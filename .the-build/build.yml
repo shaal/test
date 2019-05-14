@@ -1,0 +1,59 @@
+# @file
+# Default build configuration properties.
+#
+# This file may be customized for your project. The full set of default values can be
+# found in the-build's repository.
+# @see https://github.com/palantirnet/the-build/blob/release-2.0/defaults.yml
+
+# These properties are used when building the settings.php and settings.yml for your
+# Drupal site, and by some of the targets in the default build.xml file.
+# @see .the-build/drupal/services.build.yml
+# @see .the-build/drupal/settings.build.php
+build:
+  host: platformsh
+
+drupal:
+  root: "web"
+
+  twig:
+    debug: true
+
+  sites:
+    default:
+      # REQUIRED: Name of the sites subdirectory where the `settings.php` file
+      # should live.
+      dir: default
+
+      # REQUIRED: Your site's URI; the default should be the URI of your local
+      # development environment.
+      uri: "https://towerhealth.local"
+
+      # OPTIONAL: Drupal hash salt defaults to "temporary".
+      hash_salt: "55e03b2a8fbee7647fa1819869c3b99a6ee496115864cd323caa2adbfd739fa2"
+
+      # OPTIONAL: The Drupal database name defaults to the site's "dir" value.
+      database:
+        database: "drupal"
+
+    # Multisites created by `phing drupal-add-multisite` will be automatically added here.
+    # @multisite_placeholder@
+
+    # Defaults for all sites; these can be overridden for individual sites.
+    _defaults:
+      database:
+        username: "root"
+        password: "root"
+        host: "127.0.0.1"
+
+# Putting these flags in configuration allows you to vary the behat configuration per
+# environment. Sometimes, there are tests that are appropriate to skip on CI. Compare
+# these values to the defaults in build.circleci.yml.
+behat:
+  args: "--suite=default --strict"
+
+# To build an artifact from your code, add the URL to your artifact git repository.
+# @see https://github.com/palantirnet/the-build/blob/release-2.0/defaults.yml
+#
+# artifact:
+#   git:
+#     remote:
