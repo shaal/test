@@ -34,8 +34,7 @@
         "drupal/core": "^8.0@stable",
         "drupal/devel": "^2.1",
         "drupal/workbench": "^1.1",
-        "drupal/workbench_tabs": "^1.3",
-        "platformsh/config-reader": "^2.1"
+        "drupal/workbench_tabs": "^1.3"
     },
     "require-dev": {
         "behat/behat": "^3.1",
@@ -59,10 +58,10 @@
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "docroot/core": ["type:drupal-core"],
+            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "drupal-scaffold": {
