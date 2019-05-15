@@ -1,0 +1,8 @@
+uuid: 41af0652-9985-4da2-a6e8-cec2104619fb
+langcode: en
+status: true
+dependencies: {  }
+name: Region
+vid: region
+description: 'The region terms from Morrisey doctor profile data.'
+weight: 0

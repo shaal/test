@@ -1,0 +1,8 @@
+uuid: ec127949-ae6f-4510-a7ee-cfe7f283e6af
+langcode: en
+status: true
+dependencies: {  }
+name: 'Medical Specialty'
+vid: medical_specialty
+description: 'A taxonomy of medical specialties that a doctor may have. References conditions that relate to the specialty.'
+weight: 0

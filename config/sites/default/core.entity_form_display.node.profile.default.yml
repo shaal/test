@@ -1,0 +1,259 @@
+uuid: c254bb7a-4fa6-4d7b-bf08-b15edb0943e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.profile.field_body
+    - field.field.node.profile.field_email
+    - field.field.node.profile.field_gender
+    - field.field.node.profile.field_location_ref
+    - field.field.node.profile.field_medical_specialties_ref
+    - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_first_name
+    - field.field.node.profile.field_profile_image
+    - field.field.node.profile.field_profile_last_name
+    - field.field.node.profile.field_profile_patients
+    - field.field.node.profile.field_profile_public_email
+    - field.field.node.profile.field_profile_referral
+    - field.field.node.profile.field_profile_status
+    - field.field.node.profile.field_program_ref
+    - field.field.node.profile.field_services_ref
+    - node.type.profile
+  module:
+    - field_group
+    - media_library
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_migrated_data:
+      children:
+        - field_profile_first_name
+        - field_profile_last_name
+        - field_gender
+        - field_profile_patients
+        - field_profile_referral
+        - field_profile_status
+        - field_profile_public_email
+        - field_email
+        - field_location_ref
+        - field_profile_education
+        - field_medical_specialties_ref
+      parent_name: group_content
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Migrated data'
+    group_content:
+      children:
+        - group_profile_details
+        - group_migrated_data
+      parent_name: ''
+      weight: 5
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Content
+    group_profile_details:
+      children:
+        - field_profile_image
+        - field_body
+        - field_services_ref
+        - field_program_ref
+      parent_name: group_content
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Profile Details'
+id: node.profile.default
+targetEntityType: node
+bundle: profile
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_email:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_gender:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_location_ref:
+    weight: 20
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_medical_specialties_ref:
+    weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_profile_education:
+    type: entity_reference_paragraphs
+    weight: 21
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_profile_first_name:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_image:
+    type: media_library_widget
+    weight: 7
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_profile_last_name:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_patients:
+    weight: 15
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_profile_public_email:
+    weight: 18
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_profile_referral:
+    weight: 16
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_profile_status:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_program_ref:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_services_ref:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 2b709e38-1d9e-44dc-9f45-21a0fc32960d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_status
+    - node.type.profile
+id: node.profile.field_profile_status
+field_name: field_profile_status
+entity_type: node
+bundle: profile
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: Inactive
+field_type: boolean

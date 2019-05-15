@@ -1,0 +1,21 @@
+uuid: 97d4d2f6-94fe-4549-9406-d48564d16455
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.profile
+  module:
+    - text
+id: node.profile.field_body
+field_name: field_body
+entity_type: node
+bundle: profile
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

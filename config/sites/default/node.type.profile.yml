@@ -1,0 +1,18 @@
+uuid: 86b79c50-329b-4ae8-ad17-09181f3e4998
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Doctor profile'
+type: profile
+description: 'Help users find and connect with Tower Health healthcare providers, including doctors, nurse practitioners, and others.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

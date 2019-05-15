@@ -1,0 +1,8 @@
+uuid: fdba9969-a7b6-42fa-92a5-93cb09b37287
+langcode: en
+status: true
+dependencies: {  }
+name: Condition
+vid: condition
+description: 'A taxonomy of conditions to allow a user to search the site and find doctor profiles and Institutes/Centers/Programs based on co'
+weight: 0

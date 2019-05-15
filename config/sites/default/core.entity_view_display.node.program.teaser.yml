@@ -1,20 +1,20 @@
-uuid: b6d5960d-f7e4-452b-b0ad-5ac6be5e1c36
+uuid: 29235f83-a16b-4517-8693-9840c699266b
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.page
+    - node.type.program
   module:
     - user
-_core:
-  default_config_hash: cSv5lDnbIgDug475Hdz3woED2XMqYv3awI-J9u1JLbY
-id: node.page.teaser
+id: node.program.teaser
 targetEntityType: node
-bundle: page
+bundle: program
 mode: teaser
 content:
   links:
-    weight: 101
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
     region: content
 hidden: {  }

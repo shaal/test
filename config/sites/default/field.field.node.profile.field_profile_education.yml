@@ -1,0 +1,31 @@
+uuid: 1f612bad-d5a4-4ff8-81ea-8709fd8f5f4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_education
+    - node.type.profile
+    - paragraphs.paragraphs_type.education
+  module:
+    - entity_reference_revisions
+id: node.profile.field_profile_education
+field_name: field_profile_education
+entity_type: node
+bundle: profile
+label: Education
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      education: education
+    target_bundles_drag_drop:
+      education:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

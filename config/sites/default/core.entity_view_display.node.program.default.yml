@@ -1,0 +1,64 @@
+uuid: dea98bb8-13f3-4f4b-8574-5b204bf06e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.program.field_area_of_care_ref
+    - field.field.node.program.field_body
+    - field.field.node.program.field_location_ref
+    - field.field.node.program.field_program_type_ref
+    - field.field.node.program.field_services_ref
+    - node.type.program
+  module:
+    - text
+    - user
+id: node.program.default
+targetEntityType: node
+bundle: program
+mode: default
+content:
+  field_area_of_care_ref:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_body:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_location_ref:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_program_type_ref:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_services_ref:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

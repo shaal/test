@@ -1,0 +1,8 @@
+uuid: 40e6d245-3c28-44ff-8e57-42357bffee28
+langcode: en
+status: true
+dependencies: {  }
+name: 'Areas of care'
+vid: areas_of_care
+description: 'The high-level service lines that Tower Health provides to patients.'
+weight: 0

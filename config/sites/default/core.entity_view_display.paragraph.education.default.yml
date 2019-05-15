@@ -1,0 +1,30 @@
+uuid: fd11cca4-a4ac-4380-9963-63fc623e4205
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.education.field_education_institution
+    - field.field.paragraph.education.field_education_type
+    - paragraphs.paragraphs_type.education
+id: paragraph.education.default
+targetEntityType: paragraph
+bundle: education
+mode: default
+content:
+  field_education_institution:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_education_type:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
