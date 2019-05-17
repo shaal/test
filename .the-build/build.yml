@@ -56,3 +56,9 @@ behat:
 artifact:
   git:
     remote: "towerhealthcm@svn-6061.devcloud.hosting.acquia.com:towerhealthcm.git"
+
+# Configuration for targets/acquia.xml
+acquia:
+  realm: "devcloud"
+  site: "towerhealthcm"
+  env: "dev"
