@@ -12,7 +12,7 @@ field_name: field_location_phone_number
 entity_type: node
 bundle: location
 label: 'Phone number'
-description: ''
+description: 'Add the phone number for this location.'
 required: false
 translatable: false
 default_value: {  }

@@ -11,6 +11,7 @@ module:
   config: 0
   config_filter: 0
   config_split: 0
+  content_moderation: 0
   contextual: 0
   datetime: 0
   dblog: 0
@@ -24,11 +25,13 @@ module:
   filter: 0
   help: 0
   image: 0
+  inline_entity_form: 0
   link: 0
   media: 0
   media_library: 0
   menu_ui: 0
   node: 0
+  office_hours: 0
   options: 0
   page_cache: 0
   path: 0
@@ -46,6 +49,7 @@ module:
   views_ui: 0
   workbench: 0
   workbench_tabs: 0
+  workflows: 0
   menu_link_content: 1
   views: 10
   paragraphs: 11

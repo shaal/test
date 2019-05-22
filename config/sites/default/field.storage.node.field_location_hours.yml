@@ -1,18 +1,26 @@
-uuid: 546a04cc-abc9-4cdd-a2fe-a711278d817a
+uuid: fd9155ea-e9d7-496d-9d15-a8b0dcf05dd3
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - office_hours
 id: node.field_location_hours
 field_name: field_location_hours
 entity_type: node
-type: string_long
+type: office_hours
 settings:
-  case_sensitive: false
-module: core
+  cardinality_per_day: '2'
+  time_format: g
+  element_type: office_hours_datetime
+  increment: '15'
+  comment: 1
+  valhrs: 1
+  limit_start: ''
+  limit_end: ''
+module: office_hours
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

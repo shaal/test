@@ -11,7 +11,7 @@ field_name: field_location_ref
 entity_type: node
 bundle: program
 label: Location
-description: ''
+description: 'Select the locations for this Institute, Center or Program.'
 required: false
 translatable: false
 default_value: {  }

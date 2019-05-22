@@ -1,0 +1,33 @@
+uuid: 2f916942-dedf-4b98-9abf-fbb647eae409
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.services
+  module:
+    - node
+    - views
+  theme:
+    - bartik
+id: views_block__services_block_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:services-block_1'
+settings:
+  id: 'views_block:services-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      program: program
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

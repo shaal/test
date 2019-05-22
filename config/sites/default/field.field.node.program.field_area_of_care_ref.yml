@@ -11,7 +11,7 @@ field_name: field_area_of_care_ref
 entity_type: node
 bundle: program
 label: 'Areas of care'
-description: ''
+description: 'Select the area of care (service line) that this Institute, Center or Program belongs to.'
 required: false
 translatable: false
 default_value: {  }

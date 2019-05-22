@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.condition.field_alternative_names
     - field.field.taxonomy_term.condition.field_medical_specialties_ref
     - taxonomy.vocabulary.condition
   module:
@@ -21,6 +22,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_alternative_names:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_medical_specialties_ref:
     weight: 31
     settings:

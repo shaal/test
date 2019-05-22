@@ -11,7 +11,7 @@ field_name: field_program_type_ref
 entity_type: node
 bundle: program
 label: Type
-description: ''
+description: 'Is this an Institute, Center or Program?'
 required: false
 translatable: false
 default_value: {  }

@@ -11,7 +11,7 @@ field_name: field_services_ref
 entity_type: node
 bundle: profile
 label: Services
-description: ''
+description: 'Select the services that this doctor is associated with.'
 required: false
 translatable: true
 default_value: {  }

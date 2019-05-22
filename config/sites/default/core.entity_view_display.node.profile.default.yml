@@ -18,9 +18,11 @@ dependencies:
     - field.field.node.profile.field_profile_status
     - field.field.node.profile.field_program_ref
     - field.field.node.profile.field_services_ref
+    - image.style.medium
     - node.type.profile
   module:
     - entity_reference_revisions
+    - media
     - text
     - user
 id: node.profile.default
@@ -28,15 +30,20 @@ targetEntityType: node
 bundle: profile
 mode: default
 content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_body:
-    weight: 101
-    label: above
+    weight: 10
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_email:
-    weight: 114
+    weight: 6
     label: above
     settings:
       link_to_entity: false
@@ -44,7 +51,7 @@ content:
     type: string
     region: content
   field_gender:
-    weight: 109
+    weight: 3
     label: above
     settings:
       link_to_entity: false
@@ -52,7 +59,7 @@ content:
     type: string
     region: content
   field_location_ref:
-    weight: 103
+    weight: 12
     label: above
     settings:
       link: true
@@ -60,7 +67,7 @@ content:
     type: entity_reference_label
     region: content
   field_medical_specialties_ref:
-    weight: 102
+    weight: 2
     label: above
     settings:
       link: true
@@ -69,40 +76,24 @@ content:
     region: content
   field_profile_education:
     type: entity_reference_revisions_entity_view
-    weight: 115
+    weight: 8
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
-  field_profile_first_name:
-    weight: 107
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_profile_image:
-    type: entity_reference_entity_view
-    weight: 106
-    label: above
+    type: media_thumbnail
+    weight: 1
+    label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_style: medium
+      image_link: ''
     third_party_settings: {  }
-    region: content
-  field_profile_last_name:
-    weight: 108
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_profile_patients:
-    weight: 110
+    weight: 4
     label: above
     settings:
       format: default
@@ -112,7 +103,7 @@ content:
     type: boolean
     region: content
   field_profile_public_email:
-    weight: 113
+    weight: 7
     label: above
     settings:
       format: default
@@ -122,7 +113,7 @@ content:
     type: boolean
     region: content
   field_profile_referral:
-    weight: 111
+    weight: 5
     label: above
     settings:
       format: default
@@ -132,7 +123,7 @@ content:
     type: boolean
     region: content
   field_profile_status:
-    weight: 112
+    weight: 9
     label: above
     settings:
       format: default
@@ -142,7 +133,7 @@ content:
     type: boolean
     region: content
   field_program_ref:
-    weight: 105
+    weight: 11
     label: above
     settings:
       link: true
@@ -150,7 +141,7 @@ content:
     type: entity_reference_label
     region: content
   field_services_ref:
-    weight: 104
+    weight: 13
     label: above
     settings:
       link: true
@@ -158,8 +149,10 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 14
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-hidden: {  }
+hidden:
+  field_profile_first_name: true
+  field_profile_last_name: true

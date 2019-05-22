@@ -11,7 +11,7 @@ field_name: field_services_ref
 entity_type: node
 bundle: program
 label: Services
-description: ''
+description: 'Select the services available at Institute, Center or Program. Or create a new service if one does not already exist.'
 required: false
 translatable: false
 default_value: {  }

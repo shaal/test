@@ -1,4 +1,4 @@
-status: '1'
+status: '0'
 pattern: '[node:field_profile_first_name] [node:field_profile_last_name]'
 php: 0
 escape: 0

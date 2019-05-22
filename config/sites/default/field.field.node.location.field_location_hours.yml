@@ -1,19 +1,21 @@
-uuid: f27a3f45-e0c6-461d-a69b-b3bb50c3dfc1
+uuid: 2a7481d0-3d3a-43c8-a580-3ef3f9d46d8e
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_location_hours
     - node.type.location
+  module:
+    - office_hours
 id: node.location.field_location_hours
 field_name: field_location_hours
 entity_type: node
 bundle: location
 label: 'Hours of operation'
-description: 'Add the hours of operation for this location.'
+description: 'If applicable add the hours that this location is open.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: office_hours

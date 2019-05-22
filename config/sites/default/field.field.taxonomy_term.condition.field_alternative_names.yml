@@ -1,0 +1,19 @@
+uuid: 1e5bc41f-a8be-47df-8276-f4ee035af54a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_alternative_names
+    - taxonomy.vocabulary.condition
+id: taxonomy_term.condition.field_alternative_names
+field_name: field_alternative_names
+entity_type: taxonomy_term
+bundle: condition
+label: 'Alternative Names'
+description: 'Alternative ways of referring to this condition, so that users can find this condition under different search terms.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
