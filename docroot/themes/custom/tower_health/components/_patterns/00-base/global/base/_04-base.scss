@@ -1,0 +1,66 @@
+// @file
+// This document builds on normalize to setup standards for font sizes.
+// @copyright Copyright (c) 2018 Palantir.net
+
+// 1. Set document-wide box-sizing
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+// Body Font declarations and sizing
+// Add your base font family, size, lineheight, and color.
+// Include global adjustments for breakpoint sizing if desired.
+body {
+  color: $black;
+  font-size: ($base-font-size / 16px) * 100%;
+  line-height: ($base-line-height / $base-font-size) * 1em;
+  font-family: $base-font-family;
+
+  @include breakpoint($bp2) {
+    font-size: ($base-font-size / 16px) * 110%;
+  }
+
+  @include breakpoint($bp3) {
+    font-size: ($base-font-size / 16px) * 120%;
+  }
+}
+
+// Base Link styles
+a,
+a:link,
+a:visited {
+  @include trans();
+  color: $gray-dark;
+}
+
+a:active,
+a:hover {
+  color: $gray-medium;
+}
+
+a:focus {
+  color: $gray-medium;
+}
+
+// Pre tag
+
+pre {
+  font-family: $mono;
+}
+
+// Mark tag
+
+mark {
+  background-color: $yellow;
+  color: $black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
