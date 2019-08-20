@@ -1,0 +1,22 @@
+uuid: ba107bd5-7deb-4c1d-9426-d6c75a61947a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tower_health
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: tower_health_local_tasks
+theme: tower_health
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
