@@ -8,6 +8,8 @@
   },
   "scripts": {
     "start": "gulp compile && gulp theme",
+    "compile": "gulp compile",
+    "deploy": "gulp ghpages-deploy",
     "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
   },
   "precommit.silent": true

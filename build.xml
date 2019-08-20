@@ -60,7 +60,23 @@
 
         <!-- Include styleguide resources in the theme. This approach will symlink
              resources in development environments, and copy them for artifact builds. -->
-        <!-- <includeresource source="styleguide/source/assets/css" dest="${drupal.root}/themes/custom/example_theme/css" /> -->
+        <phingcall target="build-styleguide" />
+    </target>
+
+    <!-- Target: install-styleguide
+         Installs the styleguide
+         -->
+    <target name="install-styleguide">
+        <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${styleguide.root}" />
+        <exec command="yarn" dir="${styleguide.root}" />
+    </target>
+
+
+    <!-- Target: build-styleguide
+         Builds the styleguide
+         -->
+    <target name="build-styleguide">
+        <exec command="yarn compile" dir="${styleguide.root}" />
     </target>
 
 

@@ -1,7 +1,7 @@
 /* globals module */
 
 (() => {
-  const themeDir = './';
+const themeDir = './';
 const paths = {
   js: `${themeDir}/components/_patterns/**/*.js`,
   dist_js: `${themeDir}/dist`,
