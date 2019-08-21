@@ -15,7 +15,7 @@
 
 /// Mixin - Wrapper
 /// Outer container mixin for large screens
-@mixin wrapper($container-max-width: $max-width, $outer-container-break: $small, $v-margin: 0, $v-padding: 0, $h-padding: $space, $h-padding-large: $h-padding) {
+@mixin wrapper($container-max-width: $max-width, $outer-container-break: $bp2, $v-margin: 0, $v-padding: 0, $h-padding: $space, $h-padding-large: $h-padding) {
   max-width: #{$container-max-width};
   width: 100%;
   margin: #{$v-margin} auto;

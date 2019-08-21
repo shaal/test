@@ -128,7 +128,19 @@ $bp5: 1600px;
 // =============================================================================
 
 $space: rhythm(1.5);
-$space-half: rhythm(.75);
+$space-half: rhythm(0.75);
+$space-one-third: rhythm(0.5);
+$space-one-fourth: rhythm(0.375);
+$space-one-fifth: rhythm(0.3);
+$space-one-sixth: rhythm(0.25);
+$space-one-seventh: rhythm(0.214);
+$space-one-eighth: rhythm(0.1875);
+$space-double: rhythm(3);
+$space-triple: rhythm(4.5);
+$space-quadruple: rhythm(6);
+$space-quintuple: rhythm(7.5);
+$space-septuple: rhythm(8);
+$space-sextuple: rhythm(9.5);
 
 // =============================================================================
 // Partials to be shared with all .scss files.

@@ -1,5 +1,5 @@
 .card__title {
-  @include heading-large($font-size: 1.3rem);
+  @extend %h2;
   @include no-bottom;
 
   &-link {
@@ -8,7 +8,7 @@
 }
 
 .card__subtitle {
-  @include heading-medium($font-size: 1rem);
+  @extend %h3;
   @include no-bottom;
 
   color: $gray;
