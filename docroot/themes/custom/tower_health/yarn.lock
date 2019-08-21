@@ -1356,7 +1356,7 @@ braces@^2.3.1, braces@^2.3.2:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-breakpoint-sass@^2.7.0:
+breakpoint-sass@^2.7.0, breakpoint-sass@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/breakpoint-sass/-/breakpoint-sass-2.7.1.tgz#8ef6c4744dcc25ba83d969b6c9a17e5daa29980a"
 
@@ -8435,6 +8435,11 @@ sum-up@^1.0.1:
   resolved "https://registry.yarnpkg.com/sum-up/-/sum-up-1.0.3.tgz#1c661f667057f63bcb7875aa1438bc162525156e"
   dependencies:
     chalk "^1.0.0"
+
+support-for@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/support-for/-/support-for-1.0.7.tgz#185311a001e76981cda8a217144deb828fda2028"
+  integrity sha1-GFMRoAHnaYHNqKIXFE3rgo/aICg=
 
 supports-color@3.1.2:
   version "3.1.2"

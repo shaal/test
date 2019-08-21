@@ -12,5 +12,9 @@
     "deploy": "gulp ghpages-deploy",
     "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
   },
-  "precommit.silent": true
+  "precommit.silent": true,
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "support-for": "^1.0.7"
+  }
 }
