@@ -1,3 +1,4 @@
+/* stylelint-disable */
 // @private Default font-size for all browsers
 $browser-default-font-size: 16px;
 
@@ -183,3 +184,4 @@ $rem-with-px-fallback: true !default;
   // Use rem values for everyone else (overrides pixel values).
   #{$property}: $values;
 }
+/* stylelint-enable */

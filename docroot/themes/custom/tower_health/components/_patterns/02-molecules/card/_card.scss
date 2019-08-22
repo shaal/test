@@ -10,7 +10,6 @@
 .card__subtitle {
   @extend %h3;
   @include no-bottom;
-
   color: $gray;
 }
 
@@ -30,20 +29,4 @@
 .card--bg {
   background-color: $gray-lightest;
   padding: 1em;
-}
-// Variations
-.card--bg {
-  background-color: pink;
-  padding: 1em;
-}
-.dog-frog-bog-hog h2 h4 {
-  color: red;
-  padding: 0px;
-  @include link;
-  size: 14px;
-  margin: 0;
-}
-
-.card--hello {
-  margin: 0;
 }

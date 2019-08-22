@@ -5,8 +5,8 @@
 // 1. Set document-wide box-sizing
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -38,11 +38,11 @@ a:visited {
 
 a:active,
 a:hover {
-  color: $gray-medium;
+  color: $gray-light;
 }
 
 a:focus {
-  color: $gray-medium;
+  color: $gray-light;
 }
 
 // Pre tag
@@ -62,5 +62,3 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-

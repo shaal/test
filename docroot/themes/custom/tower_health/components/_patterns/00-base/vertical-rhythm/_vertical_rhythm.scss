@@ -1,3 +1,4 @@
+/* stylelint-disable */
 /**
  * @file
  * Libsass-compatible port of Compass' vertical-rhythm helpers
@@ -307,3 +308,4 @@ $compass-rhythm-support-ie6: false;
 ) {
   @include apply-side-rhythm-border(all, $width, $lines, $font-size, $border-style);
 }
+/* stylelint-enable */

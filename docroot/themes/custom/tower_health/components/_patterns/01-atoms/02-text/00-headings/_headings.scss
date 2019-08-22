@@ -29,14 +29,14 @@ h3 {
   @include trailer(.75, $h3-font-size);
 }
 
-%h4
+%h4,
 h4 {
   @include adjust-font-size-to($h4-font-size, 1.1);
   @include leader(1, $h4-font-size);
   @include trailer(.5, $h4-font-size);
 }
 
-%h5
+%h5,
 h5 {
   @include adjust-font-size-to($h5-font-size, .95);
   @include leader(.75, $h5-font-size);

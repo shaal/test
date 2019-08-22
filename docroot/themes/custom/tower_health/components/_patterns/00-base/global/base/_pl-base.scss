@@ -8,25 +8,42 @@
 
 .pl,
 .sg-main {
+  .patternLink {
+    color: $black;
+  }
+
+  .sg-pattern {
+    clear: left;
+  }
+
+  #icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      border: 1px solid #eee;
+      margin-right: 1em;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .icon {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+  
   .sg-subtype h2 {
     font-size: 3rem;
     text-transform: uppercase;
     background-color: $gray-darker;
 
     a {
-      @include wrapper(
-        $v-padding: $space
-      );
-
       display: block;
       color: $white;
       text-decoration: none;
       line-height: 1;
     }
-  }
-
-  .sg-pattern > div {
-    @include wrapper;
   }
 
   .sg-pattern-title {

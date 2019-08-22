@@ -10,16 +10,12 @@
 // - Next we import NPM packages (Sass mixin libraries).
 // - Last we define our custom mixins for this theme.
 //
-// @copyright Copyright (c) 2018 Palantir.net
+// @copyright Copyright (c) 2019 Palantir.net
 
 // =============================================================================
 // Browser Support Declarations, Support same browsers as normalize.css v8
 // =============================================================================
-
-$support-for: (
-  ie: 9, '*': -4
-);
-
+$support-for:(ie: 9, '*': -4);
 // =============================================================================
 // Variables
 // =============================================================================
@@ -44,8 +40,8 @@ $md-heading: 1.5 * $base-font-size;
 $sm-heading: 1.25 * $base-font-size;
 $xs-heading: 1.15 * $base-font-size;
 $text: 1 * $base-font-size;
-$label: .8 * $base-font-size;
-$crumb: .6 * $base-font-size;
+$label: 0.8 * $base-font-size;
+$crumb: 0.6 * $base-font-size;
 
 // BASE HEADING SIZES
 // Used in Normalize
@@ -55,7 +51,6 @@ $h3-font-size: $lg-heading;
 $h4-font-size: $md-heading;
 $h5-font-size: $sm-heading;
 $h6-font-size: $xs-heading;
-
 
 // FONT FAMILY DECLARATIONS
 
@@ -75,7 +70,6 @@ $arial: Arial, Helvetica, "Nimbus Sans L", sans-serif;
 
 // If using server side fonts, place your @font-face declarations here:
 
-
 // Now, Create your custom font stacks
 $sans: $helvetica;
 $serif: $georgia;
@@ -84,27 +78,6 @@ $mono: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 // Last, determine which fonts to add to these variables used in normalize.scss
 $base-font-family: $sans; // The font family set on the html element.
 $font-monospace: $mono;
-
-
-// =============================================================================
-// Color Variables
-// =============================================================================
-
-// Primary palette
-
-// Secondary palette
-
-// Neutral palette
-$black: #222222;
-$gray-dark: #414042;
-$gray-medium: #999898;
-$gray-light: #d8d8d8;
-$off-white: #f2f2f2;
-$white: #ffffff;
-
-// Helper colors
-$yellow: #ff0; // Mark
-
 
 // =============================================================================
 // Breakpoint Variables
@@ -148,5 +121,3 @@ $space-sextuple: rhythm(9.5);
 
 // Support-for
 @import "node_modules/support-for/sass/_support-for.scss";
-// Add the Breakpoint mixin.
-@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
