@@ -1,0 +1,20 @@
+{
+  "name": "emulsify",
+  "description": "Project template for Drupal 8 themes",
+  "version": "1.0.0",
+  "devDependencies": {
+    "emulsify-gulp": "^4.0.0",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "start": "gulp compile && gulp theme",
+    "compile": "gulp compile",
+    "deploy": "gulp ghpages-deploy",
+    "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
+  },
+  "precommit.silent": true,
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "support-for": "^1.0.7"
+  }
+}

@@ -1,0 +1,33 @@
+uuid: 29eaa6b1-9e1d-44e5-aad9-8da2ef08bfab
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.centers_offering_this_service
+  module:
+    - node
+    - views
+  theme:
+    - tower_health
+id: tower_health_views_block__centers_offering_this_service_block_1
+theme: tower_health
+region: header
+weight: -6
+provider: null
+plugin: 'views_block:centers_offering_this_service-block_1'
+settings:
+  id: 'views_block:centers_offering_this_service-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      service: service
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

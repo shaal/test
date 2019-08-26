@@ -89,11 +89,14 @@ The styleguide is built using [Emulsify](https://www.drupal.org/project/emulsify
 * Serve the styleguide and watch for changes:
   * From your local machine (not inside of Vagrant), change to the /styleguide folder and install the styleguide:
     * `cd /styleguide`
-    * `composer install`
     * `yarn install`
   * Now, run the styleguide:
     * `yarn start`
   * After yarn starts, visit the styleguide at http://localhost:3000
+  * Deploy to gh-pages
+    * `yarn deploy`
+  * Compile css and assets
+    * `yarn compile`
 
 ## Performance
 * [Performance Audit](https://docs.google.com/spreadsheets/d/13FHaj15h-eoUAuXzIpsPzh1uTowO5g2NSzCHJSpugjA/edit#gid=0)

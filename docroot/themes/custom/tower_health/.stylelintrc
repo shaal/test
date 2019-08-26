@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "no-descending-specificity": null,
+    "number-leading-zero": null,
+    "no-eol-whitespace": null,
+    "at-rule-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "max-empty-lines": 2
+  }
+}

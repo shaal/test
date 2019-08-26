@@ -1,0 +1,22 @@
+uuid: 2f51234c-9fd5-4f17-9bd5-063d9478645c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tower_health
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: tower_health_content
+theme: tower_health
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

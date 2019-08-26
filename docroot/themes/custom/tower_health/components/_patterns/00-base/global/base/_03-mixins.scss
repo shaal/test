@@ -1,0 +1,166 @@
+/////////////////////
+// General Mixins (put specific ones in component files where applicable)
+
+/// Mixin - Clearfix.
+/// Adds clearfix based on http://bourbon.io/docs/#clearfix
+/// use example =   @include cleafix
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+/// Use the breakout mixin for elements that should be edge-to-edge
+/// Even when a parent container uses the wrapper mixin
+@mixin breakout($v-padding: $space-double) {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(#{$v-padding} + calc(-50vw + 50%));
+  padding-right: calc(#{$v-padding} + calc(-50vw + 50%));
+}
+
+/// Mixin - Standard Margin
+@mixin margin {
+  margin-bottom: 1em;
+}
+
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
+// =============================================================================
+// Typography Helpers
+// =============================================================================
+
+// Tight tracking
+%track-in {
+  letter-spacing: -.0125em;
+}
+
+// Open tracking
+%track-out {
+  letter-spacing: .1em;
+}
+
+// Style all caps with a slightly open tracking.
+%allcaps {
+  @extend %track-out;
+  text-transform: uppercase;
+}
+
+// =============================================================================
+// List Helpers
+// =============================================================================
+
+// Unstyle a list
+%no-list,
+.no-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// =============================================================================
+// Clearfix Helpers
+//
+// Applies a clearfix ruleset using a placeholder selector. Placeholder selectors
+// do not get compiled uless they are called - removing the nesting issues that
+// can otherwise occur with extends.
+// =============================================================================
+
+.clearfix,
+%clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+    height: 1px;
+  }
+}
+
+// =============================================================================
+// Visibility Helpers
+//
+// This mixin allows you to visually hide something but keep it accessible via
+// a screen reader for accessibility purposes.
+//
+// Element-invisible as defined by snook.ca
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+// =============================================================================
+
+.visually-hidden,
+%visually-hidden,
+.element-invisible,
+%element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if support-legacy-browser(ie, '7') {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+.visually-hidden-off,
+%visually-hidden-off,
+.element-invisible-off,
+%element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+.element-focusable,
+%element-focusable {
+  @extend %element-invisible;
+
+  &:active,
+  &:focus {
+    @extend %element-invisible-off;
+  }
+}
+
+// =============================================================================
+// Color Functions
+// =============================================================================
+
+// Tint
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Shade
+@function tint($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// =============================================================================
+// Transition Functions
+// =============================================================================
+
+@mixin trans($property: all, $timing: .3s, $easing: ease) {
+  transition: $property $timing $easing;
+}
+
+// =============================================================================
+// Body copy Functions
+// =============================================================================
+
+// Create a mixin for paragraph styles that can be implemented
+// in components with other classnames.
+@mixin paragraph($margin: 0 0 1em) {
+  margin: #{$margin};
+}
+
+@mixin body-copy {
+  font-family: $base-font-family;
+  font-size: 0.9rem;
+  line-height: 1.6em;
+}
