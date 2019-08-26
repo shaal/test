@@ -1,0 +1,22 @@
+uuid: b45f6587-ffec-40af-9839-2d3cd73cc94d
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - tower_health
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: tower_health_help
+theme: tower_health
+region: content
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

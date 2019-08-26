@@ -1,0 +1,14 @@
+<div class="container">
+  {% if client_logo %}
+    <img src="../../assets/images/{{ client_logo }}" title="{{ client_name }}" alt="Tower health logo" />
+  {% else %}
+    <h1>{{ client_name }}</h1>
+  {% endif %}
+  <h2>{{ client_name }}'s Living Styleguide</h2>
+
+  <p>The style guide primarily acts to establish and maintain consistent design patterns across a project.</p> 
+  <p>It also serves as a communication tool; communicating code and content decisions between the strategists, designers, and developers on a project, communicating content strategy and best practices to stakeholders and content creators, and communicating project progress and design to stakeholders.</p>
+
+  <p>This styleguide is based on the <a href="http://patternlab.io/">PatternLab Atomic Design System</a>.</p>
+
+</div>

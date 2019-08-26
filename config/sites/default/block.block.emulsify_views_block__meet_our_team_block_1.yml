@@ -1,0 +1,33 @@
+uuid: f89ebd33-2b51-4f1c-a9d5-bcc2e1845850
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.meet_our_team
+  module:
+    - node
+    - views
+  theme:
+    - emulsify
+id: emulsify_views_block__meet_our_team_block_1
+theme: emulsify
+region: header
+weight: -5
+provider: null
+plugin: 'views_block:meet_our_team-block_1'
+settings:
+  id: 'views_block:meet_our_team-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      program: program
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

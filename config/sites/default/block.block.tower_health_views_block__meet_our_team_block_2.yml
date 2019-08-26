@@ -1,0 +1,33 @@
+uuid: 35427d0d-92e2-4960-b3d2-a2f981bcf448
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.meet_our_team
+  module:
+    - node
+    - views
+  theme:
+    - tower_health
+id: tower_health_views_block__meet_our_team_block_2
+theme: tower_health
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:meet_our_team-block_2'
+settings:
+  id: 'views_block:meet_our_team-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      location: location
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
