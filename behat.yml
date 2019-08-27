@@ -17,7 +17,7 @@ default:
       selenium2:
         wd_host: "http://127.0.0.1:8643/wd/hub"
       javascript_session: selenium2
-      base_url: https://towerhealth.local
+      base_url: http://towerhealth.local
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drupal'
@@ -33,4 +33,4 @@ default:
 circleci:
   extensions:
     Behat\MinkExtension:
-      base_url: https://towerhealth.local:8000
+      base_url: http://towerhealth.local:8000
