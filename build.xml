@@ -76,7 +76,7 @@
          Builds the styleguide
          -->
     <target name="build-styleguide">
-        <exec command="yarn compile" dir="${styleguide.root}" />
+        <exec command="yarn build" dir="${styleguide.root}" />
     </target>
 
 

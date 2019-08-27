@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "gulp compile && gulp theme",
-    "compile": "gulp compile",
+    "build": "gulp build",
     "deploy": "gulp ghpages-deploy",
     "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"
   },
