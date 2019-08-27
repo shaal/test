@@ -12,9 +12,16 @@ targetEntityType: node
 bundle: service
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_area_of_care_ref: true
+  field_body: true
