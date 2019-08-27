@@ -83,7 +83,7 @@
     <!-- Target: install
          Running this target will also run the build target.
          -->
-    <target name="install" depends="set-site,build,drupal-validate-clean-config,drupal-has-database-connection,drupal-install-if-no-config" description="Install the application.">
+    <target name="install" depends="set-site,install-styleguide,build,drupal-validate-clean-config,drupal-has-database-connection,drupal-install-if-no-config" description="Install the application.">
         <drush command="site-install" assume="yes">
             <option name="site-name">${projectname}</option>
             <option name="account-name">${drupal.site.admin_user}</option>
@@ -161,10 +161,8 @@
                 standard="${drupal_code_sniffer.standard}"
                 haltonerror="${drupal_code_sniffer.haltonerror}"
                 verbosity="1">
-
             <!-- Drupal code -->
             <fileset dir="${build.dir}/${drupal.root}" includesfile="${drupal_code_sniffer.files}" expandsymboliclinks="true" />
-
         </phpcodesniffer>
     </target>
 
@@ -189,8 +187,6 @@
         <echo>PHP Lint was successful</echo>
     </target>
 
-
-
     <!-- Target: code-fix -->
     <target name="code-fix" description="Run the automated code fixer.">
         <!-- Run PHP Code Beautifier and Fixer. -->
@@ -198,7 +194,6 @@
         <echo msg="$> ${phpcbf.command}" />
         <exec command="${phpcbf.command}" logoutput="true" checkreturn="false" />
     </target>
-
   
     <!-- Target: artifact -->
     <target name="artifact" description="Build and deploy the application.">
@@ -206,6 +201,5 @@
             <property name="build.env" value="acquia" />
         </phing>
     </target>
-
 
 </project>

@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f92501aa1cac8fe6f362d1341d7cd4e6",
+    "content-hash": "58d517f7303bf2c3b5715330741753d7",
     "packages": [
         {
             "name": "asm89/stack-cors",
