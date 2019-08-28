@@ -1,0 +1,70 @@
+uuid: 7673e9bd-f45e-46f5-aca7-b2f255b6da9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - search_api
+    - taxonomy
+  config:
+    - search_api.server.local_development
+    - core.entity_view_mode.node.search_index
+id: towerhealth
+name: TowerHealth
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          location: search_index
+          page: search_index
+          profile: search_index
+          program: search_index
+          service: search_index
+        'entity:taxonomy_term':
+          areas_of_care: ''
+          condition: ''
+          medical_specialty: ''
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected:
+        - program_type
+        - region
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_development
