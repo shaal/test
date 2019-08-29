@@ -1,0 +1,5 @@
+name: Tower Health Autocomplete
+type: module
+description: 'Autocomplete for search experiences'
+core: 8.x
+package: Custom

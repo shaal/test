@@ -47,6 +47,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  towerhealth_autocomplete: 0
   unified_twig_ext: 0
   update: 0
   user: 0
