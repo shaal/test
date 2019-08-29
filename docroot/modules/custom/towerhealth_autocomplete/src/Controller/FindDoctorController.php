@@ -8,7 +8,6 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Component\Utility\Xss;
-use Drupal\Core\Entity\Element\EntityAutocomplete;
 use Drupal\views\Views;
 
 /**
@@ -21,12 +20,14 @@ class FindDoctorController extends ControllerBase {
    * @var \Drupal\node\NodeStorage
    */
   protected $nodeStorage;
+
   /**
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
     $this->nodeStroage = $entity_type_manager->getStorage('node');
   }
+
   /**
    * {@inheritdoc}
    */
@@ -36,6 +37,7 @@ class FindDoctorController extends ControllerBase {
       $container->get('entity_type.manager')
     );
   }
+
   /**
    * Handler for autocomplete request.
    */
@@ -58,8 +60,8 @@ class FindDoctorController extends ControllerBase {
     $view->execute();
     $view_result = $view->result;
 
-    // This should pull from the view and shouldf not need to pull from the entity
-    // Access field data from the view results.
+    // This should pull from the view and shouldn't need to pull from the entity
+    // access field data from the view results.
     foreach ($view_result as $data) {
       $term = $data->_object->getEntity();
       $results[] = [
@@ -67,7 +69,8 @@ class FindDoctorController extends ControllerBase {
         'label' => $term->getName(),
       ];
     }
-    
+
     return new JsonResponse($results);
   }
+
 }
