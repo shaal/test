@@ -23,6 +23,7 @@ dependencies:
     - node.type.profile
   module:
     - media
+    - text
     - user
 id: node.profile.search_index
 targetEntityType: node
@@ -32,6 +33,13 @@ content:
   content_moderation_control:
     weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    type: text_default
+    weight: 2
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
   field_profile_image:
@@ -44,12 +52,11 @@ content:
     third_party_settings: {  }
     region: content
   links:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_body: true
   field_email: true
   field_gender: true
   field_location_ref: true
