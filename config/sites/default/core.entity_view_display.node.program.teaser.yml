@@ -12,9 +12,19 @@ targetEntityType: node
 bundle: program
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_area_of_care_ref: true
+  field_body: true
+  field_location_ref: true
+  field_program_type_ref: true
+  field_services_ref: true
