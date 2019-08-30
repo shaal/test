@@ -9,6 +9,7 @@ dependencies:
   module:
     - taxonomy
     - node
+    - search_api_solr
     - search_api
 id: towerhealth
 name: TowerHealth
@@ -38,7 +39,7 @@ field_settings:
     label: Name
     datasource_id: 'entity:taxonomy_term'
     property_path: name
-    type: text
+    type: solr_text_ngram
     dependencies:
       module:
         - taxonomy
