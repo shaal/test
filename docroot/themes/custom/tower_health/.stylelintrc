@@ -7,6 +7,7 @@
     "no-eol-whitespace": null,
     "at-rule-empty-line-before": null,
     "declaration-empty-line-before": null,
-    "max-empty-lines": 2
+    "max-empty-lines": 2,
+    "property-no-unknown": null
   }
 }

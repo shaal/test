@@ -1,24 +1,15 @@
 .form-item {
-  color: $gray;
-  margin-bottom: 1em;
-  max-width: 32em;
+  @extend %input;
 
   @include clearfix;
 }
 
 .form-item__label {
-  display: block;
-  font-weight: 600;
-
-  @include bp1 {
-    display: block;
-    margin-right: 2%;
-    padding: 0.6em 0;
-  }
+  @extend %label;
 }
 
 .form-item__textfield {
-  border: 1px solid $gray-lightest;
+  border: 1px solid $gray-light;
   padding: 0.6em;
   max-width: 100%;
 
