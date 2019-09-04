@@ -1,37 +1,43 @@
-@mixin button($bg:$black, $color:$white, $hoverBg: $gray, $hoverColor: $white) {
+@mixin button($bg:$primary-dark, $color:$white, $border:$healing, $hoverBg: rgba($healing, .3), $hoverColor: $primary-dark) {
+  @include transition(all, 0.15s, ease-in);
   background-color: $bg;
   border: none;
   color: $color;
+  border-left: 6px solid $border;
   cursor: pointer;
   line-height: 1.4;
-  padding: 0.5em 1em;
+  padding: 1em 1.25em;
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
+  font-weight: 700;
 
   &:visited {
     color: $color;
   }
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.025);
+    color: $hoverColor;
     background-color: $hoverBg;
+    border-color: $hoverColor;
   }
 }
 
 @mixin button-alt {
-  @include button($gray, $white, $black);
-
+  @include button;
+  
+  @include adjust-font-size-to($label, .8);
   font-weight: 600;
-  font-size: 0.7rem;
-  padding: 0.4em 0.6em 0.3em;
+  padding: .75em 1em;
 }
 
 .button {
   @include button;
 
   &--alt {
-    @include button;
     @include button-alt;
   }
 }
