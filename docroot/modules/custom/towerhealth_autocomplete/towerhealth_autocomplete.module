@@ -22,7 +22,7 @@ use Drupal\Core\Form\FormStateInterface;
 function towerhealth_autocomplete_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   $id = $form['#id'];
 
-  if ($id == 'views-exposed-form-search-page-1') {
+  if ($id == 'views-exposed-form-find-a-provider-find-doctor') {
     $form['search_api_fulltext']['#autocomplete_route_name'] = 'towerhealth_autocomplete.autocomplete.finddoctor';
   }
 }

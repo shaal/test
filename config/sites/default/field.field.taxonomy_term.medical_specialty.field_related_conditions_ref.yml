@@ -1,16 +1,16 @@
-uuid: 56c42ce6-60fa-4151-aff3-ecd8612645d6
+uuid: ca40a93f-e7d1-42e3-b6ce-acb2888b7df1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
     - taxonomy.vocabulary.condition
     - taxonomy.vocabulary.medical_specialty
-id: taxonomy_term.condition.field_medical_specialties_ref
-field_name: field_medical_specialties_ref
+id: taxonomy_term.medical_specialty.field_related_conditions_ref
+field_name: field_related_conditions_ref
 entity_type: taxonomy_term
-bundle: condition
-label: 'Related Medical Specialties'
+bundle: medical_specialty
+label: 'Related Conditions'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      medical_specialty: medical_specialty
+      condition: condition
     sort:
       field: name
       direction: asc

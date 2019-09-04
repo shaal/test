@@ -1,15 +1,15 @@
-uuid: 94cc256f-1159-42c6-bfb5-1905c24c4ab6
+uuid: 9c980ac8-a096-4d1e-89a2-c869d3b93457
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.condition.field_alternative_names
-    - taxonomy.vocabulary.condition
+    - field.field.taxonomy_term.medical_specialty.field_related_conditions_ref
+    - taxonomy.vocabulary.medical_specialty
   module:
     - text
-id: taxonomy_term.condition.default
+id: taxonomy_term.medical_specialty.default
 targetEntityType: taxonomy_term
-bundle: condition
+bundle: medical_specialty
 mode: default
 content:
   description:
@@ -19,13 +19,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_alternative_names:
-    weight: 2
+  field_related_conditions_ref:
+    weight: 1
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    type: string
+    type: entity_reference_label
     region: content
 hidden:
   search_api_excerpt: true

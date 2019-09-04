@@ -1,16 +1,16 @@
-uuid: e5dd162a-2790-47f8-8caa-edf36b29e865
+uuid: f9a671b0-a2af-4801-bfed-328ca28dc896
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.condition.field_alternative_names
-    - taxonomy.vocabulary.condition
+    - field.field.taxonomy_term.medical_specialty.field_related_conditions_ref
+    - taxonomy.vocabulary.medical_specialty
   module:
     - path
     - text
-id: taxonomy_term.condition.default
+id: taxonomy_term.medical_specialty.default
 targetEntityType: taxonomy_term
-bundle: condition
+bundle: medical_specialty
 mode: default
 content:
   description:
@@ -21,13 +21,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_alternative_names:
-    weight: 32
+  field_related_conditions_ref:
+    weight: 31
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   name:
     type: string_textfield

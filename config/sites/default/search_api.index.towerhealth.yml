@@ -2,20 +2,34 @@ uuid: 7673e9bd-f45e-46f5-aca7-b2f255b6da9a
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.storage.node.field_medical_specialties_ref
-    - search_api.server.local_development
-    - core.entity_view_mode.node.search_index
   module:
-    - taxonomy
     - node
+    - taxonomy
     - search_api_solr
     - search_api
+  config:
+    - field.storage.node.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
+    - search_api.server.local_development
+    - core.entity_view_mode.node.search_index
 id: towerhealth
 name: TowerHealth
 description: ''
 read_only: false
 field_settings:
+  condition_specialties_name:
+    label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+      module:
+        - taxonomy
+        - taxonomy
+        - taxonomy
   field_medical_specialties_ref:
     label: 'Medical Specialties'
     datasource_id: 'entity:node'
@@ -74,6 +88,14 @@ field_settings:
     datasource_id: 'entity:taxonomy_term'
     property_path: 'search_api_reverse_entity_references_node__field_medical_specialties_ref:title'
     type: text
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
   vid:
     label: Vocabulary
     datasource_id: 'entity:taxonomy_term'
