@@ -1,14 +1,26 @@
 // @copyright Copyright (c) 2019 Palantir.net
 
 %input {
-  border-radius: 2px;
+  border-radius: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 4em;
+  padding: 1.25em .25em;
+  border: 1px solid $gray-light;
+  font-size: 16px;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    border-color: $healing;
+  }
 }
 
 %label,
 label {
   @include adjust-font-size-to($label);
-  font-weight: 400;
-  color: $healing;
+  font-weight: 700;
+  color: $gray-dark;
 }
 
 input[type="text"],
@@ -30,24 +42,20 @@ input[type="week"] {
 legend {
   @include adjust-font-size-to($label, .8);
   font-weight: 700;
-  text-transform: uppercase;
+  color: $gray-dark;
+  margin-bottom: rhythm(.45);
   padding-top: rhythm(2);
 }
 
 fieldset {
   border: 0;
-  padding: rhythm(.5);
+  padding: 0;
 }
 
 label {
   @include adjust-font-size-to($label, .8);
   display: block;
   margin-bottom: rhythm(.25);
-}
-
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-  display: inline-block;
 }
 
 option,

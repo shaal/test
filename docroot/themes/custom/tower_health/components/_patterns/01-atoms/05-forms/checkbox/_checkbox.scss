@@ -1,4 +1,46 @@
 .form-item--checkboxes,
 .form-item--checkbox__item {
   @include list-reset;
+  
+  input {
+    margin: .25em rhythm(.5) .5em .25em;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    z-index: 1;
+    
+    &::before {
+      position: absolute;
+      top: -0.25em;
+      left: -0.25em;
+      content: '';
+      display: inline-block;
+      height: 25px;
+      width: 25px;
+      background-color: $off-white;
+      border: 1px solid rgba($gray-lighter, .7);
+      border-radius: 4px;
+    }
+    
+    &:checked::after {
+      position: absolute;
+      background: url('/pattern-lab/public/images/checkbox.svg');
+      background-size: contain;
+      background-position: center;
+      top: 0;
+      left: 0;
+      content: '';
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+    }
+  }
+  
+  label {
+    position: relative;
+    color: $gray-dark;
+    margin-bottom: rhythm(.45);
+    padding-left: 35px;
+    font-weight: 400;
+  }
 }

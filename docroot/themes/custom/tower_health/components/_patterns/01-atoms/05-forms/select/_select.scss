@@ -1,7 +1,6 @@
 // CSS-only select styling (from https://github.com/filamentgroup/select-css)
 
 .form-item__dropdown {
-  border: 1px solid $gray-light;
   display: block;
   position: relative;
 
@@ -19,19 +18,11 @@
     pointer-events: none;
     display: none;
   }
-
-  &:hover {
-    border-color: $black;
-  }
 }
 
 .form-item__select {
-  border: 1px solid $gray-light;
-  height: 41px; // set height required for discrepancy between .form-item__dropdown border and the select :focus border
-  font-size: 16px;
-  margin: 0;
+  @extend %input;
   outline: none;
-  padding: 0.6em 0.8em 0.5em;
   width: 100%;
 
   :focus {
@@ -54,7 +45,6 @@
     background: none; /* Match-04 */
 
     /* inside @supports so that Android <= 4.3 display the native arrow */
-    border: 1px solid transparent; /* Match-05 */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

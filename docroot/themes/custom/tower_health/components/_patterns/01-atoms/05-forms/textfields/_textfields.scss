@@ -1,7 +1,6 @@
 .form-item {
-  @extend %input;
-
   @include clearfix;
+  margin-bottom: 1em;
 }
 
 .form-item__label {
@@ -9,32 +8,11 @@
 }
 
 .form-item__textfield {
-  border: 1px solid $gray-light;
-  padding: 0.6em;
-  max-width: 100%;
-
-  &:focus {
-    border-color: $black;
-  }
-
-  &::-webkit-input-placeholder {
-    color: $gray-light;
-  }
-
-  &:-moz-placeholder {
-    color: $gray-light;
-  }
-
-  &::-moz-placeholder {
-    color: $gray-light;
-  }
-
-  &:-ms-input-placeholder {
-    color: $gray-light;
-  }
+  @extend %input;
 }
 
 .form-item__description {
+  @include adjust-font-size-to($label, .8);
   margin-top: 0.3em;
 }
 
@@ -42,9 +20,4 @@
   border: none;
   margin-bottom: 2em;
   padding: 0;
-
-  .form-item {
-    margin-left: 1em;
-    max-width: 31em;
-  }
 }
