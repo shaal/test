@@ -34,27 +34,27 @@
   }
   
   .sg-subtype h2 {
-    font-size: 3rem;
+    font-size: 2rem;
+    border-bottom: 1px solid $gray;
     text-transform: uppercase;
-    background-color: $gray-dark;
+    padding-bottom: .5rem;
 
     a {
       display: block;
-      color: $white;
+      color: $gray;
       text-decoration: none;
       line-height: 1;
     }
   }
 
   .sg-pattern-title {
-    color: #738ba3;
-    font-size: 1.4rem !important;
+    color: $primary-dark;
+    font-size: 1rem !important;
     text-transform: none !important;
 
     a {
-      color: #1169ba !important;
-      font-family: Calibre, Arial, sans-serif;
-      font-size: 2.2rem;
+      color: $primary-dark !important;
+      font-size: 1rem;
       font-weight: 500;
       text-transform: uppercase !important;
     }
