@@ -34,10 +34,12 @@
   }
   
   .sg-subtype h2 {
+    background-color: $off-white;
+    padding: 1rem .5rem;
     font-size: 2rem;
-    border-bottom: 1px solid $gray;
-    text-transform: uppercase;
-    padding-bottom: .5rem;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-bottom: 0;
 
     a {
       display: block;
@@ -48,15 +50,17 @@
   }
 
   .sg-pattern-title {
-    color: $primary-dark;
+    background-color: $off-white;
+    padding: .45rem .5rem !important;
     font-size: 1rem !important;
-    text-transform: none !important;
+    text-transform: capitalize !important;
 
     a {
-      color: $primary-dark !important;
+      color: $gray !important;
       font-size: 1rem;
-      font-weight: 500;
-      text-transform: uppercase !important;
+      font-weight: 700;
+      text-transform: capitalize !important;
+      padding: 0;
     }
   }
 

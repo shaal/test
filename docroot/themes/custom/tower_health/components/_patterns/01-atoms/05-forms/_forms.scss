@@ -21,6 +21,8 @@ label {
   @include adjust-font-size-to($label);
   font-weight: 700;
   color: $gray-dark;
+  display: block;
+  margin-bottom: rhythm(.25);
 }
 
 input[type="text"],
@@ -44,18 +46,11 @@ legend {
   font-weight: 700;
   color: $gray-dark;
   margin-bottom: rhythm(.45);
-  padding-top: rhythm(2);
 }
 
 fieldset {
   border: 0;
   padding: 0;
-}
-
-label {
-  @include adjust-font-size-to($label, .8);
-  display: block;
-  margin-bottom: rhythm(.25);
 }
 
 option,
