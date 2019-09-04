@@ -83,11 +83,6 @@ field_settings:
     dependencies:
       module:
         - node
-  title_1:
-    label: 'Reverse reference: <em class="placeholder">Content</em> using <em class="placeholder">Medical Specialties</em> » Title'
-    datasource_id: 'entity:taxonomy_term'
-    property_path: 'search_api_reverse_entity_references_node__field_medical_specialties_ref:title'
-    type: text
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -132,7 +127,6 @@ processor_settings:
       - name
       - rendered_item
       - title
-      - title_1
       - vid
     weights:
       preprocess_index: -20
