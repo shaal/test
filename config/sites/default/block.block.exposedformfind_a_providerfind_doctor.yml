@@ -18,6 +18,6 @@ settings:
   id: 'views_exposed_filter_block:find_a_provider-find_doctor'
   label: ''
   provider: views
-  label_display: '0'
-  views_label: ''
+  label_display: visible
+  views_label: 'Find a doctor'
 visibility: {  }

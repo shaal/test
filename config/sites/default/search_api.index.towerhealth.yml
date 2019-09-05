@@ -10,6 +10,8 @@ dependencies:
   config:
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.node.field_services_ref
+    - field.storage.node.field_conditions_ref
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
 id: towerhealth
@@ -17,7 +19,47 @@ name: TowerHealth
 description: ''
 read_only: false
 field_settings:
-  condition_specialties_name:
+  field_medical_specialties_ref:
+    label: 'Medical Specialties'
+    datasource_id: 'entity:node'
+    property_path: field_medical_specialties_ref
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+  location_services_condition_name:
+    label: 'Services » Content » Related Conditions » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:field_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+        - field.storage.node.field_conditions_ref
+      module:
+        - node
+        - taxonomy
+        - taxonomy
+  location_services_title:
+    label: 'Services » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+      module:
+        - node
+        - node
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: solr_text_ngram
+    dependencies:
+      module:
+        - taxonomy
+  provider_specialties_condition_name:
     label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:name'
@@ -30,15 +72,7 @@ field_settings:
         - taxonomy
         - taxonomy
         - taxonomy
-  field_medical_specialties_ref:
-    label: 'Medical Specialties'
-    datasource_id: 'entity:node'
-    property_path: field_medical_specialties_ref
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_medical_specialties_ref
-  medical_specialties_name:
+  provider_specialties_name:
     label: 'Medical Specialties » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_medical_specialties_ref:entity:name'
@@ -48,14 +82,6 @@ field_settings:
         - field.storage.node.field_medical_specialties_ref
       module:
         - taxonomy
-        - taxonomy
-  name:
-    label: Name
-    datasource_id: 'entity:taxonomy_term'
-    property_path: name
-    type: solr_text_ngram
-    dependencies:
-      module:
         - taxonomy
   rendered_item:
     label: 'Rendered HTML output'

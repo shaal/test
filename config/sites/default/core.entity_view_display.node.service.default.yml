@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.service.field_area_of_care_ref
     - field.field.node.service.field_body
+    - field.field.node.service.field_conditions_ref
     - node.type.service
   module:
     - text
@@ -33,6 +34,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_conditions_ref:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100

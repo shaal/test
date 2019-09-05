@@ -1,4 +1,4 @@
-uuid: 45ee9d9a-fd2c-45ee-90f3-28f44dc9484f
+uuid: 49cfb03e-e728-431d-a391-6a323dcf0ba6
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - search_api.index.towerhealth
   module:
     - search_api
-id: find_a_provider
-label: 'Find a Provider'
+id: find_a_location
+label: 'Find a Location'
 module: views
 description: ''
 tag: ''
@@ -36,7 +36,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: 'Find a doctor'
+          submit_button: 'Find a location'
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -153,7 +153,7 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
-            identifier: find_doctor_search
+            identifier: find_location_search
             required: false
             remember: false
             multiple: false
@@ -177,8 +177,8 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - provider_specialties_condition_name
-            - provider_specialties_name
+            - location_services_condition_name
+            - location_services_title
             - rendered_item
             - title
           plugin_id: search_api_fulltext
@@ -230,7 +230,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            profile: profile
+            location: location
           group: 1
           exposed: false
           expose:
@@ -287,14 +287,14 @@ display:
         - url
         - url.query_args
       tags: {  }
-  find_doctor:
+  find_location:
     display_plugin: page
-    id: find_doctor
+    id: find_location
     display_title: Page
     position: 1
     display_options:
       display_extenders: {  }
-      path: find-a-doctor
+      path: find-a-location
       exposed_block: true
     cache_metadata:
       max-age: -1
