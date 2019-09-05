@@ -153,7 +153,7 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
-            identifier: search_api_fulltext
+            identifier: find_doctor_search
             required: false
             remember: false
             multiple: false
