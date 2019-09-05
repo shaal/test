@@ -1,0 +1,116 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/3?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/medical_specialty"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/field_related_conditions_ref": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "94848d58-9882-49a6-b96b-1e7e24e9355f"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 3
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "medical_specialty"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-08-30T14:11:02+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Allergy Immunology",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/field_related_conditions_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/condition"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "89b18362-6d09-42fc-b167-c808d54b92cb"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2019-09-05T00:46:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}

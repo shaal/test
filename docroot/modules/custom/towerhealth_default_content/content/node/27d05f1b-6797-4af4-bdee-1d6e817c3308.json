@@ -1,0 +1,232 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/profile"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/profile\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/profile\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/profile\/field_medical_specialties_ref": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/3?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "27d05f1b-6797-4af4-bdee-1d6e817c3308"
+        }
+    ],
+    "vid": [
+        {
+            "value": 11
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "profile"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-09-04T19:19:47+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/profile\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c69b577d-4ca1-4237-be51-98a22da39b78"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/profile\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c69b577d-4ca1-4237-be51-98a22da39b78"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/profile\/field_medical_specialties_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/3?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/medical_specialty"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "94848d58-9882-49a6-b96b-1e7e24e9355f"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/medical_specialty"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "46b03a23-426a-4bc5-8529-86d655142f19"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "John Doe",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-08-30T15:45:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-09-04T19:19:47+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_body": [
+        {
+            "value": "<p>Here is the body<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Here is the body<\/p>",
+            "lang": "en"
+        }
+    ],
+    "field_profile_first_name": [
+        {
+            "value": "John"
+        }
+    ],
+    "field_profile_last_name": [
+        {
+            "value": "Doe"
+        }
+    ],
+    "field_profile_patients": [
+        {
+            "value": false
+        }
+    ],
+    "field_profile_public_email": [
+        {
+            "value": false
+        }
+    ],
+    "field_profile_referral": [
+        {
+            "value": false
+        }
+    ],
+    "field_profile_status": [
+        {
+            "value": false
+        }
+    ]
+}

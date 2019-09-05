@@ -3,3 +3,13 @@ type: module
 description: 'Miscellaneous custom module for Tower Health.'
 core: 8.x
 package: Custom
+
+default_content:
+  node:
+    - 48fcbd1f-7406-494b-a594-46005e6a223d
+    - 27d05f1b-6797-4af4-bdee-1d6e817c3308
+  taxonomy_term:
+    - 6279202e-7803-45a9-8478-bdbfb2e1a237
+    - 46b03a23-426a-4bc5-8529-86d655142f19
+    - 89b18362-6d09-42fc-b167-c808d54b92cb
+    - 94848d58-9882-49a6-b96b-1e7e24e9355f
