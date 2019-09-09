@@ -1,6 +1,6 @@
-name: Tower Health Misc.
+name: Tower Health Default content.
 type: module
-description: 'Miscellaneous custom module for Tower Health.'
+description: 'Default content for Tower Health.'
 core: 8.x
 package: Custom
 
