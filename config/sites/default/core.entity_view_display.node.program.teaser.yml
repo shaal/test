@@ -28,3 +28,4 @@ hidden:
   field_location_ref: true
   field_program_type_ref: true
   field_services_ref: true
+  search_api_excerpt: true

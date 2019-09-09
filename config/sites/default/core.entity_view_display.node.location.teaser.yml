@@ -36,3 +36,4 @@ hidden:
   field_location_phone_number: true
   field_location_region_ref: true
   links: true
+  search_api_excerpt: true

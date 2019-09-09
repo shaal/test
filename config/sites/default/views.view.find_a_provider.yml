@@ -1,4 +1,4 @@
-uuid: 6747efa1-c86a-4cd4-99d9-fd3363151b48
+uuid: 45ee9d9a-fd2c-45ee-90f3-28f44dc9484f
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - search_api.index.towerhealth
   module:
     - search_api
-id: search
-label: Search
+id: find_a_provider
+label: 'Find a Provider'
 module: views
 description: ''
 tag: ''
@@ -36,7 +36,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Search
+          submit_button: 'Find a doctor'
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -153,7 +153,7 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
-            identifier: search
+            identifier: find_doctor_search
             required: false
             remember: false
             multiple: false
@@ -177,6 +177,8 @@ display:
           parse_mode: terms
           min_length: null
           fields:
+            - provider_specialties_condition_name
+            - provider_specialties_name
             - rendered_item
             - title
           plugin_id: search_api_fulltext
@@ -219,7 +221,58 @@ display:
             group_items: {  }
           reduce_duplicates: false
           plugin_id: search_api_datasource
-      sorts: {  }
+        type:
+          id: type
+          table: search_api_index_towerhealth
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            profile: profile
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_towerhealth
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: Search
       header: {  }
       footer: {  }
@@ -234,14 +287,14 @@ display:
         - url
         - url.query_args
       tags: {  }
-  page_1:
+  find_doctor:
     display_plugin: page
-    id: page_1
+    id: find_doctor
     display_title: Page
     position: 1
     display_options:
       display_extenders: {  }
-      path: search
+      path: find-a-doctor
       exposed_block: true
     cache_metadata:
       max-age: -1

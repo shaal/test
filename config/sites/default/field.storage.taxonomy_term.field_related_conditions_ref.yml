@@ -1,0 +1,19 @@
+uuid: 4e01f71c-8760-4110-b74a-f5779eec2f45
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_related_conditions_ref
+field_name: field_related_conditions_ref
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

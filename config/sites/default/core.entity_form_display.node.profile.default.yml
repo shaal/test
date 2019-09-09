@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.profile.field_profile_referral
     - field.field.node.profile.field_profile_status
     - field.field.node.profile.field_program_ref
-    - field.field.node.profile.field_services_ref
     - node.type.profile
     - workflows.workflow.default
   module:
@@ -198,15 +197,6 @@ content:
     region: content
   field_program_ref:
     weight: 10
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_services_ref:
-    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
