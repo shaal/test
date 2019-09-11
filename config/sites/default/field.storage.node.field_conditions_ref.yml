@@ -1,12 +1,13 @@
-uuid: 8b9edfce-ecb0-4b03-9507-cd000a9c9a5c
+uuid: 70d4899d-9724-48be-9e46-b8db56b24ebf
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - taxonomy
-id: taxonomy_term.field_medical_specialties_ref
-field_name: field_medical_specialties_ref
-entity_type: taxonomy_term
+id: node.field_conditions_ref
+field_name: field_conditions_ref
+entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term

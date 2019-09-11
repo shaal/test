@@ -1,17 +1,17 @@
-uuid: 14678c8d-97da-4982-9e6e-1783eb46b856
+uuid: 85268a55-f516-43b4-833b-672bab9e57e2
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_services_ref
-    - node.type.profile
+    - node.type.location
     - node.type.service
-id: node.profile.field_services_ref
+id: node.location.field_services_ref
 field_name: field_services_ref
 entity_type: node
-bundle: profile
+bundle: location
 label: Services
-description: 'Select the services that this doctor is associated with.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
