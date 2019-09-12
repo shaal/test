@@ -1,4 +1,4 @@
-@mixin button($bg:$primary-dark, $color:$white, $border:$healing, $hoverBg: rgba($healing, .3), $hoverColor: $primary-dark) {
+@mixin button($bg:$primary-dark, $color:$white, $border:$trust, $hoverBg: $trust-ltst, $hoverColor: $primary-dark) {
   @include transition(all, 0.15s, ease-in);
   background-color: $bg;
   border: none;
@@ -10,7 +10,7 @@
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
 
   &:visited {
     color: $color;
@@ -27,8 +27,10 @@
 }
 
 @mixin button-alt {
-  @include button;
-  
+  @include button($trust-aa, $white, $primary-dark, $trust-ltst, $hoverColor: $primary-dark);
+}
+
+@mixin button-small {
   @include adjust-font-size-to($label, .8);
   font-weight: 600;
   padding: .75em 1em;
@@ -39,5 +41,15 @@
 
   &--alt {
     @include button-alt;
+  }
+  
+  &--small {
+    @include button;
+    @include button-small;
+  }
+  
+  &--small-alt {
+    @include button-alt;
+    @include button-small;
   }
 }
