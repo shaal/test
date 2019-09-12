@@ -18,6 +18,7 @@ body {
   font-size: ($base-font-size / 16px) * 100%;
   line-height: ($base-line-height / $base-font-size) * 1em;
   font-family: $base-font-family;
+  font-weight: 300;
 
   @include breakpoint($bp2) {
     font-size: ($base-font-size / 16px) * 110%;
@@ -33,17 +34,17 @@ a,
 a:link,
 a:visited {
   @include trans();
-  color: $healing;
+  color: $trust-aa;
 }
 
 a:active,
 a:hover {
-  color: $healing;
+  color: $trust-aa;
   text-decoration: underline;
 }
 
 a:focus {
-  color: $healing;
+  color: $trust-aa;
   text-decoration: underline;
 }
 

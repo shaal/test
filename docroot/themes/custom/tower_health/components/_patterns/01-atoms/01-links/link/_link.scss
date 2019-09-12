@@ -1,10 +1,10 @@
 @mixin link {
-  color: $healing;
+  color: $trust-aa;
   
   &:active,
   &:hover,
   &:focus {
-    color: $healing;
+    color: $trust-aa;
   }
 }
 
