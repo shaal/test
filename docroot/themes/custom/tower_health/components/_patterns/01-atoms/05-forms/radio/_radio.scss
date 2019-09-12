@@ -20,19 +20,20 @@
       background-color: $off-white;
       border: 1px solid rgba($gray-lighter, .7);
       border-radius: 50px;
+      box-shadow: inset 1px 1px 3px rgba($gray-dark, .25);
     }
     
     &:checked::after {
       position: absolute;
-      top: .125em;
-      left: .125em;
+      top: 2px;
+      left: 2px;
       content: '';
       display: inline-block;
       height: 13px;
       width: 13px;
-      background-color: $healing;
+      background-color: $trust-aa;
       border-radius: 50px;
-      box-shadow: 0 1px 3px rgba($gray-dark, .45);
+      // box-shadow: 0 1px 3px rgba($gray-dark, .45);
     }
   }
   

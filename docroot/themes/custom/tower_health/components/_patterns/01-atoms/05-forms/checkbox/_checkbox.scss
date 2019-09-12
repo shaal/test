@@ -20,6 +20,7 @@
       background-color: $off-white;
       border: 1px solid rgba($gray-lighter, .7);
       border-radius: 4px;
+      box-shadow: inset 1px 1px 3px rgba($gray-dark, .25);
     }
     
     &:checked::after {
@@ -27,8 +28,8 @@
       background: url('/pattern-lab/public/images/checkbox.svg');
       background-size: contain;
       background-position: center;
-      top: 0;
-      left: 0;
+      top: 1px;
+      left: 1px;
       content: '';
       display: inline-block;
       height: 15px;

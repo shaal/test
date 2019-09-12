@@ -12,15 +12,15 @@
   &:active,
   &:hover,
   &:focus {
-    border-color: $healing;
+    border-color: $trust-aa;
   }
 }
 
 %label,
 label {
   @include adjust-font-size-to($label);
-  font-weight: 700;
-  color: $gray-dark;
+  font-weight: 400;
+  color: $trust-aa;
   display: block;
   margin-bottom: rhythm(.25);
 }
