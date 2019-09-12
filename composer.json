@@ -46,6 +46,8 @@
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/office_hours": "^1.1",
         "drupal/paragraphs": "^1.8",
+        "drupal/pathauto": "^1.4",
+        "drupal/redirect": "^1.4",
         "drupal/search_api_solr": "^1.1",
         "drupal/token": "^1.5",
         "drupal/workbench": "^1.1",
