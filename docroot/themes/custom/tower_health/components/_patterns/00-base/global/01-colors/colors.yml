@@ -23,6 +23,8 @@ items:
     value: '#f2e5a3'
   - name: $uplifting-ltst
     value: '#f8f1ce'
+  - name: $trust-aa
+    value: '#4776bd'
   - name: $trust
     value: '#4d7bbe'
   - name: $trust-med
@@ -43,6 +45,10 @@ items:
     value: '#c2b6d9'
   - name: $wisdom-ltst
     value: '#ded7eb'
+  - name: $growth-aa
+    value: '#627f34'
+  - name: $growth-lg
+    value: '#7b9f41'
   - name: $growth
     value: '#8db750'
   - name: $growth-med
