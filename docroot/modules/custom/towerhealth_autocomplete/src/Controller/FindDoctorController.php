@@ -3,6 +3,7 @@
 namespace Drupal\towerhealth_autocomplete\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -52,6 +53,7 @@ class FindDoctorController extends ControllerBase {
 
     $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results);
     $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results);
+    $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results);
 
     return new JsonResponse($results);
   }
@@ -91,6 +93,51 @@ class FindDoctorController extends ControllerBase {
         'value' => $term_name,
         'label' => $term_name,
       ];
+    }
+
+    return $results;
+  }
+
+  /**
+   * Return suggestions from node source.
+   */
+  private function nodeSuggestedTerms($view_id, $input, $label, $results) {
+
+    // Firstly, get the view in question.
+    $view = Views::getView($view_id);
+
+    // Pass any input.
+    $view->setExposedInput(['title' => $input]);
+
+    // Execute the view.
+    $view->execute();
+    $view_result = $view->result;
+
+    // Return the results with out addititions if empty.
+    if (count($view_result) === 0) {
+      return $results;
+    }
+
+    $results[] = [
+      'grouping' => TRUE,
+      'label' => $label,
+    ];
+
+    foreach ($view_result as $data) {
+      $entity = $data->_object->getEntity();
+
+      if ($entity instanceof EntityInterface) {
+        $url = $entity->toUrl();
+
+        $values = $data->_item->getField('title')->getValues();
+        $node_title = reset($values)->toText();
+
+        $results[] = [
+          'value' => $node_title,
+          'label' => $node_title,
+          'url' => $url->toString(),
+        ];
+      }
     }
 
     return $results;
