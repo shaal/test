@@ -105,7 +105,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: text
+    type: solr_text_ngram
     dependencies:
       module:
         - node
@@ -148,11 +148,16 @@ processor_settings:
   aggregated_field: {  }
   entity_status: {  }
   ignorecase:
-    all_fields: false
+    all_fields: true
     fields:
+      - location_services_condition_name
+      - location_services_title
       - name
+      - provider_specialties_condition_name
+      - provider_specialties_name
       - rendered_item
       - title
+      - type
       - vid
     weights:
       preprocess_index: -20
