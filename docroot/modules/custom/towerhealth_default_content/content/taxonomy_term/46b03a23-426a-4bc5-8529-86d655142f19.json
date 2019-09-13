@@ -8,6 +8,11 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/field_related_conditions_ref": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+            }
         ]
     },
     "tid": [
@@ -62,11 +67,28 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/medical_specialty\/field_related_conditions_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/condition"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4c6ba21d-2475-4f7a-8025-4a6266eaa73c"
+                    }
+                ]
+            }
         ]
     },
     "changed": [
         {
-            "value": "2019-09-05T00:46:25+00:00",
+            "value": "2019-09-13T14:29:07+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
