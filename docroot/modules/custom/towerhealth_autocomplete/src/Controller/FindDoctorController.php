@@ -79,8 +79,8 @@ class FindDoctorController extends ControllerBase {
     // This should pull from the view and shouldn't need to pull from the entity
     // access field data from the view results.
     $results[] = [
-      'grouping' => true,
-      'label' => $label
+      'grouping' => TRUE,
+      'label' => $label,
     ];
 
     foreach ($view_result as $data) {
