@@ -1,50 +1,55 @@
-@mixin button($bg:$black, $color:$white, $hoverBg: $gray, $hoverColor: $white) {
+@mixin button($bg:$primary-dark, $color:$white, $border:$trust, $hoverBg: $trust-ltst, $hoverColor: $primary-dark) {
+  @include transition(all, 0.15s, ease-in);
   background-color: $bg;
   border: none;
   color: $color;
+  border-left: 6px solid $border;
   cursor: pointer;
   line-height: 1.4;
-  padding: 0.5em 1em;
+  padding: 1em 1.25em;
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  text-transform: uppercase;
+  font-weight: 600;
 
   &:visited {
     color: $color;
   }
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.025);
+    color: $hoverColor;
     background-color: $hoverBg;
+    border-color: $hoverColor;
   }
 }
 
 @mixin button-alt {
-  @include button($gray, $white, $black);
-
-  font-weight: 600;
-  font-size: 0.7rem;
-  padding: 0.4em 0.6em 0.3em;
+  @include button($trust-aa, $white, $primary-dark, $trust-ltst, $hoverColor: $primary-dark);
 }
 
-@mixin button-alt-2 {
-  @include button($gray-lightest, $black, $gray-lighter);
-
-  font-size: 0.8rem;
+@mixin button-small {
+  @include adjust-font-size-to($label, .8);
   font-weight: 600;
-  text-transform: none;
+  padding: .75em 1em;
 }
 
 .button {
   @include button;
 
   &--alt {
-    @include button;
     @include button-alt;
   }
-
-  &--alt-2 {
+  
+  &--small {
     @include button;
-    @include button-alt-2;
+    @include button-small;
+  }
+  
+  &--small-alt {
+    @include button-alt;
+    @include button-small;
   }
 }

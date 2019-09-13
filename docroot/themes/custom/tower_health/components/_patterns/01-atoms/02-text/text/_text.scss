@@ -4,7 +4,6 @@
 
 .blockquote {
   font-style: italic;
-  border-left: solid 3px $color-border;
   margin-left: 1em;
   padding-left: 1em;
 }
@@ -12,7 +11,6 @@
 .hr {
   border-style: solid;
   border-width: 1px 0 0;
-  color: currentColor;
 }
 
 // TODO: BEM selectors should be applied to wysiwyg-created content

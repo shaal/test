@@ -12,6 +12,13 @@
     margin-right: 0;
   }
 
+  @if $columns == 1 {
+    @include bp3 {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  
   @if $columns == 2 {
     @include bp3 {
       width: 48.2%;
@@ -37,6 +44,10 @@
   @include grid-item;
 
   // With Columns
+  .grid--columns-1 & {
+    @include grid-item(1);
+  }
+  
   .grid--columns-2 & {
     @include grid-item(2);
   }

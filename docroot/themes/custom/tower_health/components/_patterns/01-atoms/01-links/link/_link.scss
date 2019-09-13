@@ -1,12 +1,10 @@
-/// Link
-$color-link: $gray-darker;
-$color-link--hover: $gray-light;
-
 @mixin link {
-  color: $color-link;
-
-  &:hover {
-    color: $color-link--hover;
+  color: $trust-aa;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    color: $trust-aa;
   }
 }
 

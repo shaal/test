@@ -34,29 +34,33 @@
   }
   
   .sg-subtype h2 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    background-color: $gray-darker;
+    background-color: $off-white;
+    padding: 1rem .5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-bottom: 0;
 
     a {
       display: block;
-      color: $white;
+      color: $gray;
       text-decoration: none;
       line-height: 1;
     }
   }
 
   .sg-pattern-title {
-    color: #738ba3;
-    font-size: 1.4rem !important;
-    text-transform: none !important;
+    background-color: $off-white;
+    padding: .45rem .5rem !important;
+    font-size: 1rem !important;
+    text-transform: capitalize !important;
 
     a {
-      color: #1169ba !important;
-      font-family: Calibre, Arial, sans-serif;
-      font-size: 2.2rem;
-      font-weight: 500;
-      text-transform: uppercase !important;
+      color: $gray !important;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: capitalize !important;
+      padding: 0;
     }
   }
 

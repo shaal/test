@@ -1,24 +1,114 @@
 items:
+  - name: $primary-dark
+    value: '#003056'
+  - name: $primary-light
+    value: '#4da0d2'
+  - name: $healing
+    value: '#008a77'
+  - name: $healing-med
+    value: '#279a8b'
+  - name: $healing-lt
+    value: '#6cada3'
+  - name: $healing-ltr
+    value: '#9bc3bd'
+  - name: $healing-ltst
+    value: '#cbdfda'
+  - name: $uplifting
+    value: '#e0c100'
+  - name: $uplifting-med
+    value: '#e6cc49'
+  - name: $uplifting-lt
+    value: '#ecd879'
+  - name: $uplifting-ltr
+    value: '#f2e5a3'
+  - name: $uplifting-ltst
+    value: '#f8f1ce'
+  - name: $trust-aa
+    value: '#4776bd'
+  - name: $trust
+    value: '#4d7bbe'
+  - name: $trust-med
+    value: '#6f8fc9'
+  - name: $trust-lt
+    value: '#8ea5d5'
+  - name: $trust-ltr
+    value: '#b1bfe2'
+  - name: $trust-ltst
+    value: '#d5dcf0'
+  - name: $wisdom
+    value: '#8264ab'
+  - name: $wisdom-med
+    value: '#967cb8'
+  - name: $wisdom-lt
+    value: '#ab96c8'
+  - name: $wisdom-ltr
+    value: '#c2b6d9'
+  - name: $wisdom-ltst
+    value: '#ded7eb'
+  - name: $growth-aa
+    value: '#627f34'
+  - name: $growth-lg
+    value: '#7b9f41'
+  - name: $growth
+    value: '#8db750'
+  - name: $growth-med
+    value: '#a3c372'
+  - name: $growth-lt
+    value: '#b8d092'
+  - name: $growth-ltr
+    value: '#cedeb3'
+  - name: $growth-ltst
+    value: '#e4edd7'
+  - name: $tranquil
+    value: '#3fc1cb'
+  - name: $tranquil-med
+    value: '#6fccd4'
+  - name: $tranquil-lt
+    value: '#96d7dd'
+  - name: $tranquil-ltr
+    value: '#b9e3e9'
+  - name: $tranquil-ltst
+    value: '#dbf0f4'
+  - name: $energy
+    value: '#f47820'
+  - name: $energy-med
+    value: '#f69147'
+  - name: $energy-lt
+    value: '#faab70'
+  - name: $energy-ltr
+    value: '#fcc59a'
+  - name: $energy-ltst
+    value: '#fee0c7'
+  - name: $neuro
+    value: '#32863d'
+  - name: $ortho
+    value: '#068473'
+  - name: $ws
+    value: '#c34b63'
+  - name: $ed
+    value: '#d64000'
+  - name: $onc
+    value: '#8262ac'
+  - name: $cardio
+    value: '#d22e2c'
+  - name: $surg
+    value: '#236e88'
+  - name: $bari
+    value: '#0c7ba7'
   - name: $white
     value: white
-  - name: $near-white
+  - name: $off-white
     value: '#f2f2f2'
-  - name: $gray-lightest
-    value: '#e5e5e5'
   - name: $gray-lighter
-    value: '#ccc'
+    value: '#bbbdc0'
   - name: $gray-light
-    value: '#999'
+    value: '#939597'
   - name: $gray
-    value: '#666'
+    value: '#6d6e70'
   - name: $gray-dark
-    value: '#4c4c4c'
-  - name: $gray-darker
-    value: '#333'
+    value: '#404041'
   - name: $black
     value: black
-  - name: $yellow
-    value: '#ff0'
 meta:
   description: >-
     To add to these items, use Sass variables that start with <code>$</code> in
