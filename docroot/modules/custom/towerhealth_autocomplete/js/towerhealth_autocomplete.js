@@ -55,6 +55,13 @@
               return false;
             }
 
+            // If this is a URL suggestion, instead of autocompleting we
+            // redirect the user to that URL.
+            if (ui.item.url) {
+              location.href = ui.item.url;
+              return false;
+            }
+
             var ret = oldSelect.apply(this, arguments);
 
             return ret;
