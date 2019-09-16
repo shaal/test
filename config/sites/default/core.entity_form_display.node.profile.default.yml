@@ -227,11 +227,12 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_provider_npi:
-    weight: 12
+    weight: 30
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: string_textfield
     region: content
   field_rating_comment_count:
     weight: 28

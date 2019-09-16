@@ -1,4 +1,4 @@
-uuid: 979cf6fc-e0e4-44fa-96f2-b23cdaa2f09e
+uuid: 67bee373-7c2c-4818-a65a-5bb56637693c
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,11 @@ dependencies:
 id: node.field_provider_npi
 field_name: field_provider_npi
 entity_type: node
-type: integer
+type: string
 settings:
-  unsigned: false
-  size: normal
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1
