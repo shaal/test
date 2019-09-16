@@ -50,8 +50,19 @@ class FindDoctorController extends ControllerBase {
     }
     $input = Xss::filter($input);
 
+    $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results);
+    $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results);
+
+    return new JsonResponse($results);
+  }
+
+  /**
+   * Return suggestions from taxonomy term source.
+   */
+  private function taxonomySuggestedTerms($view_id, $input, $label, $results) {
+
     // Firstly, get the view in question.
-    $view = Views::getView('auto_medical_specialty');
+    $view = Views::getView($view_id);
 
     // Pass any input.
     $view->setExposedInput(['name' => $input]);
@@ -60,17 +71,29 @@ class FindDoctorController extends ControllerBase {
     $view->execute();
     $view_result = $view->result;
 
+    // Return the results with out addititions if empty.
+    if (count($view_result) === 0) {
+      return $results;
+    }
+
     // This should pull from the view and shouldn't need to pull from the entity
     // access field data from the view results.
+    $results[] = [
+      'grouping' => TRUE,
+      'label' => $label,
+    ];
+
     foreach ($view_result as $data) {
-      $term = $data->_object->getEntity();
+      $values = $data->_item->getField('name')->getValues();
+      $term_name = reset($values)->toText();
+
       $results[] = [
-        'value' => $term->getName(),
-        'label' => $term->getName(),
+        'value' => $term_name,
+        'label' => $term_name,
       ];
     }
 
-    return new JsonResponse($results);
+    return $results;
   }
 
 }

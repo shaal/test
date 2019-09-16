@@ -24,5 +24,6 @@ function towerhealth_autocomplete_form_views_exposed_form_alter(array &$form, Fo
 
   if ($id == 'views-exposed-form-find-a-provider-find-doctor') {
     $form['find_doctor_search']['#autocomplete_route_name'] = 'towerhealth_autocomplete.autocomplete.finddoctor';
+    $form['#attached']['library'][] = 'towerhealth_autocomplete/towerhealth_autocomplete';
   }
 }
