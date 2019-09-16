@@ -1,0 +1,11 @@
+uuid: b6343dc8-f317-471d-a5d1-d2ce04ba39ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.medical_specialty
+id: taxonomy_vocabulary_medical_specialty
+action: page_not_found
+allow_override: 1
+redirect: ''
+redirect_code: 301
