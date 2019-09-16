@@ -9,7 +9,7 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Doctor Profile'
+name: Provider
 type: profile
 description: 'Help users find and connect with Tower Health healthcare providers, including doctors, nurse practitioners, and others.'
 help: ''
