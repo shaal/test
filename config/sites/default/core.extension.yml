@@ -40,8 +40,11 @@ module:
   page_cache: 0
   path: 0
   quickedit: 0
+  rabbit_hole: 0
   rdf: 0
   redirect: 0
+  rh_node: 0
+  rh_taxonomy: 0
   search_api: 0
   search_api_solr: 0
   serialization: 0
