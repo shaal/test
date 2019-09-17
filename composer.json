@@ -48,6 +48,7 @@
         "drupal/office_hours": "^1.1",
         "drupal/paragraphs": "^1.8",
         "drupal/pathauto": "^1.4",
+        "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.4",
         "drupal/search_api_solr": "^1.1",
         "drupal/token": "^1.5",
