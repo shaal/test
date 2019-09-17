@@ -1,0 +1,9 @@
+uuid: 9691ce01-0858-4826-96d1-ba69db467ee6
+langcode: en
+status: true
+dependencies: {  }
+id: rating_comments
+label: 'Rating comments'
+icon_uuid: null
+description: 'Binary fountain rating comment.'
+behavior_plugins: {  }

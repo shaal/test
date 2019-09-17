@@ -1,0 +1,20 @@
+uuid: 1e4a378d-231c-4177-8e12-ee7609f91f88
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_rating_comment_id
+field_name: field_rating_comment_id
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
