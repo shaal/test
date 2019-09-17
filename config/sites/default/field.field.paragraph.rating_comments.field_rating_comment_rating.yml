@@ -1,0 +1,23 @@
+uuid: 9ac38520-a678-4529-b873-b6a10014fd57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rating_comment_rating
+    - paragraphs.paragraphs_type.rating_comments
+id: paragraph.rating_comments.field_rating_comment_rating
+field_name: field_rating_comment_rating
+entity_type: paragraph
+bundle: rating_comments
+label: 'Overall rating'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float
