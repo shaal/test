@@ -10,8 +10,8 @@ id: node.location.field_services_ref
 field_name: field_services_ref
 entity_type: node
 bundle: location
-label: Services
-description: ''
+label: 'Available Services'
+description: 'What services are available at this location? Use the autocomplete field below to select from a list of existing services. If a service is not in the list, <a href="/node/add/service" title="Create a new service page">create it first</a>.'
 required: false
 translatable: true
 default_value: {  }
