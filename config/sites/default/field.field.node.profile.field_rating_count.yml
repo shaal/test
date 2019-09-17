@@ -1,0 +1,23 @@
+uuid: 4e304f1b-9581-4322-bfcc-fa140d259e51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rating_count
+    - node.type.profile
+id: node.profile.field_rating_count
+field_name: field_rating_count
+entity_type: node
+bundle: profile
+label: 'Rating Count'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
