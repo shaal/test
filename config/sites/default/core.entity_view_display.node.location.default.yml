@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.location.field_body
     - field.field.node.location.field_location_accepting_ref
     - field.field.node.location.field_location_address
+    - field.field.node.location.field_location_body
     - field.field.node.location.field_location_components
     - field.field.node.location.field_location_fax
     - field.field.node.location.field_location_find_us
@@ -36,19 +36,19 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_body:
-    weight: 8
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_location_address:
     weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: address_default
+    region: content
+  field_location_body:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_location_components:
     type: entity_reference_revisions_entity_view
@@ -60,7 +60,7 @@ content:
     third_party_settings: {  }
     region: content
   field_location_fax:
-    weight: 6
+    weight: 7
     label: inline
     settings:
       title: ''
@@ -77,7 +77,7 @@ content:
     third_party_settings: {  }
     region: content
   field_location_hours:
-    weight: 7
+    weight: 8
     label: hidden
     settings:
       day_format: long
@@ -127,7 +127,7 @@ content:
     type: list_default
     region: content
   field_location_phone_number:
-    weight: 5
+    weight: 6
     label: inline
     settings:
       title: ''
