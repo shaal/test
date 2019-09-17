@@ -1,0 +1,21 @@
+uuid: e92ca393-cb4a-4e6b-b792-c3df0005156d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_body
+    - node.type.location
+  module:
+    - text
+id: node.location.field_location_body
+field_name: field_location_body
+entity_type: node
+bundle: location
+label: Description
+description: 'Optionally add a description about this location to provide the user with further information.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: afa024ad-faf1-46e1-be69-6624fb926a02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_fax
+    - node.type.location
+  module:
+    - telephone
+id: node.location.field_location_fax
+field_name: field_location_fax
+entity_type: node
+bundle: location
+label: 'Fax number'
+description: 'The fax number for this location'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

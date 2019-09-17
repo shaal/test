@@ -14,5 +14,5 @@ type: location
 description: 'Specific healthcare facilities where Tower Health provides care.'
 help: ''
 new_revision: true
-preview_mode: 0
+preview_mode: 1
 display_submitted: false

@@ -1,0 +1,8 @@
+uuid: a439088c-0d02-4dc7-a494-d0f3543b9b69
+langcode: en
+status: true
+dependencies: {  }
+name: 'Location type'
+vid: location_type
+description: 'Is this location a hospital, urgent care, etc?'
+weight: 0
