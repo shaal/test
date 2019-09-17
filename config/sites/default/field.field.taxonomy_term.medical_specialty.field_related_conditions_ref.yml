@@ -11,7 +11,7 @@ field_name: field_related_conditions_ref
 entity_type: taxonomy_term
 bundle: medical_specialty
 label: 'Related Conditions'
-description: ''
+description: 'Add the conditions that are associated with this medical specialty. Adding a related condition allows the find a provider search to match providers based on their chosen specialties and those specialties related conditions.'
 required: false
 translatable: false
 default_value: {  }
