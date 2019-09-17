@@ -11,7 +11,7 @@ field_name: field_location_image
 entity_type: node
 bundle: location
 label: Image
-description: 'Upload or select an existing image from the image library, when applicable, to help user with visual recognition of this location.'
+description: 'Upload or select an existing image from the image library to help the user with visual recognition of this location.'
 required: false
 translatable: false
 default_value: {  }

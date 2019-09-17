@@ -12,7 +12,7 @@ field_name: field_location_insurance
 entity_type: node
 bundle: location
 label: 'Insurance Information'
-description: 'What insurance information does the patient need to know about this location? Are there any caveats that need to be explained? Provide the patients with the most accurate way for them to confirm their insurance options.'
+description: 'What insurance information does the user need to know about this location? Are there any caveats that need to be explained? Provide the users with the most accurate way for them to confirm their insurance options.'
 required: false
 translatable: false
 default_value: {  }
