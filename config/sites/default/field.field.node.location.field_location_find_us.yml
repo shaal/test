@@ -1,0 +1,29 @@
+uuid: b2256648-abf2-4f01-abae-5c1ea27fc291
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_find_us
+    - node.type.location
+  module:
+    - entity_reference_revisions
+id: node.location.field_location_find_us
+field_name: field_location_find_us
+entity_type: node
+bundle: location
+label: 'How to find us'
+description: 'Optionally add information on how to find this location. What door should a user go to? Where should they park? Is there another image that will help provide further context about the location?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      education:
+        weight: 2
+        enabled: false
+field_type: entity_reference_revisions

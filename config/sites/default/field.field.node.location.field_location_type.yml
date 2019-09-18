@@ -1,17 +1,17 @@
-uuid: 4f2b3f52-e393-41f2-9b6e-032bab9c1985
+uuid: f3783079-a1ee-44cb-a4c7-0291a31a9f00
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location_region_ref
+    - field.storage.node.field_location_type
     - node.type.location
-    - taxonomy.vocabulary.region
-id: node.location.field_location_region_ref
-field_name: field_location_region_ref
+    - taxonomy.vocabulary.location_type
+id: node.location.field_location_type
+field_name: field_location_type
 entity_type: node
 bundle: location
-label: Region
-description: 'Select the region for this location.'
+label: 'Location Type'
+description: 'What type of location is this? Ex: Urgent care, Hospital, Emergency room, etc.'
 required: false
 translatable: false
 default_value: {  }
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      region: region
+      location_type: location_type
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: program_type
+    auto_create_bundle: ''
 field_type: entity_reference

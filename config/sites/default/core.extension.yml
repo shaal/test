@@ -46,6 +46,7 @@ module:
   quickedit: 0
   rabbit_hole: 0
   rdf: 0
+  readonly_field_widget: 0
   redirect: 0
   rh_node: 0
   rh_taxonomy: 0
