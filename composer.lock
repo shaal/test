@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c11daebde654fae6def22e6c60058c1f",
+    "content-hash": "5588afca3a539475780460b62d3283cd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2351,6 +2351,64 @@
             "homepage": "https://www.drupal.org/project/inline_entity_form",
             "support": {
                 "source": "https://git.drupalcode.org/project/inline_entity_form"
+            }
+        },
+        {
+            "name": "drupal/node_title_help_text",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/node_title_help_text.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/node_title_help_text-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "952e97ab60b9b9b30d0e1e5e742a9678f4c00925"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1561335486",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Devendra Jadhav",
+                    "homepage": "https://www.drupal.org/u/jadhavdevendra",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "makbul_khan8",
+                    "homepage": "https://www.drupal.org/user/991152"
+                },
+                {
+                    "name": "vinmassaro",
+                    "homepage": "https://www.drupal.org/user/525104"
+                }
+            ],
+            "description": "Allows you to add help text to node title.",
+            "homepage": "https://www.drupal.org/project/node_title_help_text",
+            "support": {
+                "source": "https://cgit.drupalcode.org/node_title_help_text",
+                "issues": "https://drupal.org/project/issues/node_title_help_text",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {
