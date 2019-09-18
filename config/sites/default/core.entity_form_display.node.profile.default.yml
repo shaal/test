@@ -47,6 +47,7 @@ third_party_settings:
         - field_profile_npi
         - field_profile_type
         - field_profile_gender
+        - field_profile_languages
         - field_profile_phone
         - field_profile_image
         - field_location_ref
@@ -135,46 +136,6 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_affiliations_ref:
-    weight: 15
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_area_interest_ref:
-    weight: 13
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_location_ref:
-    weight: 11
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_medical_specialties_ref:
-    weight: 14
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_profile_board_certified:
     weight: 16
     settings:
       label: above
@@ -184,8 +145,48 @@ content:
     third_party_settings: {  }
     type: readonly_field_widget
     region: content
-  field_profile_board_eligible:
+  field_area_interest_ref:
+    weight: 14
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_location_ref:
+    weight: 12
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_medical_specialties_ref:
+    weight: 15
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_board_certified:
     weight: 17
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_board_eligible:
+    weight: 18
     settings:
       label: above
       formatter_type: null
@@ -196,7 +197,7 @@ content:
     region: content
   field_profile_education:
     type: readonly_field_widget
-    weight: 12
+    weight: 13
     settings:
       label: above
       formatter_type: null
@@ -224,7 +225,7 @@ content:
     region: content
   field_profile_image:
     type: readonly_field_widget
-    weight: 10
+    weight: 11
     settings:
       label: above
       formatter_type: null
@@ -243,12 +244,14 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_languages:
-    weight: 31
+    weight: 9
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
   field_profile_last_name:
     weight: 3
@@ -275,7 +278,7 @@ content:
     type: string_textfield
     region: content
   field_profile_phone:
-    weight: 9
+    weight: 10
     settings:
       label: above
       formatter_type: null
@@ -295,7 +298,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_scheduling:
-    weight: 18
+    weight: 19
     settings:
       label: above
       formatter_type: null

@@ -68,9 +68,17 @@ content:
       image_style: thumbnail
       image_link: content
     third_party_settings: {  }
+  field_profile_languages:
+    type: string
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_rating_count:
     type: number_integer
-    weight: 5
+    weight: 6
     region: content
     label: hidden
     settings:
@@ -79,7 +87,7 @@ content:
     third_party_settings: {  }
   field_rating_overall:
     type: number_decimal
-    weight: 6
+    weight: 7
     region: content
     label: hidden
     settings:
@@ -102,7 +110,6 @@ hidden:
   field_profile_first_name: true
   field_profile_gender: true
   field_profile_job_title: true
-  field_profile_languages: true
   field_profile_last_name: true
   field_profile_middle_name: true
   field_profile_npi: true

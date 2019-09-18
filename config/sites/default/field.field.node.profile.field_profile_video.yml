@@ -11,7 +11,7 @@ field_name: field_profile_video
 entity_type: node
 bundle: profile
 label: Video
-description: ''
+description: 'Add a video for this provider. Select an existing video through the video library or add a new video. All videos are hosted by youtube.com. Add the full youtube link for the video when prompted if adding a new one.'
 required: false
 translatable: false
 default_value: {  }
