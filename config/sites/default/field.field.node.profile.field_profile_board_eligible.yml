@@ -1,17 +1,17 @@
-uuid: 47a17cbd-5572-48a3-9f5e-38f7226eebc7
+uuid: 0e328f5e-51cc-45d3-bc03-3e3199d96a30
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_profile_last_name
+    - field.storage.node.field_profile_board_eligible
     - node.type.profile
-id: node.profile.field_profile_last_name
-field_name: field_profile_last_name
+id: node.profile.field_profile_board_eligible
+field_name: field_profile_board_eligible
 entity_type: node
 bundle: profile
-label: 'Last Name'
+label: 'Board Eligible'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

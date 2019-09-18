@@ -9,7 +9,7 @@ id: node.profile.field_rating_comment_count
 field_name: field_rating_comment_count
 entity_type: node
 bundle: profile
-label: 'Comment count'
+label: 'Comment Count'
 description: ''
 required: false
 translatable: false

@@ -3,21 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.profile.field_body
-    - field.field.node.profile.field_email
-    - field.field.node.profile.field_gender
+    - field.field.node.profile.field_affiliations_ref
+    - field.field.node.profile.field_area_interest_ref
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
+    - field.field.node.profile.field_profile_board_certified
+    - field.field.node.profile.field_profile_board_eligible
     - field.field.node.profile.field_profile_education
     - field.field.node.profile.field_profile_first_name
+    - field.field.node.profile.field_profile_gender
     - field.field.node.profile.field_profile_image
+    - field.field.node.profile.field_profile_job_title
+    - field.field.node.profile.field_profile_languages
     - field.field.node.profile.field_profile_last_name
-    - field.field.node.profile.field_profile_patients
-    - field.field.node.profile.field_profile_public_email
-    - field.field.node.profile.field_profile_referral
-    - field.field.node.profile.field_profile_status
-    - field.field.node.profile.field_program_ref
-    - field.field.node.profile.field_provider_npi
+    - field.field.node.profile.field_profile_middle_name
+    - field.field.node.profile.field_profile_npi
+    - field.field.node.profile.field_profile_phone
+    - field.field.node.profile.field_profile_professional_title
+    - field.field.node.profile.field_profile_scheduling
+    - field.field.node.profile.field_profile_type
+    - field.field.node.profile.field_profile_video
     - field.field.node.profile.field_rating_comment_count
     - field.field.node.profile.field_rating_comments_ref
     - field.field.node.profile.field_rating_count
@@ -27,7 +32,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - media
-    - text
+    - options
+    - telephone
     - user
 id: node.profile.default
 targetEntityType: node
@@ -39,31 +45,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_body:
-    weight: 10
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_email:
-    weight: 6
+  field_affiliations_ref:
+    weight: 14
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    type: string
+    type: entity_reference_label
     region: content
-  field_gender:
-    weight: 3
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_location_ref:
-    weight: 12
+  field_area_interest_ref:
+    weight: 15
     label: above
     settings:
       link: true
@@ -78,9 +69,25 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_profile_board_certified:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_profile_board_eligible:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_profile_education:
     type: entity_reference_revisions_entity_view
-    weight: 8
+    weight: 3
     label: above
     settings:
       view_mode: default
@@ -96,65 +103,57 @@ content:
       image_link: ''
     third_party_settings: {  }
     region: content
-  field_profile_patients:
-    weight: 4
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_profile_public_email:
+  field_profile_job_title:
     weight: 7
-    label: above
+    label: hidden
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: boolean
+    type: string
     region: content
-  field_profile_referral:
-    weight: 5
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_profile_status:
-    weight: 9
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_program_ref:
+  field_profile_languages:
     weight: 11
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_provider_npi:
-    weight: 20
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_profile_phone:
+    weight: 8
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_profile_professional_title:
+    weight: 9
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_profile_type:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_profile_video:
+    type: entity_reference_entity_view
+    weight: 17
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
   field_rating_comment_count:
-    weight: 18
-    label: above
+    weight: 5
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -163,16 +162,16 @@ content:
     region: content
   field_rating_comments_ref:
     type: entity_reference_revisions_entity_view
-    weight: 15
-    label: above
+    weight: 16
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
   field_rating_count:
-    weight: 17
-    label: above
+    weight: 4
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -180,8 +179,8 @@ content:
     type: number_integer
     region: content
   field_rating_overall:
-    weight: 19
-    label: above
+    weight: 6
+    label: hidden
     settings:
       thousand_separator: ''
       decimal_separator: .
@@ -191,11 +190,16 @@ content:
     type: number_decimal
     region: content
   links:
-    weight: 14
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_location_ref: true
   field_profile_first_name: true
+  field_profile_gender: true
   field_profile_last_name: true
+  field_profile_middle_name: true
+  field_profile_npi: true
+  field_profile_scheduling: true
   search_api_excerpt: true

@@ -1,15 +1,16 @@
-uuid: bf2394d7-31d5-4b10-a0d5-1c5836981a4f
+uuid: a3f76fd0-7ac9-4c73-b1f6-eb3791ca2466
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_profile_public_email
-field_name: field_profile_public_email
+    - telephone
+id: node.field_profile_phone
+field_name: field_profile_phone
 entity_type: node
-type: boolean
+type: telephone
 settings: {  }
-module: core
+module: telephone
 locked: false
 cardinality: 1
 translatable: true

@@ -4,20 +4,30 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.profile.field_body
-    - field.field.node.profile.field_email
-    - field.field.node.profile.field_gender
+    - field.field.node.profile.field_affiliations_ref
+    - field.field.node.profile.field_area_interest_ref
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
+    - field.field.node.profile.field_profile_board_certified
+    - field.field.node.profile.field_profile_board_eligible
     - field.field.node.profile.field_profile_education
     - field.field.node.profile.field_profile_first_name
+    - field.field.node.profile.field_profile_gender
     - field.field.node.profile.field_profile_image
+    - field.field.node.profile.field_profile_job_title
+    - field.field.node.profile.field_profile_languages
     - field.field.node.profile.field_profile_last_name
-    - field.field.node.profile.field_profile_patients
-    - field.field.node.profile.field_profile_public_email
-    - field.field.node.profile.field_profile_referral
-    - field.field.node.profile.field_profile_status
-    - field.field.node.profile.field_program_ref
+    - field.field.node.profile.field_profile_middle_name
+    - field.field.node.profile.field_profile_npi
+    - field.field.node.profile.field_profile_phone
+    - field.field.node.profile.field_profile_professional_title
+    - field.field.node.profile.field_profile_scheduling
+    - field.field.node.profile.field_profile_type
+    - field.field.node.profile.field_profile_video
+    - field.field.node.profile.field_rating_comment_count
+    - field.field.node.profile.field_rating_comments_ref
+    - field.field.node.profile.field_rating_count
+    - field.field.node.profile.field_rating_overall
     - image.style.thumbnail
     - node.type.profile
   module:
@@ -37,15 +47,15 @@ content:
     type: entity_reference_label
     weight: 3
     region: content
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
   field_medical_specialties_ref:
     type: entity_reference_label
-    weight: 5
+    weight: 4
     region: content
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
@@ -58,15 +68,25 @@ content:
       image_style: thumbnail
       image_link: content
     third_party_settings: {  }
-  field_profile_patients:
-    type: boolean
-    weight: 4
+  field_rating_count:
+    type: number_integer
+    weight: 5
     region: content
-    label: inline
+    label: hidden
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_rating_overall:
+    type: number_decimal
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
     third_party_settings: {  }
   links:
     weight: 1
@@ -74,14 +94,23 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_body: true
-  field_email: true
-  field_gender: true
+  field_affiliations_ref: true
+  field_area_interest_ref: true
+  field_profile_board_certified: true
+  field_profile_board_eligible: true
   field_profile_education: true
   field_profile_first_name: true
+  field_profile_gender: true
+  field_profile_job_title: true
+  field_profile_languages: true
   field_profile_last_name: true
-  field_profile_public_email: true
-  field_profile_referral: true
-  field_profile_status: true
-  field_program_ref: true
+  field_profile_middle_name: true
+  field_profile_npi: true
+  field_profile_phone: true
+  field_profile_professional_title: true
+  field_profile_scheduling: true
+  field_profile_type: true
+  field_profile_video: true
+  field_rating_comment_count: true
+  field_rating_comments_ref: true
   search_api_excerpt: true
