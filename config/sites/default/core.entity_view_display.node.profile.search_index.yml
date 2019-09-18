@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_index
     - field.field.node.profile.field_affiliations_ref
     - field.field.node.profile.field_area_interest_ref
+    - field.field.node.profile.field_insurance_ref
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
     - field.field.node.profile.field_profile_board_certified
@@ -58,6 +59,15 @@ content:
     label: hidden
     settings:
       link: true
+    third_party_settings: {  }
+  field_insurance_ref:
+    type: entity_reference_entity_view
+    weight: 12
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
     third_party_settings: {  }
   field_location_ref:
     type: entity_reference_label
