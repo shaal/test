@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.profile.field_profile_middle_name
     - field.field.node.profile.field_profile_npi
     - field.field.node.profile.field_profile_phone
+    - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
     - field.field.node.profile.field_profile_type
@@ -135,6 +136,14 @@ content:
       title: ''
     third_party_settings: {  }
     type: telephone_link
+    region: content
+  field_profile_practid:
+    weight: 20
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_profile_professional_title:
     weight: 9

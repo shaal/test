@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.profile.field_profile_middle_name
     - field.field.node.profile.field_profile_npi
     - field.field.node.profile.field_profile_phone
+    - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
     - field.field.node.profile.field_profile_type
@@ -45,6 +46,7 @@ third_party_settings:
         - field_profile_last_name
         - field_profile_professional_title
         - field_profile_job_title
+        - field_profile_practid
         - field_profile_npi
         - field_profile_type
         - field_profile_gender
@@ -138,56 +140,6 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_affiliations_ref:
-    weight: 17
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_area_interest_ref:
-    weight: 14
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_insurance_ref:
-    weight: 16
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_location_ref:
-    weight: 12
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_medical_specialties_ref:
-    weight: 15
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_profile_board_certified:
     weight: 18
     settings:
       label: above
@@ -197,8 +149,58 @@ content:
     third_party_settings: {  }
     type: readonly_field_widget
     region: content
-  field_profile_board_eligible:
+  field_area_interest_ref:
+    weight: 15
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_insurance_ref:
+    weight: 17
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_location_ref:
+    weight: 13
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_medical_specialties_ref:
+    weight: 16
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_board_certified:
     weight: 19
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_board_eligible:
+    weight: 20
     settings:
       label: above
       formatter_type: null
@@ -209,7 +211,7 @@ content:
     region: content
   field_profile_education:
     type: readonly_field_widget
-    weight: 13
+    weight: 14
     settings:
       label: above
       formatter_type: null
@@ -226,7 +228,7 @@ content:
     type: string_textfield
     region: content
   field_profile_gender:
-    weight: 8
+    weight: 9
     settings:
       label: above
       formatter_type: null
@@ -237,7 +239,7 @@ content:
     region: content
   field_profile_image:
     type: readonly_field_widget
-    weight: 11
+    weight: 12
     settings:
       label: above
       formatter_type: null
@@ -256,7 +258,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_languages:
-    weight: 9
+    weight: 10
     settings:
       label: above
       formatter_type: null
@@ -282,7 +284,7 @@ content:
     type: string_textfield
     region: content
   field_profile_npi:
-    weight: 6
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -290,7 +292,17 @@ content:
     type: string_textfield
     region: content
   field_profile_phone:
-    weight: 10
+    weight: 11
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_practid:
+    weight: 6
     settings:
       label: above
       formatter_type: null
@@ -310,7 +322,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_scheduling:
-    weight: 20
+    weight: 21
     settings:
       label: above
       formatter_type: null
@@ -320,7 +332,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_type:
-    weight: 7
+    weight: 8
     settings:
       label: above
       formatter_type: null
