@@ -34,6 +34,9 @@ module:
   media: 0
   media_library: 0
   menu_ui: 0
+  migrate: 0
+  migrate_plus: 0
+  migrate_tools: 0
   node: 0
   node_title_help_text: 0
   office_hours: 0
