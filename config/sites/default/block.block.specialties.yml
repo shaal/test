@@ -1,0 +1,23 @@
+uuid: 390a8bad-acb6-4eb6-ad3c-59b6bc34410b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.specialties
+  module:
+    - facets
+  theme:
+    - tower_health
+id: specialties
+theme: tower_health
+region: content
+weight: -2
+provider: null
+plugin: 'facet_block:specialties'
+settings:
+  id: 'facet_block:specialties'
+  label: Specialties
+  provider: facets
+  label_display: visible
+  block_id: specialties
+visibility: {  }
