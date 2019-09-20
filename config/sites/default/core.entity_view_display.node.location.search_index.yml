@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
-    - field.field.node.location.field_location_accepting_ref
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_components
@@ -131,7 +130,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_location_accepting_ref: true
   field_location_id: true
   field_location_image: true
   field_location_omw: true

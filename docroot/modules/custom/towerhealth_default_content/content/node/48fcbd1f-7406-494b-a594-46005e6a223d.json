@@ -191,11 +191,6 @@
             "lang": "en"
         }
     ],
-    "field_gender": [
-        {
-            "value": "Femaile"
-        }
-    ],
     "field_profile_first_name": [
         {
             "value": "Jane"
@@ -204,26 +199,6 @@
     "field_profile_last_name": [
         {
             "value": "Doe"
-        }
-    ],
-    "field_profile_patients": [
-        {
-            "value": true
-        }
-    ],
-    "field_profile_public_email": [
-        {
-            "value": false
-        }
-    ],
-    "field_profile_referral": [
-        {
-            "value": false
-        }
-    ],
-    "field_profile_status": [
-        {
-            "value": false
         }
     ]
 }

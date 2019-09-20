@@ -1,0 +1,8 @@
+uuid: b516544e-298a-47fe-99ce-cf131b9bdef5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Hospital Affiliation'
+vid: hospital_affiliation
+description: ''
+weight: 0

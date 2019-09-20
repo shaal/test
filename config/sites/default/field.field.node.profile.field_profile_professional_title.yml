@@ -1,15 +1,15 @@
-uuid: 1ec64310-a7d1-416a-8ed2-0f96609682ea
+uuid: 9d69525e-a2cf-4525-9a6b-824830b3ebec
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_email
+    - field.storage.node.field_profile_professional_title
     - node.type.profile
-id: node.profile.field_email
-field_name: field_email
+id: node.profile.field_profile_professional_title
+field_name: field_profile_professional_title
 entity_type: node
 bundle: profile
-label: Email
+label: 'Professional Title'
 description: ''
 required: false
 translatable: false

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.location.field_location_accepting_ref
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_components
@@ -148,7 +147,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_location_accepting_ref: true
   field_location_id: true
   field_location_type: true
   search_api_excerpt: true

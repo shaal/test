@@ -1,0 +1,29 @@
+uuid: 0abcc7c7-af16-49f6-9ac9-cdca92a287d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_insurance_ref
+    - node.type.profile
+    - taxonomy.vocabulary.insurance_groups
+id: node.profile.field_insurance_ref
+field_name: field_insurance_ref
+entity_type: node
+bundle: profile
+label: 'Insurance accepted'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      insurance_groups: insurance_groups
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

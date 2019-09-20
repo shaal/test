@@ -1,0 +1,11 @@
+uuid: b7d4c365-8820-4bd0-8fe3-6aeb783f94a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.area_of_interest
+id: taxonomy_vocabulary_area_of_interest
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

@@ -1,20 +1,19 @@
-uuid: 67bee373-7c2c-4818-a65a-5bb56637693c
+uuid: a0e7d9a5-d90d-4a76-a0fb-235ee25aa7e4
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_provider_npi
-field_name: field_provider_npi
+    - taxonomy
+id: node.field_affiliations_ref
+field_name: field_affiliations_ref
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

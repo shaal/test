@@ -1,0 +1,11 @@
+uuid: 592b518a-7ec4-4164-987f-2a99c7aa6860
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.insurance_groups
+id: taxonomy_vocabulary_insurance_groups
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

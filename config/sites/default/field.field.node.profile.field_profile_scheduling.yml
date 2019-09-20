@@ -1,0 +1,23 @@
+uuid: 9de7b633-5079-4e03-829a-f42a8b47ab3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_scheduling
+    - node.type.profile
+  module:
+    - options
+id: node.profile.field_profile_scheduling
+field_name: field_profile_scheduling
+entity_type: node
+bundle: profile
+label: 'Open Scheduling Available'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer
