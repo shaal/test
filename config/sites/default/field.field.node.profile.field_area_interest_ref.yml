@@ -10,7 +10,7 @@ id: node.profile.field_area_interest_ref
 field_name: field_area_interest_ref
 entity_type: node
 bundle: profile
-label: 'Areas of Interest'
+label: 'Clinical Area of Focus'
 description: ''
 required: false
 translatable: false
