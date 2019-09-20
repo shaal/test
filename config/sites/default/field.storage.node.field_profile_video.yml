@@ -1,14 +1,16 @@
-uuid: 16b98c62-4fdd-4855-b54b-5a7d37ba7169
+uuid: 89db469b-33f3-4726-abc1-50b99b9000e2
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-id: node.field_profile_referral
-field_name: field_profile_referral
+id: node.field_profile_video
+field_name: field_profile_video
 entity_type: node
-type: boolean
-settings: {  }
+type: entity_reference
+settings:
+  target_type: media
 module: core
 locked: false
 cardinality: 1

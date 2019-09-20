@@ -1,14 +1,16 @@
-uuid: 492adb21-54b8-4a6e-84b6-ef8993a81c04
+uuid: 6c6f2ac5-28b6-4b7c-ad25-1d735d733029
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_profile_status
-field_name: field_profile_status
+id: node.field_profile_practid
+field_name: field_profile_practid
 entity_type: node
-type: boolean
-settings: {  }
+type: integer
+settings:
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

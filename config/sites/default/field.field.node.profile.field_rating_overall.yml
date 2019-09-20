@@ -9,7 +9,7 @@ id: node.profile.field_rating_overall
 field_name: field_rating_overall
 entity_type: node
 bundle: profile
-label: 'Overall rating'
+label: 'Overall Rating'
 description: ''
 required: false
 translatable: false

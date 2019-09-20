@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.location.field_location_accepting_ref
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_components
@@ -157,16 +156,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_location_accepting_ref:
-    weight: 8
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
   field_location_address:
     weight: 4
     settings:

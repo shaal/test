@@ -1,0 +1,11 @@
+uuid: 622e05b8-a7bc-422d-9a28-3095a0af83e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.profile
+id: node_type_profile
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

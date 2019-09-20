@@ -1,11 +1,11 @@
-uuid: bd95b9af-cea9-4d95-8c67-e4434c620f96
+uuid: 9bbaed68-4b85-410e-ab96-e3b3588d2296
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_email
-field_name: field_email
+id: node.field_profile_board_certified
+field_name: field_profile_board_certified
 entity_type: node
 type: string
 settings:
@@ -14,7 +14,7 @@ settings:
   case_sensitive: false
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

@@ -7,7 +7,6 @@ Feature: Location Content Type
   Scenario: Verify that location fields are present
     Given I am logged in as a user with the "administrator" role
     When I visit "/admin/structure/types/manage/location/fields"
-    Then I should see the text "Accepting new patients"
     Then I should see the text "Address"
     Then I should see the text "Components"
     Then I should see the text "Description"
@@ -24,7 +23,6 @@ Feature: Location Content Type
   Scenario: Verify that migrated location fields are read only
     Given I am logged in as a user with the "administrator" role
     When I visit "node/add/location"
-    Then I should not see the text "Accepting new patients"
     Then I should see the text "Address"
     Then I should see the text "Components"
     Then I should see the text "Description"
