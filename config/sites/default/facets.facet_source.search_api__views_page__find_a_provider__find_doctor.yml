@@ -1,0 +1,12 @@
+uuid: 3da71a56-4073-4204-ac8e-0cee5092d2fb
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__find_a_provider__find_doctor
+name: 'search_api:views_page__find_a_provider__find_doctor'
+filter_key: providers
+url_processor: query_string
+breadcrumb:
+  active: false
+  before: true
+  group: false

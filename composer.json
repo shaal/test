@@ -42,6 +42,7 @@
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^2.1",
         "drupal/emulsify": "^3.1",
+        "drupal/facets": "^1.4",
         "drupal/field_group": "^1.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/node_title_help_text": "^1.1",
