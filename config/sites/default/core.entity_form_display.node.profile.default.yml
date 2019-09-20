@@ -46,8 +46,8 @@ third_party_settings:
         - field_profile_last_name
         - field_profile_professional_title
         - field_profile_job_title
-        - field_profile_practid
         - field_profile_npi
+        - field_profile_practid
         - field_profile_type
         - field_profile_gender
         - field_profile_languages
@@ -66,11 +66,12 @@ third_party_settings:
       weight: 24
       format_type: tab
       format_settings:
+        label: 'Migrated data'
+        formatter: closed
+        description: 'The content in this grouping comes from the MSOW data source and is not intended to be editable. If a value needs to change then the source data needs to be corrected and the content re-imported.'
+        required_fields: true
         id: ''
         classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
       label: 'Migrated data'
     group_content:
       children:
@@ -284,7 +285,7 @@ content:
     type: string_textfield
     region: content
   field_profile_npi:
-    weight: 7
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -302,7 +303,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_practid:
-    weight: 6
+    weight: 7
     settings:
       label: above
       formatter_type: null
