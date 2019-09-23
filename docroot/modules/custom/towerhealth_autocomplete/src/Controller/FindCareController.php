@@ -5,16 +5,12 @@ namespace Drupal\towerhealth_autocomplete\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Drupal\Component\Utility\Xss;
 use Drupal\views\Views;
 
 /**
  * Defines a route controller for watches autocomplete form elements.
  */
-class FindDoctorController extends ControllerBase {
+class FindCareController extends ControllerBase {
   /**
    * The node storage.
    *
@@ -40,28 +36,9 @@ class FindDoctorController extends ControllerBase {
   }
 
   /**
-   * Handler for autocomplete request.
-   */
-  public function handleAutocomplete(Request $request) {
-    $results = [];
-    $input = $request->query->get('q');
-    // Get the typed string from the URL, if it exists.
-    if (!$input) {
-      return new JsonResponse($results);
-    }
-    $input = Xss::filter($input);
-
-    $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results);
-    $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results);
-    $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results);
-
-    return new JsonResponse($results);
-  }
-
-  /**
    * Return suggestions from taxonomy term source.
    */
-  private function taxonomySuggestedTerms($view_id, $input, $label, $results) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, $results) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -101,7 +78,7 @@ class FindDoctorController extends ControllerBase {
   /**
    * Return suggestions from node source.
    */
-  private function nodeSuggestedTerms($view_id, $input, $label, $results) {
+  public function nodeSuggestedTerms($view_id, $input, $label, $results) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
