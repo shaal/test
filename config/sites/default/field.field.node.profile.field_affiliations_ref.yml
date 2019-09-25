@@ -10,7 +10,7 @@ id: node.profile.field_affiliations_ref
 field_name: field_affiliations_ref
 entity_type: node
 bundle: profile
-label: 'Affiliated Hospitals'
+label: 'Hospital Affiliation'
 description: ''
 required: false
 translatable: false
