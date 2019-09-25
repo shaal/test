@@ -98,6 +98,11 @@
             "initial": {
                 ".htaccess": ".htaccess"
             }
+        },
+        "patches": {
+            "drupal/migrate_tools": {
+                "'status' is not a log level. (https://www.drupal.org/project/migrate_tools/issues/3073748)": "https://www.drupal.org/files/issues/2019-08-09/3073748-migrate_tools-status_loglevel-2.patch"
+            }
         }
     }
 }
