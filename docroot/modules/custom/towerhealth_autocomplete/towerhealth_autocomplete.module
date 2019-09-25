@@ -24,6 +24,14 @@ function towerhealth_autocomplete_form_views_exposed_form_alter(array &$form, Fo
 
   if ($id == 'views-exposed-form-find-a-provider-find-doctor') {
     $form['find_doctor_search']['#autocomplete_route_name'] = 'towerhealth_autocomplete.autocomplete.finddoctor';
+    $form['find_doctor_search']['#attributes']['class'] = ['find-care-autocomplete'];
+    $form['find_doctor_search']['#attributes']['placeholder'] = t('Search by Name, Condition or Specialty');
+    $form['#attached']['library'][] = 'towerhealth_autocomplete/towerhealth_autocomplete';
+  }
+  elseif ($id == 'views-exposed-form-find-a-location-find-location') {
+    $form['find_location_search']['#autocomplete_route_name'] = 'towerhealth_autocomplete.autocomplete.findlocation';
+    $form['find_location_search']['#attributes']['class'] = ['find-care-autocomplete'];
+    $form['find_location_search']['#attributes']['placeholder'] = t('Search by Location Name, Condition or Service');
     $form['#attached']['library'][] = 'towerhealth_autocomplete/towerhealth_autocomplete';
   }
 }

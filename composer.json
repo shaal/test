@@ -27,6 +27,7 @@
     ],
     "require": {
         "composer/installers": "^1.0",
+        "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.5.0",
         "drupal-pattern-lab/add-attributes-twig-extension": "^1.0",
         "drupal-pattern-lab/attach-library-twig-extension": "^1.1",
@@ -38,6 +39,7 @@
         "drupal/components": "^1.1",
         "drupal/config_installer": "^1.8",
         "drupal/config_split": "^1.4",
+        "drupal/config_update": "^1.6",
         "drupal/core": "^8.0@stable",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^2.1",
@@ -45,9 +47,11 @@
         "drupal/facets": "^1.4",
         "drupal/field_group": "^1.0",
         "drupal/inline_entity_form": "^1.0@RC",
-        "drupal/node_title_help_text": "^1.1",
+        "drupal/migrate_devel": "^1.2@beta",
         "drupal/migrate_plus": "^4.2",
+        "drupal/migrate_source_csv": "^3.1",
         "drupal/migrate_tools": "^4.3",
+        "drupal/node_title_help_text": "^1.1",
         "drupal/office_hours": "^1.1",
         "drupal/paragraphs": "^1.8",
         "drupal/pathauto": "^1.4",
@@ -93,6 +97,11 @@
             ],
             "initial": {
                 ".htaccess": ".htaccess"
+            }
+        },
+        "patches": {
+            "drupal/migrate_tools": {
+                "'status' is not a log level. (https://www.drupal.org/project/migrate_tools/issues/3073748)": "https://www.drupal.org/files/issues/2019-08-09/3073748-migrate_tools-status_loglevel-2.patch"
             }
         }
     }

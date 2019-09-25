@@ -7,8 +7,8 @@ Feature: Location Content Type
   Scenario: Verify that provider fields are present
     Given I am logged in as a user with the "administrator" role
     When I visit "/admin/structure/types/manage/profile/fields"
-    Then I should see the text "Affiliated Hospitals"
-    Then I should see the text "Areas of Interest"
+    Then I should see the text "Hospital Affiliation"
+    Then I should see the text "Clinical Area of Focus"
     Then I should see the text "Board Certified"
     Then I should see the text "Board Eligible"
     Then I should see the text "Comment Count"
