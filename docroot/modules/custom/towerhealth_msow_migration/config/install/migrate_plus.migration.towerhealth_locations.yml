@@ -20,7 +20,7 @@ source:
   # the data on import, to be used in field mappings below.
   # The value is a user-friendly string for display by the
   # migration UI.
-
+  track_changes: true
   fields:
     - name: location_id
       label: 'Location ID'
@@ -77,4 +77,5 @@ process:
     default_value: location
 
 destination:
-  plugin: 'entity:node'
+  plugin: 'node_merge'
+  lookup_field: 'field_location_id'
