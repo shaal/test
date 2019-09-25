@@ -2,14 +2,11 @@
 
 namespace Drupal\towerhealth_autocomplete\Controller;
 
-use Drupal\towerhealth_autocomplete\Controller\FindCareController;
-use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Component\Utility\Xss;
-use Drupal\views\Views;
 
 /**
  * Defines a route controller for watches autocomplete form elements.

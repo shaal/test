@@ -2,7 +2,6 @@
 
 namespace Drupal\towerhealth_autocomplete\Controller;
 
-use Drupal\towerhealth_autocomplete\Controller\FindCareController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -54,4 +53,5 @@ class FindLocationController extends FindCareController {
 
     return new JsonResponse($results);
   }
+
 }
