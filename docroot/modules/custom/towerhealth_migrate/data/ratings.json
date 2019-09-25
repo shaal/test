@@ -1,0 +1,370 @@
+{
+  "status": {
+      "message": "success",
+      "code": 200
+  },
+  "data": {
+      "client": "Reading Health",
+      "entities": [
+          {
+              "id": "1447201827",
+              "name": "VILLENEUVE: JOHN",
+              "totalCommentCount": 62,
+              "totalRatingCount": 149,
+              "totalSurveyCount": 149,
+              "overallRating": {
+                  "name": "Overall Satisfaction",
+                  "value": 4.9,
+                  "categoryResponseCount": 149,
+                  "questionRatings": [
+                      {
+                          "name": "Give easy to understand instruction",
+                          "value": 4.8,
+                          "responseCount": 104
+                      },
+                      {
+                          "name": "Provider expl in way you understand",
+                          "value": 4.9,
+                          "responseCount": 149
+                      },
+                      {
+                          "name": "Provider listen carefully to you",
+                          "value": 4.9,
+                          "responseCount": 147
+                      },
+                      {
+                          "name": "Know important info medical history",
+                          "value": 5.0,
+                          "responseCount": 145
+                      },
+                      {
+                          "name": "Show respect for what you say",
+                          "value": 4.9,
+                          "responseCount": 146
+                      },
+                      {
+                          "name": "Spend enough time with you",
+                          "value": 4.8,
+                          "responseCount": 147
+                      }
+                  ]
+              },
+              "comments": [
+                  {
+                      "id": 506065185,
+                      "surveyKey": "1891131181",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-25T19:23:14Z",
+                      "wordCount": 39,
+                      "comment": "*Dr. Villeneuve is an outstanding physician!  He provides care that is kind, compassionate & endenced based.  His staff from the front desk to *Gigi, *Kelsey & *Tracy all are the \"best of the Tower Health System has to offer.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506065189,
+                      "surveyKey": "1887700253",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-25T19:22:58Z",
+                      "wordCount": 11,
+                      "comment": "The doctor, nurse and receptionist were very cordial, helpful and nice.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506065073,
+                      "surveyKey": "1891131074",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-23T13:38:44Z",
+                      "wordCount": 4,
+                      "comment": "Too many f/u's.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064261,
+                      "surveyKey": "1882333776",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-10T05:25:05Z",
+                      "wordCount": 22,
+                      "comment": "He was great and very informative. He was able to get things done and save me a second trip to the hospital.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506063966,
+                      "surveyKey": "1885493925",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-02T14:17:03Z",
+                      "wordCount": 68,
+                      "comment": "I am very happy with the care I am getting from Dr V and Gigi. His office staff is wonderful as well. I  did not foresee  this illness but they have treated me well. I thank  God for there care.I could go to a hospital closer to my home but i choose to go to Tower Health in Reading. Because I get great care there. Thank you! ",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496462,
+                      "surveyKey": "1875828878",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-25T14:04:10Z",
+                      "wordCount": 14,
+                      "comment": "Dr.V always answers my questions  and concerns.He makes me feel at ease.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496004,
+                      "surveyKey": "1867766584",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-16T11:32:24Z",
+                      "wordCount": 9,
+                      "comment": "the whole office staff and doctor/residents are great.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485495399,
+                      "surveyKey": "1857231956",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-01T02:08:48Z",
+                      "wordCount": 11,
+                      "comment": "He is always pleasant, answers questions and puts me at ease.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 472108958,
+                      "surveyKey": "1850152050",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-05-24T21:14:42Z",
+                      "wordCount": 9,
+                      "comment": "Dr. Villeneuve listened to my concerns and alleviated them.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 472108780,
+                      "surveyKey": "1838919596",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-05-22T11:05:24Z",
+                      "wordCount": 5,
+                      "comment": "I had an excellent experience!",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506063787,
+                      "surveyKey": "1837878803",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-05-21T13:39:49Z",
+                      "wordCount": 3,
+                      "comment": "Very good experience.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 472108499,
+                      "surveyKey": "1837876951",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-05-16T14:54:36Z",
+                      "wordCount": 36,
+                      "comment": "Even when I can see that he is very busy, he has always taken the time needed to go over my questions and concerns with me.  I am generally pleased with the care I have received.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 472108431,
+                      "surveyKey": "1844178171",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-05-15T19:21:10Z",
+                      "wordCount": 21,
+                      "comment": "I am very satisfied with Dr. Villeneuve.  He is courteous.  He always asks how I am feeling. He is very professional.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 472107881,
+                      "surveyKey": "1837878907",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-05-07T12:58:31Z",
+                      "wordCount": 28,
+                      "comment": "I couldn't ask for a better doctor. Dr V is a caring doctor that listens to everything you have to say. his nurses and staff are the best.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 458709220,
+                      "surveyKey": "1809399004",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-04-17T12:03:10Z",
+                      "wordCount": 35,
+                      "comment": "My niece had 4th stage ovarian cancer & I had first stage.  He is so understanding - answering all questions.  Cancer is very scary but he helped me through the surgery & recovery.  He's great!!!",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 458709100,
+                      "surveyKey": "1785354449",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-04-16T14:36:39Z",
+                      "wordCount": 15,
+                      "comment": "*Dr. Villeneuve is great.  *Gigi is great.  Receptionist is great.  Would not change a thing.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 458708839,
+                      "surveyKey": "1809399834",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-04-15T14:58:18Z",
+                      "wordCount": 2,
+                      "comment": "Very caring.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 442272683,
+                      "surveyKey": "1801158277",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-03-26T13:46:04Z",
+                      "wordCount": 79,
+                      "comment": "Dr. Villeneuve has provided me with excellent surgical care during my two recent surgeries! He and his staff have always been very professional and supportive during a very emotional time in my life! I highly recommend him as a GYN/Oncology surgeon! If Reading Hospital ever needs a patient to help market his exceptional GYN/Oncology Surgical care, I would be honored to help! My whole experience with him and his practice has been exceptional! Thank you, Dr. V!",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 442272579,
+                      "surveyKey": "1795534518",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-03-24T19:35:12Z",
+                      "wordCount": 19,
+                      "comment": "I am alive because of Dr.Villeneuve and Dr.Jeffrey Frank. Their Cancer diagnoses and treatment saved my life !",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 442272539,
+                      "surveyKey": "1795534933",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-03-24T05:49:57Z",
+                      "wordCount": 11,
+                      "comment": "Very good   listens to my concerns  and when I asked questions",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  }
+              ],
+              "PGSealOfIntegrity": {
+                  "dataIntegrity": {
+                      "horizontal": {
+                          "darkBackground": {
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE.png"
+                          },
+                          "lightBackground": {
+                              "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.jpg",
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.png"
+                          },
+                          "darkBackgroundHighResolution": {
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE/highresolution.png"
+                          }
+                      },
+                      "stacked": {
+                          "darkBackground": {
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED_WHITE.png"
+                          },
+                          "lightBackground": {
+                              "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.jpg",
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.png"
+                          }
+                      }
+                  },
+                  "sealOfIntegrity": {
+                      "darkBackground": {
+                          "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.jpg",
+                          "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.png"
+                      },
+                      "lightBackground": {
+                          "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.jpg",
+                          "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.png"
+                      }
+                  }
+              },
+              "totalPages": 4,
+              "ratings": []
+          }
+      ],
+      "filter": {
+          "minThreshold": 0.0,
+          "minRatingCount": 30,
+          "minSurveyCount": 0,
+          "minWordCount": 0,
+          "days": 365,
+          "page": 1,
+          "perPage": 20,
+          "showComments": true,
+          "showRatings": true,
+          "configVersion": "v2",
+          "period": {
+              "to": "2019-09-20T20:56:27Z",
+              "from": "2018-09-20T00:00:00Z"
+          }
+      }
+  }
+}

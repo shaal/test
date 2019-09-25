@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_migrate # for uninstall
+id: towerhealth
+label: Tower Health
+description: 'Tower Health imports'
+source_type: 'Tower Health JSON'
+shared_configuration: null
