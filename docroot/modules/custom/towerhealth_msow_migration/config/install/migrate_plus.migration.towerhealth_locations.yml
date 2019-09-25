@@ -1,0 +1,81 @@
+id: towerhealth_locations
+label: Import tower health location content
+migration_groups:
+  - TowerHealth MSOW import
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'csv'
+  # Full path to the file.
+  path: 'modules/custom/towerhealth_msow_migration/data/tbl_Dir_Offices.csv'
+  # Column delimiter. Comma (,) by default.
+  header_offset: 1
+  ids: [location_id]
+  # Here we identify the columns of interest in the source file.
+  # Each numeric key is the 0-based index of the column.
+  # For each column, the key below is the field name assigned to
+  # the data on import, to be used in field mappings below.
+  # The value is a user-friendly string for display by the
+  # migration UI.
+  track_changes: true
+  fields:
+    - name: location_id
+      label: 'Location ID'
+    - name: office_name
+      label: 'Title'
+    - name: address_1
+      label: 'Address 1'
+    - name: address_2
+      label: 'Address 2'
+    - name: city
+      label: 'City'
+    - name: state
+      label: 'State'
+    - name: zip_code
+      label: 'Zip_Code'
+    - name: phone_number
+      label: 'Phone number'
+    - name: office_contact
+      label: 'Office Contact'
+    - name: handicap_access
+      label: 'Handicap Access'
+    - name: fax_number
+      label: 'Fax number'
+
+process:
+  title:
+  - plugin: get
+    source: office_name
+  - plugin: default_value
+    default_value: 'TowerHealth Location'
+
+  'field_location_address/country_code':
+    plugin: default_value
+    default_value: US
+
+  'field_location_address/address_line1': address_1
+
+  'field_location_address/address_line2': address_2
+
+  'field_location_address/locality': city
+
+  'field_location_address/administrative_area': state
+
+  'field_location_address/postal_code': zip_code
+
+  field_location_phone_number: phone_number
+
+  field_location_id: location_id
+
+  field_location_fax: fax_number
+
+  type:
+    plugin: default_value
+    default_value: location
+
+destination:
+  plugin: 'node_merge'
+  lookup_field: 'field_location_id'
