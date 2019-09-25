@@ -1,9 +1,0 @@
-name: towerhealth_migrate
-type: module
-description: Import from Binary Foundation
-core: 8.x
-package: towerhealth
-dependencies:
-  - migrate
-  - migrate_plus
-  - migrate_tools

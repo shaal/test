@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for towerhealth_migration.
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Copies the example file to the sites/default/files folder.
+ */
+function towerhealth_migration_install() {
+  $files = [
+    'ratings.json',
+  ];
+
+  // Create the example file directory and ensure it's writable.
+  $directory = file_default_scheme() . '://towerhealth_migration';
+  if (version_compare(\Drupal::VERSION, '8.7', '>=')) {
+    \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  }
+  else {
+    file_prepare_directory($directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+  }
+
+  // Copy the example file to example directory.
+  $module_path = drupal_get_path('module', 'towerhealth_migration');
+  foreach ($files as $file) {
+    $file_source = $module_path . '/data/' . $file;
+  }
+  if (version_compare(\Drupal::VERSION, '8.7', '>=')) {
+    \Drupal::service('file_system')->copy($file_source, $directory . '/' . $file, FileSystemInterface::EXISTS_REPLACE);
+  }
+  else {
+    file_unmanaged_copy($file_source, $directory . '/' . $file, FILE_EXISTS_REPLACE);
+  }
+}
