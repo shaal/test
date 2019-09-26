@@ -1,4 +1,4 @@
-uuid: d9be255d-19c5-4be8-b16e-7240c7931fa3
+uuid: 987cd3ff-1877-486d-8d0e-a55b87be439c
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - towerhealth_msow_migration
 _core:
-  default_config_hash: jaZj4rAiZjQvcePrsomwX-9Kh2v-WYfend77Yauvjrk
+  default_config_hash: H9dmWueitcXA7CXkc5mGfZ-A7C9guUH9UT57mnX88Us
 id: towerhealth_locations
 class: null
 field_plugin_method: null
@@ -77,6 +77,9 @@ process:
   type:
     plugin: default_value
     default_value: location
+  moderation_state:
+    plugin: default_value
+    default_value: published
 destination:
   plugin: node_merge
   lookup_field: field_location_id
