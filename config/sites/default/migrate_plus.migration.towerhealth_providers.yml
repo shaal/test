@@ -1,4 +1,4 @@
-uuid: 0f3938db-29de-4039-b380-d7f5e50d9b43
+uuid: 123618a9-cdbb-455c-b4c8-b3bb0a4390d8
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - towerhealth_msow_migration
 _core:
-  default_config_hash: EKoL2TKETQXKjnSDzWwFG6OgYp-5vB6VBHqX1cYAwYo
+  default_config_hash: _c5LsKpCYPdgS1mPwfneF1bHw62z4J32LdyKRB1i0Xk
 id: towerhealth_providers
 class: null
 field_plugin_method: null
@@ -50,14 +50,19 @@ source:
       name: npi_id
       label: 'NPI ID'
 process:
-  title:
-    -
-      plugin: default_value
-      default_value: 'TowerHealth Provider'
   field_profile_first_name: first_name
   field_profile_last_name: last_name
   field_profile_middle_name: middle_name
-  field_profile_gender: gender
+  field_profile_gender:
+    -
+      plugin: default_value
+      default_value: female;
+    -
+      plugin: static_map
+      source: gender
+      map:
+        M: male
+        F: female
   field_profile_practid: practioner_id
   field_profile_npi: npi_id
   field_profile_professional_title: professional_title
@@ -70,6 +75,9 @@ process:
         contracted: contracted
         '': independent
   field_profile_type:
+    -
+      plugin: default_value
+      default_value: tower_health_employed;
     -
       plugin: static_map
       source:
