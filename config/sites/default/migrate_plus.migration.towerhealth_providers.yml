@@ -17,7 +17,7 @@ label: 'Import tower health provider content'
 source:
   plugin: csv
   path: modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner.csv
-  header_offset: 1
+  header_row_count: 1
   ids:
     - practioner_id
   track_changes: true
@@ -39,7 +39,7 @@ source:
       label: 'Professional Title'
     -
       name: gender
-      label: Gender
+      label: 'Gender'
     -
       name: app
       label: APP

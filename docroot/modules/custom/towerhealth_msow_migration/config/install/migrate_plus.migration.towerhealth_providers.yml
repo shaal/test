@@ -12,7 +12,7 @@ source:
   # Full path to the file.
   path: 'modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner.csv'
   # Column delimiter. Comma (,) by default.
-  header_offset: 1
+  header_row_count: 1
   ids: [practioner_id]
   # Here we identify the columns of interest in the source file.
   # Each numeric key is the 0-based index of the column.
@@ -50,7 +50,7 @@ process:
 
   field_profile_gender:
     - plugin: default_value
-      default_value: female;
+      default_value: 'female';
     - plugin: static_map
       source: gender
       map:
@@ -73,7 +73,7 @@ process:
 
   field_profile_type:
     - plugin: default_value
-      default_value: tower_health_employed;
+      default_value: 'tower_health_employed';
     - plugin: static_map
       source:
         - app
