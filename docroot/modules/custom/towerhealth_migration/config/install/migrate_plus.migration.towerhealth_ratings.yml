@@ -23,7 +23,7 @@ source:
   # is relative to the elements retrieved by item_selector.
   fields:
     -
-      name: id
+      name: npi_id
       label: 'NPI ID'
       selector: id
     -
@@ -42,7 +42,7 @@ source:
   # identify each imported item. The 'type' makes sure the migration map table
   # uses the proper schema type for stored the IDs.
   ids:
-    id:
+    npi_id:
       type: integer
 process:
   # Note that the source field names here (name, description and price) were
@@ -50,16 +50,10 @@ process:
   type:
     plugin: default_value
     default_value: profile
-  field_profile_npi: id
+  field_profile_npi: npi_id
   field_rating_count: totalRatingCount
   field_rating_comment_count: totalCommentCount
   field_rating_overall: overallRating
-  status:
-    plugin: default_value
-    default_value: 1
-  uid:
-    plugin: default_value
-    default_value: 1
 destination:
   plugin: 'entity:node'
 migration_dependencies: {  }
