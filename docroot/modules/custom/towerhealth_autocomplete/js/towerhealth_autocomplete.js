@@ -28,7 +28,7 @@
     attach: function (context, settings) {
       // Find all our fields with autocomplete settings
       $(context)
-        .find('#edit-find-doctor-search')
+        .find('.find-care-autocomplete')
         .once('tower-health-autocomplete')
         .each(function (i) {
           var uiAutocomplete = $(this).data('ui-autocomplete');

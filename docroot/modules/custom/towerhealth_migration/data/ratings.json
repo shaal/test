@@ -1,0 +1,30 @@
+{
+  "status": {
+      "message": "success",
+      "code": 200
+  },
+  "data": {
+      "entities": [
+          {
+              "id": "1902864465",
+              "name": "BROCKMAN: PAUL",
+              "totalCommentCount": 68,
+              "totalRatingCount": 124,
+              "totalSurveyCount": 124,
+              "overallRating": {
+                  "value": 4.9
+              }
+          },
+          {
+              "id": "1932177086",
+              "name": "WINANS: LEWIS",
+              "totalCommentCount": 73,
+              "totalRatingCount": 177,
+              "totalSurveyCount": 177,
+              "overallRating": {
+                  "value": 4.9
+              }
+          }
+      ]
+  }
+}
