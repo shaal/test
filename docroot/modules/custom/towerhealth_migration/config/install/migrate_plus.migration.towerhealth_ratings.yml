@@ -15,6 +15,23 @@ source:
     - 'public://towerhealth_migration/ratings.json'
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: 'data/entities'
+
+  # This configuration is provided by the `http` data fetcher plugin.
+  # Do not disclose any sensitive information in the headers.
+  #headers:
+  #  Accept: 'application/json; charset=utf-8'
+  #  Accept-Encoding: 'gzip, deflate, br'
+  #  Accept-Language: 'en-US,en;q=0.5'
+  #  Custom-Key: 'understand'
+  #  Arbitrary-Header: 'drupal'
+
+  # This configuration is provided by the `digest` authentication plugin.
+  # Credentials should never be saved in plain text nor committed to the repo.
+  #authentication:
+  #  plugin: digest
+  #  username: totally
+  #  password: insecure
+
   # Under 'fields', we list the data items to be imported. The first level keys
   # are the source field names we want to populate (the names to be used as
   # sources in the process configuration below). For each field we're importing,
