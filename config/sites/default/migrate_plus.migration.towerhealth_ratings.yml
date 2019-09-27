@@ -1,4 +1,4 @@
-uuid: 0cb4b0ea-4af3-44e6-b51e-64964c57d5de
+uuid: d8043ce2-3576-456e-8ec2-38f6b0c65f3f
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - towerhealth_migration
 _core:
-  default_config_hash: 1E-MX-v-QqKusMXCrjaXB6GAnpLcaQqybQFijWRif3M
+  default_config_hash: LQeYBQFFFHmnYYXOjn8qvWMS44m3ME6PM7ETlirQb7c
 id: towerhealth_ratings
 class: null
 field_plugin_method: null
@@ -20,9 +20,13 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: json
   urls:
-    - 'public://towerhealth_migration/ratings.json'
+    - modules/custom/towerhealth_migration/data/ratings.json
   item_selector: data/entities
   fields:
+    -
+      name: display_name
+      label: 'Display Name'
+      selector: name
     -
       name: npi_id
       label: 'NPI ID'
@@ -51,5 +55,6 @@ process:
   field_rating_comment_count: totalCommentCount
   field_rating_overall: overallRating
 destination:
-  plugin: 'entity:node'
+  plugin: node_merge
+  lookup_field: field_profile_npi
 migration_dependencies: {  }
