@@ -1,0 +1,15 @@
+uuid: 4d4d5d21-64bc-4a96-8fbb-9fe02edaa599
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_migration
+_core:
+  default_config_hash: ZfSCJdEgq1BgNTxsmVVnj44S5FCkVJp58dvopYy_sX4
+id: towerhealth
+label: 'Tower Health'
+description: 'Tower Health imports'
+source_type: 'Tower Health JSON'
+module: null
+shared_configuration: null
