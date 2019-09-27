@@ -17,81 +17,75 @@ label: 'Import tower health provider content'
 source:
   plugin: csv
   path: modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner.csv
+  delimiter: ','
+  enclosure: '"'
   header_row_count: 1
   ids:
     - practioner_id
   track_changes: true
   fields:
-    -
+    0:
       name: practioner_id
       label: 'Practioner ID'
-    -
+    1:
       name: last_name
       label: 'Last name'
-    -
+    3:
       name: first_name
-      label: 'Last name'
-    -
+      label: 'First name'
+    4:
       name: middle_name
       label: 'Middle name'
-    -
+    5:
       name: professional_title
       label: 'Professional Title'
-    -
+    6:
       name: gender
-      label: 'Gender'
-    -
+      label: Gender
+    7:
       name: app
       label: APP
-    -
+    8:
       name: employment_status
       label: 'Employment Status'
-    -
+    9:
       name: npi_id
       label: 'NPI ID'
 process:
+  field_profile_practid: practioner_id
   field_profile_first_name: first_name
   field_profile_last_name: last_name
   field_profile_middle_name: middle_name
   field_profile_gender:
-    -
-      plugin: default_value
-      default_value: female;
     -
       plugin: static_map
       source: gender
       map:
         M: male
         F: female
-  field_profile_practid: practioner_id
-  field_profile_npi: npi_id
-  field_profile_professional_title: professional_title
-  _prepare_type:
-    -
-      plugin: static_map
-      source: employment_status
-      map:
-        employed: employed
-        contracted: contracted
-        '': independent
-  field_profile_type:
     -
       plugin: default_value
-      default_value: tower_health_employed;
+      default_value: female
+  field_profile_npi: npi_id
+  field_profile_professional_title: professional_title
+  field_profile_type:
     -
       plugin: static_map
       source:
         - app
-        - '@prepare_type'
+        - employment_status
       map:
-        '':
-          employed: tower_health_employed
-          independent: independent
-          contracted: contracted
-        1:
-          employed: app_employed
-          independent: independent
-          contracted: contracted
+        'FALSE':
+          Employed: tower_health_employed
+          Contracted: contracted
+          '': independent
+        'TRUE':
+          Employed: app_employed
+          Contracted: contracted
+          '': independent
+    -
+      plugin: default_value
+      default_value: tower_health_employed
   type:
     plugin: default_value
     default_value: profile

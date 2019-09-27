@@ -53,19 +53,12 @@ class TowerHealthAppendValues extends ProcessPluginBase {
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     // Throw an error if value and reverse value are the same.
-
-    $lookup_field = $this->configuration['lookup_field'];
     $field_name = $this->configuration['field'];
 
-    $id = $row->getDestinationProperty($lookup_field);
-
-    $query = \Drupal::entityQuery('node');
-    $result = $query
-      ->condition($lookup_field . '.0.value', $id, '=')
-      ->execute();
+    $id = $row->getDestinationProperty('nid');
 
     $existing = [];
-    if ($node = Node::load(reset($result))) {
+    if ($node = Node::load($id)) {
       $existing_values = $node->$field_name->getValue();
 
       foreach ($existing_values as $item) {
@@ -80,40 +73,4 @@ class TowerHealthAppendValues extends ProcessPluginBase {
 
     return $existing;
   }
-
-  /*
-  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    $source = $this->configuration['source'];
-    $properties = is_string($source) ? [$source] : $source;
-
-    $return = [];
-    foreach ($properties as $property) {
-      if ($property || (string) $property === '0') {
-        $return[] = $row->get($property);
-      }
-      else {
-        $return[] = $value;
-      }
-    }
-
-    if (is_string($source)) {
-      $this->multiple = is_array($return[0]);
-      return $return[0];
-    }
-    return $return;
-    // Get the identifier from migration row.
-    /*$example_identifier = $row->getDestinationProperty('example_identifier');
-
-    $existing = [];
-    // Get the existing entity, if it exists.
-    if ($node = Node::load($example_identifier)) {
-      $existing = $node->field_example_field->getValue();
-    }
-    if (!is_array($newValues)) {
-      $newValues = [$newValues];
-    }
-    // Append the new values to existing.
-    $existing = array_unique(array_merge($existing, $newValues));
-    return $existing;
-  }*/
 }
