@@ -3,6 +3,10 @@ label: Physician Ratings
 migration_group: towerhealth
 migration_tags:
   - towerhealth
+dependencies:
+  enforced:
+    module:
+      - towerhealth_migration
 source:
   plugin: url
   # Note -- We are loading from local file for testing. We either need:
@@ -12,7 +16,7 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: json
   urls:
-    - 'public://towerhealth_migration/ratings.json'
+    - modules/custom/towerhealth_migration/data/ratings.json
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: 'data/entities'
 
@@ -40,6 +44,10 @@ source:
   # is relative to the elements retrieved by item_selector.
   fields:
     -
+      name: display_name
+      label: 'Display Name'
+      selector: name
+    -
       name: npi_id
       label: 'NPI ID'
       selector: id
@@ -61,9 +69,10 @@ source:
   ids:
     npi_id:
       type: integer
+destination:
+  plugin: 'node_merge'
+  lookup_field: 'field_profile_npi'
 process:
-  # Note that the source field names here (name, description and price) were
-  # defined by the 'fields' configuration for the source plugin above.
   type:
     plugin: default_value
     default_value: profile
@@ -71,10 +80,5 @@ process:
   field_rating_count: totalRatingCount
   field_rating_comment_count: totalCommentCount
   field_rating_overall: overallRating
-destination:
-  plugin: 'entity:node'
 migration_dependencies: {  }
-dependencies:
-  enforced:
-    module:
-      - towerhealth_migration
+
