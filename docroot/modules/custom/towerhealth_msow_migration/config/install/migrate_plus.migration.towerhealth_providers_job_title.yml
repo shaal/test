@@ -1,0 +1,55 @@
+id: towerhealth_providers_job_title
+label: Import tower health provider job titles
+migration_groups:
+  - TowerHealth MSOW import
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'csv'
+  # Full path to the file.
+  path: 'modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner_Languages.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  header_row_count: 1
+  ids: [practioner_id, language]
+  track_changes: true
+  # Here we identify the columns of interest in the source file.
+  # Each numeric key is the 0-based index of the column.
+  # For each column, the key below is the field name assigned to
+  # the data on import, to be used in field mappings below.
+  # The value is a user-friendly string for display by the
+  # migration UI.
+  fields:
+    0:
+      name: practioner_id
+      label: 'Practioner ID'
+    1:
+      name: language
+      label: 'Language'
+
+process:
+  field_profile_practid:
+    -
+      plugin: migration_lookup
+      migration: towerhealth_providers
+      source: practioner_id
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: row
+  nid:
+    - plugin: migration_lookup
+      migration: towerhealth_providers
+      source: practioner_id
+      no_stub: true
+
+  field_profile_languages: language
+
+destination:
+  plugin: 'node_merge'
+  lookup_field: 'field_profile_practid'
