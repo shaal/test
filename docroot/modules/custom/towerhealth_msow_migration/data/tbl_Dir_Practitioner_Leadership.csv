@@ -1,0 +1,171 @@
+PRACT_ID,FacCode,Leadership_name
+3672,BH,Department Chair-Emergency Medicine
+3672,BH,Chief Medical Officer
+3978,BH,Section Chief-Hospitalists
+50030,BH,Section Chief-Plastic & Reconstructive Surgery
+50039,BH,Department VP Chair-Medicine
+50416,BH,Section Chief-Sleep Medicine
+50485,BH,Section Chief-Cardiovascular Disease
+50525,BH,Credentials Committee
+50692,BH,Section Chief-Dermatology
+51089,BH,Section Chief-General Surgery
+51108,BH,Department Chair-Anesthesiology
+51150,BH,Section Chief-Gastroenterology
+51492,BH,Section Chief-Hematology & Oncology
+51614,BH,Section Chief-Oral and Maxillofacial Surgery
+51655,BH,Section Chief-Clinical Denistry
+51678,BH,Department VP Chair-Family & Community Medicine
+51809,BH,Section Chief-Pulmonary Medicine
+51809,BH,Department Chair-Medicine
+52207,BH,Department VP Chair-Family & Community Medicine
+52328,BH,Section Chief-Orthopedic Surgery
+52537,BH,Department VP Chair-Family & Community Medicine
+52548,BH,Section Chief-Rheumatology
+52683,BH,Department Chair-Family & Community Medicine
+53367,BH,Section Chief-Physical Medicine & Rehabilitation
+53371,BH,Department VP Chair-Medicine
+53430,BH,Section Chief-Otolaryngology
+53873,BH,Section Chief-Neurology
+53925,BH,Section Chief-Urology
+54521,BH,Department VP Chair-Surgery
+54560,BH,Section Chief-Infectious Diseases
+54883,BH,Section Chief-Radiation Oncology
+55152,BH,Department Chair-Radiology
+55206,BH,Department Chair-Pathology
+55296,BH,Department Chair-Psychiatry
+50358,CHH,Section Chief-Internal Medicine
+50360,CHH,Section Chief-Plastic Surgery
+50402,CHH,Department Chair-Medicine
+50644,CHH,Section Chief-Physical Medicine & Rehabilitation
+51144,CHH,Section Chief-Urology
+51345,CHH,Section Chief-Infectious Diseases
+51558,CHH,Department Chair-Surgery
+51585,CHH,Section Chief-Gastroenterology
+51622,CHH,Section Chief-Cardiology
+51662,CHH,Section Chief-Dermatology
+51814,CHH,Section Chief-Orthopedic Surgery
+52201,CHH,Chief Executive Officer
+52245,CHH,Department Chair-Anesthesiology
+52393,CHH,Section Chief-Palliative Medicine
+52408,CHH,Section Chief-Ophthalmology
+52475,CHH,Section Chief-Neurology
+52546,CHH,Section Chief-Endocrinology & Metabolism
+52858,CHH,Section Chief-Podiatric Surgery
+53110,CHH,Section Chief-Neurologic Surgery
+53204,CHH,Section Chief-Nephrology
+53372,CHH,Department Chair-Radiology
+53453,CHH,Section Chief-Otolaryngology
+53662,CHH,Section Chief-Hematology & Oncology
+53937,CHH,Section Chief-Family Practice
+54142,CHH,Department Chair-Pathology and Laboratory Medicine
+54934,CHH,Section Chief-Cardiothoracic Surgery
+55130,CHH,Section Chief-Gynecology
+55267,CHH,Section Chief-Allergy and Immunology
+10773,JH,Section Chief-Radiology
+50923,JH,Section Chief-Emergency Medicine
+52788,JH,Section Chief-Family Practice
+52931,JH,Department Chair-Surgery
+53264,JH,Department Chair-Medicine
+53899,JH,Section Chief-Anesthesiology
+55206,JH,Section Chief-Pathology and Laboratory Medicine
+5693,PHNH,Department Chair-Emergency Medicine
+10152,PHNH,Credentials Committee
+50213,PHNH,Credentials Committee
+51213,PHNH,Department Chair-Radiology
+51286,PHNH,Department Chair-Anesthesiology
+51441,PHNH,Credentials Committee Chairman
+51804,PHNH,Department Chair-Obstetrics & Gynecology
+52569,PHNH,Medical Staff President
+52569,PHNH,Credentials Committee
+52569,PHNH,Board of Trustees Member
+52795,PHNH,Credentials Committee
+52816,PHNH,Board of Trustees President
+52816,PHNH,Department Chair-Medicine
+52816,PHNH,Chief Medical Officer
+53491,PHNH,Credentials Committee
+53885,PHNH,Department Chair-Pathology and Laboratory Medicine
+53995,PHNH,Department Chair-Surgery
+54455,PHNH,Credentials Committee
+54825,PHNH,Department Chair-Pediatrics
+10764,POTH,Department Chair-Pediatrics
+10781,POTH,Credentials Committee
+51108,POTH,Department Chair-Anesthesiology
+51267,POTH,Chief of Staff
+51538,POTH,Credentials Committee Chairman
+51624,POTH,Credentials Committee
+51674,POTH,Department Chair-Radiology
+51885,POTH,Department Chair-Pathology and Laboratory Medicine
+51944,POTH,Credentials Committee
+52243,POTH,Chief Medical Officer
+52246,POTH,Department Chair-Psychiatry
+52595,POTH,Department Chair-Surgery
+53215,POTH,Department Chair-Obstetrics & Gynecology
+53719,POTH,Department Chair-Emergency Medicine
+53823,POTH,Credentials Committee
+54452,POTH,Department Chair-Medicine
+54657,POTH,Section Chief-Radiation Oncology
+1198,RH,Section Chief-Otolaryngology
+1261,RH,Section Chief-Reproductive End/Infertility
+1380,RH,Section Chief-Trauma & Surgical Critical Care
+2024,RH,Section Chief–Addiction Medicine
+2064,RH,Department Chair-Pediatrics
+2259,RH,Section Chief-Pulmonary Medicine
+2355,RH,Department Chair-Surgery
+2423,RH,Section Chief-Gastroenterology
+2521,RH,Section Chief-Rheumatology
+2694,RH,Section Chief-Cardiothoracic Anesthesia
+2776,RH,Department Chair-Family & Community Medicine
+2777,RH,Department Chair-Medicine
+2824,RH,Section Chief-Gynecology
+2878,RH,Section Chief-Diagnostic Radiology
+2931,RH,Department Chair-Physical Medicine & Rehabilitation
+2989,RH,Section Chief-Ophthalmology
+3062,RH,Section Chief-General Surgery
+3131,RH,Section Chief-Vascular Surgery
+3210,RH,Section Chief-Urology
+3249,RH,Section Chief-Allergy and Immunology
+3275,RH,Section Chief-Nephrology
+3369,RH,Department Chair-Radiology
+3392,RH,Department Chair-Emergency Medicine
+3640,RH,Section Chief-Radiation Oncology
+3646,RH,Section Chief-Interventional Pain Management
+3708,RH,Section Chief-Occupational Medicine
+3722,RH,Section Chief-Anatomic Pathology
+3865,RH,Section Chief-Family Practice
+4080,RH,Section Chief-Neurologic Surgery
+4427,RH,Section Chief-Podiatric Surgery
+4451,RH,Section Chief-Oral and Maxillofacial Surgery
+5175,RH,Section Chief-Forensic & Autopsy Pathology
+5189,RH,Credentials Committee
+5258,RH,Section Chief-Gynecologic Oncology
+5306,RH,Section Chief-Infectious Diseases
+5343,RH,Section Chief-Cardiology
+5398,RH,Section Chief-Plastic Surgery
+5458,RH,Department Chair-Dentistry
+5951,RH,Section Chief-Geriatrics
+6245,RH,Section Chief-Urgent Care
+6547,RH,Section Chief-Urogynecology
+6795,RH,Section Chief-Interventional Radiology
+6831,RH,Section Chief-Palliative Medicine
+7022,RH,Section Chief-Internal Medicine (IP)
+7035,RH,Section Chief-Bariatric Surgery
+7121,RH,Section Chief-Neonatology
+7202,RH,Section Chief-Pediatric Hospitalist
+7306,RH,Section Chief-Obstetrics
+7530,RH,Section Chief–Pediatric Dentistry
+7843,RH,Section Chief-Hematology & Oncology
+8106,RH,Section Chief-Internal Medicine (OP)
+8134,RH,Section Chief-Cardiothoracic Surgery
+8281,RH,Section Chief-Internal Medicine Post Acute
+8288,RH,Section Chief-Endocrinology & Metabolism
+8295,RH,Section Chief-Nuclear Medicine
+8714,RH,Section Chief-Dermatology
+8742,RH,Section Chief-Orthopedic Surgery
+9113,RH,Department Chair-Obstetrics & Gynecology
+9395,RH,Section Chief-Neurology
+9529,RH,Section Chief-Pediatric Emergency Medicine
+10029,RH,Department Chair-Pathology
+10725,RH,Department Chair-Anesthesiology
+10752,RH,Department Chair-Surgery
+55639,RH,Department Chair-Psychiatry
+55872,RH,Section Chief-Transplant Surgery
