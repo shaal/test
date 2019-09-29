@@ -46,7 +46,7 @@ class TowerHealthAppendValues extends ProcessPluginBase {
    *
    * @var string
    */
-  protected $lookupField;
+  protected $nid;
 
   /**
    * {@inheritdoc}

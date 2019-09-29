@@ -48,14 +48,45 @@ source:
     npi_id:
       type: integer
 process:
-  type:
-    plugin: default_value
-    default_value: profile
-  field_profile_npi: npi_id
+  _npi_id:
+    plugin: get
+    source: npi_id
+  nid:
+    -
+      plugin: towerhealth_lookup_node
+      lookup_field: field_profile_npi
+      source: '@_npi_id'
+    -
+      plugin: skip_on_empty
+      method: row
+    -
+      plugin: entity_load_field
+      entity_type: node
+      field_name: nid
+    -
+      plugin: extract
+      index:
+        - 0
+        - value
+  title:
+    -
+      plugin: get
+      source: '@nid'
+    -
+      plugin: entity_load_field
+      entity_type: node
+      field_name: title
+    -
+      plugin: extract
+      index:
+        - 0
+        - value
   field_rating_count: totalRatingCount
   field_rating_comment_count: totalCommentCount
   field_rating_overall: overallRating
+  type:
+    plugin: default_value
+    default_value: profile
 destination:
-  plugin: node_merge
-  lookup_field: field_profile_npi
+  plugin: 'entity:node'
 migration_dependencies: {  }
