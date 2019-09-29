@@ -1,6 +1,7 @@
 <?php
 
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\process;
+
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
@@ -11,7 +12,8 @@ use Drupal\migrate\Row;
  * @code
  * field_text:
  *   plugin: towerhealth_lookup_node
- *   lookup_field: text
+ *   lookup_field: string of field to lookup against
+ *   source: value to lookup
  * @endcode
  *
  * @MigrateProcessPlugin(
@@ -63,4 +65,5 @@ class TowerHealthLookupNode extends ProcessPluginBase {
       return NULL;
     }
   }
+
 }
