@@ -1,0 +1,116 @@
+.footer {
+  padding: 1em;
+  font-size: 0.9em;
+  line-height: 1.6em;
+
+  @include breakpoint($bp2) {
+    padding: 5em 2em;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+
+    @include breakpoint($bp4) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  &__info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+
+    @include breakpoint($bp4) {
+      width: 40%;
+      max-width: 361px;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+
+    &__contact {
+      margin-top: 2em;
+
+      a {
+        display: block;
+        margin-top: 0.5em;
+      }
+    }
+
+    &__social {
+      margin-top: 2em;
+
+      @include breakpoint($bp4) {
+        margin-top: 5em;
+      }
+
+      a {
+        display: inline-block;
+        margin: 0.25em;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include breakpoint($bp4) {
+      width: 65%;
+    }
+
+    &__section {
+      width: 100%;
+      margin: 1em;
+      padding-top: 1em;
+      border-top: 5px solid $growth;
+
+      @include breakpoint($bp2) {
+        width: calc(33% - 2em);
+      }
+
+      &__title {
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        display: block;
+        margin-bottom: 1em;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__details {
+    margin-bottom: 0.5em;
+
+    a {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    @include breakpoint($bp2) {
+      a {
+        display: inline-block;
+        padding: 0 1em;
+        border-right: 1px solid $black;
+
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
