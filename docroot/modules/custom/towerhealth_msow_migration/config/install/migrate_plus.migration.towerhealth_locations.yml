@@ -76,6 +76,10 @@ process:
     plugin: default_value
     default_value: location
 
+  moderation_state:
+    plugin: default_value
+    default_value: published
+
 destination:
   plugin: 'node_merge'
   lookup_field: 'field_location_id'
