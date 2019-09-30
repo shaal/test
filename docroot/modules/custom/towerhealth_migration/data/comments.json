@@ -348,6 +348,81 @@
               },
               "totalPages": 7,
               "ratings": []
+          },
+          {
+            "id": "1932177086",
+            "name": "WINANS: LEWIS",
+            "totalCommentCount": 73,
+            "totalRatingCount": 177,
+            "totalSurveyCount": 177,
+            "overallRating": {
+              "value": 4.9
+            },
+            "comments": [
+              {
+                "id": 526064911,
+                "surveyKey": "1887701309",
+                "source": "Reading Health PG Survey-15",
+                "mentionTime": "2019-07-26T14:44:10Z",
+                "wordCount": 11,
+                "comment": "*Dr. WINANS always takes time with me.  I never feel rushed.",
+                "ratings": [],
+                "overallRating": {
+                  "name": "Overall Satisfaction",
+                  "value": 5.0
+                }
+              },
+              {
+                "id": 506064911,
+                "surveyKey": "1843966622",
+                "source": "Reading Health PG Survey-15",
+                "mentionTime": "2019-07-21T14:26:18Z",
+                "wordCount": 41,
+                "comment": "Dr. WINANS is an excellent provider. I was somewhat disappointed thatI was not able to schedule my next 4 month checkup with Dr Smith. I will be seeing a PA instead. A n appointment with Dr Smith was made for  8months",
+                "ratings": [],
+                "overallRating": {
+                  "name": "Overall Satisfaction",
+                  "value": 4.58
+                }
+              }
+            ],
+            "PGSealOfIntegrity": {
+              "dataIntegrity": {
+                "horizontal": {
+                  "darkBackground": {
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE.png"
+                  },
+                  "lightBackground": {
+                    "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.jpg",
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.png"
+                  },
+                  "darkBackgroundHighResolution": {
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE/highresolution.png"
+                  }
+                },
+                "stacked": {
+                  "darkBackground": {
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED_WHITE.png"
+                  },
+                  "lightBackground": {
+                    "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.jpg",
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.png"
+                  }
+                }
+              },
+              "sealOfIntegrity": {
+                "darkBackground": {
+                  "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.jpg",
+                  "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.png"
+                },
+                "lightBackground": {
+                  "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.jpg",
+                  "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.png"
+                }
+              }
+            },
+            "totalPages": 7,
+            "ratings": []
           }
       ],
       "filter": {
