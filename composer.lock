@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68128044857ad9ccf78c57212e357298",
+    "content-hash": "d6c4723bf90254347fad25ebe836c37b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2595,6 +2595,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Add XPath-style filtering ability in JSON data parser plugin. (https://www.drupal.org/project/migrate_plus/issues/3007709)": "https://www.drupal.org/files/issues/2018-11-14/migrate_plus-json-xpath-filtering-3007709-8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2722,7 +2725,7 @@
                     }
                 },
                 "patches_applied": {
-                    "'Status' is not a log level. (https://www.drupal.org/project/migrate_tools/issues/3073748)": "https://www.drupal.org/files/issues/2019-08-09/3073748-migrate_tools-status_loglevel-2.patch"
+                    "'status' is not a log level. (https://www.drupal.org/project/migrate_tools/issues/3073748)": "https://www.drupal.org/files/issues/2019-08-09/3073748-migrate_tools-status_loglevel-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3659,6 +3662,93 @@
             "time": "2018-12-04T22:38:24+00:00"
         },
         {
+            "name": "firebase/php-jwt",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": " 4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "time": "2017-06-27T22:17:23+00:00"
+        },
+        {
+            "name": "flow/jsonpath",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlowCommunications/JSONPath.git",
+                "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlowCommunications/JSONPath/zipball/f0222818d5c938e4ab668ab2e2c079bd51a27112",
+                "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "peekmo/jsonpath": "dev-master",
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Flow\\JSONPath": "src/",
+                    "Flow\\JSONPath\\Test": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Frank",
+                    "email": "stephen@flowsa.com"
+                }
+            ],
+            "description": "JSONPath implementation for parsing, searching and flattening arrays",
+            "time": "2018-03-04T16:39:47+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "6.3.3",
             "source": {
@@ -4423,6 +4513,55 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2016-02-11T07:05:27+00:00"
+        },
+        {
+            "name": "sainsburys/guzzle-oauth2-plugin",
+            "version": "v3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sainsburys/guzzle-oauth2-plugin.git",
+                "reference": "485edd64870dd951f8fc6ec362296f11787194bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sainsburys/guzzle-oauth2-plugin/zipball/485edd64870dd951f8fc6ec362296f11787194bf",
+                "reference": "485edd64870dd951f8fc6ec362296f11787194bf",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "^3.0|^4.0|^5.0",
+                "guzzlehttp/guzzle": "^6.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sainsburys\\Guzzle\\Oauth2\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bojan Zivanovic"
+                },
+                {
+                    "name": "Damien Tournoud"
+                },
+                {
+                    "name": "Patrick Dawkins"
+                },
+                {
+                    "name": "Daniel Macedo"
+                }
+            ],
+            "description": "An OAuth2 middleware for Guzzle",
+            "time": "2017-11-07T13:08:06+00:00"
         },
         {
             "name": "solarium/solarium",
