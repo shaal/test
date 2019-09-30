@@ -3,59 +3,82 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.profile.field_body
-    - field.field.node.profile.field_email
-    - field.field.node.profile.field_gender
+    - field.field.node.profile.field_affiliations_ref
+    - field.field.node.profile.field_area_interest_ref
+    - field.field.node.profile.field_insurance_ref
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
+    - field.field.node.profile.field_profile_board_certified
+    - field.field.node.profile.field_profile_board_eligible
     - field.field.node.profile.field_profile_education
     - field.field.node.profile.field_profile_first_name
+    - field.field.node.profile.field_profile_gender
     - field.field.node.profile.field_profile_image
+    - field.field.node.profile.field_profile_job_title
+    - field.field.node.profile.field_profile_languages
     - field.field.node.profile.field_profile_last_name
-    - field.field.node.profile.field_profile_patients
-    - field.field.node.profile.field_profile_public_email
-    - field.field.node.profile.field_profile_referral
-    - field.field.node.profile.field_profile_status
-    - field.field.node.profile.field_program_ref
-    - field.field.node.profile.field_services_ref
+    - field.field.node.profile.field_profile_middle_name
+    - field.field.node.profile.field_profile_npi
+    - field.field.node.profile.field_profile_phone
+    - field.field.node.profile.field_profile_practid
+    - field.field.node.profile.field_profile_professional_title
+    - field.field.node.profile.field_profile_scheduling
+    - field.field.node.profile.field_profile_type
+    - field.field.node.profile.field_profile_video
+    - field.field.node.profile.field_rating_comment_count
+    - field.field.node.profile.field_rating_comments_ref
+    - field.field.node.profile.field_rating_count
+    - field.field.node.profile.field_rating_overall
     - node.type.profile
     - workflows.workflow.default
   module:
     - content_moderation
     - field_group
     - media_library
-    - paragraphs
     - path
-    - text
+    - readonly_field_widget
 third_party_settings:
   field_group:
     group_migrated_data:
       children:
         - field_profile_first_name
+        - field_profile_middle_name
         - field_profile_last_name
-        - field_gender
-        - field_profile_patients
-        - field_profile_referral
-        - field_profile_status
-        - field_profile_public_email
-        - field_email
+        - field_profile_professional_title
+        - field_profile_job_title
+        - field_profile_npi
+        - field_profile_practid
+        - field_profile_type
+        - field_profile_gender
+        - field_profile_languages
+        - field_profile_phone
+        - field_profile_image
         - field_location_ref
         - field_profile_education
+        - field_area_interest_ref
         - field_medical_specialties_ref
+        - field_insurance_ref
+        - field_affiliations_ref
+        - field_profile_board_certified
+        - field_profile_board_eligible
+        - field_profile_scheduling
       parent_name: group_content
-      weight: 7
+      weight: 24
       format_type: tab
       format_settings:
+        label: 'Migrated data'
+        formatter: closed
+        description: 'The content in this grouping comes from the MSOW data source and is not intended to be editable. If a value needs to change then the source data needs to be corrected and the content re-imported.'
+        required_fields: true
         id: ''
         classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
       label: 'Migrated data'
     group_content:
       children:
-        - group_profile_details
+        - group_display
+        - group_video
         - group_migrated_data
+        - group_ratings
       parent_name: ''
       weight: 5
       format_type: tabs
@@ -64,22 +87,48 @@ third_party_settings:
         classes: ''
         direction: vertical
       label: Content
-    group_profile_details:
+    group_ratings:
       children:
-        - field_profile_image
-        - field_body
-        - field_services_ref
-        - field_program_ref
+        - field_rating_overall
+        - field_rating_count
+        - field_rating_comment_count
+        - field_rating_comments_ref
       parent_name: group_content
-      weight: 6
+      weight: 25
       format_type: tab
       format_settings:
         id: ''
         classes: ''
-        formatter: open
+        formatter: closed
         description: ''
         required_fields: true
-      label: 'Profile Details'
+      label: Ratings
+    group_video:
+      children:
+        - field_profile_video
+      parent_name: group_content
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Video
+    group_display:
+      children:
+        - title
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Display Name'
 id: node.profile.default
 targetEntityType: node
 bundle: profile
@@ -91,138 +140,264 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_body:
-    weight: 8
+  field_affiliations_ref:
+    weight: 18
     settings:
-      rows: 5
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: text_textarea
+    type: readonly_field_widget
     region: content
-  field_email:
-    weight: 19
+  field_area_interest_ref:
+    weight: 15
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
-  field_gender:
-    weight: 14
+  field_insurance_ref:
+    weight: 17
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
   field_location_ref:
-    weight: 20
+    weight: 13
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: readonly_field_widget
     region: content
   field_medical_specialties_ref:
-    weight: 22
+    weight: 16
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: readonly_field_widget
+    region: content
+  field_profile_board_certified:
+    weight: 19
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_board_eligible:
+    weight: 20
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
     region: content
   field_profile_education:
-    type: entity_reference_paragraphs
-    weight: 21
+    type: readonly_field_widget
+    weight: 14
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
     region: content
   field_profile_first_name:
-    weight: 12
+    weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_profile_gender:
+    weight: 9
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
   field_profile_image:
-    type: media_library_widget
+    type: readonly_field_widget
+    weight: 12
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    region: content
+  field_profile_job_title:
+    weight: 5
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_languages:
+    weight: 10
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_last_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_middle_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_npi:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_phone:
+    weight: 11
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_practid:
     weight: 7
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_professional_title:
+    weight: 4
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_scheduling:
+    weight: 21
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_type:
+    weight: 8
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  field_profile_video:
+    type: media_library_widget
+    weight: 6
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  field_profile_last_name:
-    weight: 13
+  field_rating_comment_count:
+    weight: 28
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
-  field_profile_patients:
-    weight: 15
+  field_rating_comments_ref:
+    type: readonly_field_widget
+    weight: 30
     settings:
-      display_label: true
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: boolean_checkbox
     region: content
-  field_profile_public_email:
-    weight: 18
+  field_rating_count:
+    weight: 27
     settings:
-      display_label: true
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: boolean_checkbox
+    type: readonly_field_widget
     region: content
-  field_profile_referral:
-    weight: 16
+  field_rating_overall:
+    weight: 26
     settings:
-      display_label: true
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_profile_status:
-    weight: 17
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_program_ref:
-    weight: 10
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_services_ref:
-    weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: readonly_field_widget
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 10
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -237,7 +412,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
@@ -249,7 +424,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 21
     region: content
     settings:
       size: 60
@@ -263,5 +438,10 @@ content:
       size: 60
       placeholder: ''
     region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 11
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

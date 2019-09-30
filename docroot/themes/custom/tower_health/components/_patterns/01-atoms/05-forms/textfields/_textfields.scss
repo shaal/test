@@ -1,0 +1,23 @@
+.form-item {
+  @include clearfix;
+  margin-bottom: 1em;
+}
+
+.form-item__label {
+  @extend %label;
+}
+
+.form-item__textfield {
+  @extend %input;
+}
+
+.form-item__description {
+  @include adjust-font-size-to($label, .8);
+  margin-top: 0.3em;
+}
+
+.form-fieldset {
+  border: none;
+  margin-bottom: 2em;
+  padding: 0;
+}

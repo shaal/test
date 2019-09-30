@@ -1,0 +1,19 @@
+uuid: 0b191220-1720-4001-acb2-b5ff57b2a033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_languages
+    - node.type.profile
+id: node.profile.field_profile_languages
+field_name: field_profile_languages
+entity_type: node
+bundle: profile
+label: Languages
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

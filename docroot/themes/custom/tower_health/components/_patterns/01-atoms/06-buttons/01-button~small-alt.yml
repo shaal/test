@@ -1,0 +1,8 @@
+button_url:
+  "#"
+button_content:
+  "Small Alternative Button"
+button_modifiers:
+  1:
+    "small-alt"
+

@@ -1,0 +1,21 @@
+uuid: 434009f1-1068-442d-ad8e-1591175c134a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_profile_languages
+field_name: field_profile_languages
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

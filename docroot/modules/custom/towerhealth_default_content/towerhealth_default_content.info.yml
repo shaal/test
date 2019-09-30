@@ -1,0 +1,19 @@
+name: Tower Health Default content.
+type: module
+description: 'Default content for Tower Health.'
+core: 8.x
+package: Custom
+
+default_content:
+  node:
+    - 48fcbd1f-7406-494b-a594-46005e6a223d
+    - 27d05f1b-6797-4af4-bdee-1d6e817c3308
+    - 7d4b5177-b707-4fd1-9a0a-3da4b9512668
+    - acdaec60-7773-40c9-9b89-67b66b460bea
+    - 7d78a112-cb1b-4884-9c11-8b924be4635f
+    - f91e6b91-18d3-4e74-8f3c-1e5ce28b5825
+  taxonomy_term:
+    - 6279202e-7803-45a9-8478-bdbfb2e1a237
+    - 46b03a23-426a-4bc5-8529-86d655142f19
+    - 89b18362-6d09-42fc-b167-c808d54b92cb
+    - 94848d58-9882-49a6-b96b-1e7e24e9355f

@@ -1,0 +1,11 @@
+uuid: 98d6c158-b04c-4639-8b17-3a44a6787c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hospital_affiliation
+id: taxonomy_vocabulary_hospital_affiliation
+action: page_not_found
+allow_override: 1
+redirect: ''
+redirect_code: 301

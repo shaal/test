@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.service.field_area_of_care_ref
     - field.field.node.service.field_body
+    - field.field.node.service.field_conditions_ref
     - node.type.service
     - workflows.workflow.default
   module:
@@ -35,6 +36,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_conditions_ref:
+    weight: 123
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   moderation_state:
     type: moderation_state_default
@@ -86,4 +96,9 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden: {  }

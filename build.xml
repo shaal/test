@@ -60,14 +60,30 @@
 
         <!-- Include styleguide resources in the theme. This approach will symlink
              resources in development environments, and copy them for artifact builds. -->
-        <!-- <includeresource source="styleguide/source/assets/css" dest="${drupal.root}/themes/custom/example_theme/css" /> -->
+        <phingcall target="build-styleguide" />
+    </target>
+
+    <!-- Target: install-styleguide
+         Installs the styleguide
+         -->
+    <target name="install-styleguide">
+        <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${styleguide.root}" />
+        <exec command="yarn" dir="${styleguide.root}" />
+    </target>
+
+
+    <!-- Target: build-styleguide
+         Builds the styleguide
+         -->
+    <target name="build-styleguide">
+        <exec command="yarn build" dir="${styleguide.root}" />
     </target>
 
 
     <!-- Target: install
          Running this target will also run the build target.
          -->
-    <target name="install" depends="set-site,build,drupal-validate-clean-config,drupal-has-database-connection,drupal-install-if-no-config" description="Install the application.">
+    <target name="install" depends="set-site,install-styleguide,build,drupal-validate-clean-config,drupal-has-database-connection,drupal-install-if-no-config" description="Install the application.">
         <drush command="site-install" assume="yes">
             <option name="site-name">${projectname}</option>
             <option name="account-name">${drupal.site.admin_user}</option>
@@ -126,15 +142,8 @@
 
     <!-- Target: code-review -->
     <target name="code-review" description="Run the automated code reviews.">
-        <!-- Run PHP's built in linter ('php -l') -->
-        <phplint deprecatedAsError="true" haltonfailure="true">
-            <fileset dir="${drupal.root}" includesfile="${phplint.includesfile}" />
-        </phplint>
-
-        <!-- Run PHP Code Sniffer. -->
-        <property name="phpcs.command" value="vendor/bin/phpcs --standard=${phpcs.standard} --ignore=${phpcs.ignore} ${phpcs.directories}" />
-        <echo msg="$> ${phpcs.command}" />
-        <exec command="${phpcs.command}" logoutput="true" checkreturn="true" />
+        <phingcall target="tower-health-run-phplint" />
+        <phingcall target="tower-health-code-sniffer" />
 
         <!-- Run PHP Mess Detector. -->
         <property name="phpmd.command" value="vendor/bin/phpmd ${phpmd.directories} ${phpmd.format} ${phpmd.rulesets} --suffixes=${phpmd.suffixes}" />
@@ -142,7 +151,42 @@
         <exec command="${phpmd.command}" logoutput="true" checkreturn="true" />
     </target>
 
-  
+    <property name="drupal_code_sniffer.standard" value="vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml" />
+    <property name="drupal_code_sniffer.files" value="conf/drupal_code_sniffer_files.txt" />
+    <property name="drupal_code_sniffer.haltonerror" value="true" />
+
+    <!-- Target: tower-health-code-sniffer -->
+    <target name="tower-health-code-sniffer">
+        <phpcodesniffer
+                standard="${drupal_code_sniffer.standard}"
+                haltonerror="${drupal_code_sniffer.haltonerror}"
+                verbosity="1">
+            <!-- Drupal code -->
+            <fileset dir="${build.dir}/${drupal.root}" includesfile="${drupal_code_sniffer.files}" expandsymboliclinks="true" />
+        </phpcodesniffer>
+    </target>
+
+    <!-- Target: tower-health-run-phplint -->
+    <target name="tower-health-run-phplint">
+        <phplint haltonfailure="false">
+            <!-- modules -->
+            <fileset dir="${build.dir}/${drupal.root}/modules/custom">
+                <include name="**/*.php" />
+            </fileset>
+            <!-- profiles -->
+            <fileset dir="${build.dir}/${drupal.root}/profiles/custom">
+                <include name="**/*.php" />
+            </fileset>
+            <!-- themes -->
+            <fileset dir="${build.dir}/${drupal.root}/themes/custom/tower_health">
+                <include name="templates/*.php" />
+                <include name="templates/*.inc" />
+                <include name="*.theme" />
+            </fileset>
+        </phplint>
+        <echo>PHP Lint was successful</echo>
+    </target>
+
     <!-- Target: code-fix -->
     <target name="code-fix" description="Run the automated code fixer.">
         <!-- Run PHP Code Beautifier and Fixer. -->
@@ -150,7 +194,6 @@
         <echo msg="$> ${phpcbf.command}" />
         <exec command="${phpcbf.command}" logoutput="true" checkreturn="false" />
     </target>
-
   
     <!-- Target: artifact -->
     <target name="artifact" description="Build and deploy the application.">
@@ -158,6 +201,5 @@
             <property name="build.env" value="acquia" />
         </phing>
     </target>
-
 
 </project>

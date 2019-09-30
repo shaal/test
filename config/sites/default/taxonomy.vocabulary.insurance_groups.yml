@@ -1,0 +1,8 @@
+uuid: a9db9592-0002-4bc7-8e31-f1dc0cfb70bb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Insurance groups'
+vid: insurance_groups
+description: ''
+weight: 0

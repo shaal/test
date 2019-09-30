@@ -1,0 +1,28 @@
+uuid: 85268a55-f516-43b4-833b-672bab9e57e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_services_ref
+    - node.type.location
+    - node.type.service
+id: node.location.field_services_ref
+field_name: field_services_ref
+entity_type: node
+bundle: location
+label: 'Available Services'
+description: 'What services are available at this location? Use the autocomplete field above to select from a list of existing services. If a service is not in the list, <a href="/node/add/service" title="Create a new service page">create it first</a>.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      service: service
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

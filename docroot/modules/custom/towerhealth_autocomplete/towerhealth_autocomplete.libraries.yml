@@ -1,0 +1,5 @@
+towerhealth_autocomplete:
+  js:
+    js/towerhealth_autocomplete.js: {}
+  dependencies:
+    - core/drupal.autocomplete

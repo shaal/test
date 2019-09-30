@@ -1,0 +1,55 @@
+@mixin button($bg:$primary-dark, $color:$white, $border:$trust, $hoverBg: $trust-ltst, $hoverColor: $primary-dark) {
+  @include transition(all, 0.15s, ease-in);
+  background-color: $bg;
+  border: none;
+  color: $color;
+  border-left: 6px solid $border;
+  cursor: pointer;
+  line-height: 1.4;
+  padding: 1em 1.25em;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+
+  &:visited {
+    color: $color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.025);
+    color: $hoverColor;
+    background-color: $hoverBg;
+    border-color: $hoverColor;
+  }
+}
+
+@mixin button-alt {
+  @include button($trust-aa, $white, $primary-dark, $trust-ltst, $hoverColor: $primary-dark);
+}
+
+@mixin button-small {
+  @include adjust-font-size-to($label, .8);
+  font-weight: 600;
+  padding: .75em 1em;
+}
+
+.button {
+  @include button;
+
+  &--alt {
+    @include button-alt;
+  }
+  
+  &--small {
+    @include button;
+    @include button-small;
+  }
+  
+  &--small-alt {
+    @include button-alt;
+    @include button-small;
+  }
+}

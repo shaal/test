@@ -1,0 +1,20 @@
+uuid: 2e862c00-3c05-48b6-953b-9210a9199691
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tower_health
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: tower_health_page_title
+theme: tower_health
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,190 @@
+uuid: 7673e9bd-f45e-46f5-aca7-b2f255b6da9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+    - search_api_solr
+    - search_api
+  config:
+    - field.storage.node.field_location_ref
+    - field.storage.node.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.node.field_services_ref
+    - field.storage.node.field_conditions_ref
+    - search_api.server.local_development
+    - core.entity_view_mode.node.search_index
+id: towerhealth
+name: TowerHealth
+description: ''
+read_only: false
+field_settings:
+  location_services_condition_name:
+    label: 'Services » Content » Related Conditions » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:field_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+        - field.storage.node.field_conditions_ref
+      module:
+        - node
+        - taxonomy
+        - taxonomy
+  location_services_title:
+    label: 'Services » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+      module:
+        - node
+        - node
+  location_title_string:
+    label: 'Location » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_ref:entity:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_ref
+      module:
+        - node
+        - node
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: solr_text_ngram
+    dependencies:
+      module:
+        - taxonomy
+  provider_specialties_condition_name:
+    label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+      module:
+        - taxonomy
+        - taxonomy
+        - taxonomy
+  provider_specialties_name:
+    label: 'Medical Specialties » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+      module:
+        - taxonomy
+        - taxonomy
+  provider_specialties_name_string:
+    label: 'Medical Specialties » Taxonomy term » Name » String '
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+      module:
+        - taxonomy
+        - taxonomy
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          location: search_index
+          page: search_index
+          profile: search_index
+          program: search_index
+          service: search_index
+        'entity:taxonomy_term':
+          areas_of_care: ''
+          condition: ''
+          medical_specialty: ''
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: solr_text_ngram
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  vid:
+    label: Vocabulary
+    datasource_id: 'entity:taxonomy_term'
+    property_path: vid
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected:
+        - areas_of_care
+        - program_type
+        - region
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  ignorecase:
+    all_fields: true
+    fields:
+      - location_services_condition_name
+      - location_services_title
+      - location_title_string
+      - name
+      - provider_specialties_condition_name
+      - provider_specialties_name
+      - provider_specialties_name_string
+      - rendered_item
+      - title
+      - type
+      - vid
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
+  reverse_entity_references: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_development

@@ -1,0 +1,13 @@
+@mixin link {
+  color: $trust-aa;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    color: $trust-aa;
+  }
+}
+
+.link {
+  @include link;
+}

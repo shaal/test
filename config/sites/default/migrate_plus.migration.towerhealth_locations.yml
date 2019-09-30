@@ -1,0 +1,86 @@
+uuid: 9311ed28-08e0-4c12-be2b-233f15c62903
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+_core:
+  default_config_hash: H9dmWueitcXA7CXkc5mGfZ-A7C9guUH9UT57mnX88Us
+id: towerhealth_locations
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import tower health location content'
+source:
+  plugin: csv
+  path: modules/custom/towerhealth_msow_migration/data/tbl_Dir_Offices.csv
+  header_offset: 1
+  ids:
+    - location_id
+  track_changes: true
+  fields:
+    -
+      name: location_id
+      label: 'Location ID'
+    -
+      name: office_name
+      label: Title
+    -
+      name: address_1
+      label: 'Address 1'
+    -
+      name: address_2
+      label: 'Address 2'
+    -
+      name: city
+      label: City
+    -
+      name: state
+      label: State
+    -
+      name: zip_code
+      label: Zip_Code
+    -
+      name: phone_number
+      label: 'Phone number'
+    -
+      name: office_contact
+      label: 'Office Contact'
+    -
+      name: handicap_access
+      label: 'Handicap Access'
+    -
+      name: fax_number
+      label: 'Fax number'
+process:
+  title:
+    -
+      plugin: get
+      source: office_name
+    -
+      plugin: default_value
+      default_value: 'TowerHealth Location'
+  field_location_address/country_code:
+    plugin: default_value
+    default_value: US
+  field_location_address/address_line1: address_1
+  field_location_address/address_line2: address_2
+  field_location_address/locality: city
+  field_location_address/administrative_area: state
+  field_location_address/postal_code: zip_code
+  field_location_phone_number: phone_number
+  field_location_id: location_id
+  field_location_fax: fax_number
+  type:
+    plugin: default_value
+    default_value: location
+  moderation_state:
+    plugin: default_value
+    default_value: published
+destination:
+  plugin: node_merge
+  lookup_field: field_location_id
+migration_dependencies: null

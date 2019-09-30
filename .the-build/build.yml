@@ -62,3 +62,24 @@ acquia:
   realm: "devcloud"
   site: "towerhealthcm"
   env: "dev"
+
+# Styleguide settings
+styleguide:
+  root: "styleguide"
+
+# Configuration for using PHP Mess Detector to check for general PHP best practices,
+# unused variables, and to agnalyze complexity.
+#
+# @see https://phpmd.org/
+#
+# These values are used in the build.dist.xml template:
+#   $> phpmd ${phpmd.directories} ${phpmd.format} ${phpmd.rulesets} --suffixes=${phpmd.suffixes}
+phpmd:
+  # Comma-separated list of directories to review.
+  directories: "${drupal.root}/modules/custom/,${drupal.root}/themes/custom/tower_health/templates,${drupal.root}/themes/custom/tower_health/tower_health.theme,${drupal.root}/profiles/custom/"
+  # Output format for phpmd.
+  format: text
+  # Comma-separated list of ruleset paths or names.
+  rulesets: "${build.thebuild.dir}/defaults/standard/phpmd.xml"
+  # File extensions to review.
+  suffixes: php,inc,module,theme,profile,install,test

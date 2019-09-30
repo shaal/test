@@ -1,0 +1,28 @@
+uuid: e8ea1551-f097-40b8-9619-a37dbb2f46f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_image
+    - media.type.image
+    - node.type.location
+id: node.location.field_location_image
+field_name: field_location_image
+entity_type: node
+bundle: location
+label: Image
+description: 'Upload or select an existing image from the image library to help the user with visual recognition of this location.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

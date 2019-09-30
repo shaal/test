@@ -18,6 +18,9 @@
 /docroot/themes/custom/*/svg/
 /docroot/themes/custom/*/imgs/
 
+# Ignore yarn error log
+/docroot/themes/custom/*/yarn-error.log
+
 # Ignore Drupal files
 /docroot/sites/*/files/
 

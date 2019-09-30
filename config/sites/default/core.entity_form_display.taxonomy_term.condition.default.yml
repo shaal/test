@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.condition.field_alternative_names
-    - field.field.taxonomy_term.condition.field_medical_specialties_ref
     - taxonomy.vocabulary.condition
   module:
     - path
@@ -29,15 +28,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
-  field_medical_specialties_ref:
-    weight: 31
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   name:
     type: string_textfield

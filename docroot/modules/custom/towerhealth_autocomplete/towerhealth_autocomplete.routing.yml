@@ -1,0 +1,14 @@
+towerhealth_autocomplete.autocomplete.finddoctor:
+  path: /search/autocomplete/provider
+  defaults:
+    _controller: \Drupal\towerhealth_autocomplete\Controller\FindProviderController::handleAutocomplete
+    _format: json
+  requirements:
+    _permission: 'access content'
+towerhealth_autocomplete.autocomplete.findlocation:
+  path: /search/autocomplete/location
+  defaults:
+    _controller: \Drupal\towerhealth_autocomplete\Controller\FindLocationController::handleAutocomplete
+    _format: json
+  requirements:
+    _permission: 'access content'

@@ -1,6 +1,6 @@
 # Tower Health - Content Model
 
-This is the development repository for the Tower Health content model in Drupal 8. It contains the codebase and an environment to run the site for development.
+This is the development repository for the Tower Health site in Drupal 8. It contains the codebase and an environment to run the site for development.
 
 ## Table of Contents
 
@@ -57,8 +57,7 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
 1. Download the most current dependencies: `composer install`
 2. Rebuild your local CSS and Drupal settings file: `phing build`
 3. Reinstall Drupal: `phing install`
-4. Run your migrations: `phing migrate`
-5. ... OR run all three phing targets at once: `phing install`
+5. ... OR run all phing targets at once: `phing install`
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
@@ -75,7 +74,35 @@ Project-specific:
 General:
 
 * [Drupal Development](docs/general/drupal_development.md)
-* [Styleguide Development](docs/general/styleguide_development.md)
+
+## Styleguide
+
+The styleguide is built using [Emulsify](https://www.drupal.org/project/emulsify). Emulsify requires the styleguide to be embeded within the theme. We have created a symlink to the styleguide at /styleguide to avoid needing to navigate to docroot/themes/custom/tower_health.
+
+### Emulsify documentation
+* [Wiki](https://github.com/fourkitchens/emulsify/wiki/Orientation)
+* [Install guide](https://github.com/fourkitchens/emulsify/wiki/Install-(Composer))
+* [Drupal usage](https://github.com/fourkitchens/emulsify/wiki/Drupal-Usage)
+* [Gulp config](https://github.com/fourkitchens/emulsify/wiki/Gulp-Config)
+
+### How to use
+* Serve the styleguide and watch for changes:
+  * From your local machine (not inside of Vagrant), change to the /styleguide folder and install the styleguide:
+    * `cd /styleguide`
+    * `yarn install`
+  * Now, run the styleguide:
+    * `yarn start`
+  * After yarn starts, visit the styleguide at http://localhost:3000
+  * Deploy to gh-pages
+    * `yarn deploy`
+  * Compile css and assets
+    * `yarn compile`
+
+## Performance
+* [Performance Audit](https://docs.google.com/spreadsheets/d/13FHaj15h-eoUAuXzIpsPzh1uTowO5g2NSzCHJSpugjA/edit#gid=0)
+* [Performance Budget](https://docs.google.com/spreadsheets/d/1pKr3cJxcpQ6R88b-w2oBWSqCAs1-klD_HS_lpcu4yug/edit#gid=1700686844)
+* [Performance testing](docs/performance_testing.md)
+
 
 ----
 Copyright 2019 Palantir.net, Inc.

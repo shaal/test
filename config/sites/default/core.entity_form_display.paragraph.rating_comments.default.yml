@@ -1,0 +1,49 @@
+uuid: 90c9298a-4026-4a3d-bc33-813054ad5775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rating_comments.field_rating_comment_body
+    - field.field.paragraph.rating_comments.field_rating_comment_date
+    - field.field.paragraph.rating_comments.field_rating_comment_id
+    - field.field.paragraph.rating_comments.field_rating_comment_rating
+    - paragraphs.paragraphs_type.rating_comments
+  module:
+    - datetime
+    - text
+id: paragraph.rating_comments.default
+targetEntityType: paragraph
+bundle: rating_comments
+mode: default
+content:
+  field_rating_comment_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_rating_comment_date:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_rating_comment_id:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_rating_comment_rating:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true

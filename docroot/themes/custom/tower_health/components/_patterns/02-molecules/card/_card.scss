@@ -1,0 +1,32 @@
+.card__title {
+  @extend %h2;
+  @include no-bottom;
+
+  &-link {
+    @include link;
+  }
+}
+
+.card__subtitle {
+  @extend %h3;
+  @include no-bottom;
+  color: $gray;
+}
+
+.card__body {
+  margin: 0.7em 0 1em;
+}
+
+.card__link {
+  @include link;
+}
+
+.card__button {
+  @include button;
+}
+
+// Variations
+.card--bg {
+  background-color: $gray-light;
+  padding: 1em;
+}

@@ -1,0 +1,16 @@
+# Breakpoints - change based on site need
+tower_health.small:
+  label: small
+  mediaQuery: 'all and (min-width: 25em)'
+tower_health.small-med:
+  label: small-med
+  mediaQuery: 'all and (min-width: 26em)'
+tower_health.small-large:
+  label: small-large
+  mediaQuery: 'all and (min-width: 41em)'
+tower_health.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 48em)'
+tower_health.large:
+  label: large
+  mediaQuery: 'all and (min-width: 61.25em)'

@@ -1,0 +1,107 @@
+id: towerhealth_providers
+label: Import tower health provider content
+migration_groups:
+  - TowerHealth MSOW import
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'csv'
+  # Full path to the file.
+  path: 'modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  header_row_count: 1
+  ids:
+   - practioner_id
+  track_changes: true
+  # Here we identify the columns of interest in the source file.
+  # Each numeric key is the 0-based index of the column.
+  # For each column, the key below is the field name assigned to
+  # the data on import, to be used in field mappings below.
+  # The value is a user-friendly string for display by the
+  # migration UI.
+  fields:
+    0:
+      name: practioner_id
+      label: 'Practioner ID'
+    1:
+      name: last_name
+      label: 'Last name'
+    # Unsure why this column needed to be set to 3 instead of 2.
+    3:
+      name: first_name
+      label: 'First name'
+    4:
+      name: middle_name
+      label: 'Middle name'
+    5:
+      name: professional_title
+      label: 'Professional Title'
+    6:
+      name: gender
+      label: 'Gender'
+    7:
+      name: app
+      label: 'APP'
+    8:
+      name: employment_status
+      label: 'Employment Status'
+    9:
+      name: npi_id
+      label: 'NPI ID'
+
+process:
+  field_profile_practid: practioner_id
+
+  field_profile_first_name: first_name
+
+  field_profile_last_name: last_name
+
+  field_profile_middle_name: middle_name
+
+  field_profile_gender:
+    - plugin: static_map
+      source: gender
+      map:
+        M: male
+        F: female
+    - plugin: default_value
+      default_value: female
+
+  field_profile_npi: npi_id
+
+  field_profile_professional_title: professional_title
+
+  field_profile_type:
+    - plugin: static_map
+      source:
+        - app
+        - employment_status
+      map:
+        'FALSE':
+          'Employed': tower_health_employed
+          'Contracted': contracted
+          '': independent
+        'TRUE':
+          'Employed': app_employed
+          'Contracted': contracted
+          '': independent
+    - plugin: default_value
+      default_value: tower_health_employed
+
+  type:
+    plugin: default_value
+    default_value: profile
+
+  moderation_state:
+    plugin: default_value
+    default_value: published
+
+destination:
+  plugin: 'node_merge'
+  lookup_field: 'field_profile_practid'

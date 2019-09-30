@@ -1,0 +1,76 @@
+// @copyright Copyright (c) 2019 Palantir.net
+
+%input {
+  border-radius: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 4em;
+  padding: 1.25em .25em;
+  border: 1px solid $gray-light;
+  font-size: 16px;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    border-color: $trust-aa;
+  }
+}
+
+%label,
+label {
+  @include adjust-font-size-to($label);
+  font-weight: 400;
+  color: $trust-aa;
+  display: block;
+  margin-bottom: rhythm(.25);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  @extend %input;
+}
+
+legend {
+  @include adjust-font-size-to($label, .8);
+  font-weight: 700;
+  color: $gray-dark;
+  margin-bottom: rhythm(.45);
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+option,
+optgroup {
+  @include adjust-font-size-to($label, .8);
+}
+
+// Placeholder Text
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $gray;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: $gray;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: $gray;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $gray;
+}

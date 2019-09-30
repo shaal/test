@@ -1,0 +1,176 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/service"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_conditions_ref": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7d4b5177-b707-4fd1-9a0a-3da4b9512668"
+        }
+    ],
+    "vid": [
+        {
+            "value": 13
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "service"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-09-05T18:31:26+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c43f45c4-7715-4f5e-929a-d1f441e8e44c"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c43f45c4-7715-4f5e-929a-d1f441e8e44c"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_conditions_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/condition"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "89b18362-6d09-42fc-b167-c808d54b92cb"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Allergy & Immunology",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-09-05T18:30:34+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-09-05T18:31:26+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "field_body": [
+        {
+            "value": "<p>Our physicians in this specialty treat patients with allergies and immune system problems. An allergy occurs when your body reacts negatively to something that is not typically harmful.<\/p>\r\n\r\n<p>The immune system is the body's way of preventing illness, which is weakened in some people due to illness, medication, or other factors.<\/p>\r\n\r\n<h2>Conditions We Treat<\/h2>\r\n\r\n<p>Allergists&nbsp;\u2013 doctors specializing in treating allergies&nbsp;\u2013 provide comprehensive care and treatment for a wide range of allergy-related conditions including:<\/p>\r\n\r\n<ul>\r\n\t<li>Asthma<\/li>\r\n\t<li>Conjunctivitis<\/li>\r\n\t<li>Ear infections<\/li>\r\n\t<li>Eczema<\/li>\r\n\t<li>Hives<\/li>\r\n\t<li>Nasal congestion<\/li>\r\n\t<li>Rashes<\/li>\r\n\t<li>Sinusitis<\/li>\r\n<\/ul>\r\n\r\n<h2>Diagnosing Allergies<\/h2>\r\n\r\n<p>Before your doctor can provide an appropriate treatment or recommendation for handling your allergy-related condition, a diagnosis for your specific allergy is needed. Your doctor may do this with:<\/p>\r\n\r\n<ul>\r\n\t<li>Skin patch testing<\/li>\r\n\t<li>Journaling&nbsp;\u2013 Keeping track of symptoms and irritations to determine the root cause<\/li>\r\n\t<li>Physical exam<\/li>\r\n\t<li>Review of medical history<\/li>\r\n<\/ul>\r\n\r\n<p>Following a diagnosis, your doctor will find a treatment plan or medication that will be best for your condition.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Our physicians in this specialty treat patients with allergies and immune system problems. An allergy occurs when your body reacts negatively to something that is not typically harmful.<\/p>\n\n<p>The immune system is the body's way of preventing illness, which is weakened in some people due to illness, medication, or other factors.<\/p>\n\n<h2>Conditions We Treat<\/h2>\n\n<p>Allergists\u00a0\u2013 doctors specializing in treating allergies\u00a0\u2013 provide comprehensive care and treatment for a wide range of allergy-related conditions including:<\/p>\n\n<ul><li>Asthma<\/li>\n\t<li>Conjunctivitis<\/li>\n\t<li>Ear infections<\/li>\n\t<li>Eczema<\/li>\n\t<li>Hives<\/li>\n\t<li>Nasal congestion<\/li>\n\t<li>Rashes<\/li>\n\t<li>Sinusitis<\/li>\n<\/ul><h2>Diagnosing Allergies<\/h2>\n\n<p>Before your doctor can provide an appropriate treatment or recommendation for handling your allergy-related condition, a diagnosis for your specific allergy is needed. Your doctor may do this with:<\/p>\n\n<ul><li>Skin patch testing<\/li>\n\t<li>Journaling\u00a0\u2013 Keeping track of symptoms and irritations to determine the root cause<\/li>\n\t<li>Physical exam<\/li>\n\t<li>Review of medical history<\/li>\n<\/ul><p>Following a diagnosis, your doctor will find a treatment plan or medication that will be best for your condition.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

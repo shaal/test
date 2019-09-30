@@ -1,0 +1,29 @@
+uuid: ca40a93f-e7d1-42e3-b6ce-acb2888b7df1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_related_conditions_ref
+    - taxonomy.vocabulary.condition
+    - taxonomy.vocabulary.medical_specialty
+id: taxonomy_term.medical_specialty.field_related_conditions_ref
+field_name: field_related_conditions_ref
+entity_type: taxonomy_term
+bundle: medical_specialty
+label: 'Related Conditions'
+description: 'Add the conditions that are associated with this medical specialty. Adding a related condition allows the find a provider search to match providers based on their chosen specialties and those specialties related conditions.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      condition: condition
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
