@@ -50,8 +50,6 @@ class TowerHealthLookupNode extends ProcessPluginBase {
     if (isset($this->configuration['lookup_field'])) {
       $lookup_field = $this->configuration['lookup_field'];
       $id = $value;
-      print_r($lookup_field);
-      print_r($id);
 
       if (!empty($id)) {
         $query = \Drupal::entityQuery('node');

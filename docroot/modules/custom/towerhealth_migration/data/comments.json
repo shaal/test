@@ -1,0 +1,679 @@
+{
+  "status": {
+      "message": "success",
+      "code": 200
+  },
+  "data": {
+      "client": "Reading Health",
+      "entities": [
+          {
+              "id": "1598729055",
+              "name": "SMITH: CHRISTOPHER",
+              "totalCommentCount": 126,
+              "totalRatingCount": 332,
+              "totalSurveyCount": 332,
+              "overallRating": {
+                  "name": "Overall Satisfaction",
+                  "value": 4.9,
+                  "categoryResponseCount": 332,
+                  "questionRatings": [
+                      {
+                          "name": "Give easy to understand instruction",
+                          "value": 4.9,
+                          "responseCount": 312
+                      },
+                      {
+                          "name": "Provider expl in way you understand",
+                          "value": 5.0,
+                          "responseCount": 331
+                      },
+                      {
+                          "name": "Provider listen carefully to you",
+                          "value": 5.0,
+                          "responseCount": 330
+                      },
+                      {
+                          "name": "Know important info medical history",
+                          "value": 4.9,
+                          "responseCount": 331
+                      },
+                      {
+                          "name": "Show respect for what you say",
+                          "value": 4.9,
+                          "responseCount": 332
+                      },
+                      {
+                          "name": "Spend enough time with you",
+                          "value": 4.9,
+                          "responseCount": 329
+                      }
+                  ]
+              },
+              "comments": [
+                  {
+                      "id": 506065214,
+                      "surveyKey": "1887701309",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-26T14:44:10Z",
+                      "wordCount": 11,
+                      "comment": "*Dr. Smith always takes time with me.  I never feel rushed.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064911,
+                      "surveyKey": "1898966622",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-21T14:26:18Z",
+                      "wordCount": 41,
+                      "comment": "Dr. Smith is an excellent provider. I was somewhat disappointed thatI was not able to schedule my next 4 month checkup with Dr Smith. I will be seeing a PA instead. A n appointment with Dr Smith was made for  8months",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 4.58
+                      }
+                  },
+                  {
+                      "id": 506064890,
+                      "surveyKey": "1900725645",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-20T23:36:27Z",
+                      "wordCount": 20,
+                      "comment": "It would be nice if you could get into see the Doctor for a sick visit, in a timely manner.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064873,
+                      "surveyKey": "1900725845",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-20T16:33:45Z",
+                      "wordCount": 111,
+                      "comment": "Dr Smith is the reason I am with this practice He is a very knowledgeable ,compassionate , and caring Dr. He listens to everything you have to say and Speaks to you so you understand everything. he addresses any concerns you may have and recommends services such as tests , vaccines, etc that you need to be up to date with. I am not a person who likes going to the Dr but he makes the experience as good as going to a Dr can be! Thank you Dr Smith! I have recommended several family & friends to him through out the years and they have all felt the same way about him",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064818,
+                      "surveyKey": "1894866321",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-19T01:29:06Z",
+                      "wordCount": 23,
+                      "comment": "Excellent physician when he cared for my Mother. Now that my previous physician has retired I find him equally effective as my doctor.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064376,
+                      "surveyKey": "1892138899",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-11T17:28:56Z",
+                      "wordCount": 16,
+                      "comment": "Dr. Smith has always been very professional, always listens to my concerns and acts on them",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064356,
+                      "surveyKey": "1893091349",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-11T14:35:46Z",
+                      "wordCount": 22,
+                      "comment": "Only thought, serve client as arrived versus scheduled time as client are rude for not being early, as suggested, for their appointment.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 4.58
+                      }
+                  },
+                  {
+                      "id": 506064355,
+                      "surveyKey": "1893091203",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-11T14:32:26Z",
+                      "wordCount": 47,
+                      "comment": "I feel that I get the best care from Dr. Smith. he is very good at what he does. Takes the time to explain thing so that I understand and answers all my questions and helpful with helping me make medical descision that are best for me.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064157,
+                      "surveyKey": "1889114917",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-07T04:17:09Z",
+                      "wordCount": 22,
+                      "comment": "doctor Smith is very friendly and knowledgeable. The receptionist went out of her way to help me find a qualified physical therapist.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064091,
+                      "surveyKey": "1886610562",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-04T12:55:47Z",
+                      "wordCount": 2,
+                      "comment": "excellent doctor",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 506064067,
+                      "surveyKey": "1886610082",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-07-03T21:16:55Z",
+                      "wordCount": 6,
+                      "comment": "He's treated me for several years.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496569,
+                      "surveyKey": "1880551872",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-26T18:35:02Z",
+                      "wordCount": 6,
+                      "comment": "Dr. Smith is an excellent doctor.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496540,
+                      "surveyKey": "1880551881",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-26T14:12:08Z",
+                      "wordCount": 9,
+                      "comment": "Very kind and willing to listen to all concerns",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496477,
+                      "surveyKey": "1879674507",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-25T17:18:56Z",
+                      "wordCount": 8,
+                      "comment": "Always professional and concerned for my well being",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496447,
+                      "surveyKey": "1875827686",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-25T11:10:18Z",
+                      "wordCount": 10,
+                      "comment": "excellent combination of medical knowledge combined with excellent people skills",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496394,
+                      "surveyKey": "1875827796",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-23T19:11:57Z",
+                      "wordCount": 13,
+                      "comment": "Patient and personal. Willing to hear and answer ALL my questions. Very through",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496271,
+                      "surveyKey": "1875828682",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-20T18:51:43Z",
+                      "wordCount": 6,
+                      "comment": "dr. smith is an excellent doctor",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485496113,
+                      "surveyKey": "1867766602",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-19T01:26:52Z",
+                      "wordCount": 6,
+                      "comment": "Dr Smith is a wonderful doctor!",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485495863,
+                      "surveyKey": "1868786010",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-13T09:46:25Z",
+                      "wordCount": 4,
+                      "comment": "Dr Smith is excellent.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  },
+                  {
+                      "id": 485495847,
+                      "surveyKey": "1868786441",
+                      "source": "Reading Health PG Survey-15",
+                      "mentionTime": "2019-06-12T16:58:48Z",
+                      "wordCount": 61,
+                      "comment": "During my emergency and contagious condition, my phone calls were not answered...the 3rd day my husband found a message on My Chart...apparently office number was blocked and nurse was unable to reach me on numerous occasions.  Then I left a message for Dr. Smith on My Chart...great way to communicate when too busy for phone calls . Thank you.",
+                      "ratings": [],
+                      "overallRating": {
+                          "name": "Overall Satisfaction",
+                          "value": 5.0
+                      }
+                  }
+              ],
+              "PGSealOfIntegrity": {
+                  "dataIntegrity": {
+                      "horizontal": {
+                          "darkBackground": {
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE.png"
+                          },
+                          "lightBackground": {
+                              "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.jpg",
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.png"
+                          },
+                          "darkBackgroundHighResolution": {
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE/highresolution.png"
+                          }
+                      },
+                      "stacked": {
+                          "darkBackground": {
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED_WHITE.png"
+                          },
+                          "lightBackground": {
+                              "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.jpg",
+                              "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.png"
+                          }
+                      }
+                  },
+                  "sealOfIntegrity": {
+                      "darkBackground": {
+                          "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.jpg",
+                          "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.png"
+                      },
+                      "lightBackground": {
+                          "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.jpg",
+                          "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.png"
+                      }
+                  }
+              },
+              "totalPages": 7,
+              "ratings": []
+          },
+          {
+            "id": "1932177086",
+            "name": "WINANS: LEWIS",
+            "totalCommentCount": 73,
+            "totalRatingCount": 177,
+            "totalSurveyCount": 177,
+            "overallRating": {
+              "value": 4.9
+            },
+            "comments": [
+                {
+                    "id": 506065330,
+                    "surveyKey": "1898966065",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-07-31T18:56:04Z",
+                    "wordCount": 10,
+                    "comment": "Hate the doctor is only in 3 days a week.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 506064793,
+                    "surveyKey": "1897974235",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-07-18T16:11:34Z",
+                    "wordCount": 5,
+                    "comment": "Efficient yet caring and thorough",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 506064784,
+                    "surveyKey": "1898966802",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-07-18T15:41:54Z",
+                    "wordCount": 30,
+                    "comment": "Dr. Winans and Dr. Chacko are my primary care doctors, although I've seen Dr. Chacko more often than Dr. Winans, during the last several years.  Both of them are excellent.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 506064174,
+                    "surveyKey": "1886609599",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-07-08T11:35:54Z",
+                    "wordCount": 1,
+                    "comment": "Outstanding!!",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 506064051,
+                    "surveyKey": "1886610171",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-07-03T15:32:45Z",
+                    "wordCount": 8,
+                    "comment": "the very best care I have ever had",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485496606,
+                    "surveyKey": "1881452034",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-27T12:55:00Z",
+                    "wordCount": 8,
+                    "comment": "Dr. Winan is an excellent physician. Highly recommend.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485495978,
+                    "surveyKey": "1870885649",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-15T11:10:48Z",
+                    "wordCount": 22,
+                    "comment": "Doctor was very good and listened to all my concerns and answered all of my questions and took his time with me.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485495871,
+                    "surveyKey": "1869844592",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-13T13:10:59Z",
+                    "wordCount": 2,
+                    "comment": "excellent experience",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485495653,
+                    "surveyKey": "1863518894",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-07T22:38:39Z",
+                    "wordCount": 10,
+                    "comment": "Very important to have the same doctor for twenty years.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485495622,
+                    "surveyKey": "1863518866",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-07T13:44:06Z",
+                    "wordCount": 17,
+                    "comment": "Very well pleased with all care provided and ease of scheduling other appts by the office staff",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485495589,
+                    "surveyKey": "1852064299",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-06T16:34:39Z",
+                    "wordCount": 1,
+                    "comment": "great",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485495588,
+                    "surveyKey": "1863519592",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-06T16:09:41Z",
+                    "wordCount": 3,
+                    "comment": "Friendly, excellent people-person",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 485495462,
+                    "surveyKey": "1857231210",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-06-04T02:55:38Z",
+                    "wordCount": 2,
+                    "comment": "Went well",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 472109100,
+                    "surveyKey": "1851072556",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-05-29T22:35:22Z",
+                    "wordCount": 5,
+                    "comment": "thanks for fitting me in.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 506063755,
+                    "surveyKey": "1834326872",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-05-21T13:29:02Z",
+                    "wordCount": 22,
+                    "comment": "I have been a patient of *Dr. Winans for many decades -***  He is always happy to see & treat me.  ***",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 506063713,
+                    "surveyKey": "1846270150",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-05-21T10:38:33Z",
+                    "wordCount": 3,
+                    "comment": "kind an caring",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 472108724,
+                    "surveyKey": "1845167290",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-05-20T13:16:08Z",
+                    "wordCount": 15,
+                    "comment": "I needed to follow up on a prescription that they promised to call me about.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 472108585,
+                    "surveyKey": "1847221028",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-05-17T12:56:46Z",
+                    "wordCount": 5,
+                    "comment": "extremely happy with my provider.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 472108510,
+                    "surveyKey": "1846269515",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-05-16T15:17:01Z",
+                    "wordCount": 15,
+                    "comment": "Dr Winans considers past history in decisions that influence my overall high level of wellness",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                },
+                {
+                    "id": 472108147,
+                    "surveyKey": "1840985477",
+                    "source": "Reading Health PG Survey-15",
+                    "mentionTime": "2019-05-10T18:26:24Z",
+                    "wordCount": 18,
+                    "comment": "I have been a patient of Dr. Winans for many years.  I am very confident with his practice.",
+                    "ratings": [],
+                    "overallRating": {
+                        "name": "Overall Satisfaction",
+                        "value": 5.0
+                    }
+                }
+            ],
+            "PGSealOfIntegrity": {
+              "dataIntegrity": {
+                "horizontal": {
+                  "darkBackground": {
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE.png"
+                  },
+                  "lightBackground": {
+                    "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.jpg",
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL.png"
+                  },
+                  "darkBackgroundHighResolution": {
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/HORIZONTAL/PG_SEAL_SM_ICON_HORIZONTAL_WHITE/highresolution.png"
+                  }
+                },
+                "stacked": {
+                  "darkBackground": {
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED_WHITE.png"
+                  },
+                  "lightBackground": {
+                    "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.jpg",
+                    "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/web-emblems/STACKED/PG_EMBLEM_STACKED.png"
+                  }
+                }
+              },
+              "sealOfIntegrity": {
+                "darkBackground": {
+                  "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.jpg",
+                  "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_HIGH_REZ.png"
+                },
+                "lightBackground": {
+                  "jpg": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.jpg",
+                  "png": "https://s3.amazonaws.com/bfountain-prod-cdn/PG/seal-of-integrity/PG_CERTIFIED_SEAL_BW_HIGH_REZ.png"
+                }
+              }
+            },
+            "totalPages": 7,
+            "ratings": []
+          }
+      ],
+      "filter": {
+          "minThreshold": 0.0,
+          "minRatingCount": 30,
+          "minSurveyCount": 0,
+          "minWordCount": 0,
+          "days": 365,
+          "page": 1,
+          "perPage": 20,
+          "showComments": true,
+          "showRatings": true,
+          "configVersion": "v2",
+          "period": {
+              "to": "2019-09-27T06:50:17Z",
+              "from": "2018-09-27T00:00:00Z"
+          }
+      }
+  }
+}

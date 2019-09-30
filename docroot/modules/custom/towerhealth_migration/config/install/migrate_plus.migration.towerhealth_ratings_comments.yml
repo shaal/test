@@ -1,5 +1,5 @@
-id: towerhealth_ratings
-label: Physician Ratings
+id: towerhealth_ratings_comments
+label: Physician Rating Comments
 migration_group: towerhealth
 migration_tags:
   - towerhealth
@@ -14,11 +14,11 @@ source:
   # writes the local file.
   # data_fetcher_plugin: http
   data_fetcher_plugin: file
-  data_parser_plugin: json
+  data_parser_plugin: jsonpath
   urls:
     - modules/custom/towerhealth_migration/data/comments.json
   # An xpath-like selector corresponding to the items to be imported.
-  item_selector: 'data/entities'
+  item_selector: '..comments[*]'
 
   # This configuration is provided by the `http` data fetcher plugin.
   # Do not disclose any sensitive information in the headers.
@@ -44,107 +44,34 @@ source:
   # is relative to the elements retrieved by item_selector.
   fields:
     -
-      name: display_name
-      label: 'Display Name'
-      selector: name
-    -
-      name: npi_id
-      label: 'NPI ID'
+      name: id
       selector: id
     -
-      name: totalRatingCount
-      label: 'Rating Count'
-      selector: totalRatingCount
+      name: date
+      selector: mentionTime
     -
-      name: totalCommentCount
-      label: 'Comment Count'
-      selector: totalCommentCount
+      name: comment
+      selector: comment
     -
-      name: overallRating
-      label: 'Overall Rating'
-      selector: overallRating/value
-    -
-      name: comments
-      label: 'Comments'
-      selector: comments
-
-
+      name: rating
+      selector: overallRating.value
+      
   # Under 'ids', we identify source fields populated above which will uniquely
   # identify each imported item. The 'type' makes sure the migration map table
   # uses the proper schema type for stored the IDs.
   ids:
-    npi_id:
+    id:
       type: integer
 
 destination:
-  plugin: 'entity:node'
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: rating_comments
 
 process:
-  _npi_id:
-      plugin: get
-      source: npi_id
-
-  nid:
-    -
-      plugin: towerhealth_lookup_node
-      lookup_field: field_profile_npi
-      source: '@_npi_id'
-    -
-      plugin: skip_on_empty
-      method: row
-    -
-      plugin: entity_load_field
-      entity_type: node
-      field_name: nid
-    -
-      plugin: extract
-      index:
-        - 0
-        - value
-
-  title:
-    -
-      plugin: get
-      source: '@nid'
-    -
-      plugin: entity_load_field
-      entity_type: node
-      field_name: title
-    -
-      plugin: extract
-      index:
-        - 0
-        - value
-
-  pseudo_rating_comments_paragraph:
-    -
-      plugin: sub_process
-      source: comments
-      process:
-        comment:
-          plugin: migration_lookup
-          migration: towerhealth_ratings_comments
-          source: id
-          no_stub: true
-    -
-      plugin: towerhealth_rating_comments
-
-    field_rating_comments_ref:
-      plugin: sub_process
-      source: '@pseudo_rating_comments_paragraph'
-      process:
-        target_id: '0'
-        target_revision_id: '1'
-
-  field_rating_count: totalRatingCount
-
-  field_rating_comment_count: totalCommentCount
-
-  field_rating_overall: overallRating
-
   type:
     plugin: default_value
-    default_value: profile
-
-migration_dependencies: {  }
-
+    default_value: rating_comments
+  field_rating_comment_body: comment
+  field_rating_comment_date: date
+  field_rating_comment_id: id
+  field_rating_comment_rating: rating

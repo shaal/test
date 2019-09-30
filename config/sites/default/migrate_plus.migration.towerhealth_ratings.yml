@@ -20,7 +20,7 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: json
   urls:
-    - modules/custom/towerhealth_migration/data/ratings.json
+    - modules/custom/towerhealth_migration/data/comments.json
   item_selector: data/entities
   track_changes: true
   fields:
@@ -44,6 +44,10 @@ source:
       name: overallRating
       label: 'Overall Rating'
       selector: overallRating/value
+    -
+      name: comments
+      label: Comments
+      selector: comments
   ids:
     npi_id:
       type: integer
@@ -51,6 +55,24 @@ process:
   _npi_id:
     plugin: get
     source: npi_id
+  pseudo_rating_comments_paragraph:
+    -
+      plugin: sub_process
+      source: comments
+      process:
+        comment:
+          plugin: migration_lookup
+          migration: towerhealth_ratings_comments
+          source: id
+          no_stub: true
+    -
+      plugin: towerhealth_rating_comments
+  field_rating_comments_ref:
+    plugin: sub_process
+    source: '@pseudo_rating_comments_paragraph'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
   nid:
     -
       plugin: towerhealth_lookup_node
