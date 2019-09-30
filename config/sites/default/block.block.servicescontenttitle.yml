@@ -1,0 +1,23 @@
+uuid: 3802c811-6e1a-4f99-9d8c-83a7a7579eea
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.services_content_title
+  module:
+    - facets
+  theme:
+    - tower_health
+id: servicescontenttitle
+theme: tower_health
+region: content
+weight: -2
+provider: null
+plugin: 'facet_block:services_content_title'
+settings:
+  id: 'facet_block:services_content_title'
+  label: Services
+  provider: facets
+  label_display: visible
+  block_id: servicescontenttitle
+visibility: {  }
