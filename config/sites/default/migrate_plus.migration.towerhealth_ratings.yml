@@ -60,16 +60,16 @@ process:
       plugin: sub_process
       source: comments
       process:
-        id:
+        comment:
           plugin: migration_lookup
           migration: towerhealth_ratings_comments
           source: id
           no_stub: true
-          allow_multiple: true
+    -
+      plugin: towerhealth_rating_comments
   field_rating_comments_ref:
     plugin: sub_process
-    source:
-      - '@pseudo_rating_comments_paragraph'
+    source: '@pseudo_rating_comments_paragraph'
     process:
       target_id: '0'
       target_revision_id: '1'

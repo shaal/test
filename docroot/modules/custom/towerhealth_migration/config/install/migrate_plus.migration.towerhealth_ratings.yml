@@ -84,26 +84,6 @@ process:
       plugin: get
       source: npi_id
 
-  pseudo_rating_comments_paragraph:
-  -
-    plugin: sub_process
-    source: comments
-    process:
-      id:
-        plugin: migration_lookup
-        migration: towerhealth_ratings_comments
-        source: id
-        no_stub: true
-        allow_multiple: true
-
-  field_rating_comments_ref:
-    plugin: sub_process
-    source:
-      - '@pseudo_rating_comments_paragraph'
-    process:
-      target_id: '0'
-      target_revision_id: '1'
-
   nid:
     -
       plugin: towerhealth_lookup_node
@@ -135,6 +115,26 @@ process:
       index:
         - 0
         - value
+
+  pseudo_rating_comments_paragraph:
+    -
+      plugin: sub_process
+      source: comments
+      process:
+        comment:
+          plugin: migration_lookup
+          migration: towerhealth_ratings_comments
+          source: id
+          no_stub: true
+    -
+      plugin: towerhealth_rating_comments
+
+    field_rating_comments_ref:
+      plugin: sub_process
+      source: '@pseudo_rating_comments_paragraph'
+      process:
+        target_id: '0'
+        target_revision_id: '1'
 
   field_rating_count: totalRatingCount
 
