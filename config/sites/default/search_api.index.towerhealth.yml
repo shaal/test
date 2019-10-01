@@ -12,9 +12,9 @@ dependencies:
     - field.storage.node.field_location_ref
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.taxonomy_term.field_condition_synonym
     - field.storage.node.field_services_ref
     - field.storage.node.field_conditions_ref
-    - field.storage.taxonomy_term.field_condition_synonym
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
 id: towerhealth
@@ -98,6 +98,19 @@ field_settings:
         - field.storage.taxonomy_term.field_related_conditions_ref
       module:
         - taxonomy
+        - taxonomy
+        - taxonomy
+  provider_specialties_condition_synonym:
+    label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms'
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+        - field.storage.taxonomy_term.field_condition_synonym
+      module:
         - taxonomy
         - taxonomy
   provider_specialties_name:
@@ -204,6 +217,7 @@ processor_settings:
       - location_type_string
       - name
       - provider_specialties_condition_name
+      - provider_specialties_condition_synonym
       - provider_specialties_name
       - provider_specialties_name_string
       - rendered_item
