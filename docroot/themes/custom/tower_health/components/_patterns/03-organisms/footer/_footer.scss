@@ -2,9 +2,10 @@
   padding: 1em;
   font-size: 0.9em;
   line-height: 1.6em;
+  margin-bottom: 0;
 
   @include breakpoint($bp3) {
-    padding: 5em 2em;
+    padding: 2.5em 2em;
   }
 
   .footer-top {
