@@ -56,14 +56,12 @@
     }
 
     &__contact {
-
       a {
         display: block;
       }
     }
 
     &__social {
-
       a {
         display: inline-block;
         margin: 0.25em;
@@ -111,6 +109,10 @@
       a {
         display: block;
         text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
