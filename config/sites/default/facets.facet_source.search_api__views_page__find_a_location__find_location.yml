@@ -1,0 +1,9 @@
+uuid: 30c9243b-bce1-4e1d-adb9-d4a8d6603b46
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__find_a_location__find_location
+name: 'search_api:views_page__find_a_location__find_location'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }
