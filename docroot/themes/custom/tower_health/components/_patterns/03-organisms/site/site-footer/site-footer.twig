@@ -37,16 +37,7 @@
       </div>
     </div>
     <div class="footer__links">
-      {% for section in sections %}
-        <div class="footer__links__section">
-          <span class="footer__links__section__title">
-            {{ section.title }}
-          </span>
-          {% for link in section.links %}
-            <a href="{{ link.href }}">{{ link.title }}</a>
-          {% endfor %}
-        </div>
-      {% endfor %}
+      {% include "@molecules/menus/footer-menu/footer-menu.twig" %}
     </div>
   </div>
   <div class="footer-bottom">
