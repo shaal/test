@@ -1,4 +1,4 @@
-uuid: 49536673-3beb-47df-ad82-42f4fd57c2d2
+uuid: 3debb310-fe81-4e91-b3b1-0818480ea3da
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
     - views.view.find_a_location
   module:
     - search_api
-id: services_content_title
-name: 'Services » Content » Title'
-url_alias: services_content_title
+id: services
+name: 'Services » Content » Title » String '
+url_alias: services
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: location_services_title
+field_identifier: location_services_title_string
 facet_source_id: 'search_api:views_page__find_a_location__find_location'
 widget:
   type: checkbox
