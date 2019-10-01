@@ -31,12 +31,12 @@ third_party_settings:
     group_vertical_tabs:
       children:
         - group_description
+        - group_migrated_data
         - group_on_my_way
         - group_service_content
         - group_flexible_components
         - group_how_t
         - group_insurance
-        - group_migrated_data
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -53,22 +53,22 @@ third_party_settings:
         - field_location_phone_number
         - field_location_fax
         - field_location_hours
-        - field_location_accepting_ref
       parent_name: group_vertical_tabs
-      weight: 10
+      weight: 9
       format_type: tab
       format_settings:
+        label: 'Migrated data'
+        formatter: closed
+        description: "<h3>Migrated data</h3>\r\nThe content in this grouping comes from the MSOW data source and is not intended to be editable. If a value needs to change then the source data needs to be corrected and the content re-imported."
+        required_fields: true
         id: ''
         classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
       label: 'Migrated data'
     group_service_content:
       children:
         - field_services_ref
       parent_name: group_vertical_tabs
-      weight: 6
+      weight: 11
       format_type: tab
       format_settings:
         id: ''
@@ -81,7 +81,7 @@ third_party_settings:
       children:
         - field_location_components
       parent_name: group_vertical_tabs
-      weight: 7
+      weight: 12
       format_type: tab
       format_settings:
         id: ''
@@ -94,7 +94,7 @@ third_party_settings:
       children:
         - field_location_insurance
       parent_name: group_vertical_tabs
-      weight: 9
+      weight: 14
       format_type: tab
       format_settings:
         id: ''
@@ -107,7 +107,7 @@ third_party_settings:
       children:
         - field_location_find_us
       parent_name: group_vertical_tabs
-      weight: 8
+      weight: 13
       format_type: tab
       format_settings:
         id: ''
@@ -120,10 +120,9 @@ third_party_settings:
       children:
         - field_location_type
         - field_location_image
-        - field_body
         - field_location_body
       parent_name: group_vertical_tabs
-      weight: 3
+      weight: 8
       format_type: tab
       format_settings:
         id: ''
@@ -136,7 +135,7 @@ third_party_settings:
       children:
         - field_location_omw
       parent_name: group_vertical_tabs
-      weight: 4
+      weight: 10
       format_type: tab
       format_settings:
         id: ''
@@ -157,7 +156,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_location_address:
-    weight: 4
+    weight: 16
     settings:
       label: above
       formatter_type: null
@@ -187,7 +186,7 @@ content:
     third_party_settings: {  }
     region: content
   field_location_fax:
-    weight: 6
+    weight: 18
     settings:
       label: above
       formatter_type: null
@@ -209,7 +208,7 @@ content:
     third_party_settings: {  }
     region: content
   field_location_hours:
-    weight: 7
+    weight: 19
     settings:
       label: above
       formatter_type: null
@@ -219,7 +218,7 @@ content:
     type: readonly_field_widget
     region: content
   field_location_id:
-    weight: 2
+    weight: 15
     settings:
       label: above
       formatter_type: null
@@ -244,13 +243,13 @@ content:
     type: text_textarea
     region: content
   field_location_omw:
-    weight: 13
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_location_phone_number:
-    weight: 5
+    weight: 17
     settings:
       label: above
       formatter_type: null
@@ -309,7 +308,7 @@ content:
     third_party_settings: {  }
   title:
     type: readonly_field_widget
-    weight: 1
+    weight: 14
     region: content
     settings:
       label: above
