@@ -14,6 +14,7 @@ dependencies:
     - field.storage.taxonomy_term.field_related_conditions_ref
     - field.storage.node.field_services_ref
     - field.storage.node.field_conditions_ref
+    - field.storage.taxonomy_term.field_condition_synonym
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
 id: towerhealth
@@ -139,6 +140,14 @@ field_settings:
           areas_of_care: ''
           condition: ''
           medical_specialty: ''
+  synonym:
+    label: Synonyms
+    datasource_id: 'entity:taxonomy_term'
+    property_path: field_condition_synonym
+    type: solr_text_ngram
+    dependencies:
+      config:
+        - field.storage.taxonomy_term.field_condition_synonym
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -198,6 +207,7 @@ processor_settings:
       - provider_specialties_name
       - provider_specialties_name_string
       - rendered_item
+      - synonym
       - title
       - type
       - vid
