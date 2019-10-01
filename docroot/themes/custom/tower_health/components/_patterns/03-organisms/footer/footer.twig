@@ -4,32 +4,34 @@
       <a href="/" alt="Tower Health logo">
         <img src="{{ logo.src }}" alt="{{ logo.alt }}" />
       </a>
-      <div class="footer__info__social">
-        <a href="{{ social_facebook }}">
-          {% include "social-facebook.svg" %}
-        </a>
-        <a href="{{ social_facebook }}">
-          {% include "social-twitter.svg" %}
-        </a>
-        <a href="{{ social_gplus }}">
-          {% include "social-gplus.svg" %}
-        </a>
-        <a href="{{ social_linkedin }}">
-          {% include "social-linkedin.svg" %}
-        </a>
-        <a href="{{ social_youtube }}">
-          {% include "social-youtube.svg" %}
-        </a>
-        <a href="{{ social_instagram }}">
-          {% include "social-instagram.svg" %}
-        </a>
-        <a href="{{ social_pinterest }}">
-          {% include "social-pinterest.svg" %}
-        </a>
-      </div>
-      <div class="footer__info__contact">
-        {{ contact.address }}
-        <a href="tel:{{contact.phone}}">{{ contact.phone }}</a>
+      <div>
+        <div class="footer__info__social">
+          <a href="{{ social.facebook }}">
+            {% include "social-facebook.svg" %}
+          </a>
+          <a href="{{ social.facebook }}">
+            {% include "social-twitter.svg" %}
+          </a>
+          <a href="{{ social.gplus }}">
+            {% include "social-gplus.svg" %}
+          </a>
+          <a href="{{ social.linkedin }}">
+            {% include "social-linkedin.svg" %}
+          </a>
+          <a href="{{ social.youtube }}">
+            {% include "social-youtube.svg" %}
+          </a>
+          <a href="{{ social.instagram }}">
+            {% include "social-instagram.svg" %}
+          </a>
+          <a href="{{ social.pinterest }}">
+            {% include "social-pinterest.svg" %}
+          </a>
+        </div>
+        <div class="footer__info__contact">
+          {{ contact.address }}
+          <a href="tel:{{contact.phone}}">{{ contact.phone }}</a>
+        </div>
       </div>
     </div>
     <div class="footer__links">

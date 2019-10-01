@@ -3,7 +3,7 @@
   font-size: 0.9em;
   line-height: 1.6em;
 
-  @include breakpoint($bp2) {
+  @include breakpoint($bp3) {
     padding: 5em 2em;
   }
 
@@ -26,18 +26,42 @@
     width: 100%;
     text-align: center;
     margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint($bp3) {
+      flex-wrap: nowrap;
+    }
 
     @include breakpoint($bp4) {
       width: 40%;
       max-width: 361px;
+      flex-wrap: wrap;
     }
 
     img {
       margin: 0 auto;
+
+      @include breakpoint($bp3) {
+        margin-right: 2em;
+      }
+
+      @include breakpoint($bp4) {
+        margin: 0 auto;
+      }
     }
 
     &__contact {
-      margin-top: 2em;
+
+      @include breakpoint($bp3) {
+        margin-top: 0;
+      }
+
+      @include breakpoint($bp4) {
+        margin-top: 2em;
+      }
 
       a {
         display: block;
@@ -47,6 +71,10 @@
 
     &__social {
       margin-top: 2em;
+
+      @include breakpoint($bp3) {
+        margin-top: 0;
+      }
 
       @include breakpoint($bp4) {
         margin-top: 5em;
