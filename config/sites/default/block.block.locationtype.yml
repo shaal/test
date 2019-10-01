@@ -11,7 +11,7 @@ dependencies:
 id: locationtype
 theme: tower_health
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: 'facet_block:location_type'
 settings:

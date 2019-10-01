@@ -46,7 +46,7 @@ field_settings:
         - node
         - node
   location_services_title_string:
-    label: 'Services » Content » Title » String '
+    label: 'Services » Content » Title » String'
     datasource_id: 'entity:node'
     property_path: 'field_services_ref:entity:title'
     type: string
@@ -67,8 +67,19 @@ field_settings:
       module:
         - node
         - node
+  location_type:
+    label: 'Location Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_type:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_location_type
+      module:
+        - taxonomy
+        - taxonomy
   location_type_string:
-    label: 'Location Type » Taxonomy term » Name » String '
+    label: 'Location Type » Taxonomy term » Name » String'
     datasource_id: 'entity:node'
     property_path: 'field_location_type:entity:name'
     type: string
@@ -192,6 +203,7 @@ processor_settings:
       - location_services_title
       - location_services_title_string
       - location_title_string
+      - location_type
       - location_type_string
       - name
       - provider_specialties_condition_name
