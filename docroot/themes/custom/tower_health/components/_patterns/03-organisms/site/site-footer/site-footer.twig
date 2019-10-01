@@ -8,27 +8,13 @@
       } %}
       <div>
         <div class="footer__info__social">
-          <a href="{{ social.facebook }}">
-            {% include "social-facebook.svg" %}
-          </a>
-          <a href="{{ social.facebook }}">
-            {% include "social-twitter.svg" %}
-          </a>
-          <a href="{{ social.gplus }}">
-            {% include "social-gplus.svg" %}
-          </a>
-          <a href="{{ social.linkedin }}">
-            {% include "social-linkedin.svg" %}
-          </a>
-          <a href="{{ social.youtube }}">
-            {% include "social-youtube.svg" %}
-          </a>
-          <a href="{{ social.instagram }}">
-            {% include "social-instagram.svg" %}
-          </a>
-          <a href="{{ social.pinterest }}">
-            {% include "social-pinterest.svg" %}
-          </a>
+          {% for icon in social %}
+            {% include "@atoms/social-icon/social-icon.twig" with {
+              title: icon.title,
+              url: icon.url,
+              svg: icon.svg
+            } %}
+          {% endfor %}
         </div>
         <div class="footer__info__contact">
           {{ contact.address }}
