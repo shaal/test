@@ -89,7 +89,11 @@
       padding-top: 1em;
       border-top: 5px solid $growth;
 
-      @include breakpoint($bp2) {
+      @include breakpoint($footer1) {
+        width: calc(50% - 2em);
+      }
+
+      @include breakpoint($footer2) {
         width: calc(33% - 2em);
       }
 

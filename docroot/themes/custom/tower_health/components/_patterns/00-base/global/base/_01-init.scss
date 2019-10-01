@@ -81,7 +81,7 @@ $font-monospace: $mono;
 // =============================================================================
 // Breakpoint Variables
 //
-// These determine the major breakpoints used most consistently throughout 
+// These determine the major breakpoints used most consistently throughout
 // your site. They are used with the breakpoint-sass mixin.
 // =============================================================================
 
@@ -91,6 +91,9 @@ $bp2: 600px;
 $bp3: 900px;
 $bp4: 1200px;
 $bp5: 1600px;
+
+$footer1: 450px;
+$footer2: 750px;
 
 // =============================================================================
 // Spacing Variables
