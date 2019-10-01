@@ -115,7 +115,7 @@
   }
 
   &__details {
-    margin-bottom: 0.5em;
+    font-size: 0.9em;
 
     a {
       display: block;
@@ -125,7 +125,7 @@
     @include breakpoint($bp2) {
       a {
         display: inline-block;
-        padding: 0 1em;
+        padding: 0 0.5em;
         border-right: 1px solid $black;
 
         &:last-of-type {
@@ -133,5 +133,9 @@
         }
       }
     }
+  }
+
+  &__legal {
+    font-size: 0.9em;
   }
 }
