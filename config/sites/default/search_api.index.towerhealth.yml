@@ -104,7 +104,7 @@ field_settings:
     label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms'
     datasource_id: 'entity:node'
     property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.field_medical_specialties_ref
