@@ -1,4 +1,4 @@
-uuid: f0f8dc14-2cf5-4baa-8f5b-86206d2b3430
+uuid: 2395cbf8-a62b-4721-b7ab-16ad97ece557
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - search_api.index.towerhealth
   module:
     - search_api
-id: autocomplete_synonym
+id: auto_synonym
 label: 'Autocomplete: Synonym'
 module: views
 description: ''
