@@ -96,7 +96,7 @@
         width: calc(33% - 2em);
       }
 
-      &__title {
+      a:first-of-type {
         text-transform: uppercase;
         font-weight: 600;
         letter-spacing: 0.1em;
