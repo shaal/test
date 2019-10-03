@@ -232,7 +232,7 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - provider_specialties_condition_synonym
+            - synonym
           plugin_id: search_api_fulltext
       sorts: {  }
       header: {  }

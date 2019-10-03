@@ -41,6 +41,7 @@ class FindProviderController extends FindCareController {
    */
   public function handleAutocomplete(Request $request) {
     $results = [];
+    // @todo add a childResults and merge with auto_condition results under 'Condition' label
     $input = $request->query->get('q');
     // Get the typed string from the URL, if it exists.
     if (!$input) {
@@ -48,8 +49,9 @@ class FindProviderController extends FindCareController {
     }
     $input = Xss::filter($input);
 
-    $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results);
-    $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results);
+    $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results, 'name');
+    $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results, 'name');
+    $results = $this->taxonomySuggestedTerms('auto_synonym', $input, t('Synonym'), $results, 'synonym');
     $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results);
 
     return new JsonResponse($results);

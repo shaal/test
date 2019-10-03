@@ -38,11 +38,10 @@ class FindCareController extends ControllerBase {
   /**
    * Return suggestions from taxonomy term source.
    */
-  public function taxonomySuggestedTerms($view_id, $input, $label, $results) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, $results, $field = null) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
-
     // Pass any input.
     $view->setExposedInput(['name' => $input]);
 
@@ -63,7 +62,7 @@ class FindCareController extends ControllerBase {
     ];
 
     foreach ($view_result as $data) {
-      $values = $data->_item->getField('name')->getValues();
+      $values = $data->_item->getField($field)->getValues();
       $term_name = reset($values)->toText();
 
       $results[] = [
