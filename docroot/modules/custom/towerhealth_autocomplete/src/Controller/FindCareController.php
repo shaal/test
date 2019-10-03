@@ -38,7 +38,7 @@ class FindCareController extends ControllerBase {
   /**
    * Return suggestions from taxonomy term source.
    */
-  public function taxonomySuggestedTerms($view_id, $input, $label, $results, $field = null) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, $results, $field = NULL) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
