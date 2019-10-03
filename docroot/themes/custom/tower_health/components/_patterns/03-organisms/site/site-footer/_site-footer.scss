@@ -32,9 +32,12 @@
     justify-content: center;
     align-items: center;
 
+    @include breakpoint($footer2) {
+      justify-content: space-between;
+    }
+
     @include breakpoint($bp3) {
       flex-wrap: nowrap;
-      justify-content: space-between;
     }
 
     @include breakpoint($bp4) {
@@ -49,6 +52,10 @@
       margin: 0 auto;
       width: 75%;
 
+      @include breakpoint($footer2) {
+        margin-left: 0;
+      }
+
       @include breakpoint($bp3) {
         margin-right: 2em;
         width: auto;
@@ -60,9 +67,7 @@
     }
 
     &__contact {
-      // text-align: right;
-
-      @include breakpoint($bp3) {
+      @include breakpoint($footer2) {
         text-align: right;
       }
 
@@ -76,9 +81,7 @@
     }
 
     &__social {
-      // text-align: right;
-
-      @include breakpoint($bp3) {
+      @include breakpoint($footer2) {
         text-align: right;
       }
 
@@ -116,7 +119,7 @@
         width: calc(50% - 2em);
       }
 
-      @include breakpoint($footer2) {
+      @include breakpoint($footer3) {
         width: calc(33% - 2em);
       }
 
