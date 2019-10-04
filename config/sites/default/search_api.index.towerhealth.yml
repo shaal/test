@@ -100,10 +100,10 @@ field_settings:
         - taxonomy
         - taxonomy
         - taxonomy
-  provider_specialties_condition_synonym:
-    label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms'
+  provider_specialties_condition_synonym_name:
+    label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms » Taxonomy term » Name'
     datasource_id: 'entity:node'
-    property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym'
+    property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym:entity:name'
     type: text
     dependencies:
       config:
@@ -111,6 +111,8 @@ field_settings:
         - field.storage.taxonomy_term.field_related_conditions_ref
         - field.storage.taxonomy_term.field_condition_synonym
       module:
+        - taxonomy
+        - taxonomy
         - taxonomy
         - taxonomy
   provider_specialties_name:
@@ -153,14 +155,6 @@ field_settings:
           areas_of_care: ''
           condition: ''
           medical_specialty: ''
-  synonym:
-    label: Synonyms
-    datasource_id: 'entity:taxonomy_term'
-    property_path: field_condition_synonym
-    type: solr_text_ngram
-    dependencies:
-      config:
-        - field.storage.taxonomy_term.field_condition_synonym
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -217,11 +211,10 @@ processor_settings:
       - location_type_string
       - name
       - provider_specialties_condition_name
-      - provider_specialties_condition_synonym
+      - provider_specialties_condition_synonym_name
       - provider_specialties_name
       - provider_specialties_name_string
       - rendered_item
-      - synonym
       - title
       - type
       - vid

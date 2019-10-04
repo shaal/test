@@ -43,7 +43,7 @@ class FindCareController extends ControllerBase {
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
     // Pass any input.
-    $view->setExposedInput(['name' => $input]);
+    $view->setExposedInput([$field => $input]);
 
     // Execute the view.
     $view->execute();
