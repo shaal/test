@@ -1,29 +1,19 @@
-uuid: 91085fce-d404-4293-97ba-4af148e1db83
+uuid: 0d9a2b69-b595-4679-bf13-6f82d806b076
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_condition_synonym
     - taxonomy.vocabulary.condition
-    - taxonomy.vocabulary.synonyms
 id: taxonomy_term.condition.field_condition_synonym
 field_name: field_condition_synonym
 entity_type: taxonomy_term
 bundle: condition
 label: Synonyms
-description: ''
+description: 'Alternative ways of referring to this condition, so that users can find this condition under different search terms.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  handler: 'default:taxonomy_term'
-  handler_settings:
-    target_bundles:
-      synonyms: synonyms
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+settings: {  }
+field_type: string

@@ -51,7 +51,7 @@ class FindProviderController extends FindCareController {
 
     $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results, 'name');
     $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results, 'name');
-    $results = $this->taxonomySuggestedTerms('auto_synonyms', $input, t('Synonym'), $results, 'name');
+    $results = $this->taxonomySuggestedTerms('auto_synonym', $input, t('Synonym'), $results, 'synonym');
     $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results);
 
     return new JsonResponse($results);

@@ -22,13 +22,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_condition_synonym:
-    weight: 31
+    weight: 33
     settings:
-      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
     region: content
   name:
     type: string_textfield

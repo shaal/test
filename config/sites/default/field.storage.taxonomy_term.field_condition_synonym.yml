@@ -1,4 +1,4 @@
-uuid: ac136de0-2a9f-41df-8383-b8ba9560dafc
+uuid: ea2af24f-3a0c-46a7-9961-895b88b5e577
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,11 @@ dependencies:
 id: taxonomy_term.field_condition_synonym
 field_name: field_condition_synonym
 entity_type: taxonomy_term
-type: entity_reference
+type: string
 settings:
-  target_type: taxonomy_term
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: -1

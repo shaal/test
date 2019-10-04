@@ -1,13 +1,14 @@
-uuid: 64539aa7-078d-483d-bba9-1174db610d3f
+uuid: 2395cbf8-a62b-4721-b7ab-16ad97ece557
 langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.taxonomy_term.field_condition_synonym
     - search_api.index.towerhealth
   module:
     - search_api
-id: auto_synonyms
-label: 'Autocomplete: Synonyms'
+id: auto_synonym
+label: 'Autocomplete: Synonym'
 module: views
 description: ''
 tag: ''
@@ -66,7 +67,8 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: false
+          default_row_class: true
+          uses_fields: false
       row:
         type: fields
         options:
@@ -75,10 +77,10 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        name_1:
-          id: name_1
+        field_condition_synonym:
+          id: field_condition_synonym
           table: search_api_datasource_towerhealth_entity_taxonomy_term
-          field: name
+          field: field_condition_synonym
           relationship: none
           group_type: group
           admin_label: ''
@@ -147,8 +149,8 @@ display:
           entity_type: taxonomy_term
           plugin_id: search_api_field
       filters:
-        vid_1:
-          id: vid_1
+        vid:
+          id: vid
           table: search_api_index_towerhealth
           field: vid
           relationship: none
@@ -158,7 +160,7 @@ display:
           value:
             min: ''
             max: ''
-            value: synonyms
+            value: condition
           group: 1
           exposed: false
           expose:
@@ -230,7 +232,7 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - name
+            - synonym
           plugin_id: search_api_fulltext
       sorts: {  }
       header: {  }
@@ -239,10 +241,6 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: OR
     cache_metadata:
       max-age: -1
       contexts:
@@ -250,4 +248,5 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-      tags: {  }
+      tags:
+        - 'config:field.storage.taxonomy_term.field_condition_synonym'
