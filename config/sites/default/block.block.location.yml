@@ -1,23 +1,23 @@
-uuid: dcdcf991-cc69-46e9-879f-973bd72dfcc1
+uuid: e7ca036a-26fa-4b14-b4b8-10c32d43040b
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.services
+    - facets.facet.location
   module:
     - facets
   theme:
     - tower_health
-id: services
+id: location
 theme: tower_health
 region: content
-weight: -3
+weight: 1
 provider: null
-plugin: 'facet_block:services'
+plugin: 'facet_block:location'
 settings:
-  id: 'facet_block:services'
-  label: Services
+  id: 'facet_block:location'
+  label: Location
   provider: facets
   label_display: visible
-  block_id: services
+  block_id: location
 visibility: {  }

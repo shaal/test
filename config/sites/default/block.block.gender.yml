@@ -1,23 +1,23 @@
-uuid: dcdcf991-cc69-46e9-879f-973bd72dfcc1
+uuid: 1106b981-26fb-47e4-a516-12175c9f75f4
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.services
+    - facets.facet.gender
   module:
     - facets
   theme:
     - tower_health
-id: services
+id: gender
 theme: tower_health
 region: content
-weight: -3
+weight: -2
 provider: null
-plugin: 'facet_block:services'
+plugin: 'facet_block:gender'
 settings:
-  id: 'facet_block:services'
-  label: Services
+  id: 'facet_block:gender'
+  label: Gender
   provider: facets
   label_display: visible
-  block_id: services
+  block_id: gender
 visibility: {  }
