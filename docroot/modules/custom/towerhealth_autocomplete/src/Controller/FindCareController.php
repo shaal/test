@@ -86,7 +86,7 @@ class FindCareController extends ControllerBase {
         $text = $value->toText();
 
         // Confirm that this field matches the input.
-        if (strpos(strtolower($text), $input) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
+        if (strpos(strtolower($text), strtolower($input)) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
           $new_results[] = [
             'value' => $text,
             'label' => $text,
@@ -171,6 +171,7 @@ class FindCareController extends ControllerBase {
    *   Returns true if this is a duplicate.
    */
   private function duplicateValue($value, array $array) {
+    $value = strtolower($value);
     foreach ($array as $item) {
       if (array_key_exists('value', $item) && $item['value'] === $value) {
         return TRUE;
