@@ -6,7 +6,6 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\views\Views;
-use Drupal\search_api\Item\Item;
 
 /**
  * Defines a route controller for watches autocomplete form elements.
@@ -39,15 +38,21 @@ class FindCareController extends ControllerBase {
   /**
    * Return suggestions from taxonomy term source.
    *
-   * @param $view_id
-   * @param $input
-   * @param $label
-   * @param $results
+   * @param string $view_id
+   *   The ID of the view.
+   * @param string $input
+   *   The string the user input.
+   * @param mixed $label
+   *   The label to group this set of results.
+   * @param array $results
+   *   The existing results.
    * @param string $field
-   * @param $child_results
+   *   The search field to pull from the result item.
+   *
    * @return array
+   *   Array of suggested items.
    */
-  public function taxonomySuggestedTerms($view_id, $input, $label, $results, $field, $child_results = NULL) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, array $results, $field) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -58,23 +63,10 @@ class FindCareController extends ControllerBase {
     $view->execute();
     $view_result = $view->result;
 
-    // Create new results array
+    // Create new results array.
     $new_results = [];
 
-    // If the parent grouping has no results still add the parent label to group.
-    if (count($view_result) === 0 && is_array($child_results) && count($child_results) >= 1) {
-      $new_results[] = [
-        'grouping' => TRUE,
-        'label' => $label,
-      ];
-
-      $child_results = array_merge($new_results, $child_results);
-
-      $results = array_merge($results, $child_results);
-
-      return $results;
-    }
-    elseif (count($view_result) === 0) {
+    if (count($view_result) === 0) {
       return $results;
     }
 
@@ -88,27 +80,19 @@ class FindCareController extends ControllerBase {
 
     // Pull the search index field and add it as a value.
     foreach ($view_result as $data) {
-      $item = $data->_item;
 
-      if ($item instanceof Item) {
-        $values = $data->_item->getField($field)->getValues();
-        foreach ($values as $value) {
-          $text = $value->toText();
+      $values = $data->_item->getField($field)->getValues();
+      foreach ($values as $value) {
+        $text = $value->toText();
 
-          // Confirm that this field matches the input.
-          if (strpos(strtolower($text), $input) !== FALSE && $this->duplicate_value($text, $new_results) === FALSE) {
-            $new_results[] = [
-              'value' => $text,
-              'label' => $text,
-            ];
-          }
+        // Confirm that this field matches the input.
+        if (strpos(strtolower($text), $input) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
+          $new_results[] = [
+            'value' => $text,
+            'label' => $text,
+          ];
         }
       }
-    }
-
-    // Add the child results to the new results.
-    if (!empty($child_results) && is_array($child_results)) {
-      $results = array_merge($new_results, $child_results);
     }
 
     // Add new results to existing results.
@@ -120,13 +104,19 @@ class FindCareController extends ControllerBase {
   /**
    * Return suggestions from node source.
    *
-   * @param $view_id
-   * @param $input
-   * @param $label
-   * @param $results
+   * @param string $view_id
+   *   The ID of the view.
+   * @param string $input
+   *   The string the user input.
+   * @param string $label
+   *   The label to group this set of results.
+   * @param array $results
+   *   The existing results.
+   *
    * @return array
+   *   Array of suggested items.
    */
-  public function nodeSuggestedTerms($view_id, $input, $label, $results) {
+  public function nodeSuggestedTerms($view_id, $input, $label, array $results) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -149,6 +139,7 @@ class FindCareController extends ControllerBase {
     ];
 
     foreach ($view_result as $data) {
+      // Store the entity object to build the URL.
       $entity = $data->_object->getEntity();
 
       if ($entity instanceof EntityInterface) {
@@ -171,11 +162,15 @@ class FindCareController extends ControllerBase {
   /**
    * Determine if the value is already in the array.
    *
-   * @param $value
-   * @param $array
+   * @param string $value
+   *   The suggested value to search for.
+   * @param array $array
+   *   The array of values to search.
+   *
    * @return bool
+   *   Returns true if this is a duplicate.
    */
-  private function duplicate_value($value, $array) {
+  private function duplicateValue($value, array $array) {
     foreach ($array as $item) {
       if (array_key_exists('value', $item) && $item['value'] === $value) {
         return TRUE;
