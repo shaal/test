@@ -173,7 +173,7 @@ class FindCareController extends ControllerBase {
   private function duplicateValue($value, array $array) {
     $value = strtolower($value);
     foreach ($array as $item) {
-      if (array_key_exists('value', $item) && $item['value'] === $value) {
+      if (array_key_exists('value', $item) && strtolower($item['value']) === $value) {
         return TRUE;
       }
     }
