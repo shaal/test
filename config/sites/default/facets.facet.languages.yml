@@ -10,7 +10,7 @@ dependencies:
 id: languages
 name: 'Languages » String'
 url_alias: languages
-weight: 0
+weight: -1
 min_count: 1
 show_only_one_result: false
 field_identifier: provider_profile_languages_string

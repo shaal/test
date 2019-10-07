@@ -10,7 +10,7 @@ dependencies:
 id: provider_type
 name: 'Provider Type'
 url_alias: provider_type
-weight: 0
+weight: 2
 min_count: 1
 show_only_one_result: false
 field_identifier: provider_profile_type
