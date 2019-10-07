@@ -37,12 +37,25 @@ class FindCareController extends ControllerBase {
 
   /**
    * Return suggestions from taxonomy term source.
+   *
+   * @param string $view_id
+   *   The ID of the view.
+   * @param string $input
+   *   The string the user input.
+   * @param mixed $label
+   *   The label to group this set of results.
+   * @param array $results
+   *   The existing results.
+   * @param string $field
+   *   The search field to pull from the result item.
+   *
+   * @return array
+   *   Array of suggested items.
    */
-  public function taxonomySuggestedTerms($view_id, $input, $label, $results) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, array $results, $field) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
-
     // Pass any input.
     $view->setExposedInput(['name' => $input]);
 
@@ -50,35 +63,60 @@ class FindCareController extends ControllerBase {
     $view->execute();
     $view_result = $view->result;
 
-    // Return the results with out addititions if empty.
+    // Create new results array.
+    $new_results = [];
+
     if (count($view_result) === 0) {
       return $results;
     }
 
-    // This should pull from the view and shouldn't need to pull from the entity
-    // access field data from the view results.
-    $results[] = [
-      'grouping' => TRUE,
-      'label' => $label,
-    ];
-
-    foreach ($view_result as $data) {
-      $values = $data->_item->getField('name')->getValues();
-      $term_name = reset($values)->toText();
-
-      $results[] = [
-        'value' => $term_name,
-        'label' => $term_name,
+    // Add the label if one is provided.
+    if (!empty($label)) {
+      $new_results[] = [
+        'grouping' => TRUE,
+        'label' => $label,
       ];
     }
+
+    // Pull the search index field and add it as a value.
+    foreach ($view_result as $data) {
+
+      $values = $data->_item->getField($field)->getValues();
+      foreach ($values as $value) {
+        $text = $value->toText();
+
+        // Confirm that this field matches the input.
+        if (strpos(strtolower($text), strtolower($input)) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
+          $new_results[] = [
+            'value' => $text,
+            'label' => $text,
+          ];
+        }
+      }
+    }
+
+    // Add new results to existing results.
+    $results = array_merge($results, $new_results);
 
     return $results;
   }
 
   /**
    * Return suggestions from node source.
+   *
+   * @param string $view_id
+   *   The ID of the view.
+   * @param string $input
+   *   The string the user input.
+   * @param string $label
+   *   The label to group this set of results.
+   * @param array $results
+   *   The existing results.
+   *
+   * @return array
+   *   Array of suggested items.
    */
-  public function nodeSuggestedTerms($view_id, $input, $label, $results) {
+  public function nodeSuggestedTerms($view_id, $input, $label, array $results) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -101,6 +139,7 @@ class FindCareController extends ControllerBase {
     ];
 
     foreach ($view_result as $data) {
+      // Store the entity object to build the URL.
       $entity = $data->_object->getEntity();
 
       if ($entity instanceof EntityInterface) {
@@ -111,13 +150,34 @@ class FindCareController extends ControllerBase {
 
         $results[] = [
           'value' => $node_title,
-          'label' => $node_title,
+          'lbael' => $node_title,
           'url' => $url->toString(),
         ];
       }
     }
 
     return $results;
+  }
+
+  /**
+   * Determine if the value is already in the array.
+   *
+   * @param string $value
+   *   The suggested value to search for.
+   * @param array $array
+   *   The array of values to search.
+   *
+   * @return bool
+   *   Returns true if this is a duplicate.
+   */
+  private function duplicateValue($value, array $array) {
+    $value = strtolower($value);
+    foreach ($array as $item) {
+      if (array_key_exists('value', $item) && strtolower($item['value']) === $value) {
+        return TRUE;
+      }
+    }
+    return FALSE;
   }
 
 }
