@@ -50,8 +50,8 @@ class FindProviderController extends FindCareController {
     $input = Xss::filter($input);
 
     $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results, 'name');
-    $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results, 'name');
-    $results = $this->taxonomySuggestedTerms('auto_synonym', $input, t('Synonym'), $results, 'synonym');
+    $child_results = $this->taxonomySuggestedTerms('auto_synonym', $input, '', [], 'synonym');
+    $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results, 'name', $child_results);
     $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results);
 
     return new JsonResponse($results);

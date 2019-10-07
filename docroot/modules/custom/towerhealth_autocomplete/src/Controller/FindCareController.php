@@ -6,6 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\views\Views;
+use Drupal\search_api\Item\Item;
 
 /**
  * Defines a route controller for watches autocomplete form elements.
@@ -37,8 +38,16 @@ class FindCareController extends ControllerBase {
 
   /**
    * Return suggestions from taxonomy term source.
+   *
+   * @param $view_id
+   * @param $input
+   * @param $label
+   * @param $results
+   * @param string $field
+   * @param $child_results
+   * @return array
    */
-  public function taxonomySuggestedTerms($view_id, $input, $label, $results, $field = NULL) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, $results, $field, $child_results = NULL) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -49,33 +58,73 @@ class FindCareController extends ControllerBase {
     $view->execute();
     $view_result = $view->result;
 
-    // Return the results with out addititions if empty.
-    if (count($view_result) === 0) {
+    // Create new results array
+    $new_results = [];
+
+    // If the parent grouping has no results still add the parent label to group.
+    if (count($view_result) === 0 && is_array($child_results) && count($child_results) >= 1) {
+      $new_results[] = [
+        'grouping' => TRUE,
+        'label' => $label,
+      ];
+
+      $child_results = array_merge($new_results, $child_results);
+
+      $results = array_merge($results, $child_results);
+
+      return $results;
+    }
+    elseif (count($view_result) === 0) {
       return $results;
     }
 
-    // This should pull from the view and shouldn't need to pull from the entity
-    // access field data from the view results.
-    $results[] = [
-      'grouping' => TRUE,
-      'label' => $label,
-    ];
-
-    foreach ($view_result as $data) {
-      $values = $data->_item->getField($field)->getValues();
-      $term_name = reset($values)->toText();
-
-      $results[] = [
-        'value' => $term_name,
-        'label' => $term_name,
+    // Add the label if one is provided.
+    if (!empty($label)) {
+      $new_results[] = [
+        'grouping' => TRUE,
+        'label' => $label,
       ];
     }
+
+    // Pull the search index field and add it as a value.
+    foreach ($view_result as $data) {
+      $item = $data->_item;
+
+      if ($item instanceof Item) {
+        $values = $data->_item->getField($field)->getValues();
+        foreach ($values as $value) {
+          $text = $value->toText();
+
+          // Confirm that this field matches the input.
+          if (strpos(strtolower($text), $input) !== FALSE && $this->duplicate_value($text, $new_results) === FALSE) {
+            $new_results[] = [
+              'value' => $text,
+              'label' => $text,
+            ];
+          }
+        }
+      }
+    }
+
+    // Add the child results to the new results.
+    if (!empty($child_results) && is_array($child_results)) {
+      $results = array_merge($new_results, $child_results);
+    }
+
+    // Add new results to existing results.
+    $results = array_merge($results, $new_results);
 
     return $results;
   }
 
   /**
    * Return suggestions from node source.
+   *
+   * @param $view_id
+   * @param $input
+   * @param $label
+   * @param $results
+   * @return array
    */
   public function nodeSuggestedTerms($view_id, $input, $label, $results) {
 
@@ -110,13 +159,29 @@ class FindCareController extends ControllerBase {
 
         $results[] = [
           'value' => $node_title,
-          'label' => $node_title,
+          'lbael' => $node_title,
           'url' => $url->toString(),
         ];
       }
     }
 
     return $results;
+  }
+
+  /**
+   * Determine if the value is already in the array.
+   *
+   * @param $value
+   * @param $array
+   * @return bool
+   */
+  private function duplicate_value($value, $array) {
+    foreach ($array as $item) {
+      if (array_key_exists('value', $item) && $item['value'] === $value) {
+        return TRUE;
+      }
+    }
+    return FALSE;
   }
 
 }
