@@ -112,11 +112,13 @@ class FindCareController extends ControllerBase {
    *   The label to group this set of results.
    * @param array $results
    *   The existing results.
+   * @param bool $redirect_url
+   *   Redirect to the node or return the plain result.
    *
    * @return array
    *   Array of suggested items.
    */
-  public function nodeSuggestedTerms($view_id, $input, $label, array $results) {
+  public function nodeSuggestedTerms($view_id, $input, $label, array $results, $redirect_url = TRUE) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -143,7 +145,12 @@ class FindCareController extends ControllerBase {
       $entity = $data->_object->getEntity();
 
       if ($entity instanceof EntityInterface) {
-        $url = $entity->toUrl();
+        $url = '';
+
+        if ($redirect_url === TRUE) {
+          $url_object = $entity->toUrl();
+          $url = $url_object->toString();
+        }
 
         $values = $data->_item->getField('title')->getValues();
         $node_title = reset($values)->toText();
@@ -151,7 +158,7 @@ class FindCareController extends ControllerBase {
         $results[] = [
           'value' => $node_title,
           'lbael' => $node_title,
-          'url' => $url->toString(),
+          'url' => $url,
         ];
       }
     }
@@ -172,11 +179,13 @@ class FindCareController extends ControllerBase {
    */
   private function duplicateValue($value, array $array) {
     $value = strtolower($value);
+
     foreach ($array as $item) {
       if (array_key_exists('value', $item) && strtolower($item['value']) === $value) {
         return TRUE;
       }
     }
+
     return FALSE;
   }
 
