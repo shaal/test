@@ -1,0 +1,23 @@
+<div class="provider-teaser">
+  <div class="provider-teaser__image">
+    {% if image %}
+      <img src="{{ img.src }}" alt="{{ img.alt }}" />
+    {% endif %}
+  </div>
+  <div class="provider-teaser__content">
+    {{ provider.name }}
+    <div>
+      {{ provider.specialies }}
+      {{ provider.focus }}
+    </div>
+    <div>
+      {{ provider.location }}
+      {{ provider.language }}
+    </div>
+  </div>
+  <div class="provider-teaser__extras">
+    {% include "@molecules/appointment-button/appointment-button.twig" with {
+        "button": button,
+      } %}
+  </div>
+</div>

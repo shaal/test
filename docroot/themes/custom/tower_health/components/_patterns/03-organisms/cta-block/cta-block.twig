@@ -1,0 +1,24 @@
+<div class="cta-block">
+  <div class="cta-block__main">
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+        "heading_level": 2,
+        "heading": title,
+        "heading_url": card_title_link|default(card_link_url),
+        "heading_blockname": card_title_blockname|default(card_base_class),
+        "heading_modifiers": card_title_modifiers,
+        "heading_link_base_class": card_title_link_base_class|default('title-link'),
+        "heading_link_blockname": card_base_class,
+        "heading_base_class": card_title_base_class|default('title'),
+      } %}
+    {% include "@atoms/02-text/text/01-paragraph.twig" with {
+        "paragraph_content": text,
+      } %}
+  </div>
+  <div class="cta-block__buttons">
+    {% for button in buttons %}
+      {% include "@molecules/cta-button/cta-button.twig" with {
+          "cta": button,
+        } %}
+    {% endfor %}
+  </div>
+</div>
