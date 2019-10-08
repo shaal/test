@@ -1,18 +1,18 @@
 <div class="provider-teaser">
   <div class="provider-teaser__image">
-    {% if image %}
-      <img src="{{ img.src }}" alt="{{ img.alt }}" />
+    {% if provider.img %}
+      <img src="{{ provider.img.src }}" alt="{{ provider.img.alt }}" />
     {% endif %}
   </div>
   <div class="provider-teaser__content">
-    {{ provider.name }}
+    {{ provider.details.name }}
     <div>
-      {{ provider.specialies }}
-      {{ provider.focus }}
+      {{ provider.details.specialies }}
+      {{ provider.details.focus }}
     </div>
     <div>
-      {{ provider.location }}
-      {{ provider.language }}
+      {{ provider.details.location }}
+      {{ provider.details.language }}
     </div>
   </div>
   <div class="provider-teaser__extras">

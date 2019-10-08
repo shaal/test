@@ -1,0 +1,7 @@
+<div class="provider-list">
+  {% for provider in providers %}
+    {% include "@organisms/provider-teaser/provider-teaser.twig" with {
+        "provider": provider,
+      } %}
+  {% endfor %}
+</div>
