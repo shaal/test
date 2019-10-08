@@ -4,7 +4,7 @@ status: true
 dependencies:
   enforced:
     module:
-      - towerhealth_migration
+      - towerhealth_rating_migration
 id: towerhealth_ratings_comments
 class: null
 field_plugin_method: null
