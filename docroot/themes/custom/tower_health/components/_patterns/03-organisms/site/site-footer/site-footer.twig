@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer__info">
+      {% include "@atoms/04-images/00-image/figure.twig" with {
+        img_src: "../../images/TowerHealth_H.svg",
+        img_alt: "Tower Health Logo",
+        img_url: logo_link_url|default('/'),
+      } %}
+      <div>
+        <div class="footer__info__social">
+          {% for icon in social %}
+            {% include "@atoms/social-icon/social-icon.twig" with {
+              title: icon.title,
+              url: icon.url,
+              svg: icon.svg
+            } %}
+          {% endfor %}
+        </div>
+        <div class="footer__info__contact">
+          {{ contact.address }}
+          <a href="tel:{{contact.phone}}">{{ contact.phone }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__links">
+      {% include "@molecules/menus/footer-menu/footer-menu.twig" %}
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer__details">
+      {% for detail in details %}
+        <a href="{{ detail.href }}">{{ detail.title }}</a>
+      {% endfor %}
+    </div>
+    <div class="footer__legal">
+      {{ legal }}
+    </div>
+  </div>
+</footer>

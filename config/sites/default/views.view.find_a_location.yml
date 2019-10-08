@@ -177,7 +177,8 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - location_services_condition_name
+            - location_services_specialty_condition_name
+            - location_services_specialty_condition_synonym
             - location_services_title
             - rendered_item
             - title
