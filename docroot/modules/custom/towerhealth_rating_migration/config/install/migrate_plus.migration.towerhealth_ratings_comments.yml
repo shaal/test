@@ -6,7 +6,7 @@ migration_tags:
 dependencies:
   enforced:
     module:
-      - towerhealth_migration
+      - towerhealth_rating_migration
 source:
   plugin: url
   # Note -- We are loading from local file for testing. We either need:
@@ -16,7 +16,7 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: jsonpath
   urls:
-    - modules/custom/towerhealth_migration/data/comments.json
+    - modules/custom/towerhealth_rating_migration/data/comments.json
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: '..comments[*]'
 
