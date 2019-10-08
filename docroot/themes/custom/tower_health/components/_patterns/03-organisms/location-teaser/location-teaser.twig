@@ -1,15 +1,15 @@
 <div class="location-teaser">
   <div class="location-teaser__image">
-    {% if image %}
-      <img src="{{ img.src }}" alt="{{ img.alt }}" />
+    {% if location.img %}
+      <img src="{{ location.img.src }}" alt="{{ location.img.alt }}" />
     {% endif %}
   </div>
   <div class="location-teaser__content">
     <div class="location-teaser__content__heading">
-      {{ location.name }}
+      {{ location.details.name }}
     </div>
-    {{ location.address1 }}
-    {{ location.address2 }}
+    {{ location.details.address1 }}
+    {{ location.details.address2 }}
     <div class="location-teaser__content__directions">
       Directions
     </div>

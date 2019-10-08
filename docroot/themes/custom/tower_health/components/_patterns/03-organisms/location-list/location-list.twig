@@ -1,0 +1,7 @@
+<div class="provider-list">
+  {% for location in locations %}
+    {% include "@organisms/location-teaser/location-teaser.twig" with {
+        "location": location,
+      } %}
+  {% endfor %}
+</div>

@@ -1,7 +1,8 @@
-img:
-  src: ""
-  alt: "Alternative Text"
 location:
-  name: "McGlinn Cancer Institute"
-  address1: "420 S. Fifth Avenue"
-  address2: "West Reading, PA 19611"
+  img:
+    src: "https://placeimg.com/400/400/any"
+    alt: "Alternative Text"
+  details:
+    name: "McGlinn Cancer Institute"
+    address1: "420 S. Fifth Avenue"
+    address2: "West Reading, PA 19611"
