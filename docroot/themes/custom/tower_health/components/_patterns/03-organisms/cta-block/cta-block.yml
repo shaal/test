@@ -1,7 +1,8 @@
-title: "Need Additional Help?",
-text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finbus lorem in massa sempur, at ultrices quam interdum."
-buttons:
-  - text: "484-628-HELP"
-    href: "/"
-  - text: "Chat with Us"
-    href: "/"
+cta:
+  title: "Need Additional Help?"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finbus lorem in massa sempur, at ultrices quam interdum."
+  buttons:
+    - label: "484-628-HELP"
+      link: "/"
+    - label: "Chat with Us"
+      link: "/"

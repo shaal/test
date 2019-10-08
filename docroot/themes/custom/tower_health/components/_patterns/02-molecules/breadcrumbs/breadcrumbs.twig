@@ -1,0 +1,12 @@
+<nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+  <h2 class="visually-hidden">Breadcrumb</h2>
+  <ol>
+    {% for link in links %}
+      {% if link.href %}
+        <li><a href="{{ link.href }}">{{ link.text }}</a></li>
+      {% else %}
+        <li>{{ link.text }}</li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
