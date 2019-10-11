@@ -3,92 +3,28 @@ label: Physician Ratings
 migration_group: towerhealth
 migration_tags:
   - towerhealth
+
 dependencies:
   enforced:
     module:
       - towerhealth_rating_migration
-source:
-  plugin: url
-  # Note -- We are loading from local file for testing. We either need:
-  # a data_fetcher_plugin for HTTP POST, or a process that runs that POST and
-  # writes the local file.
-  # data_fetcher_plugin: http
-  data_fetcher_plugin: file
-  data_parser_plugin: json
-  urls:
-    - modules/custom/towerhealth_rating_migration/data/comments.json
-  # An xpath-like selector corresponding to the items to be imported.
-  item_selector: 'data/entities'
-
-  # This configuration is provided by the `http` data fetcher plugin.
-  # Do not disclose any sensitive information in the headers.
-  #headers:
-  #  Accept: 'application/json; charset=utf-8'
-  #  Accept-Encoding: 'gzip, deflate, br'
-  #  Accept-Language: 'en-US,en;q=0.5'
-  #  Custom-Key: 'understand'
-  #  Arbitrary-Header: 'drupal'
-
-  # This configuration is provided by the `digest` authentication plugin.
-  # Credentials should never be saved in plain text nor committed to the repo.
-  #authentication:
-  #  plugin: digest
-  #  username: totally
-  #  password: insecure
-  track_changes: true
-  # Under 'fields', we list the data items to be imported. The first level keys
-  # are the source field names we want to populate (the names to be used as
-  # sources in the process configuration below). For each field we're importing,
-  # we provide a label (optional - this is for display in migration tools) and
-  # an xpath for retrieving that value. It's important to note that this xpath
-  # is relative to the elements retrieved by item_selector.
-  fields:
-    -
-      name: display_name
-      label: 'Display Name'
-      selector: name
-    -
-      name: npi_id
-      label: 'NPI ID'
-      selector: id
-    -
-      name: totalRatingCount
-      label: 'Rating Count'
-      selector: totalRatingCount
-    -
-      name: totalCommentCount
-      label: 'Comment Count'
-      selector: totalCommentCount
-    -
-      name: overallRating
-      label: 'Overall Rating'
-      selector: overallRating/value
-    -
-      name: comments
-      label: 'Comments'
-      selector: comments
-
-
-  # Under 'ids', we identify source fields populated above which will uniquely
-  # identify each imported item. The 'type' makes sure the migration map table
-  # uses the proper schema type for stored the IDs.
-  ids:
-    npi_id:
-      type: integer
 
 destination:
-  plugin: 'entity:node'
+  plugin: node_paragraphs
+  lookup_field: field_profile_npi
+
+source:
+  plugin: provider_rating
+  key: default
 
 process:
-  _npi_id:
-      plugin: get
-      source: npi_id
+  field_profile_npi: field_profile_npi
 
   nid:
     -
       plugin: towerhealth_lookup_node
       lookup_field: field_profile_npi
-      source: '@_npi_id'
+      source: field_profile_npi
     -
       plugin: skip_on_empty
       method: row
@@ -116,25 +52,9 @@ process:
         - 0
         - value
 
-  pseudo_rating_comments_paragraph:
-    -
-      plugin: sub_process
-      source: comments
-      process:
-        comment:
-          plugin: migration_lookup
-          migration: towerhealth_ratings_comments
-          source: id
-          no_stub: true
-    -
-      plugin: towerhealth_rating_comments
-
-    field_rating_comments_ref:
-      plugin: sub_process
-      source: '@pseudo_rating_comments_paragraph'
-      process:
-        target_id: '0'
-        target_revision_id: '1'
+  field_rating_comments_ref:
+    plugin: towerhealth_rating_comments
+    source: comments
 
   field_rating_count: totalRatingCount
 
@@ -147,4 +67,3 @@ process:
     default_value: profile
 
 migration_dependencies: {  }
-

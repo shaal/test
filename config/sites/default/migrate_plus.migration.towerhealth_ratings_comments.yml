@@ -1,10 +1,12 @@
-uuid: 0c36aaea-5754-49f0-bf36-73e428ac7c87
+uuid: aa2d9836-f047-4fd8-ba20-4502caccfe98
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - towerhealth_rating_migration
+_core:
+  default_config_hash: uwEuc54zQYSha6ggv2GSYO236mPlUyoeJ2IdeKsX1sE
 id: towerhealth_ratings_comments
 class: null
 field_plugin_method: null
@@ -18,7 +20,7 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: jsonpath
   urls:
-    - modules/custom/towerhealth_migration/data/comments.json
+    - modules/custom/towerhealth_rating_migration/data/comments.json
   item_selector: '..comments[*]'
   track_changes: true
   fields:

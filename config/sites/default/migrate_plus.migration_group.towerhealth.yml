@@ -1,12 +1,12 @@
-uuid: 785544a9-a2f3-4ef2-91bf-ab09bf23eabb
+uuid: bbfad902-f658-4b8d-94f6-2feb509a18aa
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
-      - towerhealth_migration
+      - towerhealth_rating_migration
 _core:
-  default_config_hash: ZfSCJdEgq1BgNTxsmVVnj44S5FCkVJp58dvopYy_sX4
+  default_config_hash: 0lnc6QO01Myml24n2jW-SjqBTnjVLPrLoPAdGPOewqc
 id: towerhealth
 label: 'Tower Health'
 description: 'Tower Health imports'
