@@ -48,7 +48,20 @@ class FindLocationController extends FindCareController {
     }
     $input = Xss::filter($input);
 
-    $results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), $results);
+    $results = $this->nodeSuggestedTerms('auto_services', $input, t('Services'), $results, FALSE);
+
+    $condition_results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), [], 'name');
+
+    $synonym_label = '';
+    if (empty($condition_results)) {
+      $synonym_label = t('Conditions');
+    }
+    $synonym_results = $this->taxonomySuggestedTerms('auto_synonym', $input, $synonym_label ? $synonym_label : '', [], 'synonym');
+
+    $condition_results = array_merge($condition_results, $synonym_results);
+
+    $results = array_merge($results, $condition_results);
+
     $results = $this->nodeSuggestedTerms('auto_location', $input, t('Locations'), $results);
 
     return new JsonResponse($results);

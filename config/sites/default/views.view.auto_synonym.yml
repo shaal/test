@@ -1,13 +1,14 @@
-uuid: d13f5d2c-aa1f-47ee-9dfd-637050ce6724
+uuid: 2395cbf8-a62b-4721-b7ab-16ad97ece557
 langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.taxonomy_term.field_condition_synonym
     - search_api.index.towerhealth
   module:
     - search_api
-id: auto_provider
-label: 'Autocomplete: Provider'
+id: auto_synonym
+label: 'Autocomplete: Synonym'
 module: views
 description: ''
 tag: ''
@@ -63,10 +64,10 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        title_1:
-          id: title_1
+        synonym:
+          id: synonym
           table: search_api_index_towerhealth
-          field: title
+          field: synonym
           relationship: none
           group_type: group
           admin_label: ''
@@ -134,16 +135,18 @@ display:
             multi_separator: ', '
           plugin_id: search_api_field
       filters:
-        type:
-          id: type
+        vid:
+          id: vid
           table: search_api_index_towerhealth
-          field: type
+          field: vid
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          operator: '='
           value:
-            profile: profile
+            min: ''
+            max: ''
+            value: condition
           group: 1
           exposed: false
           expose:
@@ -158,7 +161,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -171,8 +176,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_options
+          plugin_id: search_api_string
         search_api_fulltext:
           id: search_api_fulltext
           table: search_api_index_towerhealth
@@ -190,7 +194,7 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
-            identifier: title
+            identifier: name
             required: false
             remember: false
             multiple: false
@@ -214,7 +218,7 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - title
+            - synonym
           plugin_id: search_api_fulltext
       sorts:
         search_api_relevance:
@@ -235,14 +239,11 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-      tags: {  }
+      tags:
+        - 'config:field.storage.taxonomy_term.field_condition_synonym'

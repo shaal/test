@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.service.field_area_of_care_ref
     - field.field.node.service.field_body
-    - field.field.node.service.field_conditions_ref
+    - field.field.node.service.field_medical_specialties_ref
     - node.type.service
     - workflows.workflow.default
   module:
@@ -37,7 +37,7 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_conditions_ref:
+  field_medical_specialties_ref:
     weight: 123
     settings:
       match_operator: CONTAINS

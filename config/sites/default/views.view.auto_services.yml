@@ -1,4 +1,4 @@
-uuid: d13f5d2c-aa1f-47ee-9dfd-637050ce6724
+uuid: 1863cfde-ef93-489d-8d8d-00b4b0eea5c5
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - search_api.index.towerhealth
   module:
     - search_api
-id: auto_provider
-label: 'Autocomplete: Provider'
+id: auto_services
+label: 'Autocomplete: Services'
 module: views
 description: ''
 tag: ''
@@ -143,7 +143,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            profile: profile
+            service: service
           group: 1
           exposed: false
           expose:

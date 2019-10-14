@@ -1348,6 +1348,7 @@
         },
         {
             "name": "drupal/auto_entitylabel",
+<<<<<<< HEAD
             "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
@@ -1359,6 +1360,19 @@
                 "url": "https://ftp.drupal.org/files/projects/auto_entitylabel-8.x-3.0-beta2.zip",
                 "reference": "8.x-3.0-beta2",
                 "shasum": "b1fcf53f57147bbe445d5ff97e42c5c1a2a2718a"
+=======
+            "version": "3.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/auto_entitylabel.git",
+                "reference": "8.x-3.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/auto_entitylabel-8.x-3.0-beta1.zip",
+                "reference": "8.x-3.0-beta1",
+                "shasum": "9e58235519ff98d44687ef27e6c49af37b4ca533"
+>>>>>>> 92de9cb2fa67f42cfda1d0ec4e81a28caaa48cff
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1369,8 +1383,13 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
+<<<<<<< HEAD
                     "version": "8.x-3.0-beta2",
                     "datestamp": "1570745586",
+=======
+                    "version": "8.x-3.0-beta1",
+                    "datestamp": "1563986592",
+>>>>>>> 92de9cb2fa67f42cfda1d0ec4e81a28caaa48cff
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -1705,6 +1724,7 @@
         },
         {
             "name": "drupal/core",
+<<<<<<< HEAD
             "version": "8.7.8",
             "source": {
                 "type": "git",
@@ -1715,6 +1735,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/drupal/core/zipball/476f491b85306c09101106d9b66a5dbe73c21bf0",
                 "reference": "476f491b85306c09101106d9b66a5dbe73c21bf0",
+=======
+            "version": "8.7.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal/core.git",
+                "reference": "39164616332832e1456199d32fc3ed11562f4721"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal/core/zipball/39164616332832e1456199d32fc3ed11562f4721",
+                "reference": "39164616332832e1456199d32fc3ed11562f4721",
+>>>>>>> 92de9cb2fa67f42cfda1d0ec4e81a28caaa48cff
                 "shasum": ""
             },
             "require": {
@@ -1946,7 +1978,11 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
+<<<<<<< HEAD
             "time": "2019-10-02T18:41:30+00:00"
+=======
+            "time": "2019-08-07T19:19:20+00:00"
+>>>>>>> 92de9cb2fa67f42cfda1d0ec4e81a28caaa48cff
         },
         {
             "name": "drupal/ctools",
@@ -2796,7 +2832,12 @@
                     "services": {
                         "drush.services.yml": "^9 || ^10"
                     }
+<<<<<<< HEAD
                 }
+=======
+                },
+                "patches_applied": []
+>>>>>>> 92de9cb2fa67f42cfda1d0ec4e81a28caaa48cff
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
