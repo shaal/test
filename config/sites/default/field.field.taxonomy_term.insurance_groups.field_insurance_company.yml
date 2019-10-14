@@ -10,7 +10,7 @@ field_name: field_insurance_company
 entity_type: taxonomy_term
 bundle: insurance_groups
 label: 'Insurance company'
-description: 'Add the insurance company tha tis a part of this group.'
+description: 'Add the insurance company that is a part of this group.'
 required: false
 translatable: false
 default_value: {  }
