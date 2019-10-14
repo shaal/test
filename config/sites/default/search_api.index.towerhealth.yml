@@ -3,17 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_services_ref
+    - field.storage.node.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.taxonomy_term.field_condition_synonym
     - field.storage.node.field_profile_gender
     - field.storage.node.field_insurance_ref
     - field.storage.taxonomy_term.field_insurance_company
-    - field.storage.node.field_profile_languages
-    - field.storage.node.field_location_type
     - field.storage.node.field_location_ref
-    - field.storage.node.field_medical_specialties_ref
-    - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.node.field_location_type
+    - field.storage.node.field_profile_languages
     - field.storage.node.field_profile_type
-    - field.storage.node.field_services_ref
-    - field.storage.node.field_conditions_ref
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
   module:
