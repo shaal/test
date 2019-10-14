@@ -10,6 +10,7 @@ dependencies:
   config:
     - field.storage.node.field_profile_gender
     - field.storage.node.field_insurance_ref
+    - field.storage.taxonomy_term.field_insurance_company
     - field.storage.node.field_profile_languages
     - field.storage.node.field_location_type
     - field.storage.node.field_location_ref
@@ -76,6 +77,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_profile_gender
+  provider_insurance_company_string:
+    label: 'Insurance accepted » Taxonomy term » Insurance company » String'
+    datasource_id: 'entity:node'
+    property_path: 'field_insurance_ref:entity:field_insurance_company'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_insurance_ref
+        - field.storage.taxonomy_term.field_insurance_company
+      module:
+        - taxonomy
   provider_insurance_groups_string:
     label: 'Insurance accepted » Taxonomy term » Name » String'
     datasource_id: 'entity:node'
@@ -232,6 +244,7 @@ processor_settings:
       - location_services_title_string
       - name
       - profile_gender_string
+      - provider_insurance_company_string
       - provider_insurance_groups_string
       - provider_location_title_string
       - provider_location_type_string
