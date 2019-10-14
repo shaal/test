@@ -66,8 +66,8 @@ module:
   toolbar: 0
   towerhealth_autocomplete: 0
   towerhealth_default_content: 0
-  towerhealth_rating_migration: 0
   towerhealth_msow_migration: 0
+  towerhealth_rating_migration: 0
   unified_twig_ext: 0
   update: 0
   user: 0
