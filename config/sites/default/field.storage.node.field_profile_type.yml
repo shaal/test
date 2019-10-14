@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: tower_health_employed
-      label: 'Tower health employed'
+      label: 'Physicians Only'
     -
       value: app_employed
-      label: App
+      label: 'Advanced Practitioners Only'
     -
       value: independent
       label: Independent
