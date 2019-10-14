@@ -7,22 +7,18 @@
  * @copyright Copyright (c) 2019 Palantir.net
  */
 
-use Drupal\Core\Controller\ControllerBase;
-use GuzzleHttp\Client;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Drupal\Core\Site\Settings;
-use Drupal\Component\Serialization\Json;
-use Drupal\views\Views;
-
 /**
  * Implements hook_drush_command().
  */
 function towerhealth_rating_migration_drush_command() {
-  $commands['create-ratings-json'] = [
-    'description' => 'Create the ratings json file',
-    'aliases' => ['crj'],
+  $commands['migrate-profile-ratings'] = [
+    'description' => 'Migrate the profile ratings via batch',
+    'aliases' => ['th-mrp'],
+    'options' => [
+      'reset' => 'Reset the ratings migration to 0 and re-import.',
+    ],
     'examples' => [
-      'drush crj',
+      'drush th-mrp',
     ],
   ];
 
@@ -30,62 +26,57 @@ function towerhealth_rating_migration_drush_command() {
 }
 
 /**
- * Drush command logic for deleting aliases
- *
+ * Drush command logic for deleting aliases.
  */
-function drush_towerhealth_rating_migration_create_ratings_json() {
-  $rating_api_id = Settings::get('rating_api_id');
-  $rating_api_secret = Settings::get('rating_api_secret');
-  $access_token = '';
+function drush_towerhealth_rating_migration_migrate_profile_ratings() {
+  $state_total = 'rating_migration.state_total';
 
-  // Firstly, get the view in question.
-  $view = Views::getView('ratings_npi_id');
+  $reset = drush_get_option('reset', FALSE);
 
-  // Execute the view.
-  $view->execute();
-  $view_results = $view->result;
-
-  $npi_ids = [];
-
-  foreach($view_results as $result) {
-    $result = $result->_entity->toArray();
-    if (!empty($result['field_profile_npi'])) {
-      $npi_ids[] = ['personId' => $result['field_profile_npi'][0]['value']];
-    }
+  if ($reset == TRUE) {
+    \Drupal::state()->delete($state_total);
+    drush_invoke_process('@site', 'mrs towerhealth_ratings');
+    drush_invoke_process('@site', 'mr towerhealth_ratings');
   }
 
-  $client = new Client(["base_uri" => "https://api.binaryfountain.com/api/"]);
+  $total = \Drupal::state()->get($state_total, 0);
 
-  $response = $client->request('post', 'service/v1/token/create', [
-    'form_params' => [
-      'appId' => $rating_api_id,
-      'appSecret' => $rating_api_secret
-    ]
-  ]);
+  $storage = \Drupal::entityManager()->getStorage('node');
 
+  if ($total == 0) {
+    $total = $storage->getQuery()
+      ->condition('type', 'profile')
+      ->condition('status', 1)
+      ->condition('field_profile_npi', '', '!=')
+      ->count()
+      ->execute();
+    \Drupal::state()->set($state_total, $total);
+  }
 
-  $response_body = Json::decode($response->getBody());
+  $rounds = ceil($total / 5);
+  $processed = 0;
+  $current_round = 0;
 
-  $response_data = [
-    'status' => $response_body['status'],
-  ];
+  while ($current_round <= $rounds) {
+    // Reset status in case not ready due to error.
+    drush_invoke_process('@site', 'mrs towerhealth_ratings');
+    // Migrate the next 10 items.
+    drush_invoke_process('@site', 'mim towerhealth_ratings --limit=5');
 
-  if ($response_data['status']['code'] === 200) {
+    $processed += 5;
 
-    $access_token = $response_body['accessToken'];
+    $current_round += 1;
 
-    $provider_response = $client->request('post', 'service/bsr/comments', [
-      'headers' => [
-        'accessToken' => $access_token,
-      ],
-      'form_params' => [['personId' => '1205820826'],['personId' => '1578507232'],['personId' => '1568609121']]
-    ]);
+    $total = $total - $processed;
 
-    /*$test = [['personId' => '1205820826'], ['personId' => '1578507232'], ['personId' => '1568609121']];
+    \Drupal::state()->set($state_total, $total);
 
-    dump(http_build_query($test, '', '&'));*/
+    $message = $processed . ' total profiles migrated. Aproximate remaining: ' . $total;
 
-    //echo $provider_response->getBody();
-  //}
+    drush_print($message);
+  }
+
+  if ($total <= 0) {
+    \Drupal::state()->delete($state_total);
   }
 }

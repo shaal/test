@@ -56,11 +56,11 @@ process:
     plugin: towerhealth_rating_comments
     source: comments
 
-  field_rating_count: totalRatingCount
+  field_rating_count: total_rating_count
 
-  field_rating_comment_count: totalCommentCount
+  field_rating_comment_count: total_comment_count
 
-  field_rating_overall: overallRating
+  field_rating_overall: overall_rating
 
   type:
     plugin: default_value

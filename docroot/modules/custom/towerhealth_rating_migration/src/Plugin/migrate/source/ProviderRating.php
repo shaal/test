@@ -6,14 +6,10 @@ use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 use Drupal\Core\State\StateInterface;
 use GuzzleHttp\Client;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\migrate\MigrateException;
-use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Component\Serialization\Json;
-use Drupal\views\Views;
-
 
 /**
  * Source plugin for beer content.
@@ -26,7 +22,7 @@ use Drupal\views\Views;
 class ProviderRating extends SqlBase {
 
   /**
-   * Access token
+   * Access token.
    *
    * @var string
    *   Generated access token to binary fountain.
@@ -76,16 +72,14 @@ class ProviderRating extends SqlBase {
 
     $rating_api_id = Settings::get('rating_api_id');
     $rating_api_secret = Settings::get('rating_api_secret');
-    dump($rating_api_id);
-    dump($rating_api_secret);
 
     $this->client = new Client(["base_uri" => "https://api.binaryfountain.com/api/"]);
 
     $response = $this->client->request('post', 'service/v1/token/create', [
       'form_params' => [
         'appId' => $rating_api_id,
-        'appSecret' => $rating_api_secret
-      ]
+        'appSecret' => $rating_api_secret,
+      ],
     ]);
 
     $response_body = Json::decode($response->getBody());
@@ -117,7 +111,7 @@ class ProviderRating extends SqlBase {
 
     $query = $this->select('node__field_profile_npi', 'n')
       ->fields('n', $fields)
-      ->condition('field_profile_npi_value', '1598729055', '=');
+      ->condition('field_profile_npi_value', '', '!=');
 
     return $query;
   }
@@ -128,13 +122,12 @@ class ProviderRating extends SqlBase {
   public function fields() {
     $fields = [
       'field_profile_npi_value' => $this->t('Npi ID Query'),
-      // Note that these fields are not part of the query above - it is populated
-      // by prepareRow() below.
+      // Note that these fields are not part of the query above.
+      // They are populated by prepareRow() below.
       'field_profile_npi' => $this->t('Npi ID'),
-      'display_name' => $this->t('Display Name'),
-      'totalRatingCount' => $this->t('Rating Count'),
-      'totalCommentCount' => $this->t('Comment Count'),
-      'overallRating' => $this->t('Overall Rating'),
+      'total_rating_count' => $this->t('Rating Count'),
+      'total_rating_comment' => $this->t('Comment Count'),
+      'overall_rating' => $this->t('Overall Rating'),
       'comments' => $this->t('Comments'),
     ];
 
@@ -158,29 +151,36 @@ class ProviderRating extends SqlBase {
    */
   public function prepareRow(Row $row) {
     $npi_id = $row->getSourceProperty('field_profile_npi_value');
-    dump($npi_id);
+
+    // Set the npi_id to be used for lookup.
     $row->setSourceProperty('field_profile_npi', $npi_id);
 
-    $provider_response = $this->client->request('post', 'service/bsr/comments', [
+    $promise = $this->client->requestAsync('get', '/service/bsr/comments', [
       'headers' => [
         'accessToken' => $this->access_token,
       ],
-      'form_params' => ['personId' => $npi_id]
+      'query' => ['personId' => $npi_id],
     ]);
 
+    $provider_response = $promise->wait();
+
+    // Decode the body into JSON.
     $response_body = Json::decode($provider_response->getBody());
 
     $response_data = [
       'success' => $response_body['status'],
     ];
+
     if ($response_data['success']['code'] == 200) {
       $rating_entity = $response_body['data']['entities'][0];
-      $row->setSourceProperty('totalRatingCount', $rating_entity['totalRatingCount']);
-      $row->setSourceProperty('totalCommentCount', $rating_entity['totalCommentCount']);
-      if (isset($rating_entity['overallRating']['value'])) {
-        $row->setSourceProperty('overallRating', $rating_entity['overallRating']['value']);
-      }
+
+      $row->setSourceProperty('total_rating_count', $rating_entity['totalRatingCount']);
+      $row->setSourceProperty('total_comment_count', $rating_entity['totalCommentCount']);
       $row->setSourceProperty('comments', $rating_entity['comments']);
+
+      if (isset($rating_entity['overallRating']['value'])) {
+        $row->setSourceProperty('overall_rating', $rating_entity['overallRating']['value']);
+      }
     }
 
     return parent::prepareRow($row);

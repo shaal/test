@@ -26,6 +26,10 @@ class TowerHealthRatingComments extends ProcessPluginBase {
     $comments = $value;
     $paragraphs = [];
 
+    if (empty($comments)) {
+      return $paragraphs;
+    }
+
     foreach ($comments as $comment_value) {
       $comment = [];
 
