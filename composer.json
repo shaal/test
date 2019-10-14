@@ -35,7 +35,7 @@
         "drupal-pattern-lab/unified-twig-extensions": "^0.1.0",
         "drupal/address": "^1.6",
         "drupal/admin_toolbar": "^1.26",
-        "drupal/auto_entitylabel": "^2.1@beta",
+        "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/components": "^1.1",
         "drupal/config_installer": "^1.8",
         "drupal/config_split": "^1.4",
@@ -46,12 +46,12 @@
         "drupal/emulsify": "^3.1",
         "drupal/facets": "^1.4",
         "drupal/facets_custom_label": "^1.0",
-        "drupal/field_group": "^1.0",
+        "drupal/field_group": "^3",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/migrate_devel": "^1.2@beta",
         "drupal/migrate_plus": "^4.2",
         "drupal/migrate_source_csv": "^3.1",
-        "drupal/migrate_tools": "^4.3",
+        "drupal/migrate_tools": "^4.4",
         "drupal/node_title_help_text": "^1.1",
         "drupal/office_hours": "^1.1",
         "drupal/paragraphs": "^1.8",
@@ -103,9 +103,6 @@
             }
         },
         "patches": {
-            "drupal/migrate_tools": {
-                "'status' is not a log level. (https://www.drupal.org/project/migrate_tools/issues/3073748)": "https://www.drupal.org/files/issues/2019-08-09/3073748-migrate_tools-status_loglevel-2.patch"
-            },
             "drupal/migrate_plus": {
                 "Add XPath-style filtering ability in JSON data parser plugin. (https://www.drupal.org/project/migrate_plus/issues/3007709)": "https://www.drupal.org/files/issues/2018-11-14/migrate_plus-json-xpath-filtering-3007709-8.patch"
             }
