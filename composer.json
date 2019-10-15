@@ -36,6 +36,7 @@
         "drupal/address": "^1.6",
         "drupal/admin_toolbar": "^1.26",
         "drupal/auto_entitylabel": "^3.0@beta",
+        "drupal/better_exposed_filters": "^3.0",
         "drupal/components": "^1.1",
         "drupal/config_installer": "^1.8",
         "drupal/config_split": "^1.4",
