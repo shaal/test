@@ -1,0 +1,27 @@
+# The 'type' should be "label" for short meta tags and "text" for ones which
+# could get longer, especially ones which use a textarea field instead of a
+# textfield.
+metatag.metatag_tag.schema_physician_address:
+  type: text
+  label: 'address'
+metatag.metatag_tag.schema_physician_medicalSpecialty:
+  type: text
+  label: 'medicalSpecialty'
+metatag.metatag_tag.schema_physician_telephone:
+  type: text
+  label: 'telephone'
+metatag.metatag_tag.schema_physician_image:
+  type: text
+  label: 'image'
+metatag.metatag_tag.schema_physician_knowsLanguage:
+  type: text
+  label: 'knowsLanguage'
+metatag.metatag_tag.schema_physician_name:
+  type: text
+  label: 'name'
+metatag.metatag_tag.schema_physician_geo:
+  type: text
+  label: 'geo'
+metatag.metatag_tag.schema_physician_employee:
+  type: text
+  label: 'employee'
