@@ -152,20 +152,26 @@ class ProviderRating extends SqlBase {
   public function prepareRow(Row $row) {
     $npi_id = $row->getSourceProperty('field_profile_npi_value');
 
+    $npi_id = 1932177086;
+
     // Set the npi_id to be used for lookup.
     $row->setSourceProperty('field_profile_npi', $npi_id);
 
-    $promise = $this->client->requestAsync('get', '/service/bsr/comments', [
+    $provider_response = $this->client->request('GET', '/service/bsr/comments', [
       'headers' => [
         'accessToken' => $this->access_token,
       ],
       'query' => ['personId' => $npi_id],
+      'delay' => 500,
+      'http_errors' => false,
     ]);
 
-    $provider_response = $promise->wait();
+    //$provider_response = $promise->wait();
 
     // Decode the body into JSON.
     $response_body = Json::decode($provider_response->getBody());
+
+    echo $provider_response->getBody();
 
     $response_data = [
       'success' => $response_body['status'],
