@@ -47,6 +47,7 @@
         "drupal/facets": "^1.4",
         "drupal/field_group": "^3",
         "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/metatag": "^1.10",
         "drupal/migrate_devel": "^1.2@beta",
         "drupal/migrate_plus": "^4.2",
         "drupal/migrate_source_csv": "^3.1",
