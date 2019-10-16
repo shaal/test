@@ -64,7 +64,7 @@ processor_configs:
     weights:
       build: 50
     settings:
-      replacement_values: "r|tower_health_employed| Physicians Only\r\nr|app_employed|Advanced Practitioners Only"
+      replacement_values: "r|tower_health_employed|Physicians Only\r\nr|app_employed|Advanced Practitioners Only"
   list_item:
     processor_id: list_item
     weights:
