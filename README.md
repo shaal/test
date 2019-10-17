@@ -63,7 +63,7 @@ Additional information on developing for Drupal within this environment is in [d
 
 ## Deployment
 
-@todo This section needs to be customized per-project.
+``Run phing artifact.``
 
 ## Additional Documentation
 
