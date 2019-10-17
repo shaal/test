@@ -55,17 +55,15 @@ behat:
 # @see https://github.com/palantirnet/the-build/blob/release-2.0/defaults.yml
 artifact:
   git:
-    remote: "towerhealthcm@svn-6061.devcloud.hosting.acquia.com:towerhealthcm.git"
-
-# Configuration for targets/acquia.xml
-acquia:
-  realm: "devcloud"
-  site: "towerhealthcm"
-  env: "dev"
+    remote: "towerhealth@svn-29892.prod.hosting.acquia.com:towerhealth.git"
+  gitignore_template: .the-build/artifacts.gitignore
 
 # Styleguide settings
 styleguide:
   root: "styleguide"
+
+theme:
+  root: "themes/custom/tower_health"
 
 # Configuration for using PHP Mess Detector to check for general PHP best practices,
 # unused variables, and to agnalyze complexity.
