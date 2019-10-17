@@ -43,6 +43,8 @@
         <mkdir dir="${drupal.root}/${drupal.site.settings.file_private_path}" />
         <chmod file="${drupal.root}/${drupal.site.settings.file_private_path}" mode="640" />
 
+        <chmod file="${drupal.root}/${theme.root}" mode="744" />
+
         <!-- Copy the settings.build.php and services.build.php templates into place. -->
         <copy todir="${build.dir}" overwrite="true" mode="544">
             <!-- Copy the template files -->

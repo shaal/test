@@ -62,6 +62,9 @@ artifact:
 styleguide:
   root: "styleguide"
 
+theme:
+  root: "themes/custom/tower_health"
+
 # Configuration for using PHP Mess Detector to check for general PHP best practices,
 # unused variables, and to agnalyze complexity.
 #
