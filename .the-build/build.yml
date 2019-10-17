@@ -57,12 +57,6 @@ artifact:
   git:
     remote: "towerhealth@svn-29892.prod.hosting.acquia.com:towerhealth.git"
 
-# Configuration for targets/acquia.xml
-acquia:
-  realm: "devcloud"
-  site: "towerhealthcm"
-  env: "dev"
-
 # Styleguide settings
 styleguide:
   root: "styleguide"
