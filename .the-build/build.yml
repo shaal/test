@@ -55,7 +55,7 @@ behat:
 # @see https://github.com/palantirnet/the-build/blob/release-2.0/defaults.yml
 artifact:
   git:
-    remote: "towerhealthcm@svn-6061.devcloud.hosting.acquia.com:towerhealthcm.git"
+    remote: "towerhealth@svn-29892.prod.hosting.acquia.com:towerhealth.git"
 
 # Configuration for targets/acquia.xml
 acquia:
