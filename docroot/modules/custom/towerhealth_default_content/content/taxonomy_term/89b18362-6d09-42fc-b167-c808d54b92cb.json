@@ -50,7 +50,7 @@
     ],
     "name": [
         {
-            "value": "Pink Eye",
+            "value": "Conjunctivitis",
             "lang": "en"
         }
     ],
@@ -66,7 +66,7 @@
     },
     "changed": [
         {
-            "value": "2019-09-03T21:52:43+00:00",
+            "value": "2019-10-01T14:38:30+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -81,6 +81,16 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "rh_action": [
+        {
+            "value": "bundle_default"
+        }
+    ],
+    "rh_redirect_response": [
+        {
+            "value": 301
         }
     ]
 }

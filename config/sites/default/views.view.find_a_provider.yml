@@ -178,6 +178,7 @@ display:
           min_length: null
           fields:
             - provider_specialties_condition_name
+            - provider_specialties_condition_synonym
             - provider_specialties_name
             - rendered_item
             - title
