@@ -11,7 +11,7 @@ _core:
 id: tower_health_branding
 theme: tower_health
 region: header
-weight: -2
+weight: -5
 provider: null
 plugin: system_branding_block
 settings:

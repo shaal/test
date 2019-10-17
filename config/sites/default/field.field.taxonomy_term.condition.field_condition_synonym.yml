@@ -1,15 +1,15 @@
-uuid: 1e5bc41f-a8be-47df-8276-f4ee035af54a
+uuid: 0d9a2b69-b595-4679-bf13-6f82d806b076
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_alternative_names
+    - field.storage.taxonomy_term.field_condition_synonym
     - taxonomy.vocabulary.condition
-id: taxonomy_term.condition.field_alternative_names
-field_name: field_alternative_names
+id: taxonomy_term.condition.field_condition_synonym
+field_name: field_condition_synonym
 entity_type: taxonomy_term
 bundle: condition
-label: 'Alternative Names'
+label: Synonyms
 description: 'Alternative ways of referring to this condition, so that users can find this condition under different search terms.'
 required: false
 translatable: false

@@ -17,6 +17,11 @@
                 "lang": "en"
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/location\/field_location_type": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/8?_format=hal_json"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/node\/location\/field_services_ref": [
             {
                 "href": "http:\/\/default\/node\/4?_format=hal_json",
@@ -36,7 +41,7 @@
     ],
     "vid": [
         {
-            "value": 14
+            "value": 20
         }
     ],
     "langcode": [
@@ -52,7 +57,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-09-05T18:31:39+00:00",
+            "value": "2019-10-01T15:14:27+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -69,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "c43f45c4-7715-4f5e-929a-d1f441e8e44c"
+                        "value": "aa2e0eca-1b4b-446f-95ba-7dfa4dd9b8f1"
                     }
                 ]
             }
@@ -86,10 +91,27 @@
                 },
                 "uuid": [
                     {
-                        "value": "c43f45c4-7715-4f5e-929a-d1f441e8e44c"
+                        "value": "aa2e0eca-1b4b-446f-95ba-7dfa4dd9b8f1"
                     }
                 ],
                 "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/location\/field_location_type": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/8?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "28644580-0ff9-4a40-bfef-917e5a183882"
+                    }
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/location\/field_services_ref": [
@@ -132,7 +154,7 @@
     ],
     "changed": [
         {
-            "value": "2019-09-05T18:31:39+00:00",
+            "value": "2019-10-01T15:14:27+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -165,6 +187,16 @@
         {
             "value": "published",
             "lang": "en"
+        }
+    ],
+    "rh_action": [
+        {
+            "value": "bundle_default"
+        }
+    ],
+    "rh_redirect_response": [
+        {
+            "value": 301
         }
     ],
     "field_location_address": [

@@ -29,6 +29,11 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  geocoder: 0
+  geocoder_address: 0
+  geocoder_field: 0
+  geofield: 0
+  geolocation: 0
   hal: 0
   help: 0
   image: 0
@@ -37,6 +42,7 @@ module:
   media: 0
   media_library: 0
   menu_ui: 0
+  metatag: 0
   migrate: 0
   migrate_plus: 0
   migrate_source_csv: 0
@@ -54,7 +60,10 @@ module:
   redirect: 0
   rh_node: 0
   rh_taxonomy: 0
+  schema_metatag: 0
   search_api: 0
+  search_api_location: 0
+  search_api_location_geocoder: 0
   search_api_solr: 0
   serialization: 0
   shortcut: 0

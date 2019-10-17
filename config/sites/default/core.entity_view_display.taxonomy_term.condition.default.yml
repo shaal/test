@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.condition.field_alternative_names
+    - field.field.taxonomy_term.condition.field_condition_synonym
     - taxonomy.vocabulary.condition
   module:
     - text
@@ -19,8 +19,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_alternative_names:
-    weight: 2
+  field_condition_synonym:
+    weight: 3
     label: above
     settings:
       link_to_entity: false

@@ -63,12 +63,12 @@ third_party_settings:
         - field_profile_board_eligible
         - field_profile_scheduling
       parent_name: group_content
-      weight: 24
+      weight: 21
       format_type: tab
       format_settings:
         label: 'Migrated data'
         formatter: closed
-        description: 'The content in this grouping comes from the MSOW data source and is not intended to be editable. If a value needs to change then the source data needs to be corrected and the content re-imported.'
+        description: "<h3>Migrated data</h3>\r\nThe content in this grouping comes from the MSOW data source and is not intended to be editable. If a value needs to change then the source data needs to be corrected and the content re-imported."
         required_fields: true
         id: ''
         classes: ''
@@ -76,9 +76,9 @@ third_party_settings:
     group_content:
       children:
         - group_display
-        - group_video
         - group_migrated_data
         - group_ratings
+        - group_video
       parent_name: ''
       weight: 5
       format_type: tabs
@@ -92,16 +92,17 @@ third_party_settings:
         - field_rating_overall
         - field_rating_count
         - field_rating_comment_count
-        - field_rating_comments_ref
+        - group_rating_comments
       parent_name: group_content
-      weight: 25
+      weight: 22
       format_type: tab
       format_settings:
+        label: Ratings
+        formatter: closed
+        description: "<h3>Provider Ratings</h3>\r\nThe ratings for the provider come from Binary Fountain and are updated through a migration on a weekly schedule."
+        required_fields: true
         id: ''
         classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
       label: Ratings
     group_video:
       children:
@@ -129,6 +130,18 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Display Name'
+    group_rating_comments:
+      children:
+        - field_rating_comments_ref
+      parent_name: group_ratings
+      weight: 29
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Rating Comments'
 id: node.profile.default
 targetEntityType: node
 bundle: profile
@@ -223,10 +236,14 @@ content:
   field_profile_first_name:
     weight: 1
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: string
+      show_description: 0
+      formatter_settings:
+        string:
+          link_to_entity: 0
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
   field_profile_gender:
     weight: 9
@@ -271,26 +288,36 @@ content:
   field_profile_last_name:
     weight: 3
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: string
+      show_description: 0
+      formatter_settings:
+        string:
+          link_to_entity: 0
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
   field_profile_middle_name:
     weight: 2
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: string
+      show_description: 0
+      formatter_settings:
+        string:
+          link_to_entity: 0
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
   field_profile_npi:
     weight: 6
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
   field_profile_phone:
     weight: 11

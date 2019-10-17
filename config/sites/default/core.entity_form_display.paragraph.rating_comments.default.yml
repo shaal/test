@@ -9,8 +9,7 @@ dependencies:
     - field.field.paragraph.rating_comments.field_rating_comment_rating
     - paragraphs.paragraphs_type.rating_comments
   module:
-    - datetime
-    - text
+    - readonly_field_widget
 id: paragraph.rating_comments.default
 targetEntityType: paragraph
 bundle: rating_comments
@@ -19,30 +18,42 @@ content:
   field_rating_comment_body:
     weight: 3
     settings:
-      rows: 5
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: text_textarea
+    type: readonly_field_widget
     region: content
   field_rating_comment_date:
     weight: 2
-    settings: {  }
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: datetime_default
+    type: readonly_field_widget
     region: content
   field_rating_comment_id:
     weight: 0
     settings:
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: number
+    type: readonly_field_widget
     region: content
   field_rating_comment_rating:
-    weight: 4
+    weight: 1
     settings:
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: number
+    type: readonly_field_widget
     region: content
 hidden:
   created: true

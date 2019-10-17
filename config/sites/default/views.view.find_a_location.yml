@@ -177,7 +177,8 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - location_services_condition_name
+            - location_services_specialty_condition_name
+            - location_services_specialty_condition_synonym
             - location_services_title
             - rendered_item
             - title
@@ -296,6 +297,10 @@ display:
       display_extenders: {  }
       path: find-a-location
       exposed_block: true
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
