@@ -56,6 +56,7 @@ behat:
 artifact:
   git:
     remote: "towerhealth@svn-29892.prod.hosting.acquia.com:towerhealth.git"
+  gitignore_template: .the-build/artifacts.gitignore
 
 # Styleguide settings
 styleguide:

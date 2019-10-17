@@ -1,0 +1,16 @@
+# This .gitignore file is specific to the artifact.
+/docroot/web.config
+/docroot/core/core.api.php
+/docroot/core/CHANGELOG.txt
+/docroot/core/COPYRIGHT.txt
+/docroot/core/INSTALL.mysql.txt
+/docroot/core/INSTALL.pgsql.txt
+/docroot/core/INSTALL.sqlite.txt
+/docroot/core/INSTALL.txt
+/docroot/core/LICENSE.txt
+/docroot/core/MAINTAINERS.txt
+/docroot/core/PATCHES.txt
+/docroot/core/UPDATE.txt
+/docroot/core/misc/favicon.ico
+# Ignore local and generated settings files
+/docroot/sites/*/settings.local.php
