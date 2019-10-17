@@ -7681,16 +7681,16 @@
         },
         {
             "name": "palantirnet/the-build",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/the-build.git",
-                "reference": "dca760b21ff85fcf577d42fdd81d3156dfeae370"
+                "reference": "bfaa9babe81c2bbebc642fe2e49a01dd73d05019"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/the-build/zipball/dca760b21ff85fcf577d42fdd81d3156dfeae370",
-                "reference": "dca760b21ff85fcf577d42fdd81d3156dfeae370",
+                "url": "https://api.github.com/repos/palantirnet/the-build/zipball/bfaa9babe81c2bbebc642fe2e49a01dd73d05019",
+                "reference": "bfaa9babe81c2bbebc642fe2e49a01dd73d05019",
                 "shasum": ""
             },
             "require": {
@@ -7722,7 +7722,7 @@
                 }
             ],
             "description": "Project setup templates and Phing build tasks for Drupal projects.",
-            "time": "2019-01-11T21:48:04+00:00"
+            "time": "2019-05-23T17:14:21+00:00"
         },
         {
             "name": "palantirnet/the-vagrant",
