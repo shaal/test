@@ -1,7 +1,7 @@
-status: '2'
+status: 2
 pattern: '[node:field_profile_first_name] [node:field_profile_middle_name] [node:field_profile_last_name], [node:field_profile_professional_title]'
 php: 0
-escape: 0
+escape: false
 dependencies:
   config:
     - node.type.profile
