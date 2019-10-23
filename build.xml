@@ -109,14 +109,6 @@
                 <echo message="${styleguide.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
             </else>
         </if>
-        <if>
-            <equals arg1="${build.env}" arg2="acquia"/>
-            <then>
-                <exec dir="artifacts/build/${styleguide.root}" command="git add dist -f" passthru="true" checkreturn="true"/>
-                <exec dir="artifacts/build/${styleguide.root}" command="git commit -m'Deploy styleguide changes'" passthru="true" checkreturn="true"/>
-                <echo message="${styleguide.root} deployed generated styleguide assets." />
-            </then>
-        </if>
     </target>
 
 
