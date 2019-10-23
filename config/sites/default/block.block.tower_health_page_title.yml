@@ -9,7 +9,7 @@ _core:
 id: tower_health_page_title
 theme: tower_health
 region: content
-weight: -7
+weight: -9
 provider: null
 plugin: page_title_block
 settings:
