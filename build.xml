@@ -92,7 +92,7 @@
             <then>
                 <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
                 <chmod file="${drupal.root}/${theme.root}" mode="744" />
-                <exec dir="${drupal.root}/${theme.root}" command="yarn build" passthru="true" checkreturn="true"/>
+                <exec dir="${drupal.root}/${theme.root}" command="yarn install --silent" passthru="true" checkreturn="true"/>
                 <exec dir="${drupal.root}/${theme.root}/scripts" command="sh twig_functions.sh" passthru="true" checkreturn="true"/>
             </then>
             <else>
