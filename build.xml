@@ -92,7 +92,6 @@
             <then>
                 <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
                 <chmod file="${drupal.root}/${theme.root}" mode="744" />
-                <chmod file="${drupal.root}/${theme.root}/node_modules" mode="744" />
                 <exec dir="${drupal.root}/${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
             </then>
             <else>
