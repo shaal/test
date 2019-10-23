@@ -112,8 +112,9 @@
         <if>
             <equals arg1="${build.env}" arg2="acquia"/>
             <then>
-                <exec dir="${styleguide.root}" command="git add dist -f" passthru="true" checkreturn="true"/>
-                <exec dir="${styleguide.root}" command="git commit -m'Deploy styleguide changes'" passthru="true" checkreturn="true"/>
+                <exec dir="artifacts/build/${styleguide.root}" command="git add dist -f" passthru="true" checkreturn="true"/>
+                <exec dir="artifacts/build/${styleguide.root}" command="git commit -m'Deploy styleguide changes'" passthru="true" checkreturn="true"/>
+                <echo message="${styleguide.root} deployed generated styleguide assets." />
             </then>
         </if>
     </target>
