@@ -78,6 +78,35 @@
          Builds the styleguide
          -->
     <target name="build-styleguide">
+        <!-- If we're building for an artifact, ensure we're building a fresh copy.
+             There's no other way do do this until https://github.com/yarnpkg/yarn/issues/5271 is resolved. -->
+        <if>
+            <equals arg1="${build.env}" arg2="acquia"/>
+            <then>
+                <echo message="Removing ${theme.root}/node_modules for reinstall." />
+                <exec dir="${drupal.root}/${theme.root}" command="rm -rf node_modules" passthru="true" checkreturn="true"/>
+            </then>
+        </if>
+        <if>
+            <not><available file="${drupal.root}/${theme.root}/node_modules/.yarn-integrity" type="file" /></not>
+            <then>
+                <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
+                <exec dir="${drupal.root}/${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
+            </then>
+            <else>
+                <echo message="${drupal.theme}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
+            </else>
+        </if>
+        <if>
+            <not><available file="${drupal.root}/${theme.root}/dist/style.css" type="file" /></not>
+            <then>
+                <echo message="${drupal.root}/${theme.root}/dist/styles.css doesn't exist, so build the styleguide assets." />
+                <exec dir="${drupal.root}/${theme.root}" command="yarn build" passthru="true" checkreturn="true"/>
+            </then>
+            <else>
+                <echo message="${drupal.root}/${theme.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
+            </else>
+        </if>
         <exec command="yarn build" dir="${styleguide.root}" />
     </target>
 
