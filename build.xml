@@ -92,7 +92,7 @@
             <then>
                 <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
                 <chmod file="${drupal.root}/${theme.root}" mode="744" />
-                <exec dir="${drupal.root}/${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
+                <exec dir="${drupal.root}/${theme.root}" command="npm install" passthru="true" checkreturn="true"/>
             </then>
             <else>
                 <echo message="${drupal.theme}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
