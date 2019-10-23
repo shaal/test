@@ -93,7 +93,7 @@
                 <echo message="${styleguide.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
                 <chmod file="${styleguide.root}" mode="755" />
                 <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${styleguide.root}" />
-                <exec dir="${styleguide.root}" command="yarn install --silent" passthru="true" checkreturn="true"/>
+                <exec dir="${styleguide.root}" command="yarn" passthru="true" checkreturn="true"/>
             </then>
             <else>
                 <echo message="${styleguide.root}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
