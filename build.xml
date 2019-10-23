@@ -37,7 +37,7 @@
 
         <!-- Create the public files directory and make it world writable. -->
         <mkdir dir="${drupal.root}/${drupal.site.settings.file_public_path}" />
-        <chmod file="${drupal.root}/${drupal.site.settings.file_public_path}" mode="744" />
+        <chmod file="${drupal.root}/${drupal.site.settings.file_public_path}" mode="755" />
 
         <!-- Create the private files directory and make it private. -->
         <mkdir dir="${drupal.root}/${drupal.site.settings.file_private_path}" />
@@ -83,30 +83,31 @@
         <if>
             <equals arg1="${build.env}" arg2="acquia"/>
             <then>
-                <echo message="Removing ${theme.root}/node_modules for reinstall." />
-                <exec dir="${drupal.root}/${theme.root}" command="rm -rf node_modules" passthru="true" checkreturn="true"/>
+                <echo message="Removing ${styleguide.root}/node_modules for reinstall." />
+                <exec dir="${styleguide.root}" command="rm -rf node_modules" passthru="true" checkreturn="true"/>
             </then>
         </if>
         <if>
-            <not><available file="${drupal.root}/${theme.root}/node_modules/.yarn-integrity" type="file" /></not>
+            <not><available file="${styleguide.root}/node_modules/.yarn-integrity" type="file" /></not>
             <then>
-                <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
-                <chmod file="${drupal.root}/${theme.root}" mode="744" />
-                <exec dir="${drupal.root}/${theme.root}" command="yarn install --silent" passthru="true" checkreturn="true"/>
-                <exec dir="${drupal.root}/${theme.root}/scripts" command="sh twig_functions.sh" passthru="true" checkreturn="true"/>
+                <echo message="${styleguide.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
+                <chmod file="${styleguide.root}" mode="755" />
+                <chown file="{$styleguide.root}" user />
+                <exec dir="${styleguide.root}" command="yarn install --silent" passthru="true" checkreturn="true"/>
+                <exec dir="${styleguide.root}/scripts" command="sh twig_functions.sh" passthru="true" checkreturn="true"/>
             </then>
             <else>
-                <echo message="${drupal.theme}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
+                <echo message="${styleguide.root}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
             </else>
         </if>
         <if>
-            <not><available file="${drupal.root}/${theme.root}/dist/style.css" type="file" /></not>
+            <not><available file="${styleguide.root}/dist/style.css" type="file" /></not>
             <then>
-                <echo message="${drupal.root}/${theme.root}/dist/styles.css doesn't exist, so build the styleguide assets." />
-                <exec dir="${drupal.root}/${theme.root}" command="yarn build" passthru="true" checkreturn="true"/>
+                <echo message="${styleguide.root}/dist/styles.css doesn't exist, so build the styleguide assets." />
+                <exec dir="${styleguide.root}" command="yarn build" passthru="true" checkreturn="true"/>
             </then>
             <else>
-                <echo message="${drupal.root}/${theme.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
+                <echo message="${styleguide.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
             </else>
         </if>
         <exec command="yarn build" dir="${styleguide.root}" />
