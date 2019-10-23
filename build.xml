@@ -92,7 +92,6 @@
             <then>
                 <echo message="${styleguide.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
                 <chmod file="${styleguide.root}" mode="755" />
-                <chown file="{$styleguide.root}" user />
                 <exec dir="${styleguide.root}" command="yarn install --silent" passthru="true" checkreturn="true"/>
                 <exec dir="${styleguide.root}/scripts" command="sh twig_functions.sh" passthru="true" checkreturn="true"/>
             </then>
