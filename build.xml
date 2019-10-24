@@ -83,30 +83,30 @@
         <if>
             <equals arg1="${build.env}" arg2="acquia"/>
             <then>
-                <echo message="Removing ${styleguide.root}/node_modules for reinstall." />
-                <exec dir="${styleguide.root}" command="rm -rf node_modules" passthru="true" checkreturn="true"/>
+                <echo message="Removing ${theme.root}/node_modules for reinstall." />
+                <exec dir="${theme.root}" command="rm -rf node_modules" passthru="true" checkreturn="true"/>
             </then>
         </if>
         <if>
-            <not><available file="${styleguide.root}/node_modules/.yarn-integrity" type="file" /></not>
+            <not><available file="${theme.root}/node_modules/.yarn-integrity" type="file" /></not>
             <then>
-                <echo message="${styleguide.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
-                <chmod file="${styleguide.root}" mode="755" />
+                <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
+                <chmod file="${theme.root}" mode="755" />
                 <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${styleguide.root}" />
-                <exec dir="${styleguide.root}" command="yarn install" passthru="true" checkreturn="true"/>
+                <exec dir="${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
             </then>
             <else>
-                <echo message="${styleguide.root}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
+                <echo message="${theme.root}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
             </else>
         </if>
         <if>
-            <not><available file="${styleguide.root}/dist/style.css" type="file" /></not>
+            <not><available file="${theme.root}/dist/style.css" type="file" /></not>
             <then>
-                <echo message="${styleguide.root}/dist/styles.css doesn't exist, so build the styleguide assets." />
-                <exec dir="${styleguide.root}" command="yarn build" passthru="true" checkreturn="true"/>
+                <echo message="${theme.root}/dist/styles.css doesn't exist, so build the styleguide assets." />
+                <exec dir="${theme.root}" command="yarn build" passthru="true" checkreturn="true"/>
             </then>
             <else>
-                <echo message="${styleguide.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
+                <echo message="${theme.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
             </else>
         </if>
     </target>
