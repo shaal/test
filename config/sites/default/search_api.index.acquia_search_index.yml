@@ -1,6 +1,6 @@
-uuid: 7673e9bd-f45e-46f5-aca7-b2f255b6da9a
+uuid: a58cdf1d-1937-403f-b3dd-fb62220d590b
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_services_ref
@@ -14,15 +14,17 @@ dependencies:
     - field.storage.node.field_location_type
     - field.storage.node.field_profile_languages
     - field.storage.node.field_profile_type
-    - search_api.server.local_development
+    - search_api.server.acquia_search_server
     - core.entity_view_mode.node.search_index
   module:
     - node
     - taxonomy
     - search_api_solr
     - search_api
-id: towerhealth
-name: TowerHealth
+_core:
+  default_config_hash: '-ggwZpvT2-Ey1fqPkREitA6TGI_m5dTHD9vZm9FrlSQ'
+id: acquia_search_index
+name: 'Acquia Search Solr Index'
 description: ''
 read_only: true
 field_settings:
@@ -324,4 +326,4 @@ options:
   index_directly: true
   cron_limit: 50
   overridden_by_acquia_search: 2
-server: local_development
+server: acquia_search_server
