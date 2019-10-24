@@ -17,6 +17,7 @@
 /docroot/themes/custom/*/js/
 /docroot/themes/custom/*/svg/
 /docroot/themes/custom/*/imgs/
+/docroot/themes/custom/*/dist/
 
 # Ignore yarn error log
 /docroot/themes/custom/*/yarn-error.log
