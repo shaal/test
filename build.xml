@@ -92,7 +92,8 @@
             <then>
                 <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
                 <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${theme.root}" />
-                <chmod file="${theme.root}" mode="755" />
+                <chmod file="${theme.root}/scripts/twig_functions.sh" mode="755" />
+                <chmod file="${theme.root}/scripts/pattern_lab.sh" mode="755" />
                 <exec dir="${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
             </then>
             <else>
