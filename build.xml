@@ -43,7 +43,7 @@
         <mkdir dir="${drupal.root}/${drupal.site.settings.file_private_path}" />
         <chmod file="${drupal.root}/${drupal.site.settings.file_private_path}" mode="640" />
 
-        <chmod file="${drupal.root}/${theme.root}" mode="744" />
+        <chmod file="${theme.root}" mode="755" />
 
         <!-- Copy the settings.build.php and services.build.php templates into place. -->
         <copy todir="${build.dir}" overwrite="true" mode="544">
@@ -91,7 +91,6 @@
             <not><available file="${theme.root}/node_modules/.yarn-integrity" type="file" /></not>
             <then>
                 <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
-                <chmod file="${theme.root}" mode="755" />
                 <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${styleguide.root}" />
                 <exec dir="${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
             </then>
