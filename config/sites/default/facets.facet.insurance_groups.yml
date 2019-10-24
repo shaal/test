@@ -1,4 +1,4 @@
-uuid: 6598361b-bc68-412e-ad9d-a85847acdacc
+uuid: 659e1306-bfb2-42f6-b371-86a37e41ef75
 langcode: en
 status: true
 dependencies:
@@ -7,22 +7,28 @@ dependencies:
     - views.view.find_a_provider
   module:
     - search_api
-id: specialties
-name: 'Medical Specialties » Taxonomy term » Name » String '
-url_alias: specialties
-weight: -3
+id: insurance_groups
+name: 'Insurance accepted'
+url_alias: insurance_groups
+weight: 0
 min_count: 1
-show_only_one_result: true
-field_identifier: provider_specialties_name_string
+show_only_one_result: false
+field_identifier: provider_insurance_ref
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
 widget:
-  type: dropdown
+  type: checkbox
   config:
     show_numbers: false
-    default_option_label: Choose
+    soft_limit: 0
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+    show_reset_link: false
+    reset_text: 'Show all'
+    hide_reset_when_no_selection: false
 query_operator: or
-use_hierarchy: false
-expand_hierarchy: false
+use_hierarchy: true
+expand_hierarchy: true
 enable_parent_when_child_gets_disabled: true
 hard_limit: 0
 exclude: false
@@ -46,6 +52,17 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  term_weight_widget_order:
+    processor_id: term_weight_widget_order
+    weights:
+      sort: 60
+    settings:
+      sort: ASC
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
