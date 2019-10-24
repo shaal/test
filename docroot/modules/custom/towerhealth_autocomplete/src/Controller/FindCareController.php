@@ -83,7 +83,12 @@ class FindCareController extends ControllerBase {
 
       $values = $data->_item->getField($field)->getValues();
       foreach ($values as $value) {
-        $text = $value->toText();
+        if (is_object($value)) {
+          $text = $value->toText();
+        }
+        else {
+          $text = $value;
+        }
 
         // Confirm that this field matches the input.
         if (strpos(strtolower($text), strtolower($input)) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
@@ -153,7 +158,15 @@ class FindCareController extends ControllerBase {
         }
 
         $values = $data->_item->getField('title')->getValues();
-        $node_title = reset($values)->toText();
+
+        $value = reset($values);
+
+        if (is_object($value)) {
+          $node_title = reset($values)->toText();
+        }
+        else {
+          $node_title = $value;
+        }
 
         $results[] = [
           'value' => $node_title,
