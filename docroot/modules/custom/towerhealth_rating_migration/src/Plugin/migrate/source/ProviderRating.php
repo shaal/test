@@ -6,6 +6,8 @@ use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 use Drupal\Core\State\StateInterface;
 use GuzzleHttp\Client;
+use GuzzleHttp\Promise;
+use GuzzleHttp\Psr7\Request
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\Core\Site\Settings;
@@ -152,32 +154,24 @@ class ProviderRating extends SqlBase {
   public function prepareRow(Row $row) {
     $npi_id = $row->getSourceProperty('field_profile_npi_value');
 
-    $npi_id = 1932177086;
-
     // Set the npi_id to be used for lookup.
     $row->setSourceProperty('field_profile_npi', $npi_id);
 
-    $provider_response = $this->client->request('GET', '/service/bsr/comments', [
-      'headers' => [
-        'accessToken' => $this->access_token,
-      ],
-      'query' => ['personId' => $npi_id],
+    $request = new Request('GET', 'https://api.binaryfountain.com/api/service/bsr/comments?personId=' . $npi_id, [
+      'accessToken' => $this->access_token,
       'delay' => 500,
-      'http_errors' => false,
+      'http_errors' => FALSE,
     ]);
 
-    //$provider_response = $promise->wait();
+    $promise = ['ratings' => $this->client->sendAsync($request)];
 
-    // Decode the body into JSON.
-    $response_body = Json::decode($provider_response->getBody());
+    $results = Promise\settle($promise)->wait();
 
-    echo $provider_response->getBody();
+    $ratings = $results['ratings'];
 
-    $response_data = [
-      'success' => $response_body['status'],
-    ];
+    if ($ratings['state'] == 'fulfilled') {
+      $response_body = Json::decode($ratings['value']->getBody());
 
-    if ($response_data['success']['code'] == 200) {
       $rating_entity = $response_body['data']['entities'][0];
 
       $row->setSourceProperty('total_rating_count', $rating_entity['totalRatingCount']);
@@ -187,9 +181,13 @@ class ProviderRating extends SqlBase {
       if (isset($rating_entity['overallRating']['value'])) {
         $row->setSourceProperty('overall_rating', $rating_entity['overallRating']['value']);
       }
+
+      return parent::prepareRow($row);
     }
 
-    return parent::prepareRow($row);
+    $row->rehash();
+
+    return TRUE;
   }
 
 }

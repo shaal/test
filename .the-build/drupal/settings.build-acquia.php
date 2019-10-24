@@ -42,3 +42,6 @@ if (!$cli && (isset($_ENV['AH_NON_PRODUCTION']) && $_ENV['AH_NON_PRODUCTION'])) 
     exit;
   }
 }
+
+$settings['rating_api_id'] = '386708867350450';
+$settings['rating_api_secret'] = '60eebb76-506b-4429-957d-5dea47fe8132';
