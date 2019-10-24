@@ -7,7 +7,7 @@ use Drupal\migrate\Row;
 use Drupal\Core\State\StateInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Promise;
-use GuzzleHttp\Psr7\Request
+use GuzzleHttp\Psr7\Request;
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\Core\Site\Settings;
