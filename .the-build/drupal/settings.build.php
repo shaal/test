@@ -44,3 +44,6 @@ $settings['skip_permissions_hardening'] = TRUE;
 
 // Turn errors up.
 $config['system.logging']['error_level'] = 'verbose';
+
+$settings['rating_api_id'] = '386708867350450';
+$settings['rating_api_secret'] = '60eebb76-506b-4429-957d-5dea47fe8132';
