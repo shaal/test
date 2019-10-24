@@ -91,6 +91,7 @@
             <not><available file="${theme.root}/node_modules/.yarn-integrity" type="file" /></not>
             <then>
                 <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
+                <chmod file="${theme.root}" mode="755" />
                 <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${styleguide.root}" />
                 <exec dir="${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
             </then>
