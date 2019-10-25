@@ -11,7 +11,7 @@ dependencies:
 id: specialties
 theme: tower_health
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: 'facet_block:specialties'
 settings:

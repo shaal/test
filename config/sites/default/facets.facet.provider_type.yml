@@ -1,4 +1,4 @@
-uuid: 28087482-c6a1-4eb0-aaf7-ebd35c21e875
+uuid: 028f823d-833e-4d70-b96c-5832fb3bf47e
 langcode: en
 status: true
 dependencies:
@@ -7,16 +7,16 @@ dependencies:
     - views.view.find_a_provider
   module:
     - search_api
-id: location_content_title
-name: 'Location » Content » Title'
-url_alias: location_content_title
-weight: 0
+id: provider_type
+name: 'Provider Type'
+url_alias: provider_type
+weight: 2
 min_count: 1
 show_only_one_result: false
-field_identifier: location_title_string
+field_identifier: provider_profile_type
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
 widget:
-  type: links
+  type: checkbox
   config:
     show_numbers: false
     soft_limit: 0
@@ -52,6 +52,24 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  exclude_specified_items:
+    processor_id: exclude_specified_items
+    weights:
+      build: 50
+    settings:
+      exclude: 'independent, contracted'
+      regex: false
+  facets_custom_label:
+    processor_id: facets_custom_label
+    weights:
+      build: 50
+    settings:
+      replacement_values: "r|tower_health_employed|Physicians Only\r\nr|app_employed|Advanced Practitioners Only"
+  list_item:
+    processor_id: list_item
+    weights:
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:

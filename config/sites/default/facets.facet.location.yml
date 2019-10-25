@@ -1,4 +1,4 @@
-uuid: 6598361b-bc68-412e-ad9d-a85847acdacc
+uuid: f3846bd0-3b62-4597-a199-28456d10b63b
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
     - views.view.find_a_provider
   module:
     - search_api
-id: specialties
-name: 'Medical Specialties » Taxonomy term » Name » String '
-url_alias: specialties
-weight: -3
+id: location
+name: 'Location » Content » Title'
+url_alias: location
+weight: 1
 min_count: 1
-show_only_one_result: true
-field_identifier: provider_specialties_name_string
+show_only_one_result: false
+field_identifier: provider_location_title_string
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
 widget:
   type: dropdown

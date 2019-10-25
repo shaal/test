@@ -1,0 +1,23 @@
+uuid: 2c0a8bbd-13f6-44e2-ae27-898e9ce09f68
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.insurance_groups
+  module:
+    - facets
+  theme:
+    - tower_health
+id: insurancegroups
+theme: tower_health
+region: content
+weight: 0
+provider: null
+plugin: 'facet_block:insurance_groups'
+settings:
+  id: 'facet_block:insurance_groups'
+  label: 'Insurance Groups'
+  provider: facets
+  label_display: visible
+  block_id: insurancegroups
+visibility: {  }
