@@ -42,3 +42,13 @@ widgets:
     weight: -10
     label: 'Upload new image'
     id: entity_form
+  1de5133e-4bac-477a-b860-19363fb98ca7:
+    settings:
+      entity_type: media
+      bundle: remote_video
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: 1de5133e-4bac-477a-b860-19363fb98ca7
+    weight: 3
+    label: 'Add new video'
+    id: entity_form

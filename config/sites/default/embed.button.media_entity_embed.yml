@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
+    - core.entity_view_mode.media.media_library
+    - entity_browser.browser.media_entity_browser_media_library
+    - media.type.image
+    - media.type.remote_video
   module:
     - entity_embed
     - media
@@ -14,9 +17,12 @@ id: media_entity_embed
 type_id: entity
 type_settings:
   entity_type: media
-  bundles: {  }
-  display_plugins: {  }
-  entity_browser: media_entity_browser
+  bundles:
+    - image
+    - remote_video
+  display_plugins:
+    - 'view_mode:media.media_library'
+  entity_browser: media_entity_browser_media_library
   entity_browser_settings:
     display_review: false
 icon_uuid: null
