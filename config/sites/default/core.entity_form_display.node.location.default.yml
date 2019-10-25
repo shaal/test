@@ -35,7 +35,7 @@ third_party_settings:
         - group_on_my_way
         - group_service_content
         - group_flexible_components
-        - group_how_t
+        - group_how_to_find_us
         - group_insurance
       parent_name: ''
       weight: 0
@@ -45,6 +45,23 @@ third_party_settings:
         classes: ''
         direction: vertical
       label: 'Vertical tabs'
+      region: content
+    group_description:
+      children:
+        - field_location_type
+        - field_location_image
+        - field_location_body
+      parent_name: group_vertical_tabs
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Description
+      region: content
     group_migrated_data:
       children:
         - title
@@ -54,96 +71,86 @@ third_party_settings:
         - field_location_fax
         - field_location_hours
       parent_name: group_vertical_tabs
-      weight: 9
+      weight: 24
       format_type: tab
       format_settings:
-        label: 'Migrated data'
-        formatter: closed
-        description: "<h3>Migrated data</h3>\r\nThe content in this grouping comes from the MSOW data source and is not intended to be editable. If a value needs to change then the source data needs to be corrected and the content re-imported."
-        required_fields: true
         id: ''
         classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
       label: 'Migrated data'
-    group_service_content:
-      children:
-        - field_services_ref
-      parent_name: group_vertical_tabs
-      weight: 11
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: 'Service content'
-    group_flexible_components:
-      children:
-        - field_location_components
-      parent_name: group_vertical_tabs
-      weight: 12
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: 'Flexible components'
-    group_insurance:
-      children:
-        - field_location_insurance
-      parent_name: group_vertical_tabs
-      weight: 14
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: 'Insurance Information'
-    group_how_t:
-      children:
-        - field_location_find_us
-      parent_name: group_vertical_tabs
-      weight: 13
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: 'How to find us'
-    group_description:
-      children:
-        - field_location_type
-        - field_location_image
-        - field_location_body
-      parent_name: group_vertical_tabs
-      weight: 8
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: Description
+      region: content
     group_on_my_way:
       children:
         - field_location_omw
       parent_name: group_vertical_tabs
-      weight: 10
+      weight: 26
       format_type: tab
       format_settings:
         id: ''
         classes: ''
-        formatter: closed
         description: ''
+        formatter: closed
         required_fields: true
       label: 'On My Way'
+      region: content
+    group_service_content:
+      children:
+        - field_services_ref
+      parent_name: group_vertical_tabs
+      weight: 27
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Service content'
+      region: content
+    group_flexible_components:
+      children:
+        - field_location_components
+      parent_name: group_vertical_tabs
+      weight: 28
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Flexible components'
+      region: content
+    group_how_to_find_us:
+      children:
+        - field_location_find_us
+      parent_name: group_vertical_tabs
+      weight: 29
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'How to find us'
+      region: content
+    group_insurance:
+      children:
+        - field_location_insurance
+      parent_name: group_vertical_tabs
+      weight: 30
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Insurance Information'
+      region: content
 id: node.location.default
 targetEntityType: node
 bundle: location
@@ -156,7 +163,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_location_address:
-    weight: 16
+    weight: 14
     settings:
       label: above
       formatter_type: null
@@ -166,7 +173,7 @@ content:
     type: readonly_field_widget
     region: content
   field_location_body:
-    weight: 15
+    weight: 11
     settings:
       rows: 5
       placeholder: ''
@@ -186,7 +193,7 @@ content:
     third_party_settings: {  }
     region: content
   field_location_fax:
-    weight: 18
+    weight: 16
     settings:
       label: above
       formatter_type: null
@@ -197,7 +204,7 @@ content:
     region: content
   field_location_find_us:
     type: entity_reference_paragraphs
-    weight: 16
+    weight: 18
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -208,7 +215,7 @@ content:
     third_party_settings: {  }
     region: content
   field_location_hours:
-    weight: 19
+    weight: 17
     settings:
       label: above
       formatter_type: null
@@ -218,7 +225,7 @@ content:
     type: readonly_field_widget
     region: content
   field_location_id:
-    weight: 15
+    weight: 13
     settings:
       label: above
       formatter_type: null
@@ -229,13 +236,13 @@ content:
     region: content
   field_location_image:
     type: media_library_widget
-    weight: 13
+    weight: 10
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_location_insurance:
-    weight: 17
+    weight: 19
     settings:
       rows: 5
       placeholder: ''
@@ -249,7 +256,7 @@ content:
     type: options_buttons
     region: content
   field_location_phone_number:
-    weight: 17
+    weight: 15
     settings:
       label: above
       formatter_type: null
@@ -259,13 +266,13 @@ content:
     type: readonly_field_widget
     region: content
   field_location_type:
-    weight: 12
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_services_ref:
-    weight: 15
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: 60
@@ -275,13 +282,13 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 8
+    weight: 7
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -289,26 +296,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 3
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
     type: readonly_field_widget
-    weight: 14
+    weight: 12
     region: content
     settings:
       label: above
@@ -326,7 +333,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
