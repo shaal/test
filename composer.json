@@ -114,6 +114,9 @@
         "patches": {
             "drupal/migrate_plus": {
                 "Add XPath-style filtering ability in JSON data parser plugin. (https://www.drupal.org/project/migrate_plus/issues/3007709)": "https://www.drupal.org/files/issues/2018-11-14/migrate_plus-json-xpath-filtering-3007709-8.patch"
+            },
+            "drupal/node_title_help_text": {
+                "node_title_help_text_inline_entity_form_entity_form_alter loads NodeType even when not referencing nodes (https://www.drupal.org/project/node_title_help_text/issues/307031)": "https://www.drupal.org/files/issues/2019-07-25/ief-only-nodes.patch"
             }
         }
     }
