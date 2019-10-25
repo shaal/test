@@ -92,6 +92,7 @@ class FindCareController extends ControllerBase {
 
         // Confirm that this field matches the input.
         if (strpos(strtolower($text), strtolower($input)) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
+          $text = ucwords($text);
           $new_results[] = [
             'value' => $text,
             'label' => $text,
@@ -162,10 +163,10 @@ class FindCareController extends ControllerBase {
         $value = reset($values);
 
         if (is_object($value)) {
-          $node_title = reset($values)->toText();
+          $node_title = ucwords(reset($values)->toText());
         }
         else {
-          $node_title = $value;
+          $node_title = ucwords($value);
         }
 
         $results[] = [
