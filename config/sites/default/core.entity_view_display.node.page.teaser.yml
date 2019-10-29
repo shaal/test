@@ -23,4 +23,6 @@ content:
     weight: 101
     region: content
 hidden:
+  field_media: true
+  field_text: true
   search_api_excerpt: true

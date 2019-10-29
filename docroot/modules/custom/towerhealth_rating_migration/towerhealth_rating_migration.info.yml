@@ -1,4 +1,4 @@
-name: 'Tower Health Migration'
+name: 'Tower Health Ratings Migration'
 type: module
 description: 'Import from Binary Fountain'
 core: 8.x
