@@ -1,17 +1,16 @@
 .footer {
-  padding: 1em;
   font-size: 0.9em;
   line-height: 1.6em;
   margin-bottom: 0;
 
-  @include breakpoint($bp3) {
-    padding: 2.5em 2em;
-  }
-
   .footer-top {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 2em;
+    padding: 1em;
+
+    @include breakpoint($bp3) {
+      padding: 2.5em 2em;
+    }
 
     @include breakpoint($bp4) {
       flex-wrap: nowrap;
@@ -21,6 +20,17 @@
 
   .footer-bottom {
     text-align: center;
+    background-color: $primary-dark;
+    color: $trust-ltst;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+
+    @include breakpoint($footer2) {
+      flex-wrap: nowrap;
+    }
   }
 
   &__info {
@@ -104,6 +114,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 
     @include breakpoint($bp4) {
       width: 65%;
@@ -120,7 +131,7 @@
       }
 
       @include breakpoint($footer3) {
-        width: calc(33% - 2em);
+        width: calc(25% - 2em);
       }
 
       a:first-of-type {
@@ -146,18 +157,24 @@
 
   &__details {
     @include adjust-font-size-to($label, .9);
+    width: 100%;
 
     a {
       display: block;
       margin-bottom: 0.5em;
       border: none;
+      color: $trust-ltr;
+
+      @include breakpoint($footer2) {
+        margin-bottom: 0;
+      }
     }
 
     @include breakpoint($bp3) {
       a {
         display: inline-block;
         padding: 0 0.5em;
-        border-right: 1px solid $gray-lighter;
+        border-right: 1px solid $trust-ltr;
 
         &:last-of-type {
           border-right: none;
@@ -168,5 +185,6 @@
 
   &__legal {
     font-size: 0.9em;
+    width: 100%;
   }
 }
