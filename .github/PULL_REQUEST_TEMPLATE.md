@@ -1,15 +1,19 @@
 ## JIRA Ticket(s)
 
-- See ticket [ABC-XX: Ticket Title](https://palantir.atlassian.net/browse/ABC-XX).
+- See ticket [TH-XX: Ticket Title](https://palantir.atlassian.net/browse/TH-XX).
 
 ## Description
 
-_A description of the changes in this PR._
+_A  short description of the changes in this PR._
+
+### User story
+_Copy the user story and acceptance criteria here_
 
 ## Testing instructions
 
 1. _Add your testing instructions here, for example..._
-1. `vendor/bin/phing build install migrate`
+1. `phing build install`
+1. Go to XX page and confirm that XX hapens
 
 ## Relevant Screenshots/gifs:
 
@@ -28,4 +32,4 @@ _Anything more to add?_
 
 ---
 
-[Pull Request Guidelines](https://github.com/palantirnet/development_documentation/blob/master/guidelines/pr_review.md)
+[Pull Request Guidelines](/docs/pr_review.md)
