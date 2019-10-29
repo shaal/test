@@ -39,6 +39,7 @@
     margin-bottom: 2em;
     display: flex;
     flex-wrap: wrap;
+    order: 1;
     justify-content: center;
     align-items: center;
 
@@ -56,6 +57,15 @@
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: center;
+      order: 2;
+    }
+
+    figure {
+      margin-bottom: 2em;
+
+      @include breakpoint($footer2) {
+        margin-bottom: 0;
+      }
     }
 
     img {
@@ -115,9 +125,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
+    order: 2;
 
     @include breakpoint($bp4) {
       width: 65%;
+      margin-top: 192px;
+      order: 1;
     }
 
     &__section {
@@ -158,6 +171,12 @@
   &__details {
     @include adjust-font-size-to($label, .9);
     width: 100%;
+    margin-bottom: 1em;
+
+    @include breakpoint($footer2) {
+      text-align: left;
+      margin-bottom: 0;
+    }
 
     a {
       display: block;
@@ -170,7 +189,8 @@
       }
     }
 
-    @include breakpoint($bp3) {
+    @include breakpoint($bp2) {
+
       a {
         display: inline-block;
         padding: 0 0.5em;
@@ -186,5 +206,9 @@
   &__legal {
     font-size: 0.9em;
     width: 100%;
+
+    @include breakpoint($footer2) {
+      text-align: right;
+    }
   }
 }
