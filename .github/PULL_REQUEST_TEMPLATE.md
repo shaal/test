@@ -32,4 +32,4 @@ _Anything more to add?_
 
 ---
 
-[Pull Request Guidelines](/docs/pr_review.md)
+[Pull Request Guidelines](https://github.com/palantirnet/towerhealth/blob/develop/docs/general/pr_review.md)
