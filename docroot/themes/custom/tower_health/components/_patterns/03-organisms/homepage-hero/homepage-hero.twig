@@ -15,6 +15,9 @@
   </div>
   <div class="homepage-hero__image">
     <div class="homepage-hero__image__background"></div>
-    <img src="{{img.src}}" alt="{{img.alt}}" />
+    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+      "img_src": img.src,
+      "img_alt": img.alt,
+    } %}
   </div>
 </div>
