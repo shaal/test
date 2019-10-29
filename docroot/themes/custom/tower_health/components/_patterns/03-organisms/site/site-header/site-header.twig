@@ -1,0 +1,13 @@
+<header class="header">
+  {% block header_content %}
+    <div class="header__container">
+      {% include "@atoms/04-images/00-image/figure.twig" with {
+        img_src: "../../images/TowerHealth_H.svg",
+        img_alt: "Tower Health",
+        img_url: logo_link_url|default('/'),
+      } %}
+
+      {% include "@molecules/menus/main-menu/main-menu.twig" %}
+    </div>
+  {% endblock %}
+</header>

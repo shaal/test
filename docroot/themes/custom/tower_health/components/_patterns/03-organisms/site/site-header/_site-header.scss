@@ -1,1 +1,17 @@
 //  Empty
+.header {
+  padding-top: rhythm(.5);
+}
+
+.header__container {
+  @include grid;
+  align-items: center;
+
+  .figure {
+    max-width: 250px;
+  }
+
+  .toggle-expand {
+    margin-left: auto;
+  }
+}

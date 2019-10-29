@@ -1,39 +1,46 @@
 logo_link_url: "#"
 
 menu_items:
-  - title: "Menu Item 1"
+  - title: "Providers"
     url: "#"
     below:
       - title: "Menu Item 1 Sub 1"
         url: "#"
-      - title: "Menu Item 1 Sub 2"
-        url: "#"
-        below:
-          - title: "Menu Item 1 Sub Sub 1"
-            url: "#"
-          - title: "Menu Item 1 Sub Sub 2"
-            url: "#"
-      - title: "Menu Item 1 Sub 3"
-        url: "#"
-      - title: "Menu Item 1 Sub 4"
-        url: "#"
-  - title: "Menu Item 2"
+  - title: "Locations"
     url: "#"
     below:
       - title: "Menu Item 2 Sub 1"
         url: "#"
-      - title: "Menu Item 2 Sub 2"
-        url: "#"
-      - title: "Menu Item 2 Sub 3"
-        url: "#"
-  - title: "Menu Item 3"
+  - title: "Patient Services"
     url: "#"
     below:
-      - title: "Menu Item 3 Sub 1"
+      - title: "What to Expect"
         url: "#"
-      - title: "Menu Item 3 Sub 2"
+      - title: "Patient Portal"
         url: "#"
-      - title: "Menu Item 3 Sub 3"
+      - title: "Costs & Billing"
         url: "#"
-      - title: "Menu Item 3 Sub 4"
+      - title: "Appointments"
+        url: "#"
+      - title: "Services & Conditions"
+        url: "#"
+  - title: "Medical Professionals"
+    url: "#"
+    modifiers:
+      1:
+        secondary
+    below:
+      - title: "Menu Item 2 Sub 1"
+        url: "#"
+  - title: "Academics"
+    url: "#"
+    modifiers:
+      1:
+        secondary
+    below:
+      - title: "School of Health Sciences"
+        url: "#"
+      - title: "Medical School"
+        url: "#"
+      - title: "Internships & Training"
         url: "#"
