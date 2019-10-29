@@ -94,10 +94,10 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_profile_gender
-  provider_insurance_company_string:
-    label: 'Insurance accepted » Taxonomy term » Insurance company » String'
+  provider_insurance_groups_insurance_company_string:
+    label: 'Insurance accepted » Taxonomy term » Insurance Company » Taxonomy term » Name'
     datasource_id: 'entity:node'
-    property_path: 'field_insurance_ref:entity:field_insurance_company'
+    property_path: 'field_insurance_ref:entity:field_insurance_company:entity:name'
     type: string
     dependencies:
       config:
@@ -105,25 +105,8 @@ field_settings:
         - field.storage.taxonomy_term.field_insurance_company
       module:
         - taxonomy
-  provider_insurance_groups_string:
-    label: 'Insurance accepted » Taxonomy term » Name » String'
-    datasource_id: 'entity:node'
-    property_path: 'field_insurance_ref:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_insurance_ref
-      module:
         - taxonomy
         - taxonomy
-  provider_insurance_ref:
-    label: 'Insurance accepted'
-    datasource_id: 'entity:node'
-    property_path: field_insurance_ref
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_insurance_ref
   provider_location_title_string:
     label: 'Location » Content » Title'
     datasource_id: 'entity:node'
@@ -282,11 +265,6 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   entity_status: {  }
-  hierarchy:
-    fields:
-      provider_insurance_ref: taxonomy_term-field_related_conditions_ref
-    weights:
-      preprocess_index: -45
   ignorecase:
     all_fields: true
     fields:
@@ -296,9 +274,7 @@ processor_settings:
       - location_services_title_string
       - name
       - profile_gender_string
-      - provider_insurance_company_string
-      - provider_insurance_groups_string
-      - provider_insurance_ref
+      - provider_insurance_groups_insurance_company_string
       - provider_location_title_string
       - provider_location_type_string
       - provider_profile_languages_string
