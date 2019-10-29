@@ -1,36 +1,39 @@
 // Toggle
 .toggle-expand {
-  @include link;
+  display: inline-block;
+  text-decoration: none;
+  padding: 1em;
+
+  svg {
+    fill: $trust-aa;
+  }
+
+  &:active,
+  &:hover {
+    svg {
+      fill: $growth-lg;
+    }
+  }
 
   @include breakpoint($main-menu-medium) {
     display: none;
   }
-
-  display: inline-block;
-  padding: $space;
-  text-decoration: none;
-  width: 100%;
-
-  // See main-menu.js
-  &--open {
-    background-color: $gray-dark;
-  }
 }
 
 .toggle-expand__text {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: bold;
-
-  .toggle-expand--open & {
-    color: $white;
-  }
+  @extend %element-invisible;
 }
 
 // SVG icon
 .toggle-expand__icon {
-  height: 3rem;
-  width: 3rem;
+  height: 2rem;
+  width: 2rem;
+  margin: 0 auto;
+}
+
+.toggle-close__icon {
+  height: 1.5rem;
+  width: 1.5rem;
   margin: 0 auto;
 }
 
@@ -46,14 +49,6 @@
 .toggle-expand__close {
   display: none;
   text-align: center;
-
-  &::before {
-    color: $white;
-    content: "X";
-    display: block;
-    font-size: 2.5rem;
-    line-height: 2;
-  }
 
   .toggle-expand--open & {
     display: inline-block;

@@ -1,9 +1,137 @@
 // LI
 .main-menu__item {
-  border-top: 1px solid;
+  border-top: 1px solid $trust-ltr;
   display: flex;
   flex-wrap: wrap;
   position: relative;
+
+  /* set default color of links */
+  > a {
+
+    &:link,
+    &:visited {
+      color: $primary-dark;
+      text-decoration: none;
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $primary-dark;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  > .expand-sub {
+
+    &,
+    &:link,
+    &:visited {
+      color: transparent;
+
+      &::after {
+        border: 8px solid $primary-dark;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+
+    &--open {
+      &::after {
+        border-top-color: transparent;
+        border-bottom: 8px solid $primary-dark;
+      }
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $primary-dark;
+
+      &::after {
+        border: 8px solid $white;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+
+    &--open:active,
+    &--open:hover,
+    &--open:focus {
+      &::after {
+        border-top-color: transparent;
+        border-bottom: 8px solid $white;
+      }
+    }
+  }
+
+  /* set secondary variant */
+  &--secondary {
+    > a {
+
+      &:link,
+      &:visited {
+        color: $trust-aa;
+        text-decoration: none;
+      }
+
+      &:active,
+      &:hover,
+      &:focus {
+        background-color: $trust-aa;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+    > .expand-sub {
+
+      &,
+      &:link,
+      &:visited {
+        color: transparent;
+
+        &::after {
+          border: 8px solid $trust-aa;
+          border-bottom-color: transparent;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+        }
+      }
+
+      &--open {
+        &::after {
+          border-top-color: transparent;
+          border-bottom: 8px solid $trust-aa;
+        }
+      }
+
+      &:active,
+      &:hover,
+      &:focus {
+        background-color: $trust-aa;
+
+        &::after {
+          border: 8px solid $white;
+          border-bottom-color: transparent;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+        }
+      }
+
+      &--open:active,
+      &--open:hover,
+      &--open:focus {
+        &::after {
+          border-top-color: transparent;
+          border-bottom: 8px solid $white;
+        }
+      }
+    }
+  }
 
   @include breakpoint($main-menu-medium) {
     border-top: none;
@@ -11,7 +139,6 @@
 
     // Only top level
     &:not(.main-menu__item--sub):hover {
-      background-color: $black;
       transition: all 0.2s;
 
       & > .main-menu--sub {
@@ -19,22 +146,18 @@
       }
     }
   }
-
-  &:hover {
-    .main-menu__link::after {
-      color: $gray;
-    }
-  }
 }
 
 // Expand Button
 .expand-sub {
-  background-color: $black;
   cursor: pointer;
   display: block;
-  width: 20%;
-  color: $white;
+  width: 10%;
+  color: transparent;
   position: relative;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
 
   @include breakpoint($main-menu-medium) {
     display: none;
@@ -42,14 +165,10 @@
 
   // Down triangle
   &::after {
-    border: 15px solid;
-    border-bottom-color: transparent;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
     content: "";
     display: block;
-    margin-right: -12px;
-    margin-top: -6px;
+    margin-right: -6px;
+    margin-top: -4px;
     position: absolute;
     right: 50%;
     top: 50%;
@@ -58,13 +177,9 @@
 
   // See main-menu.js
   &--open {
-    background-color: $black;
-    color: $off-white;
 
     &::after {
-      border-top-color: transparent;
-      border-bottom: 15px solid;
-      margin-top: -20px;
+      margin-top: -13px;
     }
   }
 }
@@ -76,9 +191,5 @@
 .main-menu__item--sub {
   @include breakpoint($main-menu-medium) {
     display: block;
-
-    &:not(:first-child) {
-      border-top: 1px solid $gray-light;
-    }
   }
 }
