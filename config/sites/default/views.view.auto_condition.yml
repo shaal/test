@@ -11,7 +11,7 @@ label: 'Autocomplete: Condition'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_towerhealth
+base_table: search_api_index_acquia_search_index
 base_field: search_api_id
 core: 8.x
 display:

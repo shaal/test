@@ -33,6 +33,7 @@
         "drupal-pattern-lab/attach-library-twig-extension": "^1.1",
         "drupal-pattern-lab/bem-twig-extension": "^1.0",
         "drupal-pattern-lab/unified-twig-extensions": "^0.1.0",
+        "drupal/acquia_connector": "^1.16",
         "drupal/address": "^1.6",
         "drupal/admin_toolbar": "^1.26",
         "drupal/auto_entitylabel": "^3.0@beta",
