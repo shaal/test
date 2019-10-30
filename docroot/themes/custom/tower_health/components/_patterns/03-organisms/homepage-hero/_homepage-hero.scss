@@ -93,15 +93,15 @@
         @include breakpoint($bp5) {
           font-size: 1.75em;
         }
+      }
 
-        &:first-of-type {
-          font-weight: 300;
-        }
+      .title--first {
+        font-weight: 300;
+      }
 
-        &:last-of-type {
-          color: $trust-aa;
-          font-weight: 600;
-        }
+      .title--last {
+        color: $trust-aa;
+        font-weight: 600;
       }
     }
 
