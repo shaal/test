@@ -11,7 +11,7 @@ dependencies:
 id: services
 theme: tower_health
 region: content
-weight: -1
+weight: -3
 provider: null
 plugin: 'facet_block:services'
 settings:

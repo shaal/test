@@ -10,7 +10,7 @@ use Drupal\Core\File\FileSystemInterface;
 /**
  * Implements hook_uninstall().
  */
-function towerhealth_migration_uninstall() {
+function towerhealth_rating_migration_uninstall() {
   // Remove migration group configs.
   Drupal::configFactory()->getEditable('migrate_plus.migration_group.towerhealth')->delete();
 }

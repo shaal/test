@@ -3,7 +3,7 @@ status: true
 dependencies:
   enforced:
     module:
-      - towerhealth_migration # for uninstall
+      - towerhealth_rating_migration # for uninstall
 id: towerhealth
 label: Tower Health
 description: 'Tower Health imports'

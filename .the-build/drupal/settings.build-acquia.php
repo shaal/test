@@ -30,8 +30,8 @@ elseif (isset($_ENV['AH_NON_PRODUCTION']) && $_ENV['AH_NON_PRODUCTION']) {
 // Modified from function drush_verify_cli()
 $cli = (php_sapi_name() == 'cli');
 
-// PASSWORD-PROTECT NON-PRODUCTION SITES (i.e. staging/dev)
-if (!$cli && (isset($_ENV['AH_NON_PRODUCTION']) && $_ENV['AH_NON_PRODUCTION'])) {
+// PASSWORD-PROTECT NON-PRODUCTION SITES (i.e. staging/dev/production)
+if (!$cli && (isset($_ENV['AH_NON_PRODUCTION']) && $_ENV['AH_NON_PRODUCTION'] || isset($_ENV['AH_PRODUCTION']) && $_ENV['AH_PRODUCTION'])) {
   $username = 'tower';
   $password = 'health';
   if (!(isset($_SERVER['PHP_AUTH_USER']) && ($_SERVER['PHP_AUTH_USER']==$username && $_SERVER['PHP_AUTH_PW']==$password))) {
@@ -42,3 +42,6 @@ if (!$cli && (isset($_ENV['AH_NON_PRODUCTION']) && $_ENV['AH_NON_PRODUCTION'])) 
     exit;
   }
 }
+
+$settings['rating_api_id'] = '386708867350450';
+$settings['rating_api_secret'] = '60eebb76-506b-4429-957d-5dea47fe8132';

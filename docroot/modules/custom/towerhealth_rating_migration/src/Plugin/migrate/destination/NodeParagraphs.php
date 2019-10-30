@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\towerhealth_msow_migration\Plugin\migrate\destination;
+namespace Drupal\towerhealth_rating_migration\Plugin\migrate\destination;
 
 use Drupal\migrate\Plugin\migrate\destination\EntityContentBase;
 use Drupal\migrate\Row;
@@ -44,16 +44,13 @@ class NodeParagraphs extends EntityContentBase {
     $destination_fields = $row->getDestination();
 
     foreach (array_keys($destination_fields) as $field_name) {
-      // Exclude semesters_course_list for now.
-      if ($field_name != 'field_semesters_course_list') {
-        $item_list = $entity->$field_name;
-        if ($item_list instanceof TypedDataInterface) {
-          if ($item_list instanceof EntityReferenceRevisionsFieldItemList) {
-            foreach ($item_list as $item) {
-              $paragraph_entity = $item->entity;
-              if ($paragraph_entity) {
-                $item->entity->delete();
-              }
+      $item_list = $entity->$field_name;
+      if ($item_list instanceof TypedDataInterface) {
+        if ($item_list instanceof EntityReferenceRevisionsFieldItemList) {
+          foreach ($item_list as $item) {
+            $paragraph_entity = $item->entity;
+            if ($paragraph_entity) {
+              $item->entity->delete();
             }
           }
         }

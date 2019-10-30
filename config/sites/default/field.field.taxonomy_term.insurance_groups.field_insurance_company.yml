@@ -1,19 +1,29 @@
-uuid: 485d3869-ec3f-4356-90a7-ee9a2fc24904
+uuid: 18e94fe5-cce0-4b47-8365-72ab884ae913
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_insurance_company
+    - taxonomy.vocabulary.insurance_company
     - taxonomy.vocabulary.insurance_groups
 id: taxonomy_term.insurance_groups.field_insurance_company
 field_name: field_insurance_company
 entity_type: taxonomy_term
 bundle: insurance_groups
-label: 'Insurance company'
-description: 'Add the insurance company tha tis a part of this group.'
+label: 'Insurance Company'
+description: 'Add insurance companies that are part of this group'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      insurance_company: insurance_company
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
