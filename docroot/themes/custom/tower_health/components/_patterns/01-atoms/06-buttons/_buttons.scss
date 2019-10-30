@@ -5,13 +5,17 @@
   color: $color;
   cursor: pointer;
   line-height: 1.4;
-  padding: 1.25em 2em;
+  padding: 1em 1.5em;
   display: inline-block;
   text-decoration: none;
   text-align: center;
   font-weight: 400;
   letter-spacing: 0.05em;
   border-radius: 8px;
+
+  @include breakpoint($bp3) {
+    padding: 1.25em 2em;
+  }
 
   &:visited {
     color: $color;
