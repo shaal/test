@@ -10,7 +10,13 @@
       {% endif %}
       <span class="title--last">{{ title_3 }}</span>
     </h1>
-    <h2>{{ subtitle }}</h2>
+    {% if subtitle %}
+      {% include "@atoms/02-text/00-headings/_heading.twig" with {
+        "heading_level": 2,
+        "heading": subtitle,
+        "heading_base_class": "subtitle",
+      } %}
+    {% endif %}
     <div class="homepage-hero__content__form">
       <label for="provider-search">Search Providers</label>
       <input id="provider-search" placeholder="Search by Name, Specialty, or Condition">
