@@ -1,6 +1,9 @@
 .image-background {
-  width: 100%;
-  
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  padding-top: 10px;
+
   img {
     border-radius: 50%;
   }
