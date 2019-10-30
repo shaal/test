@@ -2,11 +2,15 @@
   <div class="homepage-hero__outline"></div>
   <div class="homepage-hero__content">
     <h1>
-      <span class="title--first">{{ title_1 }}</span>
-      <span class="title--middle">{{ title_2 }}</span>
+      {% if title_1 %}
+        <span class="title--first">{{ title_1 }}</span>
+      {% endif %}
+      {% if title_2 %}
+        <span class="title--middle">{{ title_2 }}</span>
+      {% endif %}
       <span class="title--last">{{ title_3 }}</span>
     </h1>
-    <h2>{{ subtitle}} </h2>
+    <h2>{{ subtitle }}</h2>
     <div class="homepage-hero__content__form">
       <label for="provider-search">Search Providers</label>
       <input id="provider-search" placeholder="Search by Name, Specialty, or Condition">
