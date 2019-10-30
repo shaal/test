@@ -12,11 +12,30 @@
     content: ' ';
     position: absolute;
     border-radius: 50%;
-    background-color: $growth;
     z-index: -5;
-    margin-left: -20px;
-    margin-top: -10px;
     height: 100%;
     width: 100%;
+  }
+
+  &.growth {
+
+    .image::before {
+      background-color: $growth;
+    }
+  }
+
+  &.trust {
+
+    .image::before {
+      background-color: $trust;
+    }
+  }
+
+  &.top-left {
+
+    .image::before {
+      margin-left: -20px;
+      margin-top: -10px;
+    }
   }
 }
