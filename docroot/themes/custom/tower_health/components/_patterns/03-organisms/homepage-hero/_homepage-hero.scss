@@ -1,15 +1,16 @@
 .homepage-hero {
   position: relative;
   padding-top: 100px;
+  width: 100%;
 
   @include breakpoint($bp3) {
     padding-top: 0;
+    margin-top: 4em;
   }
 
   .homepage-hero__content {
     background-color: $white;
     border: 4px solid $trust-ltr;
-    border-left: none;
     border-radius: 5px;
     width: 90%;
     padding: 2em;
@@ -27,7 +28,6 @@
       background-color: transparent;
       width: 90%;
       margin: 0 auto;
-      margin-top: 4em;
       padding: 5em 0;
       padding-right: 40%;
     }
@@ -55,7 +55,7 @@
         color: $primary-dark;
         display: block;
         text-transform: uppercase;
-        font-size: 1em;
+        font-size: 0.9em;
         line-height: 1em;
         font-weight: 500;
 
