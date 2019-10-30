@@ -1,5 +1,50 @@
-.cta-banner__image {
-  max-width: 500px;
-  z-index: -10;
-  overflow: hidden;
+.cta-banner {
+  position: relative;
+
+  .cta-banner__image {
+    max-width: 500px;
+    z-index: -10;
+    overflow: hidden;
+  }
+
+  .cta-banner__content {
+    background-color: $white;
+    border: 4px solid $trust-ltr;
+    border-radius: 5px;
+    width: 90%;
+    padding: 2em;
+    margin-top: 55%;
+
+    @include breakpoint($bp2) {
+      border: 4px solid $trust-ltr;
+      margin-top: 45%;
+      width: 75%;
+      border-width: 6px;
+    }
+
+    @include breakpoint($bp3) {
+      border: none;
+      background-color: transparent;
+      width: 90%;
+      margin: 0 auto;
+      padding: 5em 0;
+      padding-right: 40%;
+    }
+    &::before {
+      content: ' ';
+      display: none;
+
+      @include breakpoint($bp3) {
+        display: block;
+        border: 6px solid $trust-ltr;
+        border-radius: 10px;
+        width: 85%;
+        position: absolute;
+        top: 0;
+        left: 6%;
+        bottom: 0;
+        z-index: -5;
+      }
+    }
+  }
 }
