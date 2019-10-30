@@ -196,21 +196,5 @@
     @include breakpoint($bp5) {
       max-width: 950px;
     }
-
-    .homepage-hero__image__background {
-      position: absolute;
-      border-radius: 50%;
-      background-color: $growth;
-      z-index: -5;
-      margin-left: -20px;
-      margin-top: -10px;
-      height: 100%;
-      width: 100%;
-    }
-
-    img {
-      border-radius: 50%;
-      float: right;
-    }
   }
 }

@@ -24,10 +24,9 @@
     </form>
   </div>
   <div class="homepage-hero__image">
-    <div class="homepage-hero__image__background"></div>
-    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
-      "img_src": img.src,
-      "img_alt": img.alt,
+    {% include "@molecules/image-background/image-background.twig" with {
+      "img.src": img.src,
+      "img.src": img.alt,
     } %}
   </div>
 </div>

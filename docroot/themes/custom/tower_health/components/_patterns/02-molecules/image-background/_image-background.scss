@@ -1,0 +1,19 @@
+.image-background {
+  width: 100%;
+  
+  img {
+    border-radius: 50%;
+  }
+
+  .image::before {
+    content: ' ';
+    position: absolute;
+    border-radius: 50%;
+    background-color: $growth;
+    z-index: -5;
+    margin-left: -20px;
+    margin-top: -10px;
+    height: 100%;
+    width: 100%;
+  }
+}
