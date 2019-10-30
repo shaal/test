@@ -50,6 +50,23 @@
       margin: 0 auto;
       margin-top: 10%;
       padding: 5em 0;
+      padding-right: 40%;
+    }
+
+    @include breakpoint("1000px") {
+      padding-right: 45%;
+    }
+
+    @include breakpoint("1150px") {
+      padding-right: 50%;
+    }
+
+    @include breakpoint("1250px") {
+      padding-right: 52%;
+    }
+
+    @include breakpoint("1500px") {
+      padding-right: 50%;
     }
 
     h1 {
@@ -124,39 +141,8 @@
     }
 
     .homepage-hero__content__form {
-
-      @include breakpoint($bp5) {
+      @include breakpoint($bp3) {
         margin-left: 4.5em;
-      }
-
-      label {
-        color: $primary-dark;
-        font-weight: 300;
-        margin-bottom: 0;
-      }
-
-      input {
-        display: block;
-        border: 1px solid $primary-dark;
-        border-radius: 3px;
-        padding: 0.75em 1em;
-        margin-bottom: 1em;
-        width: 300px;
-        max-width: 100%;
-
-        @include breakpoint($bp3) {
-          width: 400px;
-        }
-
-        @include breakpoint($bp5) {
-          height: 80px;
-          width: 500px;
-        }
-
-        &::placeholder {
-          color: $gray-lighter;
-          font-weight: 300;
-        }
       }
     }
   }
