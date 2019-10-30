@@ -1,0 +1,4 @@
+img:
+  src: "../../images/th-hero-image.jpg"
+  alt: "Alternative Text"
+classes: "trust bottom-left"

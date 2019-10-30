@@ -18,24 +18,28 @@
   }
 
   &.growth {
-
     .image::before {
       background-color: $growth;
     }
   }
 
   &.trust {
-
     .image::before {
       background-color: $trust;
     }
   }
 
   &.top-left {
-
     .image::before {
       margin-left: -20px;
       margin-top: -10px;
+    }
+  }
+
+  &.bottom-left {
+    .image::before {
+      margin-left: -20px;
+      margin-top: 10px;
     }
   }
 }
