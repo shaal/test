@@ -36,11 +36,11 @@
         padding-top: 1em;
         border-top: 5px solid $growth;
 
-        @include breakpoint($footer1) {
+        @include breakpoint($bp2) {
           width: calc(50% - 2em);
         }
 
-        @include breakpoint($footer3) {
+        @include breakpoint($bp3) {
           width: calc(25% - 2em);
         }
 
@@ -75,7 +75,7 @@
       justify-content: center;
       align-items: center;
 
-      @include breakpoint($bp3) {
+      @include breakpoint($bp2) {
         justify-content: space-between;
         flex-wrap: nowrap;
       }
@@ -113,7 +113,7 @@
       }
 
       .footer__info__contact {
-        @include breakpoint($bp3) {
+        @include breakpoint($bp2) {
           text-align: right;
         }
 
