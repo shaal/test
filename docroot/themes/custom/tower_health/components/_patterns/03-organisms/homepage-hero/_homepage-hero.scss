@@ -37,6 +37,7 @@
     margin-top: 55%;
 
     @include breakpoint($bp2) {
+      border: 4px solid $trust-ltr;
       margin-top: 45%;
       width: 75%;
       border-width: 6px;
