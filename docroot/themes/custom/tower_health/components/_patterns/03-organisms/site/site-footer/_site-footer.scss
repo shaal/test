@@ -16,6 +16,135 @@
       flex-wrap: nowrap;
       justify-content: space-between;
     }
+
+    .footer__links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      order: 2;
+
+      @include breakpoint($bp4) {
+        width: 65%;
+        margin-top: 192px;
+        order: 1;
+      }
+
+      .footer__links__section {
+        width: 100%;
+        margin: 1em 0;
+        padding-top: 1em;
+        border-top: 5px solid $growth;
+
+        @include breakpoint($footer1) {
+          width: calc(50% - 2em);
+        }
+
+        @include breakpoint($footer3) {
+          width: calc(25% - 2em);
+        }
+
+        a {
+          display: block;
+          text-decoration: none;
+
+          &:first-of-type {
+            color: $primary-dark;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            line-height: 1.1em;
+            display: block;
+            margin-bottom: 1em;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .footer__info {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2em;
+      display: flex;
+      flex-wrap: wrap;
+      order: 1;
+      justify-content: center;
+      align-items: center;
+
+      @include breakpoint($bp3) {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
+
+      @include breakpoint($bp4) {
+        width: 40%;
+        max-width: 361px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        order: 2;
+      }
+
+      figure {
+        margin-bottom: 2em;
+
+        @include breakpoint($bp3) {
+          margin-bottom: 0;
+        }
+
+        img {
+          margin: 0 auto;
+          width: 75%;
+
+          @include breakpoint($bp3) {
+            margin-left: 0;
+            margin-right: 2em;
+            width: auto;
+          }
+
+          @include breakpoint($bp4) {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .footer__info__contact {
+        @include breakpoint($bp3) {
+          text-align: right;
+        }
+
+        @include breakpoint($bp4) {
+          text-align: center;
+        }
+
+        a {
+          display: block;
+        }
+      }
+
+      .footer__info__social {
+        @include breakpoint($bp3) {
+          text-align: right;
+        }
+
+        @include breakpoint($bp4) {
+          text-align: center;
+        }
+
+        a {
+          display: inline-block;
+          margin: 0.25em;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
   }
 
   .footer-bottom {
@@ -28,187 +157,49 @@
     align-items: center;
     padding: 1em 2em;
 
-    @include breakpoint($footer2) {
-      flex-wrap: nowrap;
-    }
-  }
-
-  &__info {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 2em;
-    display: flex;
-    flex-wrap: wrap;
-    order: 1;
-    justify-content: center;
-    align-items: center;
-
-    @include breakpoint($footer2) {
-      justify-content: space-between;
-    }
-
     @include breakpoint($bp3) {
       flex-wrap: nowrap;
     }
 
-    @include breakpoint($bp4) {
-      width: 40%;
-      max-width: 361px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-      order: 2;
-    }
-
-    figure {
-      margin-bottom: 2em;
-
-      @include breakpoint($footer2) {
-        margin-bottom: 0;
-      }
-    }
-
-    img {
-      margin: 0 auto;
-      width: 75%;
-
-      @include breakpoint($footer2) {
-        margin-left: 0;
-      }
+    .footer__details {
+      @include adjust-font-size-to($label, .9);
+      width: 100%;
+      margin-bottom: 1em;
 
       @include breakpoint($bp3) {
-        margin-right: 2em;
-        width: auto;
-      }
-
-      @include breakpoint($bp4) {
-        margin: 0 auto;
-      }
-    }
-
-    &__contact {
-      @include breakpoint($footer2) {
-        text-align: right;
-      }
-
-      @include breakpoint($bp4) {
-        text-align: center;
-      }
-
-      a {
-        display: block;
-      }
-    }
-
-    &__social {
-      @include breakpoint($footer2) {
-        text-align: right;
-      }
-
-      @include breakpoint($bp4) {
-        text-align: center;
-      }
-
-      a {
-        display: inline-block;
-        margin: 0.25em;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-    }
-  }
-
-  &__links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    order: 2;
-
-    @include breakpoint($bp4) {
-      width: 65%;
-      margin-top: 192px;
-      order: 1;
-    }
-
-    &__section {
-      width: 100%;
-      margin: 1em 0;
-      padding-top: 1em;
-      border-top: 5px solid $growth;
-
-      @include breakpoint($footer1) {
-        width: calc(50% - 2em);
-      }
-
-      @include breakpoint($footer3) {
-        width: calc(25% - 2em);
-      }
-
-      a:first-of-type {
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        line-height: 1.1em;
-        display: block;
-        margin-bottom: 1em;
-        color: $primary-dark;
-      }
-
-      a {
-        display: block;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  &__details {
-    @include adjust-font-size-to($label, .9);
-    width: 100%;
-    margin-bottom: 1em;
-
-    @include breakpoint($footer2) {
-      text-align: left;
-      margin-bottom: 0;
-    }
-
-    a {
-      display: block;
-      margin-bottom: 0.5em;
-      border: none;
-      color: $trust-ltr;
-
-      @include breakpoint($footer2) {
+        text-align: left;
         margin-bottom: 0;
       }
-    }
-
-    @include breakpoint($bp2) {
 
       a {
-        display: inline-block;
-        padding: 0 0.5em;
-        border-right: 1px solid $trust-ltr;
+        display: block;
+        margin-bottom: 0.5em;
+        border: none;
+        color: $trust-ltr;
 
-        &:last-of-type {
-          border-right: none;
+        @include breakpoint($bp2) {
+          display: inline-block;
+          padding: 0 0.5em;
+          border-right: 1px solid $trust-ltr;
+
+          &:last-of-type {
+            border-right: none;
+          }
+        }
+
+        @include breakpoint($bp3) {
+          margin-bottom: 0;
         }
       }
     }
-  }
 
-  &__legal {
-    font-size: 0.9em;
-    width: 100%;
+    .footer__legal {
+      font-size: 0.9em;
+      width: 100%;
 
-    @include breakpoint($footer2) {
-      text-align: right;
+      @include breakpoint($bp3) {
+        text-align: right;
+      }
     }
   }
 }
