@@ -32,3 +32,4 @@ backend_config:
     - DILT-190043.prod.towerhealth
     - DILT-190043.prod.default
     - DILT-190043
+  overridden_by_acquia_search: 2
