@@ -2,16 +2,16 @@
   position: relative;
   padding-top: 100px;
 
-  @include breakpoint($bp5) {
+  @include breakpoint($bp3) {
     padding-top: 0;
   }
 
   .homepage-hero__outline {
-    background-color: $white;
-    border: 8px solid $trust-ltr;
+    display: none;
+    border: 6px solid $trust-ltr;
     border-radius: 10px;
-    margin: 0 auto;
     width: 55%;
+    margin: 0 auto;
     position: absolute;
     top: 100px;
     left: 2%;
@@ -19,10 +19,8 @@
     z-index: -5;
 
     @include breakpoint($bp3) {
-      width: 65%;
-    }
-
-    @include breakpoint($bp5) {
+      display: block;
+      border-width: 8px;
       width: 85%;
       top: 0;
       left: 7.5%;
@@ -30,16 +28,24 @@
   }
 
   .homepage-hero__content {
-    width: 55%;
-    padding: 1em;
+    background-color: $white;
+    border: 4px solid $trust-ltr;
+    border-left: none;
+    border-radius: 5px;
+    width: 90%;
+    padding: 2em;
+    margin-top: 55%;
 
-    @include breakpoint($bp3) {
-      width: 65%;
-      padding-left: calc(2% + 1em);
+    @include breakpoint($bp2) {
+      margin-top: 45%;
+      width: 75%;
+      border-width: 6px;
     }
 
-    @include breakpoint($bp5) {
-      width: 87%;
+    @include breakpoint($bp3) {
+      border: none;
+      background-color: transparent;
+      width: 90%;
       margin: 0 auto;
       margin-top: 10%;
       padding: 5em 0;
@@ -49,17 +55,43 @@
       margin: 0;
 
       span {
+        color: $primary-dark;
         display: block;
         text-transform: uppercase;
-        font-weight: 400;
+        font-size: 1em;
+        line-height: 1em;
+        font-weight: 500;
+
+        @include breakpoint("425px") {
+          font-size: 1.25em;
+        }
+
+        @include breakpoint("500px") {
+          font-size: 1.5em;
+        }
+
+        @include breakpoint($bp2) {
+          font-size: 1.25em;
+        }
+
+        @include breakpoint("675px") {
+          font-size: 1.5em;
+        }
+
+        @include breakpoint("775px") {
+          font-size: 1.75em;
+        }
 
         @include breakpoint($bp3) {
+          font-size: 1.25em;
+        }
+
+        @include breakpoint("1300px") {
           font-size: 1.5em;
-          line-height: 1.15em;
         }
 
         @include breakpoint($bp5) {
-          font-size: 2em;
+          font-size: 1.75em;
         }
 
         &:first-of-type {
@@ -67,15 +99,27 @@
         }
 
         &:last-of-type {
-          color: $trust;
+          color: $trust-aa;
+          font-weight: 600;
         }
       }
     }
 
     h2 {
-      font-weight: 300;
+      color: $primary-dark;
+      font-weight: 600;
+      margin-top: 0.5em;
       margin-bottom: 1em;
+      font-size: 1.25em;
       letter-spacing: 0.05em;
+
+      @include breakpoint("1300px") {
+        font-size: 1.5em;
+      }
+
+      @include breakpoint($bp5) {
+        font-size: 1.75em;
+      }
     }
 
     .homepage-hero__content__form {
@@ -86,7 +130,7 @@
 
       label {
         color: $primary-dark;
-        font-weight: 600;
+        font-weight: 300;
         margin-bottom: 0;
       }
 
@@ -94,11 +138,19 @@
         display: block;
         border: 2px solid $primary-dark;
         border-radius: 3px;
-        height: 80px;
         padding: 0.75em 1em;
         margin-bottom: 1em;
-        width: 500px;
+        width: 300px;
         max-width: 100%;
+
+        @include breakpoint($bp3) {
+          width: 400px;
+        }
+
+        @include breakpoint($bp5) {
+          height: 80px;
+          width: 500px;
+        }
 
         &::placeholder {
           color: $gray-lighter;
@@ -109,15 +161,53 @@
   }
 
   .homepage-hero__image {
+    max-width: 500px;
     position: absolute;
-    top: -10%;
-    right: -10%;
+    top: -1%;
+    right: -20%;
     z-index: -10;
-    max-width: 950px;
+
+    @include breakpoint("500px") {
+      max-width: 550px;
+    }
+
+    @include breakpoint($bp2) {
+      max-width: 600px;
+    }
+
+    @include breakpoint("700px") {
+      max-width: 700px;
+    }
+
+    @include breakpoint("700px") {
+      max-width: 800px;
+    }
+
+    @include breakpoint($bp3) {
+      z-index: auto;
+      top: -10%;
+      right: -10%;
+      max-width: 500px;
+    }
+
+    @include breakpoint("1000px") {
+      max-width: 600px;
+    }
+
+    @include breakpoint("1150px") {
+      max-width: 700px;
+    }
+
+    @include breakpoint("1250px") {
+      max-width: 800px;
+    }
+
+    @include breakpoint("1400px") {
+      max-width: 900px;
+    }
 
     @include breakpoint($bp5) {
-      z-index: auto;
-      width: auto;
+      max-width: 950px;
     }
 
     .homepage-hero__image__background {
@@ -125,7 +215,7 @@
       border-radius: 50%;
       background-color: $growth;
       z-index: -5;
-      margin-left: -50px;
+      margin-left: -20px;
       height: 100%;
       width: 100%;
     }
