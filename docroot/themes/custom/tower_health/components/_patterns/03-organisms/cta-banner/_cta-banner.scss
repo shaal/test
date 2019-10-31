@@ -52,7 +52,7 @@
     }
 
     @include breakpoint($bp3) {
-      z-index: auto;
+      z-index: 5;
       right: 50%;
       left: 0;
       top: -5em;
