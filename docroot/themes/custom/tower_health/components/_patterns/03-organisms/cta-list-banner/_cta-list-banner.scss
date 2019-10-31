@@ -1,4 +1,5 @@
 .cta-banner-list {
+  @include grid;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -9,8 +10,22 @@
   }
 
   .cta-banner-list__text {
-    padding: 5em;
-    width: 55%;
+    padding: 3em 0;
+    width: 100%;
+
+    @include breakpoint($bp2) {
+      padding: 2em;
+      padding-top: 5em;
+    }
+
+    @include breakpoint($bp3) {
+      padding: 5em 2em;
+      width: 55%;
+    }
+
+    @include breakpoint($bp4) {
+      padding: 5em;
+    }
 
     .title {
       font-size: 0.9em;
@@ -20,6 +35,7 @@
       font-weight: 600;
       color: $primary-dark;
       margin: 0;
+      text-align: center;
 
       @include breakpoint("425px") {
         font-size: 1.25em;
@@ -29,20 +45,13 @@
         font-size: 1.5em;
       }
 
-      @include breakpoint($bp2) {
-        font-size: 1.25em;
-      }
-
-      @include breakpoint("675px") {
-        font-size: 1.5em;
-      }
-
       @include breakpoint("775px") {
         font-size: 2em;
       }
 
       @include breakpoint($bp3) {
         font-size: 3em;
+        text-align: left;
       }
 
       @include breakpoint("1300px") {
@@ -60,6 +69,7 @@
 
     .subtitle {
       letter-spacing: 0.05em;
+      text-align: center;
 
       @include breakpoint($bp2) {
         font-size: 1em;
@@ -77,6 +87,7 @@
       @include breakpoint($bp3) {
         font-size: 1.5em;
         line-height: 1.25em;
+        text-align: left;
       }
 
       @include breakpoint("1300px") {
@@ -85,19 +96,22 @@
 
       @include breakpoint($bp5) {
         font-size: 2.25em;
-        line-height: 1.5em;
       }
     }
 
-    &:before {
+    &::before {
       content: " ";
       position: absolute;
       top: 0;
       height: 10px;
-      width: 55%;
+      width: 85%;
       left: -5em;
       background-color: $growth;
       border-radius: 5px;
+
+      @include breakpoint($bp3) {
+        width: 55%;
+      }
 
       @include breakpoint($bp5) {
         left: calc(-1 * ((100% - 1600px) / 2));
@@ -109,8 +123,14 @@
     display: flex;
     flex-direction: column;
     padding-right: 2em;
-    margin-left: 2em;
+    margin-left: 5em;
     position: relative;
+    width: 100%;
+
+    @include breakpoint($bp3) {
+      margin-left: 2em;
+      width: auto;
+    }
 
     &::after {
       content: " ";
@@ -124,15 +144,17 @@
     }
 
     a {
-      display: block;
+      display: flex;
+      align-items: center;
       background-color: $trust-ltst;
       color: $primary-dark;
-      padding: 2em 3em;
+      padding: 0 3em;
       text-decoration: none;
       font-size: 1.25em;
       font-weight: 600;
       border-radius: 5px;
       width: 400px;
+      height: 124px;
       margin: 0.5em 0;
 
       &:first-of-type {

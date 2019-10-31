@@ -1,23 +1,21 @@
-<div class="grid">
-  <div class="cta-banner-list">
-    <div class="cta-banner-list__text">
-      {% if title_1 %}
-        <p class="title first">{{ title_1 }}</p>
-      {% endif %}
-      {% if title_2 %}
-        <p class="title second">{{ title_2 }}</p>
-      {% endif %}
-      <p class="title third">{{ title_3 }}</p>
-      {% if subtitle %}
-        <p class="subtitle">{{ subtitle }}</p>
-      {% endif %}
-    </div>
-    <div class="cta-banner-list__buttons">
-      {% for link in links %}
-        <a href="{{ link.url }}">
-          {{ link.text }}
-        </a>
-      {% endfor %}
-    </div>
+<div class="cta-banner-list">
+  <div class="cta-banner-list__text">
+    {% if title_1 %}
+      <p class="title first">{{ title_1 }}</p>
+    {% endif %}
+    {% if title_2 %}
+      <p class="title second">{{ title_2 }}</p>
+    {% endif %}
+    <p class="title third">{{ title_3 }}</p>
+    {% if subtitle %}
+      <p class="subtitle">{{ subtitle }}</p>
+    {% endif %}
+  </div>
+  <div class="cta-banner-list__buttons">
+    {% for link in links %}
+      <a href="{{ link.url }}">
+        <span>{{ link.text }}</span>
+      </a>
+    {% endfor %}
   </div>
 </div>
