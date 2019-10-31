@@ -10,6 +10,7 @@
 
   .cta-banner-list__text {
     padding: 5em;
+    width: 55%;
 
     .title {
       font-size: 0.9em;
@@ -57,12 +58,50 @@
       }
     }
 
+    .subtitle {
+      letter-spacing: 0.05em;
+
+      @include breakpoint($bp2) {
+        font-size: 1em;
+        line-height: 1em;
+      }
+
+      @include breakpoint("675px") {
+        font-size: 1.25em;
+      }
+
+      @include breakpoint("775px") {
+        font-size: 1.5em;
+      }
+
+      @include breakpoint($bp3) {
+        font-size: 1.5em;
+        line-height: 1.25em;
+      }
+
+      @include breakpoint("1300px") {
+        font-size: 2em;
+      }
+
+      @include breakpoint($bp5) {
+        font-size: 2.25em;
+        line-height: 1.5em;
+      }
+    }
+
     &:before {
       content: " ";
       position: absolute;
       top: 0;
-      height: 2px;
+      height: 10px;
+      width: 55%;
+      left: -5em;
       background-color: $growth;
+      border-radius: 5px;
+
+      @include breakpoint($bp5) {
+        left: calc(-1 * ((100% - 1600px) / 2));
+      }
     }
   }
 
