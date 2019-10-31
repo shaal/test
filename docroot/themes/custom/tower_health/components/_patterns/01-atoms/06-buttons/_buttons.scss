@@ -9,8 +9,7 @@
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-weight: 600;
   border-radius: 8px;
 
   @include breakpoint($bp3) {

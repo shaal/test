@@ -1,81 +1,128 @@
 .cta-banner {
   position: relative;
+  padding-top: 100px;
   width: 100%;
 
+  @include breakpoint($bp2) {
+    padding: 100px 2em 0;
+  }
+
   @include breakpoint($bp3) {
-    margin-top: 155px;
+    max-width: 1600px;
+    padding: 0 2em;
+    margin: 5em auto 0;
   }
 
-  @include breakpoint("1350px") {
-    margin-top: 220px;
+  @include breakpoint(1050px) {
+    margin-top: 6em;
   }
 
-  @include breakpoint("1500px") {
-    margin-top: 300px;
+  @include breakpoint($bp4) {
+    margin-top: 10em;
+  }
+
+  @include breakpoint($bp5) {
+    margin-top: 12em;
   }
 
   .cta-banner__image {
-    max-width: 400px;
+    width: 100%;
     position: absolute;
-    left: -60px;
+    top: 0;
+    left: 0;
     z-index: -10;
+    overflow: hidden;
+
+    .image-background {
+      position: relative;
+      width: 110%;
+      left: -10%;
+    }
+
+    @include breakpoint($bp0) {
+      width: 90%;
+    }
+
+    @include breakpoint($bp1) {
+      width: 80%;
+    }
 
     @include breakpoint($bp2) {
-      max-width: 500px;
+      width: 70%;
     }
 
     @include breakpoint($bp3) {
-      top: -35%;
-      left: -5%;
-      z-index: 10;
+      z-index: auto;
+      right: 50%;
+      left: 0;
+      top: -5em;
+      width: auto;
+
+      .image-background {
+        position: relative;
+        width: 135%;
+        max-width: 900px;
+        float: right;
+      }
     }
 
-    @include breakpoint("1000px") {
-      max-width: 600px;
+    @include breakpoint(1050px) {
+      top: -6em;
     }
 
-    @include breakpoint("1300px") {
-      max-width: 700px;
-      top: -45%;
-      left: -5%;
+    @include breakpoint($bp4) {
+      right: 45%;
+      top: -10em;
     }
 
-    @include breakpoint("1350px") {
-      max-width: 800px;
-      top: -65%;
-    }
-
-    @include breakpoint("1500px") {
-      max-width: 900px;
-      top: -90%;
-      left: -7%;
+    @include breakpoint($bp5) {
+      top: -12em;
+      left: calc(( 100vw - 1600px ) / 2 * -1 );
     }
   }
 
   .cta-banner__content {
+    position: relative;
     background-color: $white;
-    border: 4px solid $trust-ltr;
-    border-radius: 5px;
-    width: 60%;
-    padding: 3em;
-    margin-top: 65%;
-    position: absolute;
-    right: 0;
+    border-top: 4px solid $trust-ltr;
+    border-left: 4px solid $trust-ltr;
+    border-bottom: 4px solid $trust-ltr;
+    border-radius: 5px 0 0 5px;
+    width: 96%;
+    padding: 3em 2em 2em;
+    margin-top: 40%;
+    margin-left: 4%;
+    box-shadow: 0px 2px 8px rgba($black, 0.15);
+
+    @include breakpoint($bp0) {
+      width: 90%;
+      margin-top: 45%;
+      margin-left: 10%;
+    }
 
     @include breakpoint($bp2) {
       border: 4px solid $trust-ltr;
-      width: 65%;
-      margin-top: 55%;
-      border-width: 6px;
+      border-radius: 5px;
+      margin-top: 30%;
+      display: inline-block;
+      float: right;
+      width: auto;
+      max-width: 90%;
+      padding: 3em 3em 2em;
     }
 
     @include breakpoint($bp3) {
-      position: static;
-      padding: 6em 4em;
       border: none;
       background-color: transparent;
-      width: 100%;
-      margin: 0;
+      margin-top: 0;
+      box-shadow: none;
+      float: none;
+      display: block;
+      padding: 4em 4em 3em 38%;
+    }
+
+    @include breakpoint($bp4) {
+      padding: 4em 2em 3em 44%;;
     }
 
     &::before {
@@ -84,55 +131,50 @@
 
       @include breakpoint($bp3) {
         display: block;
-        border: 6px solid $trust-ltr;
+        border: 5px solid $trust-ltst;
         border-radius: 10px;
-        width: 90%;
+        margin: 0 auto;
         position: absolute;
         top: 0;
-        left: 10%;
+        left: 0;
+        right: 0;
         bottom: 0;
         z-index: -5;
       }
-
-      @include breakpoint("1300px") {
-        width: 100%;
-        left: 0;
-      }
     }
 
-    button {
+    .button {
       position: absolute;
-      top: -20px;
-      right: 50px;
+      top: -1.5em;
+      right: 2em;
 
       @include breakpoint($bp3) {
         right: 100px;
       }
     }
 
-    p {
+    .cta-banner__title {
       color: $primary-dark;
       text-transform: uppercase;
-      font-size: 2em;
+      font-size: 2.5em;
       margin: 0;
       line-height: 1em;
       font-weight: 600;
 
-      @include breakpoint($bp2) {
+      span {
+        display: block;
+      }
+
+      @include breakpoint($bp1) {
         font-size: 3em;
       }
 
       @include breakpoint($bp3) {
         font-size: 3em;
-        margin-left: 60%;
       }
 
-      @include breakpoint("950px") {
-        margin-left: 55%;
-      }
-
-      @include breakpoint("1350px") {
-        margin-left: 60%;
+      @include breakpoint($bp4) {
+        font-size: 3.5em;
       }
     }
   }

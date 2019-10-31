@@ -37,6 +37,10 @@
   }
 
   &.bottom-left {
+    padding-bottom: 10px;
+    padding-top: 0;
+    margin-bottom: 10px;
+
     .image::before {
       margin-left: -20px;
       margin-top: 10px;
