@@ -3,6 +3,14 @@
   width: 100%;
 
   @include breakpoint($bp3) {
+    margin-top: 155px;
+  }
+
+  @include breakpoint("1350px") {
+    margin-top: 220px;
+  }
+
+  @include breakpoint("1500px") {
     margin-top: 300px;
   }
 
