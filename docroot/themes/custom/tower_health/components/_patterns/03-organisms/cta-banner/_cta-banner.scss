@@ -20,7 +20,7 @@
     left: -60px;
     z-index: -10;
 
-    @include breakpoint("600px") {
+    @include breakpoint($bp2) {
       max-width: 500px;
     }
 
@@ -118,7 +118,7 @@
       line-height: 1em;
       font-weight: 600;
 
-      @include breakpoint("600px") {
+      @include breakpoint($bp2) {
         font-size: 3em;
       }
 
@@ -127,7 +127,7 @@
         margin-left: 60%;
       }
 
-      @include breakpoint("950") {
+      @include breakpoint("950px") {
         margin-left: 55%;
       }
 
