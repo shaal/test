@@ -26,14 +26,16 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer__details">
-      {% for detail in details %}
-        <a href="{{ detail.href }}">{{ detail.title }}</a>
-      {% endfor %}
-    </div>
-    <div class="footer__legal">
-      {{ legal }}
+  <div class="footer-bottom-background">
+    <div class="footer-bottom">
+      <div class="footer__details">
+        {% for detail in details %}
+          <a href="{{ detail.href }}">{{ detail.title }}</a>
+        {% endfor %}
+      </div>
+      <div class="footer__legal">
+        {{ legal }}
+      </div>
     </div>
   </div>
 </footer>

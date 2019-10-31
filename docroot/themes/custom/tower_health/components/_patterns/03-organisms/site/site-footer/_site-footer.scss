@@ -4,6 +4,7 @@
   margin-bottom: 0;
 
   .footer-top {
+    @include grid;
     display: flex;
     flex-wrap: wrap;
     padding: 1em;
@@ -179,9 +180,13 @@
     }
   }
 
-  .footer-bottom {
-    text-align: center;
+  .footer-bottom-background {
     background-color: $primary-dark;
+  }
+
+  .footer-bottom {
+    @include grid;
+    text-align: center;
     color: $trust-ltst;
     display: flex;
     flex-wrap: wrap;
