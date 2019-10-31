@@ -30,6 +30,10 @@
         order: 1;
       }
 
+      @include breakpoint($bp5) {
+        width: 70%;
+      }
+
       .footer__links__section {
         width: 100%;
         margin: 1em 0;
@@ -37,11 +41,11 @@
         border-top: 5px solid $growth;
 
         @include breakpoint($bp2) {
-          width: calc(50% - 2em);
+          width: calc(50% - 0.5em);
         }
 
         @include breakpoint($bp3) {
-          width: calc(25% - 2em);
+          width: calc(25% - 1em);
         }
 
         a {
@@ -73,7 +77,7 @@
       flex-wrap: wrap;
       order: 1;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
 
       @include breakpoint($bp2) {
         justify-content: space-between;
@@ -89,11 +93,20 @@
         order: 2;
       }
 
+      @include breakpoint($bp5) {
+        width: 20%;
+      }
+
       figure {
         margin-bottom: 2em;
 
-        @include breakpoint($bp3) {
+        @include breakpoint($bp2) {
+          order: 2;
           margin-bottom: 0;
+        }
+
+        @include breakpoint($bp4) {
+          order: 1;
         }
 
         img {
@@ -112,13 +125,28 @@
         }
       }
 
-      .footer__info__contact {
+      > div {
+        width: 100%;
+
         @include breakpoint($bp2) {
-          text-align: right;
+          width: auto;
+        }
+
+        @include breakpoint($bp4) {
+          order: 2;
+        }
+      }
+
+      .footer__info__contact {
+        font-size: 0.9em;
+
+        @include breakpoint($bp2) {
+          text-align: left;
         }
 
         @include breakpoint($bp4) {
           text-align: center;
+          order: 2;
         }
 
         a {
@@ -127,8 +155,8 @@
       }
 
       .footer__info__social {
-        @include breakpoint($bp3) {
-          text-align: right;
+        @include breakpoint($bp2) {
+          text-align: left;
         }
 
         @include breakpoint($bp4) {
@@ -137,7 +165,11 @@
 
         a {
           display: inline-block;
-          margin: 0.25em;
+          margin: 0.20em;
+
+          svg {
+            width: 25px;
+          }
 
           &:hover {
             transform: scale(1.1);
@@ -162,9 +194,8 @@
     }
 
     .footer__details {
-      @include adjust-font-size-to($label, .9);
+      @include adjust-font-size-to($crumb, 1);
       width: 100%;
-      margin-bottom: 1em;
 
       @include breakpoint($bp3) {
         text-align: left;
@@ -176,6 +207,7 @@
         margin-bottom: 0.5em;
         border: none;
         color: $trust-ltr;
+        text-decoration: none;
 
         @include breakpoint($bp2) {
           display: inline-block;
@@ -193,8 +225,9 @@
       }
     }
 
+
     .footer__legal {
-      font-size: 0.9em;
+      @include adjust-font-size-to($crumb, 1);
       width: 100%;
 
       @include breakpoint($bp3) {
