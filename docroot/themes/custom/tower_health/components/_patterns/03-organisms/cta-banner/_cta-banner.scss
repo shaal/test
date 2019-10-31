@@ -92,6 +92,16 @@
       }
     }
 
+    button {
+      position: absolute;
+      top: -20px;
+      right: 50px;
+
+      @include breakpoint($bp3) {
+        right: 100px;
+      }
+    }
+
     p {
       color: $primary-dark;
       text-transform: uppercase;
