@@ -1,34 +1,32 @@
-<div class="grid">
-  <div class="homepage-hero">
-    <div class="homepage-hero__content">
-      <h1>
-        {% if title_1 %}
+<div class="homepage-hero">
+  <div class="homepage-hero__content">
+    <h1>
+      {% if title_1 %}
           <span class="title--first">{{ title_1 }}</span>
-        {% endif %}
-        {% if title_2 %}
-          <span class="title--middle">{{ title_2 }}</span>
-        {% endif %}
-        <span class="title--last">{{ title_3 }}</span>
-      </h1>
-      {% if subtitle %}
-        {% include "@atoms/02-text/00-headings/_heading.twig" with {
-          "heading_level": 2,
-          "heading": subtitle,
-          "heading_base_class": "subtitle",
-        } %}
       {% endif %}
-      <form class="homepage-hero__content__form">
-        <label for="provider-search">Find a Provider</label>
-        <input type="text" id="provider-search" placeholder="Search by Name, Specialty, or Condition">
-        <button class="button button--primary" type="submit">Search Providers</button>
-      </form>
-    </div>
-    <div class="homepage-hero__image">
-      {% include "@molecules/image-background/image-background.twig" with {
-        "img.src": img.src,
-        "img.src": img.alt,
-        "classes": classes,
-      } %}
-    </div>
+      {% if title_2 %}
+        <span class="title--middle">{{ title_2 }}</span>
+      {% endif %}
+      <span class="title--last">{{ title_3 }}</span>
+    </h1>
+    {% if subtitle %}
+    {% include "@atoms/02-text/00-headings/_heading.twig" with {
+      "heading_level": 2,
+      "heading": subtitle,
+      "heading_base_class": "hero_subtitle",
+    } %}
+    {% endif %}
+    <form class="homepage-hero__content__form">
+      <label for="provider-search">Find a Provider</label>
+      <input type="text" id="provider-search" placeholder="Search by Name, Specialty, or Condition">
+      <button class="button button--primary" type="submit">Search Providers</button>
+    </form>
+  </div>
+  <div class="homepage-hero__image">
+    {% include "@molecules/image-background/image-background.twig" with {
+      "img.src": img.src,
+      "img.src": img.alt,
+      "classes": classes,
+    } %}
   </div>
 </div>
