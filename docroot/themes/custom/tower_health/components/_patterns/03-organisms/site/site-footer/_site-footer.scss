@@ -1,15 +1,12 @@
 .footer {
-  font-size: 0.9em;
-  line-height: 1.6em;
   margin-bottom: 0;
 
   .footer-top {
     @include grid;
-    display: flex;
-    flex-wrap: wrap;
     padding: 1em;
 
     @include breakpoint($bp3) {
+      align-items: flex-end;
       padding: 2.5em 2em;
     }
 
@@ -26,20 +23,16 @@
       order: 2;
 
       @include breakpoint($bp4) {
-        width: 65%;
-        margin-top: 192px;
+        width: 70%;
         order: 1;
       }
 
-      @include breakpoint($bp5) {
-        width: 70%;
-      }
-
       .footer__links__section {
+        @include adjust-font-size-to($label, .9);
         width: 100%;
         margin: 1em 0;
         padding-top: 1em;
-        border-top: 5px solid $growth;
+        border-top: 4px solid $growth;
 
         @include breakpoint($bp2) {
           width: calc(50% - 0.5em);
@@ -71,6 +64,7 @@
     }
 
     .footer__info {
+      @include adjust-font-size-to($label, .8);
       width: 100%;
       text-align: center;
       margin-bottom: 2em;
@@ -86,8 +80,7 @@
       }
 
       @include breakpoint($bp4) {
-        width: 40%;
-        max-width: 361px;
+        width: 30%;
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
@@ -108,16 +101,16 @@
 
         @include breakpoint($bp4) {
           order: 1;
+          margin-bottom: 3em;
         }
 
         img {
           margin: 0 auto;
-          width: 75%;
+          max-width: 225px;
 
           @include breakpoint($bp3) {
             margin-left: 0;
             margin-right: 2em;
-            width: auto;
           }
 
           @include breakpoint($bp4) {
@@ -139,7 +132,6 @@
       }
 
       .footer__info__contact {
-        font-size: 0.9em;
 
         @include breakpoint($bp2) {
           text-align: left;
@@ -169,7 +161,8 @@
           margin: 0.20em;
 
           svg {
-            width: 25px;
+            width: 30px;
+            height: 30px;
           }
 
           &:hover {
@@ -199,7 +192,7 @@
     }
 
     .footer__details {
-      @include adjust-font-size-to($crumb, 1);
+      @include adjust-font-size-to($crumb, .75);
       width: 100%;
 
       @include breakpoint($bp3) {
@@ -211,16 +204,26 @@
         display: block;
         margin-bottom: 0.5em;
         border: none;
-        color: $trust-ltr;
+        color: $trust-ltst;
         text-decoration: none;
+
+        &:active,
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
 
         @include breakpoint($bp2) {
           display: inline-block;
-          padding: 0 0.5em;
-          border-right: 1px solid $trust-ltr;
+          padding: 0 0.75em;
+          border-right: 1px solid rgba($trust-ltr, .5);
 
           &:last-of-type {
             border-right: none;
+          }
+
+          &:first-of-type {
+            padding-left: 0;
           }
         }
 
@@ -232,7 +235,7 @@
 
 
     .footer__legal {
-      @include adjust-font-size-to($crumb, 1);
+      @include adjust-font-size-to($crumb, .75);
       width: 100%;
 
       @include breakpoint($bp3) {
