@@ -1,0 +1,108 @@
+.cta-banner-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  @include breakpoint($bp3) {
+    flex-wrap: nowrap;
+  }
+
+  .cta-banner-list__text {
+    padding: 5em;
+
+    .title {
+      font-size: 0.9em;
+      letter-spacing: 0.02em;
+      line-height: 1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $primary-dark;
+      margin: 0;
+
+      @include breakpoint("425px") {
+        font-size: 1.25em;
+      }
+
+      @include breakpoint("500px") {
+        font-size: 1.5em;
+      }
+
+      @include breakpoint($bp2) {
+        font-size: 1.25em;
+      }
+
+      @include breakpoint("675px") {
+        font-size: 1.5em;
+      }
+
+      @include breakpoint("775px") {
+        font-size: 2em;
+      }
+
+      @include breakpoint($bp3) {
+        font-size: 3em;
+      }
+
+      @include breakpoint("1300px") {
+        font-size: 4em;
+      }
+
+      @include breakpoint($bp5) {
+        font-size: 5em;
+      }
+
+      &.third {
+        color: $trust-aa;
+      }
+    }
+
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      height: 2px;
+      background-color: $growth;
+    }
+  }
+
+  .cta-banner-list__buttons {
+    display: flex;
+    flex-direction: column;
+    padding-right: 2em;
+    margin-left: 2em;
+    position: relative;
+
+    &::after {
+      content: " ";
+      background-color: $primary-dark;
+      position: absolute;
+      top: 50px;
+      bottom: 50px;
+      left: 15%;
+      width: 100%;
+      z-index: -5;
+    }
+
+    a {
+      display: block;
+      background-color: $trust-ltst;
+      color: $primary-dark;
+      padding: 2em 3em;
+      text-decoration: none;
+      font-size: 1.25em;
+      font-weight: 600;
+      border-radius: 5px;
+      width: 400px;
+      margin: 0.5em 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
