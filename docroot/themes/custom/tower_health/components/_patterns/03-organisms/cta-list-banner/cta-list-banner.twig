@@ -14,7 +14,7 @@
   <div class="cta-banner-list__buttons">
     {% for link in links %}
       <a href="{{ link.url }}">
-        <img src="{{ link.icon }}"
+        {% include link.icon %}
         <span>{{ link.text }}</span>
       </a>
     {% endfor %}
