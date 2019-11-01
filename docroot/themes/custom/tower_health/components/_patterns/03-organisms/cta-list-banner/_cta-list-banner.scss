@@ -12,6 +12,7 @@
   .cta-banner-list__text {
     padding: 3em 0;
     width: 100%;
+    position: relative;
 
     @include breakpoint($bp2) {
       padding: 2em;
@@ -98,6 +99,35 @@
 
       @include breakpoint($bp5) {
         left: calc(-1 * ((100% - 1600px) / 2));
+      }
+    }
+
+    img {
+      display: none;
+      position: absolute;
+      opacity: 50%;
+      z-index: -10;
+
+      @include breakpoint($bp3) {
+        display: block;
+        top: -20%;
+        left: 0;
+        width: 600px;
+      }
+
+      @include breakpoint($bp4) {
+        top: -40%;
+        left: 3em;
+        width: 800px;
+      }
+
+      @include breakpoint("1400px") {
+        left: 10em;
+      }
+
+      @include breakpoint($bp5) {
+        left: 15em;
+        width: 1000px;
       }
     }
   }
