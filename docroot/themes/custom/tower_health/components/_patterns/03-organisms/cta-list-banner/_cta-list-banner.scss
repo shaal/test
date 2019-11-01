@@ -88,17 +88,21 @@
       position: absolute;
       top: 0;
       height: 10px;
-      width: 85%;
+      width: 115%;
       left: -5em;
       background-color: $growth;
       border-radius: 5px;
 
+      @include breakpoint($bp2) {
+        width: 100%;
+      }
+
       @include breakpoint($bp3) {
-        width: 55%;
+        width: 85%;
       }
 
       @include breakpoint($bp5) {
-        left: calc(-1 * ((100% - 1600px) / 2));
+        width: 100%;
       }
     }
 
