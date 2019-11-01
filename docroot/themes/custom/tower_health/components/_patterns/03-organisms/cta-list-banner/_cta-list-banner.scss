@@ -131,19 +131,23 @@
 
     a {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       background-color: $trust-ltst;
-      color: $primary-dark;
-      padding: 0 3em;
-      text-decoration: none;
-      font-size: 1.25em;
-      font-weight: 600;
+      padding: 2em;
       border-radius: 5px;
       width: 400px;
       max-width: 100%;
-      height: 124px;
+      text-decoration: none;
       margin: 0.5em auto;
       position: relative;
+
+      @include breakpoint($bp1) {
+        flex-wrap: nowrap;
+        height: 124px;
+        padding: 0 3em;
+      }
 
       @include breakpoint($bp3) {
         margin: 0.5em 0;
@@ -158,10 +162,35 @@
       }
 
       svg {
-        position: absolute;
-        left: -40px;
-        max-width: 80px;
-        max-height: 80px;
+        max-width: 30px;
+        max-height: 30px;
+        margin-bottom: 1em;
+
+        @include breakpoint($bp1) {
+          max-width: 50px;
+          max-height: 50px;
+          margin-right: 1em;
+          margin-bottom: 0;
+        }
+
+        @include breakpoint($bp2) {
+          position: absolute;
+          left: -40px;
+          max-width: 80px;
+          max-height: 80px;
+        }
+      }
+
+      span {
+        width: 100%;
+        text-align: center;
+        color: $primary-dark;
+        font-size: 1.25em;
+        font-weight: 600;
+
+        @include breakpoint($bp1) {
+          text-align: left;
+        }
       }
     }
   }
