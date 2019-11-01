@@ -11,7 +11,6 @@
   Drupal.behaviors.facetsRadioWidget = {
     attach: function (context) {
       Drupal.facets.makeRadioButtons(context);
-      console.log('Frog');
     }
   };
 
@@ -32,7 +31,7 @@
         // register handlers on that element.
         $widget.addClass('js-facets-widget');
 
-        // Transform links to checkboxes.
+        // Transform links to radio buttons.
         $widgetLinks.each(Drupal.facets.makeRadioButton);
       });
 
@@ -65,6 +64,8 @@
       e.preventDefault();
 
       var $widget = $(this).closest('.js-facets-widget');
+
+      $(this).parents('.facet-item').siblings().find('.radio-checkbox').attr('checked', false);
 
       Drupal.facets.disableFacet($widget);
       $widget.trigger('facets_filter', [href]);

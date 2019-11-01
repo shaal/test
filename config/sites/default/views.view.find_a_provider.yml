@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.towerhealth
+    - search_api.index.acquia_search_index
   module:
     - search_api
 id: find_a_provider
@@ -77,64 +77,14 @@ display:
               program: teaser
               service: teaser
             'entity:taxonomy_term':
+              area_of_interest: default
               condition: default
+              hospital_affiliation: default
+              insurance_company: default
+              insurance_groups: default
+              location_type: default
               medical_specialty: default
-      fields:
-        rendered_item:
-          table: search_api_index_towerhealth
-          field: rendered_item
-          id: rendered_item
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          link_to_item: false
-          use_highlighting: false
-          multi_type: separator
-          multi_separator: ', '
+      fields: {  }
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -281,6 +231,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -295,7 +246,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: find-a-doctor
+      path: find-a-provider
       exposed_block: true
       cache:
         type: none
