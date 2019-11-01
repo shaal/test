@@ -92,7 +92,7 @@
     padding: 3em 2em 2em;
     margin-top: 40%;
     margin-left: 4%;
-    box-shadow: 0 2px 8px rgba($black, 0.15);
+    box-shadow: none 2px 8px rgba($black, 0.15);
 
     @include breakpoint($bp0) {
       width: 90%;
