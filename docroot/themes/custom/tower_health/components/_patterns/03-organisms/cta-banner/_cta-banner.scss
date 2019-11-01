@@ -77,7 +77,7 @@
 
     @include breakpoint($bp5) {
       top: -12em;
-      left: calc(( 100vw - 1600px ) / 2 * -1 );
+      left: calc(( 100vw - 1600px ) / 2 * -1);
     }
   }
 
@@ -92,7 +92,7 @@
     padding: 3em 2em 2em;
     margin-top: 40%;
     margin-left: 4%;
-    box-shadow: 0px 2px 8px rgba($black, 0.15);
+    box-shadow: 0 2px 8px rgba($black, 0.15);
 
     @include breakpoint($bp0) {
       width: 90%;
@@ -122,7 +122,7 @@
     }
 
     @include breakpoint($bp4) {
-      padding: 4em 2em 3em 44%;;
+      padding: 4em 2em 3em 44%;
     }
 
     &::before {
