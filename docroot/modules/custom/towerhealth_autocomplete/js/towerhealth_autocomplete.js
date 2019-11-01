@@ -62,9 +62,7 @@
               return false;
             }
 
-            var ret = oldSelect.apply(this, arguments);
-
-            return ret;
+            $(this).parents('form').submit();
           };
         });
     }

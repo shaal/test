@@ -6,6 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\views\Views;
+use Drupal\core\Url;
 
 /**
  * Defines a route controller for watches autocomplete form elements.
@@ -52,7 +53,7 @@ class FindCareController extends ControllerBase {
    * @return array
    *   Array of suggested items.
    */
-  public function taxonomySuggestedTerms($view_id, $input, $label, array $results, $field) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, array $results, $field, $route, $facet) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -83,6 +84,7 @@ class FindCareController extends ControllerBase {
 
       $values = $data->_item->getField($field)->getValues();
       foreach ($values as $value) {
+        $url = '';
         if (is_object($value)) {
           $text = $value->toText();
         }
@@ -90,13 +92,24 @@ class FindCareController extends ControllerBase {
           $text = $value;
         }
 
+        if ($route && $facet) {
+          $query = $facet . ':' . $value;
+          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => ['providers' => [$query]]])->toString();
+        }
+
         // Confirm that this field matches the input.
         if (strpos(strtolower($text), strtolower($input)) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
           $text = ucwords($text);
-          $new_results[] = [
+
+          $result = [
             'value' => $text,
             'label' => $text,
           ];
+
+          if ($url) {
+            $result['url'] = $url;
+          }
+          $new_results[] = $result;
         }
       }
     }
@@ -124,7 +137,7 @@ class FindCareController extends ControllerBase {
    * @return array
    *   Array of suggested items.
    */
-  public function nodeSuggestedTerms($view_id, $input, $label, array $results, $redirect_url = TRUE) {
+  public function nodeSuggestedTerms($view_id, $input, $label, array $results, $route, $facet, $redirect_url = TRUE) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -153,14 +166,18 @@ class FindCareController extends ControllerBase {
       if ($entity instanceof EntityInterface) {
         $url = '';
 
+        $values = $data->_item->getField('title')->getValues();
+
+        $value = reset($values);
+
         if ($redirect_url === TRUE) {
           $url_object = $entity->toUrl();
           $url = $url_object->toString();
         }
-
-        $values = $data->_item->getField('title')->getValues();
-
-        $value = reset($values);
+        else if ($route && $facet) {
+          $query = $facet . ':' . $value;
+          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => ['f' => [$query]]])->toString();
+        }
 
         if (is_object($value)) {
           $node_title = ucwords(reset($values)->toText());
