@@ -6,8 +6,33 @@
         img_alt: "Tower Health",
         img_url: logo_link_url|default('/'),
       } %}
-
-      {% include "@molecules/menus/main-menu/main-menu.twig" %}
+      
+      <div class="header__right">
+        <div class="header__top">
+          {% include "@molecules/menus/_menu.twig" with {
+            menu_class: "utility-menu",
+            items: utility_items,
+          } %}
+          
+          <div class="header__search">
+            <button href="#" id="search-toggle" class="search-toggle">
+              {% include "@atoms/04-images/icons/_icon.twig" with {
+                icon_base_class: "icon",
+                icon_blockname: "search-toggle",
+                icon_name: "search",
+              } %}
+              <span class="toggle-expand__text">Toggle Search Drawer</span>
+            </button>
+            <form class='header__search-form'>
+              <label for="header__search-input">Search our Site</label>
+              <input type="text" id="header__search-input" placeholder="Search TowerHealth">
+              <input type="submit" value="Search">         
+            </form>
+          </div>
+        </div>
+        
+        {% include "@molecules/menus/main-menu/main-menu.twig" %}
+      </div>
     </div>
   {% endblock %}
 </header>
