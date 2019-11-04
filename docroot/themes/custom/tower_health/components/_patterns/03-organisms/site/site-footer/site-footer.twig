@@ -1,8 +1,11 @@
 <footer class="footer">
   <div class="footer-top">
+    <div class="footer__links">
+      {% include "@molecules/menus/footer-menu/footer-menu.twig" %}
+    </div>
     <div class="footer__info">
       {% include "@atoms/04-images/00-image/figure.twig" with {
-        img_src: "../../images/TowerHealth_H.svg",
+        img_src: "../../images/TowerHealth_V.svg",
         img_alt: "Tower Health Logo",
         img_url: logo_link_url|default('/'),
       } %}
@@ -22,18 +25,17 @@
         </div>
       </div>
     </div>
-    <div class="footer__links">
-      {% include "@molecules/menus/footer-menu/footer-menu.twig" %}
-    </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer__details">
-      {% for detail in details %}
-        <a href="{{ detail.href }}">{{ detail.title }}</a>
-      {% endfor %}
-    </div>
-    <div class="footer__legal">
-      {{ legal }}
+  <div class="footer-bottom-background">
+    <div class="footer-bottom">
+      <div class="footer__details">
+        {% for detail in details %}
+          <a href="{{ detail.href }}">{{ detail.title }}</a>
+        {% endfor %}
+      </div>
+      <div class="footer__legal">
+        {{ legal }}
+      </div>
     </div>
   </div>
 </footer>
