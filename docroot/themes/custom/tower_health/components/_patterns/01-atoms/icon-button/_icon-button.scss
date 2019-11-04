@@ -1,0 +1,63 @@
+.icon-button,
+.icon-button:link,
+.icon-button:visited {
+  @include transition(all, 0.15s, ease-in);
+  @include adjust-font-size-to($xs-heading, 1);
+  color: $primary-dark;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $trust-ltst;
+  padding: .25em 2em;
+  border-radius: 5px;
+  margin: 0.5em 0 0.5em 50px;
+  text-decoration: none;
+  font-weight: 600;
+
+  svg {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    fill: $primary-dark;
+    
+    @include breakpoint($bp3) {
+      width: 58px;
+      height: 58px;
+    }
+  }
+
+  .icon-button__container {
+    display: block;
+    padding: 1em;
+    margin-left: -80px;
+    margin-right: .5em;
+    border-radius: 50%;
+    background-color: rgba($trust, 0);
+    
+    @include breakpoint($bp2) {
+      margin-left: -85px;
+    }
+    
+    @include breakpoint($bp3) {
+      margin-left: -90px;
+      padding: .75em;
+    }
+  }
+}
+
+.icon-button:active,
+.icon-button:hover,
+.icon-button:focus {
+  transform: scale(1.025);
+  box-shadow: 0px 2px 5px rgba($black, .25);
+  background-color: $primary-dark;
+  color: $white;
+
+  svg {
+    fill: $white;
+  }
+  
+  .icon-button__container {
+    background-color: $trust;
+  }
+}
