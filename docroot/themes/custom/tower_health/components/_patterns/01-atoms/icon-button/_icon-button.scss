@@ -8,39 +8,35 @@
   justify-content: flex-start;
   align-items: center;
   background-color: $trust-ltst;
-  padding: .25em 2em;
+  padding: 1em 2em;
   border-radius: 5px;
-  margin: 0.5em 0 0.5em 50px;
+  margin: 0.5em 0 0.5em 35px;
   text-decoration: none;
   font-weight: 600;
 
   svg {
     display: flex;
     width: 50px;
-    height: 50px;
+    height: 60px;
     fill: $primary-dark;
     
     @include breakpoint($bp3) {
       width: 58px;
-      height: 58px;
+      height: 68px;
     }
   }
 
   .icon-button__container {
     display: block;
-    padding: 1em;
-    margin-left: -80px;
-    margin-right: .5em;
-    border-radius: 50%;
-    background-color: rgba($trust, 0);
+    margin-left: -60px;
+    margin-right: .75em;
     
     @include breakpoint($bp2) {
-      margin-left: -85px;
+      margin-left: -65px;
     }
     
     @include breakpoint($bp3) {
-      margin-left: -90px;
-      padding: .75em;
+      margin-left: -70px;
     }
   }
 }
@@ -50,14 +46,6 @@
 .icon-button:focus {
   transform: scale(1.025);
   box-shadow: 0px 2px 5px rgba($black, .25);
-  background-color: $primary-dark;
-  color: $white;
-
-  svg {
-    fill: $white;
-  }
-  
-  .icon-button__container {
-    background-color: $trust;
-  }
+  background-color: $trust-aa;
+  color: $white;  
 }
