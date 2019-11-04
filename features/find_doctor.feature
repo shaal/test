@@ -8,4 +8,4 @@ Feature: Find a doctor
     Given I am not logged in
     When I am at "/"
     And I fill in "find_doctor_search" with "John Doe"
-    Then I am at "find-a-doctor"
+    Then I am at "find-a-provider"
