@@ -17,8 +17,6 @@
 
 (function ($) { // REMOVE IF DRUPAL.
 
-  'use strict';
-
   // Use context instead of document IF DRUPAL.
   var menu_toggle = $('#toggle-expand');
   var menu_drawer = $('.main-nav__container');
@@ -31,8 +29,27 @@
     menu_toggle.addClass('is-active');
     search.removeClass('is-active');
   }
-
-  // Expose mobile sub menu on click.
+  
+  function closeNav() {
+    menu_drawer.removeClass('is-active');
+    menu_toggle.removeClass('is-active');
+    search.removeClass('is-active');
+  }
+    
+  $(menu_toggle).click(function () {
+    if ( $(menu_drawer).hasClass('is-active') ) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
+  
+  $(document).keydown(function(event) { 
+    // close menu on esc press
+    if (event.keyCode == 27) { 
+      closeNav();
+    } 
+  });
   
 
 })(jQuery); // REMOVE IF DRUPAL.
