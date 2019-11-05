@@ -15,32 +15,26 @@
 //   Drupal.behaviors.mainMenu = {
 //     attach: function (context) {
 
-(function () { // REMOVE IF DRUPAL.
+(function ($) { // REMOVE IF DRUPAL.
 
   'use strict';
 
   // Use context instead of document IF DRUPAL.
-  var toggle_expand = document.getElementById('toggle-expand');
-  var menu = document.getElementById('main-nav');
-  var expand_menu = menu.getElementsByClassName('expand-sub');
+  var menu_toggle = $('#toggle-expand');
+  var menu_drawer = $('.main-nav__container');
+  var utility = $('#utility');
+  var search = $('.header__search');
 
   // Mobile Menu Show/Hide.
-  toggle_expand.addEventListener('click', function (e) {
-    toggle_expand.classList.toggle('toggle-expand--open');
-    menu.classList.toggle('main-nav--open');
-  });
-
-  // Expose mobile sub menu on click.
-  for (var i = 0; i < expand_menu.length; i++) {
-    expand_menu[i].addEventListener('click', function (e) {
-      var menu_item = e.currentTarget;
-      var sub_menu = menu_item.nextElementSibling;
-
-      menu_item.classList.toggle('expand-sub--open');
-      sub_menu.classList.toggle('main-menu--sub-open');
-    });
+  function openNav() {
+    menu_drawer.addClass('is-active');
+    menu_toggle.addClass('is-active');
+    search.removeClass('is-active');
   }
 
-})(); // REMOVE IF DRUPAL.
+  // Expose mobile sub menu on click.
+  
+
+})(jQuery); // REMOVE IF DRUPAL.
 
 // })(Drupal); // UNCOMMENT IF DRUPAL.
