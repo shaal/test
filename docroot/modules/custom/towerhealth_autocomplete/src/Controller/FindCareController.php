@@ -102,7 +102,7 @@ class FindCareController extends ControllerBase {
           $text = $value;
         }
 
-        if ($this->searchType == 'location') {
+        if ($this->searchType == 'locations') {
           $query_param = 'f';
         }
 
@@ -186,7 +186,7 @@ class FindCareController extends ControllerBase {
 
         $value = reset($values);
 
-        if ($this->searchType == 'location') {
+        if ($this->searchType == 'locations') {
           $query_param = 'f';
         }
 
