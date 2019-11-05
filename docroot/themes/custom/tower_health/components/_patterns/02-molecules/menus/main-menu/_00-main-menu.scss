@@ -1,11 +1,16 @@
-// Menu Breakpoint
-$main-menu-medium: 43em;
-
 // Nav
+.main-nav__container {
+  
+  @include breakpoint($bp3) {
+    z-index: 1;
+    position: relative;
+  }
+}
+
 .main-nav {
   display: none;
 
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
     display: block;
   }
 
@@ -15,28 +20,26 @@ $main-menu-medium: 43em;
     height: 85%;
     left: 0;
     overflow-y: scroll;
-    position: fixed;
+    position: absolute;
     top: 134px;
     right: 0;
     width: 100%;
 
-    @include breakpoint($main-menu-medium) {
+    @include breakpoint($bp3) {
       height: auto;
-      position: relative;
       position: static;
     }
   }
 }
 
 // UL
-.main-menu {
+.main-menu:not(.main-menu--sub) {
   @include list-reset;
-
   border-bottom: 1px solid $trust-ltr;
   position: relative;
   z-index: 10;
 
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
     display: flex;
     border-bottom: none;
     border-top: 4px solid $growth;
@@ -74,23 +77,27 @@ $main-menu-medium: 43em;
   background-color: rgba($trust-ltst, .35);
   width: 100%;
 
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
     background-color: $white;
     display: none;
+    visibility: hidden;
     height: auto;
-    left: 0;
-    overflow: visible;
-    padding: $space 0;
+    width: auto;
     position: absolute;
-    top: 55px;
-    width: 315px;
+    left: 0;
+    right: 0;
+    top: 100%;
+    overflow: visible;
+    padding: 1em 0;
+    margin-top: 0;
     z-index: 1;
-    font-size: 0.9rem;
-    opacity: 0.6;
+    background-color: $white;
+    box-shadow: 0px 2px 6px rgba($black, .25);
+    column-count: 2;
   }
 
   &:hover {
-    @include breakpoint($main-menu-medium) {
+    @include breakpoint($bp3) {
       opacity: 1;
       transition: all 0.2s;
 
@@ -108,11 +115,16 @@ $main-menu-medium: 43em;
   // See main-menu.js
   &-open {
     height: auto;
+    
+    @include breakpoint($bp3) {
+      visibility: visible;
+      display: block;
+    }
   }
 }
 
 .main-menu--sub-2 {
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
     display: none; // Never shown on large screens
   }
 }

@@ -1,5 +1,5 @@
 {{ attach_library('tower_health/main-menu') }}
-<a href="#" id="toggle-expand" class="toggle-expand">
+<button href="#" id="toggle-expand" class="toggle-expand">
   <span class="toggle-expand__open">
     {% include "@atoms/04-images/icons/_icon.twig" with {
       icon_base_class: "icon",
@@ -16,8 +16,15 @@
     } %}
     <span class="toggle-expand__text">Close</span>
   </span>
-</a>
-<nav>
+</button>
+<nav class="main-nav__container">
+  <div class="utility" id="utility">
+    {% include "@molecules/menus/_menu.twig" with {
+      menu_class: "utility-menu",
+      items: utility_items,
+    } %}
+  </div>
+  
   <div id="main-nav" class="main-nav">
     {% include "@molecules/menus/_menu.twig" with {
       menu_class: "main-menu",

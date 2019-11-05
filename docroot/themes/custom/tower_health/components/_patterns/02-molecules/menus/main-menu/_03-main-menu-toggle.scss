@@ -3,19 +3,24 @@
   display: inline-block;
   text-decoration: none;
   padding: 1em;
+  background-color: transparent;
+  border: none;
 
   svg {
     fill: $trust-aa;
   }
 
   &:active,
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
+    
     svg {
       fill: $growth-lg;
     }
   }
 
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
     display: none;
   }
 }
@@ -32,8 +37,9 @@
 }
 
 .toggle-close__icon {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  padding: .25rem;
   margin: 0 auto;
 }
 

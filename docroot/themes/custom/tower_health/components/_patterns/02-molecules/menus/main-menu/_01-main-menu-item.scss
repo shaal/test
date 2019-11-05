@@ -4,6 +4,73 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  
+  @include breakpoint($bp3) {
+    margin-left: 2em;
+    position: static;
+    
+    .main-menu--sub-1 {
+      border-top: 2px solid $primary-dark;
+    }
+    
+    &--secondary .main-menu--sub-1 {
+      border-top: 2px solid $trust-aa;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      > .main-menu__link {
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          left: calc(50% - 4px);
+          border: 8px solid $primary-dark;
+          border-top-color: transparent;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+        }
+      }
+    }
+    
+    &--secondary:active,
+    &--secondary:hover,
+    &--secondary:focus {
+      > .main-menu__link {
+        &::after {
+          border: 8px solid $trust-aa;
+          border-top-color: transparent;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+        }
+      }
+    }
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    border-top: none;
+    display: inline-block;
+
+    // Only top level
+    &:not(.main-menu__item--sub):hover {
+      transition: all 0.2s;
+
+      & > .main-menu--sub {
+        display: block;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.main-menu__item:not(.main-menu__item--sub) {
 
   /* set default color of links */
   > a {
@@ -12,6 +79,11 @@
     &:visited {
       color: $primary-dark;
       text-decoration: none;
+      
+      @include breakpoint($bp3) {
+        border-top: 4px solid transparent;
+        margin-top: -4px;
+      }
     }
 
     &:active,
@@ -20,6 +92,12 @@
       background-color: $primary-dark;
       color: $white;
       text-decoration: none;
+      
+      @include breakpoint($bp3) {
+        border-top: 4px solid $primary-dark;
+        color: $primary-dark;
+        background-color: transparent;
+      }
     }
   }
 
@@ -67,82 +145,76 @@
       }
     }
   }
+}
+
+.main-menu__item--secondary:not(.main-menu__item--sub) {
 
   /* set secondary variant */
-  &--secondary {
-    > a {
+  > a {
 
-      &:link,
-      &:visited {
-        color: $trust-aa;
-        text-decoration: none;
-      }
-
-      &:active,
-      &:hover,
-      &:focus {
-        background-color: $trust-aa;
-        color: $white;
-        text-decoration: none;
-      }
+    &:link,
+    &:visited {
+      color: $trust-aa;
+      text-decoration: none;
     }
 
-    > .expand-sub {
-
-      &,
-      &:link,
-      &:visited {
-        color: transparent;
-
-        &::after {
-          border: 8px solid $trust-aa;
-          border-bottom-color: transparent;
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-        }
-      }
-
-      &--open {
-        &::after {
-          border-top-color: transparent;
-          border-bottom: 8px solid $trust-aa;
-        }
-      }
-
-      &:active,
-      &:hover,
-      &:focus {
-        background-color: $trust-aa;
-
-        &::after {
-          border: 8px solid $white;
-          border-bottom-color: transparent;
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-        }
-      }
-
-      &--open:active,
-      &--open:hover,
-      &--open:focus {
-        &::after {
-          border-top-color: transparent;
-          border-bottom: 8px solid $white;
-        }
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $trust-aa;
+      color: $white;
+      text-decoration: none;
+      
+      @include breakpoint($bp3) {
+        border-top: 4px solid $trust-aa;
+        color: $trust-aa;
+        background-color: transparent;
       }
     }
   }
 
-  @include breakpoint($main-menu-medium) {
-    border-top: none;
-    display: inline-block;
 
-    // Only top level
-    &:not(.main-menu__item--sub):hover {
-      transition: all 0.2s;
+  > .expand-sub {
 
-      & > .main-menu--sub {
-        display: block;
+    &,
+    &:link,
+    &:visited {
+      color: transparent;
+
+      &::after {
+        border: 8px solid $trust-aa;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+
+    &--open {
+      &::after {
+        border-top-color: transparent;
+        border-bottom: 8px solid $trust-aa;
+      }
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $trust-aa;
+
+      &::after {
+        border: 8px solid $white;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+
+    &--open:active,
+    &--open:hover,
+    &--open:focus {
+      &::after {
+        border-top-color: transparent;
+        border-bottom: 8px solid $white;
       }
     }
   }
@@ -159,8 +231,15 @@
   border: none;
   overflow: hidden;
 
-  @include breakpoint($main-menu-medium) {
-    display: none;
+  @include breakpoint($bp3) {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    @if support-legacy-browser(ie, '7') {
+      clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+    }
+    clip: rect(1px, 1px, 1px, 1px);
   }
 
   // Down triangle
@@ -189,7 +268,10 @@
 //
 // LI (Nested)
 .main-menu__item--sub {
-  @include breakpoint($main-menu-medium) {
+  border-top: 0;
+  
+  @include breakpoint($bp3) {
     display: block;
+    margin: 0;
   }
 }
