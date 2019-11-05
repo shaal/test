@@ -20,11 +20,11 @@ class FindCareController extends ControllerBase {
   protected $nodeStorage;
 
   /**
-   * Search type.
+   * Query paramater.
    *
    * @var string
    */
-  public $searchType = '';
+  public $queryParam = '';
 
   /**
    * {@inheritdoc}
@@ -56,6 +56,10 @@ class FindCareController extends ControllerBase {
    *   The existing results.
    * @param string $field
    *   The search field to pull from the result item.
+   * @param string $route
+   *   The route for the search page.
+   * @param string $facet
+   *   The machine name of the facet.
    *
    * @return array
    *   Array of suggested items.
@@ -92,9 +96,6 @@ class FindCareController extends ControllerBase {
 
       $values = $data->_item->getField($field)->getValues();
       foreach ($values as $value) {
-        $query_param = $this->searchType;
-
-        $url = '';
         if (is_object($value)) {
           $text = $value->toText();
         }
@@ -102,14 +103,7 @@ class FindCareController extends ControllerBase {
           $text = $value;
         }
 
-        if ($this->searchType == 'locations') {
-          $query_param = 'f';
-        }
-
-        if ($route && $facet) {
-          $query = $facet . ':' . $value;
-          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => [$query_param => [$query]]])->toString();
-        }
+        $url = $this->facetUrl($route, $facet, $value);
 
         // Confirm that this field matches the input.
         if (strpos(strtolower($text), strtolower($input)) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
@@ -118,11 +112,9 @@ class FindCareController extends ControllerBase {
           $result = [
             'value' => $text,
             'label' => $text,
+            'url' => $url,
           ];
 
-          if ($url) {
-            $result['url'] = $url;
-          }
           $new_results[] = $result;
         }
       }
@@ -145,6 +137,10 @@ class FindCareController extends ControllerBase {
    *   The label to group this set of results.
    * @param array $results
    *   The existing results.
+   * @param string $route
+   *   The route for the search page.
+   * @param string $facet
+   *   The machine name of the facet.
    * @param bool $redirect_url
    *   Redirect to the node or return the plain result.
    *
@@ -178,25 +174,15 @@ class FindCareController extends ControllerBase {
       $entity = $data->_object->getEntity();
 
       if ($entity instanceof EntityInterface) {
-        $query_param = $this->searchType;
-
-        $url = '';
-
         $values = $data->_item->getField('title')->getValues();
 
         $value = reset($values);
 
-        if ($this->searchType == 'locations') {
-          $query_param = 'f';
-        }
+        $url = $this->facetUrl($route, $facet, $value);
 
         if ($redirect_url === TRUE) {
           $url_object = $entity->toUrl();
           $url = $url_object->toString();
-        }
-        else if ($route && $facet) {
-          $query = $facet . ':' . $value;
-          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => [$query_param => [$query]]])->toString();
         }
 
         if (is_object($value)) {
@@ -238,6 +224,31 @@ class FindCareController extends ControllerBase {
     }
 
     return FALSE;
+  }
+
+  /**
+   * Creates a url to search page with facet query.
+   *
+   * @param string $route
+   *   The route for the search page.
+   * @param string $facet
+   *   The machine name of the facet.
+   * @param string $value
+   *   The autocomplete value.
+   *
+   * @return \Drupal\Core\GeneratedUrl|string
+   *   Empty string or the full URL to the search page with facet query.
+   */
+  private function facetUrl($route, $facet, $value) {
+    $query_param = $this->queryParam;
+
+    $url = '';
+    if ($route && $facet && $value) {
+      $query = $facet . ':' . $value;
+      $url = Url::fromRoute($route, [], ['attributes' => ['rel' => 'nofollow'], 'query' => [$query_param => [$query]]])->toString();
+    }
+
+    return $url;
   }
 
 }
