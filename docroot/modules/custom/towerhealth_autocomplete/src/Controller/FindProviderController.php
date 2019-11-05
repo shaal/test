@@ -23,7 +23,8 @@ class FindProviderController extends FindCareController {
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->nodeStroage = $entity_type_manager->getStorage('node');
+    $this->nodeStorage = $entity_type_manager->getStorage('node');
+    $this->searchType = 'providers';
   }
 
   /**

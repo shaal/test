@@ -23,7 +23,8 @@ class FindLocationController extends FindCareController {
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->nodeStroage = $entity_type_manager->getStorage('node');
+    $this->nodeStorage = $entity_type_manager->getStorage('node');
+    $this->searchType = 'locations';
   }
 
   /**
@@ -48,21 +49,21 @@ class FindLocationController extends FindCareController {
     }
     $input = Xss::filter($input);
 
-    $results = $this->nodeSuggestedTerms('auto_services', $input, t('Services'), $results, FALSE);
+    $results = $this->nodeSuggestedTerms('auto_services', $input, t('Services'), $results, 'view.find_a_location.find_location', 'services', FALSE);
 
-    $condition_results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), [], 'name');
+    $condition_results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), [], 'name', NULL, NULL);
 
     $synonym_label = '';
     if (empty($condition_results)) {
       $synonym_label = t('Conditions');
     }
-    $synonym_results = $this->taxonomySuggestedTerms('auto_synonym', $input, $synonym_label ? $synonym_label : '', [], 'synonym');
+    $synonym_results = $this->taxonomySuggestedTerms('auto_synonym', $input, $synonym_label ? $synonym_label : '', [], 'synonym', NULL, NULL);
 
     $condition_results = array_merge($condition_results, $synonym_results);
 
     $results = array_merge($results, $condition_results);
 
-    $results = $this->nodeSuggestedTerms('auto_location', $input, t('Locations'), $results);
+    $results = $this->nodeSuggestedTerms('auto_location', $input, t('Locations'), $results, NULL, NULL);
 
     return new JsonResponse($results);
   }

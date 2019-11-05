@@ -20,10 +20,17 @@ class FindCareController extends ControllerBase {
   protected $nodeStorage;
 
   /**
+   * Search type.
+   *
+   * @var string
+   */
+  public $searchType = '';
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->nodeStroage = $entity_type_manager->getStorage('node');
+    $this->nodeStorage = $entity_type_manager->getStorage('node');
   }
 
   /**
@@ -57,6 +64,7 @@ class FindCareController extends ControllerBase {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
+
     // Pass any input.
     $view->setExposedInput(['name' => $input]);
 
@@ -84,6 +92,8 @@ class FindCareController extends ControllerBase {
 
       $values = $data->_item->getField($field)->getValues();
       foreach ($values as $value) {
+        $query_param = $this->searchType;
+
         $url = '';
         if (is_object($value)) {
           $text = $value->toText();
@@ -92,9 +102,13 @@ class FindCareController extends ControllerBase {
           $text = $value;
         }
 
+        if ($this->searchType == 'location') {
+          $query_param = 'f';
+        }
+
         if ($route && $facet) {
           $query = $facet . ':' . $value;
-          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => ['providers' => [$query]]])->toString();
+          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => [$query_param => [$query]]])->toString();
         }
 
         // Confirm that this field matches the input.
@@ -164,11 +178,17 @@ class FindCareController extends ControllerBase {
       $entity = $data->_object->getEntity();
 
       if ($entity instanceof EntityInterface) {
+        $query_param = $this->searchType;
+
         $url = '';
 
         $values = $data->_item->getField('title')->getValues();
 
         $value = reset($values);
+
+        if ($this->searchType == 'location') {
+          $query_param = 'f';
+        }
 
         if ($redirect_url === TRUE) {
           $url_object = $entity->toUrl();
@@ -176,7 +196,7 @@ class FindCareController extends ControllerBase {
         }
         else if ($route && $facet) {
           $query = $facet . ':' . $value;
-          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => ['f' => [$query]]])->toString();
+          $url = Url::fromRoute($route,[], ['attributes' => ['rel' => 'nofollow'], 'query' => [$query_param => [$query]]])->toString();
         }
 
         if (is_object($value)) {

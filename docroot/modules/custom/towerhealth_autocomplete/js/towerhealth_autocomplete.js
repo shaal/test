@@ -62,6 +62,8 @@
               return false;
             }
 
+            $(this).val(ui.item.value);
+
             $(this).parents('form').submit();
           };
         });
