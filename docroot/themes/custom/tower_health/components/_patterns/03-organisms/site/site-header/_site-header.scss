@@ -1,14 +1,17 @@
 //  Empty
 .header {
-
+  
 }
 
 .header__container {
   @include grid;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 
   .figure {
     padding-top: 1em;
-    max-width: 250px;
+    max-width: 225px;
   }
 
   .toggle-expand {
@@ -16,19 +19,40 @@
   }
   
   @include breakpoint($bp3) {
+    position: relative;
     align-items: stretch;
     
     .figure {
       max-width: 300px;
+      width: 30%;
+    }
+  }
+  
+  @include breakpoint($bp4) {
+    
+    .figure {
+      max-width: 300px;
+      width: 25%;
     }
   }
 }
 
 .header__right {
+  display: flex;
   
   @include breakpoint($bp3) {
     margin-left: auto;
+    width: 100%;
+    position: relative;
   }
+  
+  @include breakpoint($bp4) {
+    max-width: 70%;
+    width: auto;
+    flex-grow: 1;
+  }
+  
+
 }
 
 .header__top {
@@ -37,10 +61,32 @@
    display: flex;
    align-items: flex-start;
    justify-content: flex-end;
+   position: absolute;
+   top: 0;
+   right: 2em;
+  }
+  
+  @include breakpoint($bp4) {
+    position: static;
   }
 }
 
 // Utility Menu Styles
+.utility {
+  display: none;
+  visibility: hidden;
+  
+  &.is-open {
+    display: block;
+    visibility: visible;
+  }
+  
+  @include breakpoint($bp3) {
+    display: block;
+    visibility: visible;
+  }
+}
+
 .utility-menu {
   list-style: none;
   margin: 0;
@@ -117,28 +163,71 @@
 .header__search-form {
   display: none;
   visibility: hidden;
+  align-items: flex-end;
+  background-color: $white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  margin-top: 33px;
+  padding: 1em 0;
+  
+  .header-search.is-active & {
+    display: flex;
+    visibility: visible;
+  }
+}
+
+.header__search-form__container {
+  width: 100%;
+  margin-right: .5em;
+}
+
+.header__search-input[type="text"] {
+  margin-bottom: 0;
 }
 
 .search-toggle {
   @include adjust-font-size-to($label, .9);
-  background-color: $trust-ltst;
   border: 0;
   box-shadow: none;
-  padding: 1em 1.25em .75em 1em;
+  padding: 1.5em 1em;
   
   svg {
-    height: 1.5em;
-    width: 1.5em;
-    fill: $primary-dark;
+    height: 2em;
+    width: 2em;
+    fill: $trust-aa;
   }
   
   &:active,
   &:hover,
   &:focus {
-    background-color: $trust-aa;
+    outline: none;
     
     svg {
-      fill: $white;
+      fill: $growth;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    background-color: $trust-ltst;
+    padding: 1em 1.25em .75em 1em;
+    
+    svg {
+      height: 1.5em;
+      width: 1.5em;
+      fill: $primary-dark;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $trust-aa;
+      
+      svg {
+        fill: $white;
+      }
     }
   }
 }

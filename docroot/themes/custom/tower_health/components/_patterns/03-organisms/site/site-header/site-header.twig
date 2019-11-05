@@ -1,3 +1,4 @@
+{{ attach_library('tower_health/site-header') }}
 <header class="header">
   {% block header_content %}
     <div class="header__container">
@@ -8,27 +9,23 @@
       } %}
       
       <div class="header__right">
-        <div class="header__top">
-          {% include "@molecules/menus/_menu.twig" with {
-            menu_class: "utility-menu",
-            items: utility_items,
-          } %}
-          
-          <div class="header__search">
-            <button href="#" id="search-toggle" class="search-toggle">
-              {% include "@atoms/04-images/icons/_icon.twig" with {
-                icon_base_class: "icon",
-                icon_blockname: "search-toggle",
-                icon_name: "search",
-              } %}
-              <span class="toggle-expand__text">Toggle Search Drawer</span>
-            </button>
-            <form class='header__search-form'>
+        
+        <div class="header__search">
+          <button id="search-toggle" class="search-toggle">
+            {% include "@atoms/04-images/icons/_icon.twig" with {
+              icon_base_class: "icon",
+              icon_blockname: "search-toggle",
+              icon_name: "search",
+            } %}
+            <span class="toggle-expand__text">Toggle Search Drawer</span>
+          </button>
+          <form class='header__search-form' id="header__search-form">
+            <div class="header__search-form__container">
               <label for="header__search-input">Search our Site</label>
-              <input type="text" id="header__search-input" placeholder="Search TowerHealth">
-              <input type="submit" value="Search">         
-            </form>
-          </div>
+              <input class="header__search-input" type="text" id="header__search-input" placeholder="Search TowerHealth">
+            </div>
+            <input class="header__search-submit" type="submit" value="Search">
+          </form>
         </div>
         
         {% include "@molecules/menus/main-menu/main-menu.twig" %}
