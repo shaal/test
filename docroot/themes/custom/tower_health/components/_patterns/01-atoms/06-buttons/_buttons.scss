@@ -56,3 +56,8 @@
     @include button-small;
   }
 }
+
+input[type="submit"] {
+  @include button;
+  appearance: none;
+}
