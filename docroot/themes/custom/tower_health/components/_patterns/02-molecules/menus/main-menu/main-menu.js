@@ -20,8 +20,9 @@
   // Use context instead of document IF DRUPAL.
   var menu_toggle = $('#toggle-expand');
   var menu_drawer = $('.main-nav__container');
-  var utility = $('#utility');
   var search = $('.header__search');
+  
+  var child_toggle = $('.expand-sub');
 
   // Mobile Menu Show/Hide.
   function openNav() {
@@ -42,6 +43,25 @@
     } else {
       openNav();
     }
+  });
+  
+  // open and close sub drawers
+  $(child_toggle).click(function () {
+    if ( $(this).parents('.main-menu__item--with-sub').hasClass('is-active') ) {
+      $(this).parents('.main-menu__item--with-sub').removeClass('is-active');
+    } else {
+      $(this).parents('.main-menu__item--with-sub').addClass('is-active');
+      $(this).parents('.main-menu__item--with-sub').siblings().removeClass('is-active');
+    }
+  });
+  
+  // close the nav drawer if focus button is clicked
+  $('.close-nav--mobile').click(function () {
+    closeNav();
+  });
+  
+  $('.close-nav--child').click(function () {
+    $(this).parents().parents('.main-menu__item--with-sub').removeClass('is-active');
   });
   
   $(document).keydown(function(event) { 

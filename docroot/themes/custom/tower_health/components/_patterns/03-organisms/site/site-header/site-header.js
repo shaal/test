@@ -25,24 +25,60 @@
   var search = $('.header__search');
   // search drawer
   var searchForm = $('#header__search-form');
+  
+  var menu_toggle = $('#toggle-expand');
+  var menu_drawer = $('.main-nav__container');
+  
+  function closeNav() {
+    menu_drawer.removeClass('is-active');
+    menu_toggle.removeClass('is-active');
+  }
+  
+  // Hide or show Search
+  function openSearch() {
+    search.addClass('is-active');
+    searchToggle.addClass('is-active');
+    closeNav();
+  }
+  
+  function closeSearch() {
+    search.removeClass('is-active');
+    searchToggle.removeClass('is-active');
+  }
 
   $(searchToggle).click(function(){
     if (search.hasClass('is-active')){
-      search.removeClass('is-active');
+      closeSearch();
     } else {
-      search.addClass('is-active');
-      $(this).blur();
+      openSearch();
     }
   });
         
-  
   // close overlay and menus if a user clicks esx
   $(document).keydown(function(event) { 
     // close menu on esc press
     if (event.keyCode == 27) { 
-      search.removeClass('is-active');
+      closeSearch();
     } 
   });
+  
+  // measure height of header so mobile nav can take up available space.
+  // and so that 
+  $(window).on('resize load reload', function() {
+    if ( $(window).width() < 900 ) {
+      var $headerHeight = $('.header__container').innerHeight();
+      var $windowheight = $(window).height();
+      var $math = $windowheight - $headerHeight;
+      
+      $('.main-nav__container').css('height', $math);
+      $('.header__search-form').css('max-height', $math);
+      
+    } else {
+      $('.main-nav__container').css('height', '');
+      $('.header__search-form').css('max-height', '');
+    }
+  });
+  
 
 })(jQuery); // REMOVE IF DRUPAL.
 
