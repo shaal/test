@@ -1,20 +1,8 @@
 // Nav
 .main-nav__container {
-  
-  @include breakpoint($bp3) {
-    z-index: 1;
-    position: relative;
-  }
-}
-
-.main-nav {
   display: none;
-
-  @include breakpoint($bp3) {
-    display: block;
-  }
-
-  &--open {
+  
+  &.is-active {
     background-color: $white;
     display: block;
     height: 85%;
@@ -29,6 +17,19 @@
       height: auto;
       position: static;
     }
+  }
+  
+  @include breakpoint($bp3) {
+    display: block;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.main-nav {
+
+  @include breakpoint($bp3) {
+
   }
 }
 

@@ -47,7 +47,7 @@
   display: inline-block;
   text-align: center;
 
-  .toggle-expand--open & {
+  .toggle-expand.is-active & {
     display: none;
   }
 }
@@ -56,7 +56,7 @@
   display: none;
   text-align: center;
 
-  .toggle-expand--open & {
+  .toggle-expand.is-active & {
     display: inline-block;
   }
 }

@@ -73,17 +73,10 @@
 
 // Utility Menu Styles
 .utility {
-  display: none;
-  visibility: hidden;
-  
-  &.is-open {
-    display: block;
-    visibility: visible;
-  }
+
   
   @include breakpoint($bp3) {
-    display: block;
-    visibility: visible;
+
   }
 }
 
