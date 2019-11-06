@@ -23,7 +23,8 @@ class FindProviderController extends FindCareController {
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->nodeStroage = $entity_type_manager->getStorage('node');
+    $this->nodeStorage = $entity_type_manager->getStorage('node');
+    $this->queryParam = 'providers';
   }
 
   /**
@@ -49,21 +50,21 @@ class FindProviderController extends FindCareController {
     }
     $input = Xss::filter($input);
 
-    $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results, 'name');
+    $results = $this->taxonomySuggestedTerms('auto_medical_specialty', $input, t('Medical Specialties'), $results, 'name', 'view.find_a_provider.find_doctor', 'specialties');
 
-    $condition_results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), [], 'name');
+    $condition_results = $this->taxonomySuggestedTerms('auto_condition', $input, t('Conditions'), [], 'name', NULL, NULL);
 
     $synonym_label = '';
     if (empty($condition_results)) {
       $synonym_label = t('Conditions');
     }
-    $synonym_results = $this->taxonomySuggestedTerms('auto_synonym', $input, $synonym_label ? $synonym_label : '', [], 'synonym');
+    $synonym_results = $this->taxonomySuggestedTerms('auto_synonym', $input, $synonym_label ? $synonym_label : '', [], 'synonym', NULL, NULL);
 
     $condition_results = array_merge($condition_results, $synonym_results);
 
     $results = array_merge($results, $condition_results);
 
-    $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results);
+    $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results, NULL, NULL);
 
     return new JsonResponse($results);
   }
