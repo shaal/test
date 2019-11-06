@@ -116,12 +116,6 @@
       }
     }
 
-    &--open {
-      &::after {
-        border-top-color: transparent;
-        border-bottom: 8px solid $primary-dark;
-      }
-    }
 
     &:active,
     &:hover,
@@ -135,10 +129,18 @@
         border-right: 6px solid transparent;
       }
     }
+  }
+  
+  &.is-active > .expand-sub {
 
-    &--open:active,
-    &--open:hover,
-    &--open:focus {
+    &::after {
+      border-top-color: transparent;
+      border-bottom: 8px solid $primary-dark;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
       &::after {
         border-top-color: transparent;
         border-bottom: 8px solid $white;
@@ -189,13 +191,6 @@
       }
     }
 
-    &--open {
-      &::after {
-        border-top-color: transparent;
-        border-bottom: 8px solid $trust-aa;
-      }
-    }
-
     &:active,
     &:hover,
     &:focus {
@@ -208,10 +203,18 @@
         border-right: 6px solid transparent;
       }
     }
+  }
+  
+  &.is-active > .expand-sub {
 
-    &--open:active,
-    &--open:hover,
-    &--open:focus {
+    &::after {
+      border-top-color: transparent;
+      border-bottom: 8px solid $trust-aa;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
       &::after {
         border-top-color: transparent;
         border-bottom: 8px solid $white;
@@ -255,7 +258,7 @@
   }
 
   // See main-menu.js
-  &--open {
+  .main-menu__item.is-active & {
 
     &::after {
       margin-top: -13px;
