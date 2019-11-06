@@ -8,9 +8,11 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-between;
+  position: relative;
 
-  .figure {
-    padding-top: 1em;
+  .header-logo {
+    padding-top: .5em;
+    padding-bottom: .5em;
     max-width: 225px;
   }
 
@@ -19,18 +21,21 @@
   }
   
   @include breakpoint($bp3) {
-    position: relative;
-    align-items: stretch;
+    flex-wrap: wrap;
+    // align-items: stretch;
     
-    .figure {
+    .header-logo {
+      padding-top: 1em;
+      padding-bottom: 0;
       max-width: 300px;
       width: 30%;
     }
   }
   
   @include breakpoint($bp4) {
+    flex-wrap: nowrap;
     
-    .figure {
+    .header-logo {
       max-width: 300px;
       width: 25%;
     }
@@ -43,7 +48,7 @@
   @include breakpoint($bp3) {
     margin-left: auto;
     width: 100%;
-    position: relative;
+    justify-content: flex-end;
   }
   
   @include breakpoint($bp4) {
@@ -51,32 +56,17 @@
     width: auto;
     flex-grow: 1;
   }
-  
-
-}
-
-.header__top {
-  
-  @include breakpoint($bp3) {
-   display: flex;
-   align-items: flex-start;
-   justify-content: flex-end;
-   position: absolute;
-   top: 0;
-   right: 2em;
-  }
-  
-  @include breakpoint($bp4) {
-    position: static;
-  }
 }
 
 // Utility Menu Styles
 .utility {
-
+  order: 2;
   
   @include breakpoint($bp3) {
-
+    position: absolute;
+    top: 0;
+    right: 4.5em;
+    order: 0;
   }
 }
 
@@ -84,10 +74,21 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  @include breakpoint($bp3) {
+    display: block;
+  }
 }
 
 .utility-menu__item {
   display: inline-block;
+  
+  @include breakpoint(0 899px) {
+    order: 2;
+  }
 }
 
 .utility-menu__link {
@@ -150,26 +151,58 @@
     color: $white;
     text-decoration: none;
   }
+  
+  @include breakpoint(0 899px) {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.utility-menu__item--cta {
+  @include breakpoint(0 899px) {
+    order: 1;
+    width: 100%;
+  }
 }
 
 // Search
-.header__search-form {
+
+.header__search-drawer {
   display: none;
   visibility: hidden;
-  align-items: flex-end;
   background-color: $white;
   position: absolute;
   width: 100%;
+  top: 100%;
   left: 0;
   right: 0;
   z-index: 5;
-  margin-top: 33px;
-  padding: 1em 0;
+  padding: 1em 2em 2em;
+  border-top: 1px solid $trust-ltr;
   
-  .header-search.is-active & {
-    display: flex;
+  .header__search.is-active & {
+    display: block;
     visibility: visible;
   }
+  
+  @include breakpoint($bp3) {
+    top: 0;
+    margin-top: 1em;
+  }
+  
+  @include breakpoint($bp4) {
+    border-top: 4px solid $growth;
+    margin-top: 0;
+    width: 70%;
+    left: auto;
+    padding: 1em 2em 2em 0;
+  }
+}
+
+.header__search-form {
+  display: flex;
+  align-items: flex-end;
 }
 
 .header__search-form__container {
@@ -188,8 +221,8 @@
   padding: 1.5em 1em;
   
   svg {
-    height: 2em;
-    width: 2em;
+    height: 1.9em;
+    width: 1.9em;
     fill: $trust-aa;
   }
   
@@ -204,8 +237,12 @@
   }
   
   @include breakpoint($bp3) {
+    position: absolute;
+    right: 2em;
+    top: 0;
     background-color: $trust-ltst;
     padding: 1em 1.25em .75em 1em;
+    z-index: 20;
     
     svg {
       height: 1.5em;
@@ -222,5 +259,22 @@
         fill: $white;
       }
     }
+  }
+}
+
+// Hidden close buttons at end of nav drawers
+// for keyboard users
+.close-nav {
+  @extend %element-focusable;
+  @include button;
+  @include button-small;
+}
+
+.close-nav--mobile {
+  order: 3;
+  
+  @include breakpoint($bp3) {
+    display: none;
+    visibility: hidden;
   }
 }
