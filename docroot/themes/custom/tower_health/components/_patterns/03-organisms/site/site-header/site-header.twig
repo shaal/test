@@ -12,12 +12,22 @@
         
         <div class="header__search">
           <button id="search-toggle" class="search-toggle">
-            {% include "@atoms/04-images/icons/_icon.twig" with {
-              icon_base_class: "icon",
-              icon_blockname: "search-toggle",
-              icon_name: "search",
-            } %}
-            <span class="toggle-expand__text">Toggle Search Drawer</span>
+            <span class="toggle-expand__open">
+              {% include "@atoms/04-images/icons/_icon.twig" with {
+                icon_base_class: "icon",
+                icon_blockname: "search-toggle",
+                icon_name: "search",
+              } %}
+              <span class="toggle-expand__text">Toggle Search Drawer</span>
+            </span>
+            <span class="toggle-expand__close">
+              {% include "@atoms/04-images/icons/_icon.twig" with {
+                icon_base_class: "icon",
+                icon_blockname: "toggle-close",
+                icon_name: "close",
+              } %}
+              <span class="toggle-expand__text">Close</span>
+            </span>
           </button>
           <form class='header__search-form' id="header__search-form">
             <div class="header__search-form__container">
