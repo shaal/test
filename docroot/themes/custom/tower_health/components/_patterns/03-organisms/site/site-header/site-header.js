@@ -23,8 +23,6 @@
   var searchToggle = $('#search-toggle');
   // search wrapper
   var search = $('.header__search');
-  // search drawer
-  var searchForm = $('#header__search-form');
   
   var menu_toggle = $('#toggle-expand');
   var menu_drawer = $('.main-nav__container');
@@ -62,6 +60,10 @@
     } 
   });
   
+  $('.close-search').click(function () {
+    closeSearch();
+  });
+  
   // measure height of header so mobile nav can take up available space.
   // and so that 
   $(window).on('resize load reload', function() {
@@ -71,14 +73,31 @@
       var $math = $windowheight - $headerHeight;
       
       $('.main-nav__container').css('height', $math);
-      $('.header__search-form').css('max-height', $math);
+      $('.header__search-drawer').css('max-height', $math);
       
     } else {
       $('.main-nav__container').css('height', '');
-      $('.header__search-form').css('max-height', '');
+      $('.header__search-drawer').css('max-height', '');
     }
   });
   
+  // position search drawer at desktop
+  $(window).on('resize load reload', function() {
+    if ( $(window).width() > 900 && $(window).width() < 1200 ) {
+      var $logo = $('.header-logo').innerHeight();
+      
+      $('.header__search-drawer').css('top', $logo);
+      
+    } else if ( $(window).width() > 1200 ) {
+      
+      var $offset = $('.main-menu').offset();
+      var $top = $offset.top + 'px';
+      
+      $('.header__search-drawer').css('top', $top);
+    } else {
+      $('.header__search-drawer').css('top', ' ');
+    }
+  });
 
 })(jQuery); // REMOVE IF DRUPAL.
 
