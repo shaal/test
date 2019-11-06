@@ -6,6 +6,7 @@
         img_src: "../../images/TowerHealth_H.svg",
         img_alt: "Tower Health",
         img_url: logo_link_url|default('/'),
+        image_figure_base_class: 'header-logo'
       } %}
       
       <div class="header__right">
@@ -29,13 +30,16 @@
               <span class="toggle-expand__text">Close</span>
             </span>
           </button>
-          <form class='header__search-form' id="header__search-form">
-            <div class="header__search-form__container">
-              <label for="header__search-input">Search our Site</label>
-              <input class="header__search-input" type="text" id="header__search-input" placeholder="Search TowerHealth">
-            </div>
-            <input class="header__search-submit" type="submit" value="Search">
-          </form>
+          <div class="header__search-drawer">
+            <form class='header__search-form' id="header__search-form">
+              <div class="header__search-form__container">
+                <label for="header__search-input">Search our Site</label>
+                <input class="header__search-input" type="text" id="header__search-input" placeholder="Search TowerHealth">
+              </div>
+              <input class="header__search-submit" type="submit" value="Search">
+            </form>
+            <button class="close-nav close-search">Close Search Drawer</button>
+          </div>
         </div>
         
         {% include "@molecules/menus/main-menu/main-menu.twig" %}
