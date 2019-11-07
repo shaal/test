@@ -1,0 +1,36 @@
+{{ attach_library('tower_health/main-menu') }}
+<button href="#" id="toggle-expand" class="toggle-expand">
+  <span class="toggle-expand__open">
+    {% include "@atoms/04-images/icons/_icon.twig" with {
+      icon_base_class: "icon",
+      icon_blockname: "toggle-expand",
+      icon_name: "bars",
+    } %}
+    <span class="toggle-expand__text">Main Menu</span>
+  </span>
+  <span class="toggle-expand__close">
+    {% include "@atoms/04-images/icons/_icon.twig" with {
+      icon_base_class: "icon",
+      icon_blockname: "toggle-close",
+      icon_name: "close",
+    } %}
+    <span class="toggle-expand__text">Close</span>
+  </span>
+</button>
+<nav class="main-nav__container">
+  <div class="utility" id="utility">
+    {% include "@molecules/menus/_menu.twig" with {
+      menu_class: "utility-menu",
+      items: utility_items,
+    } %}
+  </div>
+  
+  <div id="main-nav" class="main-nav">
+    {% include "@molecules/menus/_menu.twig" with {
+      menu_class: "main-menu",
+      items: menu_items,
+    } %}
+  </div>
+  
+  <button class="close-nav close-nav--mobile">Close Navigation Drawer</button>
+</nav>

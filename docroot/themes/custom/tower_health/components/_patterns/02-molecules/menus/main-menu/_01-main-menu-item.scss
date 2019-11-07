@@ -1,55 +1,256 @@
 // LI
 .main-menu__item {
-  border-top: 1px solid;
+  border-top: 1px solid $trust-ltr;
   display: flex;
   flex-wrap: wrap;
   position: relative;
-
-  @include breakpoint($main-menu-medium) {
+  
+  @include breakpoint($bp3) {
+    margin-left: 2em;
+    position: static;
+    
+    .main-menu--sub-1 {
+      border-top: 2px solid $primary-dark;
+    }
+    
+    &--secondary .main-menu--sub-1 {
+      border-top: 2px solid $trust-aa;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      > .main-menu__link {
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          left: calc(50% - 4px);
+          border: 8px solid $primary-dark;
+          border-top-color: transparent;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+        }
+      }
+    }
+    
+    &--secondary:active,
+    &--secondary:hover,
+    &--secondary:focus {
+      > .main-menu__link {
+        &::after {
+          border: 8px solid $trust-aa;
+          border-top-color: transparent;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+        }
+      }
+    }
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  
+  @include breakpoint($bp3) {
     border-top: none;
     display: inline-block;
 
     // Only top level
     &:not(.main-menu__item--sub):hover {
-      background-color: $black;
       transition: all 0.2s;
 
       & > .main-menu--sub {
         display: block;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.main-menu__item:not(.main-menu__item--sub) {
+
+  /* set default color of links */
+  > a {
+
+    &:link,
+    &:visited {
+      color: $primary-dark;
+      text-decoration: none;
+      
+      @include breakpoint($bp3) {
+        border-top: 4px solid transparent;
+        margin-top: -4px;
+      }
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $primary-dark;
+      color: $white;
+      text-decoration: none;
+      
+      @include breakpoint($bp3) {
+        border-top: 4px solid $primary-dark;
+        color: $primary-dark;
+        background-color: transparent;
       }
     }
   }
 
-  &:hover {
-    .main-menu__link::after {
-      color: $gray;
+  > .expand-sub {
+
+    &,
+    &:link,
+    &:visited {
+      color: transparent;
+
+      &::after {
+        border: 8px solid $primary-dark;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $primary-dark;
+
+      &::after {
+        border: 8px solid $white;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+  }
+  
+  &.is-active > .expand-sub {
+
+    &::after {
+      border-top-color: transparent;
+      border-bottom: 8px solid $primary-dark;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      &::after {
+        border-top-color: transparent;
+        border-bottom: 8px solid $white;
+      }
+    }
+  }
+}
+
+.main-menu__item--secondary:not(.main-menu__item--sub) {
+
+  /* set secondary variant */
+  > a {
+
+    &:link,
+    &:visited {
+      color: $trust-aa;
+      text-decoration: none;
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $trust-aa;
+      color: $white;
+      text-decoration: none;
+      
+      @include breakpoint($bp3) {
+        border-top: 4px solid $trust-aa;
+        color: $trust-aa;
+        background-color: transparent;
+      }
+    }
+  }
+
+
+  > .expand-sub {
+
+    &,
+    &:link,
+    &:visited {
+      color: transparent;
+
+      &::after {
+        border: 8px solid $trust-aa;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $trust-aa;
+
+      &::after {
+        border: 8px solid $white;
+        border-bottom-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+  }
+  
+  &.is-active > .expand-sub {
+
+    &::after {
+      border-top-color: transparent;
+      border-bottom: 8px solid $trust-aa;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      &::after {
+        border-top-color: transparent;
+        border-bottom: 8px solid $white;
+      }
     }
   }
 }
 
 // Expand Button
 .expand-sub {
-  background-color: $black;
   cursor: pointer;
   display: block;
-  width: 20%;
-  color: $white;
+  width: 10%;
+  color: transparent;
   position: relative;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
 
-  @include breakpoint($main-menu-medium) {
-    display: none;
+  @include breakpoint($bp3) {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    @if support-legacy-browser(ie, '7') {
+      clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+    }
+    clip: rect(1px, 1px, 1px, 1px);
   }
 
   // Down triangle
   &::after {
-    border: 15px solid;
-    border-bottom-color: transparent;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
     content: "";
     display: block;
-    margin-right: -12px;
-    margin-top: -6px;
+    margin-right: -6px;
+    margin-top: -4px;
     position: absolute;
     right: 50%;
     top: 50%;
@@ -57,14 +258,10 @@
   }
 
   // See main-menu.js
-  &--open {
-    background-color: $black;
-    color: $off-white;
+  .main-menu__item.is-active & {
 
     &::after {
-      border-top-color: transparent;
-      border-bottom: 15px solid;
-      margin-top: -20px;
+      margin-top: -13px;
     }
   }
 }
@@ -74,11 +271,10 @@
 //
 // LI (Nested)
 .main-menu__item--sub {
-  @include breakpoint($main-menu-medium) {
+  border-top: 0;
+  
+  @include breakpoint($bp3) {
     display: block;
-
-    &:not(:first-child) {
-      border-top: 1px solid $gray-light;
-    }
+    margin: 0;
   }
 }

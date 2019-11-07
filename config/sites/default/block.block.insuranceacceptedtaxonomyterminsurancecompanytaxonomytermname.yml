@@ -6,6 +6,7 @@ dependencies:
     - facets.facet.insurance_provider
   module:
     - facets
+    - system
   theme:
     - tower_health
 id: insuranceacceptedtaxonomyterminsurancecompanytaxonomytermname
@@ -20,4 +21,9 @@ settings:
   provider: facets
   label_display: visible
   block_id: insuranceacceptedtaxonomyterminsurancecompanytaxonomytermname
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*"
+    negate: false
+    context_mapping: {  }

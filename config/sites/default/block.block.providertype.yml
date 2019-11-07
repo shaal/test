@@ -6,6 +6,7 @@ dependencies:
     - facets.facet.provider_type
   module:
     - facets
+    - system
   theme:
     - tower_health
 id: providertype
@@ -20,4 +21,9 @@ settings:
   provider: facets
   label_display: visible
   block_id: providertype
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*"
+    negate: false
+    context_mapping: {  }

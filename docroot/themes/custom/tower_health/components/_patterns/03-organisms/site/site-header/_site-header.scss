@@ -1,1 +1,280 @@
 //  Empty
+.header {
+  
+}
+
+.header__container {
+  @include grid;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+
+  .header-logo {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    max-width: 225px;
+  }
+
+  .toggle-expand {
+    margin-left: auto;
+  }
+  
+  @include breakpoint($bp3) {
+    flex-wrap: wrap;
+    // align-items: stretch;
+    
+    .header-logo {
+      padding-top: 1em;
+      padding-bottom: 0;
+      max-width: 300px;
+      width: 30%;
+    }
+  }
+  
+  @include breakpoint($bp4) {
+    flex-wrap: nowrap;
+    
+    .header-logo {
+      max-width: 300px;
+      width: 25%;
+    }
+  }
+}
+
+.header__right {
+  display: flex;
+  
+  @include breakpoint($bp3) {
+    margin-left: auto;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  @include breakpoint($bp4) {
+    max-width: 70%;
+    width: auto;
+    flex-grow: 1;
+  }
+}
+
+// Utility Menu Styles
+.utility {
+  order: 2;
+  
+  @include breakpoint($bp3) {
+    position: absolute;
+    top: 0;
+    right: 4.5em;
+    order: 0;
+  }
+}
+
+.utility-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  @include breakpoint($bp3) {
+    display: block;
+  }
+}
+
+.utility-menu__item {
+  display: inline-block;
+  
+  @include breakpoint(0 899px) {
+    order: 2;
+  }
+}
+
+.utility-menu__link {
+  @include adjust-font-size-to($label, .9);
+  display: inline-block;
+  padding: 1em .5em;
+  margin-right: 1em;
+  font-weight: 600;
+  
+  &:link,
+  &:visited {
+    color: $primary-dark;
+    text-decoration: none;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    color: $trust-aa;
+    text-decoration: underline;
+  }
+}
+
+.utility-menu__link--mytower {
+  color: transparent;
+  background: url('../components/images/mytowerhealth-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  &:link,
+  &:visited {
+    color: transparent;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.utility-menu__link--cta {
+  @extend %track-out;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  background-color: $primary-dark;
+  padding: 1em 1em;
+  
+  &:link,
+  &:visited {
+    color: $white;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: $trust-aa;
+    color: $white;
+    text-decoration: none;
+  }
+  
+  @include breakpoint(0 899px) {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.utility-menu__item--cta {
+  @include breakpoint(0 899px) {
+    order: 1;
+    width: 100%;
+  }
+}
+
+// Search
+
+.header__search-drawer {
+  display: none;
+  visibility: hidden;
+  background-color: $white;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 1em 2em 2em;
+  border-top: 1px solid $trust-ltr;
+  
+  .header__search.is-active & {
+    display: block;
+    visibility: visible;
+  }
+  
+  @include breakpoint($bp3) {
+    top: 0;
+    margin-top: 1em;
+  }
+  
+  @include breakpoint($bp4) {
+    border-top: 4px solid $growth;
+    margin-top: 0;
+    width: 70%;
+    left: auto;
+    padding: 1em 2em 2em 0;
+  }
+}
+
+.header__search-form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.header__search-form__container {
+  width: 100%;
+  margin-right: .5em;
+}
+
+.header__search-input[type="text"] {
+  margin-bottom: 0;
+}
+
+.search-toggle {
+  @include adjust-font-size-to($label, .9);
+  border: 0;
+  box-shadow: none;
+  padding: 1.5em 1em;
+  
+  svg {
+    height: 1.9em;
+    width: 1.9em;
+    fill: $trust-aa;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    outline: none;
+    
+    svg {
+      fill: $growth;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    position: absolute;
+    right: 2em;
+    top: 0;
+    background-color: $trust-ltst;
+    padding: 1em 1.25em .75em 1em;
+    z-index: 20;
+    
+    svg {
+      height: 1.5em;
+      width: 1.5em;
+      fill: $primary-dark;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $trust-aa;
+      
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
+
+// Hidden close buttons at end of nav drawers
+// for keyboard users
+.close-nav {
+  @extend %element-focusable;
+  @include button;
+  @include button-small;
+}
+
+.close-nav--mobile {
+  order: 3;
+  
+  @include breakpoint($bp3) {
+    display: none;
+    visibility: hidden;
+  }
+}

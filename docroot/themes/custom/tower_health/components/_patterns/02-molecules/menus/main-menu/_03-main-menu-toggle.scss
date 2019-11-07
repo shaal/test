@@ -1,44 +1,78 @@
 // Toggle
 .toggle-expand {
-  @include link;
+  display: inline-block;
+  text-decoration: none;
+  padding: .75em 0 .75em .75em;
+  background-color: transparent;
+  border: none;
 
-  @include breakpoint($main-menu-medium) {
-    display: none;
+  svg {
+    fill: $trust-aa;
   }
 
-  display: inline-block;
-  padding: $space;
-  text-decoration: none;
-  width: 100%;
-
-  // See main-menu.js
-  &--open {
-    background-color: $gray-dark;
+  &:active,
+  &:hover,
+  &:focus {
+    outline: none;
+    
+    svg {
+      fill: $growth-lg;
+    }
+  }
+  
+  @include breakpoint($bp1) {
+    padding: 1em 0 1em 1em;
+  }
+  
+  @include breakpoint($bp3) {
+    display: none;
   }
 }
 
 .toggle-expand__text {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: bold;
-
-  .toggle-expand--open & {
-    color: $white;
-  }
+  @extend %element-invisible;
 }
 
 // SVG icon
 .toggle-expand__icon {
-  height: 3rem;
-  width: 3rem;
+  height: 1.7rem;
+  width: 1.7rem;
   margin: 0 auto;
+  
+  @include breakpoint($bp1) {
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
+.toggle-close__icon {
+  height: 1.7rem;
+  width: 1.7rem;
+  padding: .25rem;
+  margin: 0 auto;
+  
+  .search-toggle & {
+    padding: .15rem;
+  }
+  
+  @include breakpoint($bp1) {
+    height: 2rem;
+    width: 2rem;
+    padding: .25rem;
+    
+    .search-toggle & {
+      padding: .15rem;
+    }
+  }
+}
+
+.search-toggle__icon,
 .toggle-expand__open {
   display: inline-block;
   text-align: center;
 
-  .toggle-expand--open & {
+  .toggle-expand.is-active &,
+  .header__search.is-active & {
     display: none;
   }
 }
@@ -47,15 +81,8 @@
   display: none;
   text-align: center;
 
-  &::before {
-    color: $white;
-    content: "X";
-    display: block;
-    font-size: 2.5rem;
-    line-height: 2;
-  }
-
-  .toggle-expand--open & {
+  .toggle-expand.is-active &,
+  .header__search.is-active & {
     display: inline-block;
   }
 }
