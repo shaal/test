@@ -236,6 +236,10 @@
  
   .homepage-hero__image {
     opacity: 0;
+    
+    .image-background.top-left .image::before {
+      margin: 0;
+    }
   }
   
   // animating in
@@ -263,13 +267,19 @@
         }
         
         form {
-          animation: fadeInUp .75s ease-in-out  .5s forwards;
+          animation: fadeInUp .75s ease-in-out  .35s forwards;
         }
       }
     }
     
     .homepage-hero__image {
       animation: fadeInRightScale 1s ease-in-out forwards;
+      
+      .image-background.top-left .image::before {
+        transition: all .5s ease .25s;
+        margin-left: -20px;
+        margin-top: -10px;
+      }
     }
   }
 }

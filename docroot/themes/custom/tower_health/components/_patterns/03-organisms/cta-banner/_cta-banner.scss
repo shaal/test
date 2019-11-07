@@ -231,6 +231,11 @@
  
   .cta-banner__image {
     opacity: 0;
+    
+    .image-background.bottom-left .image::before {
+      margin-left: -30px;
+      margin-top: -10px;
+    }
   }
   
   // animating in
@@ -261,6 +266,12 @@
     
     .cta-banner__image {
       animation: fadeInLeftScale 1s ease-in-out forwards;
+      
+      .image-background.bottom-left .image::before {
+        transition: all .5s ease .25s;
+        margin-left: -20px;
+        margin-top: 10px;
+      }
     }
   }
 }
