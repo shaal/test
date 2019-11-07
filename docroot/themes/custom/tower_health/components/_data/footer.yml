@@ -1,4 +1,4 @@
-social:
+footer_social:
   - url: "/"
     svg: "social-facebook.svg"
   - url: "#"
@@ -13,18 +13,18 @@ social:
     svg: "social-instagram.svg"
   - url: "#"
     svg: "social-pinterest.svg"
-contact:
+footer_contact:
   address: "420 S. Fifth Avenue, West Reading, PA 19611"
   phone: "484-628-8000"
-details:
+footer_details:
   - title: "Privacy Policy"
     href: "#"
   - title: "Patients Rights & Responsibilities"
     href: "#"
   - title: "HIPAA Forms"
     href: "#"
-legal: "Copyright 2019 Tower Health. All rights reserved."
-items:
+footer_legal: "Copyright 2019 Tower Health. All rights reserved."
+footer_items:
   - title: "Visitors & Caregivers"
     url: "/"
     below:
