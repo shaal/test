@@ -181,3 +181,42 @@
   }
 }
 
+// Animations
+
+.cssanimations {
+  
+  // default states
+  .cta-banner-list__content,
+  .cta-banner-list__background,
+  .cta-banner-list__buttons,
+  .icon-button  {
+    opacity: 0;
+  }
+  
+  // animating in
+  .in-view {
+    .cta-banner-list__content {
+      animation: fadeInLeft 1s ease-in-out forwards;
+    }
+    
+    .cta-banner-list__background {
+      animation: fadeinSlight 1.25s ease-in-out .75s forwards;
+    }
+    
+    .cta-banner-list__buttons {
+      animation: fadein 1s ease-in-out forwards;
+    }
+    
+    .icon-button {
+      animation: fadeInRight .5s ease-in-out forwards;
+    }
+    @for $i from 1 through 6 {
+      .icon-button:nth-child(#{$i}) {
+        // Delay the animation. Delay increases as items loop.
+        animation-delay: .25 + ($i * (1s / 12));
+      }
+    }
+  }
+}
+
+
