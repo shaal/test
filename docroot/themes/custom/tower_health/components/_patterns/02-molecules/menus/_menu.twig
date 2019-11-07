@@ -53,6 +53,9 @@
             li_blockname: item_blockname,
           } %}
         {% endfor %}
+        {% if menu_level == 1 %}
+          <button class="close-nav close-nav--child">Close Child Navigation Drawer</button>
+        {% endif %}
       {% endblock %}
     {% endembed %}
   {% endif %}

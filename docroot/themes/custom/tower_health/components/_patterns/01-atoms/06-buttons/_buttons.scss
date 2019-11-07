@@ -26,7 +26,6 @@
     transform: scale(1.025);
     color: $hoverColor;
     background-color: $hoverBg;
-    border-color: $hoverColor;
   }
 }
 
@@ -56,4 +55,9 @@
     @include button-alt;
     @include button-small;
   }
+}
+
+input[type="submit"] {
+  @include button;
+  appearance: none;
 }

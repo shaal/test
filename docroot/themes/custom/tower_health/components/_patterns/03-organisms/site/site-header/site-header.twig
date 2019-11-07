@@ -1,0 +1,49 @@
+{{ attach_library('tower_health/site-header') }}
+<header class="header">
+  {% block header_content %}
+    <div class="header__container">
+      {% include "@atoms/04-images/00-image/figure.twig" with {
+        img_src: "../../images/TowerHealth_H.svg",
+        img_alt: "Tower Health",
+        img_url: logo_link_url|default('/'),
+        image_figure_base_class: 'header-logo'
+      } %}
+      
+      <div class="header__right">
+        
+        <div class="header__search">
+          <button id="search-toggle" class="search-toggle">
+            <span class="toggle-expand__open">
+              {% include "@atoms/04-images/icons/_icon.twig" with {
+                icon_base_class: "icon",
+                icon_blockname: "search-toggle",
+                icon_name: "search",
+              } %}
+              <span class="toggle-expand__text">Toggle Search Drawer</span>
+            </span>
+            <span class="toggle-expand__close">
+              {% include "@atoms/04-images/icons/_icon.twig" with {
+                icon_base_class: "icon",
+                icon_blockname: "toggle-close",
+                icon_name: "close",
+              } %}
+              <span class="toggle-expand__text">Close</span>
+            </span>
+          </button>
+          <div class="header__search-drawer">
+            <form class='header__search-form' id="header__search-form">
+              <div class="header__search-form__container">
+                <label for="header__search-input">Search our Site</label>
+                <input class="header__search-input" type="text" id="header__search-input" placeholder="Search TowerHealth">
+              </div>
+              <input class="header__search-submit" type="submit" value="Search">
+            </form>
+            <button class="close-nav close-search">Close Search Drawer</button>
+          </div>
+        </div>
+        
+        {% include "@molecules/menus/main-menu/main-menu.twig" %}
+      </div>
+    </div>
+  {% endblock %}
+</header>
