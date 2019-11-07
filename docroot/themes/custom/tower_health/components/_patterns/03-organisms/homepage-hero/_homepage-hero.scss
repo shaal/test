@@ -151,12 +151,13 @@
       @include breakpoint($bp3) {
         display: block;
         border: 5px solid $trust-ltst;
-        border-radius: 10px;
+        border-right: 0;
+        border-radius: 10px 0 0 10px;
         margin: 0 auto;
         position: absolute;
         top: 0;
         left: 2em;
-        right: 2em;
+        right: 0;
         bottom: 0;
         z-index: -5;
       }
@@ -208,6 +209,62 @@
     @include breakpoint($bp5) {
       top: -8em;
       right: calc(( 100vw - 1500px ) / 2 * -1);
+    }
+  }
+}
+
+// Animations
+
+.cssanimations {
+  
+  // default states
+  .homepage-hero__content {
+    opacity: 0;
+
+    h1,
+    h2,
+    form,
+    &::before {
+      opacity: 0;
+    }
+  }
+ 
+  .homepage-hero__image {
+    opacity: 0;
+  }
+  
+  // animating in
+  .in-view {
+    .homepage-hero__content {
+      @include transition(all, .75s, ease-in);
+      opacity: 1;
+      
+      @include breakpoint(0 899px) {
+        animation: fadeInLeft 1s ease-in-out forwards;
+      } 
+      
+      &::before {
+        @include transition(opacity, 1.25s, ease-out);
+        opacity: 1;
+      }
+      
+      @include breakpoint($bp2) {
+        h1 {
+          animation: fadeInUp .75s ease-in-out  .25s forwards;
+        }
+        
+        h2 {
+          animation: fadeInUp .75s ease-in-out  .25s forwards;
+        }
+        
+        form {
+          animation: fadeInUp .75s ease-in-out  .5s forwards;
+        }
+      }
+    }
+    
+    .homepage-hero__image {
+      animation: fadeInRightScale 1s ease-in-out forwards;
     }
   }
 }
