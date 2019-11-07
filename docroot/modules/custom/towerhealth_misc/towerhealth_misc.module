@@ -6,3 +6,25 @@
  *
  * @copyright Copyright (c) 2019 Palantir.net
  */
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+/**
+ * Add custom sort order for find a provider search.
+ *
+ * @param object\ViewExecutable $view
+ *   View to alter.
+ * @param object\QueryPluginBase $query
+ *   View query.
+ */
+function towerhealth_misc_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'find_a_provider') {
+    // Sort by provider type custom solr field first.
+    $query->sort('provider_sort_field', 'ASC');
+    // Then sort by relevance.
+    $query->sort('search_api_relevance', 'DESC');
+    // And finally by name.
+    $query->sort('title', 'ASC');
+  }
+}
