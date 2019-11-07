@@ -1,24 +1,28 @@
 .cta-banner {
+  @extend %clearfix;
   position: relative;
   padding-top: 100px;
   width: 100%;
+  margin-bottom: 2em;
 
   @include breakpoint($bp2) {
     padding: 100px 2em 0;
   }
 
   @include breakpoint($bp3) {
-    max-width: 1600px;
+    max-width: 1500px;
     padding: 0 2em;
-    margin: 5em auto 0;
+    margin: 5em auto 1.5em;
   }
 
   @include breakpoint(1050px) {
     margin-top: 6em;
+    margin-bottom: 3em;
   }
 
   @include breakpoint($bp4) {
     margin-top: 10em;
+    margin-bottom: 6em;
   }
 
   @include breakpoint($bp5) {
@@ -55,7 +59,7 @@
       z-index: 5;
       right: 50%;
       left: 0;
-      top: -5em;
+      top: -14em;
       width: auto;
 
       .image-background {
@@ -67,17 +71,16 @@
     }
 
     @include breakpoint(1050px) {
-      top: -6em;
+      top: -18em;
     }
 
     @include breakpoint($bp4) {
       right: 45%;
-      top: -10em;
+      top: -20em;
     }
 
     @include breakpoint($bp5) {
-      top: -12em;
-      left: calc(( 100vw - 1600px ) / 2 * -1);
+      left: calc(( 100vw - 1500px ) / 2 * -1);
     }
   }
 
@@ -156,25 +159,50 @@
     .cta-banner__title {
       color: $primary-dark;
       text-transform: uppercase;
-      font-size: 2.5em;
       margin: 0;
-      line-height: 1em;
-      font-weight: 600;
+      font-weight: 300;
 
       span {
         display: block;
-      }
+        font-size: .9em;
+        line-height: 1.05em;
+        
+        &:last-child {
+          font-weight: 600;
+        }
+        
+        @include breakpoint($bp0) {
+          font-size: 1em;
+        }
 
-      @include breakpoint($bp1) {
-        font-size: 3em;
-      }
+        @include breakpoint("425px") {
+          font-size: 1.15em;
+        }
 
-      @include breakpoint($bp3) {
-        font-size: 3em;
-      }
+        @include breakpoint($bp2) {
+          font-size: 1.25em;
+          line-height: 1em;
+        }
 
-      @include breakpoint($bp4) {
-        font-size: 3.5em;
+        @include breakpoint("775px") {
+          font-size: 1.5em;
+        }
+
+        @include breakpoint($bp3) {
+          font-size: 1.2em;
+        }
+
+        @include breakpoint($bp4) {
+          font-size: 1.4em;
+        }
+        
+        @include breakpoint(1400px) {
+          font-size: 1.6em;
+        }
+
+        @include breakpoint($bp5) {
+          font-size: 1.75em;
+        }
       }
     }
   }

@@ -1,6 +1,12 @@
 //  Empty
 .header {
+  @extend %clearfix;
+  z-index: 99;
+  position: relative;
   
+  @include breakpoint($bp3) {
+    margin-bottom: 2em;
+  }
 }
 
 .header__container {
@@ -22,8 +28,7 @@
   
   @include breakpoint($bp3) {
     flex-wrap: wrap;
-    // align-items: stretch;
-    
+        
     .header-logo {
       padding-top: 1em;
       padding-bottom: 0;
@@ -218,6 +223,8 @@
   @include adjust-font-size-to($label, .9);
   border: 0;
   box-shadow: none;
+  appearance: none;
+  background-color: $white;
   padding: 1.5em 1em;
   
   svg {

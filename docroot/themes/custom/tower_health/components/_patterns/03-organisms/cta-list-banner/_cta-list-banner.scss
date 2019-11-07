@@ -1,5 +1,8 @@
 .cta-banner-list {
   @include grid;
+  
+  margin-top: 1em;
+  margin-bottom: 3em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -11,66 +14,101 @@
 }
 
 .cta-banner-list__content {
-  border-top: 6px solid $growth;
-  padding: 2em 0;
+  padding: 2em 0 1em;
   width: 100%;
   position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    height: 1px;
-    border-top: 6px solid $growth;
-    left: -2em;
-    width: 2em;
-    top: -6px;
-    
-    @include breakpoint($bp5) {
-      width: calc( 2em + (100vw - 1600px) );
-      left: calc( -2em - (100vw - 1600px) );
-    }
-  }
 
   @include breakpoint($bp3) {
-    padding: 5em 0;
+    border-top: 6px solid $growth;
+    padding: 3em 0 5em;
     width: 60%;
     max-width: 55%;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      border-top: 6px solid $growth;
+      left: -2em;
+      width: 2em;
+      top: -6px;
+      
+      @include breakpoint($bp5) {
+        width: calc( 2em + (100vw - 1500px) );
+        left: calc( -2em - (100vw - 1500px) );
+      }
+    }
+  }
+  
+  @include breakpoint($bp5) {
+    padding: 5em 0;
   }
 }
 
 .cta-banner-list__title {
-  @include adjust-font-size-to($text, .6);
+  font-size: .9em;
   text-transform: uppercase;
   font-weight: 600;
   color: $primary-dark;
   word-wrap: break-word;
   margin: 0;
   
-  span {
-    display: block;
+  &.first {
+    font-weight: 300;
+  }
+  
+  &.second {
+    font-weight: 500;
   }
 
   &.third {
     color: $trust-aa;
   }
-  @include breakpoint($bp1) {
-    @include adjust-font-size-to($sm-heading, .9);
-  }
   
+  @include breakpoint($bp0) {
+    font-size: 1em;
+  }
+
+  @include breakpoint("425px") {
+    font-size: 1.15em;
+  }
+
   @include breakpoint($bp2) {
-    @include adjust-font-size-to($md-heading, 1);
+    font-size: 1.25em;
+    line-height: 1em;
+  }
+
+  @include breakpoint("775px") {
+    font-size: 1.5em;
+  }
+
+  @include breakpoint($bp3) {
+    font-size: 1.2em;
+    display: block;
+  }
+
+  @include breakpoint($bp4) {
+    font-size: 1.4em;
   }
   
-  @include breakpoint($bp4) {
-    @include adjust-font-size-to($xl-heading, 1.25);
+  @include breakpoint(1400px) {
+    font-size: 1.6em;
+  }
+
+  @include breakpoint($bp5) {
+    font-size: 1.75em;
   }
 }
 
 .cta-banner-list__subtitle {
+  @include adjust-font-size-to($sm-heading, .9);
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  font-weight: 500;
   
-  @include breakpoint(0 $bp2) {
-    @include adjust-font-size-to($sm-heading, .9);
-  }
+  @include breakpoint($bp3) {
+     @include adjust-font-size-to($md-heading, 1.2);
+   }
 }
 
 .cta-banner-list__background {
@@ -104,7 +142,7 @@
   position: relative;
   width: 100%;
   
-  @include breakpoint($bp2 $bp3) {
+  @include breakpoint($bp2 899px) {
     flex-direction: row;
     flex-wrap: wrap;
     
@@ -116,6 +154,7 @@
   @include breakpoint($bp3) {
     width: 33%;
     margin-left: auto;
+    margin-top: 4.5em;
   }
 
   &::after {
@@ -137,7 +176,7 @@
     }
     
     @include breakpoint($bp5) {
-      right: calc(  ( (100vw - 1600px) / -2 ) - 30px );
+      right: calc(  ( (100vw - 1500px) / -2 ) - 30px );
     }
   }
 }

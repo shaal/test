@@ -1,0 +1,44 @@
+site_title: true
+
+hero:
+  title_1: "Coordinated,"
+  title_2: "Convenient,"
+  title_3: "Effective."
+  subtitle: "Connecting you to your healthiest."
+  img:
+    src: "../../images/th-hero-image.jpg"
+    alt: "Alternative Text"
+  classes: "growth top-left"
+
+cta_list:
+  title_1: "Effortless,"
+  title_2: "Accessible"
+  title_3: "Healthcare."
+  subtitle: "Helping you connect with the care you need."
+  links:
+    - text: "Make an Appointment"
+      url: "/"
+      icon: "th-cal.svg"
+    - text: "Find a Hospital or Location"
+      url: "/"
+      icon: "th-find-hospital.svg"
+    - text: "Pay my Bill & Estimate Costs"
+      url: "/"
+      icon: "th-bill.svg"
+    - text: "Urgent Care & Emergency Wait Times"
+      url: "/"
+      icon: "th-emergency-time.svg"
+    - text: "My TowerHealth"
+      url: "/"
+      icon: "th-my-tower.svg"
+    - text: "Sign-up for a Class or Event"
+      url: "/"
+      icon: "th-medal.svg"
+
+cta_banner:
+  title_1: "Need Help?"
+  title_2: "We're Here."
+  img:
+    src: "../../images/th-cta-image.jpg"
+    alt: "Alternative Text"
+  classes: "trust bottom-left"
