@@ -37,7 +37,7 @@
     search.removeClass('is-active');
   }
     
-  $(menu_toggle).click(function () {
+  menu_toggle.on('click', function() {
     if ( $(menu_drawer).hasClass('is-active') ) {
       closeNav();
     } else {
@@ -46,7 +46,7 @@
   });
   
   // open and close sub drawers
-  $(child_toggle).click(function () {
+  child_toggle.on('click', function() {
     if ( $(this).parents('.main-menu__item--with-sub').hasClass('is-active') ) {
       $(this).parents('.main-menu__item--with-sub').removeClass('is-active');
     } else {
@@ -56,11 +56,11 @@
   });
   
   // close the nav drawer if focus button is clicked
-  $('.close-nav--mobile').click(function () {
+  $('.close-nav--mobile').on('click', function() {
     closeNav();
   });
   
-  $('.close-nav--child').click(function () {
+  $('.close-nav--child').on('click', function() {
     $(this).parents().parents('.main-menu__item--with-sub').removeClass('is-active');
   });
   
