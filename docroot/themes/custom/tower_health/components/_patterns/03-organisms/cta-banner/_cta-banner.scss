@@ -4,6 +4,7 @@
   padding-top: 100px;
   width: 100%;
   margin-bottom: 2em;
+  z-index: 1;
 
   @include breakpoint($bp2) {
     padding: 100px 2em 0;
@@ -204,6 +205,62 @@
           font-size: 1.75em;
         }
       }
+    }
+  }
+}
+
+// Animations
+
+.cssanimations {
+  
+  // default states
+  .cta-banner__content {
+    opacity: 0;
+
+    &::before {
+      opacity: 0;
+    }
+    
+    @include breakpoint($bp3) {
+      h1,
+      button {
+        opacity: 0;
+      }
+    }
+  }
+ 
+  .cta-banner__image {
+    opacity: 0;
+  }
+  
+  // animating in
+  .in-view {
+    .cta-banner__content {
+      @include transition(all, .75s, ease-in);
+      opacity: 1;
+      
+      @include breakpoint(0 899px) {
+        animation: fadeInRight 1s ease-in-out forwards;
+      } 
+      
+      &::before {
+        @include transition(opacity, 1.25s, ease-out);
+        opacity: 1;
+      }
+      
+      @include breakpoint($bp3) {
+        button {
+          animation: fadeInUp .75s ease-in-out  .5s forwards;
+        }
+        
+        h1 {
+          animation: fadeInUp .75s ease-in-out  .25s forwards;
+        }
+      }
+    }
+    
+    .cta-banner__image {
+      animation: fadeInLeftScale 1s ease-in-out forwards;
     }
   }
 }

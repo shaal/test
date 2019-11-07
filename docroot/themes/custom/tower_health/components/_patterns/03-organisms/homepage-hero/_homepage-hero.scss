@@ -221,11 +221,16 @@
   .homepage-hero__content {
     opacity: 0;
 
-    h1,
-    h2,
-    form,
     &::before {
       opacity: 0;
+    }
+    
+    @include breakpoint($bp3) {
+      h1,
+      h2,
+      form{
+        opacity: 0;
+      }
     }
   }
  
@@ -248,7 +253,7 @@
         opacity: 1;
       }
       
-      @include breakpoint($bp2) {
+      @include breakpoint($bp3) {
         h1 {
           animation: fadeInUp .75s ease-in-out  .25s forwards;
         }
