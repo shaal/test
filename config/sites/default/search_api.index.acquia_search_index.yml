@@ -7,18 +7,20 @@ dependencies:
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
     - field.storage.taxonomy_term.field_condition_synonym
-    - field.storage.node.field_location_type
     - field.storage.node.field_profile_gender
     - field.storage.node.field_insurance_ref
     - field.storage.taxonomy_term.field_insurance_company
-    - field.storage.node.field_location_ref
     - field.storage.node.field_profile_languages
+    - field.storage.node.field_location_geo
+    - field.storage.node.field_location_type
+    - field.storage.node.field_location_ref
     - field.storage.node.field_profile_type
-    - search_api.server.acquia_search_server
+    - search_api.server.local_development
     - core.entity_view_mode.node.search_index
   module:
     - node
     - taxonomy
+    - search_api_location
     - search_api_solr
     - search_api
 _core:
@@ -26,8 +28,16 @@ _core:
 id: acquia_search_index
 name: 'Acquia Search Solr Index'
 description: ''
-read_only: true
+read_only: false
 field_settings:
+  latlon:
+    label: 'Location Geo » LatLong Pair'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_geo:latlon'
+    type: location
+    dependencies:
+      config:
+        - field.storage.node.field_location_geo
   location_services_specialty_condition_name:
     label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -270,6 +280,7 @@ processor_settings:
   ignorecase:
     all_fields: true
     fields:
+      - latlon
       - location_services_specialty_condition_name
       - location_services_specialty_condition_synonym
       - location_services_title
@@ -301,4 +312,5 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
-server: acquia_search_server
+  overridden_by_acquia_search: 2
+server: local_development
