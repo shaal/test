@@ -4,6 +4,7 @@ global:
       dist/style.css: {}
   js:
     dist/00-base/global/animations/animation.js: {}
+    components/js/modernizer-custom.js: {}
 
 main-menu:
   js:
