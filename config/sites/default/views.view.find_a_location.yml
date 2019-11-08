@@ -263,7 +263,7 @@ display:
           reduce_duplicates: false
           plugin_id: search_api_options
         latlon:
-          id: latlon
+          id: location_latlon
           table: search_api_index_acquia_search_index
           field: latlon
           relationship: none

@@ -9,6 +9,7 @@
 
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Add custom sort order for find a provider search.
@@ -28,3 +29,22 @@ function towerhealth_misc_views_query_alter(ViewExecutable $view, QueryPluginBas
     $query->sort('title', 'ASC');
   }
 }
+
+/**
+ * Form alter exposed view block.
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+/*function towerhealth_misc_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  dump($form);
+  dump($form_state);
+  dump($form_id);
+  if ($form['#id'] == 'views-exposed-form-find-a-location-find-location' && in_array('location_latlon', $form)) {
+    //unset($form['location_latlon']);
+  }
+  elseif ($form['#id'] == 'views-exposed-form-find-a-provider-find-doctor' && in_array('location_latlon', $form)) {
+    //unset($form['provider_location_latlong']);
+  }
+}*/

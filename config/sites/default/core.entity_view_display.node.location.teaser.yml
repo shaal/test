@@ -76,6 +76,7 @@ hidden:
   field_location_body: true
   field_location_components: true
   field_location_find_us: true
+  field_location_geo: true
   field_location_hours: true
   field_location_id: true
   field_location_insurance: true

@@ -29,9 +29,9 @@ _core:
 id: acquia_search_index
 name: 'Acquia Search Solr Index'
 description: ''
-read_only: false
+read_only: true
 field_settings:
-  latlon:
+  location_latlon:
     label: 'Location Geo » LatLong Pair'
     datasource_id: 'entity:node'
     property_path: 'field_location_geo:latlon'
@@ -131,6 +131,17 @@ field_settings:
         - taxonomy
         - taxonomy
         - taxonomy
+  provider_location_latlong:
+    label: 'Location » Content » Location Geo » LatLong Pair'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_ref:entity:field_location_geo:latlon'
+    type: location
+    dependencies:
+      config:
+        - field.storage.node.field_location_ref
+        - field.storage.node.field_location_geo
+      module:
+        - node
   provider_location_title_string:
     label: 'Location » Content » Title'
     datasource_id: 'entity:node'
@@ -285,7 +296,7 @@ processor_settings:
   ignorecase:
     all_fields: true
     fields:
-      - latlon
+      - location_latlon
       - location_services_specialty_condition_name
       - location_services_specialty_condition_synonym
       - location_services_title
@@ -294,6 +305,7 @@ processor_settings:
       - name
       - profile_gender_string
       - provider_insurance_groups_insurance_company_string
+      - provider_location_latlong
       - provider_location_title_string
       - provider_profile_languages_string
       - provider_profile_type

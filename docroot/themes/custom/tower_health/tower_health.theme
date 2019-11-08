@@ -4,3 +4,11 @@
  * @file
  * Functions to support theming in the Pattern Lab theme.
  */
+
+/**
+ * @param $variables
+ * @param $hook
+ */
+function tower_health_preprocess_block__exposedformfind_a_providerfind_doctor(&$variables, $hook) {
+  unset($variables['content']['provider_location_latlong']);
+}
