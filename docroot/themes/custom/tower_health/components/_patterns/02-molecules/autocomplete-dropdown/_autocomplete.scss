@@ -1,0 +1,54 @@
+.autocomplete-container {
+  position: relative;
+}
+
+.autocomplete-search {
+  list-style: none;
+  margin: 0;
+  padding: .5em 1.5em 2em;
+  background-color: $white;
+  box-shadow: 0 4px 4px rgba($black, .25);
+  position: relative;
+  top: -1em;
+  border: 1px solid $primary-dark;
+  border-top: 1px solid $trust-ltst;
+  max-height: 250px;
+  overflow-y: scroll;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 98%;
+  display: none;
+  visibility: hidden;
+  
+  &.is-active {
+    display: block;
+    visibility: visible;
+  }
+  
+  @include breakpoint($bp3) {
+    max-height: 600px;
+  }
+}
+
+.autocomplete-search__label {
+  @include adjust-font-size-to($crumb, .8);
+  @extend %track-out;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+  margin-bottom: .25em;
+  font-weight: 600;
+}
+
+.autocomplete-search__item {
+  a {
+    display: block;
+    padding: .15em 0;
+  }
+  
+  @include breakpoint(0 $bp3) {
+    a {
+      padding: .5em 0;
+    }
+  }
+}

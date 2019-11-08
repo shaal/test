@@ -15,6 +15,10 @@ main-menu:
 site-header:
   js:
     dist/03-organisms/site/site-header/site-header.js: {}
+    
+autocomplete:
+  js:
+    dist/02-molecules/autocomplete-dropdown/autocomplete.js: {}
 
 sprite:
   js:
