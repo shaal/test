@@ -32,6 +32,8 @@
     padding: 2em 1em 2em 2em;
     margin-top: 40%;
     box-shadow: 0 2px 8px rgba($black, 0.15);
+    position: relative;
+    z-index: 1;
 
     @include breakpoint($bp0) {
       width: 95%;
@@ -51,6 +53,7 @@
       margin-top: 0;
       padding-right: 45%;
       box-shadow: none;
+      position: static;
     }
 
     @include breakpoint($bp4) {
