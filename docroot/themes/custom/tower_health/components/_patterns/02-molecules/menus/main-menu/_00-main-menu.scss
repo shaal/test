@@ -69,7 +69,7 @@
   @include breakpoint($bp5) {
     
     &:after {
-      right: calc( ((100vw - 1600px) / -2 ) - 38px);
+      right: calc( ((100vw - 1500px) / -2 ) - 38px);
     }
   }
 }
@@ -84,7 +84,7 @@
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  background-color: rgba($trust-ltst, .35);
+  background-color: #EDEFF8;
   width: 100%;
 
   @include breakpoint($bp3) {
@@ -101,7 +101,7 @@
     padding: 1em;
     margin-top: 0;
     z-index: 1;
-    background-color: rgba($trust-ltst, .25);
+    background-color: #EDEFF8;
     column-count: 2;
   }
 

@@ -1,0 +1,79 @@
+site_title: true
+
+hero:
+  title_1: "Coordinated,"
+  title_2: "Convenient,"
+  title_3: "Effective."
+  subtitle: "Connecting you to your healthiest."
+  img:
+    src: "../../images/th-hero-image.jpg"
+    alt: "Alternative Text"
+  classes: "growth top-left"
+  autocomplete:
+    label: Find a Provider
+    input_class: 
+    type: find-provider
+    placeholder: Search by Name, Specialty, or Condition
+    id: edit-find-provider
+    path: some/path
+    results:
+      - label: Conditions
+        children:
+          - id: 11
+            name: Conjunctivitis
+      - label: Providers
+        children:
+          - id: 12
+            name: Monica Chung Kwan-consigli, Pa-c
+          - id: 13
+            name: Carolyn Riester O'connor, Md
+          - id: 14
+            name: Deborah Paul Consoli, Md
+          - id: 15
+            name: Constantine Francis Harris, Md
+          - id: 16
+            name: Kristie F Conrad, Pa-c
+          - id: 17
+            name: Kathryn Marie Conlow, Pa-c
+          - id: 14
+            name: Corina Condrea Sandru, Md
+          - id: 15
+            name: Connie Lynn Garrigan, Crna
+          - id: 16
+            name: Carolyn O'connor, Md
+          - id: 17
+            name: Ann Reynolds Connor, Md
+
+
+cta_list:
+  title_1: "Effortless,"
+  title_2: "Accessible"
+  title_3: "Healthcare."
+  subtitle: "Helping you connect with the care you need."
+  links:
+    - text: "Make an Appointment"
+      url: "/"
+      icon: "th-cal.svg"
+    - text: "Find a Hospital or Location"
+      url: "/"
+      icon: "th-find-hospital.svg"
+    - text: "Pay my Bill & Estimate Costs"
+      url: "/"
+      icon: "th-bill.svg"
+    - text: "Urgent Care & Emergency Wait Times"
+      url: "/"
+      icon: "th-emergency-time.svg"
+    - text: "My TowerHealth"
+      url: "/"
+      icon: "th-my-tower.svg"
+    - text: "Sign-up for a Class or Event"
+      url: "/"
+      icon: "th-medal.svg"
+
+cta_banner:
+  title_1: "Need Help?"
+  title_2: "We're Here."
+  img:
+    src: "../../images/th-cta-image.jpg"
+    alt: "Alternative Text"
+  classes: "trust bottom-left"

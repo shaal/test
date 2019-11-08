@@ -1,4 +1,4 @@
-logo_link_url: "#"
+header_logo_link_url: "#"
 
 utility_items:
   - title: "Careers"
@@ -13,10 +13,8 @@ utility_items:
     modifiers:
       1:
         cta
-
   
-  
-menu_items:
+header_menu_items:
   - title: "Providers"
     url: "#"
     below:

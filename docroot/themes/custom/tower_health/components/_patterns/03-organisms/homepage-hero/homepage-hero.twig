@@ -1,4 +1,4 @@
-<div class="homepage-hero">
+<div class="homepage-hero js-section-animation">
   <div class="homepage-hero__content">
     <h1>
       {% if title_1 %}
@@ -17,8 +17,7 @@
     } %}
     {% endif %}
     <form class="homepage-hero__content__form">
-      <label for="provider-search">Find a Provider</label>
-      <input type="text" id="provider-search" placeholder="Search by Name, Specialty, or Condition">
+      {% include "@molecules/autocomplete-dropdown/autocomplete.twig" %}
       <button class="button button--primary" type="submit">Search Providers</button>
     </form>
   </div>
