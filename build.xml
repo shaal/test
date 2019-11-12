@@ -78,6 +78,9 @@
          Builds the styleguide
          -->
     <target name="build-styleguide">
+        <copy file="${drupal.root}/core/misc/drupal.js" tofile="${theme.root}/components/js/drupal.js" overwrite="true" mode="755"/>
+        <copy file="${drupal.root}/core/assets/vendor/jquery/jquery.min.js" tofile="${theme.root}/components/js/jquery.min.js" overwrite="true" mode="755"/>
+
         <!-- If we're building for an artifact, ensure we're building a fresh copy.
              There's no other way do do this until https://github.com/yarnpkg/yarn/issues/5271 is resolved. -->
         <if>
