@@ -1,0 +1,23 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: TRUE,
+  bottom_sidebar: TRUE,
+  full_width: false
+}%}
+  
+  {% block page_header %}
+    Placeholder for Basic Header
+  {% endblock %}
+  
+  {% block top_page_sidebar %}
+    Placeholder for sidebar Navigation
+  {% endblock %}
+  
+  {% block page_content %}
+    Placeholder for WYSIWYG
+  {% endblock %}
+  
+  {% block bottom_page_sidebar %}
+    Optional bottom sidebar for CTAs
+  {% endblock %}
+{% endembed %}
