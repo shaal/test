@@ -3,6 +3,8 @@
   display: block;
   padding: rhythm(.5) 2em;
   font-weight: 600;
+  line-height: 1.15;
+  font-size: .9em;
 
   &--with-sub {
     width: 90%;
@@ -40,6 +42,10 @@
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
     }
+  }
+  
+  @include breakpoint(1300px) {
+    font-size: 1em;
   }
 }
 

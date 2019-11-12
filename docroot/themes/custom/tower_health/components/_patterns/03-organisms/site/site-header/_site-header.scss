@@ -45,6 +45,14 @@
       width: 25%;
     }
   }
+  
+  @include breakpoint($bp5) {
+    
+    .header-logo {
+      max-width: 325px;
+      width: 30%;
+    }
+  }
 }
 
 .header__right {
@@ -119,7 +127,7 @@
 
 .utility-menu__link--mytower {
   color: transparent;
-  background: url('../components/images/mytowerhealth-logo.svg');
+  background: url('../pattern-lab/public/images/mytowerhealth-logo.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

@@ -106,11 +106,12 @@
 
         img {
           margin: 0 auto;
-          max-width: 225px;
+          max-width: 200px;
 
           @include breakpoint($bp3) {
             margin-left: 0;
             margin-right: 2em;
+            max-width: 225px;
           }
 
           @include breakpoint($bp4) {
