@@ -15,7 +15,7 @@ utility_items:
         cta
   
 header_menu_items:
-  - title: "Providers"
+  - title: "Find a Provider"
     url: "#"
     below:
       - title: "Menu Item 1 Sub 1"
@@ -53,7 +53,7 @@ header_menu_items:
         url: "#"
       - title: "Menu Item 2 Sub 8"
         url: "#"
-  - title: "Patients & Visitors"
+  - title: "Conditions & Services"
     url: "#"
     below:
       - title: "Menu Item 3 Sub 1"
