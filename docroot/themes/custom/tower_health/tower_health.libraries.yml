@@ -2,6 +2,9 @@ global:
   css:
     theme:
       dist/style.css: {}
+  js:
+    dist/00-base/global/animations/animation.js: {}
+    components/js/modernizer-custom.js: {}
 
 main-menu:
   js:
@@ -12,6 +15,10 @@ main-menu:
 site-header:
   js:
     dist/03-organisms/site/site-header/site-header.js: {}
+    
+autocomplete:
+  js:
+    dist/02-molecules/autocomplete-dropdown/autocomplete.js: {}
 
 sprite:
   js:

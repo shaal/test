@@ -1,11 +1,3 @@
-title_1: "Coordinated,"
-title_2: "Convenient,"
-title_3: "Effective."
-subtitle: "Connecting you to your healthiest."
-img:
-  src: "../../images/th-hero-image.jpg"
-  alt: "Alternative Text"
-classes: "growth top-left"
 autocomplete:
   label: Find a Provider
   input_class: 

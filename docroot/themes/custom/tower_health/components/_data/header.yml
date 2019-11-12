@@ -1,4 +1,4 @@
-logo_link_url: "#"
+header_logo_link_url: "#"
 
 utility_items:
   - title: "Careers"
@@ -13,11 +13,9 @@ utility_items:
     modifiers:
       1:
         cta
-
   
-  
-menu_items:
-  - title: "Providers"
+header_menu_items:
+  - title: "Find a Provider"
     url: "#"
     below:
       - title: "Menu Item 1 Sub 1"
@@ -55,7 +53,7 @@ menu_items:
         url: "#"
       - title: "Menu Item 2 Sub 8"
         url: "#"
-  - title: "Patients & Visitors"
+  - title: "Conditions & Services"
     url: "#"
     below:
       - title: "Menu Item 3 Sub 1"
