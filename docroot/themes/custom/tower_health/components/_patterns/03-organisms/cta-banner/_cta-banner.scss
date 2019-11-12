@@ -246,7 +246,7 @@
       
       @include breakpoint(0 899px) {
         animation: fadeInRight 1s ease-in-out forwards;
-      } 
+      }
       
       &::before {
         @include transition(opacity, 1.25s, ease-out);

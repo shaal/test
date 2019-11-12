@@ -233,7 +233,7 @@
     @include breakpoint($bp3) {
       h1,
       h2,
-      form{
+      form {
         opacity: 0;
       }
     }
@@ -255,7 +255,7 @@
       
       @include breakpoint(0 899px) {
         animation: fadeInLeft 1s ease-in-out forwards;
-      } 
+      }
       
       &::before {
         @include transition(opacity, 1.25s, ease-out);

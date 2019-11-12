@@ -28,13 +28,6 @@
   }
 }
 
-.main-nav {
-
-  @include breakpoint($bp3) {
-
-  }
-}
-
 // UL
 .main-menu:not(.main-menu--sub) {
   @include list-reset;
@@ -49,7 +42,7 @@
     margin-top: 1.5em;
     position: relative;
     
-    &:after {
+    &::after {
       content: '';
       display: block;
       height: 1px;
@@ -67,9 +60,8 @@
   }
   
   @include breakpoint($bp5) {
-    
-    &:after {
-      right: calc( ((100vw - 1500px) / -2 ) - 38px);
+    &::after {
+      right: calc(((100vw - 1500px) / -2 ) - 38px);
     }
   }
 }
@@ -84,11 +76,11 @@
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  background-color: #EDEFF8;
+  background-color: #edeff8;
   width: 100%;
 
   @include breakpoint($bp3) {
-    background-color: $white;
+    background-color: #edeff8;
     display: none;
     visibility: hidden;
     height: auto;
@@ -101,7 +93,6 @@
     padding: 1em;
     margin-top: 0;
     z-index: 1;
-    background-color: #EDEFF8;
     column-count: 2;
   }
 
@@ -109,15 +100,6 @@
     @include breakpoint($bp3) {
       opacity: 1;
       transition: all 0.2s;
-
-      .main-menu__link--sub {
-
-        &.active,
-        &:active,
-        &:hover {
-
-        }
-      }
     }
   }
 
