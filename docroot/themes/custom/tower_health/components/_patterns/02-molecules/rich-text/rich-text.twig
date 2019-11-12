@@ -1,0 +1,29 @@
+{% for item in rich_text %}
+  {% if item.type == "blockquote" %}
+    {% include "@atoms/02-text/text/02-blockquote.twig" with {
+      blockquote_content: item.blockquote_content,
+      blockquote_modifiers: item.blockquote_modifiers
+    }%}
+  {% elseif item.type == "image" %}
+    {% include "@atoms/04-images/00-image/figure.twig" with {
+      img_url: item.img_url,
+      img_src: item.img_src,
+      img_alt: item.img_alt,
+      img_caption: item.img_caption,
+      output_image_tag: item.output_image_tag,
+      image_figure_modifiers: item.image_figure_modifiers
+    } %}
+  {% elseif item.type == "video" %}
+    {% include "@atoms/08-video/video.twig" with {
+      video_content: item.video_content
+    } %}
+  {% elseif item.type == "table" %}
+  
+  {% elseif item.type == "title" %}
+  
+  {% elseif item.type == "list" %}
+  
+  {% else %}
+
+  {% endif %}
+{% endfor %}
