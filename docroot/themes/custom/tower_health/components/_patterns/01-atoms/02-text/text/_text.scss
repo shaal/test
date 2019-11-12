@@ -3,9 +3,23 @@
 }
 
 .blockquote {
-  font-style: italic;
-  margin-left: 1em;
-  padding-left: 1em;
+  @include adjust-font-size-to($sm-heading, 1.15);
+  border-left: 8px solid $growth;
+  margin: 1em 0;
+  padding: 1em 0 1em 1em;
+  font-weight: 600;
+  
+  &--left {
+    width: 50%;
+    margin-right: 1em;
+    float: left;
+  }
+  
+  &--right {
+    width: 50%;
+    margin-left: 1em;
+    float: right;
+  }
 }
 
 .hr {
