@@ -6,7 +6,9 @@
 }%}
   
   {% block page_header %}
-    Placeholder for Basic Header
+    {% include "@organisms/basic-header/basic-header.twig" with {
+      breadcrumb: header.breadcrumb
+    } %}
   {% endblock %}
   
   {% block top_page_sidebar %}
