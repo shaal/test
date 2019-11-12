@@ -28,8 +28,5 @@ backend_config:
   suggest_suffix: true
   suggest_corrections: true
   suggest_words: false
-  acquia_search_possible_cores:
-    - DILT-190043.prod.towerhealth
-    - DILT-190043.prod.default
-    - DILT-190043
+  acquia_search_possible_cores: {  }
   overridden_by_acquia_search: 2

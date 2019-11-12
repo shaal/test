@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.towerhealth
+    - search_api.index.acquia_search_index
   module:
     - search_api
 id: find_a_provider
@@ -77,7 +77,12 @@ display:
               program: teaser
               service: teaser
             'entity:taxonomy_term':
+              area_of_interest: default
               condition: default
+              hospital_affiliation: default
+              insurance_company: default
+              insurance_groups: default
+              location_type: default
               medical_specialty: default
       fields:
         rendered_item:
@@ -261,19 +266,7 @@ display:
             group_items: {  }
           reduce_duplicates: false
           plugin_id: search_api_options
-      sorts:
-        search_api_relevance:
-          id: search_api_relevance
-          table: search_api_index_towerhealth
-          field: search_api_relevance
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
+      sorts: {  }
       title: Search
       header: {  }
       footer: {  }
@@ -281,6 +274,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -295,7 +289,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: find-a-doctor
+      path: find-a-provider
       exposed_block: true
       cache:
         type: none

@@ -1,0 +1,21 @@
+{{ attach_library('tower_health/autocomplete') }}
+<div class="autocomplete-container">
+  {% if autocomplete.label %}
+    <label for="{{ autocomplete.id }}">{{ autocomplete.label }}</label>
+  {% endif %}
+
+  <input class="{{ autocomplete.input_class }} {{autocomplete.type}}-autocomplete form-autocomplete form-text form-item__textfield ui-autocomplete-input" placeholder="{{autocomplete.placeholder}}" data-drupal-selector="{{ autocomplete.id }}" data-autocomplete-path="{{ autocomplete.path }}" type="text" id="{{ autocomplete.id }}" name="{{ autocomplete.id }}" value="" size="30" maxlength="128" autocomplete="off">
+  <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front autocomplete-search">
+    {% for item in autocomplete.results %}
+      {% if item.label %}
+        <li class="autocomplete-search__label ui-menu-item">{{ item.label }}</li>
+      {% endif %}
+      {% if item.children %}
+        {% for item in item.children %}
+        <li class="ui-menu-item autocomplete-search__item"><a id="ui-id-{{ item.id }} " tabindex="-1" class="ui-menu-item-wrapper">{{ item.name }}</a></li>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+

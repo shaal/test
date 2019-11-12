@@ -41,7 +41,7 @@ $sm-heading: 1.25 * $base-font-size;
 $xs-heading: 1.15 * $base-font-size;
 $text: 1 * $base-font-size;
 $label: 0.8 * $base-font-size;
-$crumb: 0.6 * $base-font-size;
+$crumb: 0.7 * $base-font-size;
 
 // BASE HEADING SIZES
 // Used in Normalize
@@ -86,15 +86,12 @@ $font-monospace: $mono;
 // =============================================================================
 
 // Breakpoint Variables
+$bp0: 350px;
 $bp1: 400px;
 $bp2: 600px;
 $bp3: 900px;
 $bp4: 1200px;
-$bp5: 1600px;
-
-$footer1: 450px;
-$footer2: 695px;
-$footer3: 750px;
+$bp5: 1500px;
 
 // =============================================================================
 // Spacing Variables

@@ -21,6 +21,7 @@ dependencies:
     - taxonomy
     - search_api_solr
     - search_api
+    - towerhealth_misc
 _core:
   default_config_hash: '-ggwZpvT2-Ey1fqPkREitA6TGI_m5dTHD9vZm9FrlSQ'
 id: acquia_search_index
@@ -147,6 +148,10 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_profile_type
+  provider_sort_field:
+    label: 'Provider Sort Field'
+    property_path: provider_sort_field
+    type: string
   provider_specialties_condition_name:
     label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -281,6 +286,7 @@ processor_settings:
       - provider_location_title_string
       - provider_profile_languages_string
       - provider_profile_type
+      - provider_sort_field
       - provider_specialties_condition_name
       - provider_specialties_condition_synonym
       - provider_specialties_name
@@ -293,6 +299,7 @@ processor_settings:
     weights:
       preprocess_index: -20
       preprocess_query: -20
+  provider_sort_field: {  }
   rendered_item: {  }
   reverse_entity_references: {  }
 tracker_settings:
@@ -301,4 +308,5 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
+  overridden_by_acquia_search: 2
 server: acquia_search_server

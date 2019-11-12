@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.towerhealth
+    - search_api.index.acquia_search_index
   module:
     - search_api
 id: find_a_location
@@ -281,6 +281,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:

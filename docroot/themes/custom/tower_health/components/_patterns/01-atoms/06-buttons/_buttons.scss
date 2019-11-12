@@ -1,16 +1,20 @@
-@mixin button($bg:$primary-dark, $color:$white, $border:$trust, $hoverBg: $trust-ltst, $hoverColor: $primary-dark) {
+@mixin button($bg:$trust-aa, $color:$white, $hoverBg: $trust-ltst, $hoverColor: $primary-dark) {
   @include transition(all, 0.15s, ease-in);
   background-color: $bg;
   border: none;
   color: $color;
-  border-left: 6px solid $border;
   cursor: pointer;
   line-height: 1.4;
-  padding: 1em 1.25em;
+  padding: 1em 1.5em;
   display: inline-block;
   text-decoration: none;
   text-align: center;
   font-weight: 600;
+  border-radius: 8px;
+
+  @include breakpoint($bp3) {
+    padding: 1.25em 2em;
+  }
 
   &:visited {
     color: $color;
@@ -22,12 +26,11 @@
     transform: scale(1.025);
     color: $hoverColor;
     background-color: $hoverBg;
-    border-color: $hoverColor;
   }
 }
 
 @mixin button-alt {
-  @include button($trust-aa, $white, $primary-dark, $trust-ltst, $hoverColor: $primary-dark);
+  @include button($growth, $primary-dark, $growth-ltr, $primary-dark);
 }
 
 @mixin button-small {
@@ -42,14 +45,19 @@
   &--alt {
     @include button-alt;
   }
-  
+
   &--small {
     @include button;
     @include button-small;
   }
-  
+
   &--small-alt {
     @include button-alt;
     @include button-small;
   }
+}
+
+input[type="submit"] {
+  @include button;
+  appearance: none;
 }

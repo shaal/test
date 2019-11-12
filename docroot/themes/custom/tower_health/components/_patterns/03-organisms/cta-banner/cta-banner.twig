@@ -1,0 +1,18 @@
+<section class="cta-banner js-section-animation">
+  <div class="cta-banner__image">
+    {% include "@molecules/image-background/image-background.twig" with {
+      "img.src": img.src,
+      "img.src": img.alt,
+      "classes": classes,
+    } %}
+  </div>
+  <div class="cta-banner__content">
+    <button class="button button--alt" type="submit">Chat with Us</button>
+    <h1 class="cta-banner__title">
+      <span>{{ title_1 }}</span>
+      {% if title_2 %}
+      <span>{{ title_2 }}</span>
+      {% endif %}
+    </h1>
+  </div>
+</section>
