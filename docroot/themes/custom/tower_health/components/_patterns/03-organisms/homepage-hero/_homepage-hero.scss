@@ -10,16 +10,16 @@
 
   @include breakpoint($bp3) {
     padding: 0 2em;
-    margin: 4em auto 4.5em;
+    margin: 4.5em auto 4.5em;
     max-width: 1500px;
   }
   
   @include breakpoint($bp4) {
-    margin: 5.5em auto 12em;
+    margin: 7em auto 12em;
   }
   
   @include breakpoint($bp5) {
-    margin: 7em auto 12em;
+    margin: 8.5em auto 12em;
   }
 
   .homepage-hero__content {
