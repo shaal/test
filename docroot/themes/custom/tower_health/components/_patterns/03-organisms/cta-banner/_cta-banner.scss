@@ -66,7 +66,7 @@
       .image-background {
         position: relative;
         width: 135%;
-        max-width: 900px;
+        max-width: 850px;
         float: right;
       }
     }
@@ -77,7 +77,7 @@
 
     @include breakpoint($bp4) {
       right: 45%;
-      top: -20em;
+      top: -16em;
     }
 
     @include breakpoint($bp5) {
