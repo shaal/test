@@ -18,12 +18,24 @@
       video_content: item.video_content
     } %}
   {% elseif item.type == "table" %}
-  
-  {% elseif item.type == "title" %}
-  
-  {% elseif item.type == "list" %}
-  
+    {% include "@atoms/07-tables/tables.twig" %}
+  {% elseif item.type == "ul" %}
+    {% include "@atoms/03-lists/00-ul.twig" with {
+    ul_items: item.ul_items
+    }%}
+  {% elseif item.type == "ol" %}
+    {% include "@atoms/03-lists/01-ol.twig"  with {
+    ol_items: item.ol_items
+    }%}
+  {% elseif item.type == "heading" %}
+    {% include "@atoms/02-text/00-headings/_heading.twig"  with {
+    heading_level: item.heading_level,
+    heading: item.heading,
+    heading_url: item.heading_url
+    }%}
   {% else %}
-
+    {% include "@atoms/02-text/text/01-paragraph.twig" with {
+      paragraph_content: item.paragraph_content
+    }%}
   {% endif %}
 {% endfor %}
