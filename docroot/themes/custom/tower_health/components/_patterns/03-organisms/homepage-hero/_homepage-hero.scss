@@ -245,38 +245,38 @@
   // animating in
   .in-view {
     .homepage-hero__content {
-      @include transition(all, .75s, ease-in);
+      @include transition(all, .35s, ease-in);
       opacity: 1;
       
       @include breakpoint(0 899px) {
-        animation: fadeInLeft 1s ease-in-out forwards;
+        animation: fadeInLeft .65s ease-in-out forwards;
       } 
       
       &::before {
-        @include transition(opacity, 1.25s, ease-out);
+        @include transition(opacity, .85s, ease-out);
         opacity: 1;
       }
       
       @include breakpoint($bp3) {
         h1 {
-          animation: fadeInUp .75s ease-in-out  .25s forwards;
+          animation: fadeInUp .25s ease-in-out  .25s forwards;
         }
         
         h2 {
-          animation: fadeInUp .75s ease-in-out  .25s forwards;
+          animation: fadeInUp .25s ease-in-out  .25s forwards;
         }
         
         form {
-          animation: fadeInUp .75s ease-in-out  .35s forwards;
+          animation: fadeInUp .25s ease-in-out  .35s forwards;
         }
       }
     }
     
     .homepage-hero__image {
-      animation: fadeInRightScale 1s ease-in-out forwards;
+      animation: fadeInRightScale .65s ease-in-out forwards;
       
       .image-background.top-left .image::before {
-        transition: all .5s ease .25s;
+        transition: all .35s ease .25s;
         margin-left: -20px;
         margin-top: -10px;
       }

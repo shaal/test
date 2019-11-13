@@ -247,35 +247,35 @@
   // animating in
   .in-view {
     .cta-banner__content {
-      @include transition(all, .75s, ease-in);
+      @include transition(all, .5s, ease-in);
       opacity: 1;
       
       @include breakpoint(0 899px) {
-        animation: fadeInRight 1s ease-in-out forwards;
+        animation: fadeInRight .65s ease-in-out forwards;
       } 
       
       &::before {
-        @include transition(opacity, 1.25s, ease-out);
+        @include transition(opacity, .85s, ease-out);
         opacity: 1;
       }
       
       @include breakpoint($bp3) {
         .button {
-          animation: fadeInUp .75s ease-in-out  .5s forwards;
+          animation: fadeInUp .5s ease-in-out  .35s forwards;
         }
         
         .cta-banner__title,
         .cta-banner__subtitle {
-          animation: fadeInUp .75s ease-in-out  .25s forwards;
+          animation: fadeInUp .5s ease-in-out  .15s forwards;
         }
       }
     }
     
     .cta-banner__image {
-      animation: fadeInLeftScale 1s ease-in-out forwards;
+      animation: fadeInLeftScale .65s ease-in-out forwards;
       
       .image-background.bottom-left .image::before {
-        transition: all .5s ease .25s;
+        transition: all .25s ease .25s;
         margin-left: -20px;
         margin-top: 10px;
       }
