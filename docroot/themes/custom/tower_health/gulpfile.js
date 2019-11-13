@@ -16,3 +16,12 @@ catch (e) {
   }
 }
 require('emulsify-gulp')(gulp, localConfig);
+var gulpCopy = require('gulp-copy');
+
+var sourceFiles = ['../../../core/assets/vendor/jquery/jquery.min.js', '../../../core/misc/drupal.js'];
+var destination = 'components/js/';
+
+gulp.task('copy_js', function() {
+  return gulp.src(sourceFiles)
+    .pipe(gulp.dest(destination));
+});
