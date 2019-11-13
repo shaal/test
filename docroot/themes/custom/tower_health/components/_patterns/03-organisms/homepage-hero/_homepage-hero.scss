@@ -10,16 +10,16 @@
 
   @include breakpoint($bp3) {
     padding: 0 2em;
-    margin: 4em auto 4.5em;
+    margin: 6em auto 4.5em;
     max-width: 1500px;
   }
   
   @include breakpoint($bp4) {
-    margin: 5.5em auto 12em;
+    margin: 7em auto 12em;
   }
   
   @include breakpoint($bp5) {
-    margin: 7em auto 12em;
+    margin: 10em auto 12em;
   }
 
   .homepage-hero__content {
@@ -191,7 +191,7 @@
       z-index: auto;
       right: 0;
       left: 50%;
-      top: -5em;
+      top: -4em;
       width: auto;
 
       .image-background {
@@ -204,7 +204,7 @@
     }
 
     @include breakpoint(1050px) {
-      top: -6em;
+      top: -5em;
     }
 
     @include breakpoint($bp4) {
@@ -233,7 +233,7 @@
     @include breakpoint($bp3) {
       h1,
       h2,
-      form{
+      form {
         opacity: 0;
       }
     }
@@ -255,7 +255,7 @@
       
       @include breakpoint(0 899px) {
         animation: fadeInLeft 1s ease-in-out forwards;
-      } 
+      }
       
       &::before {
         @include transition(opacity, 1.25s, ease-out);

@@ -1,0 +1,17 @@
+<header class='basic-header'>
+  <div class="basic-header__container">
+    {% if header.breadcrumb %}
+    {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumb: header.breadcrumb
+    } %}
+    {% endif %}
+    
+    <div class='basic-header__content'>
+      {% include "@atoms/02-text/00-headings/_heading.twig" with {
+        "heading_level": 1,
+        "heading": header.title,
+        "heading_base_class": "basic-header__title"
+      } %}
+    </div>
+  </div>
+</header>
