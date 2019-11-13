@@ -12,14 +12,18 @@
   {% endblock %}
   
   {% block top_page_sidebar %}
-    Placeholder for sidebar Navigation
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Navigation",
+    } %}
   {% endblock %}
   
   {% block page_content %}
-    Placeholder for WYSIWYG
+    {% include "@molecules/rich-text/rich-text.twig" %}
   {% endblock %}
   
   {% block bottom_page_sidebar %}
-    Optional bottom sidebar for CTAs
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Optional Sidebar Content",
+    } %}
   {% endblock %}
 {% endembed %}
