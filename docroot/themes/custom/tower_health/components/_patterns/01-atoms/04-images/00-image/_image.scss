@@ -26,15 +26,17 @@ figure {
     margin-top: .5em;
   }
   
-  &.figure--left {
-    max-width: 50%;
-    margin-right: 1em;
-    float: left;
-  }
-  
-  &.figure--right {
-    max-width: 50%;
-    margin-left: 1em;
-    float: right;
+  @include breakpoint($bp3) {
+    &.figure--left {
+      max-width: 50%;
+      margin-right: 1em;
+      float: left;
+    }
+    
+    &.figure--right {
+      max-width: 50%;
+      margin-left: 1em;
+      float: right;
+    } 
   }
 }
