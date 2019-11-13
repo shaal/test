@@ -56,7 +56,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
     @include bp3 {
       display: grid;
       grid-gap: $gutter;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 6fr 0 30%;
       grid-auto-rows: auto 1fr;
       
       .no-cssgrid & {
@@ -65,7 +65,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
     }
     
     @include bp4 {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 6fr 1fr 25%;
       grid-auto-rows: auto 1fr;
     }
 
@@ -83,7 +83,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
       
       @include breakpoint($bp4) {
-        grid-column: 4 / span 1;
         
         .no-cssgrid & {
           width: 25%;
@@ -107,7 +106,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
       
       @include breakpoint($bp4) {
-        grid-column: 4 / span 1;
         
         .no-cssgrid & {
           width: 25%;
@@ -119,7 +117,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
     .main-content {
       @include breakpoint($bp3) {
-        grid-column: 1 / span 2; 
+        grid-column: 1 / span 1; 
         grid-row: 1 / span 2;
         
         .no-cssgrid & {
@@ -129,7 +127,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
       
       @include breakpoint($bp4) {
-        grid-column: 1 / span 3; 
         
         .no-cssgrid & {
           width: 75%;
