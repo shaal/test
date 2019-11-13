@@ -121,10 +121,10 @@
       @extend %track-in;
       @include adjust-font-size-to($sm-heading, .9);
       margin-top: 0.5em;
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
       font-weight: 500;
 
-      @include breakpoint($bp3) {
+      @include breakpoint($bp4) {
         @include adjust-font-size-to($md-heading, 1.2);
       }
     }
