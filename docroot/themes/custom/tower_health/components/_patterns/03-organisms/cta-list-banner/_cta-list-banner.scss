@@ -20,8 +20,8 @@
 
   @include breakpoint($bp3) {
     border-top: 6px solid $growth;
-    padding: 3em 0 5em;
-    width: 60%;
+    padding: 3em 0 5em 2em;
+    width: 50%;
     max-width: 55%;
     
     &::before {
