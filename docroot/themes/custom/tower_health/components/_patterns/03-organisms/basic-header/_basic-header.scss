@@ -1,13 +1,55 @@
+.basic-header {
+  margin: 1em 0 2em;
+}
+
+.basic-header--secondary {
+  background-color: rgba($trust-ltst, .4);
+}
+
 .basic-header__container {
   @include grid;
   flex-direction: column;
   padding-top: 1em;
-  padding-bottom: 1em;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 .basic-header__content {
   margin-top: 3em;
-  padding: 1em 0;
-  border-bottom: 4px solid $trust-ltst;
+  padding: 1em 0 2em;
+  border-bottom: 6px solid $trust-ltst;
+  position: relative;
+  
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2em;
+    height: 1px;
+    border-bottom: 6px solid $trust-ltst;
+    left: -2em;
+    bottom: -6px;
+    
+    @include breakpoint($bp5) {
+      width: calc(2em + (100vw - 1500px));
+      left: calc(-2em - (100vw - 1500px));
+    }
+  }
+  
+  .basic-header--secondary & {
+    border-color: $trust;
+    
+    &::before {
+      border-color: $trust;
+    }
+  }
+}
+
+.basic-header__title,
+.basic-header__lede {
+  display: block;
+  max-width: 1000px;
+}
+
+.basic-header__lede {
+  @include adjust-font-size-to($xs-heading, 1.1);
 }
