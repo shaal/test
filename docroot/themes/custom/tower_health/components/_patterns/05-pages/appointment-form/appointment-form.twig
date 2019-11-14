@@ -1,0 +1,23 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: false,
+  bottom_sidebar: false,
+  full_width: false,
+  centered: true
+}%}
+  
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" with {
+      breadcrumb: header.breadcrumb
+    } %}
+  {% endblock %}
+  
+  {% block page_content %}
+    Emergency Block
+    
+    {% include "@molecules/rich-text/rich-text.twig" %}
+    
+    Form Sections
+  {% endblock %}
+  
+{% endembed %}
