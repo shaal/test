@@ -20,6 +20,7 @@ dependencies:
     - node.type.location
     - workflows.workflow.default
   module:
+    - address
     - content_moderation
     - field_group
     - geofield

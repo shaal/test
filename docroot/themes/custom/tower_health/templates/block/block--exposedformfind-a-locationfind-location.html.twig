@@ -33,8 +33,6 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    {{ content|without('find_doctor_search')}}
-
-    <a href="#" class="js-use-my-location" data-view="views-exposed-form-find-a-provider-find-doctor">{{ 'Use my location'|t }}</a>
+    {{ content }}
   {% endblock %}
 </div>

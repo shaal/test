@@ -13,7 +13,7 @@ _core:
 id: tower_health_main_menu
 theme: tower_health
 region: header
-weight: -6
+weight: -10
 provider: null
 plugin: 'system_menu_block:main'
 settings:

@@ -31,3 +31,7 @@ accordion:
 tabs:
   js:
     dist/02-molecules/menus/tabs/tabs.js: {}
+
+proximity-facet:
+  js:
+    components/js/proximity-facet.js: {}

@@ -26,6 +26,8 @@
  */
 #}
 
+{{ attach_library('tower_health/proximity-facet') }}
+
 <div {{ bem('block') }}>
   {{ title_prefix }}
   {% if label %}
@@ -33,7 +35,7 @@
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    {{ content|without('find_doctor_search')}}
+    {{ content|without('find_location_search')}}
 
     <a href="#" class="js-use-my-location" data-view="views-exposed-form-find-a-provider-find-doctor">{{ 'Use my location'|t }}</a>
   {% endblock %}
