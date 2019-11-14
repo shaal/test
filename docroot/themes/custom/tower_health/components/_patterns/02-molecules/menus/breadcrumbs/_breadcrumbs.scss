@@ -1,3 +1,22 @@
+.breadcrumbs {
+  position: relative;  
+  
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1.25em;
+    height: 1px;
+    border-bottom: 4px solid $growth;
+    left: -2em;
+    bottom: 45%;
+    
+    @include breakpoint($bp5) {
+      width: calc(1.25em + (100vw - 1500px));
+      left: calc(-2em - (100vw - 1500px));
+    }
+  }
+}
 
 .breadcrumb {
   @include list-reset;
