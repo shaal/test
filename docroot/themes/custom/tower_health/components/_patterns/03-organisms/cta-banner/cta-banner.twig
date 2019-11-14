@@ -7,12 +7,18 @@
     } %}
   </div>
   <div class="cta-banner__content">
-    <button class="button button--alt" type="submit">Chat with Us</button>
+  
     <h1 class="cta-banner__title">
       <span>{{ title_1 }}</span>
       {% if title_2 %}
       <span>{{ title_2 }}</span>
       {% endif %}
     </h1>
+    {% if subtitle %}
+    <span class="cta-banner__subtitle">
+      {{ subtitle }}
+    </span>
+    {% endif %} 
+    <a class="button button--alt" href="{{ button.url }}">{{ button.label }}</a>
   </div>
 </section>

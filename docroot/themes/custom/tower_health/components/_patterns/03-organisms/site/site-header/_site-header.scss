@@ -123,6 +123,10 @@
     color: $trust-aa;
     text-decoration: underline;
   }
+  
+  @include breakpoint($bp4) {
+    @include adjust-font-size-to($sm-text, .9);
+  }
 }
 
 .utility-menu__link--mytower {
@@ -150,7 +154,7 @@
   text-transform: uppercase;
   color: white;
   background-color: $primary-dark;
-  padding: 1em 1em;
+  padding: 1em 1em .75em;
   
   &:link,
   &:visited {
@@ -169,6 +173,10 @@
     display: block;
     text-align: center;
     width: 100%;
+  }
+  
+  @include breakpoint($bp3) {
+    border-radius: 0 0 8px 8px;
   }
 }
 
@@ -256,8 +264,9 @@
     right: 2em;
     top: 0;
     background-color: $trust-ltst;
-    padding: 1em 1.25em .75em 1em;
+    padding: 1em 1.25em .5em 1em;
     z-index: 20;
+    border-radius: 0 0 8px 8px;
     
     svg {
       height: 1.5em;
@@ -274,6 +283,10 @@
         fill: $white;
       }
     }
+  }
+  
+  @include breakpoint($bp4) {
+    padding: 1em 1.25em .65em 1em;
   }
 }
 
