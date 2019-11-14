@@ -13,7 +13,16 @@
   {% endblock %}
   
   {% block page_content %}
-    Emergency Block
+    {% include "@molecules/banner-message/banner-message.twig" with {
+      banner_text: emergency_banner
+    } %}
+    
+    {% if doctor_reference %}
+      {% include "@molecules/banner-message/banner-message.twig" with {
+        banner_text: "You are currently requesting an appointment with " ~ doctor_reference,
+        banner_type: 'secondary'
+      } %}
+    {% endif %}
     
     {% include "@molecules/rich-text/rich-text.twig" %}
     

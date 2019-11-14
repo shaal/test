@@ -8,7 +8,11 @@ header:
   title: Request an Appointment
   lede: Maecenas vel sapien tellus. Nulla finibus vestibulum ante. Fusce porta tortor eget lacus congue tempor. Aliquam ut posuere lorem.  
   style: secondary
-  
+
+emergency_banner: If this is a medical emergency, please call 911.
+
+doctor_reference: 'Dr. Susan Jones'
+
 rich_text:
   -
     paragraph_content:
