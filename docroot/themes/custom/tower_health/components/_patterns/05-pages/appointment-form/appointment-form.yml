@@ -17,3 +17,113 @@ rich_text:
   -
     paragraph_content:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+form_sections:
+  - section_heading: Patient Information
+    section_heading_level: 2
+    section_items:
+      - 
+        width: twoFifth
+        title: First Name
+        type: text
+      - 
+        width: oneFifth
+        title: Middle Initial
+        type: text
+      - 
+        width: twoFifth
+        title: Last Name
+        type: text
+      - 
+        width: oneThird
+        title: Gender
+        type: select
+        info: Lorem ipsum dolor set amet.
+        children:
+          - title: Choose an Option
+            attributes: selected disabled
+          - title: Male
+          - title: Female
+          - title: Prefer not to say
+      - 
+        width: oneThird
+        title: Date of Birth
+        type: date
+      - 
+        width: oneThird
+        title: 'I am requesting an Appointment for:'
+        type: radio
+        orientation: inline
+        children:
+          - title: Myself
+          - title: Someone Else
+  - section_heading: Contact Information
+    section_heading_level: 2
+    section_items:
+      - 
+        width: half
+        title: Primary Phone
+        type: text
+        placeholder: 123-456-7890
+      - 
+        width: half
+        title: Secondary Phone
+        type: text
+        placeholder: 123-456-7890
+        optional: true
+      - 
+        width: half
+        title: E-mail Address
+        type: text
+      - 
+        width: half
+        title: Secondary Phone
+        type: text
+  - section_heading: Appointment & Insurance Information
+    section_heading_level: 2
+    section_items:
+      - 
+        width: half
+        title: Preferred Appointment Date
+        info: Lorem ipsum dolor set amet.
+        type: date
+        optional: true
+      - 
+        width: half
+        title: Specialty or Service
+        type: select
+        optional: true
+        children:
+          - title: Choose an Option
+            attributes: selected disabled
+          - title: Primary Care
+          - title: Cardiology
+          - title: Orthopedics
+          - title: Pediatrics
+      - 
+        width: full
+        title: 'Preferred Appointment Times'
+        type: checkbox
+        orientation: inline
+        children:
+          - title: 7-9 a.m.
+          - title: 9-11 a.m.
+          - title: 11 a.m. - 1 p.m.
+          - title: 1 - 3 p.m.
+          - title: 3 - 5 p.m.
+          - title: 5 - 7 p.m.
+      - 
+        width: full
+        title: 'Preferred Appointment Days'
+        info: 'In case your preferred date is unavailable, help us understand other dates that you may be available.'
+        type: checkbox
+        orientation: inline
+        children:
+          - title: Monday
+          - title: Tuesday
+          - title: Wednesday
+          - title: Thursday
+          - title: Friday
+          - title: Saturday
+          - title: Sunday
+
