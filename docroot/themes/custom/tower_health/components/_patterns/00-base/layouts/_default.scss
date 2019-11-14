@@ -135,4 +135,51 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
     }
   }
+  
+  &--container-centered {
+    @extend %grid-container; 
+    
+    .no-cssgrid & {
+      @extend %clearfix;
+    }
+    
+    @include bp3 {
+      display: grid;
+      grid-gap: $gutter;
+      grid-template-columns: 6% 6fr 6%;
+      grid-auto-rows: auto 1fr;
+      
+      .no-cssgrid & {
+        display: block;
+      } 
+    }
+    
+    @include breakpoint($bp4) {
+      grid-template-columns: 8% 6fr 8%;
+    }
+    
+    @include breakpoint($bp5) {
+      grid-template-columns: 10% 6fr 10%;
+    }
+
+    .main-content {
+      @include breakpoint($bp3) {
+        grid-column: 2 / span 1; 
+        grid-row: 1 / span 2;
+        
+        .no-cssgrid & {
+          width: 66%;
+          margin: 0 auto;
+        }
+      }
+      
+      @include breakpoint($bp4) {
+        
+        .no-cssgrid & {
+          width: 75%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }

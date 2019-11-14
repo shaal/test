@@ -1,0 +1,23 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: false,
+  bottom_sidebar: false,
+  full_width: false,
+  centered: true,
+  menu_items: header.templates.menu_items,
+  footer_menu_items: footer.templates.menu_items
+} %}
+
+  {% block page_header %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Page Header Region",
+    } %}
+  {% endblock %}
+  
+  {% block page_content %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Primary Content",
+    } %}
+  {% endblock %}
+  
+{% endembed %}
