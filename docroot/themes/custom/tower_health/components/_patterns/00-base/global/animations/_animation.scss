@@ -74,7 +74,7 @@
 @keyframes fadeInRightScale {
   from {
     opacity: 0;
-    transform: translate(80px, 0) scale(.95);
+    transform: translate(100px, 0) scale(.9);
   }
 
   to {
@@ -86,7 +86,7 @@
 @keyframes fadeInLeftScale {
   from {
     opacity: 0;
-    transform: translate(-80px, 0) scale(.95);
+    transform: translate(-100px, 0) scale(.9);
   }
 
   to {
@@ -98,7 +98,7 @@
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translate(80px, 0);
+    transform: translate(100px, 0);
   }
 
   to {
@@ -110,7 +110,7 @@
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translate(-80px, 0);
+    transform: translate(-100px, 0);
   }
 
   to {

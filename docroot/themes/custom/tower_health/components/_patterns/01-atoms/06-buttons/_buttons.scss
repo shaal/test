@@ -15,7 +15,7 @@
   @include breakpoint($bp3) {
     padding: 1.25em 2em;
   }
-
+  &:link,
   &:visited {
     color: $color;
   }
@@ -26,6 +26,7 @@
     transform: scale(1.025);
     color: $hoverColor;
     background-color: $hoverBg;
+    text-decoration: none;
   }
 }
 

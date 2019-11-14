@@ -60,24 +60,24 @@
       z-index: 5;
       right: 50%;
       left: 0;
-      top: -14em;
+      top: -8em;
       width: auto;
 
       .image-background {
         position: relative;
         width: 135%;
-        max-width: 900px;
+        max-width: 850px;
         float: right;
       }
     }
 
     @include breakpoint(1050px) {
-      top: -18em;
+      top: -12em;
     }
 
     @include breakpoint($bp4) {
       right: 45%;
-      top: -20em;
+      top: -14em;
     }
 
     @include breakpoint($bp5) {
@@ -93,7 +93,7 @@
     border-bottom: 4px solid $trust-ltr;
     border-radius: 5px 0 0 5px;
     width: 96%;
-    padding: 3em 2em 2em;
+    padding: 2em 2em 3em;
     margin-top: 40%;
     margin-left: 4%;
     box-shadow: 0 2px 8px rgba($black, 0.15);
@@ -112,7 +112,7 @@
       float: right;
       width: auto;
       max-width: 90%;
-      padding: 3em 3em 2em;
+      padding: 2em 3em 3em;
     }
 
     @include breakpoint($bp3) {
@@ -122,11 +122,11 @@
       box-shadow: none;
       float: none;
       display: block;
-      padding: 4em 4em 3em 38%;
+      padding: 3em 4em 4em 38%;
     }
 
     @include breakpoint($bp4) {
-      padding: 4em 2em 3em 44%;
+      padding: 3em 2em 4em 44%;
     }
 
     &::before {
@@ -149,7 +149,7 @@
 
     .button {
       position: absolute;
-      top: -1.5em;
+      bottom: -1.5em;
       right: 2em;
 
       @include breakpoint($bp3) {
@@ -190,21 +190,26 @@
         }
 
         @include breakpoint($bp3) {
-          font-size: 1.2em;
+          font-size: 1.05em;
         }
 
         @include breakpoint($bp4) {
-          font-size: 1.4em;
+          font-size: 1.3em;
         }
         
         @include breakpoint(1400px) {
-          font-size: 1.6em;
+          font-size: 1.55em;
         }
 
         @include breakpoint($bp5) {
-          font-size: 1.75em;
+          font-size: 1.65em;
         }
       }
+    }
+    
+    .cta-banner__subtitle {
+      display: block;
+      margin-top: 1em;
     }
   }
 }
@@ -222,8 +227,9 @@
     }
     
     @include breakpoint($bp3) {
-      h1,
-      button {
+      .cta-banner__title,
+      .cta-banner__subtitle,
+      .button {
         opacity: 0;
       }
     }
@@ -241,34 +247,35 @@
   // animating in
   .in-view {
     .cta-banner__content {
-      @include transition(all, .75s, ease-in);
+      @include transition(all, .5s, ease-in);
       opacity: 1;
       
       @include breakpoint(0 899px) {
-        animation: fadeInRight 1s ease-in-out forwards;
-      }
+        animation: fadeInRight .65s ease-in-out forwards;
+      } 
       
       &::before {
-        @include transition(opacity, 1.25s, ease-out);
+        @include transition(opacity, .85s, ease-out);
         opacity: 1;
       }
       
       @include breakpoint($bp3) {
-        button {
-          animation: fadeInUp .75s ease-in-out  .5s forwards;
+        .button {
+          animation: fadeInUp .5s ease-in-out  .35s forwards;
         }
         
-        h1 {
-          animation: fadeInUp .75s ease-in-out  .25s forwards;
+        .cta-banner__title,
+        .cta-banner__subtitle {
+          animation: fadeInUp .5s ease-in-out  .15s forwards;
         }
       }
     }
     
     .cta-banner__image {
-      animation: fadeInLeftScale 1s ease-in-out forwards;
+      animation: fadeInLeftScale .65s ease-in-out forwards;
       
       .image-background.bottom-left .image::before {
-        transition: all .5s ease .25s;
+        transition: all .25s ease .25s;
         margin-left: -20px;
         margin-top: 10px;
       }
