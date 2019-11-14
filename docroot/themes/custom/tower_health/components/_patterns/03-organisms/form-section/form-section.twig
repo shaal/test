@@ -1,0 +1,55 @@
+<div class="form-section">
+  {% if section_heading %}
+    {% include "@atoms/02-text/00-headings/_heading.twig"  with {
+      heading_level: section_heading_level,
+      heading: section_heading,
+      heading_url: section_heading_url,
+      heading_base_class: 'form-section__title'
+    }%}
+  {% endif %}
+  {% for item in section_items %}
+    <div class="form-section__item {% if item.width %}form-section__item--{{ item.width }}{% endif %}">
+      {% include "@atoms/05-forms/_form-label.twig"  with {
+        title: item.title
+      }%}
+      {% if item.info %}
+        {# Replace this with Info Bubble Component. #}
+      {% endif %}
+      {% if item.type == 'radio' %}
+        <ul class="form-item--radios {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
+        {% for key, item in item.children %}
+          {% include "@atoms/05-forms/radio/_radio-item.twig" with {
+            "radio_item": item.title
+          } %}
+        {% endfor %}
+        </ul>
+      {% elseif item.type == 'checkbox' %}
+        <ul class="form-item--checkboxes {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
+            {% for key, item in item.children %}
+              {% include "@atoms/05-forms/checkbox/_checkbox-item.twig" with {
+                "checkbox_item": item.title
+              } %}
+            {% endfor %}
+        </ul>
+      {% elseif item.type == 'select' %}
+        <select class="form-item__select">
+          <optgroup label="{{ item.name }}">
+            {% for item in item.children %}
+              {% include "@atoms/05-forms/select/_select-item.twig" with {
+                "select_item": item.title
+              } %}
+            {% endfor %}
+          </optgroup>
+        </select>
+      {% elseif item.type == 'textfield' %}
+        <textarea name="{{ item.name}}"></textarea>
+      {% else %}
+        <input type="{{item.type}}" name="{{ item.name}}" {% if item.placeholder %} placeholder="{{item.placeholder}}" {% endif %}/>
+      {% endif %}
+      
+      {% if item.optional == true %}
+      <span class="form-section__optional">Optional</span>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

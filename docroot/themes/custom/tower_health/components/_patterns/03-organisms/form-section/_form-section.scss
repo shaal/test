@@ -1,0 +1,83 @@
+.form-section {
+  margin: 4em 0 6em;
+  
+  @include breakpoint($bp2) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.form-section__title {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  padding-bottom: .5em;
+  border-bottom: 4px solid $growth;
+}
+
+.form-section__item {
+  margin-bottom: 2em;
+  
+  input,
+  select {
+    margin-bottom: 0;
+  }
+  
+  &--full {
+    width: 100%;
+  }
+  
+  &--half {
+    width: 48%;
+  }
+  
+  &--oneQuarter {
+    width: 23%
+  }
+  
+  &--threeQuarter {
+    width: 73%
+  }
+  
+  &--oneThird {
+    width: 31%
+  }
+  
+  &--twoThird {
+    width: 64%
+  }
+  
+  &--oneFifth {
+    width: 18%
+  }
+  
+  &--twoFifth {
+    width: 38%
+  }
+  
+  &--threeFifth {
+    width: 58%
+  }
+  
+  &--fourFifth {
+    width: 78%
+  }
+  
+  .form-item--inline {
+    display: flex;
+    margin-top: 1em;
+    
+    li {
+      margin-right: 1.5em;
+    }
+  }
+}
+
+
+.form-section__optional {
+  @include adjust-font-size-to($label, .9);
+  font-style: italic;
+  color: $gray;
+}
