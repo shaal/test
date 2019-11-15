@@ -34,8 +34,8 @@
       top: -6px;
       
       @include breakpoint($bp5) {
-        width: calc( 2em + (100vw - 1500px) );
-        left: calc( -2em - (100vw - 1500px) );
+        width: calc(2em + (100vw - 1500px));
+        left: calc(-2em - (100vw - 1500px));
       }
     }
   }
@@ -107,8 +107,8 @@
   font-weight: 500;
   
   @include breakpoint($bp4) {
-     @include adjust-font-size-to($md-heading, 1.2);
-   }
+    @include adjust-font-size-to($md-heading, 1.2);
+  }
 }
 
 .cta-banner-list__background {
@@ -176,7 +176,7 @@
     }
     
     @include breakpoint($bp5) {
-      right: calc(  ( (100vw - 1500px) / -2 ) - 30px );
+      right: calc(((100vw - 1500px) / -2) - 30px);
     }
   }
 }
@@ -189,7 +189,7 @@
   .cta-banner-list__content,
   .cta-banner-list__background,
   .cta-banner-list__buttons,
-  .icon-button  {
+  .icon-button {
     opacity: 0;
   }
   
@@ -218,5 +218,3 @@
     }
   }
 }
-
-

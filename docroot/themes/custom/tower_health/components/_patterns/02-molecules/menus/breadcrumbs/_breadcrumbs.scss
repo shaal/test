@@ -1,4 +1,3 @@
-$breadcrumb-active: #bbb;
 
 .breadcrumb {
   @include list-reset;
@@ -9,31 +8,49 @@ $breadcrumb-active: #bbb;
 .breadcrumb__link:link,
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
-  color: $gray-light;
+  color: $primary-dark;
   text-decoration: none;
 }
 
 .breadcrumb__link:hover {
-  color: $gray;
+  color: $trust-aa;
+  text-decoration: underline;
 }
 
 .breadcrumb__item {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  position: relative;
+  padding-right: .75em;
+  margin-right: .75em;
 
   &::after {
-    content: "/";
+    content: "";
+    display: block;
+    height: .6em;
+    width: 1em;
+    background: url('../pattern-lab/public/images/arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .5;
+    position: absolute;
+    right: -0.5em;
+    top: 30%;
   }
 
   &:last-child {
-    color: $breadcrumb-active;
+    color: $primary-dark;
+    font-weight: 600;
 
     &::after {
-      content: "";
+      display: none;
+      visibility: hidden;
     }
   }
 }
 
 .breadcrumb_link:active {
-  color: $breadcrumb-active;
+  color: $primary-dark;
+  font-weight: 600;
 }

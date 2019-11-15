@@ -1,4 +1,6 @@
-{% embed "@templates/_default.twig" %}
+{% embed "@templates/_default.twig" with {
+  full_width: true
+} %}
   {% block page_content %}
     
     {% include "@organisms/homepage-hero/homepage-hero.twig" with {
