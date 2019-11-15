@@ -19,7 +19,8 @@
         <ul class="form-item--radios {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
         {% for key, item in item.children %}
           {% include "@atoms/05-forms/radio/_radio-item.twig" with {
-            "radio_item": item.title
+            "radio_item": item.title,
+            "radio_id": item.id
           } %}
         {% endfor %}
         </ul>
@@ -27,20 +28,23 @@
         <ul class="form-item--checkboxes {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
             {% for key, item in item.children %}
               {% include "@atoms/05-forms/checkbox/_checkbox-item.twig" with {
-                "checkbox_item": item.title
+                "checkbox_item": item.title,
+                "checkbox_id": item.id,
               } %}
             {% endfor %}
         </ul>
       {% elseif item.type == 'select' %}
-        <select class="form-item__select">
-          <optgroup label="{{ item.name }}">
-            {% for item in item.children %}
-              {% include "@atoms/05-forms/select/_select-item.twig" with {
-                "select_item": item.title
-              } %}
-            {% endfor %}
-          </optgroup>
-        </select>
+        <div class="form-item__dropdown">
+          <select class="form-item__select">
+            <optgroup label="{{ item.name }}">
+              {% for item in item.children %}
+                {% include "@atoms/05-forms/select/_select-item.twig" with {
+                  "select_item": item.title
+                } %}
+              {% endfor %}
+            </optgroup>
+          </select>
+        </div>
       {% elseif item.type == 'textfield' %}
         <textarea name="{{ item.name}}"></textarea>
       {% else %}
