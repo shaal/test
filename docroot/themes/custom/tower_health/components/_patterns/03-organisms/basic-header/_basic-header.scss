@@ -36,10 +36,11 @@
   }
   
   .basic-header--secondary & {
-    border: none;
+    max-width: 1000px;
+    border-color: $trust;
     
     &::before {
-      content: none;
+      border-color: $trust;
     }
   }
 }
