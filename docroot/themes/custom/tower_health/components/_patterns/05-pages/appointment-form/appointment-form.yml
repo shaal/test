@@ -30,6 +30,7 @@ form_sections:
         width: oneFifth
         title: Middle Initial
         type: text
+        optional: true
       - 
         width: twoFifth
         title: Last Name
@@ -56,7 +57,9 @@ form_sections:
         orientation: inline
         children:
           - title: Myself
+            id: appt
           - title: Someone Else
+            id: appt
   - section_heading: Contact Information
     section_heading_level: 2
     section_items:
@@ -77,8 +80,16 @@ form_sections:
         type: text
       - 
         width: half
-        title: Secondary Phone
-        type: text
+        title: I prefer to be contacted via
+        type: radio
+        orientation: inline
+        children:
+          - title: Phone
+            id: contact
+          - title: E-Mail
+            id: contact
+          - title: No Preference
+            id: contact
   - section_heading: Appointment & Insurance Information
     section_heading_level: 2
     section_items:
@@ -105,25 +116,40 @@ form_sections:
         title: 'Preferred Appointment Times'
         type: checkbox
         orientation: inline
+        id: time
         children:
           - title: 7-9 a.m.
+            id: time
           - title: 9-11 a.m.
+            id: time
           - title: 11 a.m. - 1 p.m.
+            id: time
           - title: 1 - 3 p.m.
+            id: time
           - title: 3 - 5 p.m.
+            id: time
           - title: 5 - 7 p.m.
+            id: time
       - 
         width: full
         title: 'Preferred Appointment Days'
         info: 'In case your preferred date is unavailable, help us understand other dates that you may be available.'
         type: checkbox
         orientation: inline
+        id: day
         children:
           - title: Monday
+            id: day
           - title: Tuesday
+            id: day
           - title: Wednesday
+            id: day
           - title: Thursday
+            id: day
           - title: Friday
+            id: day
           - title: Saturday
+            id: day
           - title: Sunday
+            id: day
 
