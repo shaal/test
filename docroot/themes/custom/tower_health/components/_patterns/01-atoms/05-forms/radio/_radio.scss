@@ -3,7 +3,7 @@
   @include list-reset;
   
   input {
-    margin: .25em rhythm(.5) .5em .25em;
+    margin: .25rem rhythm(.5) .5rem .25rem;
     position: absolute;
     left: 0;
     top: 0;
@@ -11,16 +11,16 @@
     
     &::before {
       position: absolute;
-      top: -0.25em;
-      left: -0.25em;
+      top: -0.25rem;
+      left: -0.25rem;
       content: '';
       display: inline-block;
       height: 25px;
       width: 25px;
-      background-color: $off-white;
+      background-color: $white;
       border: 1px solid rgba($gray-lighter, .7);
       border-radius: 50px;
-      box-shadow: inset 1px 1px 3px rgba($gray-dark, .25);
+      box-shadow: inset 1px 1px 3px rgba($gray-dark, .15);
     }
     
     &:checked::after {
@@ -33,11 +33,19 @@
       width: 13px;
       background-color: $trust-aa;
       border-radius: 50px;
-      // box-shadow: 0 1px 3px rgba($gray-dark, .45);
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      &::before {
+        border-color: $trust;
+      }
     }
   }
   
   label {
+    @include adjust-font-size-to($text);
     position: relative;
     color: $gray-dark;
     margin-bottom: rhythm(.35);
