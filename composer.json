@@ -72,6 +72,7 @@
         "drupal/search_api_solr": "^1.1",
         "drupal/token": "^1.5",
         "drupal/workbench": "^1.1",
+        "drupal/workbench_access": "^1.0@beta",
         "drupal/workbench_tabs": "^1.3",
         "flow/jsonpath": "^0.4.0",
         "sainsburys/guzzle-oauth2-plugin": "^3.0"
