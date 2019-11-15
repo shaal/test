@@ -23,9 +23,12 @@ ckeditor_stylesheets:
   - dist/style.css
 
 regions:
-  header: Header
-  content: Content  # the content region is required
-  sidebar: 'Sidebar'
+  header: 'Header'
+  breadcrumb: 'Breadcrumb'
+  page_header: 'Page Header'
+  content: 'Content'  # the content region is required
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
   footer: Footer
 
 # Remove unwanted system stylesheets
