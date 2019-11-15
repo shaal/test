@@ -12,7 +12,7 @@ dependencies:
 id: languagesstring
 theme: tower_health
 region: content
-weight: 1
+weight: 0
 provider: null
 plugin: 'facet_block:languages'
 settings:

@@ -1,4 +1,4 @@
-uuid: 8e56e643-1a49-45bb-ab3f-aa5e0d43d116
+uuid: 2ac91fe9-3ab1-415f-9ad9-e79737f6eaf6
 langcode: en
 status: true
 dependencies:
@@ -7,20 +7,20 @@ dependencies:
     - towerhealth_misc
   theme:
     - tower_health
-id: providerproximityfilter
+id: clearfilters
 theme: tower_health
 region: content
-weight: 1
+weight: -7
 provider: null
-plugin: provider_proximity_filter
+plugin: clear_filters
 settings:
-  id: provider_proximity_filter
-  label: 'Provider Zip Code'
+  id: clear_filters
+  label: 'Clear filters'
   provider: towerhealth_misc
-  label_display: visible
+  label_display: '0'
 visibility:
   request_path:
     id: request_path
-    pages: "/find-a-provider\r\n/find-a-provider*"
+    pages: "/find-a-provider\r\n/find-a-provider*\r\n/find-a-location\r\n/find-a-location*"
     negate: false
     context_mapping: {  }
