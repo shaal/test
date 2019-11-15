@@ -6,15 +6,15 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
 
 /**
- * Provides a 'DynamicFilterBlock' block.
+ * Provides a 'Provider proximity filter' block.
  *
  * @Block(
- *  id = "location_proximity_filter",
- *  admin_label = @Translation("Location proximity filter"),
+ *  id = "provider_proximity_filter",
+ *  admin_label = @Translation("Provider proximity filter"),
  *  category = "Views"
  * )
  */
-class LocationProximityBlock extends BlockBase {
+class ProviderProximityBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -24,8 +24,8 @@ class LocationProximityBlock extends BlockBase {
     // and try to decide if we're on a Views page.
     /** @var \Symfony\Component\HttpFoundation\ParameterBag $currentRouteParameters */
 
-    $view_id = 'find_a_location';
-    $view_display_id = 'find_location';
+    $view_id = 'find_a_provider';
+    $view_display_id = 'find_doctor';
 
     /** @var \Drupal\views\ViewExecutable $view */
     $view = Views::getView($view_id);
@@ -40,7 +40,7 @@ class LocationProximityBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['find_location_search']);
+    unset($form['find_doctor_search']);
 
     $build['exposed_form'] = $form;
 

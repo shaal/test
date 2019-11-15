@@ -13,24 +13,36 @@
    * @prop {Drupal~behaviorAttach} attach
    *   Attaches the autocomplete behaviors.
    */
-  Drupal.behaviors.proximitySubmit = {
+  Drupal.behaviors.proximityMyLocation = {
     attach: function (context, settings) {
-      // Find all our fields with autocomplete settings
-      let proximitySubmit = document.getElementById('find-a-location-proximity');
-      let view = document.getElementById('views-exposed-form-find-a-location-find-location');
+      let locationButton = $('.js-use-my-location');
 
-      let setLocationAndSubmitForm = function (coordinates, viewID) {
-        $('#edit-proximity-value').val(coordinates);
-        $('#views-exposed-form-' + viewID).submit();
+      let setLocation = function (coordinates) {
+        $('.js-set-my-location').val(coordinates);
       };
 
+      locationButton.click(function(e){
+        e.preventDefault();
 
-      proximitySubmit.onclick = function(e) {
-        //view.submit();
-        let radius = document.getElementById('edit-location-latlon-distance-from');
-        let address = document.getElementById('edit-location-latlon-value');
-        console.log(radius.options[radius.selectedIndex].value);
-      };
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat = position.coords.latitude;
+          var long = position.coords.longitude;
+          var point = new google.maps.LatLng(lat, long);
+          new google.maps.Geocoder().geocode(
+            {'latLng': point},
+            function (res, status) {
+              var address = res[0].address_components;
+              var zip = '';
+              $.each(address, function() {
+                if (this.types[0] === 'postal_code') {
+                  zip = this.short_name;
+                }
+              });
+              setLocation(zip);
+            }
+          );
+        });
+      });
     }
   };
 

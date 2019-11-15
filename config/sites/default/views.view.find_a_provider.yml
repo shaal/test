@@ -388,7 +388,7 @@ display:
                 weight: '0'
                 checked: 0
             radius_type: select
-            radius_options: "- -\r\n8.046 5 mi\r\n16.09 10 mi\r\n40.233 25 mi"
+            radius_options: "8.046 5 mi\r\n16.09 10 mi\r\n40.233 25 mi"
             radius_units: km
           plugin_id: search_api_location
       sorts: {  }

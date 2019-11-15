@@ -34,4 +34,5 @@ tabs:
 
 proximity-facet:
   js:
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyA3C75l2wGcniyoEsIIksbtKk4ayv5RTXY: { type: external, attributes: { async: true, defer: true }}
     components/js/proximity-facet.js: {}

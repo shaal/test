@@ -12,7 +12,7 @@ dependencies:
 id: gender
 theme: tower_health
 region: content
-weight: -2
+weight: -3
 provider: null
 plugin: 'facet_block:gender'
 settings:

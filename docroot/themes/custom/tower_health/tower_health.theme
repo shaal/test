@@ -5,19 +5,20 @@
  * Functions to support theming in the Pattern Lab theme.
  */
 
-
-
 /**
- * @param $variables
- * @param $hook
+ * Remove variables from exposed provider search form.
+ *
+ * {@inheritdoc}
  */
 function tower_health_preprocess_block__exposedformfind_a_providerfind_doctor(&$variables, $hook) {
   unset($variables['content']['provider_location_latlong']);
+  unset($variables['content']['facets']);
 }
 
 /**
- * @param $variables
- * @param $hook
+ * Remove variables from exposed location search form.
+ *
+ * {@inheritdoc}
  */
 function tower_health_preprocess_block__exposedformfind_a_locationfind_location(&$variables, $hook) {
   unset($variables['content']['location_latlon']);
@@ -25,9 +26,31 @@ function tower_health_preprocess_block__exposedformfind_a_locationfind_location(
 }
 
 /**
- * @param $variables
- * @param $hook
+ * Alter proximity block for location search.
+ *
+ * {@inheritdoc}
  */
 function tower_health_preprocess_block__locationproximityfilter(&$variables, $hook) {
-  $variables['content']['exposed_form']['actions']['#attributes']['class'][] = 'element-invisible';
+  if (array_key_exists('submit', $variables['content']['exposed_form']['actions'])) {
+    $variables['content']['exposed_form']['actions']['submit']['#value'] = 'Apply';
+  }
+  if (array_key_exists('location_latlon', $variables['content']['exposed_form'])) {
+    $variables['content']['exposed_form']['location_latlon']['value']['#attributes']['class'] = ['js-set-my-location'];
+    $variables['content']['exposed_form']['location_latlon']['distance']['#attributes']['class'] = ['js-set-my-radius'];
+  }
+}
+
+/**
+ * Alter proximity block for provider search.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__providerproximityfilter(&$variables, $hook) {
+  if (array_key_exists('submit', $variables['content']['exposed_form']['actions'])) {
+    $variables['content']['exposed_form']['actions']['submit']['#value'] = 'Apply';
+  }
+  if (array_key_exists('provider_location_latlong', $variables['content']['exposed_form'])) {
+    $variables['content']['exposed_form']['provider_location_latlong']['value']['#attributes']['class'] = ['js-set-my-location'];
+    $variables['content']['exposed_form']['provider_location_latlong']['distance']['#attributes']['class'] = ['js-set-my-radius'];
+  }
 }

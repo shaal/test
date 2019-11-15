@@ -12,7 +12,7 @@ dependencies:
 id: exposedformfind_a_locationfind_location
 theme: tower_health
 region: content
-weight: -9
+weight: -10
 provider: null
 plugin: 'views_exposed_filter_block:find_a_location-find_location'
 settings:

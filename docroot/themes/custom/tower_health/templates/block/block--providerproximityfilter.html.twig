@@ -25,12 +25,11 @@
  * @see template_preprocess_block()
  */
 #}
+{{ attach_library('tower_health/proximity-facet') }}
 
 <div {{ bem('block') }}>
   {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
-  {% endif %}
+  <h2{{ title_attributes.addClass('h2') }}>{{ 'Zip Code'|t }}</h2>
   {{ title_suffix }}
   {% block content %}
     {{ content|without('find_doctor_search')}}
