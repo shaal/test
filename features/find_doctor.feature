@@ -6,6 +6,6 @@ Feature: Find a doctor
 
   Scenario: Verify that find a doctor exists
     Given I am not logged in
-    When I am at "/"
+    When I am at "/find-a-provider"
     And I fill in "find_doctor_search" with "John Doe"
     Then I am at "find-a-provider"
