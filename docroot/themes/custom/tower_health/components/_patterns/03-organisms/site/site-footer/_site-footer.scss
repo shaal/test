@@ -67,7 +67,7 @@
       @include adjust-font-size-to($label, .8);
       width: 100%;
       text-align: center;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       display: flex;
       flex-wrap: wrap;
       order: 1;
@@ -143,7 +143,8 @@
           order: 2;
         }
 
-        a {
+        a,
+        span {
           display: block;
         }
       }

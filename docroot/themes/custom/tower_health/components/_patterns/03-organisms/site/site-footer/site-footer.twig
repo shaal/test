@@ -22,7 +22,8 @@
           {% endfor %}
         </div>
         <div class="footer__info__contact">
-          {{ footer_contact.address }}
+          <span>{{ footer_contact.address_1 }}</span>
+          <span>{{ footer_contact.address_2 }}</span>
           <a href="tel:{{footer_contact.phone}}">{{ footer_contact.phone }}</a>
         </div>
       </div>
