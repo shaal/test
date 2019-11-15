@@ -9,10 +9,13 @@ section_items:
     width: oneFifth
     title: Middle Initial
     type: text
+    placeholder: A
+    optional: true
   - 
     width: twoFifth
     title: Last Name
     type: text
+    
   - 
     width: oneThird
     title: Gender
