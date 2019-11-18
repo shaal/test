@@ -17,7 +17,46 @@ utility_items:
 header_menu_items:
   - title: "Find a Provider"
     url: "#"
+    menu_name: "main-menu"
     below:
+      - type: 'form'
+        button_label: 'Search Providers'
+        link_url: '#'
+        link_content: 'All Providers'
+        autocomplete:
+          label: Find a Provider
+          input_class: 
+          type: find-provider
+          placeholder: Search by Name, Specialty, or Condition
+          id: edit-find-provider
+          path: some/path
+          results:
+            - label: Conditions
+              children:
+                - id: 11
+                  name: Conjunctivitis
+            - label: Providers
+              children:
+                - id: 12
+                  name: Monica Chung Kwan-consigli, Pa-c
+                - id: 13
+                  name: Carolyn Riester O'connor, Md
+                - id: 14
+                  name: Deborah Paul Consoli, Md
+                - id: 15
+                  name: Constantine Francis Harris, Md
+                - id: 16
+                  name: Kristie F Conrad, Pa-c
+                - id: 17
+                  name: Kathryn Marie Conlow, Pa-c
+                - id: 14
+                  name: Corina Condrea Sandru, Md
+                - id: 15
+                  name: Connie Lynn Garrigan, Crna
+                - id: 16
+                  name: Carolyn O'connor, Md
+                - id: 17
+                  name: Ann Reynolds Connor, Md
       - title: "Menu Item 1 Sub 1"
         url: "#"
       - title: "Menu Item 1 Sub 2"
@@ -37,6 +76,32 @@ header_menu_items:
   - title: "Locations"
     url: "#"
     below:
+      - type: 'form'
+        button_label: 'Search Locations'
+        link_url: '#'
+        link_content: 'All Locations'
+        autocomplete:
+          label: Find a Location
+          input_class: 
+          type: find-location
+          placeholder: Search by Name, Condition, or Service
+          id: edit-find-location
+          path: some/path
+          results:
+            - label: Locations
+              children:
+                - id: 22
+                  name: Reading Hospital
+                - id: 23
+                  name: Brandywine Hospital
+                - id: 24
+                  name: Phoenixville Hospital
+                - id: 25
+                  name: Chestnut Hill Hospital
+                - id: 26
+                  name: Jennersville Hospital
+                - id: 27
+                  name: Pottstown Hospital
       - title: "Menu Item 2 Sub 1"
         url: "#"
       - title: "Menu Item 2 Sub 2"
@@ -56,6 +121,32 @@ header_menu_items:
   - title: "Conditions & Services"
     url: "#"
     below:
+      - type: 'form'
+        button_label: 'Search Services'
+        link_url: '#'
+        link_content: 'All Services'
+        autocomplete:
+          label: Find a Service
+          input_class: 
+          type: find-service
+          placeholder: Search by Condition or Service
+          id: edit-find-service
+          path: some/path
+          results:
+            - label: Services
+              children:
+                - id: 22
+                  name: Reading Hospital
+                - id: 23
+                  name: Brandywine Hospital
+                - id: 24
+                  name: Phoenixville Hospital
+                - id: 25
+                  name: Chestnut Hill Hospital
+                - id: 26
+                  name: Jennersville Hospital
+                - id: 27
+                  name: Pottstown Hospital
       - title: "Menu Item 3 Sub 1"
         url: "#"
       - title: "Menu Item 3 Sub 2"
