@@ -1,0 +1,36 @@
+{{ attach_library('tower_health/side-menu') }}
+
+<button href="#" id="side-toggle-expand" class="toggle-expand">
+  <span class="toggle-expand__open">
+    {% include "@atoms/04-images/icons/_icon.twig" with {
+      icon_base_class: "icon",
+      icon_blockname: "toggle-expand",
+      icon_name: "bars",
+    } %}
+    <span class="toggle-expand__text">Section Menu</span>
+  </span>
+  <span class="toggle-expand__close">
+    {% include "@atoms/04-images/icons/_icon.twig" with {
+      icon_base_class: "icon",
+      icon_blockname: "toggle-close",
+      icon_name: "close",
+    } %}
+    <span class="toggle-expand__text">Close</span>
+  </span>
+</button>
+<div class="side-nav">
+  <ul class="side-nav__top">
+    {% for item in items %}
+      <li>
+        <a {% if item.children %}class="dropdown"{% endif %} href="{{ item.url }}">{{ item.title }}</a>
+      </li>
+      {% if item.children %}
+        <ul class="side-nav__second">
+          {% for child in item.children %}
+            <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

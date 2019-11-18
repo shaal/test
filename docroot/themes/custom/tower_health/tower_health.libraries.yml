@@ -11,11 +11,17 @@ main-menu:
     dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
     - core/drupal
-    
+
+side-menu:
+  js:
+    dist/02-molecules/menus/side-menu/side-menu.js: {}
+  dependencies:
+    - core/drupal
+
 site-header:
   js:
     dist/03-organisms/site/site-header/site-header.js: {}
-    
+
 autocomplete:
   js:
     dist/02-molecules/autocomplete-dropdown/autocomplete.js: {}
