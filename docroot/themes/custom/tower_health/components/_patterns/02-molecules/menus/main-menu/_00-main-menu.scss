@@ -112,11 +112,13 @@
   .main-menu__item--with-sub.is-active & {
     height: auto;
     visibility: visible;
+    overflow: visible;
     
     @include breakpoint($bp3) {
       visibility: visible;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 }
@@ -184,6 +186,7 @@
   
   .autocomplete-container {
     width: 100%;
+    z-index: 10;
     
     label {
       font-weight: 600;
@@ -210,8 +213,6 @@
   
   @include breakpoint($bp3) {
     margin: 0 0 2em 0;
-    padding-bottom: 2em;
-    border-bottom: 1px solid $trust-ltst; 
     
     .button {
       padding: 1.6em 1.5em;
