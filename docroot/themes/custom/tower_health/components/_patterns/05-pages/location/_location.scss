@@ -1,0 +1,9 @@
+.menu-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint($bp3) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}

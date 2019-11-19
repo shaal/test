@@ -20,6 +20,10 @@
     } %}
 
     <div class="menu-wrapper">
+      {% include "@molecules/link-list/link-list.twig" with {
+        title: link_list.title,
+        items: link_list.items,
+      } %}
       {% include "@molecules/menus/side-menu/side-menu.twig" with {
         items: section_items
       } %}

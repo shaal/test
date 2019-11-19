@@ -9,11 +9,11 @@
   &::after {
     content: ' ';
     background-color: $primary-dark;
-    width: 500px;
+    width: 200px;
     position: absolute;
-    top: 5%;
+    top: 10%;
     right: 0;
-    bottom: 5%;
+    bottom: 22%;
     z-index: -5;
   }
 
@@ -38,7 +38,8 @@
 
   .section-nav {
     background-color: $trust-ltst;
-    font-size: 1.5em;
+    border-radius: 5px;
+    font-size: 1.25em;
     line-height: 1em;
     font-weight: 700;
 
