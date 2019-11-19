@@ -73,51 +73,6 @@ header_menu_items:
         url: "#"
       - title: "Menu Item 1 Sub 8"
         url: "#"
-  - title: "Locations"
-    url: "#"
-    below:
-      - type: 'form'
-        button_label: 'Search Locations'
-        link_url: '#'
-        link_content: 'Browse All Locations'
-        autocomplete:
-          label: Find a Location
-          input_class: 
-          type: find-location
-          placeholder: Search by Name, Condition, or Service
-          id: edit-find-location
-          path: some/path
-          results:
-            - label: Locations
-              children:
-                - id: 22
-                  name: Reading Hospital
-                - id: 23
-                  name: Brandywine Hospital
-                - id: 24
-                  name: Phoenixville Hospital
-                - id: 25
-                  name: Chestnut Hill Hospital
-                - id: 26
-                  name: Jennersville Hospital
-                - id: 27
-                  name: Pottstown Hospital
-      - title: "Menu Item 2 Sub 1"
-        url: "#"
-      - title: "Menu Item 2 Sub 2"
-        url: "#"
-      - title: "Menu Item 2 Sub 3"
-        url: "#"
-      - title: "Menu Item 2 Sub 4"
-        url: "#"
-      - title: "Menu Item 2 Sub 5"
-        url: "#"
-      - title: "Menu Item 2 Sub 6"
-        url: "#"
-      - title: "Menu Item 2 Sub 7"
-        url: "#"
-      - title: "Menu Item 2 Sub 8"
-        url: "#"
   - title: "Conditions & Services"
     url: "#"
     below:
@@ -162,6 +117,51 @@ header_menu_items:
       - title: "Menu Item 3 Sub 7"
         url: "#"
       - title: "Menu Item 3 Sub 8"
+        url: "#"
+  - title: "Locations"
+    url: "#"
+    below:
+      - type: 'form'
+        button_label: 'Search Locations'
+        link_url: '#'
+        link_content: 'Browse All Locations'
+        autocomplete:
+          label: Find a Location
+          input_class: 
+          type: find-location
+          placeholder: Search by Name, Condition, or Service
+          id: edit-find-location
+          path: some/path
+          results:
+            - label: Locations
+              children:
+                - id: 22
+                  name: Reading Hospital
+                - id: 23
+                  name: Brandywine Hospital
+                - id: 24
+                  name: Phoenixville Hospital
+                - id: 25
+                  name: Chestnut Hill Hospital
+                - id: 26
+                  name: Jennersville Hospital
+                - id: 27
+                  name: Pottstown Hospital
+      - title: "Menu Item 2 Sub 1"
+        url: "#"
+      - title: "Menu Item 2 Sub 2"
+        url: "#"
+      - title: "Menu Item 2 Sub 3"
+        url: "#"
+      - title: "Menu Item 2 Sub 4"
+        url: "#"
+      - title: "Menu Item 2 Sub 5"
+        url: "#"
+      - title: "Menu Item 2 Sub 6"
+        url: "#"
+      - title: "Menu Item 2 Sub 7"
+        url: "#"
+      - title: "Menu Item 2 Sub 8"
         url: "#"
   - title: "Medical Professionals"
     url: "#"
