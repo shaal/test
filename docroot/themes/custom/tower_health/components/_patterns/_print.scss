@@ -1,0 +1,122 @@
+// @file
+// Define your print styles here.
+//
+// Add items you do not want to print with display: none
+// @copyright Copyright (c) 2018 Palantir.net
+
+@media print {
+
+  // Standardize body for print
+  body {
+    font-family: $sans;
+    background: none;
+    color: black;
+    font-size: 16pt;
+    line-height: 1.3;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 22pt;
+  }
+
+  h3 {
+    font-size: 20pt;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 18pt;
+  }
+
+  // Define page margins
+  @page {
+    margin: .5cm;
+  }
+
+  // Put a max width on images to not waste ink
+  img {
+    max-width: 500px;
+  }
+
+  // Hide elements for print.
+  video,
+  audio,
+  object,
+  embed {
+    display: none;
+  }
+
+  a {
+    color: $black;
+    text-decoration: underline;
+
+    p & {
+      // Make sure the link breaks properly.
+      word-wrap: break-word;
+
+      &::after {
+        // Show link content
+        content: ' (' attr(href) ')';
+        font-size: 80%;
+      }
+    }
+  }
+  
+  // hide things from printing
+  .header__right,
+  .image-background,
+  .cta-banner-list__background,
+  .footer {
+    display: none;
+  }
+  
+  .cta-banner,
+  .homepage-hero {
+    margin: 1em 0;
+  }
+  
+  .cta-banner .cta-banner__content,
+  .homepage-hero .homepage-hero__content {
+    padding: 2em;
+  }
+  
+  .cssanimations,
+  .cssanimations .in-view {
+    // make things visible for printing
+    .cta-banner__content,
+    .cta-banner__content::before,
+    .homepage-hero__content,
+    .homepage-hero__content::before,
+    .homepage-hero__content h1,
+    .homepage-hero__content h2,
+    .homepage-hero__content form,
+    .cta-banner__image,
+    .cta-banner__content .cta-banner__title,
+    .cta-banner__content .cta-banner__subtitle,
+    .cta-banner__content .button,
+    .cta-banner-list__content,
+    .cta-banner-list__background,
+    .cta-banner-list__buttons,
+    .icon-button,
+    .homepage-hero__image {
+      opacity: 1;
+      transition: none;
+      animation: none;
+    }
+    
+    .cta-banner__image .image-background.bottom-left .image::before {
+      margin-left: -20px;
+      margin-top: 10px;
+    }
+    
+    .homepage-hero__image .image-background.top-left .image::before {
+      margin-left: -20px;
+      margin-top: -10px;
+    }
+  }
+}
