@@ -23,6 +23,8 @@
   var searchToggle = $('#search-toggle');
   // search wrapper
   var search = $('.header__search');
+  // search drawer
+  var searchDrawer = $('#search-drawer');
   
   var menu_toggle = $('#toggle-expand');
   var menu_drawer = $('.main-nav__container');
@@ -30,18 +32,24 @@
   function closeNav() {
     menu_drawer.removeClass('is-active');
     menu_toggle.removeClass('is-active');
+    
+    if ( $(window).width() < 900 ) {
+      menu_drawer.attr("aria-expanded", "false");
+    }
   }
   
   // Hide or show Search
   function openSearch() {
     search.addClass('is-active');
     searchToggle.addClass('is-active');
+    searchDrawer.attr("aria-expanded", "true");
     closeNav();
   }
   
   function closeSearch() {
     search.removeClass('is-active');
     searchToggle.removeClass('is-active');
+    searchDrawer.attr("aria-expanded", "false");
   }
 
   searchToggle.on('click', function() {
