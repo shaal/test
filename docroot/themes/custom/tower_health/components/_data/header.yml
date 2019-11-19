@@ -22,7 +22,7 @@ header_menu_items:
       - type: 'form'
         button_label: 'Search Providers'
         link_url: '#'
-        link_content: 'All Providers'
+        link_content: 'Browse All Providers'
         autocomplete:
           label: Find a Provider
           input_class: 
@@ -79,7 +79,7 @@ header_menu_items:
       - type: 'form'
         button_label: 'Search Locations'
         link_url: '#'
-        link_content: 'All Locations'
+        link_content: 'Browse All Locations'
         autocomplete:
           label: Find a Location
           input_class: 
@@ -124,7 +124,7 @@ header_menu_items:
       - type: 'form'
         button_label: 'Search Services'
         link_url: '#'
-        link_content: 'All Services'
+        link_content: 'Browse All Services'
         autocomplete:
           label: Find a Service
           input_class: 
