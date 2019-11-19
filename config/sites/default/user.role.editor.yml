@@ -1,0 +1,29 @@
+uuid: f1c64959-34e8-4b71-a605-f02ec5cb1679
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'access workbench'
+  - 'create page content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'edit any page content'
+  - 'edit own page content'
+  - 'revert page revisions'
+  - 'use default transition back_to_draft'
+  - 'use default transition create_new_draft'
+  - 'use default transition needs_review'
+  - 'use workbench access'
+  - 'use workbench_tabs'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view the administration theme'

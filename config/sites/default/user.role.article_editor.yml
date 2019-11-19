@@ -1,0 +1,10 @@
+uuid: 70f4c6a4-bf7b-4b77-a9f7-385e8b09fd9c
+langcode: en
+status: true
+dependencies: {  }
+id: article_editor
+label: 'Article Editor'
+weight: -8
+is_admin: null
+permissions:
+  - 'access toolbar'

@@ -1,0 +1,19 @@
+uuid: 663537e9-2c58-4a29-8c13-83cb0df6fa59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_reference_access_control
+    - taxonomy.vocabulary.access_control
+id: access_control
+label: 'Access Control'
+plural_label: 'Access Control'
+scheme: taxonomy
+scheme_settings:
+  vocabularies:
+    - access_control
+  fields:
+    -
+      entity_type: node
+      bundle: page
+      field: field_reference_access_control
