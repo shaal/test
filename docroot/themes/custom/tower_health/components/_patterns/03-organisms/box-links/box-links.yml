@@ -1,0 +1,33 @@
+boxes:
+  - title: "McGlinn Cancer Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "https://placeimg.com/600/400/any"
+      alt: "Alternative text"
+  - title: "Tower Health Transplant Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "https://placeimg.com/600/400/any"
+      alt: "Alternative text"
+  - title: "Miller Regional Heart Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "https://placeimg.com/600/400/any"
+      alt: "Alternative text"
+  - title: "Weight Loss Surgery & Wellness Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "https://placeimg.com/600/400/any"
+      alt: "Alternative text"

@@ -1,0 +1,9 @@
+<div class="box-links">
+  {% for box in boxes %}
+    <a class="box-link" href="{{ link.url }}">
+      <div style='background-image: linear-gradient(to top, #003056EE, #00305600), url("{{ box.img.src }}");'>
+        <h3><span>{{ box.title }}</span></h3>
+      </div>
+    </a>
+  {% endfor %}
+</div>

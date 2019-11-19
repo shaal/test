@@ -1,0 +1,68 @@
+.box-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5em 7em;
+  position: relative;
+
+  &::after {
+    content: ' ';
+    background-color: $trust-ltst;
+    position: absolute;
+    top: 15%;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    z-index: -5;
+  }
+
+  .box-link {
+    width: 100%;
+    margin: 5px;
+    height: 400px;
+    position: relative;
+
+    @include breakpoint($bp3) {
+      width: calc(50% - 10px);
+    }
+
+    > div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    h3 {
+      color: $white;
+      position: absolute;
+      bottom: 1em;
+      left: 0;
+      max-width: 85%;
+
+      span {
+        padding-left: 1em;
+        display: block;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          height: 1px;
+          border-top: 6px solid $trust;
+          border-radius: 3px;
+          left: 0;
+          bottom: -0.5em;
+          width: calc((100vw - 5em) * 0.80);
+
+          @include breakpoint($bp3) {
+            width: calc(((100vw - 5em) / 2) * 0.80);
+          }
+        }
+      }
+    }
+  }
+}
