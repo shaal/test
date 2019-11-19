@@ -29,6 +29,13 @@
     {% include "@organisms/box-links/box-links.twig" with {
       boxes: boxes
     } %}
+
+    {% include "@organisms/image-with-callout/image-with-callout.twig" with {
+      img: image_callout.img,
+      title: image_callout.title,
+      text: image_callout.text,
+      link: image_callout.link,
+    } %}
   {% endblock %}
 
 {% endembed %}

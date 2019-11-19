@@ -1,0 +1,56 @@
+.image-callout {
+  position: relative;
+
+  .image-callout__image {
+    max-width: 800px;
+    float: right;
+
+    @include breakpoint($bp4) {
+      max-width: 100%;
+    }
+  }
+
+  .image-callout__text {
+    width: 85%;
+    position: absolute;
+    top: 16em;
+    left: -5px;
+    background-color: $white;
+    border: 3px solid $growth;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba($black, 0.15);
+
+    @include breakpoint($bp2) {
+      left: 0;
+      top: 24em;
+    }
+
+    @include breakpoint($bp3) {
+      top: 4em;
+      width: 55%;
+    }
+
+    @include breakpoint($bp4) {
+      top: 6em;
+    }
+
+    .button-wrapper {
+      position: relative;
+      width: 100%;
+      padding: 2em;
+
+      @include breakpoint($bp4) {
+        padding: 4em;
+      }
+
+      a {
+
+        @include breakpoint($bp2) {
+          position: absolute;
+          right: 10%;
+          bottom: -35px;
+        }
+      }
+    }
+  }
+}
