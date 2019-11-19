@@ -1,7 +1,12 @@
 .link-list {
   padding: 2em;
   position: relative;
-  width: 66%;
+  margin-top: 3em;
+
+  @include breakpoint($bp3) {
+    width: 66%;
+    margin-top: 0;
+  }
 
   @include breakpoint($bp4) {
     padding-left: 6em;
@@ -46,7 +51,7 @@
     border-top: 6px solid $growth;
     border-radius: 3px;
     left: -2em;
-    width: 50em;
+    width: 85%;
     top: 0;
   }
 }

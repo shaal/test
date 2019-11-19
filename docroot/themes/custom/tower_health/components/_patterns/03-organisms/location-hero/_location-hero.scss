@@ -19,11 +19,7 @@
   }
 
   @include breakpoint($bp4) {
-    margin: 8em auto 13em;
-  }
-
-  @include breakpoint($bp5) {
-    margin: 10em auto 12em;
+    margin: 8em auto 10em;
   }
 
   .location-hero__content {

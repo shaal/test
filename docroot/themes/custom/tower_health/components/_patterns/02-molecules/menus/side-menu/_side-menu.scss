@@ -2,19 +2,19 @@
   position: relative;
   padding-right: 6em;
 
-  @include breakpoint ($bp2) {
-
-  }
-
   &::after {
-    content: ' ';
-    background-color: $primary-dark;
-    width: 200px;
-    position: absolute;
-    top: 10%;
-    right: 0;
-    bottom: 22%;
-    z-index: -5;
+    content: 'Section Menu';
+    
+    @include breakpoint ($bp2) {
+      content: ' ';
+      background-color: $primary-dark;
+      width: 200px;
+      position: absolute;
+      top: 10%;
+      right: 0;
+      bottom: 22%;
+      z-index: -5;
+    }
   }
 
   ul {
