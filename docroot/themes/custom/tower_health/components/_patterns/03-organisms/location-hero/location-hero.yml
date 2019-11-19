@@ -1,0 +1,14 @@
+type: "Hospital"
+title: "Reading Hospital - Tower Health"
+address_1: "420 S. Fifth Avenue"
+address_2: "West Reading, PA 19611"
+directions:
+  link: "/"
+  icon: "th-find-hospital.svg"
+  text: "Directions"
+main_phone: "484-628-8000"
+alt_phone: "484-628-HELP (4357) or 866-988-4357"
+img:
+  src: "../../images/th-hero-image.jpg"
+  alt: "Alternative Text"
+classes: "growth top-left"

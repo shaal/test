@@ -1,0 +1,28 @@
+{% embed "@templates/_default.twig" with {
+  full_width: true
+} %}
+
+  {% block breadcrumbs %}
+    {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+      breadcrumb: breadcrumb
+    } %}
+  {% endblock %}
+
+  {% block page_content %}
+    {% include "@organisms/location-hero/location-hero.twig" with {
+      type: hero.type,
+      title: hero.title,
+      address_1: hero.address_1,
+      address_2: hero.address_2,
+      directions: hero.directions,
+      main_phone: hero.main_phone,
+      alt_phone: hero.alt_phone,
+      img: hero.img,
+      classes: hero.classes,
+    } %}
+
+    {% include "@molecules/menus/section-menu/section-menu.twig" with {
+      "place_holder": "Navigation",
+    } %}
+  {% endblock %}
+{% endembed %}

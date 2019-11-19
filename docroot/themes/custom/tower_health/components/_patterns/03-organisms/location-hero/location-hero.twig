@@ -1,0 +1,31 @@
+<div class="location-hero js-section-animation">
+  <div class="location-hero__content">
+    <div class="location-label">{{ type }}</div>
+    <h1>{{ title }}</h1>
+    <div class="location-details">
+      <div class="location-details__first">
+        <span>Address</span>
+        <p>{{ address_1 }}</p>
+        <p>{{ address_2 }}</p>
+        {% include "@atoms/icon-button/icon-button.twig" with {
+          "url": directions.url,
+          "icon": directions.icon,
+          "text": directions.text, 
+        } %}
+      </div>
+      <div class="location-details__second">
+        <span>Main</span>
+        {{ main_phone }}
+        <span>Appointments</span>
+        {{ alt_phone }}
+      </div>
+    </div>
+  </div>
+  <div class="location-hero__image">
+    {% include "@molecules/image-background/image-background.twig" with {
+      "img.src": img.src,
+      "img.src": img.alt,
+      "classes": classes,
+    } %}
+  </div>
+</div>
