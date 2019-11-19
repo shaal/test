@@ -63,8 +63,9 @@
       transition: all 0.2s;
 
       & > .main-menu--sub {
-        display: block;
+        display: flex;
         visibility: visible;
+        flex-wrap: wrap;
       }
     }
   }
@@ -266,5 +267,12 @@
   @include breakpoint($bp3) {
     display: block;
     margin: 0;
+    width: 48%;
+  }
+  
+  @include breakpoint($bp5) {
+    display: block;
+    margin: 0;
+    width: 33%;
   }
 }

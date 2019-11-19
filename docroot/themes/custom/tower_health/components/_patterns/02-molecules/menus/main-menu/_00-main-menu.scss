@@ -81,7 +81,7 @@
 
   @include breakpoint($bp3) {
     background-color: $white;
-    border-radius: 8px;
+    border-radius: 0 0 8px 8px;
     display: none;
     visibility: hidden;
     height: auto;
@@ -115,7 +115,8 @@
     
     @include breakpoint($bp3) {
       visibility: visible;
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 }
@@ -159,6 +160,7 @@
 
 .main-menu__item--form {
   position: relative;
+  width: 100%;
   
   .link {
     @include adjust-font-size-to($label, .9);
