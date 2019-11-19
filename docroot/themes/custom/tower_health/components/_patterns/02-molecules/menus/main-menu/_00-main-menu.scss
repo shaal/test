@@ -120,6 +120,37 @@
   }
 }
 
+.main-menu__item--with-sub.is-active {
+  
+  @include breakpoint($bp3) {
+    > .main-menu__link--with-sub::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $primary-dark;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+    
+    &.main-menu__item--secondary > .main-menu__link--with-sub::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $trust-aa;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    } 
+  }
+}
+
 .main-menu--sub-2 {
   @include breakpoint($bp3) {
     display: none; // Never shown on large screens
