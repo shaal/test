@@ -1,3 +1,9 @@
-<div>
-  Toggle
+<div aria-role="tooltip" class="toggle-tip">
+  <button class="" aria-controls="{{info_id}}">
+    i
+    <span>Informational Tooltip</span>
+  </button>
+  <div id="{{info_id}}" class="toggle-tip__drawer" aria-expanded="false">
+    {{ info }}
+  </div>
 </div>
