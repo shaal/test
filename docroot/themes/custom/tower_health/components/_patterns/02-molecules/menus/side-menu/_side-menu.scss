@@ -1,4 +1,4 @@
-.side-nav {
+.section-nav__container {
   position: relative;
   padding-right: 6em;
 
@@ -36,7 +36,7 @@
     }
   }
 
-  .side-nav__top {
+  .section-nav {
     background-color: $trust-ltst;
     font-size: 1.5em;
     line-height: 1em;
@@ -73,7 +73,7 @@
     }
   }
 
-  .side-nav__second {
+  .section-menu--sub {
     background-color: rgba($white, 0.5);
     font-size: 0.75em;
     font-weight: 300;

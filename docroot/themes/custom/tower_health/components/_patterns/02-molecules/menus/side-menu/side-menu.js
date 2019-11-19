@@ -18,9 +18,8 @@
 (function ($) { // REMOVE IF DRUPAL.
 
   // Use context instead of document IF DRUPAL.
-  var menu = $('.side-nav li');
-  console.log("loaded");
-  var menu_drawer = $('.side-nav__second');
+  var menu = $('.section-nav li');
+  var menu_drawer = $('.section-nav--sub');
 
   // Mobile Menu Show/Hide.
   function openNav() {

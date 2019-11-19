@@ -18,19 +18,11 @@
     <span class="toggle-expand__text">Close</span>
   </span>
 </button>
-<div class="side-nav">
-  <ul class="side-nav__top">
-    {% for item in items %}
-      <li>
-        <a {% if item.children %}class="dropdown"{% endif %} href="{{ item.url }}">{{ item.title }}</a>
-      </li>
-      {% if item.children %}
-        <ul class="side-nav__second">
-          {% for child in item.children %}
-            <li><a href="{{ child.url }}">{{ child.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endfor %}
-  </ul>
+<nav class="section-nav__container">
+  <div id="section-nav" class="section-nav">
+    {% include "@molecules/menus/_menu.twig" with {
+      menu_class: "section-menu",
+      items: section_items
+    } %}
+  </div>
 </div>
