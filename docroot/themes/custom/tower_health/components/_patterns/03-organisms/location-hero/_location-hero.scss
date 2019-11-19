@@ -62,7 +62,7 @@
     }
 
     @include breakpoint($bp4) {
-      padding: 8em 40% 3em 4em;
+      padding: 8em 35% 3em 4em;
     }
 
     .location-label {
@@ -144,11 +144,21 @@
       .location-details__first {
         width: 50%;
         padding-right: 1em;
+        order: 2;
+
+        @include breakpoint($bp2) {
+          order: 1;
+        }
       }
 
       .location-details__second {
         color: $trust-aa;
         font-weight: 600;
+        order: 1;
+
+        @include breakpoint($bp3) {
+          order: 2;
+        }
       }
 
       p {
@@ -215,24 +225,24 @@
     @include breakpoint($bp3) {
       z-index: auto;
       right: 0;
-      left: 50%;
+      left: 60%;
       top: -4em;
-      width: 60%;
+      width: 50%;
 
       .image-background {
         position: relative;
-        max-width: 950px;
+        max-width: 850px;
         left: 0;
         right: auto;
       }
     }
 
     @include breakpoint(1050px) {
-      top: -5em;
+      top: -3em;
     }
 
     @include breakpoint($bp4) {
-      left: 45%;
+      left: 55%;
     }
 
     @include breakpoint($bp5) {
