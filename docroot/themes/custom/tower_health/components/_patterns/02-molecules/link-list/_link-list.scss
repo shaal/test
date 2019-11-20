@@ -58,14 +58,35 @@
 
 .cssanimations {
 
+  default states
+  .link-list {
+
+    h2 {
+      opacity: 0;
+    }
+
+    &::before {
+      opacity: 0;
+    }
+
+    @include breakpoint($bp3) {
+      .link-list,
+      .link-list__link {
+        opacity: 0;
+      }
+    }
+  }
+
   // animating in
   .in-view {
     .link-list::before,
     .link-list h2 {
+      opacity: 1;
       animation: fadeInLeftScale .25s ease-in-out forwards;
     }
 
     .link-list__link {
+      opacity: 1;
       animation: fadeInUp .65s ease-in-out forwards;
     }
   }

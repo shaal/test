@@ -256,6 +256,10 @@
   .location-hero__content {
     opacity: 0;
 
+    .icon-button {
+      opacity: 0;
+    }
+
     &::before {
       opacity: 0;
     }
