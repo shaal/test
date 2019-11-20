@@ -10,20 +10,16 @@
 
   @include breakpoint($bp3) {
     padding: 0 2em;
-    margin: 5.5em auto 5.5em;
+    margin: 5.5em auto 3em;
     max-width: 1350px;
   }
   
   @include breakpoint(1050px) {
-    margin-bottom: 7em;
+    margin-bottom: 4em;
   }
   
   @include breakpoint($bp4) {
-    margin: 8em auto 13em;
-  }
-  
-  @include breakpoint($bp5) {
-    margin: 10em auto 12em;
+    margin: 6.25em auto 5em;
   }
 
   .homepage-hero__content {
@@ -34,81 +30,55 @@
     border-radius: 0 5px 5px 0;
     width: 96%;
     padding: 2em 1em 2em 2em;
-    margin-top: 40%;
+    margin-top: 15%;
     box-shadow: 0 2px 8px rgba($black, 0.15);
     position: relative;
     z-index: 1;
 
     @include breakpoint($bp0) {
       width: 95%;
-      margin-top: 45%;
+      margin-top: 25%;
     }
 
     @include breakpoint($bp2) {
       border: 4px solid $trust-ltr;
       border-radius: 5px;
-      width: 90%;
+      width: 75%;
       padding: 2em;
     }
 
     @include breakpoint($bp3) {
-      border: none;
-      background-color: transparent;
+      width: 95%;
       margin-top: 0;
       padding-right: 45%;
       box-shadow: none;
       position: static;
+      border-radius: 8px;
     }
 
     @include breakpoint($bp4) {
-      padding: 3em 50% 3em 2em;
+      padding: 2.5em 50% 2.5em 2em;
     }
 
     h1 {
       @extend %track-in;
+      @include adjust-font-size-to($xl-heading, 1.45);
       margin: 0;
+      
+      @include breakpoint($bp0) {
+        @include adjust-font-size-to($xxl-heading, 1.5);
+      }
+      
+      @include breakpoint($bp3) {
+        @include adjust-font-size-to($xxxl-heading, 1.75);
+      }
 
       span {
         color: $primary-dark;
         display: block;
         text-transform: uppercase;
-        font-size: .9em;
-        line-height: 1.05em;
         font-weight: 500;
         word-wrap: break-word;
-
-        @include breakpoint($bp0) {
-          font-size: 1em;
-        }
-
-        @include breakpoint("425px") {
-          font-size: 1.15em;
-        }
-
-        @include breakpoint($bp2) {
-          font-size: 1.25em;
-          line-height: 1em;
-        }
-
-        @include breakpoint("775px") {
-          font-size: 1.5em;
-        }
-
-        @include breakpoint($bp3) {
-          font-size: 1.05em;
-        }
-
-        @include breakpoint($bp4) {
-          font-size: 1.3em;
-        }
-        
-        @include breakpoint(1400px) {
-          font-size: 1.55em;
-        }
-
-        @include breakpoint($bp5) {
-          font-size: 1.65em;
-        }
       }
 
       .title--first {
@@ -136,34 +106,16 @@
     .homepage-hero__content__form {
       position: relative;
       z-index: 4;
+      
+      button {
+        @include adjust-font-size-to($label, .8);
+        padding: 1em 1.5em;
+      }
 
-      @include breakpoint($bp3, 1400px) {
+      @include breakpoint($bp3) {
         input[type="text"] {
           height: 60px;
         }
-
-        button {
-          padding: 1em 1.5em;
-        }
-      }
-    }
-
-    &::before {
-      content: ' ';
-      display: none;
-
-      @include breakpoint($bp3) {
-        display: block;
-        border: 5px solid $trust-ltst;
-        border-right: 0;
-        border-radius: 10px 0 0 10px;
-        margin: 0 auto;
-        position: absolute;
-        top: 0;
-        left: 2em;
-        right: 0;
-        bottom: 0;
-        z-index: -5;
       }
     }
   }
@@ -178,8 +130,8 @@
 
     .image-background {
       position: relative;
-      width: 110%;
-      right: -10%;
+      width: 90%;
+      right: -30%;
     }
 
     @include breakpoint($bp2) {
@@ -189,29 +141,25 @@
     @include breakpoint($bp3) {
       z-index: auto;
       right: 0;
-      left: 50%;
+      left: 53%;
       top: -4em;
       width: auto;
 
       .image-background {
         position: relative;
-        width: 135%;
-        max-width: 950px;
+        width: 150%;
+        max-width: 700px;
         left: 0;
         right: auto;
       }
     }
 
-    @include breakpoint(1050px) {
+    @include breakpoint($bp4) {
+      left: 50%;
       top: -5em;
     }
 
-    @include breakpoint($bp4) {
-      left: 45%;
-    }
-
     @include breakpoint($bp5) {
-      top: -8em;
       right: calc(( 100vw - 1350px ) / 2 * -1);
     }
   }
@@ -255,11 +203,6 @@
       @include breakpoint(0 899px) {
         animation: fadeInLeft .65s ease-in-out forwards;
       } 
-      
-      &::before {
-        @include transition(opacity, .85s, ease-out);
-        opacity: 1;
-      }
       
       @include breakpoint($bp3) {
         h1 {
