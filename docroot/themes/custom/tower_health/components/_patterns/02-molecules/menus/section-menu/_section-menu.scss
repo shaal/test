@@ -1,10 +1,15 @@
 .section-nav__container {
   position: relative;
   padding-right: 6em;
+  width: 50%;
+
+  @include breakpoint($bp4) {
+    width: 33%;
+  }
 
   &::after {
     content: 'Section Menu';
-    
+
     @include breakpoint ($bp2) {
       content: ' ';
       background-color: $primary-dark;
@@ -12,7 +17,7 @@
       position: absolute;
       top: 10%;
       right: 0;
-      bottom: 22%;
+      bottom: 10%;
       z-index: -5;
     }
   }
@@ -26,13 +31,11 @@
       display: block;
     }
 
-    li {
+    .section-menu__link {
+      display: block;
       padding: 0.75em 1em;
-
-      a {
-        color: $primary-dark;
-        text-decoration: none;
-      }
+      color: $primary-dark;
+      text-decoration: none;
     }
   }
 
@@ -43,33 +46,44 @@
     line-height: 1em;
     font-weight: 700;
 
-    a.dropdown {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    &:first-child li:hover {
+      background-color: rgba($white, 0.5);
+      border-left: 5px solid $trust-aa;
+    }
+  }
+
+  .section-menu__item--with-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    &.is-active {
+      flex-wrap: wrap;
+    }
+
+    .expand-sub {
+      width: 50px;
+      height: 100%;
+      position: relative !important;
 
       &::after {
         content: "+";
-
-        &.is-active {
-          content: "-";
-        }
+        color: $primary-dark;
+        position: absolute;
+        font-size: 1.5em;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
       }
-    }
 
-    li:hover {
-      background-color: rgba($white, 0.5);
-      border-left: 5px solid $trust-aa;
-
-      a {
-        color: $trust-aa;
-        position: relative;
-        left: -5px;
-
-        &.dropdown::after {
-          position: relative;
-          left: 5px;
-        }
+      &.is-active::after {
+        content: "-";
       }
     }
   }
@@ -78,6 +92,7 @@
     background-color: rgba($white, 0.5);
     font-size: 0.75em;
     font-weight: 300;
+    width: 100%;
     display: none;
 
     &.is-active {
