@@ -1,6 +1,6 @@
 .cta-banner-list {
   @include grid;
-  
+  position: relative;
   margin-top: 1em;
   margin-bottom: 3em;
   display: flex;
@@ -17,6 +17,7 @@
   padding: 2em 0 1em;
   width: 100%;
   position: relative;
+  z-index: 1;
 
   @include breakpoint($bp3) {
     border-top: 6px solid $growth;
@@ -41,62 +42,47 @@
   }
   
   @include breakpoint($bp5) {
-    padding: 5em 0;
+    padding: 4em 0;
   }
 }
 
 .cta-banner-list__title {
-  font-size: .9em;
+  @extend %track-in;
+  @include adjust-font-size-to($xl-heading, 1.45);
   text-transform: uppercase;
   font-weight: 600;
   color: $primary-dark;
   word-wrap: break-word;
   margin: 0;
   
-  &.first {
+  @include breakpoint($bp0) {
+    @include adjust-font-size-to($xxl-heading, 1.5);
+  }
+  
+  @include breakpoint($bp3) {
+    @include adjust-font-size-to($xxxl-heading, 1.75);
+  }
+  
+  span {
+    @include breakpoint($bp4) {
+      display: block;
+    }  
+  }
+  
+  .first {
     font-weight: 300;
   }
   
-  &.second {
+  .second {
     font-weight: 500;
   }
 
-  &.third {
+  .third {
     color: $trust-aa;
   }
   
-  @include breakpoint($bp0) {
-    font-size: 1em;
-  }
-
-  @include breakpoint("425px") {
-    font-size: 1.15em;
-  }
-
-  @include breakpoint($bp2) {
-    font-size: 1.25em;
-    line-height: 1em;
-  }
-
-  @include breakpoint("775px") {
-    font-size: 1.5em;
-  }
-
   @include breakpoint($bp3) {
     display: block;
-    font-size: 1.05em;
-  }
-
-  @include breakpoint($bp4) {
-    font-size: 1.3em;
-  }
-  
-  @include breakpoint(1400px) {
-    font-size: 1.55em;
-  }
-
-  @include breakpoint($bp5) {
-    font-size: 1.65em;
   }
 }
 
@@ -112,27 +98,29 @@
 }
 
 .cta-banner-list__background {
-  width: 100%;
-  position: absolute;
-  opacity: 40%;
-  z-index: -10;
-  top: -20%;
-  left: -20%;
-  
+  display: none;
+  visibility: hidden;
+
   @include breakpoint($bp2) {
-    width: 60%;
-    left: 10%;
-  }
-
-  @include breakpoint($bp3) {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: 0;
     width: 100%;
-    top: -20%;
+    top: -10%;
     left: 0;
+    max-width: 400px;
+  }
+  
+  @include breakpoint($bp3) {
+    top: -15%;
+    left: 10%;
+    max-width: 500px;
   }
 
-  @include breakpoint($bp4) {
-    top: -40%;
-    left: 20%;
+  @include breakpoint($bp5) {
+    top: -20%;
+    max-width: 600px;
   }
 }
 
@@ -152,9 +140,14 @@
   }
 
   @include breakpoint($bp3) {
-    width: 33%;
+    width: 38%;
     margin-left: auto;
-    margin-top: 4.5em;
+    margin-top: 4em;
+  }
+  
+  @include breakpoint($bp4) {
+    margin-left: auto;
+    margin-top: 3em;
   }
 
   &::after {
@@ -176,7 +169,7 @@
     }
     
     @include breakpoint($bp5) {
-      right: calc(((100vw - 1350px) / -2) - 30px);
+      right: calc(((100vw - 1350px) / -2) - 38px);
     }
   }
 }
