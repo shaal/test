@@ -11,15 +11,11 @@
 
   @include breakpoint($bp3) {
     padding: 0;
-    margin: 5.5em auto 3em;
+    margin: 4.5em auto 3em;
   }
   
   @include breakpoint(1050px) {
     margin-bottom: 4em;
-  }
-  
-  @include breakpoint($bp4) {
-    margin: 6.25em auto 5em;
   }
 }
 
@@ -58,16 +54,17 @@
   }
 
   @include breakpoint($bp3) {
-    width: 92%;
+    width: 100%;
     margin-top: 0;
-    padding-right: 45%;
+    padding-right: 50%;
     box-shadow: none;
     position: static;
     border-radius: 8px;
   }
 
   @include breakpoint($bp4) {
-    padding: 2.5em 50% 2.5em 2em;
+    width: 80%;
+    padding: 2.5em 34% 2.5em 2em;
   }
 
   h1 {
@@ -152,13 +149,13 @@
     z-index: auto;
     right: 0;
     left: 53%;
-    top: -4em;
+    top: -3.25em;
     width: auto;
 
     .image-background {
       position: relative;
       width: 150%;
-      max-width: 700px;
+      max-width: 625px;
       left: 0;
       right: auto;
     }
@@ -166,7 +163,6 @@
 
   @include breakpoint($bp4) {
     left: 50%;
-    top: -5em;
   }
 
   @include breakpoint($bp5) {
