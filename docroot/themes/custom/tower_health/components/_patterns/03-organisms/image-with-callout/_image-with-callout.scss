@@ -70,13 +70,13 @@
 
     .image-callout__text {
       animation: fadeInLeft .65s ease-in-out forwards;
-      animation-delay: 1s
+      animation-delay: 1s;
       opacity: 1;
     }
 
     .image-callout__image {
       animation: fadeInRight .65s ease-in-out forwards;
-      animation-delay: .5s
+      animation-delay: .5s;
       opacity: 1;
     }
   }
