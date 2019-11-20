@@ -1,0 +1,61 @@
+{% embed "@templates/_default.twig" with {
+  full_width: true
+} %}
+
+  {% block page_content %}
+
+    {% include "@organisms/location-hero/location-hero.twig" with {
+      type: hero.type,
+      name: hero.name,
+      address_1: hero.address_1,
+      address_2: hero.address_2,
+      directions: hero.directions,
+      phone: hero.phone,
+      numbers: hero.numbers,
+      img: hero.img,
+      classes: hero.classes,
+    } %}
+
+    <div class="menu-wrapper">
+      {% include "@molecules/rich-text/rich-text.twig" %}
+      {% include "@molecules/link-list/link-list.twig" with {
+        title: link_list.title,
+        items: link_list.items,
+      } %}
+      {% include "@molecules/hours-block/hours-block.twig" with {
+        hours: hours,
+      } %}
+    </div>
+
+    {% include "@organisms/omw-callout/omw-callout.twig" with {
+      title: omw_callout.title,
+      text: omw_callout.text,
+      button: omw_callout.button,
+    } %}
+
+    {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
+      img: image_callout.img,
+      title: image_callout.title,
+      text: image_callout.text,
+      links: image_callout.links,
+    } %}
+
+    {% include "@organisms/box-links/box-links.twig" with {
+      boxes: boxes
+    } %}
+
+    {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
+      img: image_callout.img,
+      title: image_callout.title,
+      text: image_callout.text,
+      links: image_callout.links,
+    } %}
+
+    {% include "@organisms/text-teaser-banner/text-teaser-banner.twig" with {
+      title: text_callout.title,
+      text: text_callout.text,
+      button: text_callout.button,
+    } %}
+  {% endblock %}
+
+{% endembed %}
