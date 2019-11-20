@@ -48,7 +48,7 @@
       z-index: 5;
       right: 53%;
       left: 0;
-      top: -7em;
+      top: -9em;
       width: auto;
 
       .image-background {
@@ -62,7 +62,7 @@
 
     @include breakpoint($bp4) {
       right: 50%;
-      top: -10em;
+      top: -11em;
     }
 
     @include breakpoint($bp5) {
