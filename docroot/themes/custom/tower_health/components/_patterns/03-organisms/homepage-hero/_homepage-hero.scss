@@ -3,15 +3,15 @@
   position: relative;
   padding-top: 100px;
   width: 100%;
+  max-width: 1350px;
 
   @include breakpoint($bp2) {
-    padding: 70px 2em 0;
+    padding: 70px 0 0;
   }
 
   @include breakpoint($bp3) {
-    padding: 0 2em;
+    padding: 0;
     margin: 5.5em auto 3em;
-    max-width: 1350px;
   }
   
   @include breakpoint(1050px) {
@@ -21,149 +21,160 @@
   @include breakpoint($bp4) {
     margin: 6.25em auto 5em;
   }
+}
 
-  .homepage-hero__content {
-    background-color: $white;
-    border-top: 4px solid $trust-ltr;
-    border-right: 4px solid $trust-ltr;
-    border-bottom: 4px solid $trust-ltr;
-    border-radius: 0 5px 5px 0;
-    width: 96%;
-    padding: 2em 1em 2em 2em;
-    margin-top: 15%;
-    box-shadow: 0 2px 8px rgba($black, 0.15);
-    position: relative;
-    z-index: 1;
+.homepage-hero__container {
+  max-width: 1350px;
+  width: 100%;
+  
+  @include breakpoint($bp2) {
+    padding: 0 2em;
+  }
+}
 
+.homepage-hero__content {
+  background-color: $white;
+  border-top: 4px solid $trust-ltr;
+  border-right: 4px solid $trust-ltr;
+  border-bottom: 4px solid $trust-ltr;
+  border-radius: 0 5px 5px 0;
+  width: 96%;
+  padding: 2em 1em 2em 2em;
+  margin-top: 15%;
+  box-shadow: 0 2px 8px rgba($black, 0.15);
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint($bp0) {
+    width: 95%;
+    margin-top: 25%;
+  }
+
+  @include breakpoint($bp2) {
+    border: 4px solid $trust-ltr;
+    border-radius: 5px;
+    width: 75%;
+    padding: 2em;
+  }
+
+  @include breakpoint($bp3) {
+    width: 92%;
+    margin-top: 0;
+    padding-right: 45%;
+    box-shadow: none;
+    position: static;
+    border-radius: 8px;
+  }
+
+  @include breakpoint($bp4) {
+    padding: 2.5em 50% 2.5em 2em;
+  }
+
+  h1 {
+    @extend %track-in;
+    @include adjust-font-size-to($xl-heading, 1.45);
+    margin: 0;
+    
     @include breakpoint($bp0) {
-      width: 95%;
-      margin-top: 25%;
+      @include adjust-font-size-to($xxl-heading, 1.5);
     }
-
-    @include breakpoint($bp2) {
-      border: 4px solid $trust-ltr;
-      border-radius: 5px;
-      width: 75%;
-      padding: 2em;
-    }
-
+    
     @include breakpoint($bp3) {
-      width: 95%;
-      margin-top: 0;
-      padding-right: 45%;
-      box-shadow: none;
-      position: static;
-      border-radius: 8px;
+      @include adjust-font-size-to($xxxl-heading, 1.75);
     }
 
-    @include breakpoint($bp4) {
-      padding: 2.5em 50% 2.5em 2em;
-    }
-
-    h1 {
-      @extend %track-in;
-      @include adjust-font-size-to($xl-heading, 1.45);
-      margin: 0;
-      
-      @include breakpoint($bp0) {
-        @include adjust-font-size-to($xxl-heading, 1.5);
-      }
-      
-      @include breakpoint($bp3) {
-        @include adjust-font-size-to($xxxl-heading, 1.75);
-      }
-
-      span {
-        color: $primary-dark;
-        display: block;
-        text-transform: uppercase;
-        font-weight: 500;
-        word-wrap: break-word;
-      }
-
-      .title--first {
-        font-weight: 300;
-      }
-
-      .title--last {
-        color: $trust-aa;
-        font-weight: 600;
-      }
-    }
-
-    .hero_subtitle {
-      @extend %track-in;
-      @include adjust-font-size-to($sm-heading, .9);
-      margin-top: 0.5em;
-      margin-bottom: 1em;
+    span {
+      color: $primary-dark;
+      display: block;
+      text-transform: uppercase;
       font-weight: 500;
-
-      @include breakpoint($bp4) {
-        @include adjust-font-size-to($md-heading, 1.2);
-      }
+      word-wrap: break-word;
     }
 
-    .homepage-hero__content__form {
-      position: relative;
-      z-index: 4;
-      
-      button {
-        @include adjust-font-size-to($label, .8);
-        padding: 1em 1.5em;
-      }
+    .title--first {
+      font-weight: 300;
+    }
 
-      @include breakpoint($bp3) {
-        input[type="text"] {
-          height: 60px;
-        }
-      }
+    .title--last {
+      color: $trust-aa;
+      font-weight: 600;
     }
   }
 
-  .homepage-hero__image {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -10;
-    overflow: hidden;
+  .hero_subtitle {
+    @extend %track-in;
+    @include adjust-font-size-to($sm-heading, .9);
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-weight: 500;
 
-    .image-background {
-      position: relative;
-      width: 90%;
-      right: -30%;
+    @include breakpoint($bp4) {
+      @include adjust-font-size-to($md-heading, 1.2);
     }
+  }
 
-    @include breakpoint($bp2) {
-      width: 80%;
+  .homepage-hero__content__form {
+    position: relative;
+    z-index: 4;
+    
+    button {
+      @include adjust-font-size-to($label, .8);
+      padding: 1em 1.5em;
     }
 
     @include breakpoint($bp3) {
-      z-index: auto;
-      right: 0;
-      left: 53%;
-      top: -4em;
-      width: auto;
-
-      .image-background {
-        position: relative;
-        width: 150%;
-        max-width: 700px;
-        left: 0;
-        right: auto;
+      input[type="text"] {
+        height: 60px;
       }
-    }
-
-    @include breakpoint($bp4) {
-      left: 50%;
-      top: -5em;
-    }
-
-    @include breakpoint($bp5) {
-      right: calc(( 100vw - 1350px ) / 2 * -1);
     }
   }
 }
+
+.homepage-hero__image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -10;
+  overflow: hidden;
+
+  .image-background {
+    position: relative;
+    width: 90%;
+    right: -30%;
+  }
+
+  @include breakpoint($bp2) {
+    width: 80%;
+  }
+
+  @include breakpoint($bp3) {
+    z-index: auto;
+    right: 0;
+    left: 53%;
+    top: -4em;
+    width: auto;
+
+    .image-background {
+      position: relative;
+      width: 150%;
+      max-width: 700px;
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @include breakpoint($bp4) {
+    left: 50%;
+    top: -5em;
+  }
+
+  @include breakpoint($bp5) {
+    right: calc(( 100vw - 1350px ) / 2 * -1);
+  }
+}
+
+
 
 // Animations
 
