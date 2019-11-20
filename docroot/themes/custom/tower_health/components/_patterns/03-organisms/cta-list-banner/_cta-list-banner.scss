@@ -10,6 +10,7 @@
 
   @include breakpoint($bp3) {
     flex-wrap: nowrap;
+    margin-bottom: 1em;
   }
 }
 
@@ -35,8 +36,8 @@
       top: -6px;
       
       @include breakpoint($bp5) {
-        width: calc(2em + (100vw - 1350px));
-        left: calc(-2em - (100vw - 1350px));
+        width: calc(1.5em + (100vw - 1350px));
+        left: calc(-1.5em - (100vw - 1350px));
       }
     }
   }
@@ -169,7 +170,7 @@
     }
     
     @include breakpoint($bp5) {
-      right: calc(((100vw - 1350px) / -2) - 30px);
+      right: calc(((100vw - 1350px) / -2) - 1.5em);
     }
   }
 }

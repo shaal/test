@@ -61,7 +61,7 @@
   
   @include breakpoint($bp5) {
     &::after {
-      right: calc(((100vw - 1350px) / -2 ) - 38px);
+      right: calc(((100vw - 1350px) / -2 ) - 1.5em);
     }
   }
 }
