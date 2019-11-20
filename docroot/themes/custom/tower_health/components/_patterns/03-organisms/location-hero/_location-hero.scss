@@ -52,13 +52,20 @@
       border: none;
       background-color: transparent;
       margin-top: 0;
-      padding-right: 35%;
       box-shadow: none;
       position: static;
+
+      &.image {
+        padding-right: 35%;
+      }
     }
 
     @include breakpoint($bp4) {
-      padding: 8em 35% 3em 4em;
+      padding: 8em 4em 3em 4em;
+
+      &.image {
+        padding-right: 35%;
+      }
     }
 
     .location-label {
@@ -187,8 +194,7 @@
       @include breakpoint($bp3) {
         display: block;
         border: 5px solid $trust-ltst;
-        border-right: 0;
-        border-radius: 10px 0 0 10px;
+        border-radius: 10px;
         margin: 0 auto;
         position: absolute;
         top: 0;

@@ -1,5 +1,5 @@
 <div class="location-hero js-section-animation">
-  <div class="location-hero__content">
+  <div class="location-hero__content {% if img %}image{% endif %}">
     <div class="location-label">{{ type }}</div>
     <h1>{{ title }}</h1>
     <div class="location-details">
@@ -10,7 +10,7 @@
         {% include "@atoms/icon-button/icon-button.twig" with {
           "url": directions.url,
           "icon": directions.icon,
-          "text": directions.text, 
+          "text": directions.text,
         } %}
       </div>
       <div class="location-details__second">
@@ -21,11 +21,13 @@
       </div>
     </div>
   </div>
-  <div class="location-hero__image">
-    {% include "@molecules/image-background/image-background.twig" with {
-      "img.src": img.src,
-      "img.src": img.alt,
-      "classes": classes,
-    } %}
-  </div>
+  {% if img %}
+    <div class="location-hero__image">
+      {% include "@molecules/image-background/image-background.twig" with {
+        "img.src": img.src,
+        "img.src": img.alt,
+        "classes": classes,
+      } %}
+    </div>
+  {% endif %}
 </div>
