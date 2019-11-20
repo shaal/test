@@ -165,10 +165,6 @@
     }
   }
 
-  @include breakpoint($bp4) {
-    left: 50%;
-  }
-
   @include breakpoint($bp5) {
     right: calc(( 100vw - 1365px ) / 2 * -1);
   }
