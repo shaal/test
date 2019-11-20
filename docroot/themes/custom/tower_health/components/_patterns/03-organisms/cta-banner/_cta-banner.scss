@@ -13,21 +13,20 @@
   @include breakpoint($bp3) {
     max-width: 1350px;
     padding: 0 2em;
-    margin: 5em auto 1.5em;
+    margin: 4em auto 1.5em;
   }
 
   @include breakpoint(1050px) {
+    margin-bottom: 2.5em;
+  }
+
+  @include breakpoint($bp4) {
     margin-top: 6em;
     margin-bottom: 3em;
   }
 
-  @include breakpoint($bp4) {
-    margin-top: 10em;
-    margin-bottom: 6em;
-  }
-
   @include breakpoint($bp5) {
-    margin-top: 12em;
+    margin-top: 7em;
   }
 
   .cta-banner__image {
@@ -40,44 +39,34 @@
 
     .image-background {
       position: relative;
-      width: 110%;
-      left: -10%;
-    }
-
-    @include breakpoint($bp0) {
+      max-width: 700px;
       width: 90%;
-    }
-
-    @include breakpoint($bp1) {
-      width: 80%;
+      left: -20%;
     }
 
     @include breakpoint($bp2) {
-      width: 70%;
+      width: 80%;
     }
 
     @include breakpoint($bp3) {
       z-index: 5;
-      right: 50%;
+      right: 53%;
       left: 0;
       top: -8em;
       width: auto;
 
       .image-background {
         position: relative;
-        width: 135%;
-        max-width: 850px;
+        width: 150%;
+        max-width: 700px;
         float: right;
+        left: auto;
       }
     }
 
-    @include breakpoint(1050px) {
-      top: -12em;
-    }
-
     @include breakpoint($bp4) {
-      right: 45%;
-      top: -14em;
+      right: 50%;
+      top: -12em;
     }
 
     @include breakpoint($bp5) {
@@ -94,13 +83,13 @@
     border-radius: 5px 0 0 5px;
     width: 96%;
     padding: 2em 2em 3em;
-    margin-top: 40%;
+    margin-top: 20%;
     margin-left: 4%;
     box-shadow: 0 2px 8px rgba($black, 0.15);
 
     @include breakpoint($bp0) {
       width: 90%;
-      margin-top: 45%;
+      margin-top: 35%;
       margin-left: 10%;
     }
 
@@ -112,98 +101,50 @@
       float: right;
       width: auto;
       max-width: 90%;
-      padding: 2em 3em 3em;
+      padding: 2em 2em 3em;
     }
 
     @include breakpoint($bp3) {
-      border: none;
-      background-color: transparent;
       margin-top: 0;
       box-shadow: none;
       float: none;
       display: block;
-      padding: 3em 4em 4em 38%;
+      padding: 3em 2em 4em 40%;
     }
 
     @include breakpoint($bp4) {
-      padding: 3em 2em 4em 44%;
-    }
-
-    &::before {
-      content: ' ';
-      display: none;
-
-      @include breakpoint($bp3) {
-        display: block;
-        border: 5px solid $trust-ltst;
-        border-radius: 10px;
-        margin: 0 auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -5;
-      }
+      padding: 2.5em 2em 3.5em 45%;
     }
 
     .button {
       position: absolute;
       bottom: -1.5em;
       right: 2em;
-
-      @include breakpoint($bp3) {
-        right: 100px;
-      }
     }
 
     .cta-banner__title {
+      @extend %track-in;
+      @include adjust-font-size-to($xl-heading, 1.45);
       color: $primary-dark;
       text-transform: uppercase;
       margin: 0;
       font-weight: 300;
+      
+      @include breakpoint($bp0) {
+        @include adjust-font-size-to($xxl-heading, 1.5);
+      }
+      
+      @include breakpoint($bp3) {
+        @include adjust-font-size-to($xxxl-heading, 1.75);
+      } 
 
       span {
         display: block;
-        font-size: .9em;
         line-height: 1.05em;
         
         &:last-child {
           font-weight: 600;
-        }
-        
-        @include breakpoint($bp0) {
-          font-size: 1em;
-        }
-
-        @include breakpoint("425px") {
-          font-size: 1.15em;
-        }
-
-        @include breakpoint($bp2) {
-          font-size: 1.25em;
-          line-height: 1em;
-        }
-
-        @include breakpoint("775px") {
-          font-size: 1.5em;
-        }
-
-        @include breakpoint($bp3) {
-          font-size: 1.05em;
-        }
-
-        @include breakpoint($bp4) {
-          font-size: 1.3em;
-        }
-        
-        @include breakpoint(1400px) {
-          font-size: 1.55em;
-        }
-
-        @include breakpoint($bp5) {
-          font-size: 1.65em;
-        }
+        }       
       }
     }
     
