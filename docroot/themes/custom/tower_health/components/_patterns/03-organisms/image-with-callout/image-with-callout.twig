@@ -6,7 +6,13 @@
     <div class="button-wrapper">
       <h3>{{ title }}</h3>
       <p>{{ text }}</p>
-      <a class="button button-primary" href="{{ link.url }}">{{ link.text }}</a>
+      {% if links|length == 1 %}
+        <a class="button button-primary" href="{{ links|first.url }}">{{ links|first.text }}</a>
+      {% else %}
+        {% for link in links %}
+          <a href="{{ link.url }}">{{ link.text }}</a>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>

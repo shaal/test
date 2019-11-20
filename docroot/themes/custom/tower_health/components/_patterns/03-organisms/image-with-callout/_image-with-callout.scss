@@ -46,7 +46,7 @@
         padding: 4em;
       }
 
-      a {
+      a.button {
 
         @include breakpoint($bp2) {
           position: absolute;
