@@ -1,7 +1,7 @@
 <div class="location-hero js-section-animation">
   <div class="location-hero__content {% if img %}image{% endif %}">
     <div class="location-label">{{ type }}</div>
-    <h1>{{ title }}</h1>
+    <h1>{{ name }}</h1>
     <div class="location-details">
       <div class="location-details__first">
         <span>Address</span>
@@ -15,9 +15,11 @@
       </div>
       <div class="location-details__second">
         <span>Main</span>
-        {{ main_phone }}
+        <a href="tel{{phone.number}}">{{ phone.label }}</a>
         <span>Appointments</span>
-        {{ alt_phone }}
+        {% for number in numbers %}
+          <a href="tel{{number.number}}">{{ number.label }}</a>
+        {% endfor %}
       </div>
     </div>
   </div>

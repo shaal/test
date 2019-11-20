@@ -162,6 +162,11 @@
         @include breakpoint($bp3) {
           order: 2;
         }
+
+        a {
+          text-decoration: none;
+          display: block;
+        }
       }
 
       p {
@@ -248,7 +253,7 @@
     }
 
     @include breakpoint($bp5) {
-      top: -8em;
+      top: -6.25em;
       right: calc(( 100vw - 1500px ) / 2 * -1);
     }
   }
