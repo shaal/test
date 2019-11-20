@@ -3,7 +3,7 @@ header_logo_link_url: "#"
 utility_items:
   - title: "Careers"
     url: "#"
-  - title: "My TowerHealth"
+  - title: "MyTowerHealth"
     url: "#"
     modifiers:
       1:
@@ -17,60 +17,135 @@ utility_items:
 header_menu_items:
   - title: "Find a Provider"
     url: "#"
+    menu_name: "main-menu"
     below:
-      - title: "Menu Item 1 Sub 1"
+      - type: 'form'
+        button_label: 'Search Providers'
+        link_url: '#'
+        link_content: 'Browse All Providers'
+        autocomplete:
+          label: Find a Provider
+          input_class: 
+          type: find-provider
+          placeholder: Search by Name, Specialty, or Condition
+          id: edit-find-provider
+          path: some/path
+          results:
+            - label: Conditions
+              children:
+                - id: 11
+                  name: Conjunctivitis
+            - label: Providers
+              children:
+                - id: 12
+                  name: Monica Chung Kwan-consigli, Pa-c
+                - id: 13
+                  name: Carolyn Riester O'connor, Md
+                - id: 14
+                  name: Deborah Paul Consoli, Md
+                - id: 15
+                  name: Constantine Francis Harris, Md
+                - id: 16
+                  name: Kristie F Conrad, Pa-c
+                - id: 17
+                  name: Kathryn Marie Conlow, Pa-c
+                - id: 14
+                  name: Corina Condrea Sandru, Md
+                - id: 15
+                  name: Connie Lynn Garrigan, Crna
+                - id: 16
+                  name: Carolyn O'connor, Md
+                - id: 17
+                  name: Ann Reynolds Connor, Md
+  - title: "Conditions & Services"
+    url: "#"
+    below:
+      - type: 'form'
+        button_label: 'Search Services'
+        link_url: '#'
+        link_content: 'Browse All Services'
+        autocomplete:
+          label: Find a Service
+          input_class: 
+          type: find-service
+          placeholder: Search by Condition or Service
+          id: edit-find-service
+          path: some/path
+          results:
+            - label: Services
+              children:
+                - id: 22
+                  name: Reading Hospital
+                - id: 23
+                  name: Brandywine Hospital
+                - id: 24
+                  name: Phoenixville Hospital
+                - id: 25
+                  name: Chestnut Hill Hospital
+                - id: 26
+                  name: Jennersville Hospital
+                - id: 27
+                  name: Pottstown Hospital
+      - title: "Cancer Care"
         url: "#"
-      - title: "Menu Item 1 Sub 2"
+      - title: "Heart & Vascular Care"
         url: "#"
-      - title: "Menu Item 1 Sub 3"
+      - title: "Orthopedics"
         url: "#"
-      - title: "Menu Item 1 Sub 4"
+      - title: "Neurology & Neurosurgery"
         url: "#"
-      - title: "Menu Item 1 Sub 5"
+      - title: "Pediatrics"
         url: "#"
-      - title: "Menu Item 1 Sub 6"
+      - title: "Primary Care"
         url: "#"
-      - title: "Menu Item 1 Sub 7"
-        url: "#"
-      - title: "Menu Item 1 Sub 8"
+      - title: "Women's Health"
         url: "#"
   - title: "Locations"
     url: "#"
     below:
-      - title: "Menu Item 2 Sub 1"
+      - type: 'form'
+        button_label: 'Search Locations'
+        link_url: '#'
+        link_content: 'Browse All Locations'
+        autocomplete:
+          label: Find a Location
+          input_class: 
+          type: find-location
+          placeholder: Search by Name, Condition, or Service
+          id: edit-find-location
+          path: some/path
+          results:
+            - label: Locations
+              children:
+                - id: 22
+                  name: Reading Hospital
+                - id: 23
+                  name: Brandywine Hospital
+                - id: 24
+                  name: Phoenixville Hospital
+                - id: 25
+                  name: Chestnut Hill Hospital
+                - id: 26
+                  name: Jennersville Hospital
+                - id: 27
+                  name: Pottstown Hospital
+      - title: "Reading Hospital"
         url: "#"
-      - title: "Menu Item 2 Sub 2"
+      - title: "Brandywine Hospital"
         url: "#"
-      - title: "Menu Item 2 Sub 3"
+      - title: "Chestnut Hill Hospital"
         url: "#"
-      - title: "Menu Item 2 Sub 4"
+      - title: "Jennersville Hospital"
         url: "#"
-      - title: "Menu Item 2 Sub 5"
+      - title: "Phoenixville Hospital"
         url: "#"
-      - title: "Menu Item 2 Sub 6"
+      - title: "Pottstown Hospital"
         url: "#"
-      - title: "Menu Item 2 Sub 7"
+      - title: "St. Christopher's Hospital for Children"
         url: "#"
-      - title: "Menu Item 2 Sub 8"
+      - title: "Emergency"
         url: "#"
-  - title: "Conditions & Services"
-    url: "#"
-    below:
-      - title: "Menu Item 3 Sub 1"
-        url: "#"
-      - title: "Menu Item 3 Sub 2"
-        url: "#"
-      - title: "Menu Item 3 Sub 3"
-        url: "#"
-      - title: "Menu Item 3 Sub 4"
-        url: "#"
-      - title: "Menu Item 3 Sub 5"
-        url: "#"
-      - title: "Menu Item 3 Sub 6"
-        url: "#"
-      - title: "Menu Item 3 Sub 7"
-        url: "#"
-      - title: "Menu Item 3 Sub 8"
+      - title: "Urgent Care"
         url: "#"
   - title: "Medical Professionals"
     url: "#"
@@ -78,21 +153,17 @@ header_menu_items:
       1:
         secondary
     below:
-      - title: "Menu Item 4 Sub 1"
+      - title: "Tower Health Partners"
         url: "#"
-      - title: "Menu Item 4 Sub 2"
+      - title: "Physicians"
         url: "#"
-      - title: "Menu Item 4 Sub 3"
+      - title: "Nurses & Advanced Practitioners"
         url: "#"
-      - title: "Menu Item 4 Sub 4"
+      - title: "Fellows & Residents"
         url: "#"
-      - title: "Menu Item 4 Sub 5"
+      - title: "EMS Professionals"
         url: "#"
-      - title: "Menu Item 4 Sub 6"
-        url: "#"
-      - title: "Menu Item 4 Sub 7"
-        url: "#"
-      - title: "Menu Item 4 Sub 8"
+      - title: "Medical Affairs"
         url: "#"
   - title: "Academics"
     url: "#"
@@ -100,19 +171,19 @@ header_menu_items:
       1:
         secondary
     below:
-      - title: "Menu Item 5 Sub 1"
+      - title: "Academic Departments"
         url: "#"
-      - title: "Menu Item 5 Sub 2"
+      - title: "Residency Programs"
         url: "#"
-      - title: "Menu Item 5 Sub 3"
+      - title: "Fellowships Programs"
         url: "#"
-      - title: "Menu Item 5 Sub 4"
+      - title: "Continuing Medical Education"
         url: "#"
-      - title: "Menu Item 5 Sub 5"
+      - title: "Research"
         url: "#"
-      - title: "Menu Item 5 Sub 6"
+      - title: "Clinical Trials"
         url: "#"
-      - title: "Menu Item 5 Sub 7"
+      - title: "Reading Hospital School of Health Sciences"
         url: "#"
-      - title: "Menu Item 5 Sub 8"
+      - title: "Drexel University College of Medicine"
         url: "#"
