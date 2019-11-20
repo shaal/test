@@ -119,13 +119,13 @@
   
   @include breakpoint($bp3) {
     top: -15%;
-    left: 10%;
+    left: 15%;
     max-width: 500px;
   }
 
   @include breakpoint($bp5) {
     top: -20%;
-    max-width: 600px;
+    left: 20%;
   }
 }
 
