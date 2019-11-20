@@ -54,14 +54,14 @@
     }
   }
   
-  @include breakpoint($bp4) {
+  @include breakpoint($nav-breakpoint) {
     margin-top: 0;
-    top: 3em;
+    top: 2.25em;
   }
   
   @include breakpoint($bp5) {
     &::after {
-      right: calc(((100vw - 1500px) / -2 ) - 38px);
+      right: calc(((100vw - 1350px) / -2 ) - 38px);
     }
   }
 }
