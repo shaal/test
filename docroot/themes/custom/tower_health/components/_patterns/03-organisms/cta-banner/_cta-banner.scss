@@ -18,7 +18,7 @@
 
   @include breakpoint($bp4) {
     margin-top: 3em;
-    margin-bottom: 0;
+    margin-bottom: .5em;
   }
 
   @include breakpoint($bp5) {
