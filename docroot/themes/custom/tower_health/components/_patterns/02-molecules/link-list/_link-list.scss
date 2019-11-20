@@ -55,3 +55,18 @@
     top: 0;
   }
 }
+
+.cssanimations {
+
+  // animating in
+  .in-view {
+    .link-list::before,
+    .link-list h2 {
+      animation: fadeInLeftScale .25s ease-in-out forwards;
+    }
+
+    .link-list__link {
+      animation: fadeInUp .65s ease-in-out forwards;
+    }
+  }
+}

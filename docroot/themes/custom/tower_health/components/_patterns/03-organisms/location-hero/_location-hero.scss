@@ -285,6 +285,10 @@
 
       @include breakpoint(0 899px) {
         animation: fadeInLeft .65s ease-in-out forwards;
+
+        .icon-button {
+          animation: fadeInLeftScale .65s ease-in-out forwards;
+        }
       }
 
       &::before {
@@ -297,12 +301,16 @@
           animation: fadeInUp .25s ease-in-out  .25s forwards;
         }
 
-        h2 {
+        .location-details {
           animation: fadeInUp .25s ease-in-out  .25s forwards;
+
+          .icon-button {
+            animation: fadeInLeftScale .65s ease-in-out forwards;
+          }
         }
 
-        form {
-          animation: fadeInUp .25s ease-in-out  .35s forwards;
+        .location-label {
+          animation: fadeInLeftScale .65s ease-in-out forwards;
         }
       }
     }
