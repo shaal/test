@@ -21,7 +21,7 @@
         title: link_list.title,
         items: link_list.items,
       } %}
-      {% include "@molecules/menus/side-menu/side-menu.twig" with {
+      {% include "@molecules/menus/section-menu/section-menu.twig" with {
         items: section_items
       } %}
     </div>
@@ -30,7 +30,7 @@
       boxes: boxes
     } %}
 
-    {% include "@organisms/image-with-callout/image-with-callout.twig" with {
+    {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
       img: image_callout.img,
       title: image_callout.title,
       text: image_callout.text,

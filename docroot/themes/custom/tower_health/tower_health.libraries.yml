@@ -12,9 +12,9 @@ main-menu:
   dependencies:
     - core/drupal
 
-side-menu:
+section-menu:
   js:
-    dist/02-molecules/menus/side-menu/side-menu.js: {}
+    dist/02-molecules/menus/section-menu/section-menu.js: {}
   dependencies:
     - core/drupal
 

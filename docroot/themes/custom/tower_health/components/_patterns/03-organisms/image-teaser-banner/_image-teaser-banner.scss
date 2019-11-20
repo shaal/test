@@ -1,9 +1,9 @@
-.image-callout {
+.image-teaser {
   position: relative;
   display: flex;
   justify-content: flex-end;
 
-  .image-callout__image {
+  .image-teaser__image {
     max-width: 800px;
     float: right;
 
@@ -12,7 +12,7 @@
     }
   }
 
-  .image-callout__text {
+  .image-teaser__text {
     width: 85%;
     position: absolute;
     top: 16em;
@@ -60,21 +60,21 @@
 
 .cssanimations {
 
-  .image-callout__text,
-  .image-callout__image {
+  .image-teaser__text,
+  .image-teaser__image {
     opacity: 0;
   }
 
   // animating in
   .in-view {
 
-    .image-callout__text {
+    .image-teaser__text {
       animation: fadeInLeft .65s ease-in-out forwards;
       animation-delay: 1s;
       opacity: 1;
     }
 
-    .image-callout__image {
+    .image-teaser__image {
       animation: fadeInRight .65s ease-in-out forwards;
       animation-delay: .5s;
       opacity: 1;
