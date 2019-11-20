@@ -189,25 +189,26 @@
   
   // animating in
   .in-view {
-    .cta-banner-list__content {
+    &.cta-banner-list__content {
       animation: fadeInLeft .65s ease-in-out forwards;
     }
     
-    .cta-banner-list__background {
+    &.cta-banner-list__background {
       animation: fadeinSlight .85s ease-in-out .5s forwards;
     }
     
-    .cta-banner-list__buttons {
+    &.cta-banner-list__buttons {
       animation: fadein .65s ease-in-out forwards;
-    }
-    
-    .icon-button {
-      animation: fadeInRight .35s ease-in-out forwards;
-    }
-    @for $i from 1 through 6 {
-      .icon-button:nth-child(#{$i}) {
-        // Delay the animation. Delay increases as items loop.
-        animation-delay: .25 + ($i * (1s / 12));
+      
+      .icon-button {
+        animation: fadeInRight .35s ease-in-out forwards;
+      }
+      
+      @for $i from 1 through 6 {
+        .icon-button:nth-child(#{$i}) {
+          // Delay the animation. Delay increases as items loop.
+          animation-delay: .25 + ($i * (1s / 12));
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
-<section class="cta-banner-list js-section-animation">
-  <div class="cta-banner-list__content">
+<section class="cta-banner-list">
+  <div class="cta-banner-list__content js-section-animation">
     <h1 class="cta-banner-list__title">
       {% if title_1 %}
         <span class="first">{{ title_1 }}</span>
@@ -13,8 +13,8 @@
       <h2 class="cta-banner-list__subtitle">{{ subtitle }}</h2>
     {% endif %}
   </div>
-  <img class="cta-banner-list__background" src="../../images/th-mark.svg" />
-  <div class="cta-banner-list__buttons">
+  <img class="cta-banner-list__background js-section-animation" src="../../images/th-mark.svg" />
+  <div class="cta-banner-list__buttons js-section-animation">
     {% for link in links %}
       {% include "@atoms/icon-button/icon-button.twig" with {
         "url": link.url,
