@@ -1,7 +1,7 @@
 .image-callout {
   position: relative;
-  width: 100%;
-  display: block;
+  display: flex;
+  justify-content: flex-end;
 
   .image-callout__image {
     max-width: 800px;
@@ -23,12 +23,13 @@
     box-shadow: 0 2px 8px rgba($black, 0.15);
 
     @include breakpoint($bp2) {
-      left: 0;
+      left: 1em;
       top: 24em;
     }
 
     @include breakpoint($bp3) {
       top: 4em;
+      left: 2em;
       width: 55%;
     }
 
@@ -53,6 +54,30 @@
           bottom: -35px;
         }
       }
+    }
+  }
+}
+
+.cssanimations {
+
+  .image-callout__text,
+  .image-callout__image {
+    opacity: 0;
+  }
+
+  // animating in
+  .in-view {
+
+    .image-callout__text {
+      animation: fadeInLeft .65s ease-in-out forwards;
+      animation-delay: 1s
+      opacity: 1;
+    }
+
+    .image-callout__image {
+      animation: fadeInRight .65s ease-in-out forwards;
+      animation-delay: .5s
+      opacity: 1;
     }
   }
 }
