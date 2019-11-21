@@ -1,16 +1,18 @@
 .section-nav__container {
   position: relative;
   padding-right: 6em;
-  width: 50%;
+  width: 100%;
+  background-color: $primary-dark;
 
-  @include breakpoint($bp4) {
-    width: 33%;
+  @include breakpoint($bp2) {
+    background-color: transparent;
   }
 
   &::after {
     content: 'Section Menu';
+    width: 100%;
 
-    @include breakpoint ($bp2) {
+    @include breakpoint ($bp3) {
       content: ' ';
       background-color: $primary-dark;
       width: 200px;

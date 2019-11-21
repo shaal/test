@@ -21,9 +21,11 @@
         title: link_list.title,
         items: link_list.items,
       } %}
-      {% include "@molecules/menus/section-menu/section-menu.twig" with {
-        items: section_items
-      } %}
+      <div class="menu--inner">
+        {% include "@molecules/menus/section-menu/section-menu.twig" with {
+          items: section_items
+        } %}
+      </div>
     </div>
 
     {% include "@organisms/box-links/box-links.twig" with {

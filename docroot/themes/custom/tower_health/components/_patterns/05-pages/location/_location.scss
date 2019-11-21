@@ -6,4 +6,17 @@
     flex-wrap: nowrap;
     justify-content: space-between;
   }
+
+  .menu--inner {
+    display: flex;
+    width: 100%;
+
+    @include breakpoint($bp3) {
+      width: 50%;
+    }
+
+    @include breakpoint($bp4) {
+      width: 33%;
+    }
+  }
 }
