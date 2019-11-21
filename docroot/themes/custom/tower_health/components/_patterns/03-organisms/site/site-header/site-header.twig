@@ -12,7 +12,7 @@
       <div class="header__right">
         
         <div class="header__search">
-          <button id="search-toggle" class="search-toggle">
+          <button id="search-toggle" class="search-toggle" aria-controls="search-drawer">
             <span class="toggle-expand__open">
               {% include "@atoms/04-images/icons/_icon.twig" with {
                 icon_base_class: "icon",
@@ -30,7 +30,7 @@
               <span class="toggle-expand__text">Close</span>
             </span>
           </button>
-          <div class="header__search-drawer">
+          <div class="header__search-drawer" id="search-drawer" aria-expanded='false'>
             <form class='header__search-form' id="header__search-form">
               <div class="header__search-form__container">
                 <label for="header__search-input">Search our Site</label>
@@ -38,7 +38,7 @@
               </div>
               <input class="header__search-submit" type="submit" value="Search">
             </form>
-            <button class="close-nav close-search">Close Search Drawer</button>
+            <button aria-controls="search-drawer" class="close-nav close-search">Close Search Drawer</button>
           </div>
         </div>
         
