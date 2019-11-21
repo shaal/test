@@ -1,6 +1,7 @@
 .filter {
   background-color: $trust-ltst;
   padding: 2em;
+  margin-bottom: 6em;
 
   @include breakpoint($bp5) {
     margin-left: calc(((100% - 1500px) / 2) + 2em);
