@@ -34,7 +34,7 @@
       border-radius: 3px;
       left: 0;
       bottom: 2em;
-      width: calc((100vw - 5em) * 0.80);
+      width: calc((100vw - 5em) * 0.65);
 
       @include breakpoint($bp3) {
         width: calc(((100vw - 5em) / 2) * 0.70);

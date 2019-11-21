@@ -1,11 +1,21 @@
+.section-toggle-expand {
+  background-color: $primary-dark;
+}
+
 .section-nav__container {
   position: relative;
   padding-right: 6em;
   width: 100%;
   background-color: $primary-dark;
+  color: $trust;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  font-weight: 700;
+  padding: 1em;
 
-  @include breakpoint($bp2) {
+  @include breakpoint($bp3) {
     background-color: transparent;
+    font-size: 1em;
   }
 
   &::after {
