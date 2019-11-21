@@ -17,7 +17,28 @@
 
 (function ($) { // REMOVE IF DRUPAL.
 
+  var menu_toggle = $('#section-toggle-expand');
+  var menu_drawer = $('.section-nav > ul');
   var child_toggle = $('.section-menu .expand-sub');
+
+  // Mobile Menu Show/Hide.
+  function openNav() {
+    menu_drawer.addClass('is-active');
+    menu_toggle.addClass('is-active');
+  }
+
+  function closeNav() {
+    menu_drawer.removeClass('is-active');
+    menu_toggle.removeClass('is-active');
+  }
+
+  menu_toggle.on('click', function() {
+    if ( $(menu_drawer).hasClass('is-active') ) {
+      closeNav();
+    } else {
+      openNav();
+    }
+  });
 
   // open and close sub drawers
   child_toggle.on('click', function() {

@@ -39,28 +39,42 @@
     list-style: none;
     padding: 1em 0;
 
+    &.is-active {
+      display: block;
+    }
+
     @include breakpoint($bp3) {
       display: block;
     }
 
     .section-menu__link {
       display: block;
-      padding: 0.75em 1em;
+      padding: 0.5em;
       color: $primary-dark;
       text-decoration: none;
+    }
+
+    @include breakpoint($bp3) {
+      padding: 0.75em 1em;
     }
   }
 
   .section-nav {
     background-color: $trust-ltst;
     border-radius: 5px;
-    font-size: 1.25em;
     line-height: 1em;
     font-weight: 700;
 
-    &:first-child li:hover {
-      background-color: rgba($white, 0.5);
+    @include breakpoint($bp3) {
+      font-size: 1.25em;
+    }
+
+    > .section-menu > .section-menu__item:hover {
       border-left: 5px solid $trust-aa;
+    }
+
+    .section-menu__item:hover {
+      background-color: rgba($white, 0.5);
     }
   }
 
@@ -79,7 +93,7 @@
       height: 100%;
       position: relative !important;
 
-      &::after {
+      &::before {
         content: "+";
         color: $primary-dark;
         position: absolute;
