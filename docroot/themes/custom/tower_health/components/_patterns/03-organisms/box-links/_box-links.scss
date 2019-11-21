@@ -19,11 +19,26 @@
   .box-link {
     width: 100%;
     margin: 5px;
-    height: 400px;
+    height: 450px;
     position: relative;
 
     @include breakpoint($bp3) {
       width: calc(50% - 10px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      border-top: 6px solid $trust;
+      border-radius: 3px;
+      left: 0;
+      bottom: 2em;
+      width: calc((100vw - 5em) * 0.80);
+
+      @include breakpoint($bp3) {
+        width: calc(((100vw - 5em) / 2) * 0.70);
+      }
     }
 
     > div {
@@ -34,34 +49,52 @@
       right: 0;
       background-repeat: no-repeat;
       background-size: cover;
+
+      > h3 {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        color: $white;
+        max-width: calc(85% - 1em);
+        display: block;
+      }
     }
 
-    h3 {
+    .box-link--hover {
       color: $white;
-      position: absolute;
-      bottom: 1em;
-      left: 0;
-      max-width: 85%;
+      padding: 5em 15% 2em 2em;
+      background-color: rgba($primary-dark, 0.5);
+      display: none;
+      height: 100%;
 
-      span {
-        padding-left: 1em;
+      p {
+        color: $white;
+      }
+
+      .box-link__text {
+        color: $growth-med;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        position: absolute;
+        right: 20%;
+        bottom: 3em;
+      }
+    }
+
+    &:hover {
+
+      &::after {
+        border-color: $growth;
+      }
+
+      .box-link--hover {
         display: block;
-        position: relative;
+      }
 
-        &::after {
-          content: '';
-          position: absolute;
-          height: 1px;
-          border-top: 6px solid $trust;
-          border-radius: 3px;
-          left: 0;
-          bottom: -0.5em;
-          width: calc((100vw - 5em) * 0.80);
-
-          @include breakpoint($bp3) {
-            width: calc(((100vw - 5em) / 2) * 0.80);
-          }
-        }
+      > div > h3 {
+        display: none;
       }
     }
   }
