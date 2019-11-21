@@ -19,7 +19,6 @@
       margin-bottom: 0;
       width: calc(100% - 225px);
     }
-
   }
 
   label {
@@ -42,7 +41,7 @@
     align-items: center;
 
     @include breakpoint($bp2) {
-      width: auto;
+      width: 230px;
       margin-left: 2em;
     }
   }
