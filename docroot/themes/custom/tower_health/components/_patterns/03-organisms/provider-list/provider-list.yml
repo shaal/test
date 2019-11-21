@@ -2,10 +2,11 @@ providers:
   - img:
       src: "https://www.placeimg.com/500/500/any"
       alt: "Alternative Text"
-    button:
-      href: "/"
-      src: ""
-      alt: "Alternative Text"
+    classes: "growth bottom-right"
+    link:
+      url: "/"
+      text: "Request an Appointment"
+      icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: "Oral and Maxillofacial Surgery"
@@ -15,10 +16,11 @@ providers:
   - img:
       src: "https://www.placeimg.com/500/500/any"
       alt: "Alternative Text"
-    button:
-      href: "/"
-      src: ""
-      alt: "Alternative Text"
+    classes: "growth bottom-right"
+    link:
+      url: "/"
+      text: "Request an Appointment"
+      icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
       specialties: "Pediatrics"
@@ -28,10 +30,11 @@ providers:
   - img:
       src: "https://www.placeimg.com/500/500/any"
       alt: "Alternative Text"
-    button:
-      href: "/"
-      src: ""
-      alt: "Alternative Text"
+    classes: "growth bottom-right"
+    link:
+      url: "/"
+      text: "Request an Appointment"
+      icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
       specialties: "Plastic Surgery"

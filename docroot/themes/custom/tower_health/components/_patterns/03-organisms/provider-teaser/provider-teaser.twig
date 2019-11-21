@@ -1,23 +1,33 @@
-<div class="provider-teaser">
+<div class="teaser">
   <div class="provider-teaser__image">
     {% if provider.img %}
-      <img src="{{ provider.img.src }}" alt="{{ provider.img.alt }}" />
+      {% include "@molecules/image-background/image-background.twig" with {
+        "img.src": provider.img.src,
+        "img.alt": provider.img.alt,
+        "classes": provider.classes,
+      } %}
     {% endif %}
   </div>
-  <div class="provider-teaser__content">
-    {{ provider.details.name }}
+  <span class="provider-teaser__content__name">{{ provider.details.name }}</span>
+  <div class="teaser__content">
     <div>
-      {{ provider.details.specialies }}
+      <span class="teaser-label">Specialties</span>
+      {{ provider.details.specialties }}
+      <span class="teaser-label">Clinical Areas of Focus</span>
       {{ provider.details.focus }}
     </div>
     <div>
+      <span class="teaser-label">Location</span>
       {{ provider.details.location }}
+      <span class="teaser-label">Languages</span>
       {{ provider.details.language }}
     </div>
-  </div>
-  <div class="provider-teaser__extras">
-    {% include "@molecules/appointment-button/appointment-button.twig" with {
-        "button": button,
+    <div class="teaser__button">
+      {% include "@atoms/icon-button/icon-button.twig" with {
+        "url": provider.link.url,
+        "icon": provider.link.icon,
+        "text": provider.link.text,
       } %}
+    </div>
   </div>
 </div>

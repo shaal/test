@@ -5,8 +5,8 @@
       breadcrumb: header.breadcrumb
     } %}
     {% endif %}
-    
-    <div class='basic-header__content'>
+
+    <div class='basic-header__content {% if header.class %}{{ class }}{% endif %}'>
       {% include "@atoms/02-text/00-headings/_heading.twig" with {
         "heading_level": 1,
         "heading": header.title,

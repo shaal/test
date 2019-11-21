@@ -46,4 +46,15 @@
       margin-top: 10px;
     }
   }
+
+  &.bottom-right {
+    padding-bottom: 10px;
+    padding-top: 0;
+    margin-bottom: 10px;
+
+    .image::before {
+      margin-right: -20px;
+      margin-top: 10px;
+    }
+  }
 }

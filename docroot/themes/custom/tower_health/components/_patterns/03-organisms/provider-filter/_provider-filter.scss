@@ -1,0 +1,108 @@
+.filter {
+  background-color: $trust-ltst;
+  padding: 2em;
+
+  @include breakpoint($bp5) {
+    margin-left: calc(100% - 1600px);
+    border-radius: 10px 0 0 10px;
+  }
+
+  .filter-grid-wrapper {
+    @include grid;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include breakpoint($bp2) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .filter__labels {
+    font-size: 0.8em;
+    width: 100%;
+    margin-bottom: 1em;
+
+    @include breakpoint($bp2) {
+      width: auto;
+    }
+
+    span {
+      font-size: 1.25em;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  .filter__filters {
+    width: 100%;
+
+    @include breakpoint($bp2) {
+      width: 80%;
+    }
+
+    .filter--top {
+
+      > div {
+
+        @include breakpoint($bp3) {
+          display: inline-block;
+          width: 19%;
+        }
+
+        label {
+          font-weight: 600;
+        }
+
+        select, input {
+          @extend %input;
+          height: 50px;
+          width: 100%;
+          border: 2px solid $primary-dark;
+          border-radius: 5px;
+
+          @include breakpoint($bp3) {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    .filter--bottom {
+
+      div {
+
+        @include breakpoint($bp4) {
+          display: inline-block;
+        }
+      }
+
+      label {
+        font-weight: 600;
+
+        @include breakpoint($bp4) {
+          display: inline-block;
+        }
+      }
+
+      input {
+        margin-right: 0.5em;
+
+        @include breakpoint($bp3) {
+          display: inline-block;
+          margin-left: 1em;
+        }
+
+        &:first-of-type {
+          margin-left: 0;
+
+          @include breakpoint($bp4) {
+            margin-left: 1em;
+          }
+        }
+      }
+    }
+  }
+}
