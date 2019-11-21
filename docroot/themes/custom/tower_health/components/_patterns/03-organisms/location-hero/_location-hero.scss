@@ -68,6 +68,22 @@
       }
     }
 
+    .breadcrumbs {
+      top: -10px;
+
+      @include breakpoint($bp2) {
+        top: -20px;
+      }
+
+      @include breakpoint($bp3) {
+        top: -200px;
+      }
+
+      @include breakpoint($bp5) {
+        top: -250px;
+      }
+    }
+
     .location-label {
       position: absolute;
       top: 2em;

@@ -1,5 +1,10 @@
 <div class="location-hero js-section-animation">
   <div class="location-hero__content {% if img %}image{% endif %}">
+    {% if breadcrumb %}
+      {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+        breadcrumb: breadcrumb
+      } %}
+    {% endif %}
     <div class="location-label">{{ type }}</div>
     <h1>{{ name }}</h1>
     <div class="location-details">
