@@ -1,0 +1,26 @@
+.listing-cta {
+  background-color: $primary-dark;
+  color: $white;
+  width: 70%;
+  padding: 3em;
+  padding-left: calc(((100% - 1500px)) + 2em);
+  position: relative;
+  top: 4em;
+
+  .listing-cta__title {
+    font-size: 3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+  }
+
+  .listing-cta__text {
+    width: 75%;
+  }
+
+  a {
+    position: absolute;
+    bottom: 3em;
+    right: -2em;
+  }
+}

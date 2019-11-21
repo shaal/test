@@ -17,6 +17,11 @@
         "providers": providers,
       } %}
     {% include "@molecules/pagination/pagination.twig" %}
+    {% include "@organisms/listing-cta/listing-cta.twig" with {
+        "title": cta.title,
+        "text": cta.text,
+        "link": cta.link
+      } %}
   {% endblock %}
 
 {% endembed %}
