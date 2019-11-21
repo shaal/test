@@ -1,4 +1,6 @@
 module:
+  acquia_connector: 0
+  acquia_search: 0
   address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
@@ -22,21 +24,34 @@ module:
   default_content: 0
   dynamic_page_cache: 0
   editor: 0
+  embed: 0
+  entity_browser: 0
+  entity_browser_entity_form: 0
+  entity_embed: 0
   entity_reference_revisions: 0
   facets: 0
+  facets_custom_label: 0
   field: 0
   field_group: 0
   field_ui: 0
   file: 0
   filter: 0
+  geocoder: 0
+  geocoder_address: 0
+  geocoder_field: 0
+  geofield: 0
+  geolocation: 0
   hal: 0
   help: 0
   image: 0
   inline_entity_form: 0
   link: 0
   media: 0
+  media_entity_browser: 0
+  media_entity_browser_media_library: 0
   media_library: 0
   menu_ui: 0
+  metatag: 0
   migrate: 0
   migrate_plus: 0
   migrate_source_csv: 0
@@ -54,7 +69,10 @@ module:
   redirect: 0
   rh_node: 0
   rh_taxonomy: 0
+  schema_metatag: 0
   search_api: 0
+  search_api_location: 0
+  search_api_location_geocoder: 0
   search_api_solr: 0
   serialization: 0
   shortcut: 0
@@ -66,8 +84,9 @@ module:
   toolbar: 0
   towerhealth_autocomplete: 0
   towerhealth_default_content: 0
-  towerhealth_migration: 0
+  towerhealth_misc: 0
   towerhealth_msow_migration: 0
+  towerhealth_rating_migration: 0
   unified_twig_ext: 0
   update: 0
   user: 0

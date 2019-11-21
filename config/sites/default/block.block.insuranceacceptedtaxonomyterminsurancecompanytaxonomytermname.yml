@@ -1,0 +1,29 @@
+uuid: 76dd87f9-2de7-4116-b319-f4f1f4d10b94
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.insurance_provider
+  module:
+    - facets
+    - system
+  theme:
+    - tower_health
+id: insuranceacceptedtaxonomyterminsurancecompanytaxonomytermname
+theme: tower_health
+region: content
+weight: 0
+provider: null
+plugin: 'facet_block:insurance_provider'
+settings:
+  id: 'facet_block:insurance_provider'
+  label: 'Insurance accepted'
+  provider: facets
+  label_display: visible
+  block_id: insuranceacceptedtaxonomyterminsurancecompanytaxonomytermname
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*"
+    negate: false
+    context_mapping: {  }

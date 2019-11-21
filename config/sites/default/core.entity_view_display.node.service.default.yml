@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.service.field_area_of_care_ref
     - field.field.node.service.field_body
-    - field.field.node.service.field_conditions_ref
+    - field.field.node.service.field_medical_specialties_ref
     - node.type.service
   module:
     - text
@@ -35,7 +35,7 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_conditions_ref:
+  field_medical_specialties_ref:
     weight: 103
     label: above
     settings:
@@ -49,4 +49,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_conditions_ref: true
   search_api_excerpt: true

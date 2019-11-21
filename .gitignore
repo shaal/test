@@ -17,6 +17,9 @@
 /docroot/themes/custom/*/js/
 /docroot/themes/custom/*/svg/
 /docroot/themes/custom/*/imgs/
+/docroot/themes/custom/*/dist/
+/docroot/themes/custom/tower_health/components/js/drupal.js
+/docroot/themes/custom/tower_health/components/js/jquery.min.js
 
 # Ignore yarn error log
 /docroot/themes/custom/*/yarn-error.log

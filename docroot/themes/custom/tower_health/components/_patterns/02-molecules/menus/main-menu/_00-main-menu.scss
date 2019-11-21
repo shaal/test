@@ -1,37 +1,68 @@
-// Menu Breakpoint
-$main-menu-medium: 43em;
-
 // Nav
-.main-nav {
+.main-nav__container {
   display: none;
-
-  @include breakpoint($main-menu-medium) {
-    display: block;
-  }
-
-  &--open {
+  
+  &.is-active {
     background-color: $white;
-    display: block;
-    height: 85%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     left: 0;
+    top: 100%;
     overflow-y: scroll;
-    position: fixed;
-    top: 134px;
+    position: absolute;
     right: 0;
     width: 100%;
+
+    @include breakpoint($bp3) {
+      display: block;
+      height: auto;
+      position: static;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    display: block;
+    z-index: 1;
+    position: static;
   }
 }
 
 // UL
-.main-menu {
+.main-menu:not(.main-menu--sub) {
   @include list-reset;
-
-  border-bottom: 1px solid;
+  border-bottom: 1px solid $trust-ltr;
   position: relative;
   z-index: 10;
 
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
+    display: flex;
     border-bottom: none;
+    border-top: 4px solid $growth;
+    margin-top: 1.5em;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      border-top: 4px solid $growth;
+      position: absolute;
+      top: -4px;
+      left: 100%;
+      right: -2em;
+    }
+  }
+  
+  @include breakpoint($bp4) {
+    margin-top: 0;
+    top: 3em;
+  }
+  
+  @include breakpoint($bp5) {
+    &::after {
+      right: calc(((100vw - 1500px) / -2 ) - 38px);
+    }
   }
 }
 
@@ -44,51 +75,156 @@ $main-menu-medium: 43em;
   border-bottom: none;
   height: 0;
   overflow: hidden;
-  background-color: $off-white;
+  visibility: hidden;
+  background-color: #edeff8;
   width: 100%;
 
-  @include breakpoint($main-menu-medium) {
-    background-color: $gray-light;
+  @include breakpoint($bp3) {
+    background-color: $white;
+    border-radius: 0 0 8px 8px;
     display: none;
+    visibility: hidden;
     height: auto;
-    left: 0;
-    overflow: visible;
-    padding: $space 0;
+    width: auto;
     position: absolute;
-    top: 55px;
-    width: 315px;
+    left: 0;
+    right: 0;
+    top: 100%;
+    overflow: visible;
+    padding: 1em;
+    margin-top: 0;
     z-index: 1;
-    font-size: 0.9rem;
-    opacity: 0.6;
+    box-shadow: 0 0 4px rgba($black, .25);
+  }
+  
+  @include breakpoint($bp4) {
+    padding: 2em;
   }
 
   &:hover {
-    @include breakpoint($main-menu-medium) {
+    @include breakpoint($bp3) {
       opacity: 1;
-      background-color: $black;
       transition: all 0.2s;
-
-      .main-menu__link--sub {
-        color: $gray-light;
-
-        &.active,
-        &:active,
-        &:hover {
-          color: $white;
-          background-color: $black;
-        }
-      }
     }
   }
 
   // See main-menu.js
-  &-open {
+  .main-menu__item--with-sub.is-active & {
     height: auto;
+    visibility: visible;
+    overflow: visible;
+    
+    @include breakpoint($bp3) {
+      visibility: visible;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+.main-menu__item--with-sub.is-active {
+  
+  @include breakpoint($bp3) {
+    > .main-menu__link--with-sub::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $primary-dark;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+    
+    &.main-menu__item--secondary > .main-menu__link--with-sub::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $trust-aa;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    } 
   }
 }
 
 .main-menu--sub-2 {
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
     display: none; // Never shown on large screens
+  }
+}
+
+.main-menu__item--form {
+  position: relative;
+  width: 100%;
+  
+  .link {
+    @include adjust-font-size-to($label, .9);
+    text-transform: uppercase;
+    font-weight: 600;
+    position:absolute;
+    right: 1em;
+    text-decoration: none;
+    
+    @include breakpoint($bp3) {
+      right: 0;
+    }
+  }
+}
+
+.main-menu__form {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  margin: 1em;
+  
+  .autocomplete-container {
+    width: 100%;
+    z-index: 10;
+    
+    label {
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+  }
+  
+  .autocomplete-search {
+    top: 84%;
+  }
+  
+  @include breakpoint($bp2) {
+    flex-direction: row;
+    align-items: flex-end;
+    
+    .autocomplete-container {
+      padding-right: .5em;
+    }
+    
+    .autocomplete-search {
+      top: 98%;
+      right: .5em;
+    }
+    
+    .form-autocomplete {
+      margin-bottom: 0;
+    }
+    
+    .button {
+      padding: 1.5em 1.5em;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    margin: 0 0 2em 0;
+    
+    .button {
+      padding: 1.6em 1.5em;
+    } 
   }
 }

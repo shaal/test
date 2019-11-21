@@ -1,36 +1,57 @@
 uuid: 7673e9bd-f45e-46f5-aca7-b2f255b6da9a
 langcode: en
-status: true
+status: false
 dependencies:
+  config:
+    - field.storage.node.field_services_ref
+    - field.storage.node.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.taxonomy_term.field_condition_synonym
+    - field.storage.node.field_profile_gender
+    - field.storage.node.field_insurance_ref
+    - field.storage.taxonomy_term.field_insurance_company
+    - field.storage.node.field_location_ref
+    - field.storage.node.field_location_type
+    - field.storage.node.field_profile_languages
+    - field.storage.node.field_profile_type
+    - search_api.server.local_development
+    - core.entity_view_mode.node.search_index
   module:
     - node
     - taxonomy
     - search_api_solr
     - search_api
-  config:
-    - field.storage.node.field_location_type
-    - field.storage.node.field_location_ref
-    - field.storage.node.field_medical_specialties_ref
-    - field.storage.taxonomy_term.field_related_conditions_ref
-    - field.storage.taxonomy_term.field_condition_synonym
-    - field.storage.node.field_services_ref
-    - field.storage.node.field_conditions_ref
-    - search_api.server.local_development
-    - core.entity_view_mode.node.search_index
 id: towerhealth
 name: TowerHealth
 description: ''
-read_only: false
+read_only: true
 field_settings:
-  location_services_condition_name:
-    label: 'Services » Content » Related Conditions » Taxonomy term » Name'
+  location_services_specialty_condition_name:
+    label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
     datasource_id: 'entity:node'
-    property_path: 'field_services_ref:entity:field_conditions_ref:entity:name'
+    property_path: 'field_services_ref:entity:field_medical_specialties_ref:entity:field_related_conditions_ref:entity:name'
     type: text
     dependencies:
       config:
         - field.storage.node.field_services_ref
-        - field.storage.node.field_conditions_ref
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+      module:
+        - node
+        - taxonomy
+        - taxonomy
+        - taxonomy
+  location_services_specialty_condition_synonym:
+    label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+        - field.storage.taxonomy_term.field_condition_synonym
       module:
         - node
         - taxonomy
@@ -39,7 +60,7 @@ field_settings:
     label: 'Services » Content » Title'
     datasource_id: 'entity:node'
     property_path: 'field_services_ref:entity:title'
-    type: text
+    type: solr_text_ngram
     dependencies:
       config:
         - field.storage.node.field_services_ref
@@ -57,7 +78,36 @@ field_settings:
       module:
         - node
         - node
-  location_title_string:
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: solr_text_ngram
+    dependencies:
+      module:
+        - taxonomy
+  profile_gender_string:
+    label: 'Gender » String'
+    datasource_id: 'entity:node'
+    property_path: field_profile_gender
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_gender
+  provider_insurance_groups_insurance_company_string:
+    label: 'Insurance accepted » Taxonomy term » Insurance Company » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_insurance_ref:entity:field_insurance_company:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_insurance_ref
+        - field.storage.taxonomy_term.field_insurance_company
+      module:
+        - taxonomy
+        - taxonomy
+        - taxonomy
+  provider_location_title_string:
     label: 'Location » Content » Title'
     datasource_id: 'entity:node'
     property_path: 'field_location_ref:entity:title'
@@ -68,7 +118,7 @@ field_settings:
       module:
         - node
         - node
-  location_type_string:
+  provider_location_type_string:
     label: 'Location Type » Taxonomy term » Name » String'
     datasource_id: 'entity:node'
     property_path: 'field_location_type:entity:name'
@@ -79,14 +129,22 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
-  name:
-    label: Name
-    datasource_id: 'entity:taxonomy_term'
-    property_path: name
-    type: solr_text_ngram
+  provider_profile_languages_string:
+    label: 'Languages » String'
+    datasource_id: 'entity:node'
+    property_path: field_profile_languages
+    type: string
     dependencies:
-      module:
-        - taxonomy
+      config:
+        - field.storage.node.field_profile_languages
+  provider_profile_type:
+    label: 'Provider Type'
+    datasource_id: 'entity:node'
+    property_path: field_profile_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_type
   provider_specialties_condition_name:
     label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -210,12 +268,17 @@ processor_settings:
   ignorecase:
     all_fields: true
     fields:
-      - location_services_condition_name
+      - location_services_specialty_condition_name
+      - location_services_specialty_condition_synonym
       - location_services_title
       - location_services_title_string
-      - location_title_string
-      - location_type_string
       - name
+      - profile_gender_string
+      - provider_insurance_groups_insurance_company_string
+      - provider_location_title_string
+      - provider_location_type_string
+      - provider_profile_languages_string
+      - provider_profile_type
       - provider_specialties_condition_name
       - provider_specialties_condition_synonym
       - provider_specialties_name
@@ -236,4 +299,5 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
+  overridden_by_acquia_search: 2
 server: local_development

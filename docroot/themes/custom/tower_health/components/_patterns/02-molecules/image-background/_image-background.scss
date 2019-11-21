@@ -1,0 +1,49 @@
+.image-background {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  padding-top: 10px;
+
+  img {
+    border-radius: 50%;
+  }
+
+  .image::before {
+    content: ' ';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -5;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.growth {
+    .image::before {
+      background-color: $growth;
+    }
+  }
+
+  &.trust {
+    .image::before {
+      background-color: $trust;
+    }
+  }
+
+  &.top-left {
+    .image::before {
+      margin-left: -20px;
+      margin-top: -10px;
+    }
+  }
+
+  &.bottom-left {
+    padding-bottom: 10px;
+    padding-top: 0;
+    margin-bottom: 10px;
+
+    .image::before {
+      margin-left: -20px;
+      margin-top: 10px;
+    }
+  }
+}

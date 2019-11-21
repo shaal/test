@@ -1,0 +1,6 @@
+drupal.towerhealth_misc.radio-widget:
+  version: VERSION
+  js:
+    js/radio-widget.js: {}
+  dependencies:
+    - facets/widget

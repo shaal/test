@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "devDependencies": {
     "emulsify-gulp": "^4.0.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-copy": "^4.0.1"
   },
   "scripts": {
-    "start": "gulp compile && gulp theme",
+    "start": "gulp copy_js && gulp compile && gulp theme",
     "build": "gulp build",
     "deploy": "gulp ghpages-deploy",
     "postinstall": "./scripts/pattern_lab.sh && ./scripts/twig_functions.sh"

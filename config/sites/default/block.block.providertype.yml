@@ -1,0 +1,29 @@
+uuid: 5bdc62e5-692d-431f-aac3-827cb618668a
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.provider_type
+  module:
+    - facets
+    - system
+  theme:
+    - tower_health
+id: providertype
+theme: tower_health
+region: content
+weight: 0
+provider: null
+plugin: 'facet_block:provider_type'
+settings:
+  id: 'facet_block:provider_type'
+  label: 'Provider Type'
+  provider: facets
+  label_display: visible
+  block_id: providertype
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*"
+    negate: false
+    context_mapping: {  }

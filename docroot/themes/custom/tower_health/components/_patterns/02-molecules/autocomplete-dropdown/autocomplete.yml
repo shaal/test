@@ -1,0 +1,34 @@
+autocomplete:
+  label: Find a Provider
+  input_class: 
+  type: find-provider
+  placeholder: Search by Name, Specialty, or Condition
+  id: edit-find-provider
+  path: some/path
+  results:
+    - label: Conditions
+      children:
+        - id: 11
+          name: Conjunctivitis
+    - label: Providers
+      children:
+        - id: 12
+          name: Monica Chung Kwan-consigli, Pa-c
+        - id: 13
+          name: Carolyn Riester O'connor, Md
+        - id: 14
+          name: Deborah Paul Consoli, Md
+        - id: 15
+          name: Constantine Francis Harris, Md
+        - id: 16
+          name: Kristie F Conrad, Pa-c
+        - id: 17
+          name: Kathryn Marie Conlow, Pa-c
+        - id: 14
+          name: Corina Condrea Sandru, Md
+        - id: 15
+          name: Connie Lynn Garrigan, Crna
+        - id: 16
+          name: Carolyn O'connor, Md
+        - id: 17
+          name: Ann Reynolds Connor, Md

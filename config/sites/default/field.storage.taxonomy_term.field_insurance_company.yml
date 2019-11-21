@@ -1,4 +1,4 @@
-uuid: 8490c1c2-b5b8-4cb2-a4ca-fd2df8b9bb5a
+uuid: 11c0e1af-051f-496a-b416-cf09869714fe
 langcode: en
 status: true
 dependencies:
@@ -7,14 +7,12 @@ dependencies:
 id: taxonomy_term.field_insurance_company
 field_name: field_insurance_company
 entity_type: taxonomy_term
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

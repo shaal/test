@@ -10,7 +10,7 @@ dependencies:
 id: specialties
 name: 'Medical Specialties » Taxonomy term » Name » String '
 url_alias: specialties
-weight: 0
+weight: -3
 min_count: 1
 show_only_one_result: true
 field_identifier: provider_specialties_name_string

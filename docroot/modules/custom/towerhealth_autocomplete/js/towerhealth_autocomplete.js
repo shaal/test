@@ -36,7 +36,8 @@
             return;
           }
           var $element = uiAutocomplete.menu.element;
-          $element.addClass('autocomplete-search');
+          // Temporarily remove autocomplete class to fix protoype conflict.
+          //$element.addClass('autocomplete-search');
 
           // Add labels to the dropdown
           uiAutocomplete._renderItem = function (ul, item) {
@@ -62,9 +63,9 @@
               return false;
             }
 
-            var ret = oldSelect.apply(this, arguments);
+            $(this).val(ui.item.value);
 
-            return ret;
+            $(this).parents('form').submit();
           };
         });
     }

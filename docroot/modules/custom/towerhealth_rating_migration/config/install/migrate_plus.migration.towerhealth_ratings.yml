@@ -1,0 +1,69 @@
+id: towerhealth_ratings
+label: Physician Ratings
+migration_group: towerhealth
+migration_tags:
+  - towerhealth
+
+dependencies:
+  enforced:
+    module:
+      - towerhealth_rating_migration
+
+destination:
+  plugin: node_paragraphs
+  lookup_field: field_profile_npi
+
+source:
+  plugin: provider_rating
+  key: default
+
+process:
+  field_profile_npi: field_profile_npi
+
+  nid:
+    -
+      plugin: towerhealth_lookup_node
+      lookup_field: field_profile_npi
+      source: field_profile_npi
+    -
+      plugin: skip_on_empty
+      method: row
+    -
+      plugin: entity_load_field
+      entity_type: node
+      field_name: nid
+    -
+      plugin: extract
+      index:
+        - 0
+        - value
+
+  title:
+    -
+      plugin: get
+      source: '@nid'
+    -
+      plugin: entity_load_field
+      entity_type: node
+      field_name: title
+    -
+      plugin: extract
+      index:
+        - 0
+        - value
+
+  field_rating_comments_ref:
+    plugin: towerhealth_rating_comments
+    source: comments
+
+  field_rating_count: total_rating_count
+
+  field_rating_comment_count: total_comment_count
+
+  field_rating_overall: overall_rating
+
+  type:
+    plugin: default_value
+    default_value: profile
+
+migration_dependencies: {  }

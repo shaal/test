@@ -1,0 +1,34 @@
+{% embed "@templates/_default.twig" with {
+  full_width: true
+} %}
+  {% block page_content %}
+    
+    {% include "@organisms/homepage-hero/homepage-hero.twig" with {
+      title_1: hero.title_1,
+      title_2: hero.title_2,
+      title_3: hero.title_3,
+      subtitle: hero.subtitle,
+      img: hero.img,
+      classes: hero.classes,
+      autocomplete: hero.autocomplete
+    } %}
+    
+    {% include "@organisms/cta-list-banner/cta-list-banner.twig" with {
+      title_1: cta_list.title_1,
+      title_2: cta_list.title_2,
+      title_3: cta_list.title_3,
+      subtitle: cta_list.subtitle,
+      links: cta_list.links
+    } %}
+    
+    {% include "@organisms/cta-banner/cta-banner.twig" with {
+      title_1: cta_banner.title_1,
+      title_2: cta_banner.title_2,
+      subtitle: cta_banner.subtitle,
+      img: cta_banner.img,
+      classes: cta_banner.classes,
+      button: cta_banner.button
+    } %}
+
+  {% endblock %}
+{% endembed %}

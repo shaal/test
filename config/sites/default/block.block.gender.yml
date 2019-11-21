@@ -1,0 +1,29 @@
+uuid: 1106b981-26fb-47e4-a516-12175c9f75f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.gender
+  module:
+    - facets
+    - system
+  theme:
+    - tower_health
+id: gender
+theme: tower_health
+region: content
+weight: -2
+provider: null
+plugin: 'facet_block:gender'
+settings:
+  id: 'facet_block:gender'
+  label: Gender
+  provider: facets
+  label_display: visible
+  block_id: gender
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*"
+    negate: false
+    context_mapping: {  }

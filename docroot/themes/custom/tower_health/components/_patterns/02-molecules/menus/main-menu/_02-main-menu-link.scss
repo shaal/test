@@ -1,50 +1,51 @@
 // A
 .main-menu__link {
-  color: $gray-dark;
   display: block;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  padding: $space $space-triple $space $space-double;
-  text-decoration: none;
-  font-weight: bold;
+  padding: rhythm(.5) 2em;
+  font-weight: 600;
+  line-height: 1.15;
+  font-size: .9em;
 
   &--with-sub {
-    width: 80%;
+    width: 90%;
   }
 
-  @include breakpoint($main-menu-medium) {
+  @include breakpoint($bp3) {
     border-bottom: none;
-    color: $gray-dark;
     display: inline-block;
-    font-size: 1.1rem;
-    padding: $space $space-double $space $space;
-    text-transform: none;
     position: relative;
     width: auto;
-
-    &.active,
-    &:active,
-    &:hover {
-      color: $gray-light;
+    padding: rhythm(.5) 0;
+    
+    &-open::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $primary-dark;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
     }
-
-    &::after {
-      color: $white;
-      display: inline-block;
-      content: ">";
+    
+    &--secondary.main-menu__link-open::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $trust-aa;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
     }
-
-    &--sub::after {
-      display: none;
-    }
-
-    &:hover {
-      color: $white;
-
-      &::after {
-        color: $gray-light;
-      }
-    }
+  }
+  
+  @include breakpoint(1300px) {
+    font-size: 1em;
   }
 }
 
@@ -53,21 +54,44 @@
 //
 // A (Nested)
 .main-menu__link--sub {
-  color: $gray-dark;
-  padding-left: $space-triple;
-  font-weight: normal;
+  display: block;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-weight: 300;
+  text-decoration: none;
 
-  @include breakpoint($main-menu-medium) {
-    color: $gray-light;
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+
+  @include breakpoint($bp3) {
     display: block;
-    padding: $space-one-third $space;
+    padding: .4em 0;
+    
+    &,
+    &:link,
+    &:visited {
+      border-top: 0;
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      border-top: 0;
+      
+      &::after {
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
 }
 
-.main-menu--sub-2 {
-  background-color: $gray-light;
-}
-
 .main-menu__link--sub-2 {
-  padding-left: $space-quadruple;
+  padding-left: 3em;
 }

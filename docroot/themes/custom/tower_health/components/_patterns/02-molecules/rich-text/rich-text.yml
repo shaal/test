@@ -1,0 +1,101 @@
+rich_text:
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "This is an Example of Rich Text."
+  -
+    paragraph_content:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  -
+    paragraph_content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
+  -
+    paragraph_content:
+      "Pellentesque vel ante sit amet odio cursus facilisis vehicula vel felis. In tempor nunc ipsum, ac tincidunt felis auctor et. Cras nisl dolor, aliquam a erat et, molestie facilisis magna. Quisque vel ex blandit, malesuada velit nec, feugiat ex. Ut tristique erat sed erat tempus, ac feugiat velit pulvinar. Pellentesque vehicula ultrices arcu, ac consequat ipsum eleifend vel. Etiam efficitur vestibulum ornare. Cras lacus libero, consequat non nulla non, semper feugiat mauris. Morbi ut lectus congue enim porttitor sodales. Ut ac ligula convallis, blandit dolor malesuada, elementum purus."
+  -
+    type: blockquote
+    blockquote_content:
+      "Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim."
+    blockquote_modifiers:
+      1:
+        left
+  -
+    paragraph_content:
+      "Aenean in ante maximus, pharetra velit at, rutrum leo. Ut a finibus erat. Nunc dui nibh, sodales eget metus eget, interdum ultricies massa. In sit amet lobortis nibh. Praesent vitae pulvinar ante, ac hendrerit ligula. In imperdiet vehicula est non eleifend. Sed euismod laoreet dolor, eget vehicula eros maximus et. Duis ac dui sit amet mi placerat malesuada."
+  -
+    paragraph_content:
+      "Maecenas vel sapien tellus. Nulla finibus vestibulum ante. Fusce porta tortor eget lacus congue tempor. Aliquam ut posuere lorem. Integer libero magna, efficitur quis bibendum at, placerat ut mi. Proin elit leo, viverra in facilisis sed, tincidunt vel arcu. Proin tincidunt tellus est, eget varius ex congue eget. Praesent mattis vel nibh vel gravida."
+  -
+    paragraph_content:
+      "Ut pulvinar faucibus mauris ac sollicitudin. Aenean enim dui, lacinia sed eleifend interdum, auctor et nunc. Mauris vulputate tortor non dui tempus, eu mattis sapien laoreet. Nulla condimentum, ex eu vestibulum auctor, massa libero porttitor quam, sed consectetur libero lectus eu tellus. Nunc non sodales magna. Aenean lacinia vehicula nibh, id imperdiet eros ultrices sit amet. Donec ullamcorper quam ac lectus rutrum, vel tristique turpis dapibus. Mauris placerat tellus sit amet lorem sagittis maximus non id augue. Nulla consequat vestibulum ipsum a laoreet. Donec viverra orci sit amet augue rutrum, eu elementum nunc sagittis. Suspendisse et arcu a felis molestie volutpat et sit amet augue. Nunc nec ante sed elit sodales euismod. Praesent porttitor massa in orci placerat, nec eleifend lacus tempus. Suspendisse aliquet tincidunt enim, nec convallis dui rutrum mollis."
+  -
+    paragraph_content:
+      "Pellentesque vel ante sit amet odio cursus facilisis vehicula vel felis. In tempor nunc ipsum, ac tincidunt felis auctor et. Cras nisl dolor, aliquam a erat et, molestie facilisis magna. Quisque vel ex blandit, malesuada velit nec, feugiat ex. Ut tristique erat sed erat tempus, ac feugiat velit pulvinar. Pellentesque vehicula ultrices arcu, ac consequat ipsum eleifend vel. Etiam efficitur vestibulum ornare. Cras lacus libero, consequat non nulla non, semper feugiat mauris. Morbi ut lectus congue enim porttitor sodales. Ut ac ligula convallis, blandit dolor malesuada, elementum purus."
+  
+  -
+    type: image
+    img_url: "#"
+    img_src: "https://placeimg.com/1200/200/tech"
+    img_alt: "This is the alt text"
+    img_caption: "This is an image caption."
+    output_image_tag: TRUE
+    image_figure_modifiers:
+      1:
+        inline
+      2: 
+        right
+  -
+    paragraph_content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
+  -
+    paragraph_content:
+      "Aenean in ante maximus, pharetra velit at, rutrum leo. Ut a finibus erat. Nunc dui nibh, sodales eget metus eget, interdum ultricies massa. In sit amet lobortis nibh. Praesent vitae pulvinar ante, ac hendrerit ligula. In imperdiet vehicula est non eleifend. Sed euismod laoreet dolor, eget vehicula eros maximus et. Duis ac dui sit amet mi placerat malesuada."
+  
+  -
+    type: video
+    video_content:
+      '<iframe width="560" height="315" title="Title Placeholder" src="https://www.youtube.com/embed/qyJZSTqRP_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  -
+    paragraph_content:
+      "Maecenas vel sapien tellus. Nulla finibus vestibulum ante. Fusce porta tortor eget lacus congue tempor. Aliquam ut posuere lorem. Integer libero magna, efficitur quis bibendum at, placerat ut mi. Proin elit leo, viverra in facilisis sed, tincidunt vel arcu. Proin tincidunt tellus est, eget varius ex congue eget. Praesent mattis vel nibh vel gravida."
+  -
+    type: table
+  -
+    paragraph_content:
+      "Ut pulvinar faucibus mauris ac sollicitudin. Aenean enim dui, lacinia sed eleifend interdum, auctor et nunc. Mauris vulputate tortor non dui tempus, eu mattis sapien laoreet. Nulla condimentum, ex eu vestibulum auctor, massa libero porttitor quam, sed consectetur libero lectus eu tellus. Nunc non sodales magna. Aenean lacinia vehicula nibh, id imperdiet eros ultrices sit amet. Donec ullamcorper quam ac lectus rutrum, vel tristique turpis dapibus. Mauris placerat tellus sit amet lorem sagittis maximus non id augue. Nulla consequat vestibulum ipsum a laoreet. Donec viverra orci sit amet augue rutrum, eu elementum nunc sagittis. Suspendisse et arcu a felis molestie volutpat et sit amet augue. Nunc nec ante sed elit sodales euismod. Praesent porttitor massa in orci placerat, nec eleifend lacus tempus. Suspendisse aliquet tincidunt enim, nec convallis dui rutrum mollis.Ut pulvinar faucibus mauris ac sollicitudin. Aenean enim dui, lacinia sed eleifend interdum, auctor et nunc. Mauris vulputate tortor non dui tempus, eu mattis sapien laoreet. Nulla condimentum, ex eu vestibulum auctor, massa libero porttitor quam, sed consectetur libero lectus eu tellus. Nunc non sodales magna. Aenean lacinia vehicula nibh, id imperdiet eros ultrices sit amet. Donec ullamcorper quam ac lectus rutrum, vel tristique turpis dapibus. Mauris placerat tellus sit amet lorem sagittis maximus non id augue. Nulla consequat vestibulum ipsum a laoreet. Donec viverra orci sit amet augue rutrum, eu elementum nunc sagittis. Suspendisse et arcu a felis molestie volutpat et sit amet augue. Nunc nec ante sed elit sodales euismod. Praesent porttitor massa in orci placerat, nec eleifend lacus tempus. Suspendisse aliquet tincidunt enim, nec convallis dui rutrum mollis."
+  -
+    type: ul
+    ul_items:
+      1:
+        content: "This is the first item in the <ul>."
+      2:
+        label: "This is the optional label"
+        content: "And here is the item that goes with the label."
+      3:
+        content: "Here's the third item."
+      4:
+        content: "And here's the last item."
+  - 
+    type: ol
+    ol_items:
+      1:
+        content: "This is the first item in the <ol>."
+      2:
+        label: "This is the optional label"
+        content: "And here is the item that goes with the label."
+      3:
+        content: "Here's the third item."
+      4:
+        content: "And here's the last item."
+  -
+    paragraph_content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
+  -
+    paragraph_content:
+      "Pellentesque vel ante sit amet odio cursus facilisis vehicula vel felis. In tempor nunc ipsum, ac tincidunt felis auctor et. Cras nisl dolor, aliquam a erat et, molestie facilisis magna. Quisque vel ex blandit, malesuada velit nec, feugiat ex. Ut tristique erat sed erat tempus, ac feugiat velit pulvinar. Pellentesque vehicula ultrices arcu, ac consequat ipsum eleifend vel. Etiam efficitur vestibulum ornare. Cras lacus libero, consequat non nulla non, semper feugiat mauris. Morbi ut lectus congue enim porttitor sodales. Ut ac ligula convallis, blandit dolor malesuada, elementum purus."
+  -
+    paragraph_content:
+      "Maecenas vel sapien tellus. Nulla finibus vestibulum ante. Fusce porta tortor eget lacus congue tempor. Aliquam ut posuere lorem. Integer libero magna, efficitur quis bibendum at, placerat ut mi. Proin elit leo, viverra in facilisis sed, tincidunt vel arcu. Proin tincidunt tellus est, eget varius ex congue eget. Praesent mattis vel nibh vel gravida."
+  

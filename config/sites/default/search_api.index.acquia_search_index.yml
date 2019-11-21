@@ -1,0 +1,312 @@
+uuid: a58cdf1d-1937-403f-b3dd-fb62220d590b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_services_ref
+    - field.storage.node.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.taxonomy_term.field_condition_synonym
+    - field.storage.node.field_location_type
+    - field.storage.node.field_profile_gender
+    - field.storage.node.field_insurance_ref
+    - field.storage.taxonomy_term.field_insurance_company
+    - field.storage.node.field_location_ref
+    - field.storage.node.field_profile_languages
+    - field.storage.node.field_profile_type
+    - search_api.server.acquia_search_server
+    - core.entity_view_mode.node.search_index
+  module:
+    - node
+    - taxonomy
+    - search_api_solr
+    - search_api
+    - towerhealth_misc
+_core:
+  default_config_hash: '-ggwZpvT2-Ey1fqPkREitA6TGI_m5dTHD9vZm9FrlSQ'
+id: acquia_search_index
+name: 'Acquia Search Solr Index'
+description: ''
+read_only: true
+field_settings:
+  location_services_specialty_condition_name:
+    label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:field_medical_specialties_ref:entity:field_related_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+      module:
+        - node
+        - taxonomy
+        - taxonomy
+        - taxonomy
+  location_services_specialty_condition_synonym:
+    label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+        - field.storage.taxonomy_term.field_condition_synonym
+      module:
+        - node
+        - taxonomy
+        - taxonomy
+  location_services_title:
+    label: 'Services » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:title'
+    type: solr_text_ngram
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+      module:
+        - node
+        - node
+  location_services_title_string:
+    label: 'Services » Content » Title » String'
+    datasource_id: 'entity:node'
+    property_path: 'field_services_ref:entity:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_services_ref
+      module:
+        - node
+        - node
+  location_type_string:
+    label: 'Location Type » Taxonomy term » Name » String'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_type
+      module:
+        - taxonomy
+        - taxonomy
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: solr_text_ngram
+    dependencies:
+      module:
+        - taxonomy
+  profile_gender_string:
+    label: 'Gender » String'
+    datasource_id: 'entity:node'
+    property_path: field_profile_gender
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_gender
+  provider_insurance_groups_insurance_company_string:
+    label: 'Insurance accepted » Taxonomy term » Insurance Company » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_insurance_ref:entity:field_insurance_company:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_insurance_ref
+        - field.storage.taxonomy_term.field_insurance_company
+      module:
+        - taxonomy
+        - taxonomy
+        - taxonomy
+  provider_location_title_string:
+    label: 'Location » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_ref:entity:title'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_ref
+      module:
+        - node
+        - node
+  provider_profile_languages_string:
+    label: 'Languages » String'
+    datasource_id: 'entity:node'
+    property_path: field_profile_languages
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_languages
+  provider_profile_type:
+    label: 'Provider Type'
+    datasource_id: 'entity:node'
+    property_path: field_profile_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_type
+  provider_sort_field:
+    label: 'Provider Sort Field'
+    property_path: provider_sort_field
+    type: string
+  provider_specialties_condition_name:
+    label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+      module:
+        - taxonomy
+        - taxonomy
+        - taxonomy
+  provider_specialties_condition_synonym:
+    label: 'Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms'
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+        - field.storage.taxonomy_term.field_related_conditions_ref
+        - field.storage.taxonomy_term.field_condition_synonym
+      module:
+        - taxonomy
+        - taxonomy
+  provider_specialties_name:
+    label: 'Medical Specialties » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+      module:
+        - taxonomy
+        - taxonomy
+  provider_specialties_name_string:
+    label: 'Medical Specialties » Taxonomy term » Name » String '
+    datasource_id: 'entity:node'
+    property_path: 'field_medical_specialties_ref:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_medical_specialties_ref
+      module:
+        - taxonomy
+        - taxonomy
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          location: search_index
+          page: search_index
+          profile: search_index
+          program: search_index
+          service: search_index
+        'entity:taxonomy_term':
+          areas_of_care: ''
+          condition: ''
+          medical_specialty: ''
+  synonym:
+    label: Synonyms
+    datasource_id: 'entity:taxonomy_term'
+    property_path: field_condition_synonym
+    type: solr_text_ngram
+    dependencies:
+      config:
+        - field.storage.taxonomy_term.field_condition_synonym
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: solr_text_ngram
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  vid:
+    label: Vocabulary
+    datasource_id: 'entity:taxonomy_term'
+    property_path: vid
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected:
+        - areas_of_care
+        - program_type
+        - region
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  ignorecase:
+    all_fields: true
+    fields:
+      - location_services_specialty_condition_name
+      - location_services_specialty_condition_synonym
+      - location_services_title
+      - location_services_title_string
+      - location_type_string
+      - name
+      - profile_gender_string
+      - provider_insurance_groups_insurance_company_string
+      - provider_location_title_string
+      - provider_profile_languages_string
+      - provider_profile_type
+      - provider_sort_field
+      - provider_specialties_condition_name
+      - provider_specialties_condition_synonym
+      - provider_specialties_name
+      - provider_specialties_name_string
+      - rendered_item
+      - synonym
+      - title
+      - type
+      - vid
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  provider_sort_field: {  }
+  rendered_item: {  }
+  reverse_entity_references: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+  overridden_by_acquia_search: 2
+server: acquia_search_server

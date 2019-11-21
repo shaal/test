@@ -37,11 +37,13 @@
 
         <!-- Create the public files directory and make it world writable. -->
         <mkdir dir="${drupal.root}/${drupal.site.settings.file_public_path}" />
-        <chmod file="${drupal.root}/${drupal.site.settings.file_public_path}" mode="744" />
+        <chmod file="${drupal.root}/${drupal.site.settings.file_public_path}" mode="755" />
 
         <!-- Create the private files directory and make it private. -->
         <mkdir dir="${drupal.root}/${drupal.site.settings.file_private_path}" />
         <chmod file="${drupal.root}/${drupal.site.settings.file_private_path}" mode="640" />
+
+        <chmod file="${theme.root}" mode="755" />
 
         <!-- Copy the settings.build.php and services.build.php templates into place. -->
         <copy todir="${build.dir}" overwrite="true" mode="544">
@@ -76,7 +78,41 @@
          Builds the styleguide
          -->
     <target name="build-styleguide">
-        <exec command="yarn build" dir="${styleguide.root}" />
+        <copy file="${drupal.root}/core/misc/drupal.js" tofile="${theme.root}/components/js/drupal.js" overwrite="true" mode="755"/>
+        <copy file="${drupal.root}/core/assets/vendor/jquery/jquery.min.js" tofile="${theme.root}/components/js/jquery.min.js" overwrite="true" mode="755"/>
+
+        <!-- If we're building for an artifact, ensure we're building a fresh copy.
+             There's no other way do do this until https://github.com/yarnpkg/yarn/issues/5271 is resolved. -->
+        <if>
+            <equals arg1="${build.env}" arg2="acquia"/>
+            <then>
+                <echo message="Removing ${theme.root}/node_modules for reinstall." />
+                <exec dir="${theme.root}" command="rm -rf node_modules" passthru="true" checkreturn="true"/>
+            </then>
+        </if>
+        <if>
+            <not><available file="${theme.root}/node_modules/.yarn-integrity" type="file" /></not>
+            <then>
+                <echo message="${theme.root}/node_modules/.yarn-integrity doesn't exist, so run yarn install." />
+                <exec command="composer install --no-interaction --no-scripts --optimize-autoloader --prefer-dist" dir="${theme.root}" />
+                <chmod file="${theme.root}/scripts/twig_functions.sh" mode="755" />
+                <chmod file="${theme.root}/scripts/pattern_lab.sh" mode="755" />
+                <exec dir="${theme.root}" command="yarn install" passthru="true" checkreturn="true"/>
+            </then>
+            <else>
+                <echo message="${theme.root}/node_modules/.yarn-integrity exists so tt looks like you've already installed yarn. Cool beans." />
+            </else>
+        </if>
+        <if>
+            <not><available file="${theme.root}/dist/style.css" type="file" /></not>
+            <then>
+                <echo message="${theme.root}/dist/styles.css doesn't exist, so build the styleguide assets." />
+                <exec dir="${theme.root}" command="yarn build" passthru="true" checkreturn="true"/>
+            </then>
+            <else>
+                <echo message="${theme.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
+            </else>
+        </if>
     </target>
 
 

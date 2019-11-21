@@ -6,6 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\views\Views;
+use Drupal\core\Url;
 
 /**
  * Defines a route controller for watches autocomplete form elements.
@@ -19,10 +20,17 @@ class FindCareController extends ControllerBase {
   protected $nodeStorage;
 
   /**
+   * Query paramater.
+   *
+   * @var string
+   */
+  public $queryParam = '';
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager) {
-    $this->nodeStroage = $entity_type_manager->getStorage('node');
+    $this->nodeStorage = $entity_type_manager->getStorage('node');
   }
 
   /**
@@ -48,14 +56,19 @@ class FindCareController extends ControllerBase {
    *   The existing results.
    * @param string $field
    *   The search field to pull from the result item.
+   * @param string $route
+   *   The route for the search page.
+   * @param string $facet
+   *   The machine name of the facet.
    *
    * @return array
    *   Array of suggested items.
    */
-  public function taxonomySuggestedTerms($view_id, $input, $label, array $results, $field) {
+  public function taxonomySuggestedTerms($view_id, $input, $label, array $results, $field, $route, $facet) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
+
     // Pass any input.
     $view->setExposedInput(['name' => $input]);
 
@@ -83,14 +96,26 @@ class FindCareController extends ControllerBase {
 
       $values = $data->_item->getField($field)->getValues();
       foreach ($values as $value) {
-        $text = $value->toText();
+        if (is_object($value)) {
+          $text = $value->toText();
+        }
+        else {
+          $text = $value;
+        }
+
+        $url = $this->facetUrl($route, $facet, $value);
 
         // Confirm that this field matches the input.
         if (strpos(strtolower($text), strtolower($input)) !== FALSE && $this->duplicateValue($text, $new_results) === FALSE) {
-          $new_results[] = [
+          $text = ucwords($text);
+
+          $result = [
             'value' => $text,
             'label' => $text,
+            'url' => $url,
           ];
+
+          $new_results[] = $result;
         }
       }
     }
@@ -112,11 +137,17 @@ class FindCareController extends ControllerBase {
    *   The label to group this set of results.
    * @param array $results
    *   The existing results.
+   * @param string $route
+   *   The route for the search page.
+   * @param string $facet
+   *   The machine name of the facet.
+   * @param bool $redirect_url
+   *   Redirect to the node or return the plain result.
    *
    * @return array
    *   Array of suggested items.
    */
-  public function nodeSuggestedTerms($view_id, $input, $label, array $results) {
+  public function nodeSuggestedTerms($view_id, $input, $label, array $results, $route, $facet, $redirect_url = TRUE) {
 
     // Firstly, get the view in question.
     $view = Views::getView($view_id);
@@ -143,15 +174,28 @@ class FindCareController extends ControllerBase {
       $entity = $data->_object->getEntity();
 
       if ($entity instanceof EntityInterface) {
-        $url = $entity->toUrl();
-
         $values = $data->_item->getField('title')->getValues();
-        $node_title = reset($values)->toText();
+
+        $value = reset($values);
+
+        $url = $this->facetUrl($route, $facet, $value);
+
+        if ($redirect_url === TRUE) {
+          $url_object = $entity->toUrl();
+          $url = $url_object->toString();
+        }
+
+        if (is_object($value)) {
+          $node_title = ucwords(reset($values)->toText());
+        }
+        else {
+          $node_title = ucwords($value);
+        }
 
         $results[] = [
           'value' => $node_title,
           'lbael' => $node_title,
-          'url' => $url->toString(),
+          'url' => $url,
         ];
       }
     }
@@ -172,12 +216,39 @@ class FindCareController extends ControllerBase {
    */
   private function duplicateValue($value, array $array) {
     $value = strtolower($value);
+
     foreach ($array as $item) {
       if (array_key_exists('value', $item) && strtolower($item['value']) === $value) {
         return TRUE;
       }
     }
+
     return FALSE;
+  }
+
+  /**
+   * Creates a url to search page with facet query.
+   *
+   * @param string $route
+   *   The route for the search page.
+   * @param string $facet
+   *   The machine name of the facet.
+   * @param string $value
+   *   The autocomplete value.
+   *
+   * @return \Drupal\Core\GeneratedUrl|string
+   *   Empty string or the full URL to the search page with facet query.
+   */
+  private function facetUrl($route, $facet, $value) {
+    $query_param = $this->queryParam;
+
+    $url = '';
+    if ($route && $facet && $value) {
+      $query = $facet . ':' . $value;
+      $url = Url::fromRoute($route, [], ['attributes' => ['rel' => 'nofollow'], 'query' => [$query_param => [$query]]])->toString();
+    }
+
+    return $url;
   }
 
 }

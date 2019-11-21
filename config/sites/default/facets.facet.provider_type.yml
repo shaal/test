@@ -1,0 +1,75 @@
+uuid: 028f823d-833e-4d70-b96c-5832fb3bf47e
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.acquia_search_index
+    - views.view.find_a_provider
+  module:
+    - search_api
+id: provider_type
+name: 'Provider Type'
+url_alias: provider_type
+weight: 2
+min_count: 1
+show_only_one_result: true
+field_identifier: provider_profile_type
+facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
+widget:
+  type: radio_widget
+  config:
+    show_numbers: false
+    soft_limit: '0'
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+    show_reset_link: 1
+    reset_text: 'All Providers'
+    hide_reset_when_no_selection: 0
+query_operator: or
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: 30
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  exclude_specified_items:
+    processor_id: exclude_specified_items
+    weights:
+      build: 50
+    settings:
+      exclude: 'independent, contracted'
+      regex: false
+  facets_custom_label:
+    processor_id: facets_custom_label
+    weights:
+      build: 50
+    settings:
+      replacement_values: "r|tower_health_employed|Physicians Only\r\nr|app_employed|Advanced Practitioners Only"
+  list_item:
+    processor_id: list_item
+    weights:
+      build: 5
+    settings: {  }
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false

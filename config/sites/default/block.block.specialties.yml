@@ -6,12 +6,13 @@ dependencies:
     - facets.facet.specialties
   module:
     - facets
+    - system
   theme:
     - tower_health
 id: specialties
 theme: tower_health
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: 'facet_block:specialties'
 settings:
@@ -20,4 +21,9 @@ settings:
   provider: facets
   label_display: visible
   block_id: specialties
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*"
+    negate: false
+    context_mapping: {  }
