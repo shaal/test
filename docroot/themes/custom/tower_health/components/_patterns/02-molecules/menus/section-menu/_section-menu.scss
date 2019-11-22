@@ -32,6 +32,11 @@
       bottom: 10%;
       z-index: -5;
     }
+
+    @include breakpoint("1350px") {
+      width: calc(100% + ((100vw - 1350px) / 2) - 2em);
+      right: calc(-1 * ((100vw - 1350px) / 2) - 2em);
+    }
   }
 
   ul {
