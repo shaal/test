@@ -9,13 +9,13 @@
         breadcrumb: header.breadcrumb,
         class: header.class,
       } %}
-      {% include "@organisms/search/provider-search/provider-search.twig" %}
-      {% include "@organisms/search/provider-filter/provider-filter.twig" %}
+      {% include "@organisms/search/location-search/location-search.twig" %}
+      {% include "@organisms/search/location-filter/location-filter.twig" %}
     </div>
   {% endblock %}
 
   {% block page_content %}
-    {% include "@organisms/listings/provider-list/provider-list.twig" with {
+    {% include "@organisms/listings/location-list/location-list.twig" with {
         "providers": providers,
       } %}
     {% include "@molecules/pagination/pagination.twig" %}
