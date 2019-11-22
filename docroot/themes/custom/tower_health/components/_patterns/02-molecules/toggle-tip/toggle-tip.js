@@ -43,7 +43,8 @@
       mouseleave : handleFocusOut,
       focusin    : handleFocusIn,
       focusout   : handleFocusOut,
-      touchstart : handleClick
+      touchstart : handleClick,
+      click : handleClick
     });
   
 
