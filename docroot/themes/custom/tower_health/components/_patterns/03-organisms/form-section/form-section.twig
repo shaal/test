@@ -13,7 +13,10 @@
         title: item.title
       }%}
       {% if item.info %}
-        {# Replace this with Info Bubble Component. #}
+        {% include "@molecules/toggle-tip/toggle-tip.twig"  with {
+          info: item.info,
+          info_id: item.info_id
+        }%}
       {% endif %}
       {% if item.type == 'radio' %}
         <ul class="form-item--radios {% if item.orientation == 'inline' %}form-item--inline {% endif %}">

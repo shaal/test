@@ -39,7 +39,8 @@ form_sections:
         width: oneThird
         title: Gender
         type: select
-        info: Lorem ipsum dolor set amet.
+        info: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        info_id: gender_info
         children:
           - title: Choose an Option
             attributes: selected disabled
@@ -96,7 +97,8 @@ form_sections:
       - 
         width: half
         title: Preferred Appointment Date
-        info: Lorem ipsum dolor set amet.
+        info: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        info_id: date_info
         type: date
         optional: true
       - 
@@ -134,6 +136,7 @@ form_sections:
         width: full
         title: 'Preferred Appointment Days'
         info: 'In case your preferred date is unavailable, help us understand other dates that you may be available.'
+        info_id: day_info
         type: checkbox
         orientation: inline
         id: day
