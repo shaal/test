@@ -11,3 +11,19 @@
     margin-bottom: 0;
   }
 }
+
+// Animations
+
+.cssanimations {
+
+  // default states
+  .header__wrapper {
+    opacity: 0;
+  }
+
+  // animating in
+  .in-view.header__wrapper {
+    animation: fadeInUp .25s ease-in-out .35s forwards;
+    opacity: 1;
+  }
+}

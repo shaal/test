@@ -75,3 +75,19 @@
     }
   }
 }
+
+// Animations
+
+.cssanimations {
+
+  // default states
+  .teaser {
+    opacity: 0;
+  }
+
+  // animating in
+  .in-view.teaser {
+    animation: fadeInUp .25s ease-in-out .35s forwards;
+    opacity: 1;
+  }
+}

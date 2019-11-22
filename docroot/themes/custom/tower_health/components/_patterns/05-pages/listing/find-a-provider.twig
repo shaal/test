@@ -4,15 +4,17 @@
 }%}
 
   {% block page_header %}
-    {% include "@organisms/basic-header/basic-header.twig" with {
-      breadcrumb: header.breadcrumb,
-      class: header.class,
-    } %}
+    <div class="header__wrapper js-section-animation">
+      {% include "@organisms/basic-header/basic-header.twig" with {
+        breadcrumb: header.breadcrumb,
+        class: header.class,
+      } %}
+      {% include "@organisms/provider-search/provider-search.twig" %}
+      {% include "@organisms/provider-filter/provider-filter.twig" %}
+    </div>
   {% endblock %}
 
   {% block page_content %}
-    {% include "@organisms/provider-search/provider-search.twig" %}
-    {% include "@organisms/provider-filter/provider-filter.twig" %}
     {% include "@organisms/provider-list/provider-list.twig" with {
         "providers": providers,
       } %}
