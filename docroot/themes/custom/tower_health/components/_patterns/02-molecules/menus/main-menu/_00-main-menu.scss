@@ -54,14 +54,14 @@
     }
   }
   
-  @include breakpoint($bp4) {
+  @include breakpoint($nav-breakpoint) {
     margin-top: 0;
-    top: 3em;
+    top: 2.25em;
   }
   
   @include breakpoint($bp5) {
     &::after {
-      right: calc(((100vw - 1500px) / -2 ) - 38px);
+      right: calc(((100vw - 1350px) / -2 ) - 1.5em);
     }
   }
 }
@@ -80,7 +80,8 @@
   width: 100%;
 
   @include breakpoint($bp3) {
-    background-color: #edeff8;
+    background-color: $white;
+    border-radius: 0 0 8px 8px;
     display: none;
     visibility: hidden;
     height: auto;
@@ -93,7 +94,11 @@
     padding: 1em;
     margin-top: 0;
     z-index: 1;
-    column-count: 2;
+    box-shadow: 0 0 4px rgba($black, .25);
+  }
+  
+  @include breakpoint($bp4) {
+    padding: 2em;
   }
 
   &:hover {
@@ -107,16 +112,119 @@
   .main-menu__item--with-sub.is-active & {
     height: auto;
     visibility: visible;
+    overflow: visible;
     
     @include breakpoint($bp3) {
       visibility: visible;
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
+  }
+}
+
+.main-menu__item--with-sub.is-active {
+  
+  @include breakpoint($bp3) {
+    > .main-menu__link--with-sub::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $primary-dark;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+    
+    &.main-menu__item--secondary > .main-menu__link--with-sub::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      left: calc(50% - 4px);
+      border: 8px solid $trust-aa;
+      border-top-color: transparent;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    } 
   }
 }
 
 .main-menu--sub-2 {
   @include breakpoint($bp3) {
     display: none; // Never shown on large screens
+  }
+}
+
+.main-menu__item--form {
+  position: relative;
+  width: 100%;
+  
+  .link {
+    @include adjust-font-size-to($label, .9);
+    text-transform: uppercase;
+    font-weight: 600;
+    position:absolute;
+    right: 1em;
+    text-decoration: none;
+    
+    @include breakpoint($bp3) {
+      right: 0;
+    }
+  }
+}
+
+.main-menu__form {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  margin: 1em;
+  
+  .autocomplete-container {
+    width: 100%;
+    z-index: 10;
+    
+    label {
+      font-weight: 600;
+      margin-bottom: 1em;
+    }
+  }
+  
+  .autocomplete-search {
+    top: 84%;
+  }
+  
+  @include breakpoint($bp2) {
+    flex-direction: row;
+    align-items: flex-end;
+    
+    .autocomplete-container {
+      padding-right: .5em;
+    }
+    
+    .autocomplete-search {
+      top: 98%;
+      right: .5em;
+    }
+    
+    .form-autocomplete {
+      margin-bottom: 0;
+    }
+    
+    .button {
+      padding: 1.5em 1.5em;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    margin: 0 0 2em 0;
+    
+    .button {
+      padding: 1.6em 1.5em;
+    } 
   }
 }

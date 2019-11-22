@@ -23,6 +23,8 @@
   var searchToggle = $('#search-toggle');
   // search wrapper
   var search = $('.header__search');
+  // search drawer
+  var searchDrawer = $('#search-drawer');
   
   var menu_toggle = $('#toggle-expand');
   var menu_drawer = $('.main-nav__container');
@@ -30,18 +32,24 @@
   function closeNav() {
     menu_drawer.removeClass('is-active');
     menu_toggle.removeClass('is-active');
+    
+    if ( $(window).width() < 900 ) {
+      menu_drawer.attr("aria-expanded", "false");
+    }
   }
   
   // Hide or show Search
   function openSearch() {
     search.addClass('is-active');
     searchToggle.addClass('is-active');
+    searchDrawer.attr("aria-expanded", "true");
     closeNav();
   }
   
   function closeSearch() {
     search.removeClass('is-active');
     searchToggle.removeClass('is-active');
+    searchDrawer.attr("aria-expanded", "false");
   }
 
   searchToggle.on('click', function() {
@@ -81,10 +89,10 @@
   
   // position search drawer at desktop
   $(window).on('resize load reload', function() {
-    if ( $(window).width() > 900 && $(window).width() < 1200 ) {
+    if ( $(window).width() > 900 && $(window).innerWidth() < 1025 ) {
       var $logo = $('.header-logo').innerHeight();
       $('.header__search-drawer').css('top', $logo);
-    } else if ( $(window).width() > 1200 ) {
+    } else if ( $(window).innerWidth() > 1025 ) {
       var $offset = $('.main-menu').offset();
       var $top = $offset.top + 'px';
       $('.header__search-drawer').css('top', $top);
