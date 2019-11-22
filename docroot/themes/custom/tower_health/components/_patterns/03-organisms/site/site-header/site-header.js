@@ -52,6 +52,55 @@
     searchDrawer.attr("aria-expanded", "false");
   }
 
+  searchToggle.on('click', function() {
+    if (search.hasClass('is-active')){
+      closeSearch();
+    } else {
+      openSearch();
+    }
+  });
+
+  // close overlay and menus if a user clicks esx
+  $(document).keydown(function(event) {
+    // close menu on esc press
+    if (event.keyCode == 27) {
+      closeSearch();
+    }
+  });
+
+  $('.close-search').on('click', function() {
+    closeSearch();
+  });
+
+  // measure height of header so mobile nav can take up available space.
+  // and so that
+  $(window).on('resize load reload', function() {
+    if ( $(window).width() < 900 ) {
+      var $headerHeight = $('.header__container').innerHeight();
+      var $windowheight = $(window).height();
+      var $math = $windowheight - $headerHeight;
+      $('.main-nav__container').css('height', $math);
+      $('.header__search-drawer').css('max-height', $math);
+    } else {
+      $('.main-nav__container').css('height', '');
+      $('.header__search-drawer').css('max-height', '');
+    }
+  });
+
+  // position search drawer at desktop
+  $(window).on('resize load reload', function() {
+    if ( $(window).width() > 900 && $(window).innerWidth() < 1025 ) {
+      var $logo = $('.header-logo').innerHeight();
+      $('.header__search-drawer').css('top', $logo);
+    } else if ( $(window).innerWidth() > 1025 ) {
+      var $offset = $('.main-menu').offset();
+      var $top = $offset.top + 'px';
+      $('.header__search-drawer').css('top', $top);
+    } else {
+      $('.header__search-drawer').css('top', ' ');
+    }
+  });
+
 })(jQuery); // REMOVE IF DRUPAL.
 
 // })(jQuery, Drupal); // UNCOMMENT IF DRUPAL.

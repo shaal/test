@@ -75,17 +75,17 @@ header_menu_items:
             - label: Services
               children:
                 - id: 22
-                  name: Reading Hospital
+                  name: Cardiology
                 - id: 23
-                  name: Brandywine Hospital
+                  name: Women's Health
                 - id: 24
-                  name: Phoenixville Hospital
+                  name: Cancer Care
                 - id: 25
-                  name: Chestnut Hill Hospital
+                  name: Pediatrics
                 - id: 26
-                  name: Jennersville Hospital
+                  name: Orthopedics
                 - id: 27
-                  name: Pottstown Hospital
+                  name: Allergy & Immunology
       - title: "Cancer Care"
         url: "#"
       - title: "Heart & Vascular Care"
