@@ -3,7 +3,11 @@
 } %}
 
   {% block page_content %}
-
+    {% if breadcrumb %}
+      {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+        breadcrumb: breadcrumb
+      } %}
+    {% endif %}
     {% include "@organisms/location-hero/location-hero.twig" with {
       type: hero.type,
       name: hero.name,

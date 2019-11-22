@@ -6,6 +6,7 @@ directions:
   link: "/"
   icon: "th-find-hospital.svg"
   text: "Directions"
+  variation: "small"
 phone:
   number: "484-628-8000"
   label: "484-628-8000"

@@ -9,13 +9,14 @@ breadcrumb:
     text: "Location Name"
 hero:
   type: "Hospital"
-  name: "Reading Hospital - Tower Health"
+  name: "Reading Hospital"
   address_1: "420 S. Fifth Avenue"
   address_2: "West Reading, PA 19611"
   directions:
     link: "/"
     icon: "th-find-hospital.svg"
     text: "Directions"
+    variation: "small"
   phone:
     number: "484-628-8000"
     label: "484-628-8000"

@@ -1,40 +1,38 @@
 <div class="location-hero js-section-animation">
-  <div class="location-hero__content {% if img %}image{% endif %}">
-    {% if breadcrumb %}
-      {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
-        breadcrumb: breadcrumb
-      } %}
-    {% endif %}
-    <div class="location-label">{{ type }}</div>
-    <h1>{{ name }}</h1>
-    <div class="location-details">
-      <div class="location-details__first">
-        <span>Address</span>
-        <p>{{ address_1 }}</p>
-        <p>{{ address_2 }}</p>
-        {% include "@atoms/icon-button/icon-button.twig" with {
-          "url": directions.url,
-          "icon": directions.icon,
-          "text": directions.text,
+  <div class="location-hero__container">
+    <div class="location-hero__content {% if img %}image{% endif %}">
+      <div class="location-label">{{ type }}</div>
+      <h1>{{ name }}</h1>
+      <div class="location-details">
+        <div class="location-details__first">
+          <span>Address</span>
+          <p>{{ address_1 }}</p>
+          <p>{{ address_2 }}</p>
+          {% include "@atoms/icon-button/icon-button.twig" with {
+            "url": directions.url,
+            "icon": directions.icon,
+            "text": directions.text,
+            "variation": directions.variation,
+          } %}
+        </div>
+        <div class="location-details__second">
+          <span>Main</span>
+          <a href="tel{{phone.number}}">{{ phone.label }}</a>
+          <span>Appointments</span>
+          {% for number in numbers %}
+            <a href="tel{{number.number}}">{{ number.label }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% if img %}
+      <div class="location-hero__image">
+        {% include "@molecules/image-background/image-background.twig" with {
+          "img.src": img.src,
+          "img.src": img.alt,
+          "classes": classes,
         } %}
       </div>
-      <div class="location-details__second">
-        <span>Main</span>
-        <a href="tel{{phone.number}}">{{ phone.label }}</a>
-        <span>Appointments</span>
-        {% for number in numbers %}
-          <a href="tel{{number.number}}">{{ number.label }}</a>
-        {% endfor %}
-      </div>
-    </div>
+    {% endif %}
   </div>
-  {% if img %}
-    <div class="location-hero__image">
-      {% include "@molecules/image-background/image-background.twig" with {
-        "img.src": img.src,
-        "img.src": img.alt,
-        "classes": classes,
-      } %}
-    </div>
-  {% endif %}
 </div>
