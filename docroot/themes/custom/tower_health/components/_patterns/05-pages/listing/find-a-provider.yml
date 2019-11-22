@@ -10,6 +10,31 @@ header:
       text: "3rd Level"
   title: Find a Provider
   class: "listing"
+search:
+  label: "Search Providers"
+  placeholder: "Search by Name, Specialty, or Condition"
+  button: "Search Providers"
+filters:
+  - label: "Specialty"
+    type: "select"
+  - label: "Gender"
+    type: "select"
+  - label: "Languages"
+    type: "select"
+  - label: "Zip Code"
+    placeholder: "00000"
+    type: "text"
+  - label: "Distance"
+    type: "select"
+filter_radios:
+  label: "Provider Type"
+  items:
+    - value: "all"
+      label: "All Providers"
+    - value: "physicians"
+      label: "Physicians Only"
+    - value: "advanced"
+      label: "Advanced Practice Providers Only"
 providers:
   - img:
       src: "https://www.placeimg.com/500/500/any"

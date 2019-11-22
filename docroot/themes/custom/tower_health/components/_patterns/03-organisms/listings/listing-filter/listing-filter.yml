@@ -1,0 +1,21 @@
+filters:
+  - label: "Specialty"
+    type: "select"
+  - label: "Gender"
+    type: "select"
+  - label: "Languages"
+    type: "select"
+  - label: "Zip Code"
+    placeholder: "00000"
+    type: "text"
+  - label: "Distance"
+    type: "select"
+filter_radios:
+  label: "Provider Type"
+  items:
+    - value: "all"
+      label: "All Providers"
+    - value: "physicians"
+      label: "Physicians Only"
+    - value: "advanced"
+      label: "Advanced Practice Providers Only"

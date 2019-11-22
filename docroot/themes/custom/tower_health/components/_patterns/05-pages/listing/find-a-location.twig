@@ -8,8 +8,12 @@
       {% include "@organisms/basic-header/basic-header.twig" with {
         breadcrumb: header.breadcrumb,
         class: header.class,
-      } %}
-      {% include "@organisms/search/location-search/location-search.twig" %}
+        } %}
+      {% include "@organisms/listings/listing-search/listing-search.twig" with {
+        label: search.label,
+        placeholder: search.placeholder,
+        button: search.button,
+        } %}
       {% include "@organisms/search/location-filter/location-filter.twig" %}
     </div>
   {% endblock %}

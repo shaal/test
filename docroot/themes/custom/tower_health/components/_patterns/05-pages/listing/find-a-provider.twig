@@ -8,9 +8,16 @@
       {% include "@organisms/basic-header/basic-header.twig" with {
         breadcrumb: header.breadcrumb,
         class: header.class,
-      } %}
-      {% include "@organisms/search/provider-search/provider-search.twig" %}
-      {% include "@organisms/search/provider-filter/provider-filter.twig" %}
+        } %}
+      {% include "@organisms/listings/listing-search/listing-search.twig" with {
+        label: search.label,
+        placeholder: search.placeholder,
+        button: search.button,
+        } %}
+      {% include "@organisms/listings/listing-filter/listing-filter.twig"  with {
+        filters: filters,
+        filter_radios: filter_radios
+        } %}
     </div>
   {% endblock %}
 

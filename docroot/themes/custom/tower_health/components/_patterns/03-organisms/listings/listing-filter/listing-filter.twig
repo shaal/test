@@ -1,0 +1,32 @@
+<div class="filter">
+  <div class="filter-grid-wrapper">
+    <div class="filter__labels">
+      <span>Filter</span>
+      <a href="/">Clear Filters</a>
+    </div>
+    <div class="filter__filters">
+      <div class="filter--top">
+        {% for item in filters %}
+          <div>
+            <label>{{ item.label }}</label>
+            {% if item.type == "select" %}
+              <select>
+                <option default>Any</option>
+              </select>
+            {% else %}
+              <input type="text" placeholder="{{ item.placeholder }}" />
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+      {% if filter_radios %}
+        <div class="filter--bottom">
+          <label>{{ filter_radios.label }}</label>
+          {% for item in filter_radios.items %}
+            <div><input type="radio" value="{{ item.value }}">{{ item.label }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
