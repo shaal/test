@@ -17,28 +17,52 @@
 
 (function ($) { // REMOVE IF DRUPAL.
   
+    function position_tooltip(e) {
+      var tooltip = e.parents('.toggle-tip');
+      var tooltip_drawer = e.siblings('.toggle-tip__drawer');
+      var ww = $(window).outerWidth(); //window width
+      var tl = tooltip.offset().left; //Tooltip left pos
+      var left = tl + 200;
+      var right = tl - 200;
+      console.log(left);
+      console.log(right);
+
+      if ( left > ww && right >= 0 ) {
+        tooltip_drawer.css({ 'left': 'auto', 'right': 0 });
+      } else if ( left > ww && right < 0 ) {
+        tooltip_drawer.css({ 'left': 'auto', 'right': 'auto' });
+      } else {
+        tooltip_drawer.css({ 'left': 0, 'right': 'auto' });
+      }
+    };
+    
+
+  
     var handleFocusIn = function(evt) {
-      $(evt.currentTarget).addClass("is-active");
-      $(evt.currentTarget).children(".toggle-tip__drawer").attr("aria-expanded", "true");
-    }
+      $(evt.currentTarget).parents('.toggle-tip').addClass("is-active");
+      $(evt.currentTarget).siblings(".toggle-tip__drawer").attr("aria-expanded", "true");
+      position_tooltip($(evt.currentTarget));
+    };
 
     var handleFocusOut = function(evt) {
-     $(evt.currentTarget).removeClass("is-active");
-     $(evt.currentTarget).children(".toggle-tip__drawer").attr("aria-expanded", "false");
+     $(evt.currentTarget).parents('.toggle-tip').removeClass("is-active");
+     $(evt.currentTarget).siblings(".toggle-tip__drawer").attr("aria-expanded", "false");
+     position_tooltip($(evt.currentTarget));
     };
 
     var handleClick = function(evt) {
       evt.preventDefault();
-      $(evt.currentTarget).toggleClass("is-active");
+      $(evt.currentTarget).parents('.toggle-tip').toggleClass("is-active");
+      position_tooltip($(evt.currentTarget));
       
-      if ( $(evt.currentTarget).children(".toggle-tip__drawer").attr('aria-expanded') == 'true' ) {
-        $(evt.currentTarget).children(".toggle-tip__drawer").attr("aria-expanded", "false");
+      if ( $(evt.currentTarget).siblings(".toggle-tip__drawer").attr('aria-expanded') == 'true' ) {
+        $(evt.currentTarget).siblings(".toggle-tip__drawer").attr("aria-expanded", "false");
       } else {
-        $(evt.currentTarget).children(".toggle-tip__drawer").attr("aria-expanded", "true");
+        $(evt.currentTarget).siblings(".toggle-tip__drawer").attr("aria-expanded", "true");
       }
     }
 
-    $('.toggle-tip').on({
+    $('.toggle-tip__toggle').on({
       mouseenter : handleFocusIn,
       mouseleave : handleFocusOut,
       focusin    : handleFocusIn,

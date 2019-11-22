@@ -9,19 +9,18 @@
   background-color: $white;
   padding: .75em;
   border-radius: 8px;
-  max-width: 100vw;
   width: 200px;
+  max-width: 50vw;
   z-index: 5;
   border: 1px solid $off-white;
   position: absolute;
+  bottom: 100%;
   box-shadow: 0 2px 4px rgba($black, .25);
   display: none;
   visibility: hidden;
   
   @include breakpoint($bp3) {
-    left: -118px;
-    bottom: 100%;
-    width: 250px;
+    max-width: 250px;
   }
   
   .toggle-tip.is-active & {
