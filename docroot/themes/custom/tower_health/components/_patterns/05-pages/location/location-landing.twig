@@ -1,47 +1,53 @@
 {% embed "@templates/_default.twig" with {
-  full_width: true
+  page_header: TRUE,
+  top_sidebar: TRUE,
+  full_content: TRUE,
+  full_width: false
 } %}
 
-  {% block page_content %}
+  {% block page_header %}
     {% if breadcrumb %}
       {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
-        breadcrumb: breadcrumb
-      } %}
+          breadcrumb: breadcrumb,
+        } %}
     {% endif %}
     {% include "@organisms/location-hero/location-hero.twig" with {
-      type: hero.type,
-      name: hero.name,
-      address_1: hero.address_1,
-      address_2: hero.address_2,
-      directions: hero.directions,
-      phone: hero.phone,
-      numbers: hero.numbers,
-      img: hero.img,
-      classes: hero.classes,
-    } %}
+        type: hero.type,
+        name: hero.name,
+        address_1: hero.address_1,
+        address_2: hero.address_2,
+        directions: hero.directions,
+        phone: hero.phone,
+        numbers: hero.numbers,
+        img: hero.img,
+        classes: hero.classes,
+      } %}
+  {% endblock %}
 
-    <div class="menu-wrapper">
-      {% include "@molecules/link-list/link-list.twig" with {
+  {% block top_page_sidebar %}
+    {% include "@molecules/menus/section-menu/section-menu.twig" with {
+        items: section_items,
+      } %}
+  {% endblock %}
+
+  {% block page_content %}
+    {% include "@molecules/link-list/link-list.twig" with {
         title: link_list.title,
         items: link_list.items,
       } %}
-      <div class="menu--inner">
-        {% include "@molecules/menus/section-menu/section-menu.twig" with {
-          items: section_items
-        } %}
-      </div>
-    </div>
+  {% endblock %}
 
+  {% block full_content %}
     {% include "@organisms/box-links/box-links.twig" with {
-      boxes: boxes
-    } %}
+        boxes: boxes,
+      } %}
 
     {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
-      img: image_callout.img,
-      title: image_callout.title,
-      text: image_callout.text,
-      links: image_callout.links,
-    } %}
+        img: image_callout.img,
+        title: image_callout.title,
+        text: image_callout.text,
+        links: image_callout.links,
+      } %}
   {% endblock %}
 
 {% endembed %}

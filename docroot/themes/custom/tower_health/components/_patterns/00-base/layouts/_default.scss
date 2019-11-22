@@ -45,25 +45,25 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 //
 
 .page {
-  
+
   &--container {
-    @extend %grid-container; 
-    
+    @extend %grid-container;
+
     .no-cssgrid & {
       @extend %clearfix;
     }
-    
+
     @include bp3 {
       display: grid;
       grid-gap: $gutter;
       grid-template-columns: 6fr 0 30%;
       grid-auto-rows: auto 1fr;
-      
+
       .no-cssgrid & {
         display: block;
-      } 
+      }
     }
-    
+
     @include bp4 {
       grid-template-columns: 6fr 1fr 25%;
       grid-auto-rows: auto 1fr;
@@ -71,9 +71,9 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
     .top-sidebar {
       @include breakpoint($bp3) {
-        grid-column: 3 / span 1; 
+        grid-column: 3 / span 1;
         grid-row: 1 / span 1;
-        
+
         .no-cssgrid & {
           width: 33%;
           padding-left: $gutter;
@@ -81,22 +81,22 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
           clear: right;
         }
       }
-      
+
       @include breakpoint($bp4) {
-        
+
         .no-cssgrid & {
           width: 25%;
           float: right;
           clear: right;
-        } 
+        }
       }
     }
 
     .bottom-sidebar {
       @include breakpoint($bp3) {
-        grid-column: 3 / span 1; 
+        grid-column: 3 / span 1;
         grid-row: 2 / span 1;
-        
+
         .no-cssgrid & {
           width: 33%;
           padding-left: $gutter;
@@ -104,32 +104,52 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
           clear: right;
         }
       }
-      
+
       @include breakpoint($bp4) {
-        
+
         .no-cssgrid & {
           width: 25%;
           float: right;
           clear: right;
-        }  
+        }
       }
     }
 
     .main-content {
       @include breakpoint($bp3) {
-        grid-column: 1 / span 1; 
+        grid-column: 1 / span 1;
         grid-row: 1 / span 2;
-        
+
         .no-cssgrid & {
           width: 66%;
           float: left;
         }
       }
-      
+
       @include breakpoint($bp4) {
-        
+
         .no-cssgrid & {
           width: 75%;
+          float: left;
+        }
+      }
+    }
+
+    .full-content {
+      @include breakpoint($bp3) {
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 1;
+
+        .no-cssgrid & {
+          width: 100%;
+          float: left;
+        }
+      }
+
+      @include breakpoint($bp4) {
+
+        .no-cssgrid & {
+          width: 100%;
           float: left;
         }
       }

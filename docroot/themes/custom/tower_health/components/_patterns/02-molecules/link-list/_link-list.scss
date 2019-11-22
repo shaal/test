@@ -3,19 +3,6 @@
   position: relative;
   margin-top: 3em;
 
-  @include breakpoint($bp3) {
-    width: 66%;
-    margin-top: 0;
-  }
-
-  @include breakpoint($bp4) {
-    padding-left: 6em;
-  }
-
-  @include breakpoint($bp5) {
-    padding-left: 10em;
-  }
-
   h2 {
     color: $primary-dark;
     text-transform: uppercase;
@@ -51,8 +38,12 @@
     border-top: 6px solid $growth;
     border-radius: 3px;
     left: -2em;
-    width: 85%;
+    width: 95%;
     top: 0;
+
+    @include breakpoint("1350px") {
+      left: calc(-1 * (((100vw - 1350px) / 2) + 2em));
+    }
   }
 }
 
