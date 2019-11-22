@@ -1,4 +1,4 @@
-<a class="icon-button" href="{{ url }}">
+<a class="icon-button {% if class %}{{ class }}{% endif %}" href="{{ url }}">
   <span class="icon-button__container">{% include icon %}</span>
   {{ text }}
 </a>

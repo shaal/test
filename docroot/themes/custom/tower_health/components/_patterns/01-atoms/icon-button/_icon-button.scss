@@ -19,7 +19,7 @@
     width: 45px;
     height: 55px;
     fill: $primary-dark;
-    
+
     @include breakpoint($bp3) {
       width: 50px;
       height: 60px;
@@ -30,13 +30,30 @@
     display: block;
     margin-left: -53px;
     margin-right: .75em;
-    
+
     @include breakpoint($bp2) {
       margin-left: -56px;
     }
-    
+
     @include breakpoint($bp3) {
       margin-left: -62px;
+    }
+  }
+
+  &.right {
+
+    .icon-button__container {
+      order: 2;
+      margin-right: -53px;
+      margin-left: .75em;
+
+      @include breakpoint($bp2) {
+        margin-right: -53px;
+      }
+
+      @include breakpoint($bp3) {
+        margin-right: -53px;
+      }
     }
   }
 }
