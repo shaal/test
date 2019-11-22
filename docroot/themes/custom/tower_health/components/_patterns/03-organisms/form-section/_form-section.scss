@@ -19,55 +19,76 @@
 
 .form-section__item {
   margin-bottom: 2em;
+  width: 100%;
   
   input,
   select {
     margin-bottom: 0;
   }
   
-  &--full {
-    width: 100%;
-  }
-  
   &--half {
-    width: 48%;
+    
+    @include breakpoint($bp3) {
+      width: 48%;
+    }
   }
   
   &--oneQuarter {
-    width: 23%
+    
+    @include breakpoint($bp3) {
+      width: 23%;
+    }
   }
   
   &--threeQuarter {
-    width: 73%
+    
+    @include breakpoint($bp3) {
+      width: 73%;
+    }
   }
   
   &--oneThird {
-    width: 31%
+    
+    @include breakpoint($bp3) {
+      width: 31%;
+    }
   }
   
   &--twoThird {
-    width: 64%
+    @include breakpoint($bp3) {
+      width: 64%;
+    }
+    
   }
   
   &--oneFifth {
-    width: 18%
+    @include breakpoint($bp3) {
+      width: 18%;
+    }
   }
   
   &--twoFifth {
-    width: 38%
+    @include breakpoint($bp3) {
+      width: 38%;
+    }
   }
   
   &--threeFifth {
-    width: 58%
+    @include breakpoint($bp3) {
+      width: 58%;
+    }
   }
   
   &--fourFifth {
-    width: 78%
+    @include breakpoint($bp3) {
+      width: 78%;
+    }
   }
   
   .form-item--inline {
     display: flex;
     margin-top: 1em;
+    flex-wrap: wrap;
     
     li {
       margin-right: 1.5em;
