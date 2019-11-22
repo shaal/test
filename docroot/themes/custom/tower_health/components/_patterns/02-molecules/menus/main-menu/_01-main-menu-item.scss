@@ -73,6 +73,10 @@
 }
 
 .main-menu__item:not(.main-menu__item--sub) {
+  
+  @include breakpoint($bp3 $bp4) {
+    @include adjust-font-size-to($sm-text, .8);
+  }
   /* set default color of links */
   > a {
     &:link,

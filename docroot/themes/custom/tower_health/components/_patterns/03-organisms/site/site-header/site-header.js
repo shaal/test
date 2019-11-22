@@ -89,10 +89,10 @@
   
   // position search drawer at desktop
   $(window).on('resize load reload', function() {
-    if ( $(window).width() > 900 && $(window).width() < 1200 ) {
+    if ( $(window).width() > 900 && $(window).innerWidth() < 1025 ) {
       var $logo = $('.header-logo').innerHeight();
       $('.header__search-drawer').css('top', $logo);
-    } else if ( $(window).width() > 1200 ) {
+    } else if ( $(window).innerWidth() > 1025 ) {
       var $offset = $('.main-menu').offset();
       var $top = $offset.top + 'px';
       $('.header__search-drawer').css('top', $top);
