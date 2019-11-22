@@ -6,3 +6,9 @@ location:
     name: "McGlinn Cancer Institute"
     address1: "420 S. Fifth Avenue"
     address2: "West Reading, PA 19611"
+    phone: "484-555-5555"
+    fax: "484-555-5556"
+  link:
+    url: "/"
+    text: "Directions"
+    icon: "th-find-hospital.svg"

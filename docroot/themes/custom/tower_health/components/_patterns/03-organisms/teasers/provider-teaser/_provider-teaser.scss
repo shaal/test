@@ -1,7 +1,7 @@
 .teaser {
   border: 4px solid $trust-ltst;
   border-radius: 5px;
-  padding: 2em 3em 2em 8em;
+  padding: 2em 3em 2em 16em;
   margin: 50px 0 50px 4em;
   position: relative;
   width: 100%;
@@ -14,7 +14,7 @@
     width: 250px;
   }
 
-  .provider-teaser__content__name {
+  .callout {
     font-size: 1.5em;
     padding-bottom: 0.5em;
     color: $primary-dark;

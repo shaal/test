@@ -1,0 +1,13 @@
+<div class="teaser-list">
+  {% for teaser in teasers %}
+    {% if teaser.type == "provider" %}
+      {% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
+          "provider": teaser,
+        } %}
+    {% elseif teaser.type == "location" %}
+      {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
+          "location": teaser,
+        } %}
+    {% endif %}
+  {% endfor %}
+</div>

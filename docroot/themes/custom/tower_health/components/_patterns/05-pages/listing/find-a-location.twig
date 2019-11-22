@@ -14,13 +14,16 @@
         placeholder: search.placeholder,
         button: search.button,
         } %}
-      {% include "@organisms/search/location-filter/location-filter.twig" %}
+      {% include "@organisms/listings/listing-filter/listing-filter.twig"  with {
+        filters: filters,
+        filter_radios: filter_radios
+        } %}
     </div>
   {% endblock %}
 
   {% block page_content %}
-    {% include "@organisms/listings/location-list/location-list.twig" with {
-        "providers": providers,
+    {% include "@organisms/listings/teaser-list/teaser-list.twig" with {
+        "teasers": locations,
       } %}
     {% include "@molecules/pagination/pagination.twig" %}
     {% include "@organisms/listings/listing-cta/listing-cta.twig" with {

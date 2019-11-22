@@ -13,6 +13,7 @@ providers:
       focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: "English"
+    type: "provider"
   - img:
       src: "https://www.placeimg.com/500/500/any"
       alt: "Alternative Text"
@@ -27,6 +28,7 @@ providers:
       focus: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: "English"
+    type: "provider"
   - img:
       src: "https://www.placeimg.com/500/500/any"
       alt: "Alternative Text"
@@ -41,3 +43,4 @@ providers:
       focus: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
       language: "English"
+    type: "provider"
