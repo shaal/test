@@ -1,0 +1,23 @@
+.hours-block {
+  margin-top: 6em;
+
+  .hours-block__label {
+    @extend %track-out;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 400;
+    display: block;
+    color: $primary-dark;
+    margin: 1em 0 0.5em 0;
+  }
+
+  .hours-block__day {
+    margin-bottom: 0.5em;
+  }
+
+  .hours-block__text {
+    margin: 0.5em 0;
+    font-style: italic;
+    font-size: $label; 
+  }
+}

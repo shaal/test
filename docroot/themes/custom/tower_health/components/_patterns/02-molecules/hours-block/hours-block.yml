@@ -1,3 +1,5 @@
+label: "Hours"
+text: "Hours may be affected by holidays"
 hours:
   - title: "Monday"
     hours: "8 a.m. - 5 p.m."

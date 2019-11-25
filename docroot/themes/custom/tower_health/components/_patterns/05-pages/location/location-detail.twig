@@ -26,7 +26,9 @@
 
   {% block top_page_sidebar %}
     {% include "@molecules/hours-block/hours-block.twig" with {
-        hours: hours,
+        label: hours.label,
+        hours: hours.hours,
+        text: hours.text,
       } %}
   {% endblock %}
 
