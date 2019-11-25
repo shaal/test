@@ -53,7 +53,7 @@
     padding: 6em 34% 2.25em 2em;
   }
 
-  h1 {
+  .location-hero__title {
     @extend %track-in;
     margin: 0;
     color: $primary-dark;
