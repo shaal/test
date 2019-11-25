@@ -1,9 +1,9 @@
 <div class="hours-block">
-  <span class="hours-block__label">{{ label }}</span>
-  {% for hour in hours %}
-    <div class="hours-block__day">
-      {{ hour.title }}: {{ hour.hours }}
-    </div>
-  {% endfor %}
+  <h2 class="hours-block__label">{{ label }}</h2>
+  <ul class="hours-block__days">
+    {% for hour in hours %}
+      <li class="hours-block__day"><span>{{ hour.title }}:</span> {{ hour.hours }}</li>
+    {% endfor %}
+  </ul>
   <span class="hours-block__text">{{ text }}</span>
 </div>

@@ -11,13 +11,22 @@
     margin: 1em 0 0.5em 0;
   }
 
+  .hours-block__days {
+    padding-left: 0;
+    list-style: none;
+  }
+
   .hours-block__day {
     margin-bottom: 0.5em;
+
+    span {
+      font-weight: 700;
+    }
   }
 
   .hours-block__text {
     margin: 0.5em 0;
     font-style: italic;
-    font-size: $label; 
+    font-size: $label;
   }
 }
