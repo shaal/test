@@ -10,7 +10,7 @@
         <a class="button button-primary" href="{{ links|first.url }}">{{ links|first.text }}</a>
       {% else %}
         {% for link in links %}
-          <a href="{{ link.url }}">{{ link.text }}</a>
+          <a class="image-teaser__link" href="{{ link.url }}">{{ link.text }}</a>
         {% endfor %}
       {% endif %}
     </div>
