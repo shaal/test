@@ -1,12 +1,12 @@
-uuid: 124fece5-4a42-4cb9-adae-e707b1f11454
+uuid: 6f27f72b-6b9d-4669-9e49-c1bf5ca20c03
 langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
-id: paragraph.field_education_institution
-field_name: field_education_institution
-entity_type: paragraph
+    - taxonomy
+id: taxonomy_term.field_university_record_no
+field_name: field_university_record_no
+entity_type: taxonomy_term
 type: string
 settings:
   max_length: 255

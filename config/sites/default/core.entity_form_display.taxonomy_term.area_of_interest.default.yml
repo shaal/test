@@ -1,0 +1,49 @@
+uuid: d4defb54-8306-4b29-890f-94c7051da459
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.area_of_interest.field_area_of_interest_msow_id
+    - taxonomy.vocabulary.area_of_interest
+  module:
+    - path
+    - readonly_field_widget
+    - text
+id: taxonomy_term.area_of_interest.default
+targetEntityType: taxonomy_term
+bundle: area_of_interest
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_area_of_interest_msow_id:
+    weight: 1
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

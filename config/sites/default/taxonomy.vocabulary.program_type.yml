@@ -1,8 +1,0 @@
-uuid: 0e656d65-66fb-46ab-80bf-75200649a402
-langcode: en
-status: true
-dependencies: {  }
-name: 'Program type'
-vid: program_type
-description: 'Whether a program is an "Institute", "Center", or "Program". This may be used to prioritize how institutes / centers / programs '
-weight: 0
