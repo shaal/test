@@ -99,9 +99,11 @@
 
       @include breakpoint($bp3) {
         display: none;
-        padding: 4em;
         box-shadow: 0 2px 8px rgba($black, 0.15);
-        z-index: 15;
+      }
+
+      @include breakpoint($bp4) {
+        padding: 4em;
       }
 
       h3 {

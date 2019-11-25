@@ -1,0 +1,33 @@
+.text-teaser {
+  @include grid;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+
+.text-teaser__title {
+  width: 100%;
+}
+
+.text-teaser__text {
+
+  @include breakpoint($bp3) {
+    width: 60%;
+  }
+
+  p {
+    margin-top: 0;
+
+    @include breakpoint($bp3) {
+      margin: 0;
+    }
+  }
+}
+
+.text-teaser__button {
+
+  @include breakpoint($bp3) {
+    padding-left: 1em;
+    width: 40%;
+  }
+}
