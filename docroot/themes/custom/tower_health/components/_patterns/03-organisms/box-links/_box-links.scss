@@ -30,7 +30,7 @@
     padding: 5em 0;
 
     @include breakpoint($bp3) {
-      padding: 5em;
+      padding: 0 5em;
 
     }
   }
@@ -69,6 +69,7 @@
       right: 0;
       background-repeat: no-repeat;
       background-size: cover;
+      border-radius: 5px;
 
       &:hover {
         transform: scale(1.05);
@@ -99,6 +100,8 @@
       @include breakpoint($bp3) {
         display: none;
         padding: 4em;
+        box-shadow: 0 2px 8px rgba($black, 0.15);
+        z-index: 15;
       }
 
       h3 {

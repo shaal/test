@@ -12,6 +12,11 @@
   @include breakpoint($bp3) {
     background-color: transparent;
     font-size: 1em;
+    margin-top: 8em;
+  }
+
+  @include breakpoint($bp4) {
+    margin-top: 6em;
   }
 
   &::after {

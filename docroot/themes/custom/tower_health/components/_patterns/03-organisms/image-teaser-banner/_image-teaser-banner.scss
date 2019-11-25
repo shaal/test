@@ -4,6 +4,10 @@
   display: flex;
   justify-content: flex-end;
 
+  @include breakpoint($bp3) {
+    margin: 2em 0;
+  }
+
   .image-teaser__image {
     max-width: 800px;
     float: right;
@@ -18,23 +22,27 @@
   }
 
   .image-teaser__text {
-    width: 85%;
-    position: absolute;
-    top: 16em;
-    left: -5px;
+    width: 90%;
+    position: relative;
+    top: -3em;
+    left: -25%;
     background-color: $white;
     border: 3px solid $growth;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba($black, 0.15);
 
+    @include breakpoint($bp1) {
+      left: -20%;
+    }
+
     @include breakpoint($bp2) {
-      left: 1em;
-      top: 24em;
+      left: -15%;
     }
 
     @include breakpoint($bp3) {
+      position: absolute;
       top: 4em;
-      left: 2em;
+      left: 1em;
       width: 55%;
     }
 
@@ -45,7 +53,8 @@
     .button-wrapper {
       position: relative;
       width: 100%;
-      padding: 1.5em 2em;
+      padding: 2em;
+      padding-bottom: 2.5em;
 
       @include breakpoint($bp4) {
         padding: 4em;
@@ -60,11 +69,13 @@
       }
 
       a.button {
+        margin-top: 1em;
 
         @include breakpoint($bp2) {
           position: absolute;
           right: 10%;
           bottom: -35px;
+          margin-top: 0;
         }
       }
     }

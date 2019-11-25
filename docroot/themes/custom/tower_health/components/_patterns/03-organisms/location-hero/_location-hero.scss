@@ -11,15 +11,7 @@
 
   @include breakpoint($bp3) {
     padding: 0 2em;
-    margin: 5.5em auto 5.5em;
-  }
-
-  @include breakpoint(1050px) {
-    margin-bottom: 7em;
-  }
-
-  @include breakpoint($bp4) {
-    margin: 8em auto 10em;
+    margin: 3em auto;
   }
 }
 
