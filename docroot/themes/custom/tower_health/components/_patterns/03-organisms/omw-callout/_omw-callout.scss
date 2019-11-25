@@ -1,0 +1,35 @@
+.omw-callout {
+  @include grid;
+  background-color: $trust-ltst;
+  padding: 2em;
+  border-radius: 5px;
+  margin: 2em 0;
+  text-align: center;
+
+  @include breakpoint($bp3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .omw-callout__text {
+
+    @include breakpoint($bp3) {
+      width: 60%;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  .omw-callout__button {
+    margin: 0 auto;
+
+    @include breakpoint($bp3) {
+      width: 30%;
+      text-align: right;
+    }
+  }
+}
