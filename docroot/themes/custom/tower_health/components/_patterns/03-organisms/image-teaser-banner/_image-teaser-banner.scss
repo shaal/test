@@ -1,4 +1,5 @@
 .image-teaser {
+  @include grid;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -6,6 +7,10 @@
   .image-teaser__image {
     max-width: 800px;
     float: right;
+
+    img {
+      max-height: 700px;
+    }
 
     @include breakpoint($bp4) {
       max-width: 100%;
@@ -40,10 +45,18 @@
     .button-wrapper {
       position: relative;
       width: 100%;
-      padding: 2em;
+      padding: 1.5em 2em;
 
       @include breakpoint($bp4) {
         padding: 4em;
+      }
+
+      h3 {
+        margin-top: 0;
+      }
+
+      p {
+        margin-bottom: 0;
       }
 
       a.button {

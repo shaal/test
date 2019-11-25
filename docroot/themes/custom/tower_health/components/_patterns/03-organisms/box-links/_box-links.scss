@@ -1,19 +1,38 @@
 .box-links {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 5em 7em;
   position: relative;
 
   &::after {
     content: ' ';
     background-color: $trust-ltst;
     position: absolute;
-    top: 15%;
-    bottom: 15%;
-    left: 0;
-    right: 0;
+    top: 10%;
+    bottom: 10%;
+    left: -2em;
+    right: -2em;
     z-index: -5;
+
+    @include breakpoint($bp3) {
+      top: 15%;
+      bottom: 15%;
+    }
+
+    @include breakpoint("1350px") {
+      left: calc(-1 * (((100vw - 1350px) / 2) + 2em));
+      right: calc(-1 * (((100vw - 1350px) / 2) + 2em));
+    }
+  }
+
+  .box-links-wrapper {
+    @include grid;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5em 0;
+
+    @include breakpoint($bp3) {
+      padding: 5em;
+
+    }
   }
 
   .box-link {
@@ -30,18 +49,19 @@
       content: '';
       position: absolute;
       height: 1px;
-      border-top: 6px solid $trust;
+      border-top: 6px solid $growth;
       border-radius: 3px;
       left: 0;
-      bottom: 2em;
-      width: calc((100vw - 5em) * 0.65);
+      bottom: 4em;
+      width: calc((100vw - 9em));
 
       @include breakpoint($bp3) {
-        width: calc(((100vw - 5em) / 2) * 0.70);
+        border-top: 6px solid $trust;
+        width: calc((100vw / 2) - 18em);
       }
     }
 
-    > div {
+    .box-link__background {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -50,22 +70,36 @@
       background-repeat: no-repeat;
       background-size: cover;
 
-      > h3 {
+      .box-link__title {
         position: absolute;
         bottom: 1em;
         left: 1em;
         color: $white;
-        max-width: calc(85% - 1em);
-        display: block;
+        max-width: calc(85% - 2em);
+        display: none;
+
+        @include breakpoint($bp3) {
+          display: block;
+          bottom: 2.5em;
+          left: 2em;
+        }
       }
     }
 
-    .box-link--hover {
+    .box-link__hover {
       color: $white;
-      padding: 5em 15% 2em 2em;
-      background-color: rgba($primary-dark, 0.5);
-      display: none;
+      padding: 2em;
+      background-color: rgba($primary-dark, 0.9);
       height: 100%;
+
+      @include breakpoint($bp3) {
+        display: none;
+        padding: 4em;
+      }
+
+      h3 {
+        margin-top: 0;
+      }
 
       p {
         color: $white;
@@ -78,23 +112,26 @@
         font-size: 1em;
         letter-spacing: 0.1em;
         position: absolute;
-        right: 20%;
-        bottom: 3em;
+        right: 3.5em;
+        bottom: 5em;
       }
     }
 
-    &:hover {
+    @include breakpoint($bp3) {
+      &:hover {
+        transform: scale(1.05);
 
-      &::after {
-        border-color: $growth;
-      }
+        &::after {
+          border-color: $growth;
+        }
 
-      .box-link--hover {
-        display: block;
-      }
+        .box-link__hover {
+          display: block;
+        }
 
-      > div > h3 {
-        display: none;
+        .box-link__title {
+          display: none;
+        }
       }
     }
   }

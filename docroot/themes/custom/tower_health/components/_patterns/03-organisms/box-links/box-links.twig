@@ -1,14 +1,16 @@
 <div class="box-links js-section-animation">
-  {% for box in boxes %}
-    <a class="box-link" href="{{ link.url }}">
-      <div style='background-image: linear-gradient(to top, #003056EE, #00305600), url("{{ box.img.src }}");'>
-        <h3><span>{{ box.title }}</span></h3>
-        <div class="box-link--hover">
-          <h3><span>{{ box.title }}</span></h3>
-          <p>{{ box.text }}</p>
-          <span class="box-link__text">{{ box.link.text }}</span>
+  <div class="box-links-wrapper">
+    {% for box in boxes %}
+      <a class="box-link" href="{{ link.url }}">
+        <div class="box-link__background" style='background-image: linear-gradient(to top, #003056AA, #003056AA), url("{{ box.img.src }}");'>
+          <h3 class="box-link__title"><span>{{ box.title }}</span></h3>
+          <div class="box-link__hover">
+            <h3><span>{{ box.title }}</span></h3>
+            <p>{{ box.text }}</p>
+            <span class="box-link__text">{{ box.link.text }}</span>
+          </div>
         </div>
-      </div>
-    </a>
-  {% endfor %}
+      </a>
+    {% endfor %}
+  </div>
 </div>
