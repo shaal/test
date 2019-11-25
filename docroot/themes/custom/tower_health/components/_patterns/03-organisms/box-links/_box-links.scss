@@ -38,7 +38,7 @@
   .box-link {
     width: 100%;
     margin: 5px;
-    height: 450px;
+    min-height: 450px;
     position: relative;
 
     @include breakpoint($bp3) {
@@ -100,7 +100,7 @@
       border-radius: 5px;
 
       @include breakpoint($bp3) {
-        display: none;
+        visibility: hidden;
         box-shadow: 0 2px 8px rgba($black, 0.15);
       }
 
@@ -136,7 +136,7 @@
         }
 
         .box-link__hover {
-          display: block;
+          visibility: visible;
         }
 
         .box-link__title {
