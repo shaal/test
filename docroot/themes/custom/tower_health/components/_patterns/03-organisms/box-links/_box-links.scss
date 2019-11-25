@@ -96,6 +96,7 @@
       padding: 2em;
       background-color: rgba($primary-dark, 0.9);
       height: 100%;
+      border-radius: 5px;
 
       @include breakpoint($bp3) {
         display: none;
