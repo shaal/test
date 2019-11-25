@@ -71,7 +71,8 @@
       background-size: cover;
       border-radius: 5px;
 
-      &:hover {
+      &:hover,
+      &:focus {
         transform: scale(1.05);
       }
 
