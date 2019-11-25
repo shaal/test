@@ -37,9 +37,11 @@
     }
   }
   
-  @include breakpoint($bp4) {
+  @include breakpoint($nav-breakpoint) {
     flex-wrap: nowrap;
-    
+  }
+  
+  @include breakpoint($bp4) {
     .header-logo {
       max-width: 300px;
       width: 25%;
@@ -150,7 +152,7 @@
   text-transform: uppercase;
   color: white;
   background-color: $primary-dark;
-  padding: 1em 1em;
+  padding: 1em 1em .75em;
   
   &:link,
   &:visited {
@@ -169,6 +171,10 @@
     display: block;
     text-align: center;
     width: 100%;
+  }
+  
+  @include breakpoint($bp3) {
+    border-radius: 0 0 8px 8px;
   }
 }
 
@@ -204,12 +210,20 @@
     margin-top: 1em;
   }
   
-  @include breakpoint($bp4) {
+  @include breakpoint($nav-breakpoint) {
     border-top: 4px solid $growth;
     margin-top: 0;
-    width: 70%;
+    width: 73%;
     left: auto;
     padding: 1em 2em 2em 0;
+  }
+  
+  @include breakpoint($nav-breakpoint 1070px) {
+    top: 74px;
+  }
+  
+  @include breakpoint(1070px) {
+    width: 70%;
   }
 }
 
@@ -256,8 +270,9 @@
     right: 2em;
     top: 0;
     background-color: $trust-ltst;
-    padding: 1em 1.25em .75em 1em;
+    padding: .9em 1.25em .5em 1em;
     z-index: 20;
+    border-radius: 0 0 8px 8px;
     
     svg {
       height: 1.5em;
@@ -274,6 +289,10 @@
         fill: $white;
       }
     }
+  }
+  
+  @include breakpoint($bp4) {
+    padding: .9em 1.25em .5em 1em;
   }
 }
 

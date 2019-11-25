@@ -35,7 +35,7 @@
         "drupal-pattern-lab/unified-twig-extensions": "^0.1.0",
         "drupal/acquia_connector": "^1.16",
         "drupal/address": "^1.6",
-        "drupal/admin_toolbar": "^1.26",
+        "drupal/admin_toolbar": "^2.0",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/better_exposed_filters": "^3.0",
         "drupal/components": "^1.1",

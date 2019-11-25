@@ -1,0 +1,34 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: TRUE,
+  bottom_sidebar: TRUE,
+  full_width: false,
+  menu_items: header.templates.menu_items,
+  footer_menu_items: footer.templates.menu_items
+} %}
+
+  {% block page_header %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Page Header Region",
+    } %}
+  {% endblock %}
+  
+  {% block top_page_sidebar %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Top Sidebar Section",
+    } %}
+  {% endblock %}
+  
+  {% block page_content %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Primary Content",
+    } %}
+  {% endblock %}
+  
+  {% block bottom_page_sidebar %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Bottom Sidebar Section",
+    } %}
+  {% endblock %}
+
+{% endembed %}

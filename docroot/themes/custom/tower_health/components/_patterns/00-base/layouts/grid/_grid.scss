@@ -1,11 +1,18 @@
 @mixin grid {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1500px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 2em;
 }
 
 .grid {
   @include grid;
+}
+
+%grid-container,
+.grid-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 2em;
 }

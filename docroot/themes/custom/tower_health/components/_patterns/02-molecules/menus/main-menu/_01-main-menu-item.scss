@@ -63,18 +63,22 @@
       transition: all 0.2s;
 
       & > .main-menu--sub {
-        display: block;
+        display: flex;
         visibility: visible;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
     }
   }
 }
 
 .main-menu__item:not(.main-menu__item--sub) {
-
+  
+  @include breakpoint($bp3 $bp4) {
+    @include adjust-font-size-to($sm-text, .8);
+  }
   /* set default color of links */
   > a {
-
     &:link,
     &:visited {
       color: $primary-dark;
@@ -102,7 +106,6 @@
   }
 
   > .expand-sub {
-
     &,
     &:link,
     &:visited {
@@ -132,7 +135,6 @@
   }
   
   &.is-active > .expand-sub {
-
     &::after {
       border-top-color: transparent;
       border-bottom: 8px solid $primary-dark;
@@ -150,10 +152,8 @@
 }
 
 .main-menu__item--secondary:not(.main-menu__item--sub) {
-
   /* set secondary variant */
   > a {
-
     &:link,
     &:visited {
       color: $trust-aa;
@@ -175,9 +175,7 @@
     }
   }
 
-
   > .expand-sub {
-
     &,
     &:link,
     &:visited {
@@ -206,7 +204,6 @@
   }
   
   &.is-active > .expand-sub {
-
     &::after {
       border-top-color: transparent;
       border-bottom: 8px solid $trust-aa;
@@ -259,7 +256,6 @@
 
   // See main-menu.js
   .main-menu__item.is-active & {
-
     &::after {
       margin-top: -13px;
     }
@@ -276,5 +272,6 @@
   @include breakpoint($bp3) {
     display: block;
     margin: 0;
+    width: 48%;
   }
 }

@@ -10,12 +10,11 @@ dependencies:
 source:
   plugin: 'csv'
   # Full path to the file.
-  path: 'modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner.csv'
+  path: 'public://directory/Find_Provider_Dir_Practitioner.txt'
   # Column delimiter. Comma (,) by default.
-  delimiter: ','
-  # Field enclosure. Double quotation marks (") by default.
-  enclosure: '"'
+  delimiter: '|'
   header_row_count: 1
+  enclosure: '"'
   ids:
    - practioner_id
   track_changes: true
@@ -26,34 +25,28 @@ source:
   # The value is a user-friendly string for display by the
   # migration UI.
   fields:
-    0:
-      name: practioner_id
+    - name: practioner_id
       label: 'Practioner ID'
-    1:
-      name: last_name
+    - name: last_name
       label: 'Last name'
-    # Unsure why this column needed to be set to 3 instead of 2.
-    3:
-      name: first_name
+    - name: first_name
       label: 'First name'
-    4:
-      name: middle_name
+    - name: middle_name
       label: 'Middle name'
-    5:
-      name: professional_title
+    - name: professional_title
       label: 'Professional Title'
-    6:
-      name: gender
+    - name: gender
       label: 'Gender'
-    7:
-      name: app
+    - name: app
       label: 'APP'
-    8:
-      name: employment_status
+    - name: employment_status
       label: 'Employment Status'
-    9:
-      name: npi_id
+    - name: npi_id
       label: 'NPI ID'
+    - name: epic_id
+      label: 'Epic_Provider_Number'
+    - name: open_scheduling
+      label: 'Open scheduling'
 
 process:
   field_profile_practid: practioner_id
@@ -83,11 +76,11 @@ process:
         - app
         - employment_status
       map:
-        'FALSE':
+        'False':
           'Employed': tower_health_employed
           'Contracted': contracted
           '': independent
-        'TRUE':
+        'True':
           'Employed': app_employed
           'Contracted': contracted
           '': independent

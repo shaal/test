@@ -1,4 +1,7 @@
-{% embed "@templates/_default.twig" %}
+{% embed "@templates/_default.twig" with {
+  full_width: true,
+  page_header: false
+} %}
   {% block page_content %}
     
     {% include "@organisms/homepage-hero/homepage-hero.twig" with {
@@ -22,8 +25,10 @@
     {% include "@organisms/cta-banner/cta-banner.twig" with {
       title_1: cta_banner.title_1,
       title_2: cta_banner.title_2,
+      subtitle: cta_banner.subtitle,
       img: cta_banner.img,
-      classes: cta_banner.classes
+      classes: cta_banner.classes,
+      button: cta_banner.button
     } %}
 
   {% endblock %}
