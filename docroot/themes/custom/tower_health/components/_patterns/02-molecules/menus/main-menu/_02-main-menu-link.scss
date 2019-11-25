@@ -59,6 +59,7 @@
   padding-left: 1em;
   padding-right: 1em;
   font-weight: 300;
+  text-decoration: none;
 
   &:active,
   &:hover,
@@ -70,6 +71,7 @@
 
   @include breakpoint($bp3) {
     display: block;
+    padding: .4em 0;
     
     &,
     &:link,

@@ -29,13 +29,23 @@
     menu_drawer.addClass('is-active');
     menu_toggle.addClass('is-active');
     search.removeClass('is-active');
+    menu_drawer.attr("aria-expanded", "true");
   }
   
   function closeNav() {
     menu_drawer.removeClass('is-active');
     menu_toggle.removeClass('is-active');
     search.removeClass('is-active');
+    menu_drawer.attr("aria-expanded", "false");
   }
+  
+  $(window).on('load', function() {
+    if ( $(window).width() < 900 ) {
+      menu_drawer.attr("aria-expanded", "false");
+    } else {
+      menu_drawer.attr("aria-expanded", "true");
+    }
+  });
     
   menu_toggle.on('click', function() {
     if ( $(menu_drawer).hasClass('is-active') ) {
