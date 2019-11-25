@@ -23,7 +23,6 @@ class TowerHealthCredentials extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    dump($value);
     $credentials = $value;
     $paragraphs = [];
 
