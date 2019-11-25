@@ -55,9 +55,13 @@
 
     .section-menu__link {
       display: block;
-      padding: 1em;
+      padding: 0.5em;
       color: $primary-dark;
       text-decoration: none;
+
+      &:hover {
+        width: 100%;
+      }
     }
   }
 
@@ -71,11 +75,11 @@
       font-size: 1.25em;
     }
 
-    > .section-menu > .section-menu__item:hover {
+    > .section-menu > .section-menu__item a:hover {
       border-left: 5px solid $trust-aa;
     }
 
-    .section-menu__item:hover {
+    .section-menu__item a:hover {
       background-color: rgba($white, 0.5);
     }
   }
@@ -88,6 +92,10 @@
 
     &.is-active {
       flex-wrap: wrap;
+    }
+
+    &:hover.a {
+      background-color: rgba($white, 0.5);
     }
 
     .expand-sub {
@@ -110,7 +118,7 @@
         width: 100%;
       }
 
-      &.is-active::after {
+      &.is-active::before {
         content: "-";
       }
     }
@@ -127,8 +135,8 @@
       display: block;
     }
 
-    li {
-      padding: 0.25em 1.5em;
+    li a {
+      padding: 0.5em 1em;
     }
   }
 }

@@ -8,7 +8,8 @@
   {% block page_header %}
     {% if breadcrumb %}
       {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
-          breadcrumb: breadcrumb,
+          class: breadcrumb.class,
+          breadcrumb: breadcrumb.breadcrumb,
         } %}
     {% endif %}
     {% include "@organisms/location-hero/location-hero.twig" with {

@@ -1,12 +1,14 @@
 breadcrumb:
-  1:
-    url: "#"
-    text: "Home"
-  2:
-    url: "#"
-    text: "Locations"
-  3:
-    text: "Location Name"
+  class: "hero"
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "Locations"
+    3:
+      text: "Location Name"
 hero:
   type: "Hospital"
   name: "Reading Hospital"
