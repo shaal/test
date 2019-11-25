@@ -4,14 +4,10 @@
 
 .section-nav__container {
   position: relative;
-  padding-right: 6em;
   width: 100%;
-  background-color: $primary-dark;
   color: $trust;
-  text-transform: uppercase;
   font-size: 1.25em;
   font-weight: 700;
-  padding: 1em;
 
   @include breakpoint($bp3) {
     background-color: transparent;
@@ -28,7 +24,7 @@
       width: 200px;
       position: absolute;
       top: 10%;
-      right: 0;
+      right: -2em;
       bottom: 10%;
       z-index: -5;
     }
@@ -54,13 +50,9 @@
 
     .section-menu__link {
       display: block;
-      padding: 0.5em;
+      padding: 1em;
       color: $primary-dark;
       text-decoration: none;
-    }
-
-    @include breakpoint($bp3) {
-      padding: 0.75em 1em;
     }
   }
 
