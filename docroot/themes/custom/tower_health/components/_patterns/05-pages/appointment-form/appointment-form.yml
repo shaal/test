@@ -6,7 +6,7 @@ header:
     2:
       text: "Request an Appointment"
   title: Request an Appointment
-  lede: Maecenas vel sapien tellus. Nulla finibus vestibulum ante. Fusce porta tortor eget lacus congue tempor. Aliquam ut posuere lorem.  
+  lede: Maecenas vel sapien tellus. Nulla finibus vestibulum ante. Fusce porta tortor eget lacus congue tempor. Aliquam ut posuere lorem.
   style: secondary
 
 emergency_banner: If this is a medical emergency, please call 911.
@@ -22,20 +22,20 @@ form_sections:
   - section_heading: Patient Information
     section_heading_level: 2
     section_items:
-      - 
+      -
         width: twoFifth
         title: First Name
         type: text
-      - 
+      -
         width: oneFifth
         title: Middle Initial
         type: text
         optional: true
-      - 
+      -
         width: twoFifth
         title: Last Name
         type: text
-      - 
+      -
         width: oneThird
         title: Gender
         type: select
@@ -47,11 +47,11 @@ form_sections:
           - title: Male
           - title: Female
           - title: Prefer not to say
-      - 
+      -
         width: oneThird
         title: Date of Birth
         type: date
-      - 
+      -
         width: oneThird
         title: 'I am requesting an Appointment for:'
         type: radio
@@ -64,22 +64,22 @@ form_sections:
   - section_heading: Contact Information
     section_heading_level: 2
     section_items:
-      - 
+      -
         width: half
         title: Primary Phone
         type: text
         placeholder: 123-456-7890
-      - 
+      -
         width: half
         title: Secondary Phone
         type: text
         placeholder: 123-456-7890
         optional: true
-      - 
+      -
         width: half
         title: E-mail Address
         type: text
-      - 
+      -
         width: half
         title: I prefer to be contacted via
         type: radio
@@ -94,14 +94,14 @@ form_sections:
   - section_heading: Appointment & Insurance Information
     section_heading_level: 2
     section_items:
-      - 
+      -
         width: half
         title: Preferred Appointment Date
         info: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         info_id: date_info
         type: date
         optional: true
-      - 
+      -
         width: half
         title: Specialty or Service
         type: select
@@ -113,7 +113,7 @@ form_sections:
           - title: Cardiology
           - title: Orthopedics
           - title: Pediatrics
-      - 
+      -
         width: full
         title: 'Preferred Appointment Times'
         type: checkbox
@@ -132,7 +132,7 @@ form_sections:
             id: time
           - title: 5 - 7 p.m.
             id: time
-      - 
+      -
         width: full
         title: 'Preferred Appointment Days'
         info: 'In case your preferred date is unavailable, help us understand other dates that you may be available.'
@@ -156,3 +156,6 @@ form_sections:
           - title: Sunday
             id: day
 
+button:
+  text: "Request an Appointment"
+  url: "#"
