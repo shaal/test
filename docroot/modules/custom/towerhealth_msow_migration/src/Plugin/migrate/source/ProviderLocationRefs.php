@@ -2,10 +2,6 @@
 
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\MigrationInterface;
-use Drupal\towerhealth_msow_migration\Plugin\migrate\source\CSVtoJSON;
-use Drupal\migrate\Row;
-
 /**
  * Migrate source plugin for Insurance.
  *
@@ -14,12 +10,7 @@ use Drupal\migrate\Row;
  * )
  */
 class ProviderLocationRefs extends CSVtoJSON {
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
-  }
+
   /**
    * List of available source fields.
    *
@@ -46,7 +37,7 @@ class ProviderLocationRefs extends CSVtoJSON {
   ];
 
   /**
-   * Process the JSON file and convert flattened data to single record per TIN.
+   * Process the JSON file and convert flattened data.
    */
   public function parseJson($json) {
     $data = json_decode($json);
@@ -75,4 +66,5 @@ class ProviderLocationRefs extends CSVtoJSON {
 
     return $processed_data;
   }
+
 }

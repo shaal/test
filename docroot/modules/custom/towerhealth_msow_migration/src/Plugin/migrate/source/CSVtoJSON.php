@@ -58,11 +58,10 @@ class CSVtoJSON extends SourcePluginBase {
 
     $file = fopen($this->configuration['path'], 'r');
 
-    //Setup a PHP array to hold our CSV rows.
+    // Setup a PHP array to hold our CSV rows.
     $csv_data = [];
 
-    //Loop through the rows in our CSV file and add them to
-    //the PHP array that we created above.
+    // Go through rows in our CSV file and add them to array.
     while (($row = fgetcsv($file, 0, "|")) !== FALSE) {
       $csv_data[] = $row;
     }
@@ -96,6 +95,7 @@ class CSVtoJSON extends SourcePluginBase {
   public function getIds() {
     return $this->ids;
   }
+
   /**
    * {@inheritdoc}
    */
