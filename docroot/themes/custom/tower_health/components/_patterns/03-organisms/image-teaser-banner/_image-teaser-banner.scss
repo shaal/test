@@ -94,13 +94,11 @@
 
     .image-teaser__text {
       animation: fadeInLeft .65s ease-in-out forwards;
-      animation-delay: 1s;
       opacity: 1;
     }
 
     .image-teaser__image {
       animation: fadeInRight .65s ease-in-out forwards;
-      animation-delay: .5s;
       opacity: 1;
     }
   }
