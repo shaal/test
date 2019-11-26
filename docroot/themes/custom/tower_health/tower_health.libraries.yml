@@ -37,3 +37,7 @@ accordion:
 tabs:
   js:
     dist/02-molecules/menus/tabs/tabs.js: {}
+    
+toggle-tips:
+  js:
+    dist/02-molecules/toggle-tip/toggle-tip.js: {}

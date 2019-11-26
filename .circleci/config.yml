@@ -88,9 +88,6 @@ jobs:
           name: Install Drupal
           command: vendor/bin/phing install
       - run:
-          name: Run any migrations
-          command: vendor/bin/phing migrate
-      - run:
           name: Run Behat tests
           command: |
               nohup php -S ${CIRCLE_PROJECT_REPONAME}.local:8000 -t $(pwd)/${DRUPAL_ROOT}/ > /tmp/artifacts/phpd.log 2>&1 &
