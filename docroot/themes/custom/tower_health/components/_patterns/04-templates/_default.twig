@@ -14,8 +14,12 @@
   {% set page_modifiers = page_modifiers|merge(['with-sidebar']) %}
 {% endif %}
 
-{% if full_width == false %}
+{% if (full_width == false) and (centered == false) %}
   {% set page_modifiers = page_modifiers|merge(['container']) %}
+{% endif %}
+
+{% if centered == true %}
+  {% set page_modifiers = page_modifiers|merge(['container-centered']) %}
 {% endif %}
 
 <div>

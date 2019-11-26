@@ -1,0 +1,42 @@
+section_heading: Patient Information
+section_heading_level: 2
+section_items:
+  - 
+    width: twoFifth
+    title: First Name
+    type: text
+  - 
+    width: oneFifth
+    title: Middle Initial
+    type: text
+    placeholder: A
+    optional: true
+  - 
+    width: twoFifth
+    title: Last Name
+    type: text
+    
+  - 
+    width: oneThird
+    title: Gender
+    type: select
+    info: Lorem ipsum dolor set amet.
+    children:
+      - title: Choose an Option
+        attributes: selected disabled
+      - title: Male
+      - title: Female
+      - title: Prefer not to say
+  - 
+    width: oneThird
+    title: Date of Birth
+    type: date
+  - 
+    width: oneThird
+    title: 'I am requesting an Appointment for:'
+    type: radio
+    orientation: inline
+    children:
+      - title: Myself
+      - title: Someone Else
+    
