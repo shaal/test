@@ -2,17 +2,31 @@
   background-color: $primary-dark;
 }
 
+.section-menu__wrapper {
+  background-color: $primary-dark;
+  display: flex;
+  align-items: center;
+  margin-top: 5em;
+
+  @include breakpoint($bp3) {
+    display: block;
+    margin-top: 0;
+  }
+}
+
 .section-nav__container {
   position: relative;
   width: 100%;
   color: $trust;
   font-size: 1.25em;
   font-weight: 700;
+  margin-left: 1em;
 
   @include breakpoint($bp3) {
     background-color: transparent;
     font-size: 1em;
     margin-top: 8em;
+    margin-left: 0;
   }
 
   @include breakpoint($bp4) {
@@ -96,6 +110,10 @@
 
     &:hover.a {
       background-color: rgba($white, 0.5);
+    }
+
+    a {
+      max-width: calc(100% - 50px);
     }
 
     .expand-sub {
