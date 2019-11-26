@@ -1,0 +1,8 @@
+uuid: 4b8567ea-fa14-4fb6-aa8c-247269061cef
+langcode: en
+status: true
+dependencies: {  }
+name: 'Access Control'
+vid: access_control
+description: 'Limit users to certain areas of the site using this taxonomy.'
+weight: 0

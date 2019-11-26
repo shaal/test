@@ -1,0 +1,29 @@
+uuid: 15eb2609-a7d0-4861-8cbc-801cd59bcf8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_access_control
+    - node.type.page
+    - taxonomy.vocabulary.access_control
+id: node.page.field_reference_access_control
+field_name: field_reference_access_control
+entity_type: node
+bundle: page
+label: 'Access Control'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      access_control: access_control
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
