@@ -18,7 +18,7 @@
 {% endblock %}
 {% block logo %}
   {% include "@atoms/04-images/00-image/figure.twig" with {
-    img_src: "../../components/images/TowerHealth_H.svg",
+    img_src: directory ~ "/components/images/TowerHealth_H.svg",
     img_alt: "Tower Health",
     img_url: header_logo_link_url|default('/'),
     image_figure_base_class: 'header-logo'

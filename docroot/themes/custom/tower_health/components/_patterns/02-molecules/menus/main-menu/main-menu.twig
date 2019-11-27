@@ -21,10 +21,13 @@
 <nav id='main-nav__container' class="main-nav__container" aria-expanded='true'>
 
   <div id="main-nav" class="main-nav">
-    {% include "@molecules/menus/_menu.twig" with {
-      menu_class: "main-menu",
-      menu_name: "main-menu",
-    } %}
+    {% block menu %}
+      {% include "@molecules/menus/_menu.twig" with {
+        menu_class: "main-menu",
+        items: header_menu_items,
+        menu_name: "main-menu"
+      } %}
+    {% endblock %}
   </div>
 
   <button aria-controls="main-nav__container" class="close-nav close-nav--mobile">Close Navigation Drawer</button>
