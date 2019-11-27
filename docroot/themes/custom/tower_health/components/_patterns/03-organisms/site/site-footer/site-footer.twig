@@ -1,9 +1,11 @@
 <footer class="footer">
   <div class="footer-top">
     <div class="footer__links">
-      {% include "@molecules/menus/footer-menu/footer-menu.twig" with {
-        items: footer_items
-      } %}
+      {% block menu %}
+        {% include "@molecules/menus/footer-menu/footer-menu.twig" with {
+          items: footer_items
+        } %}
+      {% endblock %}
     </div>
     <div class="footer__info">
       {% block logo %}

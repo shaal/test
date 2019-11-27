@@ -12,25 +12,29 @@
  * @see template_preprocess_region()
  */
 #}
-{% extends "@organisms/site/site-footer/site-footer.twig" %}
-{% block logo %}
-  {% include "@atoms/04-images/00-image/figure.twig" with {
-    img_src: directory ~ "/components/images/TowerHealth_V.svg",
-    img_alt: "Tower Health Logo",
-    img_url: logo_link_url|default('/'),
-  } %}
-{% endblock %}
-{% block social %}
-  Placeholder for social links
-{% endblock %}
-{% block contact %}
-  <span>{{ address_1 }}</span>
-  <span>{{ address_2 }}</span>
-  <a href="tel:{{telephone}}">{{ telephone }}</a>
-{% endblock %}
-{% block details %}
-  {{ drupal_entity('block', 'footer_detail') }}
-{% endblock %}
-{% block legal %}
-  {{ legal }}
-{% endblock %}
+{% embed "@organisms/site/site-footer/site-footer.twig" %}
+  {% block menu %}
+    {{ drupal_entity('block', 'tower_health_footer') }}
+  {% endblock %}
+  {% block logo %}
+    {% include "@atoms/04-images/00-image/figure.twig" with {
+      img_src: directory ~ "/components/images/TowerHealth_V.svg",
+      img_alt: "Tower Health Logo",
+      img_url: logo_link_url|default('/'),
+    } %}
+  {% endblock %}
+  {% block social %}
+    Placeholder for social links
+  {% endblock %}
+  {% block contact %}
+    <span>{{ address_1 }}</span>
+    <span>{{ address_2 }}</span>
+    <a href="tel:{{telephone}}">{{ telephone }}</a>
+  {% endblock %}
+  {% block details %}
+    {{ drupal_entity('block', 'footer_detail') }}
+  {% endblock %}
+  {% block legal %}
+    {{ legal }}
+  {% endblock %}
+{% endembed %}
