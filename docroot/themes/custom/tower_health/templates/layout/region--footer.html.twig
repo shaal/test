@@ -29,7 +29,7 @@
   <a href="tel:{{telephone}}">{{ telephone }}</a>
 {% endblock %}
 {% block details %}
-  Placeholder for detail links
+  {{ drupal_entity('block', 'footer_detail') }}
 {% endblock %}
 {% block legal %}
   {{ legal }}
