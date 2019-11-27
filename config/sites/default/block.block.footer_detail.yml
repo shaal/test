@@ -1,0 +1,27 @@
+uuid: 8a91af0c-0bc8-482f-ac90-80d10c28e78c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-detail
+  module:
+    - menu_block
+  theme:
+    - tower_health
+id: footer_detail
+theme: tower_health
+region: footer
+weight: 0
+provider: null
+plugin: 'menu_block:footer-detail'
+settings:
+  id: 'menu_block:footer-detail'
+  label: 'Footer detail menu'
+  provider: menu_block
+  label_display: visible
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'footer-detail:'
+  suggestion: footer_detail
+visibility: {  }
