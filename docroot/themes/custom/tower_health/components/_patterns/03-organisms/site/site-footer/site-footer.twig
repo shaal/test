@@ -6,25 +6,31 @@
       } %}
     </div>
     <div class="footer__info">
-      {% include "@atoms/04-images/00-image/figure.twig" with {
-        img_src: "../../images/TowerHealth_V.svg",
-        img_alt: "Tower Health Logo",
-        img_url: logo_link_url|default('/'),
-      } %}
+      {% block logo %}
+        {% include "@atoms/04-images/00-image/figure.twig" with {
+          img_src: "../../images/TowerHealth_V.svg",
+          img_alt: "Tower Health Logo",
+          img_url: logo_link_url|default('/'),
+        } %}
+      {% endblock %}
       <div>
         <div class="footer__info__social">
-          {% for icon in footer_social %}
-            {% include "@atoms/social-icon/social-icon.twig" with {
-              title: icon.title,
-              url: icon.url,
-              svg: icon.svg
-            } %}
-          {% endfor %}
+          {% block social %}
+            {% for icon in footer_social %}
+              {% include "@atoms/social-icon/social-icon.twig" with {
+                title: icon.title,
+                url: icon.url,
+                svg: icon.svg
+              } %}
+            {% endfor %}
+          {% endblock %}
         </div>
         <div class="footer__info__contact">
-          <span>{{ footer_contact.address_1 }}</span>
-          <span>{{ footer_contact.address_2 }}</span>
-          <a href="tel:{{footer_contact.phone}}">{{ footer_contact.phone }}</a>
+          {% block contact %}
+            <span>{{ footer_contact.address_1 }}</span>
+            <span>{{ footer_contact.address_2 }}</span>
+            <a href="tel:{{footer_contact.phone}}">{{ footer_contact.phone }}</a>
+          {% endblock %}
         </div>
       </div>
     </div>
@@ -32,12 +38,16 @@
   <div class="footer-bottom-background">
     <div class="footer-bottom">
       <div class="footer__details">
-        {% for detail in footer_details %}
-          <a href="{{ detail.href }}">{{ detail.title }}</a>
-        {% endfor %}
+        {% block details %}
+          {% for detail in footer_details %}
+            <a href="{{ detail.href }}">{{ detail.title }}</a>
+          {% endfor %}
+        {% endblock %}
       </div>
       <div class="footer__legal">
-        {{ footer_legal }}
+        {% block legal %}
+          {{ footer_legal }}
+        {% endblock %}
       </div>
     </div>
   </div>

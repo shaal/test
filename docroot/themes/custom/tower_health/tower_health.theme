@@ -4,3 +4,10 @@
  * @file
  * Functions to support theming in the Pattern Lab theme.
  */
+
+function tower_health_preprocess_region__footer(&$variables) {
+ $variables['address_1'] = theme_get_setting('address1', 'tower_health');
+ $variables['address_2'] = theme_get_setting('address2', 'tower_health');
+ $variables['telephone'] = theme_get_setting('telephone', 'tower_health');
+ $variables['legal'] = theme_get_setting('legal', 'tower_health');
+}

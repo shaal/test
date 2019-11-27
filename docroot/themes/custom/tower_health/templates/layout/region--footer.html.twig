@@ -13,7 +13,24 @@
  */
 #}
 {% extends "@organisms/site/site-footer/site-footer.twig" %}
-
-{% block footer_content %}
-  {{ content }}
+{% block logo %}
+  {% include "@atoms/04-images/00-image/figure.twig" with {
+    img_src: directory ~ "/components/images/TowerHealth_V.svg",
+    img_alt: "Tower Health Logo",
+    img_url: logo_link_url|default('/'),
+  } %}
+{% endblock %}
+{% block social %}
+  Placeholder for social links
+{% endblock %}
+{% block contact %}
+  <span>{{ address_1 }}</span>
+  <span>{{ address_2 }}</span>
+  <a href="tel:{{telephone}}">{{ telephone }}</a>
+{% endblock %}
+{% block details %}
+  Placeholder for detail links
+{% endblock %}
+{% block legal %}
+  {{ legal }}
 {% endblock %}
