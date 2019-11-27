@@ -6,8 +6,8 @@
  */
 
 /**
-* Implements hook_preprocess_region().
-*/
+ * Implements hook_preprocess_region().
+ */
 function tower_health_preprocess_region__footer(&$variables) {
   $variables['address_1'] = theme_get_setting('address1', 'tower_health');
   $variables['address_2'] = theme_get_setting('address2', 'tower_health');
