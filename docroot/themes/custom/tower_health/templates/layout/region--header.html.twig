@@ -12,10 +12,8 @@
  * @see template_preprocess_region()
  */
 #}
+
 {% extends "@organisms/site/site-header/site-header.twig" %}
-{% block menu %}
-  {{ drupal_entity('block', 'tower_health_main_menu') }}
-{% endblock %}
 {% block logo %}
   {% include "@atoms/04-images/00-image/figure.twig" with {
     img_src: directory ~ "/components/images/TowerHealth_H.svg",
@@ -23,4 +21,10 @@
     img_url: header_logo_link_url|default('/'),
     image_figure_base_class: 'header-logo'
   } %}
+{% endblock %}
+{% block utility %}
+  {{ drupal_entity('block', 'tower_health_utility') }}
+{% endblock %}
+{% block menu %}
+  {{ drupal_entity('block', 'tower_health_main_menu') }}
 {% endblock %}
