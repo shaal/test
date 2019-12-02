@@ -233,21 +233,9 @@
   // default states
   .location-hero__content {
     opacity: 0;
-
+    
     .icon-button {
-      opacity: 0;
-    }
-
-    &::before {
-      opacity: 0;
-    }
-
-    @include breakpoint($bp3) {
-      h1,
-      h2,
-      form {
-        opacity: 0;
-      }
+      opacity: 1;
     }
   }
 
@@ -261,40 +249,9 @@
 
   // animating in
   .in-view {
+    
     .location-hero__content {
-      @include transition(all, .35s, ease-in);
-      opacity: 1;
-
-      @include breakpoint(0 899px) {
-        animation: fadeInLeft .65s ease-in-out forwards;
-
-        .icon-button {
-          animation: fadeInLeftScale .65s ease-in-out forwards;
-        }
-      }
-
-      &::before {
-        @include transition(opacity, .85s, ease-out);
-        opacity: 1;
-      }
-
-      @include breakpoint($bp3) {
-        h1 {
-          animation: fadeInUp .25s ease-in-out  .25s forwards;
-        }
-
-        .location-details {
-          animation: fadeInUp .25s ease-in-out  .25s forwards;
-
-          .icon-button {
-            animation: fadeInLeftScale .65s ease-in-out forwards;
-          }
-        }
-
-        .location-label {
-          animation: fadeInLeftScale .65s ease-in-out forwards;
-        }
-      }
+      animation: fadeInLeft .65s ease-in-out forwards;
     }
 
     .location-hero__image {
