@@ -66,6 +66,11 @@
     width: 80%;
     padding: 2.25em 34% 2.25em 2em;
   }
+  
+  @include breakpoint($bp6) {
+    width: 80%;
+    padding: 2.25em 32% 2.25em 2em;
+  }
 
   h1 {
     @extend %track-in;
@@ -170,8 +175,9 @@
   }
 
   @include breakpoint($bp6) {
-    right: calc(( 100vw - 1520px ) / 2 * -1);
+    right: calc(( 100vw - 1500px ) / 2 * -1);
     top: -2em;
+    left: 55%;
     
     .image-background {
       max-width: 650px;
