@@ -35,7 +35,7 @@
       width: 2em;
       top: -6px;
       
-      @include breakpoint($bp5) {
+      @include breakpoint($bp6) {
         width: calc(1.5em + (100vw - 1500px));
         left: calc(-1.5em - (100vw - 1500px));
       }
@@ -66,6 +66,10 @@
   
   @include breakpoint($bp5) {
     @include adjust-font-size-to($hero-heading, 1.95);
+  }
+  
+  @include breakpoint($bp6) {
+    @include adjust-font-size-to($lg-hero-heading, 2);
   }
   
   span {
@@ -173,7 +177,7 @@
       left: 30%;
     }
     
-    @include breakpoint($bp5) {
+    @include breakpoint($bp6) {
       right: calc(((100vw - 1500px) / -2) - 1.5em);
     }
   }
