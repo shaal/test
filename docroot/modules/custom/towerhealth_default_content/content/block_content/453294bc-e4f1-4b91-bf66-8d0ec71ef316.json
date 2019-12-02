@@ -1,0 +1,125 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/footer_contact_info"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/footer_contact_info\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "453294bc-e4f1-4b91-bf66-8d0ec71ef316"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 2
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "footer_contact_info"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-12-02T20:54:50+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/footer_contact_info\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bae93c7a-629d-40df-8f08-6f26750e44e9"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Contact info to display in site footer",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-02T20:54:50+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Tower Health",
+                "canonical_url": "http:\/\/default\/node"
+            }
+        }
+    ],
+    "field_address_1": [
+        {
+            "value": "420 S. Fifth Avenue"
+        }
+    ],
+    "field_address_2": [
+        {
+            "value": "West Reading, PA 19611"
+        }
+    ],
+    "field_telephone": [
+        {
+            "value": "484-628-8000"
+        }
+    ]
+}
