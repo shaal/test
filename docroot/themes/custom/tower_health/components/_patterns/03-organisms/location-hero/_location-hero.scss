@@ -35,7 +35,7 @@
     border: 4px solid $trust-ltr;
     border-radius: 5px;
     width: 75%;
-    padding: 2rem;
+    padding: 3rem 2rem;
   }
 
   @include breakpoint($bp3) {
@@ -49,12 +49,12 @@
 
   @include breakpoint($bp4) {
     width: 85%;
-    padding: 2rem 34% 2rem 2rem;
+    padding-right: 34%;
   }
 
   .location-hero__title {
     @extend %track-in;
-    margin: 0;
+    margin-top: 0;
     color: $primary-dark;
     text-transform: uppercase;
     font-weight: 600;
@@ -90,9 +90,12 @@
     background-color: $trust;
   }
 
-  @include breakpoint("1350px") {
-    // left: calc(-1 * (100vw - 1350px) / 2);
-    // padding-left: calc(((100vw - 1350px) / 2) + 4em)
+  @include breakpoint($bp5) {
+    
+    &::before {
+      left: calc( (-1 * (100vw - 1350px) / 2) - 4.5rem);
+      width: calc(((100vw - 1350px) / 2) + 4.5rem );
+    }
   }
 }
 
@@ -103,42 +106,48 @@
 
   @include breakpoint($bp2) {
     flex-wrap: nowrap;
+    justify-content: space-between;
   }
+}
 
-  .location-details__first {
-    padding-right: 1em;
+.location-details__item {
 
-    @include breakpoint("412px") {
-      width: 50%;
-    }
-
-    .icon-button {
-      margin-top: 1em;
-    }
+  @include breakpoint("412px") {
+    width: 48%;
   }
-
-  .location-details__second {
-    color: $trust-aa;
-    font-weight: 600;
-
-    a {
-      text-decoration: none;
-      display: block;
-    }
+  
+  .icon-button {
+    margin-top: 1.5em;
   }
+}
 
-  p {
-    margin: 0;
-  }
+.location-details__label {
+  @extend %track-out;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 400;
+  display: block;
+  color: $primary-dark;
+  margin: 1em 0 0.5em 0;
+}
 
-  span {
-    @extend %track-out;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    font-weight: 400;
+.location-details__info {
+  display: block;
+}
+
+.location-details__number {
+  &:link,
+  &:visited {
     display: block;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: underline;
     color: $primary-dark;
-    margin: 1em 0 0.5em 0;
   }
 }
 
@@ -164,7 +173,7 @@
     z-index: 5;
     right: 0;
     left: 53%;
-    top: -1.5em;
+    top: -3.25em;
     width: auto;
 
     .image-background {

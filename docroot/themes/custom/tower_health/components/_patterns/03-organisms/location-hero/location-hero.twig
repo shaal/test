@@ -4,10 +4,10 @@
       <span class="location-label">{{ type }}</span>
       <h1 class="location-hero__title">{{ name }}</h1>
       <div class="location-details">
-        <div class="location-details__first">
-          <span>Address</span>
-          <p>{{ address_1 }}</p>
-          <p>{{ address_2 }}</p>
+        <div class="location-details__item">
+          <span class="location-details__label">Address</span>
+          <span class='location-details__info'>{{ address_1 }}</span>
+          <span class='location-details__info'>{{ address_2 }}</span>
           {% include "@atoms/icon-button/icon-button.twig" with {
             "url": directions.url,
             "icon": directions.icon,
@@ -15,12 +15,14 @@
             "variation": directions.variation,
           } %}
         </div>
-        <div class="location-details__second">
-          <span>Main</span>
-          <a href="tel:{{phone.number}}">{{ phone.label }}</a>
-          <span>Appointments</span>
-          {% for number in numbers %}
-            <a href="tel:{{number.number}}">{{ number.label }}</a>
+        <div class="location-details__item">
+          {% for phone in phones %}
+            {% if phone.label %}
+              <span class="location-details__label">{{ phone.label }}</span>
+            {% endif %}
+            {% for item in phone.numbers %}
+              <a class="location-details__number" href="tel:+1{{item.number}}">{% if item.label %}{{item.label}}{% else %}{{item.number}}{% endif %}</a>
+            {% endfor %}
           {% endfor %}
         </div>
       </div>
