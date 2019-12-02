@@ -39,7 +39,7 @@ omw_callout:
     text: "Save my Place in Line"
     url: "/"
 link_list:
-  title: "Services we Offer"
+  title: "Services We Offer"
   items:
     - text: "Cancer Care"
       link: "/"
