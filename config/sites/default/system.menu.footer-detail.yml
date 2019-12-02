@@ -1,8 +1,0 @@
-uuid: 8fcfb90b-e319-4cbb-bf42-be32876dd0ee
-langcode: en
-status: true
-dependencies: {  }
-id: footer-detail
-label: 'Footer Detail'
-description: 'Additional links to display in the blue band below the footer'
-locked: false
