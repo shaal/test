@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_area_of_care_ref
     - node.type.program
-    - taxonomy.vocabulary.areas_of_care
 id: node.program.field_area_of_care_ref
 field_name: field_area_of_care_ref
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      areas_of_care: areas_of_care
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

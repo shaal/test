@@ -1,0 +1,29 @@
+uuid: b6e78fc1-7eac-48ef-b43c-14ebe72ece43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_education_institution_ref
+    - paragraphs.paragraphs_type.education
+    - taxonomy.vocabulary.universities
+id: paragraph.education.field_education_institution_ref
+field_name: field_education_institution_ref
+entity_type: paragraph
+bundle: education
+label: 'Education Institution'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      universities: universities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

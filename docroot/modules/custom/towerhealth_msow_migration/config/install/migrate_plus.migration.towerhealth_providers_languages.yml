@@ -14,11 +14,9 @@ dependencies:
 source:
   plugin: 'csv'
   # Full path to the file.
-  path: 'modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner_Languages.csv'
+  path: 'public://directory/Find_Provider_Dir_Languages.txt'
   # Column delimiter. Comma (,) by default.
-  delimiter: ','
-  # Field enclosure. Double quotation marks (") by default.
-  enclosure: '"'
+  delimiter: '|'
   header_row_count: 1
   ids: [practioner_id]
   track_changes: true

@@ -1,0 +1,40 @@
+uuid: 5a2e64c8-a846-44aa-8025-fccd5bdbb77f
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+id: towerhealth_special_interests
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import tower health clinical areas of interest taxonomy terms.'
+source:
+  plugin: csv
+  path: 'public://directory/Find_Provider_Dir_Special_Interests.txt'
+  delimiter: '|'
+  header_row_count: 1
+  enclosure: '"'
+  ids:
+    - id
+  track_changes: true
+  fields:
+    -
+      name: id
+      label: 'Special interest ID'
+    -
+      name: interest
+      label: 'Special Interest'
+process:
+  vid:
+    -
+      plugin: default_value
+      default_value: area_of_interest
+  name: interest
+  field_area_of_interest_msow_id: id
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null
