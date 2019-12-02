@@ -65,7 +65,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
     }
 
     @include bp4 {
-      grid-template-columns: 6fr 1fr 25%;
+      grid-template-columns: 6fr 40px 25%;
       grid-auto-rows: auto 1fr;
     }
 
