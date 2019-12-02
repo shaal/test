@@ -11,7 +11,7 @@
   }
 
   @include breakpoint($bp3) {
-    max-width: 1350px;
+    max-width: 1500px;
     padding: 0 2em;
     margin: 2em auto 1em;
   }
@@ -66,7 +66,7 @@
     }
 
     @include breakpoint($bp5) {
-      left: calc(( 100vw - 1350px ) / 2 * -1);
+      left: calc(( 100vw - 1500px ) / 2 * -1);
     }
   }
 

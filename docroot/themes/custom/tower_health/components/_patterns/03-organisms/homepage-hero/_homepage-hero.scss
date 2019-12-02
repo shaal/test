@@ -3,7 +3,7 @@
   position: relative;
   padding-top: 100px;
   width: 100%;
-  max-width: 1350px;
+  max-width: 1500px;
 
   @include breakpoint($bp2) {
     padding: 70px 0 0;
@@ -20,7 +20,7 @@
 }
 
 .homepage-hero__container {
-  max-width: 1350px;
+  max-width: 1500px;
   width: 100%;
   
   @include breakpoint($bp2) {
@@ -82,6 +82,10 @@
     
     @include breakpoint($bp5) {
       @include adjust-font-size-to($hero-heading, 1.95);
+    }
+    
+    @include breakpoint($bp6) {
+      @include adjust-font-size-to($lg-hero-heading, 2);
     }
 
     span {
@@ -165,8 +169,13 @@
     }
   }
 
-  @include breakpoint($bp5) {
-    right: calc(( 100vw - 1365px ) / 2 * -1);
+  @include breakpoint($bp6) {
+    right: calc(( 100vw - 1520px ) / 2 * -1);
+    top: -2em;
+    
+    .image-background {
+      max-width: 650px;
+    }
   }
 }
 

@@ -30,8 +30,8 @@
     bottom: -6px;
     
     @include breakpoint($bp5) {
-      width: calc(1.9em + (100vw - 1350px));
-      left: calc(-1.9em - (100vw - 1350px));
+      width: calc(1.9em + (100vw - 1500px));
+      left: calc(-1.9em - (100vw - 1500px));
     }
   }
   
