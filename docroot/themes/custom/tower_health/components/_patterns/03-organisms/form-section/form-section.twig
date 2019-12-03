@@ -54,6 +54,14 @@
         <input type="{{item.type}}" name="{{ item.name}}" {% if item.placeholder %} placeholder="{{item.placeholder}}" {% endif %}/>
       {% endif %}
       
+      {% if item.link == true %}
+        {% include "@atoms/01-links/link/link.twig" with {
+           "link_url": item.link.url,
+           "link_content": item.link.label,
+           "link_modifiers": ['small']
+         } %}
+      {% endif %}
+      
       {% if item.optional == true %}
       <span class="form-section__optional">Optional</span>
       {% endif %}

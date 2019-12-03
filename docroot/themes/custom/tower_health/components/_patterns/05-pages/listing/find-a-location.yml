@@ -9,6 +9,7 @@ header:
     3:
       text: "3rd Level"
   title: Find a Location
+  style: list
   form:
     label: "Search Locations"
     placeholder: "Search by Name"
@@ -19,6 +20,49 @@ filters:
     type: "text"
   - label: "Distance"
     type: "select"
+form_sections:
+  - section_items:
+      -
+        width: oneFifth
+        title: Services
+        type: select
+        children:
+          - title: Select
+            attributes: selected disabled
+          - title: Cardiology
+          - title: Orthopedics
+          - title: Primary Care
+      -
+        width: oneFifth
+        title: Location Type
+        type: select
+        children:
+          - title: Select
+            attributes: selected disabled
+          - title: Hospital
+          - title: Specialty Center
+          - title: Institute
+          - title: Emergency
+          - title: Urgent Care
+          - title: Primary Care
+      -
+        width: oneFifth
+        title: Zip Code
+        type: text
+        placeholder: '000000'
+        link:
+          label: Use my location
+          url: '#'
+      -
+        width: oneFifth
+        title: Distance
+        type: select
+        children:
+          - title: Choose an Option
+            attributes: selected disabled
+          - title: < 5 Miles
+          - title: < 10 Miles
+          - title: < 25 Miles
 locations:
   - img:
       src: "../../images/locations/teaser-mcglinn.jpg"

@@ -4,16 +4,34 @@
 }
 
 .filter-grid-wrapper {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: $trust-ltst;
+  background-color: rgba($trust-ltst, .6);
   padding: 1em 2em;
   border-radius: 8px 0 0 8px;
+  width: 100%;
 
   @include breakpoint($bp3) {
     flex-wrap: nowrap;
+  }
+  
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2em;
+    right: -2em;
+    background-color: rgba($trust-ltst, .6);
+    
+    @include breakpoint($bp5) {
+      width: calc( 1.5em + (100vw - 1350px) / 2 );
+      right: calc( -1.5em - (100vw - 1350px) / 2 );
+    }
   }
 }
 
@@ -39,8 +57,8 @@
 
 .filter__items {
   
-  @include breakpoint($bp2) {
-    flex: 0 1 auto;
+  @include breakpoint($bp3) {
+    flex: 0 1 90%;
   }
   
   .form-item__select,
@@ -50,10 +68,15 @@
   
   .form-section {
     margin: 0;
+    justify-content: flex-start;
   }
   
   .form-section__item {
     margin-bottom: .5em;
+    
+    @include breakpoint($bp3) {
+      margin-right: 2%;
+    }
   }
   
   @include breakpoint($bp3) {

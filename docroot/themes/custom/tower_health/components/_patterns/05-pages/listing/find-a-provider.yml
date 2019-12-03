@@ -14,27 +14,6 @@ header:
     label: "Search Providers"
     placeholder: "Search by Name, Specialty, or Condition"
     button: "Search Providers"
-filters:
-  - label: "Specialty"
-    type: "select"
-  - label: "Gender"
-    type: "select"
-  - label: "Languages"
-    type: "select"
-  - label: "Zip Code"
-    placeholder: "00000"
-    type: "text"
-  - label: "Distance"
-    type: "select"
-filter_radios:
-  label: "Provider Type"
-  items:
-    - value: "all"
-      label: "All Providers"
-    - value: "physicians"
-      label: "Physicians Only"
-    - value: "advanced"
-      label: "Advanced Practice Providers Only"
 form_sections:
   - section_items:
       -
@@ -71,6 +50,9 @@ form_sections:
         title: Zip Code
         type: text
         placeholder: '000000'
+        link:
+          label: Use my location
+          url: '#'
       -
         width: oneFifth
         title: Distance
