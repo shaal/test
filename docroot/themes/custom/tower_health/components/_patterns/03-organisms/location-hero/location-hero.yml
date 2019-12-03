@@ -17,7 +17,7 @@ phones:
         label: 484-628-HELP (4357)
       - number: 866-988-4357
 img:
-  src: "../../images/th-hero-image.jpg"
+  src: "../../images/locations/Reading-Hospital.jpg"
   alt: "Alternative Text"
 classes: "growth top-left"
 breadcrumb:
