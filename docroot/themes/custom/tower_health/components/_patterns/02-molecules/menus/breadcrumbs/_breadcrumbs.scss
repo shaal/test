@@ -18,10 +18,15 @@
   }
 
   &.hero {
-    left: 2em;
-
-    @include breakpoint("1350px") {
-      left: calc(((100vw - 1350px) / 2) + 2em);
+    @include grid;
+    
+    &::before {
+      left: 0;
+      
+      @include breakpoint($bp5) {
+        width: calc(1em + ((100vw - 1350px) / 2 ));
+        left: calc( ((100vw - 1350px) / -2 ));
+      }
     }
   }
 }
