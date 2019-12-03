@@ -1,0 +1,31 @@
+uuid: ed8a3568-29f7-4d98-aaa2-23fa6a78d57d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.universities.field_university_record_no
+    - taxonomy.vocabulary.universities
+  module:
+    - text
+id: taxonomy_term.universities.default
+targetEntityType: taxonomy_term
+bundle: universities
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_university_record_no:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

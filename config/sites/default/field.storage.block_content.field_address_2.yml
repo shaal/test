@@ -1,12 +1,12 @@
-uuid: 124fece5-4a42-4cb9-adae-e707b1f11454
+uuid: 97dc16a6-b47f-4b62-ba53-2a25853cca4e
 langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
-id: paragraph.field_education_institution
-field_name: field_education_institution
-entity_type: paragraph
+    - block_content
+id: block_content.field_address_2
+field_name: field_address_2
+entity_type: block_content
 type: string
 settings:
   max_length: 255

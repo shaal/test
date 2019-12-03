@@ -233,6 +233,10 @@
           margin-bottom: 0;
         }
       }
+
+      p {
+        margin-bottom: 0;
+      }
     }
 
 
@@ -242,6 +246,10 @@
 
       @include breakpoint($bp3) {
         text-align: right;
+      }
+
+      p {
+        margin-bottom: 0;
       }
     }
   }
