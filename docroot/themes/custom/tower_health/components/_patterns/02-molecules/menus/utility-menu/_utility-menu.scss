@@ -52,7 +52,7 @@
   }
 }
 
-.utility-menu__item:nth-of-type(2) .utility-menu__link {
+.utility-menu__link--mytower {
   color: transparent;
   background: url('../pattern-lab/public/images/mytowerhealth-logo.svg');
   background-size: contain;
@@ -71,7 +71,7 @@
   }
 }
 
-.utility-menu__item:last-of-type .utility-menu__link {
+.utility-menu__link--cta {
   @extend %track-out;
   font-weight: 600;
   text-transform: uppercase;
