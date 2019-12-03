@@ -19,4 +19,10 @@
  */
 #}
 
-{% include "@molecules/menus/utility-menu/utility-menu.twig" %}
+{% extends "@molecules/menus/utility-menu/utility-menu.twig" %}
+{% block menu_items %}
+  {% include "@molecules/menus/_menu.twig" with {
+    menu_class: "utility-menu",
+    items: items,
+  } %}
+{% endblock %}

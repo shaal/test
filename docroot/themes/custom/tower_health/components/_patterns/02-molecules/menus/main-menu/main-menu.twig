@@ -21,10 +21,11 @@
 <nav id='main-nav__container' class="main-nav__container" aria-expanded='true'>
 
   <div id="main-nav" class="main-nav">
-    {% block menu %}
+    {% block menu_items %}
       {% include "@molecules/menus/_menu.twig" with {
         menu_class: "main-menu",
-        menu_name: "main-menu"
+        menu_name: "main-menu",
+        items: header_menu_items,
       } %}
     {% endblock %}
   </div>

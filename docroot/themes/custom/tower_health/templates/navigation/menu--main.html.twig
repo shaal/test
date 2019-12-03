@@ -19,4 +19,11 @@
  */
 #}
 
-{% include "@molecules/menus/main-menu/main-menu.twig" %}
+{% extends "@molecules/menus/main-menu/main-menu.twig" %}
+{% block menu_items %}
+  {% include "@molecules/menus/_menu.twig" with {
+    menu_class: "main-menu",
+    menu_name: "main-menu",
+    items: items,
+  } %}
+{% endblock %}

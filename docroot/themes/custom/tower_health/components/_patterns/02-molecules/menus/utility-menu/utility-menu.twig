@@ -1,7 +1,8 @@
 <div class="utility" id="utility">
-  {% block utility %}
+  {% block menu_items %}
     {% include "@molecules/menus/_menu.twig" with {
       menu_class: "utility-menu",
+      items: utility_items,
     } %}
   {% endblock %}
 </div>
