@@ -55,8 +55,7 @@
   }
 }
 
-.main-menu__item:nth-of-type(4),
-.main-menu__item:nth-of-type(5) {
+.main-menu__item--secondary {
 
   .main-menu--sub-1 {
     border-top: 2px solid $trust-aa;
@@ -155,8 +154,7 @@
   }
 }
 
-.main-menu__item:nth-of-type(4):not(.main-menu__item--sub),
-.main-menu__item:nth-of-type(5):not(.main-menu__item--sub) {
+.main-menu__item--secondary:not(.main-menu__item--sub) {
   /* set secondary variant */
   > a {
     &:link,

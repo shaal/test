@@ -1,0 +1,28 @@
+uuid: 016e1cf9-f812-443d-830e-31525bc4f091
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_main_link_type
+    - system.menu.main
+  module:
+    - options
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  children:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_main_link_type:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden:
+  search_api_excerpt: true

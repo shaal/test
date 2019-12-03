@@ -4,7 +4,7 @@
             "href": "http:\/\/default\/admin\/structure\/menu\/item\/28\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/main"
         }
     },
     "id": [
@@ -30,7 +30,7 @@
     ],
     "bundle": [
         {
-            "value": "menu_link_content"
+            "target_id": "main"
         }
     ],
     "revision_created": [
@@ -84,7 +84,7 @@
     ],
     "changed": [
         {
-            "value": "2019-11-26T21:34:53+00:00",
+            "value": "2019-12-03T23:23:43+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -101,12 +101,23 @@
             "lang": "en"
         }
     ],
+    "view_mode": [
+        {
+            "value": "default",
+            "lang": "en"
+        }
+    ],
     "metatag": [
         {
             "value": {
                 "title": "| Tower Health",
                 "canonical_url": "http:\/\/default\/node"
             }
+        }
+    ],
+    "field_main_link_type": [
+        {
+            "value": "default"
         }
     ]
 }

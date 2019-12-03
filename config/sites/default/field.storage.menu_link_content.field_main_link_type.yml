@@ -1,0 +1,27 @@
+uuid: 964d0742-d91b-4a59-a2d8-fb1010e2dcb4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+    - options
+id: menu_link_content.field_main_link_type
+field_name: field_main_link_type
+entity_type: menu_link_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: secondary
+      label: Secondary
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
