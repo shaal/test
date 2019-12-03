@@ -1,10 +1,10 @@
 <div class="teaser js-section-animation">
-  <div class="provider-teaser__image-container">
-    <div class="provider-teaser__image">
+  <div class="teaser__image-container">
+    <div class="teaser__image">
       <a href="{{ url }}"><img src="{% if provider.img %}{{provider.img.src}}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ provider.img.alt}}"></a>
     </div>
   </div>
-  <h2 class="teaser__provider-name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
+  <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
   
   <div class="teaser__content">
     <div class="teaser__content__info">

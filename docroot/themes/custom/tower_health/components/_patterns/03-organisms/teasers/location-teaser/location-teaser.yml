@@ -1,6 +1,6 @@
 location:
   img:
-    src: "https://placeimg.com/400/400/any"
+    src: "../../images/locations/imgs-location-callout-mcglinn-cancer-institute.jpg"
     alt: "Alternative Text"
   details:
     name: "McGlinn Cancer Institute"

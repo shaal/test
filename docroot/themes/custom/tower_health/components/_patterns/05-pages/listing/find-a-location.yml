@@ -22,50 +22,146 @@ filters:
     type: "select"
 locations:
   - img:
-      src: "https://www.placeimg.com/500/500/any"
+      src: "../../images/locations/teaser-mcglinn.jpg"
       alt: "Alternative Text"
-    label: "Reading Hosptial"
-    link:
-      url: "/"
-      text: "Directions"
-      icon: "th-find-hospital.svg"
     details:
       name: "McGlinn Cancer Institute"
       address1: "420 S. Fifth Avenue"
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
-    type: "location"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
   - img:
-      src: "https://www.placeimg.com/500/500/any"
+      src: "../../images/locations/teaser-reading.jpg"
       alt: "Alternative Text"
-    label: "Reading Hosptial"
-    link:
-      url: "/"
-      text: "Directions"
-      icon: "th-find-hospital.svg"
     details:
-      name: "McGlinn Cancer Institute"
+      name: "Reading Hospital"
       address1: "420 S. Fifth Avenue"
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
-    type: "location"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
   - img:
-      src: "https://www.placeimg.com/500/500/any"
+      src: "../../images/locations/teaser-phoenixville.jpg"
       alt: "Alternative Text"
-    label: "Reading Hospital"
+    details:
+      name: "Phoenixville Hospital"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
     link:
       url: "/"
       text: "Directions"
       icon: "th-find-hospital.svg"
+    type: location
+  - img:
+      src: "../../images/locations/teaser-mcglinn.jpg"
+      alt: "Alternative Text"
     details:
       name: "McGlinn Cancer Institute"
       address1: "420 S. Fifth Avenue"
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
-    type: "location"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+  - img:
+      src: "../../images/locations/teaser-reading.jpg"
+      alt: "Alternative Text"
+    details:
+      name: "Reading Hospital"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+  - img:
+      src: "../../images/locations/teaser-phoenixville.jpg"
+      alt: "Alternative Text"
+    details:
+      name: "Phoenixville Hospital"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+  - img:
+      src: "../../images/locations/teaser-mcglinn.jpg"
+      alt: "Alternative Text"
+    details:
+      name: "McGlinn Cancer Institute"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+  - img:
+      src: "../../images/locations/teaser-reading.jpg"
+      alt: "Alternative Text"
+    details:
+      name: "Reading Hospital"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+  - img:
+      src: "../../images/locations/teaser-phoenixville.jpg"
+      alt: "Alternative Text"
+    details:
+      name: "Phoenixville Hospital"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+  - img:
+      src: "../../images/locations/teaser-reading.jpg"
+      alt: "Alternative Text"
+    details:
+      name: "Reading Hospital"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+    
 cta:
   title: "Need Help? We're Here."
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
