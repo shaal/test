@@ -1,6 +1,6 @@
 provider:
   img:
-    src: "https://www.placeimg.com/500/500/any"
+    src: "../../images/people/Roland-Donald.jpg"
     alt: "Alternative Text"
   classes: "growth bottom-right"
   link:

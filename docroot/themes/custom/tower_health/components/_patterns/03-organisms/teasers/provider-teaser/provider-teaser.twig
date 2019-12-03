@@ -1,27 +1,31 @@
 <div class="teaser js-section-animation">
-  <div class="provider-teaser__image">
-    {% if provider.img %}
-      {% include "@molecules/image-background/image-background.twig" with {
-        "img.src": provider.img.src,
-        "img.alt": provider.img.alt,
-        "classes": provider.classes,
-      } %}
-    {% endif %}
+  <div class="provider-teaser__image-container">
+    <div class="provider-teaser__image">
+      <a href="{{ url }}"><img src="{% if provider.img %}{{provider.img.src}}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ provider.img.alt}}"></a>
+    </div>
   </div>
-  <span class="callout provider">{{ provider.details.name }}</span>
+  <h2 class="teaser__provider-name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
+  
   <div class="teaser__content">
-    <div>
-      <span class="teaser-label">Specialties</span>
-      {{ provider.details.specialties }}
-      <span class="teaser-label">Clinical Areas of Focus</span>
-      {{ provider.details.focus }}
+    <div class="teaser__content__info">
+      <div class="teaser__section">
+        <h3 class="teaser-label">Specialties</h3>
+        {{ provider.details.specialties }}
+      </div>
+      <div class="teaser__section">
+        <h3 class="teaser-label">Clinical Areas of Focus</h3>
+        {{ provider.details.focus }}
+      </div>
+      <div class="teaser__section teaser__section--small">
+        <h3 class="teaser-label">Location</h3>
+        {{ provider.details.location }}
+      </div>
+      <div class="teaser__section teaser__section--small">
+        <h3 class="teaser-label">Languages</h3>
+        {{ provider.details.language }}
+      </div>
     </div>
-    <div>
-      <span class="teaser-label">Location</span>
-      {{ provider.details.location }}
-      <span class="teaser-label">Languages</span>
-      {{ provider.details.language }}
-    </div>
+    {% if provider.link %}
     <div class="teaser__button">
       {% include "@atoms/icon-button/icon-button.twig" with {
         "url": provider.link.url,
@@ -29,5 +33,7 @@
         "text": provider.link.text,
       } %}
     </div>
+   {% endif %}
   </div>
+  
 </div>
