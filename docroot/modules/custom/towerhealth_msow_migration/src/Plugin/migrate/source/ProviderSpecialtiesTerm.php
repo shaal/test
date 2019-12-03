@@ -3,13 +3,13 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 /**
- * Migrate source plugin for Insurance.
+ * Migrate source plugin for provider leadership titles.
  *
  * @MigrateSource(
- *   id = "provider_credential_refs"
+ *   id = "provider_specialties_term"
  * )
  */
-class ProviderCredentialsRefs extends CSVtoJSON {
+class ProviderSpecialtiesTerm extends CSVtoJSON {
 
   /**
    * List of available source fields.
@@ -20,7 +20,6 @@ class ProviderCredentialsRefs extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'practioner_id' => 'Pracitioner ID',
     'specialty_term' => 'Specialty Term',
   ];
 
@@ -30,7 +29,7 @@ class ProviderCredentialsRefs extends CSVtoJSON {
    * @var array
    */
   public $ids = [
-    'practioner_id' => [
+    'specialty_term' => [
       'type' => 'string',
       'max_length' => 64,
     ],
@@ -46,19 +45,10 @@ class ProviderCredentialsRefs extends CSVtoJSON {
 
     $processed_data = [];
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
-      $id = $row[1];
-      $credential_type = $row[7];
-      if (!isset($processed_data[$pracitioner_id])) {
-        $processed_data[$pracitioner_id] = [
-          'practioner_id' => $pracitioner_id,
-          'credentials' => [],
-        ];
-      }
-      if (!in_array($id, $processed_data[$pracitioner_id]['credentials'])) {
-        $processed_data[$pracitioner_id]['credentials'][] = [
-          'id' => $id,
-          'credential_type' => $credential_type,
+      $specialty_term = $row[1];
+      if (!isset($processed_data[$specialty_term])) {
+        $processed_data[$specialty_term] = [
+          'specialty_term' => $specialty_term,
         ];
       }
     }

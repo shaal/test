@@ -1,0 +1,23 @@
+id: towerhealth_provider_specialties
+label: Import tower health clinical areas of interest taxonomy terms.
+migration_groups:
+  - TowerHealth MSOW import
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'provider_specialties_term'
+  # Full path to the file.
+  path: 'public://directory/Find_Provider_Dir_Practitioner_Specialties.txt'
+
+process:
+  vid:
+  - plugin: default_value
+    default_value: medical_specialty
+
+  name: specialty_term
+
+destination:
+  plugin: entity:taxonomy_term
