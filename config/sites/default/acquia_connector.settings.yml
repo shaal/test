@@ -42,7 +42,7 @@ spi:
   cron_interval: 28800
   site_name: 'Tower Health Develop'
   site_machine_name: __towerhealth__5db9a4d41159b
-  site_environment: prod
+  site_environment: null
   env_detection_enabled: true
   site_uuid: 7f3bcf79-7f93-4c96-bb31-16cbf9557848
 mapping:
@@ -175,34 +175,4 @@ mapping:
 _core:
   default_config_hash: zpNu9svmDErXEgsDvxYh8liyArVM2E-w5QHHCqdNmvY
 subscription_data:
-  active: true
-  href: 'https://insight.acquia.com/node/uuid/de343a39-76ae-4c2c-b749-390caff70813/dashboard'
-  uuid: de343a39-76ae-4c2c-b749-390caff70813
-  subscription_name: 'Tower Health'
-  expiration_date:
-    value: '2022-09-29T00:00:00'
-  product:
-    view: 'Acquia Network'
-  derived_key_salt: f924431f77fc7245ba99a3ef0c2a292e
-  update_service: '1'
-  search_service_enabled: 1
-  rpc_version: '3.1'
-  update: {  }
-  heartbeat_data:
-    acquia_lift:
-      status: false
-      decision:
-        public_key: ''
-        private_key: ''
-      profile:
-        account_name: ''
-        hostname: ''
-        public_key: ''
-        secret_key: ''
-        js_path: ''
-    search_service_enabled: 1
-    search_cores:
-      -
-        balancer: useast1-c26.acquia-search.com
-        core_id: DILT-190043
-    search_service_colony: useast1-c26.acquia-search.com
+  active: false

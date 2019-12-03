@@ -1,0 +1,8 @@
+uuid: 4663591c-d301-45dc-8e85-1f83cda57841
+langcode: en
+status: true
+dependencies: {  }
+id: footer_contact_info
+label: 'Footer contact info block'
+revision: 1
+description: 'Add contact information for site footer'

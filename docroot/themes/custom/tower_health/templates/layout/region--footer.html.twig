@@ -13,7 +13,25 @@
  */
 #}
 {% extends "@organisms/site/site-footer/site-footer.twig" %}
-
-{% block footer_content %}
-  {{ content }}
+{% block menu %}
+  {{ drupal_entity('block', 'tower_health_footer') }}
+{% endblock %}
+{% block logo %}
+  {% include "@atoms/04-images/00-image/figure.twig" with {
+    img_src: "/" ~ directory ~ "/components/images/TowerHealth_V.svg",
+    img_alt: "Tower Health Logo",
+    img_url: logo_link_url|default('/'),
+  } %}
+{% endblock %}
+{% block social %}
+  Placeholder for social links
+{% endblock %}
+{% block contact %}
+  {{ drupal_entity('block', 'tower_health_footer_contact_info') }}
+{% endblock %}
+{% block details %}
+  {{ drupal_entity('block', 'tower_health_footer_detail_menu') }}
+{% endblock %}
+{% block legal %}
+  {{ drupal_entity('block', 'footer_legal_disclaimer') }}
 {% endblock %}
