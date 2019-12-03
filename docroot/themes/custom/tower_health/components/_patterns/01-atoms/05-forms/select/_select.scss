@@ -24,6 +24,7 @@
   @extend %input;
   outline: none;
   width: 100%;
+  background-color: $white;
 
   :focus {
     outline: none;
@@ -48,6 +49,8 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    
+    background-color: $white;
 
     &:focus {
       border-color: $gray;

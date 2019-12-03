@@ -9,11 +9,11 @@ header:
     3:
       text: "3rd Level"
   title: Find a Provider
-  class: "listing"
-search:
-  label: "Search Providers"
-  placeholder: "Search by Name, Specialty, or Condition"
-  button: "Search Providers"
+  style: list
+  form:
+    label: "Search Providers"
+    placeholder: "Search by Name, Specialty, or Condition"
+    button: "Search Providers"
 filters:
   - label: "Specialty"
     type: "select"
@@ -35,6 +35,66 @@ filter_radios:
       label: "Physicians Only"
     - value: "advanced"
       label: "Advanced Practice Providers Only"
+form_sections:
+  - section_items:
+      -
+        width: oneFifth
+        title: Specialty
+        type: select
+        children:
+          - title: Select
+            attributes: selected disabled
+          - title: Cardiology
+          - title: Orthopedics
+          - title: Primary Care
+      -
+        width: oneFifth
+        title: Gender
+        type: select
+        children:
+          - title: Select
+            attributes: selected disabled
+          - title: Male
+          - title: Female
+      -
+        width: oneFifth
+        title: Languages
+        type: select
+        children:
+          - title: Select
+            attributes: selected disabled
+          - title: Spanish
+          - title: Russian
+          - title: Chinese
+      -
+        width: oneFifth
+        title: Zip Code
+        type: text
+        placeholder: '000000'
+      -
+        width: oneFifth
+        title: Distance
+        type: select
+        children:
+          - title: Choose an Option
+            attributes: selected disabled
+          - title: < 5 Miles
+          - title: < 10 Miles
+          - title: < 25 Miles
+      -
+        width: full
+        title: 'Provider Type'
+        type: radio
+        info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ullam, optio similique eius esse ex maiores distinctio tempore magni dolor, labore natus unde ratione consequuntur maxime repellendus beatae mollitia aliquam.'
+        info_id: type
+        orientation: inline
+        children:
+          - title: All Providers
+            id: type
+          - title: Physicians Only
+            id: type
+          - title: Advanced Practice Providers Only
+            id: type
 providers:
   - img:
       src: "../../images/people/Roland-Donald.jpg"

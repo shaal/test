@@ -9,11 +9,10 @@ header:
     3:
       text: "3rd Level"
   title: Find a Location
-  class: "listing"
-search:
-  label: "Search Locations"
-  placeholder: "Search by Name"
-  button: "Search Locations"
+  form:
+    label: "Search Locations"
+    placeholder: "Search by Name"
+    button: "Search Locations"
 filters:
   - label: "Zip Code"
     placeholder: "00000"
