@@ -2,7 +2,7 @@
   border: 4px solid $trust-ltst;
   border-radius: 5px;
   padding: 1em;
-  margin: 100px 0 2em;
+  margin: 100px 0 3em;
   position: relative;
   text-align: center;
   width: 100%;
@@ -74,9 +74,7 @@
   }
   
   img {
-    min-width: 100%;
-    min-height: 100%;
-    max-width: none;
+    width: 100%;
     object-fit: cover;
   }
   
@@ -177,13 +175,17 @@
 
 .teaser__button {
   margin: 1em auto -4em;
+  width: 310px;
+  
+  @include breakpoint($bp2) {
+    margin: 1em 0 -4em;
+  }
 
   @include breakpoint($bp3) {
     width: 250px;
     padding-top: 0;
     margin: 0;
     margin-left: auto;
-    
   }
 
   .icon-button {
