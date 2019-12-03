@@ -17,7 +17,9 @@
   {% set item_modifiers = item_modifiers|merge([modifier]) %}
 {% endfor %}
 
-{% set item_modifiers = item_modifiers|merge([item.entity.field_utility_link_type.value]) %}
+{% if item.entity.field_utility_link_type.value %}
+  {% set item_modifiers = item_modifiers|merge([item.entity.field_utility_link_type.value]) %}
+{% endif %}
 
 {% embed "@atoms/03-lists/_list-item.twig" with {
   "list_item_label": item_label,
