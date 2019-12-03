@@ -1,28 +1,28 @@
 .form-item--checkboxes,
 .form-item--checkbox__item {
   @include list-reset;
-  
+
   input {
-    margin: .25em rhythm(.5) .5em .25em;
+    margin: .25rem rhythm(.5) .5rem .25rem;
     position: absolute;
     left: 0;
     top: 2px;
     z-index: 1;
-    
+
     &::before {
       position: absolute;
-      top: -0.25em;
-      left: -0.25em;
+      top: -0.25rem;
+      left: -0.25rem;
       content: '';
       display: inline-block;
       height: 25px;
       width: 25px;
-      background-color: $off-white;
+      background-color: $white;
       border: 1px solid rgba($gray-lighter, .7);
       border-radius: 4px;
-      box-shadow: inset 1px 1px 3px rgba($gray-dark, .25);
+      box-shadow: inset 1px 1px 3px rgba($gray-dark, .15);
     }
-    
+
     &:checked::after {
       position: absolute;
       background: url('/pattern-lab/public/images/checkbox.svg');
@@ -35,13 +35,34 @@
       height: 15px;
       width: 15px;
     }
+
+    &:active,
+    &:hover,
+    &:focus {
+      &::before {
+        border-color: $trust;
+      }
+    }
   }
-  
+
   label {
+    @include adjust-font-size-to($text);
     position: relative;
     color: $gray-dark;
     margin-bottom: rhythm(.35);
     padding-left: 35px;
-    font-weight: 400;
+    font-weight: 300;
+  }
+}
+
+.form-item--checkbox__item {
+  width: 40%;
+
+  @include breakpoint($bp2) {
+    width: 28%;
+  }
+
+  @include breakpoint($bp4) {
+    width: auto;
   }
 }

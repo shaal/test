@@ -1,0 +1,47 @@
+uuid: 690fe416-dd56-4f37-be63-9efede806365
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_contact_info
+    - field.field.block_content.footer_contact_info.field_address_1
+    - field.field.block_content.footer_contact_info.field_address_2
+    - field.field.block_content.footer_contact_info.field_telephone
+id: block_content.footer_contact_info.default
+targetEntityType: block_content
+bundle: footer_contact_info
+mode: default
+content:
+  field_address_1:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_address_2:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

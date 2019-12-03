@@ -1,0 +1,25 @@
+uuid: 62ccdfa9-736a-41ac-b3f3-9c0b1fb34d9c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_contact_info:453294bc-e4f1-4b91-bf66-8d0ec71ef316'
+  module:
+    - block_content
+  theme:
+    - tower_health
+id: tower_health_footer_contact_info
+theme: tower_health
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:453294bc-e4f1-4b91-bf66-8d0ec71ef316'
+settings:
+  id: 'block_content:453294bc-e4f1-4b91-bf66-8d0ec71ef316'
+  label: 'Footer contact info'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

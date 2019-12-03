@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_media
+    - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
     - node.type.page
+    - workflows.workflow.default
   module:
+    - content_moderation
     - media_library
     - path
     - text
@@ -29,6 +32,12 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_reference_access_control:
+    weight: 123
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_text:
     weight: 122
@@ -90,7 +99,7 @@ content:
     third_party_settings: {  }
   url_redirects:
     weight: 50
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
