@@ -54,13 +54,13 @@
           {% block bottom_page_sidebar %}{% endblock %}
         </aside>
       {% endif %}
-
-      {% if full_content %}
-        <div class="full-content">
-          {% block full_content %}{% endblock %}
-        </div>
-      {% endif %}
     </div>
+    
+    {% if full_content %}
+      <div class="full-content">
+        {% block full_content %}{% endblock %}
+      </div>
+    {% endif %}
 
   </main>
 

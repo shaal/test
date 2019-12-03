@@ -21,129 +21,112 @@
       right: calc(-1 * (((100vw - 1350px) / 2) + 2em));
     }
   }
+}
 
-  .box-links-wrapper {
-    @include grid;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 5em 0;
+.box-links-wrapper {
+  @include grid;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5em 0;
 
-    @include breakpoint($bp3) {
-      padding: 0 5em;
+  @include breakpoint($bp3) {
+    padding: 0 5em;
+  }
+}
 
-    }
+.box-link {
+  width: 100%;
+  margin: 5px;
+  min-height: 450px;
+  position: relative;
+
+  @include breakpoint($bp3) {
+    width: calc(50% - 10px);
   }
 
-  .box-link {
-    width: 100%;
-    margin: 5px;
-    min-height: 450px;
-    position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    border-top: 6px solid $growth;
+    border-radius: 0 3px 3px 0;
+    left: 0;
+    bottom: 4em;
+    width: calc((100vw - 9em));
 
     @include breakpoint($bp3) {
-      width: calc(50% - 10px);
+      border-top: 6px solid $trust;
+      width: calc((100vw / 2) - 18em);
     }
+  }
+}
+    
+.box-link__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
 
-    &::after {
-      content: '';
-      position: absolute;
-      height: 1px;
-      border-top: 6px solid $growth;
-      border-radius: 0 3px 3px 0;
-      left: 0;
-      bottom: 4em;
-      width: calc((100vw - 9em));
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
 
-      @include breakpoint($bp3) {
-        border-top: 6px solid $trust;
-        width: calc((100vw / 2) - 18em);
-      }
-    }
+.box-link__title {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  color: $white;
+  max-width: calc(85% - 2em);
+  display: none;
 
-    .box-link__background {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 5px;
+  @include breakpoint($bp3) {
+    display: block;
+    bottom: 2.5em;
+    left: 2em;
+  }
+}
 
-      &:hover,
-      &:focus {
-        transform: scale(1.05);
-      }
 
-      .box-link__title {
-        position: absolute;
-        bottom: 1em;
-        left: 1em;
-        color: $white;
-        max-width: calc(85% - 2em);
-        display: none;
+.box-link__back {
+  color: $white;
+  padding: 2em;
+  background-color: rgba($primary-dark, 0.9);
+  height: 100%;
+  border-radius: 5px;
 
-        @include breakpoint($bp3) {
-          display: block;
-          bottom: 2.5em;
-          left: 2em;
-        }
-      }
-    }
+  @include breakpoint($bp3) {
+    visibility: hidden;
+    box-shadow: 0 2px 8px rgba($black, 0.15);
+  }
 
-    .box-link__hover {
-      color: $white;
-      padding: 2em;
-      background-color: rgba($primary-dark, 0.9);
-      height: 100%;
-      border-radius: 5px;
+  @include breakpoint($bp4) {
+    padding: 4em;
+  }
 
-      @include breakpoint($bp3) {
-        visibility: hidden;
-        box-shadow: 0 2px 8px rgba($black, 0.15);
-      }
+  h3 {
+    margin-top: 0;
+  }
 
-      @include breakpoint($bp4) {
-        padding: 4em;
-      }
+  p {
+    color: $white;
+  }
 
-      h3 {
-        margin-top: 0;
-      }
-
-      p {
-        color: $white;
-      }
-
-      .box-link__text {
-        color: $growth-med;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 1em;
-        letter-spacing: 0.1em;
-        position: absolute;
-        right: 4.5em;
-        bottom: 5em;
-      }
-    }
-
-    @include breakpoint($bp3) {
-      &:hover {
-
-        &::after {
-          border-color: $growth;
-        }
-
-        .box-link__hover {
-          visibility: visible;
-        }
-
-        .box-link__title {
-          display: none;
-        }
-      }
-    }
+  .box-link__text {
+    color: $growth-med;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    position: absolute;
+    right: 4.5em;
+    bottom: 5em;
   }
 }
 

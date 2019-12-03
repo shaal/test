@@ -5,7 +5,8 @@
     position: relative;
     margin-top: 2em;
     margin-bottom: 2em;
-    padding: 3em 0;
+    padding-top: 3em;
+    padding-bottom: 3em;
     
     .image-teaser--reverse & {
       display: flex;
@@ -24,7 +25,7 @@
   @include breakpoint($bp3) {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 2em;
     bottom: 0;
     left: 40%;
     overflow: hidden;
@@ -39,7 +40,7 @@
     }
     
     .image-teaser--reverse & {
-      left: 0;
+      left: 2em;
       right: 40%;
     }
   }

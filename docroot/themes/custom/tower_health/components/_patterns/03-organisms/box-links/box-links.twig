@@ -4,9 +4,11 @@
       <a class="box-link" href="{{ link.url }}">
         <div class="box-link__background" style='background-image: linear-gradient(to top, #003056, #003056 25%, #FFFFFF00), url("{{ box.img.src }}");'>
           <h3 class="box-link__title"><span>{{ box.title }}</span></h3>
-          <div class="box-link__hover">
-            <h3><span>{{ box.title }}</span></h3>
-            <p>{{ box.text }}</p>
+          <div class="box-link__back">
+            <h3 class="box-link__title"><span>{{ box.title }}</span></h3>
+            <div class="box-link__text">
+              {{ box.text }}
+            </div>
             <span class="box-link__text">{{ box.link.text }}</span>
           </div>
         </div>
