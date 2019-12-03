@@ -1,16 +1,48 @@
 .section-toggle-expand {
   background-color: $primary-dark;
+  border-radius: 8px;
+  width: 100%;
+  padding: .5em 0;
+  
+  svg {
+    fill: $white;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: $trust-aa;
+    
+    svg {
+      fill: $white;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.toggle-expand__text--section {
+  display: inline-block;
+  text-transform: uppercase;
+  color: $white;
+  overflow: visible;
+  float: right;
+  margin-top: .5em;
+  margin-left: .5em;
 }
 
 .section-menu__wrapper {
-  background-color: $primary-dark;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-top: 5em;
+  margin-top: 2em;
 
   @include breakpoint($bp3) {
     display: block;
-    margin-top: 0;
+    margin-top: 5em;
   }
 }
 
@@ -18,14 +50,9 @@
   position: relative;
   width: 100%;
   color: $trust;
-  font-size: 1.25em;
-  font-weight: 700;
-  margin-left: 1em;
 
   @include breakpoint($bp3) {
     background-color: transparent;
-    font-size: 1em;
-    margin-top: 8em;
     margin-left: 0;
   }
 
@@ -34,8 +61,6 @@
   }
 
   &::after {
-    content: 'Section Menu';
-    width: 100%;
 
     @include breakpoint ($bp3) {
       content: ' ';
@@ -48,113 +73,146 @@
       z-index: -5;
     }
 
-    @include breakpoint("1350px") {
-      width: calc(100% + ((100vw - 1350px) / 2) - 2em);
-      right: calc(-1 * ((100vw - 1350px) / 2) - 2em);
-    }
-  }
-
-  ul {
-    display: none;
-    list-style: none;
-    padding: 1em 0;
-
-    &.is-active {
-      display: block;
-    }
-
-    @include breakpoint($bp3) {
-      display: block;
-    }
-
-    .section-menu__link {
-      display: block;
-      padding: 0.5em;
-      color: $primary-dark;
-      text-decoration: none;
-
-      &:hover {
-        width: 100%;
-      }
-    }
-  }
-
-  .section-nav {
-    background-color: $trust-ltst;
-    border-radius: 5px;
-    line-height: 1em;
-    font-weight: 700;
-
-    @include breakpoint($bp3) {
-      font-size: 1.25em;
-    }
-
-    > .section-menu > .section-menu__item a:hover {
-      border-left: 5px solid $trust-aa;
-    }
-
-    .section-menu__item a:hover {
-      background-color: rgba($white, 0.5);
-    }
-  }
-
-  .section-menu__item--with-sub {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-
-    &.is-active {
-      flex-wrap: wrap;
-    }
-
-    &:hover.a {
-      background-color: rgba($white, 0.5);
-    }
-
-    .section-menu__link--with-sub {
-      max-width: calc(100% - 50px);
-    }
-
-    .expand-sub {
-      width: 50px;
-      height: 100%;
-      position: relative !important;
-
-      &::before {
-        content: "+";
-        color: $primary-dark;
-        position: absolute;
-        font-size: 1.5em;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-      }
-
-      &.is-active::before {
-        content: "-";
-      }
-    }
-  }
-
-  .section-menu--sub {
-    background-color: rgba($white, 0.5);
-    font-size: 0.75em;
-    font-weight: 300;
-    width: 100%;
-    display: none;
-
-    &.is-active {
-      display: block;
-    }
-
-    li a {
-      padding: 0.5em 1em;
+    @include breakpoint($bp5) {
+      width: calc( ((100vw - 1350px) / 2) + 1.5em);
+      right: calc(((100vw - 1350px) / -2) - 1.5em);
     }
   }
 }
+
+.section-menu {
+  display: none;
+  visibility: hidden;
+  list-style: none;
+  padding: 0;
+  margin: .5em 0 0 0;
+
+  &.is-active {
+    display: block;
+    visibility: visible;
+  }
+
+  @include breakpoint($bp3) {
+    display: block;
+    visibility: visible;
+
+  }
+}
+
+.section-menu__link {
+  display: block;
+  padding: 0.75em;
+  color: $primary-dark;
+  text-decoration: none;
+  
+  &:link,
+  &:visited {
+    color: $primary-dark;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    
+  }
+}
+
+.section-nav {
+  background-color: $trust-ltst;
+  border-radius: 5px;
+  line-height: 1em;
+  font-weight: 700;
+
+  > .section-menu > .section-menu__item a:hover,
+  > .section-menu > .section-menu__item a:active,
+  > .section-menu > .section-menu__item a:focus {
+    border-left: 5px solid $trust-aa;
+  }
+
+  .section-menu__item a:active,
+  .section-menu__item a:hover,
+  .section-menu__item a:focus {
+    background-color: rgba($white, 0.5);
+    text-decoration: none;
+  }
+}
+
+.section-menu__item--with-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  .expand-sub {
+    width: 50px;
+    height: 100%;
+    flex: 1 1 10%;
+    position: relative !important;
+
+    &::before {
+      content: "+";
+      color: $primary-dark;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-weight: 600;
+    }
+
+    &.is-active::before {
+      content: "-";
+    }
+    
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: rgba($white, 0.5);
+      
+      &::before {
+        color: $trust-aa;
+      }
+    }
+    
+    @include breakpoint($bp3) {
+      flex: 1 1 20%;
+    }
+  }
+}
+
+.section-menu__link--with-sub {
+  flex: 1 1 90%;
+  
+  @include breakpoint($bp3) {
+    flex: 1 1 80%;
+  }
+}
+
+.section-menu--sub {
+  @include adjust-font-size-to($sm-text, .9);
+  font-weight: 300;
+  background-color: rgba($white, 0.5);
+  width: 100%;
+  display: none;
+  visibility: hidden;
+  margin: 0;
+  padding: .75em 0;
+
+  &.is-active {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.section-menu__link--sub {
+  padding: 0.5em 0.75em;
+  
+  @include breakpoint($bp3) {
+    padding: 0.35em 1.25em;
+  }
+}
+

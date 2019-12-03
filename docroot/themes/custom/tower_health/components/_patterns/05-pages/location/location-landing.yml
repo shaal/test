@@ -19,14 +19,15 @@ hero:
     icon: "th-find-hospital.svg"
     text: "Directions"
     variation: "small"
-  phone:
-    number: "484-628-8000"
-    label: "484-628-8000"
-  numbers:
-    - number: "484-628-4357"
-      label: "484-628-HELP (4357)"
-    - number: "866-988-4357"
-      label: "866-988-4357"
+  phones:
+    - label: Main
+      numbers:
+        - number: 484-628-8000
+    - label: Appointments
+      numbers:
+        - number: 484-628-4357
+          label: 484-628-HELP (4357)
+        - number: 866-988-4357
   img:
     src: "../../images/locations/Reading-Hospital.jpg"
     alt: "Alternative Text"
