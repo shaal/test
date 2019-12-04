@@ -45,7 +45,6 @@ class ProviderSpecialtiesRefs extends CSVtoJSON {
     $data = json_decode($json);
     // Remove the header from the data file.
     unset($data[0]);
-    dump(count($data));
 
     $processed_data = [];
     foreach ($data as $row) {
@@ -83,7 +82,6 @@ class ProviderSpecialtiesRefs extends CSVtoJSON {
 
     // Remove keys since this is confusing the migration references.
     $processed_data = array_values($processed_data);
-    dump(count($processed_data));
 
     return $processed_data;
   }
