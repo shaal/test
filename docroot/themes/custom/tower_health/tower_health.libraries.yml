@@ -21,6 +21,10 @@ chosen:
     dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
     dist/01-atoms/05-forms/chosen/chosen-select.js: {}
     
+listFilters:
+  js:
+    dist/03-organisms/listings/listing-filter/listing-filter.js: {}
+    
 autocomplete:
   js:
     dist/02-molecules/autocomplete-dropdown/autocomplete.js: {}

@@ -26,9 +26,9 @@ form_sections:
         width: oneFifth
         title: Services
         type: select
+        chosen: true
+        multiple: true
         children:
-          - title: Select
-            attributes: selected disabled
           - title: Cardiology
           - title: Orthopedics
           - title: Primary Care
@@ -36,9 +36,9 @@ form_sections:
         width: oneFifth
         title: Location Type
         type: select
+        chosen: true
+        multiple: true
         children:
-          - title: Select
-            attributes: selected disabled
           - title: Hospital
           - title: Specialty Center
           - title: Institute

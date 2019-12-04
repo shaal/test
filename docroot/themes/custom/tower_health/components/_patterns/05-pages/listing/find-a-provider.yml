@@ -23,8 +23,6 @@ form_sections:
         chosen: true
         multiple: true
         children:
-          - title: Select
-            attributes: selected disabled
           - title: Cardiology
           - title: Primary Care
           - title: Orthopedics
@@ -43,8 +41,6 @@ form_sections:
         type: select
         chosen: true
         children:
-          - title: Select
-            attributes: selected disabled
           - title: Male
           - title: Female
       -
@@ -54,11 +50,11 @@ form_sections:
         chosen: true
         multiple: true
         children:
-          - title: Select
-            attributes: selected disabled
           - title: Spanish
           - title: Russian
           - title: Chinese
+          - title: French
+          - title: Arabic
       -
         width: oneFifth
         title: Zip Code

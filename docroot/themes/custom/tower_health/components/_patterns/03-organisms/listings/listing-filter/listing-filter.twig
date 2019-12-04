@@ -1,5 +1,11 @@
+{{ attach_library('tower_health/chosen') }}
+{{ attach_library('tower_health/listFilter') }}
 <div class="filter">
-  <div class="filter-grid-wrapper">
+  <button aria-controls="list-filters" class="filter__toggle">
+    <span class="filter__toggle--open">Show</span><span class="filter__toggle--close">Hide</span>
+    Filters
+  </button>
+  <div id="list-filters" class="filter-grid-wrapper">
     <div class="filter__labels">
       <span>Filter</span>
       <a href="/">Clear Filters</a>
