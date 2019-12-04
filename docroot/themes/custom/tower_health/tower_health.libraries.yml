@@ -15,6 +15,11 @@ main-menu:
 site-header:
   js:
     dist/03-organisms/site/site-header/site-header.js: {}
+
+chosen:
+  js:
+    dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
+    dist/01-atoms/05-forms/chosen/chosen-select.js: {}
     
 autocomplete:
   js:

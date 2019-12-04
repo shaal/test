@@ -1,3 +1,4 @@
+{{ attach_library('tower_health/autocomplete') }}
 <div class="form-section">
   {% if section_heading %}
     {% include "@atoms/02-text/00-headings/_heading.twig"  with {
@@ -38,7 +39,7 @@
         </ul>
       {% elseif item.type == 'select' %}
         <div class="form-item__dropdown">
-          <select class="form-item__select">
+          <select class="form-item__select {% if item.chosen %}chosen-select{% endif %}" {% if item.multiple %}multiple {% endif %}>
             <optgroup label="{{ item.name }}">
               {% for item in item.children %}
                 {% include "@atoms/05-forms/select/_select-item.twig" with {

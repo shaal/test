@@ -20,16 +20,28 @@ form_sections:
         width: oneFifth
         title: Specialty
         type: select
+        chosen: true
+        multiple: true
         children:
           - title: Select
             attributes: selected disabled
           - title: Cardiology
-          - title: Orthopedics
           - title: Primary Care
+          - title: Orthopedics
+          - title: Women's Health
+          - title: Neurology
+          - title: Cancer Care
+          - title: Heart & Vascular
+          - title: Pediatrics
+          - title: Audiology
+          - title: Behavioral Health
+          - title: Breast Health
+          - title: Gastroenterology
       -
         width: oneFifth
         title: Gender
         type: select
+        chosen: true
         children:
           - title: Select
             attributes: selected disabled
@@ -39,6 +51,8 @@ form_sections:
         width: oneFifth
         title: Languages
         type: select
+        chosen: true
+        multiple: true
         children:
           - title: Select
             attributes: selected disabled
