@@ -10,7 +10,7 @@
   background-color: $trust-ltst;
   padding: .75em 2em;
   border-radius: 5px;
-  margin: 0.35em 0 0.35em 30px;
+  margin: 0.35em 0;
   text-decoration: none;
   font-weight: 600;
 
@@ -41,6 +41,7 @@
   }
 
   &.right {
+    margin: 0.35em 0;
 
     .icon-button__container {
       order: 2;

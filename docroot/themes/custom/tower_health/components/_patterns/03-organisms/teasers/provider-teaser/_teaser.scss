@@ -1,7 +1,7 @@
 .teaser {
   border: 4px solid $trust-ltst;
   border-radius: 5px;
-  padding: 1em;
+  padding: 1em 1em 2.5em;
   margin: 100px 0 3em;
   position: relative;
   text-align: center;
@@ -205,22 +205,25 @@
 }
 
 .teaser__button {
-  margin: 1em auto -4em;
-  width: 310px;
+  display: inline-block;
+  position: absolute;
+  bottom: -3em;
+  left: 50%;
+  transform: translateX(-50%);
+
   
   @include breakpoint($bp2) {
-    margin: 1em 0 -4em;
+    left: 1.75em;
+    transform: none;
   }
 
   @include breakpoint($bp3) {
+    position: relative;
     width: 250px;
+    bottom: auto;
     padding-top: 0;
     margin: 0;
     margin-left: auto;
-  }
-
-  .icon-button {
-    opacity: 1;
   }
 }
 
