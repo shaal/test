@@ -18,12 +18,12 @@
   top: 98%;
   display: none;
   visibility: hidden;
-  
+
   &.is-active {
     display: block;
     visibility: visible;
   }
-  
+
   @include breakpoint($bp3) {
     max-height: 400px;
   }
@@ -43,10 +43,25 @@
     display: block;
     padding: .15em 0;
   }
-  
+
   @include breakpoint(0 $bp3) {
     a {
       padding: .5em 0;
     }
+  }
+}
+
+// Drupal form styles
+
+#views-exposed-form-find-a-provider-find-doctor,
+#views-exposed-form-find-a-location-find-location,
+#views-exposed-form-find-a-service-find-service {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .form-item {
+    margin-right: 1em;
+    flex-grow: 1;
   }
 }

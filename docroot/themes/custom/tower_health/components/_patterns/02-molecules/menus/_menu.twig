@@ -47,26 +47,37 @@
     } %}
       {% block list_content %}
         {% for item in items %}
-          {% if item.type == 'form' and menu_name == 'main-menu' %}
+          {% if item.entity.field_main_autocomplete_form.value %}
             <div class='main-menu__item--form'>
-              {% include "@atoms/01-links/link/link.twig" with { 
+              {% set autocomplete = item.entity.field_main_autocomplete_form.value  %}
+              {% if autocomplete == "provider" %}
+                {{ drupal_entity('block', 'exposedformfind_a_providerfind_doctor') }}
+              {% elseif autocomplete == "service" %}
+                {{ drupal_entity('block', 'exposedformfind_a_servicefind_service') }}
+              {% elseif autocomplete == "location" %}
+                {{ drupal_entity('block', 'exposedformfind_a_locationfind_location') }}
+              {% endif %}
+            </div>
+          {% elseif item.type == 'form' and menu_name == 'main-menu' %}
+            <div class='main-menu__item--form'>
+              {% include "@atoms/01-links/link/link.twig" with {
                 link_url: item.link_url,
                 link_content: item.link_content
               }%}
               <form class="main-menu__form">
-                {% include "@molecules/autocomplete-dropdown/autocomplete.twig" with { 
+                {% include "@molecules/autocomplete-dropdown/autocomplete.twig" with {
                   autocomplete: item.autocomplete
                 }%}
                 <input class="button button--small button--primary" type="submit" value="{{ item.button_label }}">
               </form>
             </div>
           {% else %}
-          {% include "@molecules/menus/_menu-item.twig" with {
-            li_base_class: item_base_class,
-            li_modifiers: item_modifiers,
-            li_blockname: item_blockname,
-          } %}
-        {% endif %}
+            {% include "@molecules/menus/_menu-item.twig" with {
+              li_base_class: item_base_class,
+              li_modifiers: item_modifiers,
+              li_blockname: item_blockname,
+            } %}
+          {% endif %}
         {% endfor %}
         {% if menu_level == 1 %}
           <button class="close-nav close-nav--child">Close Child Navigation Drawer</button>
