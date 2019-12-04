@@ -51,6 +51,8 @@
       $('.section-menu .expand-sub').removeClass('is-active');
       $(this).siblings('.section-menu--sub').addClass('is-active');
       $(this).parents('.section-menu__item--with-sub').addClass('is-active');
+      $(this).parent().parents('.section-menu--sub').addClass('is-active');
+      $(this).parent().parents('.section-menu--sub').siblings('.expand-sub').addClass('is-active');
       $(this).addClass('is-active');
     }
   });
