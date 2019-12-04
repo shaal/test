@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.menu_link_content.main.field_main_autocomplete_form
     - field.field.menu_link_content.main.field_main_link_type
     - system.menu.main
   module:
@@ -17,6 +18,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_main_autocomplete_form:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
   field_main_link_type:
     weight: 2
     label: hidden
