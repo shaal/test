@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
     - field.field.node.profile.field_profile_board_certified
-    - field.field.node.profile.field_profile_board_eligible
     - field.field.node.profile.field_profile_education
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
@@ -21,6 +20,7 @@ dependencies:
     - field.field.node.profile.field_profile_middle_name
     - field.field.node.profile.field_profile_npi
     - field.field.node.profile.field_profile_phone
+    - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
     - field.field.node.profile.field_profile_type
@@ -88,14 +88,6 @@ content:
   field_profile_board_certified:
     type: string
     weight: 9
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_profile_board_eligible:
-    type: string
-    weight: 8
     region: content
     label: hidden
     settings:

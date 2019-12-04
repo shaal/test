@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
     - field.field.node.profile.field_profile_board_certified
-    - field.field.node.profile.field_profile_board_eligible
     - field.field.node.profile.field_profile_education
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
@@ -81,14 +80,6 @@ content:
     region: content
   field_profile_board_certified:
     weight: 12
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_profile_board_eligible:
-    weight: 13
     label: above
     settings:
       link_to_entity: false
