@@ -38,6 +38,11 @@
       visibility: hidden;
     }
   }
+  
+  @include breakpoint($bp3) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .filter-grid-wrapper {

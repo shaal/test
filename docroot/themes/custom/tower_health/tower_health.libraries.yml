@@ -23,7 +23,7 @@ chosen:
     
 listFilters:
   js:
-    dist/03-organisms/listings/listing-filter/listing-filter.js: {}
+    dist/03-organisms/listings/listing-filter/listing-filters.js: {}
     
 autocomplete:
   js:
