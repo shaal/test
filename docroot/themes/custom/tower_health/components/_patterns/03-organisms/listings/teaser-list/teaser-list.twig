@@ -12,6 +12,10 @@
       {% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
           "article": teaser,
         } %}
+    {% else %}
+      {% include "@organisms/teasers/basic-teaser/basic-teaser.twig" with {
+          "basic": teaser,
+        } %}
     {% endif %}
   {% endfor %}
 </div>
