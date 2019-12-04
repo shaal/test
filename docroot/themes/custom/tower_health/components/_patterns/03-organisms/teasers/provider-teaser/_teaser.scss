@@ -157,6 +157,27 @@
   }
 }
 
+.teaser__rating {
+  display: block;
+  
+  .ratings-count {
+    justify-content: center;
+  }
+  
+  @include breakpoint($bp2) {
+    .ratings-count {
+      justify-content: flex-start;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    position: relative;
+    top: -5px;
+    float: right;
+    
+  }
+}
+
 .teaser__content {
   text-align: left;
   
@@ -211,7 +232,6 @@
   left: 50%;
   transform: translateX(-50%);
 
-  
   @include breakpoint($bp2) {
     left: 1.75em;
     transform: none;
@@ -222,7 +242,7 @@
     width: 250px;
     bottom: auto;
     padding-top: 0;
-    margin: 0;
+    margin: 25px 0 0;
     margin-left: auto;
   }
 }

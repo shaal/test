@@ -104,6 +104,7 @@ providers:
       focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: "English"
+      rating: '4.2'
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -119,6 +120,7 @@ providers:
       focus: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '3.25'
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -132,6 +134,7 @@ providers:
       focus: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '2'
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -147,6 +150,7 @@ providers:
       focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: "English"
+      rating: null
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -162,6 +166,7 @@ providers:
       focus: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '1.75'
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -175,6 +180,7 @@ providers:
       focus: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '4.2'
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -190,6 +196,7 @@ providers:
       focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: "English"
+      rating: '5'
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -205,6 +212,7 @@ providers:
       focus: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '3'
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -218,6 +226,7 @@ providers:
       focus: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '4.2'
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -233,6 +242,7 @@ providers:
       focus: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '1'
     type: "provider"
 current: 4
 items:

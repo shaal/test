@@ -17,6 +17,7 @@ location:
     focus: short text / optional
     location: short text / required
     language: short text / required
+    rating: number / optional
   link:
     url: href / required  
 ~~~
