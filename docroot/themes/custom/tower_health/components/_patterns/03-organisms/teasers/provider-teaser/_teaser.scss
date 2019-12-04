@@ -9,6 +9,7 @@
   
   @include breakpoint($bp2) {
     text-align: left;
+    margin-top: 50px;
   }
   
   @include breakpoint($bp3) {
@@ -32,16 +33,21 @@
     left: -10px;
     display: block;
     content: '';
-    height: 205px;
-    width: 205px;
+    height: 180px;
+    width: 180px;
     background-color: $growth;
     border-radius: 50%;
     z-index: 1;
   }
   
   @include breakpoint($bp2) {
-    margin: -125px 0 0;
+    margin: -75px 0 0;
     float: right;
+    
+    &::after {
+      height: 155px;
+      width: 155px;
+    }
   }
   
   @include breakpoint($bp3) {
@@ -49,6 +55,11 @@
     margin: 0;
     left: -140px;
     top: -0.5em;
+    
+    &::after {
+      height: 205px;
+      width: 205px;
+    }
   }
   
   @include breakpoint($bp4) {
@@ -61,21 +72,41 @@
 
 .teaser__image {
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
   overflow: hidden;
   border-radius: 150px;
   z-index: 3;
   
   a {
     display: block;
-    height: 200px;
-    width: 200px;
+    height: 175px;
+    width: 175px;
   }
   
   img {
     width: 100%;
     object-fit: cover;
+  }
+  
+  @include breakpoint($bp2) {
+    height: 150px;
+    width: 150px;
+    
+    a {
+      height: 150px;
+      width: 150px;
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    height: 200px;
+    width: 200px;
+    
+    a {
+      height: 200px;
+      width: 200px;
+    }
   }
   
   @include breakpoint($bp4) {
