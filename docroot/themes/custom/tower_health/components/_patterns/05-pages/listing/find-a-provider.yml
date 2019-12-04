@@ -87,6 +87,8 @@ form_sections:
             id: type
           - title: Advanced Practice Providers Only
             id: type
+results_shown: 1-10
+results_count: 128
 providers:
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -232,6 +234,21 @@ providers:
       location: "Wyomissing, PA"
       language: "English"
     type: "provider"
+current: 4
+items:
+  pages:
+    1:
+      href: "#"
+    2:
+      href: "#"
+    3:
+      href: "#"
+    4:
+      href: "#"
+    5:
+      href: "#"
+  previous: true
+  next: true
 cta:
   title: "Need Help? We're Here."
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."

@@ -1,12 +1,16 @@
 <div class="teaser-list">
+  <div class='listing-results'>
+    Showing {{ results_shown}} of {{ results_count }} results{% if results_term %} for "<strong>{{ results_term }}</strong>"{% endif %}.
+  </div>
+  
   {% for teaser in teasers %}
     {% if teaser.type == "provider" %}
       {% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
-          "provider": teaser,
+          "provider": teaser
         } %}
     {% elseif teaser.type == "location" %}
       {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
-          "location": teaser,
+          "location": teaser
         } %}
     {% endif %}
   {% endfor %}
