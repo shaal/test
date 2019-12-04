@@ -63,10 +63,18 @@ class CSVtoJSON extends SourcePluginBase {
 
     // Go through rows in our CSV file and add them to array.
     while (($row = fgetcsv($file, 0, "|")) !== FALSE) {
-      $csv_data[] = $row;
+      // Cleanup non-utf8 characters.
+      $csv_data[] = mb_convert_encoding($row, 'UTF-8', 'UTF-8');
     }
 
-    $this->dataRows = $this->parseJSON(json_encode($csv_data));
+    $json = json_encode($csv_data);
+
+    // If JSON encoding fails throw an exception
+    if (!$json) {
+      throw new MigrateException(json_last_error_msg());
+    }
+
+    $this->dataRows = $this->parseJSON($json);
   }
 
   /**
