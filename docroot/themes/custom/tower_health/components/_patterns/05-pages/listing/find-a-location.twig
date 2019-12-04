@@ -4,16 +4,14 @@
 }%}
 
   {% block page_header %}
-    <div class="header__wrapper js-section-animation">
-      {% include "@organisms/basic-header/basic-header.twig" with {
-        breadcrumb: header.breadcrumb
+    {% include "@organisms/basic-header/basic-header.twig" with {
+      breadcrumb: header.breadcrumb
+    } %}
+      
+    {% include "@organisms/listings/listing-filter/listing-filter.twig"  with {
+      filters: filters,
+      filter_radios: filter_radios
       } %}
-        
-      {% include "@organisms/listings/listing-filter/listing-filter.twig"  with {
-        filters: filters,
-        filter_radios: filter_radios
-        } %}
-    </div>
   {% endblock %}
 
   {% block page_content %}
