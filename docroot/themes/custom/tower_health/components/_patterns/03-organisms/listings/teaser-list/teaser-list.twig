@@ -8,6 +8,10 @@
       {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
           "location": teaser,
         } %}
+    {% elseif teaser.type == "article" %}
+      {% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
+          "article": teaser,
+        } %}
     {% endif %}
   {% endfor %}
 </div>
