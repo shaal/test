@@ -11,6 +11,8 @@ header:
     label: "Search"
     placeholder: "Search by Name, Specialty, Condition, Location, or Keyword"
     button: "Search"
+results_shown: 1-10
+results_count: 321
 teasers:
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -90,6 +92,56 @@ teasers:
       location: "Wyomissing, PA"
       language: "English"
     type: "provider"
+  - img:
+      src: "../../images/people/Roland-Donald.jpg"
+      alt: "Alternative Text"
+    classes: "growth bottom-right"
+    link:
+      url: "/"
+      text: "Request an Appointment"
+      icon: "th-cal.svg"
+    details:
+      name: "Donald E. Roland, MD, DMD"
+      specialties: "Oral and Maxillofacial Surgery"
+      focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      location: "Pottstown, PA"
+      language: "English"
+    type: "provider"
+  - details:
+      title: "Lessons from the Oncology Center"
+      author: "John Doe"
+      tags:
+        - Oncology
+        - Patient Stories
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem...."
+    link:
+      url: "/"
+      text: "Read More"
+      icon: "th-find-hospital.svg"
+    type: article
+  - img:
+      src: "../../images/locations/teaser-mcglinn.jpg"
+      alt: "Alternative Text"
+    details:
+      name: "McGlinn Cancer Institute"
+      address1: "420 S. Fifth Avenue"
+      address2: "West Reading, PA 19611"
+      phone: "484-555-5555"
+      fax: "484-555-5556"
+    link:
+      url: "/"
+      text: "Directions"
+      icon: "th-find-hospital.svg"
+    type: location
+  - details:
+      title: "Giving to Tower Health"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+    link:
+      url: "/"
+      text: "Read More"
+      icon: "th-find-hospital.svg"
+    type: basic
+current: 2
 items:
   pages:
     1:
