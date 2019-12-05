@@ -64,12 +64,12 @@ form_sections:
             id: appt
       -
         width: half
-        title: Your name
+        title: Your Name
         type: text
         conditional_result: appt-for-condition
       -
         width: half
-        title: Relationship to patient
+        title: Relationship to Patient
         type: text
         conditional_result: appt-for-condition
   - section_heading: Contact Information
