@@ -11,7 +11,13 @@ main-menu:
     dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
     - core/drupal
-    
+
+section-menu:
+  js:
+    dist/02-molecules/menus/section-menu/section-menu.js: {}
+  dependencies:
+    - core/drupal
+
 site-header:
   js:
     dist/03-organisms/site/site-header/site-header.js: {}

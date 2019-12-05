@@ -105,6 +105,12 @@
     .icon-button,
     .homepage-hero__image,
     .teaser {
+    .link-list__title,
+    .link-list__link,
+    .location-hero__content,
+    .location-hero__image,
+    .image-teaser__content,
+    .image-teaser__image {
       opacity: 1;
       transition: none;
       animation: none;
@@ -115,6 +121,7 @@
       margin-top: 10px;
     }
     
+    .location-hero__image .image-background.top-left .image::before,
     .homepage-hero__image .image-background.top-left .image::before {
       margin-left: -20px;
       margin-top: -10px;

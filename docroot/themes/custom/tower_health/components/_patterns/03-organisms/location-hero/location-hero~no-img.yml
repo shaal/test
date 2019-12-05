@@ -1,0 +1,29 @@
+type: "Hospital"
+name: "Reading Hospital"
+address_1: "420 S. Fifth Avenue"
+address_2: "West Reading, PA 19611"
+directions:
+  link: "/"
+  icon: "th-find-hospital.svg"
+  text: "Directions"
+  variation: "small"
+phones:
+  - label: Main
+    numbers:
+      - number: 484-628-8000
+  - label: Appointments
+    numbers:
+      - number: 484-628-4357
+        label: 484-628-HELP (4357)
+      - number: 866-988-4357
+img: null
+classes: "growth top-left"
+breadcrumb:
+  1:
+    url: "#"
+    text: "Home"
+  2:
+    url: "#"
+    text: "2nd Level"
+  3:
+    text: "3rd Level"
