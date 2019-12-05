@@ -56,11 +56,22 @@ form_sections:
         title: 'I am requesting an appointment for:'
         type: radio
         orientation: inline
+        conditional_control: appt-for-condition
         children:
           - title: Myself
             id: appt
           - title: Someone Else
             id: appt
+      -
+        width: half
+        title: Your name
+        type: text
+        conditional_result: appt-for-condition
+      -
+        width: half
+        title: Relationship to patient
+        type: text
+        conditional_result: appt-for-condition
   - section_heading: Contact Information
     section_heading_level: 2
     section_items:

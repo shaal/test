@@ -8,7 +8,7 @@
     }%}
   {% endif %}
   {% for item in section_items %}
-    <div class="form-section__item {% if item.width %}form-section__item--{{ item.width }}{% endif %}">
+    <div class="form-section__item {% if item.width %}form-section__item--{{ item.width }}{% endif %} {% if item.conditional_result %}form-section__item--conditional{% endif %}" {% if item.conditional_result %}data-cond-by="{{item.conditional_result}}"{% endif %} {% if item.conditional_control %}data-cond="{{item.conditional_control}}" data-cond-met="false"{% endif %}>
       {% include "@atoms/05-forms/_form-label.twig"  with {
         title: item.title
       }%}

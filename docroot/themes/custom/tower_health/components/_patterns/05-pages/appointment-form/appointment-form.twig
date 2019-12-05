@@ -33,14 +33,12 @@
       } %}
 
     {% endfor %}
-    </form>
-
     {% include "@molecules/rich-text/rich-text.twig" %}
 
-    {% include "@atoms/06-buttons/01-button.twig" with {
-      button_content: button.text,
-      button_url: button.url,
-    } %}
+      <input class="button" type="submit" name="{{button.text}}" value="{{button.text}}">
+    
+    </form>
+
   {% endblock %}
 
 {% endembed %}
