@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.profile.field_medical_specialties_ref
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_epic_id
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
     - field.field.node.profile.field_profile_image
@@ -104,7 +105,7 @@ third_party_settings:
         - field_insurance_ref
         - field_affiliations_ref
         - field_profile_board_certified
-        - field_profile_board_eligible
+        - field_profile_epic_id
         - field_profile_scheduling
       parent_name: group_content
       weight: 37
@@ -226,6 +227,16 @@ content:
       formatter_settings: null
       show_description: false
     third_party_settings: {  }
+    region: content
+  field_profile_epic_id:
+    weight: 20
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
     region: content
   field_profile_first_name:
     weight: 1
