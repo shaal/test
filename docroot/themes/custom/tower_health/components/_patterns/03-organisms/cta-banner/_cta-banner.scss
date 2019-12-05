@@ -71,6 +71,7 @@
 
     @include breakpoint($bp6) {
       left: calc(( 100vw - 1500px ) / 2 * -1);
+      right: 58%;
       
       .image-background {
         max-width: 650px;
@@ -122,6 +123,10 @@
     
     @include breakpoint($bp5) {
       padding: 2.5em 2em 3.5em 42%;
+    }
+    
+    @include breakpoint($bp6) {
+      padding: 2.5em 2em 3.5em 36%;
     }
 
     .button {
