@@ -1,3 +1,8 @@
 .teaser-list {
   @include grid;
 }
+
+.listing-results {
+  @include adjust-font-size-to($label, .9);
+  margin-bottom: 2em;
+}

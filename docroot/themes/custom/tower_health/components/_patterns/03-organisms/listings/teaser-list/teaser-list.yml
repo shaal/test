@@ -1,4 +1,7 @@
-providers:
+results_shown: 1-10
+results_count: 128
+results_term: Heart
+teasers:
   - img:
       src: "https://www.placeimg.com/500/500/any"
       alt: "Alternative Text"

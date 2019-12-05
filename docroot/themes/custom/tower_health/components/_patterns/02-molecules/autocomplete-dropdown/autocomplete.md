@@ -1,4 +1,5 @@
 ---
+el: ".autocomplete-container"
 title: 'Autocomplete Dropdown'
 ---
 #### Description

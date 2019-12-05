@@ -63,6 +63,10 @@ form_sections:
           - title: < 5 Miles
           - title: < 10 Miles
           - title: < 25 Miles
+results_shown: 1-10
+results_count: 128
+emergency_banner: If this is a medical emergency, please call 911.
+
 locations:
   - img:
       src: "../../images/locations/teaser-mcglinn.jpg"
@@ -204,7 +208,21 @@ locations:
       text: "Directions"
       icon: "th-find-hospital.svg"
     type: location
-    
+current: 4
+items:
+  pages:
+    1:
+      href: "#"
+    2:
+      href: "#"
+    3:
+      href: "#"
+    4:
+      href: "#"
+    5:
+      href: "#"
+  previous: true
+  next: true
 cta:
   title: "Need Help? We're Here."
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
@@ -212,4 +230,3 @@ cta:
     url: "/"
     text: "484-628-HELP"
     icon: "th-cal.svg"
-    class: "right"
