@@ -1,0 +1,53 @@
+.listing-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+
+  @include breakpoint($bp2) {
+    flex-wrap: nowrap;
+  }
+
+  .button {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint($bp2) {
+      width: 200px;
+      margin-left: 1em;
+    }
+    
+    @include breakpoint($bp3) {
+      width: 230px;
+    }
+  }
+}
+
+.listing-search__input {
+  margin-bottom: 2em;
+  width: 100%;
+  
+  label {
+    font-weight: 600;
+  }
+  
+  input {
+    @extend %input;
+    height: 80px;
+    margin-right: 1em;
+    margin-bottom: 0;
+    border: 2px solid $primary-dark;
+    border-radius: 5px;
+  }
+
+  @include breakpoint($bp2) {
+    margin-bottom: 0;
+    width: calc(100% - 225px);
+  }
+}
+

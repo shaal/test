@@ -1,0 +1,29 @@
+.basic-header__content.listing {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  border-bottom: none;
+  text-align: center;
+  color: $primary-dark;
+  margin-top: 0;
+  padding-bottom: 0;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+// Animations
+
+.cssanimations {
+
+  // default states
+  .header__wrapper {
+    opacity: 0;
+  }
+
+  // animating in
+  .in-view.header__wrapper {
+    animation: fadeInUp .25s ease-in-out .35s forwards;
+    opacity: 1;
+  }
+}

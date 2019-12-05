@@ -1,0 +1,57 @@
+.anchored-cta-block {
+  background-color: $primary-dark;
+  color: $white;
+  margin: 4em 0 3.5em;
+  position: relative;
+  
+  @include breakpoint($bp3) {
+    background: linear-gradient(to right, $primary-dark, $primary-dark 30%, transparent 30%, transparent);
+    margin: 4em 0 0;
+  }
+}
+
+.anchored-cta-block__content {
+  background-color: $primary-dark;
+  padding: 3em 0;
+  
+  @include breakpoint($bp3) {
+    width: 70%;
+    padding-right: 4em;
+  }
+  
+  @include breakpoint($bp4) {
+    width: 80%;
+    padding-right: 6em;
+  }
+}
+
+.anchored-cta-block__title {
+  margin-top: 0;
+  margin-bottom: .25em;
+}
+
+.anchored-cta-block__buttons {
+  position: absolute;
+  bottom: -4.25em;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  
+  @include breakpoint($bp2) {
+    bottom: -4em;
+  }
+  
+  @include breakpoint($bp3) {
+    bottom: 3em;
+    left: 75%;
+  }
+  
+  @include breakpoint($bp4) {
+    bottom: 3em;
+    left: 80%;
+  }
+  
+  @include breakpoint($bp5) {
+    left: calc( ((100vw - 1350px) / 2) + (1350px * .8) );
+  }
+}

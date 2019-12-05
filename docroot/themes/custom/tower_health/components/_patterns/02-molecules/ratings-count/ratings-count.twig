@@ -1,0 +1,32 @@
+{% if (rating|round(1, 'ceil') > '0.5') and (rating|round(1, 'ceil') < '1') %}
+  {% set rating_round = 'half' %}
+{% elseif (rating|round(1, 'ceil') >= '1') and (rating|round(1, 'ceil') < '1.5') %}
+  {% set rating_round = 'one' %}
+{% elseif (rating|round(1, 'ceil') >= '1.5') and (rating|round(1, 'ceil') < '2') %}
+  {% set rating_round = 'oneh' %}
+{% elseif (rating|round(1, 'ceil') >= '2') and (rating|round(1, 'ceil') < '2.5') %}
+  {% set rating_round = 'two' %}
+{% elseif (rating|round(1, 'ceil') >= '2.5') and (rating|round(1, 'ceil') < '3') %}
+  {% set rating_round = 'twoh' %}
+{% elseif (rating|round(1, 'ceil') >= '3') and (rating|round(1, 'ceil') < '3.5') %}
+  {% set rating_round = 'three' %}
+{% elseif (rating|round(1, 'ceil') >= '3.5') and (rating|round(1, 'ceil') < '4') %}
+  {% set rating_round = 'threeh' %}
+{% elseif (rating|round(1, 'ceil') >= '4') and (rating|round(1, 'ceil') < '4.5') %}
+  {% set rating_round = 'four' %}
+{% elseif (rating|round(1, 'ceil') >= '4.5') and (rating|round(1, 'ceil') <= '5') %}
+  {% set rating_round = 'fourh' %}
+{% endif %}
+
+<div class="ratings-count">
+  {{ rating }} of 5
+  <div class="ratings-count__stars ratings-count__stars--{{rating_round}}">
+    {% include 'star.svg' %}
+    {% include 'star.svg' %}
+    {% include 'star.svg' %}
+    {% include 'star.svg' %}
+    {% include 'star.svg' %}
+  </div>
+</div>
+
+

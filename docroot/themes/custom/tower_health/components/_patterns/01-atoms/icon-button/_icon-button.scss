@@ -10,7 +10,7 @@
   background-color: $trust-ltst;
   padding: .75em 2em;
   border-radius: 5px;
-  margin: 0.35em 0 0.35em 30px;
+  margin: 0.35em 0;
   text-decoration: none;
   font-weight: 600;
 
@@ -40,6 +40,24 @@
     }
   }
 
+  &.right {
+    margin: 0.35em 0;
+
+    .icon-button__container {
+      order: 2;
+      margin-right: -53px;
+      margin-left: .75em;
+
+      @include breakpoint($bp2) {
+        margin-right: -53px;
+      }
+
+      @include breakpoint($bp3) {
+        margin-right: -53px;
+      }
+    }
+  }
+  
   &.icon-button--small {
     padding-top: 0;
     padding-bottom: 0;
