@@ -31,6 +31,14 @@
   }
 }
 
+// ie11 specific styling
+.form-item__select::-ms-expand {
+  outline: none;
+  appearance: none;
+  background: none;
+  border: none;
+}
+
 @supports ( -webkit-appearance: none ) or ( appearance: none ) or ( ( -moz-appearance: none ) and ( mask-type: alpha ) ) {
   /* Show custom arrow */
   .form-item__dropdown::after {
