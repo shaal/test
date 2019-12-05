@@ -1,0 +1,16 @@
+<div class="image-teaser js-section-animation {% if orientation %}image-teaser--{{orientation}}{% else %}image-teaser--def{% endif %}">
+  <div class="image-teaser__image">
+    <img src="{{ img.src }}" alt="{{ img.alt }}"/>
+  </div>
+  <div class="image-teaser__content">
+    <h3 class='image-teaser__title'>{{ title }}</h3>
+    <div class="image-teaser__text">{{ text }}</div>
+    {% if links|length == 1 %}
+      <a class="button button-primary" href="{{ links|first.url }}">{{ links|first.text }}</a>
+    {% else %}
+      {% for link in links %}
+        <a class="image-teaser__link" href="{{ link.url }}">{{ link.text }}</a>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

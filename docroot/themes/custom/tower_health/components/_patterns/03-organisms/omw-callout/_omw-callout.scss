@@ -1,0 +1,61 @@
+.omw-callout {
+  @include grid;
+  position: relative;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  @include breakpoint($bp3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.omw-callout__title {
+  @include adjust-font-size-to($xs-heading, 1.1);
+  margin-top: 0;
+  margin-bottom: .25em;
+  color: $white;
+}
+
+.omw-callout__text {
+  background-color: $primary-dark;
+  padding: 2em 2em 3em 2em;
+  border-radius: 8px;
+  color: $white;
+  margin-bottom: 1em;
+  width: 100%;
+  
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  @include breakpoint($bp3) {
+    width: 80%;
+    margin-bottom: 0;
+    padding: 2em 6em 2em 2em;
+  }
+  
+  @include breakpoint($bp4) {
+    width: 90%;
+  }
+}
+
+.omw-callout__button {
+  margin: 0 auto;
+  margin-top: -3em;
+
+  @include breakpoint($bp3) {
+    position: absolute;
+    right: 2em;
+    width: 30%;
+    top: 2em;
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+}

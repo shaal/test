@@ -1,0 +1,134 @@
+breadcrumb:
+  class: "hero"
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "Locations"
+    3:
+      text: "Location Name"
+hero:
+  type: "Hospital"
+  name: "Reading Hospital"
+  address_1: "420 S. Fifth Avenue"
+  address_2: "West Reading, PA 19611"
+  directions:
+    link: "/"
+    icon: "th-find-hospital.svg"
+    text: "Directions"
+    variation: "small"
+  phones:
+    - label: Main
+      numbers:
+        - number: 484-628-8000
+    - label: Appointments
+      numbers:
+        - number: 484-628-4357
+          label: 484-628-HELP (4357)
+        - number: 866-988-4357
+  img:
+    src: "../../images/locations/Reading-Hospital.jpg"
+    alt: "Alternative Text"
+  classes: "growth top-left"
+omw_callout:
+  title: "Heading to our Emergency Room? Let us know your are on your way"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra dui quis."
+  button:
+    text: "Save my Place in Line"
+    url: "/"
+link_list:
+  title: "Services We Offer"
+  items:
+    - text: "Cancer Care"
+      link: "/"
+    - text: "Weight Management"
+      link: "/"
+    - text: Heart & Vascular Care
+      link: "/"
+    - text: "Diagnostic Testing"
+      link: "/"
+    - text: "Joint & Bone Care"
+      link: "/"
+    - text: "Rehabilitation & Physical Therapy"
+      link: "/"
+    - text: "Emergency & Trauma"
+      link: "/"
+    - text: "Urgent Care"
+      link: "/"
+    - text: "Primary Care"
+      link: "/"
+    - text: "Women's Health"
+      link: "/"
+    - text: "Transplant"
+      link: "/"
+    - text: "Pediatrics"
+      link: "/"
+hours:
+  label: "Hours"
+  text: "Hours may be affected by holidays"
+  hours:
+    - title: "Monday"
+      hours: "8 a.m. - 5 p.m."
+    - title: "Tuesday"
+      hours: "8 a.m. - 5 p.m."
+    - title: "Wednesday"
+      hours: "8 a.m. - 5 p.m."
+    - title: "Thursday"
+      hours: "8 a.m. - 5 p.m."
+    - title: "Friday"
+      hours: "12 p.m. - 8 p.m."
+    - title: "Saturday"
+      hours: "8 a.m. - 8 p.m."
+    - title: "Sunday"
+      hours: "Closed"
+boxes:
+  - title: "McGlinn Cancer Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_193543982_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Tower Health Transplant Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care."
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_271545252_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Miller Regional Heart Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Center"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_239096192_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Weight Loss Surgery & Wellness Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Center"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_204599156_Preview.jpeg"
+      alt: "Alternative text"
+image_callout:
+  orientation: reverse
+  img:
+    src: "../../images/locations/stchris.jpg"
+    alt: "Alternative Text"
+  title: "Tower Health and Drexel University to Assume Ownership of St. Christopher's Hospital for Children"
+  text: "Tower Health and Drexel University have entered into an agreement to acquire St. Christopher's Hospital for Children, ensuring that the health care provider will continue its role as a vital resource for families in North Philadelphia and the region following its sale in bankruptcy court"
+  links:
+    - url: "/"
+      text: "About the Acquisition"
+text_callout:
+  title: "Insurance & Payment Information"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
+  button:
+    text: "Insurances Accepted"
+    url: "/"
