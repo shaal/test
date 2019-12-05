@@ -13,8 +13,8 @@
     {% include "@organisms/listings/teaser-list/teaser-list.twig" with {
         "teasers": teasers,
       } %}
-    {% include "@molecules/pagination/pagination.twig" %}
-    {% include "@organisms/listings/listing-cta/listing-cta.twig" with {
+    {% include "@molecules/pager/pager.twig" %}
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
         "title": cta.title,
         "text": cta.text,
         "link": cta.link,
