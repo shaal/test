@@ -228,3 +228,13 @@
     } 
   }
 }
+
+.main-menu__list-label {
+  @extend %track-out;
+  @include adjust-font-size-to($label, .8);
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .5em;
+}
