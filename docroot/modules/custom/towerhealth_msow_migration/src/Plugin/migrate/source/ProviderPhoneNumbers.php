@@ -21,7 +21,7 @@ class ProviderPhoneNumbers extends CSVtoJSON {
    */
   public $fields = [
     'practioner_id' => 'Pracitioner ID',
-    'phone_number' => 'Phone number'
+    'phone_number' => 'Phone number',
   ];
 
   /**

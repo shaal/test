@@ -21,7 +21,7 @@ class ProviderInsuranceProviderGroup extends CSVtoJSON {
    */
   public $fields = [
     'practioner_id' => 'Practioner Id',
-    'insurance_groups' => 'Insurance Groups'
+    'insurance_groups' => 'Insurance Groups',
   ];
 
   /**

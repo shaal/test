@@ -126,7 +126,7 @@ class CSVtoJSON extends SourcePluginBase {
 
     $json = json_encode($csv_data);
 
-    // If JSON encoding fails throw an exception
+    // If JSON encoding fails throw an exception.
     if (!$json) {
       throw new MigrateException(json_last_error_msg());
     }

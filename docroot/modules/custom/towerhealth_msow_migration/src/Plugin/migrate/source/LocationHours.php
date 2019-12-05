@@ -20,7 +20,7 @@ class LocationHours extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'office_record_no' => 'Office record number',
+    'office_record_number' => 'Office record number',
     'hours' => 'Hours',
   ];
 
@@ -30,7 +30,7 @@ class LocationHours extends CSVtoJSON {
    * @var array
    */
   public $ids = [
-    'office_record_no' => [
+    'office_record_number' => [
       'type' => 'string',
       'max_length' => 64,
     ],
@@ -90,17 +90,24 @@ class LocationHours extends CSVtoJSON {
           $end_day = $start_day;
         }
 
-        $start = substr($start, '11');
-        $end = substr($end, '11');
+        $start = substr($start, '11', 5);
+        $end = substr($end, '11', 5);
 
         $i = $start_day;
 
         while ($i <= $end_day) {
+          $day = $i;
+          // Office hour modules weeks are sunday - saturday.
+          // Office hour data is monday - sunday.
+          // Reset the day to 0 to work with office hour module.
+          if ($i == 7) {
+            $day = 0;
+          }
           $processed_data[$office_record_no]['hours'][] = [
             'office_hours_id' => $office_hours_id,
-            'days_of_week' => $i,
-            'start' => $start,
-            'end' => $end,
+            'day' => $day,
+            'starthours' => str_replace(':', '', $start),
+            'endhours' => str_replace(':', '', $end),
           ];
 
           $i++;
@@ -110,7 +117,6 @@ class LocationHours extends CSVtoJSON {
 
     // Remove keys since this is confusing the migration references.
     $processed_data = array_values($processed_data);
-    dump($processed_data);
 
     return $processed_data;
   }

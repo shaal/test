@@ -47,6 +47,7 @@ class ProviderSpecialtiesRefs extends CSVtoJSON {
     unset($data[0]);
 
     $processed_data = [];
+
     foreach ($data as $row) {
       $pracitioner_id = $row[0];
       $specialty_term = $row[1];
@@ -64,24 +65,47 @@ class ProviderSpecialtiesRefs extends CSVtoJSON {
       if (is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
         $processed_data[$pracitioner_id]['specialty_terms'][] = $specialty_term;
 
-        $specialty_term_board = '';
-
-        if ($document_name == 'Board Specialties') {
-          $specialty_term_board = $board_name;
-        }
-        else if ($document_name == 'Board Pending') {
-          $certified_year = $certified_year ? ', ' . $certified_year : '';
-          $specialty_term_board = $board_name . ' <span>' . t('Board Elligible') . $certified_year . '</span>';
-        }
-
-        if (!in_array($specialty_term_board, $processed_data[$pracitioner_id]['board_certified'])) {
-          $processed_data[$pracitioner_id]['board_certified'][] = $specialty_term_board;
-        }
+        $this->boardPendingDataAlter($processed_data, $pracitioner_id, $document_name, $board_name, $certified_year);
       }
     }
 
     // Remove keys since this is confusing the migration references.
     $processed_data = array_values($processed_data);
+
+    return $processed_data;
+  }
+
+  /**
+   * Add the board name to the data array.
+   *
+   * @param array $processed_data
+   *   The data array to work on.
+   * @param string $pracitioner_id
+   *   The provider's id.
+   * @param string $document_name
+   *   Is this pending or certified.
+   * @param string $board_name
+   *   The name of the board.
+   * @param string $certified_year
+   *   The year the provider was certified.
+   *
+   * @return mixed
+   *   THe processed array with board data added.
+   */
+  private function boardPendingDataAlter(array &$processed_data, $pracitioner_id, $document_name, $board_name, $certified_year) {
+    $specialty_term_board = '';
+
+    if ($document_name == 'Board Specialties') {
+      $specialty_term_board = $board_name;
+    }
+    elseif ($document_name == 'Board Pending') {
+      $certified_year = $certified_year ? ', ' . $certified_year : '';
+      $specialty_term_board = $board_name . ' <span>' . t('Board Elligible') . $certified_year . '</span>';
+    }
+
+    if (!in_array($specialty_term_board, $processed_data[$pracitioner_id]['board_certified'])) {
+      $processed_data[$pracitioner_id]['board_certified'][] = $specialty_term_board;
+    }
 
     return $processed_data;
   }
