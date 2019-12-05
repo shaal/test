@@ -1,0 +1,144 @@
+.image-teaser {
+
+  @include breakpoint($bp3) {
+    @include grid;
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+
+    .image-teaser--reverse & {
+      display: flex;
+    }
+  }
+}
+
+.image-teaser__image {
+  z-index: 1;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  @include breakpoint($bp3) {
+    position: absolute;
+    top: 0;
+    right: 2em;
+    bottom: 0;
+    left: 40%;
+    overflow: hidden;
+    width: auto;
+
+    img {
+      min-height: 100%;
+      min-width: 100%;
+      max-height: none;
+      width: auto;
+      object-fit: cover;
+    }
+
+    .image-teaser--reverse & {
+      left: 2em;
+      right: 40%;
+    }
+  }
+}
+
+.image-teaser__content {
+  position: relative;
+  margin: -2em 2em 0;
+  padding: 1em 1em 2em 1em;
+  background-color: $white;
+  border: 3px solid $growth;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba($black, 0.15);
+  z-index: 2;
+  margin-bottom: 2em;
+
+  @include breakpoint($bp1) {
+    padding: 2em 2em 2.5em 2em;
+    margin-top: -4em;
+  }
+
+  @include breakpoint($bp2) {
+    margin-top: -6em;
+  }
+
+  @include breakpoint($bp3) {
+    padding: 3em 3em 3.5em 3em;
+    width: 70%;
+    margin: 0;
+
+    .image-teaser--reverse & {
+      margin-left: auto;
+    }
+  }
+
+  @include breakpoint($bp4) {
+    width: 60%;
+  }
+
+  @include breakpoint($bp5) {
+    width: 50%;
+  }
+
+  a.button {
+    position: absolute;
+    right: 10%;
+    bottom: -1.5em;
+    margin-top: 0;
+  }
+}
+
+.image-teaser__title {
+  @include adjust-font-size-to($md-heading, 1.25);
+  margin-top: 0;
+}
+
+.image-teaser__text {
+  margin-bottom: 1em;
+}
+
+.image-teaser__link {
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1em;
+  margin-right: 1em;
+  text-decoration: none;
+
+  &:active,
+  &:hover,
+  &:focus {
+    @include trans;
+    text-decoration: underline;
+    color: $primary-dark;
+  }
+}
+
+
+.cssanimations {
+
+  .image-teaser__content,
+  .image-teaser__image {
+    opacity: 0;
+  }
+
+  // animating in
+  .in-view {
+
+    &:not(.image-teaser--reverse) .image-teaser__content,
+    &.image-teaser--reverse .image-teaser__image {
+      animation: fadeInLeft .65s ease-in-out forwards;
+      opacity: 1;
+    }
+
+    &:not(.image-teaser--reverse) .image-teaser__image,
+    &.image-teaser--reverse .image-teaser__content {
+      animation: fadeInRight .65s ease-in-out forwards;
+      opacity: 1;
+    }
+  }
+}

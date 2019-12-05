@@ -16,28 +16,28 @@
 //     attach: function (context) {
 
 (function ($) { // REMOVE IF DRUPAL.
-  
+
   'use strict';
-  
+
   // toggle
   var searchToggle = $('#search-toggle');
   // search wrapper
   var search = $('.header__search');
   // search drawer
   var searchDrawer = $('#search-drawer');
-  
+
   var menu_toggle = $('#toggle-expand');
   var menu_drawer = $('.main-nav__container');
-  
+
   function closeNav() {
     menu_drawer.removeClass('is-active');
     menu_toggle.removeClass('is-active');
-    
+
     if ( $(window).width() < 900 ) {
       menu_drawer.attr("aria-expanded", "false");
     }
   }
-  
+
   // Hide or show Search
   function openSearch() {
     search.addClass('is-active');
@@ -45,7 +45,7 @@
     searchDrawer.attr("aria-expanded", "true");
     closeNav();
   }
-  
+
   function closeSearch() {
     search.removeClass('is-active');
     searchToggle.removeClass('is-active');
@@ -59,21 +59,21 @@
       openSearch();
     }
   });
-        
+
   // close overlay and menus if a user clicks esx
-  $(document).keydown(function(event) { 
+  $(document).keydown(function(event) {
     // close menu on esc press
-    if (event.keyCode == 27) { 
+    if (event.keyCode == 27) {
       closeSearch();
-    } 
+    }
   });
-  
+
   $('.close-search').on('click', function() {
     closeSearch();
   });
-  
+
   // measure height of header so mobile nav can take up available space.
-  // and so that 
+  // and so that
   $(window).on('resize load reload', function() {
     if ( $(window).width() < 900 ) {
       var $headerHeight = $('.header__container').innerHeight();
@@ -86,7 +86,7 @@
       $('.header__search-drawer').css('max-height', '');
     }
   });
-  
+
   // position search drawer at desktop
   $(window).on('resize load reload', function() {
     if ( $(window).width() > 900 && $(window).innerWidth() < 1025 ) {
