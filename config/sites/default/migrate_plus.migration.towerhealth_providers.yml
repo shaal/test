@@ -59,9 +59,24 @@ source:
       label: 'Open scheduling'
 process:
   field_profile_practid: practioner_id
-  field_profile_first_name: first_name
-  field_profile_last_name: last_name
-  field_profile_middle_name: middle_name
+  field_profile_first_name:
+    -
+      plugin: get
+      source: first_name
+    -
+      plugin: towerhealth_utf_8
+  field_profile_last_name:
+    -
+      plugin: get
+      source: last_name
+    -
+      plugin: towerhealth_utf_8
+  field_profile_middle_name:
+    -
+      plugin: get
+      source: middle_name
+    -
+      plugin: towerhealth_utf_8
   field_profile_gender:
     -
       plugin: static_map
@@ -73,7 +88,12 @@ process:
       plugin: default_value
       default_value: female
   field_profile_npi: npi_id
-  field_profile_professional_title: professional_title
+  field_profile_professional_title:
+    -
+      plugin: get
+      source: professional_title
+    -
+      plugin: towerhealth_utf_8
   field_profile_type:
     -
       plugin: static_map
