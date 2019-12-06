@@ -21,7 +21,7 @@ class ProviderCredentialsRefs extends CSVtoJSON {
    */
   public $fields = [
     'practioner_id' => 'Pracitioner ID',
-    'credentials' => 'Credentials',
+    'specialty_term' => 'Specialty Term',
   ];
 
   /**
@@ -39,7 +39,7 @@ class ProviderCredentialsRefs extends CSVtoJSON {
   /**
    * Process the JSON file and convert flattened data.
    */
-  public function parseJson($json) {
+  public function parseJson($json, $secondary_json = NULL) {
     $data = json_decode($json);
     // Remove the header from the data file.
     unset($data[0]);

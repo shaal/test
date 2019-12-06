@@ -14,9 +14,24 @@ main-menu:
   dependencies:
     - core/drupal
 
+section-menu:
+  js:
+    dist/02-molecules/menus/section-menu/section-menu.js: {}
+  dependencies:
+    - core/drupal
+
 site-header:
   js:
     dist/03-organisms/site/site-header/site-header.js: {}
+
+chosen:
+  js:
+    dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
+    dist/01-atoms/05-forms/chosen/chosen-select.js: {}
+
+listFilters:
+  js:
+    dist/03-organisms/listings/listing-filter/listing-filters.js: {}
 
 autocomplete:
   js:

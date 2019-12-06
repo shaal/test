@@ -71,6 +71,10 @@
                 <input class="button button--small button--primary" type="submit" value="{{ item.button_label }}">
               </form>
             </div>
+          {% elseif item.type == 'label' and menu_name == 'main-menu' %}
+            <div class="main-menu__list-label">
+              {{ item.label }}
+            </div>
           {% else %}
             {% include "@molecules/menus/_menu-item.twig" with {
               li_base_class: item_base_class,

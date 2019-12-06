@@ -1,0 +1,30 @@
+{{ attach_library('tower_health/section-menu') }}
+
+<div class="section-menu__wrapper">
+  <button href="#" id="section-toggle-expand" class="toggle-expand section-toggle-expand" aria-controls='section-nav__container'>
+    <span class="toggle-expand__open">
+      {% include "@atoms/04-images/icons/_icon.twig" with {
+        icon_base_class: "icon",
+        icon_blockname: "toggle-expand",
+        icon_name: "bars",
+      } %}
+      <span class="toggle-expand__text--section">Section Menu</span>
+    </span>
+    <span class="toggle-expand__close">
+      {% include "@atoms/04-images/icons/_icon.twig" with {
+        icon_base_class: "icon",
+        icon_blockname: "toggle-close",
+        icon_name: "close",
+      } %}
+      <span class="toggle-expand__text--section">Close Section Menu</span>
+    </span>
+  </button>
+  <nav class="section-nav__container">
+    <div id="section-nav" class="section-nav">
+      {% include "@molecules/menus/_menu.twig" with {
+        menu_class: "section-menu",
+        items: section_items
+      } %}
+    </div>
+  </nav>
+</div>

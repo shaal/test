@@ -1,0 +1,8 @@
+img:
+  src: "../../images/locations/stchris.jpg"
+  alt: "Alternative Text"
+title: "Tower Health and Drexel University to Assume Ownership of St. Christopher's Hospital for Children"
+text: "Tower Health and Drexel University have entered into an agreement to acquire St. Christopher's Hospital for Children, ensuring that the health care provider will continue its role as a vital resource for families in North Philadelphia and the region following its sale in bankruptcy court"
+links:
+  - url: "/"
+    text: "About the Acquisition"

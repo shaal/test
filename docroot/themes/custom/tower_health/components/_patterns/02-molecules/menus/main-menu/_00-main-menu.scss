@@ -28,6 +28,14 @@
   }
 }
 
+.main-nav {
+  padding-top: 45px; 
+  
+  @include breakpoint($bp3) {
+    padding-top: 0;
+  }
+}
+
 // UL
 .main-menu:not(.main-menu--sub) {
   @include list-reset;
@@ -214,4 +222,14 @@
       padding: 1.6em 1.5em;
     }
   }
+}
+
+.main-menu__list-label {
+  @extend %track-out;
+  @include adjust-font-size-to($label, .8);
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .5em;
 }

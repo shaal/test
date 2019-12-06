@@ -1,0 +1,28 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  full_width: true
+}%}
+
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" with {
+      breadcrumb: header.breadcrumb
+    } %}
+    {% include "@organisms/listings/listing-filter/listing-filter.twig"  with {
+      filters: filters,
+      filter_radios: filter_radios
+      } %}
+  {% endblock %}
+
+  {% block page_content %}
+    {% include "@organisms/listings/teaser-list/teaser-list.twig" with {
+        "teasers": providers,
+      } %}
+    {% include "@molecules/pager/pager.twig" %}
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
+        "title": cta.title,
+        "text": cta.text,
+        "link": cta.link,
+      } %}
+  {% endblock %}
+
+{% endembed %}

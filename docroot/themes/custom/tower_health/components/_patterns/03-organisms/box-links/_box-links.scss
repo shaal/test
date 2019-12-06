@@ -1,0 +1,154 @@
+.box-links {
+  position: relative;
+  background: linear-gradient(to top, transparent, transparent 10%, $trust-ltst 10%, $trust-ltst 90%, transparent 90%, transparent);
+  margin: 4em 0;
+}
+
+.box-links-wrapper {
+  @include grid;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box-link {
+  width: 100%;
+  margin-bottom: 1em;
+  min-height: 350px;
+  position: relative;
+  @include trans;
+
+  @include breakpoint($bp3) {
+    width: 48%;
+    min-height: 400px;
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    
+    .box-link__background {
+      @include trans;
+      transform: scale(1.05); 
+      
+      &::before {
+        background: linear-gradient(to top, $primary-dark, rgba($primary-dark, .6));
+      }
+    }
+    
+    .box-link__cta,
+    .box-link__text {
+      @include trans;
+      opacity: 1;
+      height: auto;
+    }
+    
+    .box-link__text {
+      margin-bottom: 2em;
+    }
+    
+    .box-link__content {
+      @include trans;
+      border-color: $growth;
+    }
+  }
+}
+    
+.box-link__background {
+  @include trans;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2em;
+  
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    background: linear-gradient(to top, $primary-dark, rgba($primary-dark, .6));
+  }
+  
+  @include breakpoint($bp3) {
+    &::before {
+      background: linear-gradient(to top, $primary-dark, rgba($primary-dark, .3));      
+    }
+  }
+}
+
+.box-link__content {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 0 0 2em;
+  margin-right: 2em;
+  border-bottom: 4px solid $growth;
+  position: relative;
+  
+  @include breakpoint($bp3) {
+    border-color: $trust;
+  }
+}
+
+.box-link__title {
+  @include adjust-font-size-to($md-heading, 1.25);
+  color: $white;
+  margin-top: 0;
+  margin-bottom: .25em;
+}
+
+.box-link__text {
+  color: $white;
+  margin-bottom: 2em;
+  
+  @include breakpoint($bp3) {
+    @include trans;
+    height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+  }
+}
+
+.box-link__cta {
+  @include adjust-font-size-to($label, .9);
+  @extend %track-out;
+  color: $growth-med;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .5em;
+  align-self: flex-end;
+  
+  @include breakpoint($bp3) {
+    @include trans;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.cssanimations {
+
+  .box-link {
+    opacity: 0;
+  }
+
+  // animating in
+  .in-view {
+
+    .box-link {
+      opacity: 1;
+      animation: fadeInUp .65s ease-in-out forwards;
+    }
+  }
+}

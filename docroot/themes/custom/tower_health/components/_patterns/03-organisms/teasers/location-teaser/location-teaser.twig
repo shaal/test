@@ -1,0 +1,33 @@
+<div class="teaser location js-section-animation">
+  
+  <div class="teaser__image-container">
+    <div class="teaser__image">
+      <a href="{{ url }}"><img src="{% if location.img %}{{ location.img.src }}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ location.img.alt }}"></a>
+    </div>
+  </div>
+  
+  <h2 class="teaser__name"><a href="{{ url }}">{{ location.details.name }}</a></h2>
+
+  <div class="teaser__content">
+    <div class="teaser__content__info">
+      <div class="teaser__section">
+        <span class="teaser-label">Address</span>
+        <span class="teaser__row">{{ location.details.address1 }}</span>
+        <span class="teaser__row">{{ location.details.address2 }}</span>
+      </div>
+      <div class="teaser__section">
+        <span class="teaser-label">Phone</span>
+        {{ location.details.phone }}
+        <span class="teaser-label">Fax</span>
+        {{ location.details.fax }}
+      </div>
+    </div>
+    <div class="teaser__button">
+      {% include "@atoms/icon-button/icon-button.twig" with {
+        "url": location.link.url,
+        "icon": location.link.icon,
+        "text": location.link.text,
+      } %}
+    </div>
+  </div>
+</div>

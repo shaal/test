@@ -1,12 +1,12 @@
-<header class='basic-header {% if header.style == 'secondary' %}basic-header--secondary{% endif %}'>
+<header class='basic-header {% if header.style == 'secondary' %}basic-header--secondary{% endif %}{% if header.style == 'list' %}basic-header--list{% endif %}'>
   <div class="basic-header__container">
     {% if header.breadcrumb %}
     {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
       breadcrumb: header.breadcrumb
     } %}
     {% endif %}
-    
-    <div class='basic-header__content'>
+
+    <div class='basic-header__content {% if header.class %}{{ class }}{% endif %}'>
       {% include "@atoms/02-text/00-headings/_heading.twig" with {
         "heading_level": 1,
         "heading": header.title,
@@ -15,6 +15,14 @@
       
       {% if header.lede %}
       <span class="basic-header__lede">{{ header.lede}}</span>
+      {% endif %}
+      
+      {% if header.form %}
+        {% include "@organisms/listings/listing-search/listing-search.twig" with {
+          label: header.form.label,
+          placeholder: header.form.placeholder,
+          button: header.form.button
+        } %}
       {% endif %}
     </div>
   </div>

@@ -50,6 +50,7 @@ process:
   title:
   - plugin: get
     source: office_name
+  - plugin: towerhealth_utf_8
   - plugin: default_value
     default_value: 'TowerHealth Location'
 
@@ -57,13 +58,25 @@ process:
     plugin: default_value
     default_value: US
 
-  'field_location_address/address_line1': address_1
+  'field_location_address/address_line1':
+  - plugin: get
+    source: address_1
+  - plugin: towerhealth_utf_8
 
-  'field_location_address/address_line2': address_2
+  'field_location_address/address_line2':
+  - plugin: get
+    source: address_2
+  - plugin: towerhealth_utf_8
 
-  'field_location_address/locality': city
+  'field_location_address/locality':
+  - plugin: get
+    source: city
+  - plugin: towerhealth_utf_8
 
-  'field_location_address/administrative_area': state
+  'field_location_address/administrative_area':
+  - plugin: get
+    source: state
+  - plugin: towerhealth_utf_8
 
   'field_location_address/postal_code': zip_code
 

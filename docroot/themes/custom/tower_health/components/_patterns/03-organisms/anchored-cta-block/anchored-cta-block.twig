@@ -1,0 +1,18 @@
+<div class="anchored-cta-block js-section-animation">
+  <div class="grid">
+    <div class="anchored-cta-block__content">
+      <h2 class="anchored-cta-block__title">{{ title }}</h2>
+      <div class="anchored-cta-block__text">
+        {{ text }}
+      </div>
+    </div>
+    <div class="anchored-cta-block__buttons">
+      {% include "@atoms/icon-button/icon-button.twig" with {
+        "url": link.url,
+        "icon": link.icon,
+        "text": link.text,
+        "variation": "right"
+      } %}
+    </div>
+  </div>
+</div>

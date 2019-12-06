@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.location.field_location_id
     - field.field.node.location.field_location_image
     - field.field.node.location.field_location_insurance
-    - field.field.node.location.field_location_omw
     - field.field.node.location.field_location_phone_number
     - field.field.node.location.field_location_type
     - field.field.node.location.field_services_ref
@@ -32,7 +31,6 @@ third_party_settings:
       children:
         - group_description
         - group_migrated_data
-        - group_on_my_way
         - group_service_content
         - group_flexible_components
         - group_how_to_find_us
@@ -80,20 +78,6 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: 'Migrated data'
-      region: content
-    group_on_my_way:
-      children:
-        - field_location_omw
-      parent_name: group_vertical_tabs
-      weight: 26
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: 'On My Way'
       region: content
     group_service_content:
       children:
@@ -248,12 +232,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-    region: content
-  field_location_omw:
-    weight: 15
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
     region: content
   field_location_phone_number:
     weight: 15

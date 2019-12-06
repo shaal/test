@@ -10,7 +10,6 @@ Feature: Location Content Type
     Then I should see the text "Hospital Affiliation"
     Then I should see the text "Clinical Area of Focus"
     Then I should see the text "Board Certified"
-    Then I should see the text "Board Eligible"
     Then I should see the text "Comment Count"
     Then I should see the text "Comments"
     Then I should see the text "Education"

@@ -1,5 +1,9 @@
 .basic-header {
   margin: 1em 0 2em;
+  
+  &.basic-header--list {
+    margin-bottom: 0;
+  }
 }
 
 .basic-header--secondary {
@@ -11,6 +15,10 @@
   flex-direction: column;
   padding-top: 1em;
   padding-bottom: 2em;
+  
+  .basic-header--list & {
+    padding-bottom: 0;
+  }
 }
 
 .basic-header__content {
@@ -41,6 +49,28 @@
     
     &::before {
       border-color: $trust;
+    }
+  }
+  
+  .basic-header--list & {
+    text-align: center;
+    border-bottom: 0;
+    
+    &::before {
+      display: none;
+      visibility: hidden;
+    }
+    
+    .basic-header__title {
+      @include adjust-font-size-to($xxxl-heading, 1.5);
+      text-transform: uppercase;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .basic-header__lede {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
