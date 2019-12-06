@@ -1,0 +1,8 @@
+uuid: fedd5061-e16d-46ee-b559-d5113154ef7a
+langcode: en
+status: true
+dependencies: {  }
+name: Universities
+vid: universities
+description: 'The universities used for provider''s education'
+weight: 0

@@ -1,0 +1,23 @@
+id: towerhealth_insurance_company_terms
+label: Import tower health insurance company taxonomy terms.
+migration_groups:
+  - TowerHealth MSOW import
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'provider_insurance_terms'
+  # Full path to the file.
+  path: 'public://directory/Find_Provider_Dir_Practitioner_Insurance.txt'
+
+process:
+  vid:
+  - plugin: default_value
+    default_value: insurance_company
+
+  name: insurance_company
+
+destination:
+  plugin: entity:taxonomy_term

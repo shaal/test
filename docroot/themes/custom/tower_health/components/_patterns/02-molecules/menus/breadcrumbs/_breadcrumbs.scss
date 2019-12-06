@@ -1,6 +1,6 @@
 .breadcrumbs {
-  position: relative;  
-  
+  position: relative;
+
   &::before {
     content: '';
     display: block;
@@ -14,6 +14,19 @@
     @include breakpoint($bp6) {
       width: calc(1.25em + (100vw - 1500px));
       left: calc(-1.9em - (100vw - 1500px));
+    }
+  }
+
+  &.hero {
+    @include grid;
+    
+    &::before {
+      left: 0;
+      
+      @include breakpoint($bp6) {
+        width: calc(1em + ((100vw - 1500px) / 2 ));
+        left: calc( ((100vw - 1500px) / -2 ));
+      }
     }
   }
 }

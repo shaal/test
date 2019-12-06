@@ -1,3 +1,4 @@
+{{ attach_library('tower_health/autocomplete') }}
 <div class="form-section">
   {% if section_heading %}
     {% include "@atoms/02-text/00-headings/_heading.twig"  with {
@@ -8,7 +9,7 @@
     }%}
   {% endif %}
   {% for item in section_items %}
-    <div class="form-section__item {% if item.width %}form-section__item--{{ item.width }}{% endif %}">
+    <div class="form-section__item {% if item.width %}form-section__item--{{ item.width }}{% endif %} {% if item.conditional_result %}form-section__item--conditional{% endif %}" {% if item.conditional_result %}data-cond-by="{{item.conditional_result}}"{% endif %} {% if item.conditional_control %}data-cond="{{item.conditional_control}}" data-cond-met="false"{% endif %}>
       {% include "@atoms/05-forms/_form-label.twig"  with {
         title: item.title
       }%}
@@ -38,7 +39,7 @@
         </ul>
       {% elseif item.type == 'select' %}
         <div class="form-item__dropdown">
-          <select class="form-item__select">
+          <select class="form-item__select {% if item.chosen %}chosen-select{% endif %}" {% if item.multiple %}multiple {% endif %}>
             <optgroup label="{{ item.name }}">
               {% for item in item.children %}
                 {% include "@atoms/05-forms/select/_select-item.twig" with {
@@ -52,6 +53,14 @@
         <textarea name="{{ item.name}}"></textarea>
       {% else %}
         <input type="{{item.type}}" name="{{ item.name}}" {% if item.placeholder %} placeholder="{{item.placeholder}}" {% endif %}/>
+      {% endif %}
+      
+      {% if item.link == true %}
+        {% include "@atoms/01-links/link/link.twig" with {
+           "link_url": item.link.url,
+           "link_content": item.link.label,
+           "link_modifiers": ['small']
+         } %}
       {% endif %}
       
       {% if item.optional == true %}

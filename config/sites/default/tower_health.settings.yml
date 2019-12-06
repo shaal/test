@@ -1,0 +1,13 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+address1: '420 S. Fifth Avenue'
+address2: 'West Reading, PA 19611'
+telephone: 484-628-8000
+legal: 'Copyright 2019 Tower Health. All rights reserved.'
