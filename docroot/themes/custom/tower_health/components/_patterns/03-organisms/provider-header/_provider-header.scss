@@ -1,9 +1,11 @@
-.provider-hero {
-  margin-top: 1em;
+.provider-header {
+  margin-top: 3em;
   margin-bottom: 1em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $trust-ltst;
 }
 
-.provider-hero__content {
+.provider-header__content {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -13,7 +15,7 @@
   }
 }
 
-.provider-hero__image-container {
+.provider-header__image-container {
   position: relative;
   width: 240px;
   height: 240px;
@@ -27,7 +29,7 @@
     content: '';
     height: 250px;
     width: 250px;
-    background-color: $growth;
+    background-color: $trust-aa;
     border-radius: 50%;
     z-index: 1;
   }
@@ -37,7 +39,7 @@
   }
 }
 
-.provider-hero__image {
+.provider-header__image {
   overflow: hidden;
   border-radius: 50%;
   width: 240px;
@@ -51,7 +53,7 @@
 }
 
 
-.provider-hero__card {
+.provider-header__card {
   
   @include breakpoint($bp4) {
     display: flex;
@@ -60,7 +62,7 @@
   }
 }
 
-.provider-hero__card-info {
+.provider-header__card-info {
   width: 100%;
   
   @include breakpoint($bp4) {
@@ -76,16 +78,16 @@
 }
 
 
-.provider-hero__name {
+.provider-header__name {
   margin-bottom: 0;
 }
 
-.provider-hero__title {
+.provider-header__title {
   @include adjust-font-size-to($sm-heading, 1.15);
   margin-top: 0;
 }
 
-.provider-hero__ratings {
+.provider-header__ratings {
   margin-top: 2em;
   display: flex;
   
@@ -98,18 +100,17 @@
   }
 }
 
-.provider-hero__cta {
+.provider-header__cta {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 2em 0;
-  padding: 1em 0;
+  margin: 2em 0 0;
+  padding: 1em 0 0;
   text-align: center;
   border-top: 1px solid $trust-ltst;
-  border-bottom: 1px solid $trust-ltst;
   
   @include breakpoint($bp3) {
     border: none;
@@ -128,7 +129,7 @@
   }
 }
 
-.provider-hero__cta__label {
+.provider-header__cta__label {
   @include adjust-font-size-to($label, .75)
   margin-top: 0;
   margin-bottom: 1em;
@@ -141,12 +142,12 @@
   }
 }
 
-.provider-hero__cta__text {
+.provider-header__cta__text {
   @include adjust-font-size-to($sm-text, .85);
   margin: 0 1em;
 }
 
-.provider-hero__cta__link {
+.provider-header__cta__link {
   display: inline-block;
   text-decoration: none;
   font-weight: 600;

@@ -1,9 +1,9 @@
-<div class="provider-hero grid">
-  <div class="provider-hero__content">
-    <div class="provider-hero__first">
+<div class="provider-header grid">
+  <div class="provider-header__content">
+    <div class="provider-header__first">
       
-      <div class="provider-hero__image-container">
-        <div class="provider-hero__image">
+      <div class="provider-header__image-container">
+        <div class="provider-header__image">
         <img src="{% if img %}{{img.src}}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ img.alt}}">
         </div>
       </div>
@@ -18,15 +18,15 @@
       
     </div>
     
-    <div class="provider-hero__card">
-      <div class="provider-hero__card-info">
-        <h1 class="provider-hero__name">{{ name }}</h1>
+    <div class="provider-header__card">
+      <div class="provider-header__card-info">
+        <h1 class="provider-header__name">{{ name }}</h1>
         {% if lead_title %}
-        <span class="provider-hero__title">{{ lead_title }}</span>
+        <span class="provider-header__title">{{ lead_title }}</span>
         {% endif %}
         
         {% if rating %}
-        <div class="provider-hero__ratings">
+        <div class="provider-header__ratings">
           {% include "@molecules/ratings-count/ratings-count.twig" %}
           <a href="#ratings">{{ review_amt }} Reviews</a>
           {% endif %}
@@ -34,15 +34,15 @@
       </div>
       
       {% if accepting_patients == 'true' %}
-      <div class="provider-hero__cta">
-        <h2 class="provider-hero__cta__label">Request an Appointment</h2>
+      <div class="provider-header__cta">
+        <h2 class="provider-header__cta__label">Request an Appointment</h2>
         {% include "@atoms/icon-button/icon-button.twig" with {
           text: "Make an Appointment Online",
           url: appt_url,
           icon: "th-cal.svg"
         } %}
-        <span class="provider-hero__cta__text">
-        or call <a class="provider-hero__cta__link" href="tel+1{{appt_phone.number}}">{{ appt_phone.label }}</a>
+        <span class="provider-header__cta__text">
+        or call <a class="provider-header__cta__link" href="tel+1{{appt_phone.number}}">{{ appt_phone.label }}</a>
         </span>
       </div>
       {% endif %}
