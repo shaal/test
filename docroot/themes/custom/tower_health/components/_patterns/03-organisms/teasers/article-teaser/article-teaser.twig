@@ -1,35 +1,12 @@
-<div class="teaser article js-section-animation">
+<div class="teaser--simple article js-section-animation">
 
-  <div class="teaser__image-container">
-    <div class="teaser__image">
-      <a href="{{ url }}"><img src="{% if article.img %}{{ article.img.src }}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ article.img.alt }}"></a>
-    </div>
-  </div>
+  <h2 class="teaser__name--simple"><a href="{{ url }}">{{ article.details.title }}</a></h2>
 
-  <h2 class="teaser__name"><a href="{{ url }}">{{ article.details.title }}</a></h2>
-
-  <div class="teaser__content">
-    <div class="teaser__content__info">
-      <div class="teaser__section">
-        <span class="teaser-label">Author</span>
-        <span class="teaser__row">{{ article.details.author }}</span>
-      </div>
-      <div class="teaser__section">
-        <span class="teaser-label">Tags</span>
-          {% for item in article.details.tags %}
-            <span class="teaser-tag">{{ item }}</span>
-          {% endfor %}
-      </div>
-      <div class="teaser__section--full">
-        {{ article.details.text }}
-      </div>
-    </div>
-    <div class="teaser__button">
-      {% include "@atoms/icon-button/icon-button.twig" with {
-        "url": article.link.url,
-        "icon": article.link.icon,
-        "text": article.link.text,
-      } %}
-    </div>
+  <div class="teaser__content--simple">
+    <span class="article-date">{{ article.details.date }}</span>
+    <p>{{ article.details.text }}</p>
+    {% for item in article.details.tags %}
+      <span class="teaser-tag">{{ item }}</span>
+    {% endfor %}
   </div>
 </div>

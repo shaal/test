@@ -310,12 +310,42 @@
 .cssanimations {
 
   // default states
-  .teaser {
+  .teaser,
+  .teaser--simple {
     opacity: 0;
   }
 
   // animating in
-  .in-view.teaser {
+  .in-view.teaser,
+  .in-view.teaser--simple {
     animation: fadeInUp .25s ease-in-out .35s forwards;
   }
+}
+
+
+// Simple variation styles
+.teaser--simple {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 4em;
+}
+
+.teaser__name--simple {
+  @include adjust-font-size-to($md-heading, 1.25);
+  font-weight: 700;
+
+  a {
+    color: $primary-dark;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.article-date {
+  font-weight: 700;
 }

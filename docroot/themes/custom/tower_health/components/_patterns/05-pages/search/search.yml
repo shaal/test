@@ -17,7 +17,6 @@ teasers:
   - img:
       src: "../../images/people/Roland-Donald.jpg"
       alt: "Alternative Text"
-    classes: "growth bottom-right"
     link:
       url: "/"
       text: "Request an Appointment"
@@ -31,15 +30,11 @@ teasers:
     type: "provider"
   - details:
       title: "Lessons from the Oncology Center"
-      author: "John Doe"
+      date: "December 6, 2019"
       tags:
         - Oncology
         - Patient Stories
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem...."
-    link:
-      url: "/"
-      text: "Read More"
-      icon: "th-find-hospital.svg"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
     type: article
   - img:
       src: "../../images/locations/teaser-mcglinn.jpg"
@@ -58,10 +53,6 @@ teasers:
   - details:
       title: "Giving to Tower Health"
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
-    link:
-      url: "/"
-      text: "Read More"
-      icon: "th-find-hospital.svg"
     type: basic
   - img:
       src: "../../images/locations/teaser-reading.jpg"
@@ -80,7 +71,6 @@ teasers:
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
       alt: "Alternative Text"
-    classes: "growth bottom-right"
     link:
       url: "/"
       text: "Request an Appointment"
@@ -95,7 +85,6 @@ teasers:
   - img:
       src: "../../images/people/Roland-Donald.jpg"
       alt: "Alternative Text"
-    classes: "growth bottom-right"
     link:
       url: "/"
       text: "Request an Appointment"
@@ -109,15 +98,11 @@ teasers:
     type: "provider"
   - details:
       title: "Lessons from the Oncology Center"
-      author: "John Doe"
+      date: "December 6, 2019"
       tags:
         - Oncology
         - Patient Stories
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem...."
-    link:
-      url: "/"
-      text: "Read More"
-      icon: "th-find-hospital.svg"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
     type: article
   - img:
       src: "../../images/locations/teaser-mcglinn.jpg"
@@ -136,10 +121,6 @@ teasers:
   - details:
       title: "Giving to Tower Health"
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
-    link:
-      url: "/"
-      text: "Read More"
-      icon: "th-find-hospital.svg"
     type: basic
 current: 2
 items:
