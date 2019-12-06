@@ -60,7 +60,7 @@
 
   &.icon-button--small {
     @include adjust-font-size-to($sm-text, .75);
-    padding: .25em .75em;
+    padding: .25em 1.5em .25em .75em;
     
     svg {
       width: 30px;
