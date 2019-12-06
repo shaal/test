@@ -1,0 +1,21 @@
+uuid: b00774df-5573-4705-993d-d1f7135a5299
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_omw_description
+    - paragraphs.paragraphs_type.on_my_way
+  module:
+    - text
+id: paragraph.on_my_way.field_omw_description
+field_name: field_omw_description
+entity_type: paragraph
+bundle: on_my_way
+label: Description
+description: 'Optionally add copy for this on my way component, that will inform the user about the mychart on my way functionality.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

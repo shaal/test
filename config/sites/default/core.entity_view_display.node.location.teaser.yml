@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.location.field_location_id
     - field.field.node.location.field_location_image
     - field.field.node.location.field_location_insurance
-    - field.field.node.location.field_location_omw
     - field.field.node.location.field_location_phone_number
     - field.field.node.location.field_location_type
     - field.field.node.location.field_services_ref
@@ -79,7 +78,6 @@ hidden:
   field_location_hours: true
   field_location_id: true
   field_location_insurance: true
-  field_location_omw: true
   field_services_ref: true
   links: true
   search_api_excerpt: true
