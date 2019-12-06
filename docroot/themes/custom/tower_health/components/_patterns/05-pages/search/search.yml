@@ -68,6 +68,13 @@ teasers:
       text: "Directions"
       icon: "th-find-hospital.svg"
     type: location
+  - details:
+      title: "Pediatrics"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Pediatric Cardiology
+        - Pediatric Radiology
+    type: service
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
       alt: "Alternative Text"
