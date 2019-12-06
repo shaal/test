@@ -35,6 +35,7 @@ settings:
             - Blockquote
             - DrupalImage
             - media_entity_embed
+            - Table
         -
           name: 'Block Formatting'
           items:
