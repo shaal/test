@@ -59,6 +59,13 @@
   background-repeat: no-repeat;
   background-position: center;
 
+  @include breakpoint(0 899px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5em;
+  }
+
   &:link,
   &:visited {
     color: transparent;
@@ -103,7 +110,7 @@
   }
 }
 
-a {
+.utility-menu__item--cta {
   @include breakpoint(0 899px) {
     order: 1;
     width: 100%;
