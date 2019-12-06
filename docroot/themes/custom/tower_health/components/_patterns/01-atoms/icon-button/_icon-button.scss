@@ -57,6 +57,10 @@
       }
     }
   }
+  
+  &.icon-button--list {
+    margin-left: 2em;
+  }
 
   &.icon-button--small {
     @include adjust-font-size-to($sm-text, .75);
