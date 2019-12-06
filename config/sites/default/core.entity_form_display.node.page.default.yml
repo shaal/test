@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.page.field_basic_components
     - field.field.node.page.field_media
     - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
@@ -11,6 +12,7 @@ dependencies:
   module:
     - content_moderation
     - media_library
+    - paragraphs
     - path
     - text
 _core:
@@ -26,6 +28,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_basic_components:
+    type: entity_reference_paragraphs
+    weight: 125
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_media:
     type: media_library_widget
     weight: 121
