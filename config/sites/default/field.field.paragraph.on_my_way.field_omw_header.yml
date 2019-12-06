@@ -1,0 +1,21 @@
+uuid: 51e586dd-a00c-4996-8e89-57dea4cccbe3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_omw_header
+    - paragraphs.paragraphs_type.on_my_way
+id: paragraph.on_my_way.field_omw_header
+field_name: field_omw_header
+entity_type: paragraph
+bundle: on_my_way
+label: Header
+description: 'Add a header for this banner'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Heading to our Emergency Room? Let us know your are on your way'
+default_value_callback: ''
+settings: {  }
+field_type: string

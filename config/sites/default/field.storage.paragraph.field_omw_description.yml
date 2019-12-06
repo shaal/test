@@ -1,0 +1,19 @@
+uuid: 2af06895-77c4-46d9-8679-eff3ad1b3ae0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_omw_description
+field_name: field_omw_description
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
