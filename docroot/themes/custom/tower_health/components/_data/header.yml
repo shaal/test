@@ -86,6 +86,8 @@ header_menu_items:
                   name: Orthopedics
                 - id: 27
                   name: Allergy & Immunology
+      - type: 'label'
+        label: 'Featured Services'
       - title: "Cancer Care"
         url: "#"
       - title: "Heart & Vascular Care"
@@ -129,6 +131,8 @@ header_menu_items:
                   name: Jennersville Hospital
                 - id: 27
                   name: Pottstown Hospital
+      - type: 'label'
+        label: 'Featured Locations'
       - title: "Reading Hospital"
         url: "#"
       - title: "Brandywine Hospital"

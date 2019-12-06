@@ -1,0 +1,28 @@
+uuid: 7a4408ef-feb8-49ee-9766-bfd337e892c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_omw_link
+    - paragraphs.paragraphs_type.on_my_way
+  module:
+    - link
+id: paragraph.on_my_way.field_omw_link
+field_name: field_omw_link
+entity_type: paragraph
+bundle: on_my_way
+label: 'On My Way Link'
+description: 'Add the mychart on my way link that is appropriate for this location.'
+required: false
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'internal:/'
+    title: 'Hold your place in line'
+    options: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
