@@ -1,0 +1,38 @@
+uuid: 1843b0f4-6a2d-4f02-a063-f752335532b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.social-media.field_social_icon
+    - system.menu.social-media
+  module:
+    - file
+    - link
+    - menu_item_extras
+id: menu_link_content.social-media.default
+targetEntityType: menu_link_content
+bundle: social-media
+mode: default
+content:
+  field_social_icon:
+    weight: 21
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
