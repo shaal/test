@@ -56,17 +56,16 @@ class CSVtoJSON extends SourcePluginBase {
       throw new MigrateException('You must declare the "path" to the source CSV file in your source settings.');
     }
 
-    $file = fopen($this->configuration['path'], 'r');
+    $json = $this->encodeJsonCsv($this->configuration['path']);
 
-    // Setup a PHP array to hold our CSV rows.
-    $csv_data = [];
+    $secondary_json = '';
 
-    // Go through rows in our CSV file and add them to array.
-    while (($row = fgetcsv($file, 0, "|")) !== FALSE) {
-      $csv_data[] = $row;
+    // Path is required.
+    if (!empty($this->configuration['second_path'])) {
+      $secondary_json = $this->encodeJsonCsv($this->configuration['second_path']);
     }
 
-    $this->dataRows = $this->parseJSON(json_encode($csv_data));
+    $this->dataRows = $this->parseJSON($json, $secondary_json);
   }
 
   /**
@@ -106,8 +105,33 @@ class CSVtoJSON extends SourcePluginBase {
   /**
    * Process the JSON file and convert flattened data to single record per TIN.
    */
-  public function parseJson($json) {
+  public function parseJson($json, $secondary_json = NULL) {
     return [];
+  }
+
+  /**
+   * Open file from CSV and encode to JSON.
+   */
+  public function encodeJsonCsv($path) {
+    $file = fopen($path, 'r');
+
+    // Setup a PHP array to hold our CSV rows.
+    $csv_data = [];
+
+    // Go through rows in our CSV file and add them to array.
+    while (($row = fgetcsv($file, 0, "|")) !== FALSE) {
+      // Cleanup non-utf8 characters.
+      $csv_data[] = mb_convert_encoding($row, 'UTF-8', 'UTF-8');
+    }
+
+    $json = json_encode($csv_data);
+
+    // If JSON encoding fails throw an exception.
+    if (!$json) {
+      throw new MigrateException(json_last_error_msg());
+    }
+
+    return $json;
   }
 
 }

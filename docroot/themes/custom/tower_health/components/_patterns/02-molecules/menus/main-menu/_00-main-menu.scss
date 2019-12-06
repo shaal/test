@@ -28,6 +28,14 @@
   }
 }
 
+.main-nav {
+  padding-top: 45px; 
+  
+  @include breakpoint($bp3) {
+    padding-top: 0;
+  }
+}
+
 // UL
 .main-menu:not(.main-menu--sub) {
   @include list-reset;

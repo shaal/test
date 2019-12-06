@@ -28,6 +28,8 @@
   }
   
   .is-active & {
+    border-radius: 8px 8px 0 0;
+    
     .filter__toggle--close {
       display: inline;
       visibility: visible;
@@ -53,7 +55,7 @@
   justify-content: space-between;
   background-color: rgba($trust-ltst, .6);
   padding: 1em 2em;
-  border-radius: 8px 0 0 8px;
+  border-radius: 0 0 8px 8px;
   width: 100%;
   
   display: none;
@@ -68,17 +70,21 @@
     display: flex;
     visibility: visible;
     flex-wrap: nowrap;
+    border-radius: 8px 0 0 8px;
   }
   
   &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 2em;
-    right: -2em;
-    background-color: rgba($trust-ltst, .6);
+    
+    @include breakpoint($bp3) {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2em;
+      right: -2em;
+      background-color: rgba($trust-ltst, .6);
+    }
     
     @include breakpoint($bp5) {
       width: calc( 1.5em + (100vw - 1350px) / 2 );

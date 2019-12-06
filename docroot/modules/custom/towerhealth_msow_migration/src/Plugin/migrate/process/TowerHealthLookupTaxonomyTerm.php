@@ -43,18 +43,27 @@ class TowerHealthLookupTaxonomyTerm extends ProcessPluginBase {
   protected $lookupField;
 
   /**
+   * The field holding vocabulary id.
+   *
+   * @var string
+   */
+  protected $vid;
+
+  /**
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
 
     if (isset($this->configuration['lookup_field'])) {
       $lookup_field = $this->configuration['lookup_field'];
+      $vid = $this->configuration['vid'];
       $id = $value;
 
       if (!empty($id)) {
         $query = \Drupal::entityQuery('taxonomy_term');
         $result = $query
           ->condition($lookup_field . '.0.value', $id, '=')
+          ->condition('vid', $vid)
           ->execute();
 
         return reset($result);

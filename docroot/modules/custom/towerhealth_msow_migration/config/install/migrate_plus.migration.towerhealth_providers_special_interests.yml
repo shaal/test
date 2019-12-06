@@ -57,6 +57,7 @@ process:
     - plugin: towerhealth_lookup_taxonomy_term
       lookup_field: field_area_of_interest_msow_id
       source: msow_ids
+      vid: area_of_interest
     - plugin: skip_on_empty
       method: row
 
