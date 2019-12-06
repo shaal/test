@@ -5,7 +5,7 @@
     </div>
   </div>
   <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
-  
+
   {% if provider.details.rating %}
   <div class="teaser__rating">
     {% include "@molecules/ratings-count/ratings-count.twig" with {
@@ -13,7 +13,7 @@
     } %}
   </div>
   {% endif %}
-  
+
   <div class="teaser__content">
     <div class="teaser__content__info">
       <div class="teaser__section">
@@ -39,9 +39,10 @@
         "url": provider.link.url,
         "icon": provider.link.icon,
         "text": provider.link.text,
+        "variation": provider.link.variation,
       } %}
     </div>
    {% endif %}
   </div>
-  
+
 </div>
