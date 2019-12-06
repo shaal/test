@@ -113,5 +113,10 @@
                 "canonical_url": "http:\/\/default\/node"
             }
         }
+    ],
+    "field_main_link_type": [
+        {
+            "value": "default"
+        }
     ]
 }

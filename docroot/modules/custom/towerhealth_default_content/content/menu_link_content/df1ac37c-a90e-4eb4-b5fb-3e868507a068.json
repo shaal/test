@@ -74,7 +74,7 @@
     ],
     "weight": [
         {
-            "value": 1
+            "value": -48
         }
     ],
     "expanded": [
@@ -89,7 +89,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-03T22:56:12+00:00",
+            "value": "2019-12-06T20:38:40+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -112,6 +112,11 @@
                 "title": "| Tower Health",
                 "canonical_url": "http:\/\/default\/node"
             }
+        }
+    ],
+    "field_main_link_type": [
+        {
+            "value": "default"
         }
     ]
 }

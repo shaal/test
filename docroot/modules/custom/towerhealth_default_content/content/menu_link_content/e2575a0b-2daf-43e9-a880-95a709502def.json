@@ -30,7 +30,7 @@
     ],
     "bundle": [
         {
-            "value": "menu_link_content"
+            "target_id": "footer"
         }
     ],
     "revision_created": [
