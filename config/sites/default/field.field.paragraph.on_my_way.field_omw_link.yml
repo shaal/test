@@ -12,7 +12,7 @@ field_name: field_omw_link
 entity_type: paragraph
 bundle: on_my_way
 label: 'On My Way Link'
-description: 'On my way link for this location'
+description: 'Add the mychart on my way link that is appropriate for this location.'
 required: false
 translatable: false
 default_value:

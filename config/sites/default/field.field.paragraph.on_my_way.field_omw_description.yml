@@ -12,7 +12,7 @@ field_name: field_omw_description
 entity_type: paragraph
 bundle: on_my_way
 label: Description
-description: 'Description text for this banner'
+description: 'Optionally add copy for this on my way component, that will inform the user about the mychart on my way functionality.'
 required: false
 translatable: false
 default_value: {  }

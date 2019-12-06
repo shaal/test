@@ -10,7 +10,7 @@ field_name: field_omw_header
 entity_type: paragraph
 bundle: on_my_way
 label: Header
-description: 'Add a header for this banner'
+description: 'Add a header for this on my way component.'
 required: false
 translatable: false
 default_value:
