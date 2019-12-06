@@ -3,13 +3,13 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 /**
- * Migrate source plugin for Insurance.
+ * Migrate source plugin for provider leadership titles.
  *
  * @MigrateSource(
- *   id = "provider_special_interest_refs"
+ *   id = "provider_insurance_provider_group"
  * )
  */
-class ProviderSpecialInterestRefs extends CSVtoJSON {
+class ProviderInsuranceProviderGroup extends CSVtoJSON {
 
   /**
    * List of available source fields.
@@ -20,8 +20,8 @@ class ProviderSpecialInterestRefs extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'practioner_id' => 'Pracitioner ID',
-    'msow_ids' => 'MSOW IDs',
+    'practioner_id' => 'Practioner Id',
+    'insurance_groups' => 'Insurance Groups',
   ];
 
   /**
@@ -47,21 +47,28 @@ class ProviderSpecialInterestRefs extends CSVtoJSON {
     $processed_data = [];
     foreach ($data as $row) {
       $pracitioner_id = $row[0];
-      $msow_id = $row[1];
+      $insurance_name = trim($row[2]);
+      $insurance_group = 'DIV1';
+
+      if (strpos($insurance_name, 'DIV') === 0) {
+        $insurance_group = substr($insurance_name, 0, '4');
+      }
+
       if (!isset($processed_data[$pracitioner_id])) {
         $processed_data[$pracitioner_id] = [
           'practioner_id' => $pracitioner_id,
-          'msow_ids' => [],
+          'insurance_groups' => [],
         ];
       }
-      if (!in_array($msow_id, $processed_data[$pracitioner_id]['msow_ids'])) {
-        $processed_data[$pracitioner_id]['msow_ids'][] = $msow_id;
+
+      if (!in_array($insurance_group, $processed_data[$pracitioner_id]['insurance_groups'])) {
+        $processed_data[$pracitioner_id]['insurance_groups'][] = $insurance_group;
       }
     }
     // Remove keys since this is confusing the migration references.
     $processed_data = array_values($processed_data);
     foreach ($processed_data as &$pracitioner_id) {
-      $pracitioner_id['msow_ids'] = array_values($pracitioner_id['msow_ids']);
+      $pracitioner_id['insurance_groups'] = array_values($pracitioner_id['insurance_groups']);
     }
 
     return $processed_data;

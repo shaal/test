@@ -1,8 +1,8 @@
 # @file
 # Contains migration configuration for the TowerHealth provider languages.
 ---
-id: towerhealth_providers_special_interests
-label: Import tower health provider clinical areas of interest references
+id: towerhealth_location_hours
+label: Import tower health location hours.
 migration_groups:
   - TowerHealth MSOW import
 
@@ -12,9 +12,9 @@ dependencies:
       - towerhealth_msow_migration
 
 source:
-  plugin: 'provider_special_interest_refs'
+  plugin: 'location_hours'
   # Full path to the file.
-  path: 'public://directory/Find_Provider_Dir_Practitioner_Interests.txt'
+  path: 'public://directory/Find_Provider_Dir_OfficeHours.txt'
 
 destination:
   plugin: 'entity:node'
@@ -23,9 +23,9 @@ process:
   nid:
     -
       plugin: migration_lookup
-      migration: towerhealth_providers
+      migration: towerhealth_locations
       no_stub: true
-      source: practioner_id
+      source: office_record_number
     -
       plugin: skip_on_empty
       method: row
@@ -53,14 +53,6 @@ process:
         - 0
         - value
 
-  _area_of_interest:
-    - plugin: towerhealth_lookup_taxonomy_term
-      lookup_field: field_area_of_interest_msow_id
-      source: msow_ids
-      vid: area_of_interest
-    - plugin: skip_on_empty
-      method: row
-
-  field_area_interest_ref:
-  - plugin: towerhealth_entity_ref_values
-    source: '@_area_of_interest'
+  field_location_hours:
+  - plugin: towerhealth_office_hours
+    source: hours

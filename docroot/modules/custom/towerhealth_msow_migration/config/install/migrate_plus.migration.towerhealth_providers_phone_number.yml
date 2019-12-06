@@ -1,8 +1,8 @@
 # @file
 # Contains migration configuration for the TowerHealth provider languages.
 ---
-id: towerhealth_providers_special_interests
-label: Import tower health provider clinical areas of interest references
+id: towerhealth_providers_phone_number
+label: Import tower health provider credentials
 migration_groups:
   - TowerHealth MSOW import
 
@@ -12,9 +12,10 @@ dependencies:
       - towerhealth_msow_migration
 
 source:
-  plugin: 'provider_special_interest_refs'
+  plugin: 'provider_phone_numbers'
   # Full path to the file.
-  path: 'public://directory/Find_Provider_Dir_Practitioner_Interests.txt'
+  path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
+  second_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
 
 destination:
   plugin: 'entity:node'
@@ -53,14 +54,4 @@ process:
         - 0
         - value
 
-  _area_of_interest:
-    - plugin: towerhealth_lookup_taxonomy_term
-      lookup_field: field_area_of_interest_msow_id
-      source: msow_ids
-      vid: area_of_interest
-    - plugin: skip_on_empty
-      method: row
-
-  field_area_interest_ref:
-  - plugin: towerhealth_entity_ref_values
-    source: '@_area_of_interest'
+  field_profile_phone: phone_number
