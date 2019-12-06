@@ -33,20 +33,20 @@ settings:
           name: Media
           items:
             - Blockquote
-            - DrupalImage
             - media_entity_embed
             - Table
         -
           name: 'Block Formatting'
           items:
             - Format
+            - Styles
         -
           name: Tools
           items:
             - Source
   plugins:
     stylescombo:
-      styles: ''
+      styles: "blockquote.blockquote--left|Blockquote left aligned\r\nblockquote.blockquote--right|Blockquote right aligned"
     language:
       language_list: un
 image_upload:
