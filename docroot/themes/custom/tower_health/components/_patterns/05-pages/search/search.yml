@@ -21,6 +21,7 @@ teasers:
       url: "/"
       text: "Request an Appointment"
       icon: "th-cal.svg"
+      variation: "small"
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: "Oral and Maxillofacial Surgery"
@@ -49,6 +50,7 @@ teasers:
       url: "/"
       text: "Directions"
       icon: "th-find-hospital.svg"
+      variation: "small"
     type: location
   - details:
       title: "Giving to Tower Health"
@@ -67,6 +69,7 @@ teasers:
       url: "/"
       text: "Directions"
       icon: "th-find-hospital.svg"
+      variation: "small"
     type: location
   - details:
       title: "Pediatrics"
@@ -82,6 +85,7 @@ teasers:
       url: "/"
       text: "Request an Appointment"
       icon: "th-cal.svg"
+      variation: "small"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
       specialties: "Pediatrics"
@@ -96,6 +100,7 @@ teasers:
       url: "/"
       text: "Request an Appointment"
       icon: "th-cal.svg"
+      variation: "small"
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: "Oral and Maxillofacial Surgery"
@@ -124,6 +129,7 @@ teasers:
       url: "/"
       text: "Directions"
       icon: "th-find-hospital.svg"
+      variation: "small"
     type: location
   - details:
       title: "Giving to Tower Health"
@@ -151,4 +157,4 @@ cta:
     url: "/"
     text: "484-628-HELP"
     icon: "th-cal.svg"
-    class: "right"
+    variation: "right"
