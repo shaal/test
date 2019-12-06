@@ -266,4 +266,4 @@ cta:
     url: "/"
     text: "484-628-HELP"
     icon: "th-cal.svg"
-    class: "right"
+    variation: "right"

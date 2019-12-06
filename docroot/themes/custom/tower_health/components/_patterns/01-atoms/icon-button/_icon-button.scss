@@ -40,7 +40,7 @@
     }
   }
 
-  &.right {
+  &.icon-button--right {
     margin: 0.35em 0;
 
     .icon-button__container {
@@ -49,21 +49,40 @@
       margin-left: .75em;
 
       @include breakpoint($bp2) {
-        margin-right: -53px;
+        margin-right: -58px;
       }
 
       @include breakpoint($bp3) {
-        margin-right: -53px;
+        margin-right: -64px;
       }
     }
   }
   
   &.icon-button--small {
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-    max-width: 180px;
-    margin-left: 20px;
+    @include adjust-font-size-to($sm-text, .75);
+    padding: .5em .75em;
+    
+    svg {
+      width: 35px;
+      height: 45px;
+
+      @include breakpoint($bp3) {
+        width: 40px;
+        height: 50px;
+      }
+    }
+    
+    .icon-button__container {
+      margin-left: -25px;
+
+      @include breakpoint($bp2) {
+        margin-left: -25px;
+      }
+
+      @include breakpoint($bp3) {
+        margin-left: -30px;
+      }
+    }
   }
 }
 
