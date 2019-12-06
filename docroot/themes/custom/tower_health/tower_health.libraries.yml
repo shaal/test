@@ -50,3 +50,8 @@ tabs:
 toggle-tips:
   js:
     dist/02-molecules/toggle-tip/toggle-tip.js: {}
+    
+modal:
+  js:
+    components/js/modaal.js: {}
+    dist/02-molecules/modal/modal.js: {}
