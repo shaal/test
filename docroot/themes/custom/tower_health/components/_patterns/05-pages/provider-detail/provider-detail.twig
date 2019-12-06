@@ -1,0 +1,32 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: FALSE,
+  bottom_sidebar: TRUE,
+  full_width: false
+}%}
+  
+  {% block page_header %}
+    {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+        class: breadcrumb.class,
+        breadcrumb: breadcrumb.breadcrumb,
+      } %}
+    
+    {% include "@organisms/provider-header/provider-header.twig" %}
+  {% endblock %}
+  
+  {% block page_content %}
+    {% for detail in details %}
+    {% include "@molecules/provider-details/provider-details.twig" %}
+    {% endfor %}
+    
+    Provider Ratings Go here
+  {% endblock %}
+  
+  {% block bottom_page_sidebar %}
+    {% for detail in side_details %}
+    {% include "@molecules/provider-details/provider-details.twig" with {
+      'detail.sidebar': 'true'
+    } %}
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,87 @@
+breadcrumb:
+  class: "hero"
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "Providers"
+    3:
+      text: "Karen A. Hoerst, MD"
+
+name: "Karen A. Hoerst, MD"
+lead_title: "Medical Director, Stroke Program"
+rating: 4.9
+review_amt: 36
+provider_video: "https://www.youtube.com/embed/d3ZLhedUtkA"
+img: 
+  src: "../../images/people/hoerst-karen.jpg"
+  alt: "Karen A. Hoerst, MD"
+accepting_patients: true
+appt_phone: 
+  number: "4846288888"
+  label: "484-628-HELP"
+appt_url: "#"
+
+details:
+  - label: Specialties
+    items:
+      - text: Neurology
+      - text: Second Specialty
+      - text: Third Specialty
+  - label: Clinical Areas of Focus
+    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+    info_id: 'areas-focus'
+    items:
+      - text: Stroke Care
+      - text: Stroke Recovery
+      - text: Thrid Area of Focus
+  - label: Board Certifications
+    items:
+      - title: Vascular Neurology
+        text: American Board of Neurology
+      - title: Neurology
+        text: American Board of Neurology
+      - title: Example for Eligible
+        text: American Board of Neurology
+        meta: Board Eligible, 2018
+  - label: Education
+    items:
+      - title: Thomas Jefferson University Hospital
+        text: Medical School
+      - title: Thomas Jefferson University Hospital
+        text: Residency
+      - title: Thomas Jefferson University Hospital
+        text: Fellowship
+      - title: Thomas Jefferson University Hospital
+        text: Internship
+
+side_details:
+  - label: languages
+    sidebar: true
+    items:
+      - text: English
+      - text: Second Language
+  - label: Contact Information
+    sidebar: true
+    items:
+      - label: 'Main:'
+        link:
+          url: tel+14846284656
+          text: 484-628-4656
+      - label: 'Fax:'
+        text: 484-628-4657
+  - label: Employed By
+    sidebar: true
+    items:
+      - text: Tower Health Medical Group
+        info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+        info_id: thmg
+      - text: Tower Health Providers
+        info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+        info_id: thp
+  - label: Hospital Affiliation
+    sidebar: true
+    items:
+      - text: Tower Health Reading Hospital
