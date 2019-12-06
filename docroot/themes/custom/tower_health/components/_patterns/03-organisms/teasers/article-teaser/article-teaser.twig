@@ -1,0 +1,12 @@
+<div class="teaser--simple article js-section-animation">
+
+  <h2 class="teaser__name--simple"><a href="{{ url }}">{{ article.details.title }}</a></h2>
+
+  <div class="teaser__content--simple">
+    <span class="article-date">{{ article.details.date }}</span>
+    <div class="teaser__content__desc">{{ article.details.text }}</div>
+    {% for item in article.details.tags %}
+      <span class="teaser-tag">{{ item }}</span>
+    {% endfor %}
+  </div>
+</div>
