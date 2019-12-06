@@ -15,7 +15,7 @@ required: false
 translatable: false
 default_value:
   -
-    value: 'Heading to our Emergency Room? Let us know your are on your way'
+    value: 'Heading to our Emergency Room? Let us know you are on your way'
 default_value_callback: ''
 settings: {  }
 field_type: string
