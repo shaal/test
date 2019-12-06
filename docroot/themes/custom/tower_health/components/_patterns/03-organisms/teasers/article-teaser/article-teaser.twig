@@ -4,7 +4,7 @@
 
   <div class="teaser__content--simple">
     <span class="article-date">{{ article.details.date }}</span>
-    <p>{{ article.details.text }}</p>
+    <div class="teaser__content__desc">{{ article.details.text }}</div>
     {% for item in article.details.tags %}
       <span class="teaser-tag">{{ item }}</span>
     {% endfor %}

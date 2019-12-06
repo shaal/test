@@ -327,13 +327,14 @@
 .teaser--simple {
   max-width: 1100px;
   margin: 0 auto;
-  margin-top: 2em;
-  margin-bottom: 4em;
+  margin-top: 1.5em;
+  margin-bottom: 2.5em;
 }
 
 .teaser__name--simple {
   @include adjust-font-size-to($md-heading, 1.25);
   font-weight: 700;
+  margin-bottom: .25em;
 
   a {
     color: $primary-dark;
@@ -346,8 +347,19 @@
   }
 }
 
+.teaser__content__desc {
+  margin-bottom: 1em;
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .article-date {
-  font-weight: 700;
+  @include adjust-font-size-to($label, .75);
+  display: block;
+  margin-bottom: .5em;
+  text-transform: uppercase;
 }
 
 .related-items {
