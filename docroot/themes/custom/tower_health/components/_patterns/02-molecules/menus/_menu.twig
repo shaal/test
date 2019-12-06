@@ -51,12 +51,13 @@
             <div class='main-menu__item--form'>
               {% set autocomplete = item.entity.field_main_autocomplete_form.value  %}
               {% if autocomplete == "provider" %}
-                {{ drupal_entity('block', 'exposedformfind_a_providerfind_doctor') }}
               {% elseif autocomplete == "service" %}
-                {{ drupal_entity('block', 'exposedformfind_a_servicefind_service') }}
               {% elseif autocomplete == "location" %}
-                {{ drupal_entity('block', 'exposedformfind_a_locationfind_location') }}
               {% endif %}
+            </div>
+          {% elseif item.entity.field_main_label.value %}
+            <div class="main-menu__list-label">
+              {{ item.entity.field_main_label.value }}
             </div>
           {% elseif item.type == 'form' and menu_name == 'main-menu' %}
             <div class='main-menu__item--form'>

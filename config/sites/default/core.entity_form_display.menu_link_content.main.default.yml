@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.menu_link_content.main.field_main_autocomplete_form
+    - field.field.menu_link_content.main.field_main_label
     - field.field.menu_link_content.main.field_main_link_type
     - system.menu.main
   module:
@@ -19,6 +20,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_main_label:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_main_link_type:
     weight: 1
