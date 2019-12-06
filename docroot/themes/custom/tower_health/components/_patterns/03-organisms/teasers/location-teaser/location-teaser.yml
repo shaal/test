@@ -12,3 +12,4 @@ location:
     url: "/"
     text: "Directions"
     icon: "th-find-hospital.svg"
+    variation: "small"

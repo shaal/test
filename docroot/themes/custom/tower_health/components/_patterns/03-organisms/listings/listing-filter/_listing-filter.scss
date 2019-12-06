@@ -14,33 +14,33 @@
   width: 100%;
   padding: .5em 1em;
   text-transform: uppercase;
-  
+
   &:active,
   &:hover,
   &:focus {
     background-color: $trust-aa;
     color: $white;
   }
-  
+
   .filter__toggle--close {
     display: none;
     visibility: hidden;
   }
-  
+
   .is-active & {
     border-radius: 8px 8px 0 0;
-    
+
     .filter__toggle--close {
       display: inline;
       visibility: visible;
     }
-    
+
     .filter__toggle--open {
       display: none;
       visibility: hidden;
     }
   }
-  
+
   @include breakpoint($bp3) {
     display: none;
     visibility: hidden;
@@ -57,10 +57,10 @@
   padding: 1em 2em;
   border-radius: 0 0 8px 8px;
   width: 100%;
-  
+
   display: none;
   visibility: hidden;
-  
+
   .is-active & {
     display: flex;
     visibility: visible;
@@ -72,9 +72,9 @@
     flex-wrap: nowrap;
     border-radius: 8px 0 0 8px;
   }
-  
+
   &::after {
-    
+
     @include breakpoint($bp3) {
       content: '';
       display: block;
@@ -114,50 +114,54 @@
 }
 
 .filter__items {
-  
+
   @include breakpoint($bp3) {
     flex: 0 1 90%;
   }
-  
+
   .form-item__select,
   input[type="text"],
   .chosen-container-single .chosen-single,
   .chosen-container-multi .chosen-choices {
     height: 50px;
   }
-  
+
   .chosen-container-single .chosen-single,
   .chosen-container-multi .chosen-choices {
     padding: .65em 1.35em 0 1em;
   }
-  
+
   .form-item__dropdown::after {
     top: 1.15em;
   }
-  
+
   .chosen-container-multi .chosen-drop {
     top: 50px;
   }
-  
+
   .form-section {
     margin: 0;
     justify-content: flex-start;
   }
-  
+
   .form-section__item {
     margin-bottom: .5em;
-    
+
     @include breakpoint($bp3) {
       margin-right: 2%;
     }
   }
-  
+
+  .form-item--checkbox__item {
+    display: inline-block;
+  }
+
   @include breakpoint($bp3) {
     .form-item--inline,
     .form-item--radio__item {
       display: inline-block;
     }
-    
+
     .form-item--inline {
       margin-left: .5em;
     }
