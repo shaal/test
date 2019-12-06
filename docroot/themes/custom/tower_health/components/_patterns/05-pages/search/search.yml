@@ -11,6 +11,24 @@ header:
     label: "Search"
     placeholder: "Search by Name, Specialty, Condition, Location, or Keyword"
     button: "Search"
+form_sections:
+  - section_items:
+      -
+        width: full
+        type: checkbox
+        info_id: type
+        orientation: inline
+        children:
+          - title: Location
+            id: type
+          - title: Provider
+            id: type
+          - title: Service
+            id: type
+          - title: News
+            id: type
+          - title: All
+            id: type
 results_shown: 1-10
 results_count: 321
 teasers:

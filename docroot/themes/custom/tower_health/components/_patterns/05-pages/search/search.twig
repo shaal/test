@@ -5,8 +5,11 @@
 
   {% block page_header %}
     {% include "@organisms/basic-header/basic-header.twig" with {
-      breadcrumb: header.breadcrumb
-    } %}
+        breadcrumb: header.breadcrumb
+      } %}
+    {% include "@organisms/listings/listing-filter/listing-filter.twig"  with {
+        form_sections: form_sections
+      } %}
   {% endblock %}
 
   {% block page_content %}
