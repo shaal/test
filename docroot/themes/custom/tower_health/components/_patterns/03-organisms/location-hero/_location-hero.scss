@@ -3,7 +3,7 @@
   position: relative;
   padding-top: 100px;
   width: 100%;
-  max-width: 1350px;
+  max-width: 1500px;
 
   @include breakpoint($bp2) {
     padding: 70px 2em 0;
@@ -108,11 +108,11 @@
     background-color: $trust;
   }
 
-  @include breakpoint($bp5) {
+  @include breakpoint($bp6) {
     
     &::before {
-      left: calc( (-1 * (100vw - 1350px) / 2) - 4.5rem);
-      width: calc(((100vw - 1350px) / 2) + 4.5rem );
+      left: calc( (-1 * (100vw - 1500px) / 2) - 4.5rem);
+      width: calc(((100vw - 1500px) / 2) + 4.5rem );
     }
   }
 }
