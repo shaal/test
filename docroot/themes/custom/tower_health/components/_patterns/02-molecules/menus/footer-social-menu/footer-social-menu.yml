@@ -1,7 +1,10 @@
 items:
   - title: "Facebook"
     url: "/"
-    field_social_icon: "field_social_icon"
+    field_social_icon: "social-facebook.svg"
   - title: "Twitter"
     url: "/"
-    field_social_icon: "field_social_icon"
+    field_social_icon: "social-twitter.svg"
+  - title: "Instagram"
+    url: "/"
+    field_social_icon: "social-instagram.svg"

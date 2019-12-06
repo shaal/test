@@ -32,16 +32,16 @@
   {% if items %}
 
     {% for item in items %}
-      <div class="footer__links__section">
-        <a class="footer__links__section__title" href="{{ item.url }}">
-          {{ item.title }}
-        </a>
-        {% if item.below %}
-          {% for link in item.below %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          {% endfor %}
-        {% endif %}
-      </div>
+
+
+
+          {% include "@atoms/social-icon/social-icon.twig" with {
+            "svg": item.field_social_icon,
+            "url": item.url
+          } %}
+
+
+
     {% endfor %}
   {% endif %}
 {% endmacro %}
