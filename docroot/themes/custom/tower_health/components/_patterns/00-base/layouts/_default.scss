@@ -196,3 +196,33 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
     }
   }
 }
+
+.sidebar--growth {
+  background-color: $growth-ltst;
+  padding: 1.5em 1.5em;
+  margin-bottom: 0;
+  position: relative;
+  border-radius: 8px;
+  
+  @include breakpoint($bp3) {
+    border-radius: 8px 0 0 8px;
+  }
+  
+  &::after {
+    
+    @include breakpoint($bp3) {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -2em;
+      width: 2em;
+      background-color: $growth-ltst;
+    }
+    
+    @include breakpoint($bp5) {
+      width: calc(1.5em + ((100vw - 1350px) / 2));
+      right: calc(-1.5em - ((100vw - 1350px) / 2));
+    }
+  }
+}

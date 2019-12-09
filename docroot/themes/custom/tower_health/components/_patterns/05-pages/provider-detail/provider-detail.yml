@@ -27,64 +27,70 @@ appt_phone:
   label: "484-628-HELP"
 appt_url: "#"
 
-details:
-  - label: Specialties
-    items:
-      - text: Neurology
-      - text: Second Specialty
-      - text: Third Specialty
-  - label: Clinical Areas of Focus
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
-    info_id: 'areas-focus'
-    items:
-      - text: Stroke Care
-      - text: Stroke Recovery
-      - text: Thrid Area of Focus
-  - label: Board Certifications
-    items:
-      - title: Vascular Neurology
-        text: American Board of Neurology
-      - title: Neurology
-        text: American Board of Neurology
-      - title: Example for Eligible
-        text: American Board of Neurology
-        meta: Board Eligible, 2018
-  - label: Education
-    items:
-      - title: Thomas Jefferson University Hospital
-        text: Medical School
-      - title: Thomas Jefferson University Hospital
-        text: Residency
-      - title: Thomas Jefferson University Hospital
-        text: Fellowship
-      - title: Thomas Jefferson University Hospital
-        text: Internship
+specialties:
+  label: Specialties
+  items:
+    - text: Neurology
+    - text: Second Specialty
+    - text: Third Specialty
+focus:
+  label: Clinical Areas of Focus
+  info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+  info_id: 'areas-focus'
+  items:
+    - text: Stroke Care
+    - text: Stroke Recovery
+    - text: Thrid Area of Focus
+certification:
+  label: Board Certifications
+  items:
+    - title: Vascular Neurology
+      text: American Board of Neurology
+    - title: Neurology
+      text: American Board of Neurology
+    - title: Example for Eligible
+      text: American Board of Neurology
+      meta: Board Eligible, 2018
+education:
+  label: Education
+  items:
+    - title: Thomas Jefferson University Hospital
+      text: Medical School
+    - title: Thomas Jefferson University Hospital
+      text: Residency
+    - title: Thomas Jefferson University Hospital
+      text: Fellowship
+    - title: Thomas Jefferson University Hospital
+      text: Internship
 
-side_details:
-  - label: Languages
-    sidebar: true
-    items:
-      - text: English
-      - text: Second Language
-  - label: Contact Information
-    sidebar: true
-    items:
-      - label: 'Main:'
-        link:
-          url: tel+14846284656
-          text: 484-628-4656
-      - label: 'Fax:'
-        text: 484-628-4657
-  - label: Employed By
-    sidebar: true
-    items:
-      - text: Tower Health Medical Group
-        info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
-        info_id: thmg
-      - text: Tower Health Providers
-        info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
-        info_id: thp
-  - label: Hospital Affiliation
-    sidebar: true
-    items:
-      - text: Tower Health Reading Hospital
+language:
+  label: Languages
+  sidebar: true
+  items:
+    - text: English
+    - text: Second Language
+contact:
+  label: Contact Information
+  sidebar: true
+  items:
+    - label: 'Main:'
+      link:
+        url: tel+14846284656
+        text: 484-628-4656
+    - label: 'Fax:'
+      text: 484-628-4657
+employed:
+  label: Employed By
+  sidebar: true
+  items:
+    - text: Tower Health Medical Group
+      info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+      info_id: thmg
+    - text: Tower Health Providers
+      info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+      info_id: thp
+affiliation:
+  label: Hospital Affiliation
+  sidebar: true
+  items:
+    - text: Tower Health Reading Hospital

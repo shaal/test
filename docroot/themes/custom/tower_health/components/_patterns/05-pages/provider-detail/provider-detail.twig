@@ -15,18 +15,48 @@
   {% endblock %}
   
   {% block page_content %}
-    {% for detail in details %}
-    {% include "@molecules/provider-details/provider-details.twig" %}
-    {% endfor %}
+
+    {% include "@molecules/provider-details/provider-details.twig" with {
+      detail: specialties
+    } %}
+    
+    {% include "@molecules/provider-details/provider-details.twig" with {
+      detail: focus
+    } %}
+    
+    {% include "@molecules/provider-details/provider-details.twig" with {
+      detail: certification
+    } %}
+    
+    {% include "@molecules/provider-details/provider-details.twig" with {
+      detail: education
+    } %}
+
     
     Provider Ratings Go here
   {% endblock %}
   
   {% block bottom_page_sidebar %}
-    {% for detail in side_details %}
-    {% include "@molecules/provider-details/provider-details.twig" with {
-      'detail.sidebar': 'true'
-    } %}
-    {% endfor %}
+    <div class="sidebar--growth">
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: language,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: contact,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: employed,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: affiliation,
+        'detail.sidebar': 'true'
+      } %}
+    </div>
   {% endblock %}
 {% endembed %}
