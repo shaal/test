@@ -1,4 +1,6 @@
-<a href="{{ url }}"">
+<a href="{{ url }}">
   <span class="element-invisible">{{ title }}</span>
-  {% include svg %}
+  {% if svg %}
+    {% include svg %}
+  {% endif %}
 </a>

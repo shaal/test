@@ -31,11 +31,16 @@
   {% import _self as menus %}
   {% if items %}
     {% for item in items %}
-          {% include "@atoms/social-icon/social-icon.twig" with {
-            "svg": item.svg,
-            "url": item.url,
-            "title": item.title
-          } %}
+      {% if item.entity.field_social_icon %}
+        {% set svg = item.entity.field_social_icon|file_url %}
+      {% else %}
+        {% set svg = item.svg %}
+      {% endif %}
+      {% include "@atoms/social-icon/social-icon.twig" with {
+        "url": item.url,
+        "title": item.title,
+        "svg": svg
+      } %}
     {% endfor %}
   {% endif %}
 {% endmacro %}
