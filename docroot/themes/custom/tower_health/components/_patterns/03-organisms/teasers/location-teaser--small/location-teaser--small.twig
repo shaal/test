@@ -1,0 +1,29 @@
+<div class="teaser--small location js-section-animation">
+  <h3 class="teaser__name"><a href="{{ url }}">{{ name }}</a></h3>
+  
+  <div class="teaser--small__content">
+    <div class="teaser--small__content__info">
+      <div class="teaser__section">
+        <span class="teaser-label">Address</span>
+        {% for item in address_rows %}
+          <span class="teaser__row">{{ item }}</span>
+        {% endfor %}
+        {% include "@atoms/icon-button/icon-button.twig" with {
+          "url": direction_url,
+          "icon": 'th-find-hospital.svg',
+          "text": 'Directions',
+          "variation": "small",
+        } %}
+      </div>
+      <div class="teaser__section">
+        {% for item in phones %}
+        <span class="teaser-label">{{ item.label }}</span>
+        <span>{{ item.number }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="teaser__link--small">
+      <a class="teaser__link" href="{{cta.url}}">{{ cta.label }} {% include "@base/icons/arrow.svg" %} </a>
+    </div>
+  </div>
+</div>

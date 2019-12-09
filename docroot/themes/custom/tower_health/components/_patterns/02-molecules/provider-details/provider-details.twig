@@ -29,9 +29,17 @@
         info_id: item.info_id
       }%}
     {% endif %}
-      
     {% if item.meta %}
       <span class="provider-detail__item-meta">{{ item.meta }}</span>
+    {% endif %}
+    {% if item.type == 'location' %}
+      {% include "@organisms/teasers/location-teaser--small/location-teaser--small.twig"  with {
+        name: item.name,
+        address_rows: item.address_rows,
+        direction_url: item.direction_url,
+        phones: item.phones,
+        cta: item.cta
+      }%}
     {% endif %}
   </li>
   

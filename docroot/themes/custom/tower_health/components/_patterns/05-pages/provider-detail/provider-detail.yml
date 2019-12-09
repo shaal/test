@@ -41,6 +41,37 @@ focus:
     - text: Stroke Care
     - text: Stroke Recovery
     - text: Thrid Area of Focus
+locations:
+  label: Locations
+  items:
+    - type: location
+      name: "McGlinn Cancer Institute"
+      address_rows: 
+        - "420 S. Fifth Avenue"
+        - "West Reading, PA 19611"
+      direction_url: '#'
+      phones:
+        - label: Main
+          number: "484-555-5555"
+        - label: Fax
+          number: "484-555-5556"
+      cta:
+        url: "#"
+        label: "View Other Providers at this Location"
+    - type: location
+      name: "Reading Hospital"
+      address_rows: 
+        - "420 S. Fifth Avenue"
+        - "West Reading, PA 19611"
+      direction_url: '#'
+      phones:
+        - label: Main
+          number: "484-555-5555"
+        - label: Fax
+          number: "484-555-5556"
+      cta:
+        url: "#"
+        label: "View Other Providers at this Location"
 certification:
   label: Board Certifications
   items:

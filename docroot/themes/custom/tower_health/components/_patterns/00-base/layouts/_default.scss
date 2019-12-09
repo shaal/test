@@ -220,9 +220,9 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       background-color: $growth-ltst;
     }
     
-    @include breakpoint($bp5) {
-      width: calc(1.5em + ((100vw - 1350px) / 2));
-      right: calc(-1.5em - ((100vw - 1350px) / 2));
+    @include breakpoint($bp6) {
+      width: calc(1.5em + ((100vw - 1500px) / 2));
+      right: calc(-1.5em - ((100vw - 1500px) / 2));
     }
   }
 }

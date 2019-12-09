@@ -1,19 +1,8 @@
 .provider-details {
   margin-bottom: 3em;
-}
-
-.provider-details--side {
-  margin-bottom: 2em;
-}
-
-.provider-detail__label {
-  @include adjust-font-size-to($md-heading, 1.15);
-  position: relative;
-  display: inline-block;
-  margin-top: 0;
-  margin-right: .5em;
+  padding-top: 1.5em;
   border-top: 4px solid $trust-aa;
-  padding-top: .5em;
+  position: relative;
   
   &::after {
     content: '';
@@ -24,22 +13,34 @@
     width: 2em;
     top: -4px;
     
-    @include breakpoint($bp5) {
-      width: calc(1.5em + (100vw - 1350px));
-      left: calc(-1.5em - (100vw - 1350px));
+    @include breakpoint($bp6) {
+      width: calc(1.5em + ((100vw - 1500px) / 2));
+      left: calc(-1.5em - ((100vw - 1500px) / 2));
     }
   }
+}
+
+.provider-details--side {
+  margin-bottom: 2em;
+  padding-top: 0;
+  border-top: none;
+  
+  &::after {
+    content: none;
+  }
+}
+
+.provider-detail__label {
+  @include adjust-font-size-to($md-heading, 1.15);
+  position: relative;
+  display: inline-block;
+  margin-top: 0;
+  margin-right: .5em;
   
   .provider-details--side & {
     @include adjust-font-size-to($sm-text, 1.15);
     @extend %track-out;
     text-transform: uppercase;
-    border-top: 0;
-    padding-top: 0;
-    
-    &::after {
-      content: none;
-    }
   }
 }
 
