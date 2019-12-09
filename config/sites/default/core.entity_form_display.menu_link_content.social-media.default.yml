@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.menu_link_content.social-media.field_social_icon
-    - system.menu.social-media
   module:
     - file
     - link
-    - menu_item_extras
+    - menu_link_content
 id: menu_link_content.social-media.default
 targetEntityType: menu_link_content
 bundle: social-media
@@ -30,9 +29,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   view_mode:
-    type: menu_item_extras_view_mode_selector_select
-    weight: 0
-    region: content
-    settings: {  }
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
+    region: content
 hidden: {  }
