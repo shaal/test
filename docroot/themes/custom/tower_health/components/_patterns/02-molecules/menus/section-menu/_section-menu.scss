@@ -73,9 +73,9 @@
       z-index: -5;
     }
 
-    @include breakpoint($bp5) {
-      width: calc( ((100vw - 1350px) / 2) + 1.5em);
-      right: calc(((100vw - 1350px) / -2) - 1.5em);
+    @include breakpoint($bp6) {
+      width: calc( ((100vw - 1500px) / 2) + 1.5em);
+      right: calc(((100vw - 1500px) / -2) - 1.5em);
     }
   }
 }

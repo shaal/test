@@ -46,6 +46,7 @@ teasers:
       focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: "English"
+      rating: '4.2'
     type: "provider"
   - details:
       title: "Lessons from the Oncology Center"
@@ -110,6 +111,7 @@ teasers:
       focus: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: "English"
+      rating: '5'
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -125,6 +127,7 @@ teasers:
       focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: "English"
+      rating: '4.2'
     type: "provider"
   - details:
       title: "Lessons from the Oncology Center"

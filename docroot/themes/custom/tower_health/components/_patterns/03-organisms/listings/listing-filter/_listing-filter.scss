@@ -85,10 +85,10 @@
       right: -2em;
       background-color: rgba($trust-ltst, .6);
     }
-
-    @include breakpoint($bp5) {
-      width: calc( 1.5em + (100vw - 1350px) / 2 );
-      right: calc( -1.5em - (100vw - 1350px) / 2 );
+    
+    @include breakpoint($bp6) {
+      width: calc( 1.5em + (100vw - 1500px) / 2 );
+      right: calc( -1.5em - (100vw - 1500px) / 2 );
     }
   }
 }
