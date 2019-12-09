@@ -8,8 +8,8 @@
 /**
  * Adds a body class by role.
  */
- function tower_health_preprocess_html(&$variables) {
-   foreach ($variables['user']->getRoles() as $role) {
-     $variables['attributes']['class'][] = 'role-' . $role;
-   }
- }
+  function tower_health_preprocess_html(&$variables) {
+    foreach ($variables['user']->getRoles() as $role) {
+      $variables['attributes']['class'][] = 'role-' . $role;
+    }
+  }
