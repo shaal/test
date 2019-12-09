@@ -11,7 +11,7 @@
   }
 
   @include breakpoint($bp3) {
-    max-width: 1350px;
+    max-width: 1500px;
     padding: 0 2em;
     margin: 2em auto 1em;
   }
@@ -64,9 +64,18 @@
       right: 50%;
       top: -11em;
     }
-
+    
     @include breakpoint($bp5) {
-      left: calc(( 100vw - 1350px ) / 2 * -1);
+      right: 52%;
+    }
+
+    @include breakpoint($bp6) {
+      left: calc(( 100vw - 1500px ) / 2 * -1);
+      right: 58%;
+      
+      .image-background {
+        max-width: 650px;
+      }
     }
   }
 
@@ -110,6 +119,14 @@
 
     @include breakpoint($bp4) {
       padding: 2.5em 2em 3.5em 45%;
+    }
+    
+    @include breakpoint($bp5) {
+      padding: 2.5em 2em 3.5em 42%;
+    }
+    
+    @include breakpoint($bp6) {
+      padding: 2.5em 2em 3.5em 36%;
     }
 
     .button {
