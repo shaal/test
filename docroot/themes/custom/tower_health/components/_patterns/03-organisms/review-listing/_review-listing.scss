@@ -1,0 +1,96 @@
+.review-listing {
+  margin: 2em 0;
+}
+
+.review-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2em;
+}
+
+.review-summary__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.review-summary__link {
+  @include adjust-font-size-to($label, .8);
+  display: inline-block;
+  margin-top: .25em;
+}
+
+.review-summary__rating {
+  width: 100%;
+  display: flex;
+  margin-top: .5em;
+}
+
+.review-summary__label {
+  @include adjust-font-size-to($label, .8);
+  @extend %track-out;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: .5em;
+}
+
+.review-summary__total {
+  @include adjust-font-size-to($label, .8);
+  border-bottom: 1px solid $off-white;
+  padding-bottom: .5em;
+  margin-bottom: 2em;
+}
+
+.review-listing__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-listing__item.is-hidden {
+  display: none;
+  visibility: hidden;
+  
+  .review-listing.is-active & {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.review-listing__toggle {
+  @include adjust-font-size-to($label, .8);
+  @extend %track-out;
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: none;
+  outline: 0;
+  border: 0;
+  color: $trust-aa;
+  text-transform: uppercase;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+  
+  .hide {
+    display: none;
+    visibility: hidden;
+  }
+  
+  .review-listing.is-active & {
+    .hide {
+      display: block;
+      visibility: visible;
+    }
+    
+    .view {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}

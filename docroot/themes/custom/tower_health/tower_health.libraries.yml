@@ -55,3 +55,7 @@ modal:
   js:
     components/js/modaal.js: {}
     dist/02-molecules/modal/modal.js: {}
+
+reviews:
+  js:
+    dist/03-organisms/review-listing/review-listing.js: {}
