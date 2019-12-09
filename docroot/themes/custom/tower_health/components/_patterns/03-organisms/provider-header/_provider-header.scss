@@ -1,15 +1,39 @@
 .provider-header {
-  margin: 3em auto;
-  padding-bottom: 2em;
+  margin: 0 auto 3em;
+  padding: 1em 0 2em;
+  background-color: rgba($trust-ltst, .4);
 }
 
 .provider-header__content {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 1500px;
+  margin: 2em auto 0;
+  padding: 0 2em;
   
   @include breakpoint($bp3) {
     flex-direction: row;
+  }
+  
+  .modal {
+    @include adjust-font-size-to($label, .8);
+    @extend %track-out;
+    display: block;
+    margin: .5em 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    
+    &:active,
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+    
+    @include breakpoint($bp3) {
+      margin-right: 2em;
+    }
   }
 }
 

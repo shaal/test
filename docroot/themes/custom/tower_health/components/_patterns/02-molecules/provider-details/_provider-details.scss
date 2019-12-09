@@ -1,33 +1,13 @@
 .provider-details {
-  margin-bottom: 3em;
-  padding-top: 1.5em;
-  border-top: 4px solid $trust-aa;
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    border-top: 4px solid $trust-aa;
-    left: -2em;
-    width: 2em;
-    top: -4px;
-    
-    @include breakpoint($bp6) {
-      width: calc(1.5em + ((100vw - 1500px) / 2));
-      left: calc(-1.5em - ((100vw - 1500px) / 2));
-    }
-  }
+  margin-bottom: 2em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid $off-white;
 }
 
 .provider-details--side {
   margin-bottom: 2em;
-  padding-top: 0;
-  border-top: none;
-  
-  &::after {
-    content: none;
-  }
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .provider-detail__label {

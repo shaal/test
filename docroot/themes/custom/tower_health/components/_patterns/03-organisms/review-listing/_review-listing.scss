@@ -1,6 +1,6 @@
 .review-listing {
   margin: 4em 0 0;
-  background-color: $off-white;
+  background-color: rgba($off-white, .75);
   padding: 3em 2em 3em 0;
   border-radius: 0 8px 8px 0;
   position: relative;
@@ -12,7 +12,7 @@
     bottom: 0;
     left: -2em;
     width: 2em;
-    background-color: $off-white;
+    background-color: rgba($off-white, .75);
     
     @include breakpoint($bp6) {
       width: calc(2em + ((100vw - 1500px) / 2));

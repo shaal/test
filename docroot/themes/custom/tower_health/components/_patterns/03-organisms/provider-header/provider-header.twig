@@ -1,4 +1,10 @@
-<div class="provider-header grid">
+<div class="provider-header">
+  
+  {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+    class: breadcrumb.class,
+    breadcrumb: breadcrumb.breadcrumb,
+  } %}
+  
   <div class="provider-header__content">
     <div class="provider-header__first">
       
@@ -7,12 +13,6 @@
         <img src="{% if img %}{{img.src}}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ img.alt}}">
         </div>
       </div>
-      
-      {% if provider_video %}
-      {% include "@molecules/modal/modal.twig" with {
-        modal: provider_video
-      } %}
-      {% endif %}
       
     </div>
     
@@ -23,12 +23,18 @@
         <span class="provider-header__title">{{ lead_title }}</span>
         {% endif %}
         
+        {% if provider_video %}
+        {% include "@molecules/modal/modal.twig" with {
+          modal: provider_video
+        } %}
+        {% endif %}
+        
         {% if rating %}
         <div class="provider-header__ratings">
           {% include "@molecules/ratings-count/ratings-count.twig" %}
           <a href="#ratings">{{ review_amt }} Reviews</a>
-          {% endif %}
         </div>
+        {% endif %}
       </div>
       
       {% if accepting_patients == 'true' %}
