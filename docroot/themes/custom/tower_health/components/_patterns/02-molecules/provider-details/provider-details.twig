@@ -1,6 +1,8 @@
 <div class="provider-details {% if detail.sidebar == 'true' %}provider-details--side{% endif %}">
   
+  {% if detail.label %}
   <h2 class="provider-detail__label">{{detail.label}}</h2>
+  {% endif %}
   
   {% if detail.info %}
     {% include "@molecules/toggle-tip/toggle-tip.twig"  with {
@@ -17,6 +19,11 @@
     {% if item.link %}
       <a class="provider-detail__item-link" href="{{item.link.url}}">{{item.link.text}}</a>
     {% endif %}
+    
+    {% if item.buttonLink %}
+      <a class="button" href="{{item.buttonLink.url}}">{{item.buttonLink.text}}</a>
+    {% endif %}
+    
     {% if item.title %}
       <h3 class="provider-detail__item-title">{{ item.title }}</h3>
     {% endif %}

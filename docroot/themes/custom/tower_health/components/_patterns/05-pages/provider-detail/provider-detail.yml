@@ -110,6 +110,13 @@ contact:
         text: 484-628-4656
     - label: 'Fax:'
       text: 484-628-4657
+insurance:
+  sidebar: true
+  items:
+    - buttonLink:
+        url: "#"
+        text: 'Insurances Accepted'
+      meta: 'Please check with your insurance provider before booking an appointment.'
 employed:
   label: Employed By
   sidebar: true

@@ -53,6 +53,11 @@
       } %}
       
       {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: insurance,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
         detail: employed,
         'detail.sidebar': 'true'
       } %}
