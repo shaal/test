@@ -32,8 +32,9 @@
   {% if items %}
     {% for item in items %}
           {% include "@atoms/social-icon/social-icon.twig" with {
-            "svg": item.field_social_icon,
-            "url": item.url
+            "svg": item.svg,
+            "url": item.url,
+            "title": item.title
           } %}
     {% endfor %}
   {% endif %}
