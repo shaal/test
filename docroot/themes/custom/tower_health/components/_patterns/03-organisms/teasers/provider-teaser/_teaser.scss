@@ -169,8 +169,14 @@
       justify-content: flex-start;
     }
   }
+  
+  @include breakpoint($bp3 1349px) {
+    position: relative;
+    top: -3em;
+    padding-left: .85em;
+  }
 
-  @include breakpoint($bp3) {
+  @include breakpoint($bp5) {
     position: relative;
     top: -5px;
     float: right;
@@ -206,6 +212,7 @@
     clear: none;
     padding-left: 1em;
     flex-grow: 1;
+    width: 70%;
   }
 }
 
@@ -233,7 +240,7 @@
 .teaser__button {
   display: inline-block;
   position: absolute;
-  bottom: -3em;
+  bottom: -1.75em;
   left: 50%;
   transform: translateX(-50%);
 
@@ -241,15 +248,25 @@
     left: 1.75em;
     transform: none;
   }
-
+  
   @include breakpoint($bp3) {
+    right: 0;
+    left: auto;
+    bottom: -3.75em;
+  }
+
+  @include breakpoint($bp5) {
     position: relative;
-    min-width: 250px;
-    width: 250px;
+    min-width: 175px;
+    width: 175px;
     bottom: auto;
     padding-top: 0;
     margin: 25px 0 0;
     margin-left: auto;
+  }
+  
+  @include breakpoint($bp5) {
+    width: 260px;
   }
 }
 

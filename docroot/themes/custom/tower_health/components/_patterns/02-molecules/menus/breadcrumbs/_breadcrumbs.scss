@@ -10,10 +10,10 @@
     border-bottom: 4px solid $growth;
     left: -2em;
     bottom: 45%;
-
-    @include breakpoint($bp5) {
-      width: calc(1.25em + (100vw - 1350px));
-      left: calc(-1.9em - (100vw - 1350px));
+    
+    @include breakpoint($bp6) {
+      width: calc(1.25em + (100vw - 1500px));
+      left: calc(-1.9em - (100vw - 1500px));
     }
   }
 
@@ -23,9 +23,9 @@
     &::before {
       left: 0;
       
-      @include breakpoint($bp5) {
-        width: calc(1em + ((100vw - 1350px) / 2 ));
-        left: calc( ((100vw - 1350px) / -2 ));
+      @include breakpoint($bp6) {
+        width: calc(1em + ((100vw - 1500px) / 2 ));
+        left: calc( ((100vw - 1500px) / -2 ));
       }
     }
   }

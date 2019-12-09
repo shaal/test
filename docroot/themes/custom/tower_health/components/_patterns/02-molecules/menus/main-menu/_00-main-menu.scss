@@ -29,8 +29,8 @@
 }
 
 .main-nav {
-  padding-top: 45px; 
-  
+  padding-top: 45px;
+
   @include breakpoint($bp3) {
     padding-top: 0;
   }
@@ -67,9 +67,9 @@
     top: 2.25em;
   }
 
-  @include breakpoint($bp5) {
+  @include breakpoint($bp6) {
     &::after {
-      right: calc(((100vw - 1350px) / -2 ) - 1.5em);
+      right: calc(((100vw - 1500px) / -2 ) - 1.5em);
     }
   }
 }
