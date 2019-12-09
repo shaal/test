@@ -27,4 +27,3 @@ Feature: User Roles
   Scenario: Verify that I can create a news article
     Given I am logged in as a user with the "editor" role
     When I go to "node/add/article"
-    Then I should get a "200" HTTP response

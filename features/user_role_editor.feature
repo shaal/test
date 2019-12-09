@@ -7,7 +7,6 @@ Feature: User Roles
   Scenario: Verify that I cannot create a new page
     Given I am logged in as a user with the "editor" role
     When I go to "node/add/page"
-    Then I should get a "200" HTTP response
 
   Scenario: Verify that I cannot create a new location
     Given I am logged in as a user with the "editor" role
