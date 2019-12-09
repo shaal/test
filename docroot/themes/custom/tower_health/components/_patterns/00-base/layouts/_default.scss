@@ -199,7 +199,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
 .sidebar--growth {
   background-color: $growth-ltst;
-  padding: 1.5em 1.5em;
+  padding: 1.5em 0 1.5em 1.5em;
   margin-bottom: 0;
   position: relative;
   border-radius: 8px;

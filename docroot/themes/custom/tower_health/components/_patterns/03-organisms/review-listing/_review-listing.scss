@@ -1,5 +1,24 @@
 .review-listing {
   margin: 4em 0 0;
+  background-color: $off-white;
+  padding: 3em 2em 3em 0;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -2em;
+    width: 2em;
+    background-color: $off-white;
+    
+    @include breakpoint($bp6) {
+      width: calc(2em + ((100vw - 1500px) / 2));
+      left: calc(-2em - ((100vw - 1500px) / 2));
+    }
+  }
 }
 
 .review-summary {
@@ -37,7 +56,7 @@
 
 .review-summary__total {
   @include adjust-font-size-to($label, .8);
-  border-bottom: 1px solid $off-white;
+  border-bottom: 1px solid $trust;
   padding-bottom: .5em;
   margin-bottom: 2em;
 }
