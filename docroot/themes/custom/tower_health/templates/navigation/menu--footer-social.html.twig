@@ -18,23 +18,5 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-{% import _self as menus %}
 
-{#
-  We call a macro which calls itself to render the full tree.
-  @see http://twig.sensiolabs.org/doc/tags/macro.html
-#}
-
-{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
-
-{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
-  {% import _self as menus %}
-  {% if items %}
-    {% for item in items %}
-          {% include "@atoms/social-icon/social-icon.twig" with {
-            "svg": item.field_social_icon,
-            "url": item.url
-          } %}
-    {% endfor %}
-  {% endif %}
-{% endmacro %}
+{% include "@molecules/menus/footer-social-menu/footer-social-menu.twig" %}
