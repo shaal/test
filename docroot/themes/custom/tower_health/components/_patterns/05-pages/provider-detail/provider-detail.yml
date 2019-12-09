@@ -132,3 +132,41 @@ affiliation:
   sidebar: true
   items:
     - text: Tower Health Reading Hospital
+review_url: '#'
+reviews:
+  - rating: 4
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: December 2019
+  - rating: 3
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: December 2019
+  - rating: 4.5
+    review: 'Donec rutrum eros sit amet tortor posuere, sed iaculis ex hendrerit. Pellentesque mauris libero, faucibus sit amet ipsum non, egestas vulputate diam. Nam sed lacinia dolor, at venenatis ante. Phasellus lacinia ut justo et fermentum. Ut ultricies turpis vel accumsan pellentesque. Aliquam eu porttitor justo. Suspendisse semper ipsum non risus suscipit interdum. Donec iaculis tempus nisl, quis tristique elit tristique ut. Suspendisse porttitor risus ac purus fringilla, non molestie ante egestas. Quisque iaculis gravida nunc sit amet porttitor. Donec consectetur placerat mauris at aliquet. Nam eget rhoncus elit, sit amet laoreet enim. In sit amet enim sem. Etiam tortor turpis, viverra et nulla eget, interdum ornare eros. Praesent consectetur, diam sit amet venenatis pellentesque, sem nunc interdum lorem, et sagittis magna ipsum nec mi. Vestibulum dictum id arcu vel iaculis. Aliquam rutrum justo erat, eget mattis ex lobortis in. Nam arcu neque, tempus at nulla in, dignissim malesuada neque. Vivamus leo diam, vestibulum vel dapibus vel, tincidunt non lacus. Aliquam placerat lectus in velit porttitor tristique.'
+    date: December 2019
+  - rating: 4
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: December 2019
+  - rating: 2
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: November 2019
+  - rating: 2.5
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: October 2019
+  - rating: 3.75
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: September 2019
+  - rating: 4
+    review: 'Donec rutrum eros sit amet tortor posuere, sed iaculis ex hendrerit. Pellentesque mauris libero, faucibus sit amet ipsum non, egestas vulputate diam. Nam sed lacinia dolor, at venenatis ante. Phasellus lacinia ut justo et fermentum. Ut ultricies turpis vel accumsan pellentesque. Aliquam eu porttitor justo. Suspendisse semper ipsum non risus suscipit interdum. Donec iaculis tempus nisl, quis tristique elit tristique ut. Suspendisse porttitor risus ac purus fringilla, non molestie ante egestas. Quisque iaculis gravida nunc sit amet porttitor. Donec consectetur placerat mauris at aliquet. Nam eget rhoncus elit, sit amet laoreet enim. In sit amet enim sem. Etiam tortor turpis, viverra et nulla eget, interdum ornare eros. Praesent consectetur, diam sit amet venenatis pellentesque, sem nunc interdum lorem, et sagittis magna ipsum nec mi. Vestibulum dictum id arcu vel iaculis. Aliquam rutrum justo erat, eget mattis ex lobortis in. Nam arcu neque, tempus at nulla in, dignissim malesuada neque. Vivamus leo diam, vestibulum vel dapibus vel, tincidunt non lacus. Aliquam placerat lectus in velit porttitor tristique.'
+    date: September 2019
+  - rating: 4.5
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: September 2019
+  - rating: 5
+    review: 'Donec rutrum eros sit amet tortor posuere, sed iaculis ex hendrerit. Pellentesque mauris libero, faucibus sit amet ipsum non, egestas vulputate diam. Nam sed lacinia dolor, at venenatis ante. Phasellus lacinia ut justo et fermentum. Ut ultricies turpis vel accumsan pellentesque. Aliquam eu porttitor justo. Suspendisse semper ipsum non risus suscipit interdum. Donec iaculis tempus nisl, quis tristique elit tristique ut. Suspendisse porttitor risus ac purus fringilla, non molestie ante egestas. Quisque iaculis gravida nunc sit amet porttitor. Donec consectetur placerat mauris at aliquet. Nam eget rhoncus elit, sit amet laoreet enim. In sit amet enim sem. Etiam tortor turpis, viverra et nulla eget, interdum ornare eros. Praesent consectetur, diam sit amet venenatis pellentesque, sem nunc interdum lorem, et sagittis magna ipsum nec mi. Vestibulum dictum id arcu vel iaculis. Aliquam rutrum justo erat, eget mattis ex lobortis in. Nam arcu neque, tempus at nulla in, dignissim malesuada neque. Vivamus leo diam, vestibulum vel dapibus vel, tincidunt non lacus. Aliquam placerat lectus in velit porttitor tristique.'
+    date: August 2019
+  - rating: 3.5
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: August 2019
+  - rating: 4
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: July 2019

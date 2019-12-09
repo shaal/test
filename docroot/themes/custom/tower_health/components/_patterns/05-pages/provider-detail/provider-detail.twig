@@ -35,9 +35,11 @@
     {% include "@molecules/provider-details/provider-details.twig" with {
       detail: education
     } %}
-
     
-    Provider Ratings Go here
+    {% include "@organisms/review-listing/review-listing.twig" with {
+      count: review_amt
+    } %}
+    
   {% endblock %}
   
   {% block bottom_page_sidebar %}

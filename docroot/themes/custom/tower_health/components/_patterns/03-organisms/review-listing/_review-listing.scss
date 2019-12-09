@@ -1,5 +1,5 @@
 .review-listing {
-  margin: 2em 0;
+  margin: 4em 0 0;
 }
 
 .review-summary {
@@ -83,8 +83,9 @@
   }
   
   .review-listing.is-active & {
+    
     .hide {
-      display: block;
+      display: inline;
       visibility: visible;
     }
     
