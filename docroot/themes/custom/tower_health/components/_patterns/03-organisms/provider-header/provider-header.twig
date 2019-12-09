@@ -10,9 +10,7 @@
       
       {% if provider_video %}
       {% include "@molecules/modal/modal.twig" with {
-        "modal.type": "video",
-        "model.label": "Provider Video",
-        "modal.reference": provider_video
+        modal: provider_video
       } %}
       {% endif %}
       

@@ -14,7 +14,10 @@ name: "Karen A. Hoerst, MD"
 lead_title: "Medical Director, Stroke Program"
 rating: 4.9
 review_amt: 36
-provider_video: "https://www.youtube.com/embed/d3ZLhedUtkA"
+provider_video:
+  type: video
+  reference: https://www.youtube.com/embed/d3ZLhedUtkA
+  label: Provider Video 
 img: 
   src: "../../images/people/hoerst-karen.jpg"
   alt: "Karen A. Hoerst, MD"
@@ -58,7 +61,7 @@ details:
         text: Internship
 
 side_details:
-  - label: languages
+  - label: Languages
     sidebar: true
     items:
       - text: English
