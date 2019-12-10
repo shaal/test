@@ -75,12 +75,8 @@ locations:
 certification:
   label: Board Certifications
   items:
-    - title: Vascular Neurology
-      text: American Board of Neurology
-    - title: Neurology
-      text: American Board of Neurology
-    - title: Example for Eligible
-      text: American Board of Neurology
+    - title: American Board of Neurology
+    - title: American Board of Orthopedics
       meta: Board Eligible, 2018
 education:
   label: Education
