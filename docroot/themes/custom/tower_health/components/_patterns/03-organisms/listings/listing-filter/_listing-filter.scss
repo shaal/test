@@ -49,7 +49,6 @@
 
 .filter-grid-wrapper {
   position: relative;
-  display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
@@ -87,8 +86,8 @@
     }
     
     @include breakpoint($bp6) {
-      width: calc( 1.5em + (100vw - 1500px) / 2 );
-      right: calc( -1.5em - (100vw - 1500px) / 2 );
+      width: calc(1.5em + (100vw - 1500px) / 2);
+      right: calc(-1.5em - (100vw - 1500px) / 2);
     }
   }
 }

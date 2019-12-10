@@ -29,7 +29,7 @@
 }
 
 .main-nav {
-  padding-top: 45px; 
+  padding-top: 45px;
   
   @include breakpoint($bp3) {
     padding-top: 0;
@@ -158,7 +158,7 @@
       border-top-color: transparent;
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
-    } 
+    }
   }
 }
 
@@ -176,7 +176,7 @@
     @include adjust-font-size-to($label, .9);
     text-transform: uppercase;
     font-weight: 600;
-    position:absolute;
+    position: absolute;
     right: 1em;
     text-decoration: none;
     
@@ -233,7 +233,7 @@
     
     .button {
       padding: 1.6em 1.5em;
-    } 
+    }
   }
 }
 

@@ -120,10 +120,9 @@
   }
 
   @include breakpoint($bp6) {
-    
     &::before {
-      left: calc( (-1 * (100vw - 1500px) / 2) - 4.5rem);
-      width: calc(((100vw - 1500px) / 2) + 4.5rem );
+      left: calc((-1 * (100vw - 1500px) / 2) - 4.5rem);
+      width: calc(((100vw - 1500px) / 2) + 4.5rem);
     }
   }
 }
@@ -270,7 +269,6 @@
 
   // animating in
   .in-view {
-    
     .location-hero__content {
       animation: fadeInLeft .65s ease-in-out forwards;
     }

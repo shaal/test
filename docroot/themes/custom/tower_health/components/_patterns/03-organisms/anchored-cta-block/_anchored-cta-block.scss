@@ -52,6 +52,6 @@
   }
   
   @include breakpoint($bp6) {
-    left: calc( ((100vw - 1500px) / 2) + (1500px * .8) );
+    left: calc(((100vw - 1500px) / 2) + (1500px * .8));
   }
 }
