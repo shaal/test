@@ -19,7 +19,6 @@ permissions:
   - 'administer entity browsers'
   - 'create image media'
   - 'create media'
-  - 'create page content'
   - 'create remote_video media'
   - 'create video media'
   - 'delete own image media'
