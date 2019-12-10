@@ -57,7 +57,7 @@
     ],
     "link": [
         {
-            "uri": "route:<nolink>",
+            "uri": "internal:\/find-a-service",
             "title": "",
             "options": []
         }
@@ -69,7 +69,7 @@
     ],
     "rediscover": [
         {
-            "value": false
+            "value": true
         }
     ],
     "weight": [
@@ -89,7 +89,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-04T18:25:06+00:00",
+            "value": "2019-12-10T02:49:35+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -123,6 +123,11 @@
     "field_main_autocomplete_form": [
         {
             "value": "service"
+        }
+    ],
+    "field_main_label": [
+        {
+            "value": "Browse all services"
         }
     ],
     "field_main_link_type": [

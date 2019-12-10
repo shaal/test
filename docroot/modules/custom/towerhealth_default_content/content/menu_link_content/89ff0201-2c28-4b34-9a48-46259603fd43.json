@@ -57,7 +57,7 @@
     ],
     "link": [
         {
-            "uri": "route:<nolink>",
+            "uri": "internal:\/find-a-provider",
             "title": "",
             "options": []
         }
@@ -69,12 +69,12 @@
     ],
     "rediscover": [
         {
-            "value": false
+            "value": true
         }
     ],
     "weight": [
         {
-            "value": 0
+            "value": -49
         }
     ],
     "expanded": [
@@ -89,7 +89,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-04T18:25:15+00:00",
+            "value": "2019-12-10T02:49:48+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -123,6 +123,11 @@
     "field_main_autocomplete_form": [
         {
             "value": "provider"
+        }
+    ],
+    "field_main_label": [
+        {
+            "value": "Browse all providers"
         }
     ],
     "field_main_link_type": [

@@ -49,6 +49,10 @@
         {% for item in items %}
           {% if item.entity.field_main_autocomplete_form.value %}
             <div class='main-menu__item--form'>
+              {% include "@atoms/01-links/link/link.twig" with {
+                link_url: item.url,
+                link_content: item.entity.field_main_label.value
+              }%}
               {% set autocomplete = item.entity.field_main_autocomplete_form.value  %}
               {% if autocomplete == "provider" %}
                 {{ drupal_entity('block', 'exposedformfind_a_providerfind_doctor') }}
