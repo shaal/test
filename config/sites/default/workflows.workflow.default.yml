@@ -6,7 +6,6 @@ dependencies:
     - node.type.location
     - node.type.page
     - node.type.profile
-    - node.type.program
     - node.type.service
   module:
     - content_moderation
@@ -86,6 +85,5 @@ type_settings:
       - location
       - page
       - profile
-      - program
       - service
   default_moderation_state: draft

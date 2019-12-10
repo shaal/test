@@ -1,18 +1,21 @@
-uuid: b1ff95fb-b164-4382-aa33-fc31927f5d3c
+uuid: 7696c520-ba38-458b-8d82-9411a8e127ff
 langcode: en
 status: true
 dependencies:
   module:
     - menu_ui
+    - node_title_help_text
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
-name: 'Institute, Center or Program'
-type: program
-description: 'Landing pages for service lines available at Tower Health locations.'
+  node_title_help_text:
+    title_help: ''
+name: Article
+type: article
+description: ''
 help: ''
 new_revision: true
-preview_mode: 0
+preview_mode: 1
 display_submitted: false
