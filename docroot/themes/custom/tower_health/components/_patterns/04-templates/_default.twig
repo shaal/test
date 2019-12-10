@@ -21,6 +21,10 @@
   {% set page_modifiers = page_modifiers|merge(['container-centered']) %}
 {% endif %}
 
+{% if page_background == true %}
+  {% set main_content_modifiers = main_content_modifiers|merge(['background js-section-animation']) %}
+{% endif %}
+
 <div>
   <a class="element-focusable" href="#main-content">Jump to Page Content</a>
   {% block site_header %}
