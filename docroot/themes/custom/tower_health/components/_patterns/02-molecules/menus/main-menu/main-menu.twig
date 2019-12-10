@@ -20,8 +20,17 @@
 </button>
 <nav id='main-nav__container' class="main-nav__container" aria-expanded='true'>
 
+  <div class="utility" id="utility">
+    {% block utility_menu_items %}
+      {% include "@molecules/menus/_menu.twig" with {
+        menu_class: "utility-menu",
+        items: utility_items,
+      } %}
+    {% endblock %}
+  </div>
+
   <div id="main-nav" class="main-nav">
-    {% block menu_items %}
+    {% block main_menu_items %}
       {% include "@molecules/menus/_menu.twig" with {
         menu_class: "main-menu",
         menu_name: "main-menu",

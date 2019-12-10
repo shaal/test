@@ -20,7 +20,10 @@
 #}
 
 {% extends "@molecules/menus/main-menu/main-menu.twig" %}
-{% block menu_items %}
+{% block utility_menu_items %}
+  {{ utility_nav }}
+{% endblock %}
+{% block main_menu_items %}
   {% include "@molecules/menus/_menu.twig" with {
     menu_class: "main-menu",
     menu_name: "main-menu",
