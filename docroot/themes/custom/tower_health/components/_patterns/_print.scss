@@ -110,7 +110,12 @@
     .location-hero__content,
     .location-hero__image,
     .image-teaser__content,
-    .image-teaser__image {
+    .image-teaser__image,
+    .sidebar--growth,
+    .review-listing,
+    .provider-header__first,
+    .provider-header__card,
+    .provider-header__cta {
       opacity: 1;
       transition: none;
       animation: none;

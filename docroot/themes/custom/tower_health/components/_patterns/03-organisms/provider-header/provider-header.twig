@@ -6,7 +6,7 @@
   } %}
   
   <div class="provider-header__content">
-    <div class="provider-header__first">
+    <div class="provider-header__first js-section-animation">
       
       <div class="provider-header__image-container">
         <div class="provider-header__image">
@@ -16,7 +16,7 @@
       
     </div>
     
-    <div class="provider-header__card">
+    <div class="provider-header__card js-section-animation">
       <div class="provider-header__card-info">
         <h1 class="provider-header__name">{{ name }}</h1>
         {% if lead_title %}
@@ -38,7 +38,7 @@
       </div>
       
       {% if accepting_patients == 'true' %}
-      <div class="provider-header__cta">
+      <div class="provider-header__cta js-section-animation">
         <h2 class="provider-header__cta__label">Request an Appointment</h2>
         {% include "@atoms/icon-button/icon-button.twig" with {
           text: "Make an Appointment Online",

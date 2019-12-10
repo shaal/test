@@ -137,6 +137,7 @@
   @include breakpoint($bp3) {
     border: none;
     padding: 0;
+    margin: 1em 0 0;
   }
 
   @include breakpoint($bp4) {
@@ -178,5 +179,30 @@
   &:link,
   &:visited {
     
+  }
+}
+
+.cssanimations {
+  
+  .provider-header__first,
+  .provider-header__card,
+  .provider-header__cta {
+    opacity: 0;
+  }
+  
+  .provider-header__first.in-view {
+    animation: fadeInUp .5s ease forwards;
+  }
+  
+  .provider-header__card.in-view {
+    animation: fadeInUp .5s ease forwards;
+  }
+  
+  .provider-header__cta.in-view {
+    animation: fadeInUp .5s ease .25s forwards;
+    
+    @include breakpoint($bp4) {
+      animation: fadeInRightScale .5s ease .25s forwards
+    }
   }
 }
