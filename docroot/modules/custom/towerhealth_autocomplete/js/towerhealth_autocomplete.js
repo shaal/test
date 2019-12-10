@@ -37,7 +37,7 @@
           }
           var $element = uiAutocomplete.menu.element;
           // Temporarily remove autocomplete class to fix protoype conflict.
-          //$element.addClass('autocomplete-search');
+          $element.addClass('autocomplete-search drupal');
 
           // Add labels to the dropdown
           uiAutocomplete._renderItem = function (ul, item) {
@@ -45,7 +45,7 @@
               return $('<li>').addClass('autocomplete-search__label').html(item.label).appendTo(ul);
             }
 
-            return $('<li>').append($('<a>').html(item.label)).appendTo(ul);
+            return $('<li>').addClass('autocomplete-search__item').append($('<a>').html(item.label)).appendTo(ul);
           };
 
           // Override the "select" callback of the jQuery UI autocomplete.

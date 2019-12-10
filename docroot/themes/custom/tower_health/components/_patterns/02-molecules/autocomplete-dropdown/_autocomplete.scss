@@ -19,6 +19,7 @@
   display: none;
   visibility: hidden;
 
+  &.drupal,
   &.is-active {
     display: block;
     visibility: visible;
@@ -26,6 +27,24 @@
 
   @include breakpoint($bp3) {
     max-height: 400px;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    @include trans();
+    color: $trust-aa;
+  }
+
+  a:active,
+  a:hover {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+
+  a:focus {
+    color: $primary-dark;
+    text-decoration: underline;
   }
 }
 
