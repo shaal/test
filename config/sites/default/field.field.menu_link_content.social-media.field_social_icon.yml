@@ -12,7 +12,7 @@ field_name: field_social_icon
 entity_type: menu_link_content
 bundle: social-media
 label: 'Social Icon'
-description: ''
+description: 'This file needs to be a properly formatted SVG with a unique "fill" class to display the proper color.'
 required: false
 translatable: false
 default_value: {  }
