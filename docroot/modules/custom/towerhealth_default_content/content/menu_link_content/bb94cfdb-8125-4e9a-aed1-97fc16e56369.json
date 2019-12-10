@@ -1,0 +1,142 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/91\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/social-media"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/social-media\/field_social_icon": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/social-icons\/social-instagram.svg"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 91
+        }
+    ],
+    "uuid": [
+        {
+            "value": "bb94cfdb-8125-4e9a-aed1-97fc16e56369"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 91
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "target_id": "social-media"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-12-10T16:56:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "Instagram",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "This is the link to our Instagram page.",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "social-media"
+        }
+    ],
+    "link": [
+        {
+            "uri": "https:\/\/www.instagram.com\/readinghospital\/?hl=en",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": false
+        }
+    ],
+    "weight": [
+        {
+            "value": -46
+        }
+    ],
+    "expanded": [
+        {
+            "value": false
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-10T17:48:53+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Tower Health",
+                "canonical_url": "http:\/\/default\/node"
+            }
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/social-media\/field_social_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/social-icons\/social-instagram.svg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8f5de981-40de-467e-8b6f-c60ded574dc2"
+                    }
+                ]
+            }
+        ]
+    }
+}
