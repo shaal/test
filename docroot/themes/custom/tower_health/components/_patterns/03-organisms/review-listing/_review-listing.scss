@@ -1,5 +1,5 @@
 .review-listing {
-  margin: 4em 0 0;
+  margin: 4em 0 2em;
   background-color: rgba($off-white, .75);
   padding: 3em 2em 3em 0;
   border-radius: 0 8px 8px 0;
@@ -18,6 +18,10 @@
       width: calc(2em + ((100vw - 1500px) / 2));
       left: calc(-2em - ((100vw - 1500px) / 2));
     }
+  }
+  
+  @include breakpoint($bp3) {
+    margin: 4em 0 0;
   }
   
   .cssanimations & {
