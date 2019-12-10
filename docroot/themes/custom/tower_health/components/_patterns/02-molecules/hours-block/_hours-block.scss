@@ -34,7 +34,7 @@
     font-weight: 700;
     
     @include breakpoint($bp1 $bp2) {
-      display: block
+      display: block;
     }
   }
   

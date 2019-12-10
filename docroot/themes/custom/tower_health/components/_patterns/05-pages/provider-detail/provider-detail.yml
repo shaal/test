@@ -1,0 +1,172 @@
+breadcrumb:
+  class: "hero"
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "Providers"
+    3:
+      text: "Karen A. Hoerst, MD"
+
+name: "Karen A. Hoerst, MD"
+lead_title: "Medical Director, Stroke Program"
+rating: 4.9
+review_amt: 36
+provider_video:
+  type: video
+  reference: https://www.youtube.com/embed/d3ZLhedUtkA
+  label: Provider Video 
+img: 
+  src: "../../images/people/hoerst-karen.jpg"
+  alt: "Karen A. Hoerst, MD"
+accepting_patients: true
+appt_phone: 
+  number: "4846288888"
+  label: "484-628-HELP"
+appt_url: "#"
+
+specialties:
+  label: Specialties
+  items:
+    - text: Neurology
+    - text: Second Specialty
+    - text: Third Specialty
+focus:
+  label: Clinical Areas of Focus
+  info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+  info_id: 'areas-focus'
+  items:
+    - text: Stroke Care
+    - text: Stroke Recovery
+    - text: Thrid Area of Focus
+locations:
+  label: Locations
+  items:
+    - type: location
+      name: "McGlinn Cancer Institute"
+      address_rows: 
+        - "420 S. Fifth Avenue"
+        - "West Reading, PA 19611"
+      direction_url: '#'
+      phones:
+        - label: Main
+          number: "484-555-5555"
+        - label: Fax
+          number: "484-555-5556"
+      cta:
+        url: "#"
+        label: "View Other Providers at this Location"
+    - type: location
+      name: "Reading Hospital"
+      address_rows: 
+        - "420 S. Fifth Avenue"
+        - "West Reading, PA 19611"
+      direction_url: '#'
+      phones:
+        - label: Main
+          number: "484-555-5555"
+        - label: Fax
+          number: "484-555-5556"
+      cta:
+        url: "#"
+        label: "View Other Providers at this Location"
+certification:
+  label: Board Certifications
+  items:
+    - title: Vascular Neurology
+      text: American Board of Neurology
+    - title: Neurology
+      text: American Board of Neurology
+    - title: Example for Eligible
+      text: American Board of Neurology
+      meta: Board Eligible, 2018
+education:
+  label: Education
+  items:
+    - title: Thomas Jefferson University Hospital
+      text: Medical School
+    - title: Thomas Jefferson University Hospital
+      text: Residency
+    - title: Thomas Jefferson University Hospital
+      text: Fellowship
+    - title: Thomas Jefferson University Hospital
+      text: Internship
+
+language:
+  label: Languages
+  sidebar: true
+  items:
+    - text: English
+    - text: Second Language
+contact:
+  label: Contact Information
+  sidebar: true
+  items:
+    - label: 'Main:'
+      link:
+        url: tel+14846284656
+        text: 484-628-4656
+    - label: 'Fax:'
+      text: 484-628-4657
+insurance:
+  sidebar: true
+  items:
+    - buttonLink:
+        url: "#"
+        text: 'Insurances Accepted'
+      meta: 'Please check with your insurance provider before booking an appointment.'
+employed:
+  label: Employed By
+  sidebar: true
+  items:
+    - text: Tower Health Medical Group
+      info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+      info_id: thmg
+    - text: Tower Health Providers
+      info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloribus maiores ducimus velit aperiam perspiciatis est hic ipsum veniam, labore animi veritatis, quidem fuga eius eaque enim excepturi voluptatem in!'
+      info_id: thp
+affiliation:
+  label: Hospital Affiliation
+  sidebar: true
+  items:
+    - text: Tower Health Reading Hospital
+review_url: '#'
+reviews:
+  - rating: 4
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: December 2019
+  - rating: 3
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: December 2019
+  - rating: 4.5
+    review: 'Donec rutrum eros sit amet tortor posuere, sed iaculis ex hendrerit. Pellentesque mauris libero, faucibus sit amet ipsum non, egestas vulputate diam. Nam sed lacinia dolor, at venenatis ante. Phasellus lacinia ut justo et fermentum. Ut ultricies turpis vel accumsan pellentesque. Aliquam eu porttitor justo. Suspendisse semper ipsum non risus suscipit interdum. Donec iaculis tempus nisl, quis tristique elit tristique ut. Suspendisse porttitor risus ac purus fringilla, non molestie ante egestas. Quisque iaculis gravida nunc sit amet porttitor. Donec consectetur placerat mauris at aliquet. Nam eget rhoncus elit, sit amet laoreet enim. In sit amet enim sem. Etiam tortor turpis, viverra et nulla eget, interdum ornare eros. Praesent consectetur, diam sit amet venenatis pellentesque, sem nunc interdum lorem, et sagittis magna ipsum nec mi. Vestibulum dictum id arcu vel iaculis. Aliquam rutrum justo erat, eget mattis ex lobortis in. Nam arcu neque, tempus at nulla in, dignissim malesuada neque. Vivamus leo diam, vestibulum vel dapibus vel, tincidunt non lacus. Aliquam placerat lectus in velit porttitor tristique.'
+    date: December 2019
+  - rating: 4
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: December 2019
+  - rating: 2
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: November 2019
+  - rating: 2.5
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: October 2019
+  - rating: 3.75
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: September 2019
+  - rating: 4
+    review: 'Donec rutrum eros sit amet tortor posuere, sed iaculis ex hendrerit. Pellentesque mauris libero, faucibus sit amet ipsum non, egestas vulputate diam. Nam sed lacinia dolor, at venenatis ante. Phasellus lacinia ut justo et fermentum. Ut ultricies turpis vel accumsan pellentesque. Aliquam eu porttitor justo. Suspendisse semper ipsum non risus suscipit interdum. Donec iaculis tempus nisl, quis tristique elit tristique ut. Suspendisse porttitor risus ac purus fringilla, non molestie ante egestas. Quisque iaculis gravida nunc sit amet porttitor. Donec consectetur placerat mauris at aliquet. Nam eget rhoncus elit, sit amet laoreet enim. In sit amet enim sem. Etiam tortor turpis, viverra et nulla eget, interdum ornare eros. Praesent consectetur, diam sit amet venenatis pellentesque, sem nunc interdum lorem, et sagittis magna ipsum nec mi. Vestibulum dictum id arcu vel iaculis. Aliquam rutrum justo erat, eget mattis ex lobortis in. Nam arcu neque, tempus at nulla in, dignissim malesuada neque. Vivamus leo diam, vestibulum vel dapibus vel, tincidunt non lacus. Aliquam placerat lectus in velit porttitor tristique.'
+    date: September 2019
+  - rating: 4.5
+    review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
+    date: September 2019
+  - rating: 5
+    review: 'Donec rutrum eros sit amet tortor posuere, sed iaculis ex hendrerit. Pellentesque mauris libero, faucibus sit amet ipsum non, egestas vulputate diam. Nam sed lacinia dolor, at venenatis ante. Phasellus lacinia ut justo et fermentum. Ut ultricies turpis vel accumsan pellentesque. Aliquam eu porttitor justo. Suspendisse semper ipsum non risus suscipit interdum. Donec iaculis tempus nisl, quis tristique elit tristique ut. Suspendisse porttitor risus ac purus fringilla, non molestie ante egestas. Quisque iaculis gravida nunc sit amet porttitor. Donec consectetur placerat mauris at aliquet. Nam eget rhoncus elit, sit amet laoreet enim. In sit amet enim sem. Etiam tortor turpis, viverra et nulla eget, interdum ornare eros. Praesent consectetur, diam sit amet venenatis pellentesque, sem nunc interdum lorem, et sagittis magna ipsum nec mi. Vestibulum dictum id arcu vel iaculis. Aliquam rutrum justo erat, eget mattis ex lobortis in. Nam arcu neque, tempus at nulla in, dignissim malesuada neque. Vivamus leo diam, vestibulum vel dapibus vel, tincidunt non lacus. Aliquam placerat lectus in velit porttitor tristique.'
+    date: August 2019
+  - rating: 3.5
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: August 2019
+  - rating: 4
+    review: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, temporibus dolor rerum consequatur reiciendis, magni cum deserunt pariatur nisi atque unde commodi dicta nemo libero enim porro obcaecati? Ducimus, sapiente!'
+    date: July 2019

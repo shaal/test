@@ -1,20 +1,25 @@
-uuid: 29235f83-a16b-4517-8693-9840c699266b
+uuid: afcebb22-6082-4b4d-b079-2d29cbde4896
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.program
+    - field.field.node.article.body
+    - node.type.article
   module:
+    - text
     - user
-id: node.program.teaser
+id: node.article.teaser
 targetEntityType: node
-bundle: program
+bundle: article
 mode: teaser
 content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     region: content
   links:
@@ -23,9 +28,4 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_area_of_care_ref: true
-  field_body: true
-  field_location_ref: true
-  field_program_type_ref: true
-  field_services_ref: true
   search_api_excerpt: true

@@ -1,0 +1,8 @@
+{{ attach_library('tower_health/modal') }}
+<a href="{% if modal.type == 'inline' %}#{% endif %}{{modal.reference}}" class="modal {% if modal.type %}modal--{{modal.type}}{% endif %}">{{ modal.label }}</a>
+
+{% if modal.type == 'inline' %}
+  <div id="{{modal.reference}}" class="modal__inline-window">
+    {{ modal.content }}
+  </div>
+{% endif %}

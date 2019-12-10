@@ -1,0 +1,17 @@
+detail:
+  label: Board Certifications
+  info: This is an example of an info bubble for the label.
+  info_id: detail_label
+  items:
+    - title: Vascular Neurology
+      text: American Board of Neurology
+    - title: Neurology
+      text: American Board of Neurology
+      info: This is an example of an info bubble for an item.
+    - title: Example for Eligible
+      text: American Board of Neurology
+      meta: Board Eligible, 2018
+    - title: Example for Eligible
+      link:
+        url: "#"
+        label: Example link item.
