@@ -45,7 +45,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 //
 
 .page {
-
   &--container {
     @extend %grid-container;
 
@@ -83,7 +82,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
 
       @include breakpoint($bp4) {
-
         .no-cssgrid & {
           width: 25%;
           float: right;
@@ -106,7 +104,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
 
       @include breakpoint($bp4) {
-
         .no-cssgrid & {
           width: 25%;
           float: right;
@@ -127,7 +124,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
 
       @include breakpoint($bp4) {
-
         .no-cssgrid & {
           width: 75%;
           float: left;
@@ -147,7 +143,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       }
 
       @include breakpoint($bp4) {
-
         .no-cssgrid & {
           width: 100%;
           float: left;
@@ -157,7 +152,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   }
   
   &--container-centered {
-    @extend %grid-container; 
+    @extend %grid-container;
     
     .no-cssgrid & {
       @extend %clearfix;
@@ -171,12 +166,12 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
       
       .no-cssgrid & {
         display: block;
-      } 
+      }
     }
 
     .main-content {
       @include breakpoint($bp3) {
-        grid-column: 1 / span 1; 
+        grid-column: 1 / span 1;
         grid-row: 1 / span 2;
         
         .no-cssgrid & {
@@ -255,7 +250,6 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 }
 
 .cssanimations {
-  
   .main-content--background::after {
     opacity: 0;
   }

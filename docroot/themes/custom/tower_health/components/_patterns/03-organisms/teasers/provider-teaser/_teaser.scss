@@ -199,7 +199,6 @@
     position: relative;
     top: -5px;
     float: right;
-
   }
 }
 
@@ -306,7 +305,7 @@
   margin-bottom: .25em;
   margin-top: .5em;
 
-  &::first-child {
+  &:first-child {
     margin-top: 0;
   }
 }
@@ -327,7 +326,7 @@
 }
 
 .teaser.article {
-  .teaser__image-container{
+  .teaser__image-container {
     &::after {
       background-color: $wisdom;
     }
@@ -335,7 +334,7 @@
 }
 
 .teaser.basic {
-  .teaser__image-container{
+  .teaser__image-container {
     &::after {
       background-color: $tranquil;
     }

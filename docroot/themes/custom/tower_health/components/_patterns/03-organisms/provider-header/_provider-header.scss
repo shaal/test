@@ -153,7 +153,7 @@
 }
 
 .provider-header__cta__label {
-  @include adjust-font-size-to($label, .75)
+  @include adjust-font-size-to($label, .75);
   margin-top: 0;
   margin-bottom: 1em;
   text-transform: uppercase;
@@ -175,15 +175,9 @@
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
-  
-  &:link,
-  &:visited {
-    
-  }
 }
 
 .cssanimations {
-  
   .provider-header__first,
   .provider-header__card,
   .provider-header__cta {
@@ -202,7 +196,7 @@
     animation: fadeInUp .5s ease .25s forwards;
     
     @include breakpoint($bp4) {
-      animation: fadeInRightScale .5s ease .25s forwards
+      animation: fadeInRightScale .5s ease .25s forwards;
     }
   }
 }

@@ -74,7 +74,7 @@
     }
 
     @include breakpoint($bp6) {
-      width: calc( ((100vw - 1500px) / 2) + 1.5em);
+      width: calc(((100vw - 1500px) / 2) + 1.5em);
       right: calc(((100vw - 1500px) / -2) - 1.5em);
     }
   }
@@ -95,7 +95,6 @@
   @include breakpoint($bp3) {
     display: block;
     visibility: visible;
-
   }
 }
 

@@ -185,10 +185,7 @@
   }
 }
 
-
-
 // Animations
-
 .cssanimations {
   
   // default states
@@ -224,7 +221,7 @@
       
       @include breakpoint(0 899px) {
         animation: fadeInLeft .65s ease-in-out forwards;
-      } 
+      }
       
       @include breakpoint($bp3) {
         h1 {
