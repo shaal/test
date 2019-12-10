@@ -6,7 +6,7 @@ global:
 
   js:
     dist/00-base/global/animations/animation.js: {}
-    components/js/modernizer-custom.js: {}
+    components/js/modernizr-custom.js: {}
 
 main-menu:
   js:
