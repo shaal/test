@@ -1,0 +1,24 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  full_width: true
+}%}
+
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" with {
+      breadcrumb: header.breadcrumb
+    } %}
+  {% endblock %}
+
+  {% block page_content %}
+    {% include "@organisms/box-links/box-links.twig" with {
+      boxes: boxes
+    } %}
+    
+    
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
+      "title": cta.title,
+      "text": cta.text,
+      "link": cta.link
+    } %}
+  {% endblock %}
+{% endembed %}
