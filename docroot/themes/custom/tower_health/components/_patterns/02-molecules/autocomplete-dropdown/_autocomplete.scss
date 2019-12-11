@@ -23,6 +23,7 @@
   &.is-active {
     display: block;
     visibility: visible;
+    width: 100% !important;
   }
 
   @include breakpoint($bp3) {
@@ -58,13 +59,30 @@
 }
 
 .autocomplete-search__item {
+  &.ui-menu-item {
+    list-style-image: none;
+  }
+
+  .autocomplete-search & a.ui-state-active,
+  .autocomplete-search & a.ui-menu-item-wrapper,
+  &.ui-menu a,
+  &.ui-menu a.ui-state-active,
   a {
     display: block;
+    border: none;
+    background: none;
+    font-weight: 300;
+    margin: 0;
     padding: .15em 0;
   }
 
   @include breakpoint(0 $bp3) {
+    .autocomplete-search & a.ui-state-active,
+    .autocomplete-search & a.ui-menu-item-wrapper,
+    &.ui-menu a,
+    &.ui-menu a.ui-state-active,
     a {
+      margin: 0;
       padding: .5em 0;
     }
   }

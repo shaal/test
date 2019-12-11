@@ -15,6 +15,18 @@
 
   var autocomplete = {};
 
+  $.fn.filterByData = function (prop, val) {
+    var $self = this;
+    if (typeof val === 'undefined') {
+      return $self.filter(
+        function () { return typeof $(this).data(prop) !== 'undefined'; }
+      );
+    }
+    return $self.filter(
+      function () { return $(this).data(prop) == val; }
+    );
+  };
+
 
   /**
    * Attaches our custom autocomplete settings to all affected fields.
@@ -35,9 +47,14 @@
           if (!uiAutocomplete) {
             return;
           }
+          // Set a data attribute to append dropdown too.
+          $(this).data('autocomplete-id', 'id-' + i);
+          // Get the width of the input.
+          var width = $(this).width();
           var $element = uiAutocomplete.menu.element;
           // Temporarily remove autocomplete class to fix protoype conflict.
           $element.addClass('autocomplete-search drupal');
+          $element.css('width', width);
 
           // Add labels to the dropdown
           uiAutocomplete._renderItem = function (ul, item) {
@@ -68,6 +85,12 @@
             $(this).parents('form').submit();
           };
         });
+      $('.autocomplete-search.ui-autocomplete').each(function (i) {
+        var id = 'id-' + i;
+        var input = $('.find-care-autocomplete').filterByData('autocomplete-id', id).parent();
+        $(this).data('autocomplete-id', id);
+        $(this).appendTo(input);
+      });
     }
   };
 
