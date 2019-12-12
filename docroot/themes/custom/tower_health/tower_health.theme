@@ -20,7 +20,7 @@ function tower_health_preprocess_html(&$variables) {
  * Load the utility menu into a variable.
  */
 function tower_health_preprocess_menu(&$variables) {
-  $utility_nav_block = \Drupal\block\Entity\Block::load('tower_health_utility');
+  $utility_nav_block = Block::load('tower_health_utility');
   $utility_nav_block_view = \Drupal::entityTypeManager()
     ->getViewBuilder('block')
     ->view($utility_nav_block);
