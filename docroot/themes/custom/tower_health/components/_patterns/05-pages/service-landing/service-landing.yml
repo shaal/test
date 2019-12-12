@@ -8,10 +8,13 @@ header:
       text: "2nd Level"
     3:
       text: "3rd Level"
-  title: Find a Service
+  title: Conditions & Services
   style: list
+  link:
+    url: '#core-services'
+    label: Browse Core Services
   form:
-    label: "Search Services"
+    label: "Search All Services"
     placeholder: "Search by Condition or Service"
     button: "Search Services"
 boxes:
@@ -48,6 +51,7 @@ boxes:
       src: "../../images/AdobeStock_239096192_Preview.jpeg"
       alt: "Alternative text"
 services_header: Core Services
+services_id: core-services
 services_lede: Below is a list of our core services. The list is not exhaustive, so if you are having trouble finding what you are looking for please search in the above search box.
 services:
   - name: "Cancer Care"
