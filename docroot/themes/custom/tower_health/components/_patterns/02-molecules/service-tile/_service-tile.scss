@@ -2,15 +2,16 @@
   background-color: $white;
   border-radius: $rd-brd-lg;
   box-shadow: $shadow;
-  padding: 1em;
   margin: 1em 0;
 }
 
 .service-tile__title {
+  @include adjust-font-size-to($md-heading, 1.1);
+  padding: 1.5rem 0 .5rem 1.5rem;
   margin-top: 0;
   margin-bottom: .5em;
-  padding-bottom: .5em;
-  border-bottom: 1px solid $off-white;
+  margin-right: 1rem;
+  border-bottom: 4px solid $growth;
   
   a:link,
   a:visited {
@@ -20,12 +21,28 @@
   a:active,
   a:hover,
   a:focus {
-    text-decoration: underline
+    text-decoration: underline;
   }
 }
 
 .service-tile__subservices {
   list-style: none;
-  margin: 0 0 1em;
-  padding: 0;
+  margin: 0 0 1.5em;
+  padding: 0 1.5rem;
+  
+  a:link,
+  a:visited {
+    color: $gray-dark;
+  }
+  
+  a:active,
+  a:hover,
+  a:focus {
+    color: $trust-aa;
+  }
+  
+  @include breakpoint($bp1 $bp2) {
+    column-count: 2;
+    column-gap: 1em;
+  }
 }

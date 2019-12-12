@@ -1,0 +1,43 @@
+.service-tile-listing {
+  @include grid;
+}
+
+.service-tile-listing__header {
+  margin: 0 auto 1em;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.service-tile-listing__title {
+  margin-top: 0;
+  margin-bottom: .25em;
+}
+
+.service-tile-listing__list {
+  
+  @include breakpoint($bp2) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  
+  .service-tile {
+    width: 100%;
+    
+    @include breakpoint($bp2) {
+      width: 48%;
+      flex: 0 1 48%;
+    }
+    
+    @include breakpoint($bp3) {
+      width: 32%;
+      flex: 0 1 32%;
+    }
+    
+    @include breakpoint($bp4) {
+      width: 24%;
+      flex: 0 1 24%;
+    }
+  }
+}

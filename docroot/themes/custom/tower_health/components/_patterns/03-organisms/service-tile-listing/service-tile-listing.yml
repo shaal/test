@@ -1,0 +1,174 @@
+header: Core Services
+lede: Below is a list of our core services. The list is not exhaustive, so if you are having trouble finding what you are looking for please search in the above search box.
+services:
+  - name: "Cancer Care"
+    url: '#'
+    subservices:
+      - name: 'Cancer Types'
+        url: '#'
+      - name: 'Chemotherapy'
+        url: '#'
+      - name: 'Oncology'
+        url: '#'
+      - name: 'Radiation Therapy'
+        url: '#'
+  - name: "Heart & Vascular"
+    url: '#'
+    subservices:
+      - name: 'Cardiology'
+        url: '#'
+      - name: 'Cardiothoracic Surgery'
+        url: '#'
+      - name: 'Thoracic Surgery'
+        url: '#'
+      - name: 'Vascular Care'
+        url: '#'
+  - name: "Orthopedics"
+    url: '#'
+    subservices:
+      - name: 'Joint Replacement'
+        url: '#'
+      - name: 'Bone Care'
+        url: '#'
+      - name: 'Sports Medicine'
+        url: '#'
+  - name: "Pediatrics"
+    url: '#'
+    subservices:
+      - name: 'Physicals'
+        url: '#'
+      - name: "Children's Medicine"
+        url: '#'
+      - name: 'Newborn Care'
+        url: '#'
+      - name: 'Speech & Language Therapy'
+        url: '#'
+  - name: "Family Medicine"
+    url: '#'
+    subservices:
+      - name: 'Primary Care'
+        url: '#'
+      - name: 'Internal Medicine'
+        url: '#'
+      - name: 'Geriatric Medicine'
+        url: '#'
+      - name: 'Sexual Health'
+        url: '#'
+  - name: "Neuroscience"
+    url: '#'
+    subservices:
+      - name: 'Sleep Health'
+        url: '#'
+      - name: 'Stroke Care'
+        url: '#'
+      - name: 'Neurology'
+        url: '#'
+  - name: "Emergency & Trauma"
+    url: '#'
+    subservices:
+      - name: 'Emergency Care'
+        url: '#'
+      - name: 'Urgent care'
+        url: '#'
+      - name: 'Convenient Care'
+        url: '#'
+      - name: 'Burn Care'
+        url: '#'
+  - name: "Gastroenterology"
+    url: '#'
+    subservices:
+      - name: 'Digestive Health'
+        url: '#'
+      - name: 'Endoscopy'
+        url: '#'
+      - name: 'Colorectal'
+        url: '#'
+      - name: 'Gastro Intestinal'
+        url: '#'
+  - name: "Behavioral Health"
+    url: '#'
+    subservices:
+      - name: 'Addiction'
+        url: '#'
+      - name: 'Alcohol Abuse'
+        url: '#'
+      - name: 'Counseling'
+        url: '#'
+      - name: 'Psychiatry'
+        url: '#'
+  - name: "Diagnostic Testing"
+    url: '#'
+    subservices:
+      - name: 'Imaging'
+        url: '#'
+      - name: 'Interventional Radiology'
+        url: '#'
+      - name: 'Lab Services'
+        url: '#'
+      - name: 'Radiology'
+        url: '#'
+  - name: "Home Care"
+    url: '#'
+    subservices:
+      - name: 'Palliative Care'
+        url: '#'
+      - name: 'Home Services'
+        url: '#'
+      - name: 'Outpatient Services'
+        url: '#'
+  - name: "Infectious Diseases"
+    url: '#'
+    subservices:
+      - name: 'HIV'
+        url: '#'
+      - name: 'Infections'
+        url: '#'
+      - name: 'Vaccinationns'
+        url: '#'
+  - name: "Plastic & Reconstructive"
+    url: '#'
+    subservices:
+      - name: 'Dermatology'
+        url: '#'
+      - name: 'Aesthetics'
+        url: '#'
+      - name: 'Cosmetic Surgery'
+        url: '#'
+      - name: 'Reconstructive Surgery'
+        url: '#'
+  - name: "Rehabilitation"
+    url: '#'
+    subservices:
+      - name: 'Occupational Therapy'
+        url: '#'
+      - name: 'Speech & Hearing'
+        url: '#'
+      - name: 'Cochlear Implants'
+        url: '#'
+  - name: "Support Services"
+    url: '#'
+    subservices:
+      - name: 'Pharmacy'
+        url: '#'
+      - name: 'Social Services'
+        url: '#'
+      - name: 'Blood Services'
+        url: '#'
+      - name: Language Services'
+        url: '#'
+      - name: Nutrition'
+        url: '#'  
+  - name: "Women's Health"
+    url: '#'
+    subservices:
+      - name: 'Breast Health'
+        url: '#'
+      - name: 'Fertility'
+        url: '#'
+      - name: 'OB/GYN'
+        url: '#'
+      - name: 'Pregnancy & Birth'
+        url: '#'
+      - name: 'Urogynecology'
+        url: '#'
+  

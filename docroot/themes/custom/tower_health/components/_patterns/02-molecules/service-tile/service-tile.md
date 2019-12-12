@@ -1,5 +1,5 @@
 ---
-
+el: ".service-tile"
 title: 'Service Tile'
 ---
 #### Description
