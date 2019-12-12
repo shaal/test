@@ -56,7 +56,6 @@
 }
 
 .main-menu__item--secondary {
-
   .main-menu--sub-1 {
     border-top: 2px solid $trust-aa;
   }
@@ -80,7 +79,7 @@
   @include breakpoint($bp3 $bp4) {
     @include adjust-font-size-to($sm-text, .8);
   }
-  
+
   /* set default color of links */
   > a {
     &:link,

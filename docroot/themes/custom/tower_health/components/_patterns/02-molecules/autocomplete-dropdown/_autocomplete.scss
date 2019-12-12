@@ -1,4 +1,4 @@
-.autocomplete-container {
+ .autocomplete-container {
   position: relative;
 }
 
@@ -23,7 +23,11 @@
   &.is-active {
     display: block;
     visibility: visible;
-    width: 100% !important;
+    width: calc(100% - 175px - 1em) !important;
+
+    @include breakpoint($bp3) {
+      width: calc(100% - 205px - 1em) !important;
+    }
   }
 
   @include breakpoint($bp3) {
@@ -100,5 +104,15 @@
   .form-item {
     margin-right: 1em;
     flex-grow: 1;
+  }
+}
+
+#edit-submit-find-a-provider,
+#edit-submit-find-a-service,
+#edit-submit-find-a-location {
+  width: 175px;
+
+  @include breakpoint($bp3) {
+    width: 205px;
   }
 }
