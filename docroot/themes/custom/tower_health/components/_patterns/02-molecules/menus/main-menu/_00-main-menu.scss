@@ -89,7 +89,7 @@
 
   @include breakpoint($bp3) {
     background-color: $white;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 $rd-brd-lg $rd-brd-lg;
     display: none;
     visibility: hidden;
     height: auto;
@@ -102,7 +102,7 @@
     padding: 1em;
     margin-top: 0;
     z-index: 1;
-    box-shadow: 0 0 4px rgba($black, .25);
+    box-shadow: $menu-shadow;
   }
   
   @include breakpoint($bp4) {

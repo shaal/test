@@ -20,7 +20,7 @@
       background-color: $white;
       border: 1px solid rgba($gray-lighter, .7);
       border-radius: 50px;
-      box-shadow: inset 1px 1px 3px rgba($gray-dark, .15);
+      box-shadow: $inset-shadow;
     }
     
     &:checked::after {
