@@ -1,4 +1,5 @@
 ---
+el: ".image-background"
 title: 'Image Background'
 ---
 #### Description
