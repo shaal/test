@@ -7,17 +7,19 @@
   </button>
   <div id="list-filters" class="filter-grid-wrapper">
     <div class="filter__labels">
-      <span>Filter</span>
-      <a href="/">Clear Filters</a>
+      <span>{{ "Filter"|t }}</span>
+      <a href="/">{{ "Clear Filters"|t }}</a>
     </div>
     <div class="filter__items">
-      {% for item in form_sections %}
-        {% include "@organisms/form-section/form-section.twig" with {
-          section_heading_level: null,
-          section_heading: null,
-          section_items: item.section_items
-        } %}
-      {% endfor %}
+      {% block filter_items %}
+        {% for item in form_sections %}
+          {% include "@organisms/form-section/form-section.twig" with {
+            section_heading_level: null,
+            section_heading: null,
+            section_items: item.section_items
+          } %}
+        {% endfor %}
+      {% endblock %}
     </div>
   </div>
 </div>
