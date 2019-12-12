@@ -1,0 +1,31 @@
+.service-tile {
+  background-color: $white;
+  border-radius: $rd-brd-lg;
+  box-shadow: $shadow;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.service-tile__title {
+  margin-top: 0;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid $off-white;
+  
+  a:link,
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:active,
+  a:hover,
+  a:focus {
+    text-decoration: underline
+  }
+}
+
+.service-tile__subservices {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+}
