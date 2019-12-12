@@ -1,0 +1,286 @@
+.location-hero {
+  @extend %clearfix;
+  position: relative;
+  padding-top: 100px;
+  width: 100%;
+  max-width: 1500px;
+
+  @include breakpoint($bp2) {
+    padding: 70px 0 0;
+  }
+
+  @include breakpoint($bp3) {
+    padding: 0;
+    margin: 3em auto;
+  }
+}
+
+.location-hero__container {
+  max-width: 1500px;
+  width: 100%;
+  
+  @include breakpoint($bp2) {
+    padding: 0 2em;
+  }
+}
+
+.location-hero__content {
+  background-color: $white;
+  border-top: 4px solid $trust-ltr;
+  border-right: 4px solid $trust-ltr;
+  border-bottom: 4px solid $trust-ltr;
+  border-radius: 0 5px 5px 0;
+  width: 96%;
+  padding: 2em 1em 2em 2em;
+  box-shadow: 0 2px 8px rgba($black, 0.15);
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint($bp0) {
+    width: 95%;
+  }
+
+  @include breakpoint($bp2) {
+    border: 4px solid $trust-ltr;
+    border-radius: 5px;
+    padding: 3em 2em;
+    width: 100%;
+  }
+
+  @include breakpoint($bp3) {
+    box-shadow: none;
+    position: static;
+    border-radius: 8px;
+    background-color: transparent;
+    padding-right: 28%;
+    width: 80%;
+  }
+  
+  &.image {
+    margin-top: 3.5em;
+    
+    @include breakpoint($bp0) {
+      margin-top: 5em;
+    }
+    
+    @include breakpoint($bp2) {
+      margin-top: 8em;
+      width: 80%;
+    }
+
+    @include breakpoint($bp3) {
+      width: 80%;
+      padding-right: 28%;
+      margin-top: .5em;
+    }
+
+    @include breakpoint($bp4) {
+      width: 85%;
+      padding-right: 34%;
+    }
+  }
+
+  .location-hero__title {
+    @extend %track-in;
+    margin-top: 0;
+    color: $primary-dark;
+    text-transform: uppercase;
+    font-weight: 600;
+    word-wrap: break-word;
+    
+    @include breakpoint($bp2) {
+      @include adjust-font-size-to($xxxl-heading, 1.75);
+    }
+  }
+}
+
+.location-label {
+  @include adjust-font-size-to($label, .8);
+  @extend %track-out;
+  display: inline-block;
+  position: relative;
+  padding: .5em 1em .5em 0;
+  margin-bottom: 2em;
+  background-color: $trust;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0 6px 6px 0;
+  z-index: -10;
+  
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 5.25em;
+    left: -5.25em;
+    top: 0;
+    bottom: 0;
+    background-color: $trust;
+  }
+
+  @include breakpoint($bp6) {
+    &::before {
+      left: calc((-1 * (100vw - 1500px) / 2) - 4.5rem);
+      width: calc(((100vw - 1500px) / 2) + 4.5rem);
+    }
+  }
+}
+
+.location-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include breakpoint($bp2) {
+    justify-content: space-between;
+  }
+}
+
+.location-details__item {
+
+  @include breakpoint($bp1) {
+    width: 48%;
+  }
+  
+  @include breakpoint($bp4) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    .image & {
+      display: block;
+    }
+  }
+}
+
+.location-details__child {
+  margin-bottom: 1em;
+  
+  @include breakpoint($bp4) {
+    width: 48%;
+    
+    .image & {
+      width: auto;
+    }
+  }
+  
+  .icon-button {
+    max-width: 180px;
+  }
+}
+
+.location-details__label {
+  @include adjust-font-size-to($label, .9);
+  @extend %track-out;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: block;
+  color: $primary-dark;
+  margin: 0 0 .5em;
+}
+
+.location-details__info {
+  display: block;
+}
+
+.location-details__number {
+  &:link,
+  &:visited {
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: $primary-dark;
+  }
+}
+
+.location-hero__image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -10;
+  overflow: hidden;
+
+  .image-background {
+    position: relative;
+    width: 90%;
+    right: -30%;
+  }
+
+  @include breakpoint($bp2) {
+    width: 80%;
+  }
+
+  @include breakpoint($bp3) {
+    z-index: 5;
+    right: 0;
+    left: 53%;
+    top: -3.25em;
+    width: auto;
+
+    .image-background {
+      position: relative;
+      width: 150%;
+      max-width: 625px;
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @include breakpoint($bp6) {
+    right: calc(( 100vw - 1550px ) / 2 * -1);
+    top: -4em;
+    left: 55%;
+    
+    .image-background {
+      max-width: 650px;
+    }
+  }
+}
+
+// Animations
+
+.cssanimations {
+
+  // default states
+  .location-hero__content {
+    opacity: 0;
+    
+    .icon-button {
+      opacity: 1;
+    }
+  }
+
+  .location-hero__image {
+    opacity: 0;
+
+    .image-background.top-left .image::before {
+      margin: 0;
+    }
+  }
+
+  // animating in
+  .in-view {
+    .location-hero__content {
+      animation: fadeInLeft .65s ease-in-out forwards;
+    }
+
+    .location-hero__image {
+      animation: fadeInRightScale .65s ease-in-out forwards;
+
+      .image-background.top-left .image::before {
+        transition: all .35s ease .25s;
+        margin-left: -20px;
+        margin-top: -10px;
+      }
+    }
+  }
+}

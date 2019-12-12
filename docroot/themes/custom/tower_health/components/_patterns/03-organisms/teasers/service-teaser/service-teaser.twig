@@ -1,0 +1,17 @@
+<div class="teaser--simple basic js-section-animation">
+
+  <h2 class="teaser__name--simple"><a href="{{ url }}">{{ service.details.title }}</a></h2>
+
+  <div class="teaser__content--simple">
+    {{ service.details.text }}
+    
+    {% if service.details.related %}
+    <div class="related-items">
+      <span>Related Conditions:</span>
+      {% for condition in service.details.related %}
+        {{ condition }}{% if not loop.last %},  {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>

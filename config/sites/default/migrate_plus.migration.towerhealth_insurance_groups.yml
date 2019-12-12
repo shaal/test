@@ -1,0 +1,39 @@
+uuid: 859874f2-21c3-46ed-9df3-0ae113d62de6
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+id: towerhealth_insurance_groups
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import tower health insurance group terms.'
+source:
+  plugin: provider_insurance_group_terms
+  path: 'public://directory/Find_Provider_Dir_Practitioner_Insurance.txt'
+process:
+  vid:
+    -
+      plugin: default_value
+      default_value: insurance_groups
+  name: insurance_group
+  _insurance_companies:
+    -
+      plugin: towerhealth_lookup_taxonomy_term
+      lookup_field: name
+      source: insurance_companies
+      vid: insurance_company
+    -
+      plugin: skip_on_empty
+      method: row
+  field_insurance_company:
+    -
+      plugin: towerhealth_entity_ref_values
+      source: '@_insurance_companies'
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

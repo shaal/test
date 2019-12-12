@@ -28,6 +28,14 @@
   }
 }
 
+.main-nav {
+  padding-top: 45px;
+  
+  @include breakpoint($bp3) {
+    padding-top: 0;
+  }
+}
+
 // UL
 .main-menu:not(.main-menu--sub) {
   @include list-reset;
@@ -59,9 +67,9 @@
     top: 2.25em;
   }
   
-  @include breakpoint($bp5) {
+  @include breakpoint($bp6) {
     &::after {
-      right: calc(((100vw - 1350px) / -2 ) - 1.5em);
+      right: calc(((100vw - 1500px) / -2 ) - 1.5em);
     }
   }
 }
@@ -150,7 +158,7 @@
       border-top-color: transparent;
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
-    } 
+    }
   }
 }
 
@@ -168,7 +176,7 @@
     @include adjust-font-size-to($label, .9);
     text-transform: uppercase;
     font-weight: 600;
-    position:absolute;
+    position: absolute;
     right: 1em;
     text-decoration: none;
     
@@ -225,6 +233,16 @@
     
     .button {
       padding: 1.6em 1.5em;
-    } 
+    }
   }
+}
+
+.main-menu__list-label {
+  @extend %track-out;
+  @include adjust-font-size-to($label, .8);
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: .5em;
 }

@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.location.field_location_id
     - field.field.node.location.field_location_image
     - field.field.node.location.field_location_insurance
-    - field.field.node.location.field_location_omw
     - field.field.node.location.field_location_phone_number
     - field.field.node.location.field_location_type
     - field.field.node.location.field_services_ref
@@ -23,7 +22,6 @@ dependencies:
     - entity_reference_revisions
     - geofield
     - office_hours
-    - options
     - telephone
     - text
     - user
@@ -90,11 +88,10 @@ content:
     weight: 8
     label: hidden
     settings:
-      day_format: long
-      time_format: G
-      compress: false
-      grouped: false
       show_closed: all
+      office_hours_first_day: ''
+      day_format: long
+      time_format: g
       closed_format: Closed
       separator:
         days: '<br />'
@@ -106,10 +103,11 @@ content:
         position: ''
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
+      compress: false
+      grouped: false
       schema:
-        enabled: false
+        enabled: 0
       timezone_field: ''
-      office_hours_first_day: ''
     third_party_settings: {  }
     type: office_hours
     region: content
@@ -128,13 +126,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_location_omw:
-    weight: 4
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
   field_location_phone_number:
     weight: 6

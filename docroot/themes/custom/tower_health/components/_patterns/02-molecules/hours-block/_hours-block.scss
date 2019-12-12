@@ -1,0 +1,49 @@
+.hours-block {
+  margin-top: 2em;
+  
+  @include breakpoint($bp3) {
+    margin-top: 6em;
+  }
+}
+
+.hours-block__label {
+  @include adjust-font-size-to($label, .9);
+  @extend %track-out;
+  text-transform: uppercase;
+  display: block;
+  color: $primary-dark;
+  margin: 0 0 1em 0;
+}
+
+.hours-block__days {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+  @include breakpoint($bp1 $bp3) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.hours-block__day {
+  margin-bottom: 0.5em;
+
+  span {
+    font-weight: 700;
+    
+    @include breakpoint($bp1 $bp2) {
+      display: block;
+    }
+  }
+  
+  @include breakpoint($bp1 $bp3) {
+    width: 48%;
+  }
+}
+
+.hours-block__text {
+  @include adjust-font-size-to($label, .9);
+  margin: 0.5em 0;
+}

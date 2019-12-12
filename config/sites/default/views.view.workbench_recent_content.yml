@@ -5,6 +5,7 @@ dependencies:
   module:
     - node
     - user
+    - workbench_access
 _core:
   default_config_hash: sE8LcWl4XA93if6pA-KTbMmgz3gKkd40g4wxUVmBD8I
 id: workbench_recent_content
@@ -636,11 +637,57 @@ display:
           plugin_id: boolean
           entity_type: node
           entity_field: status
+        workbench_access_section__access_control:
+          id: workbench_access_section__access_control
+          table: node
+          field: workbench_access_section__access_control
+          relationship: nid
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: workbench_access_section__access_control_op
+            label: Access
+            description: ''
+            use_operator: false
+            operator: workbench_access_section__access_control_op
+            identifier: workbench_access_section__access_control
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              article_editor: article_editor
+              editor: editor
+              publisher: publisher
+              anonymous: '0'
+              administrator: '0'
+            reduce: 1
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: 0
+          section_filter:
+            show_hierarchy: 1
+          entity_type: node
+          plugin_id: workbench_access_section
         status_extra:
           id: status_extra
           table: node_field_data
           field: status_extra
-          relationship: none
+          relationship: nid
           group_type: group
           admin_label: ''
           operator: '='
@@ -723,6 +770,17 @@ display:
           entity_type: node
           entity_field: uid
           plugin_id: standard
+        nid:
+          id: nid
+          table: node_field_revision
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: 'Get the actual content from a content revision.'
+          required: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
       filter_groups:
@@ -787,32 +845,29 @@ display:
           quantity: 9
       display_description: 'The ten most recent posts to the site'
       filters:
-        status:
-          id: status
+        status_extra:
+          id: status_extra
           table: node_field_data
-          field: status
-          relationship: none
+          field: status_extra
+          relationship: nid
           group_type: group
           admin_label: ''
           operator: '='
-          value: '1'
+          value: false
           group: 1
           exposed: false
           expose:
             operator_id: ''
-            label: Published
+            label: ''
             description: ''
             use_operator: false
-            operator: status_op
-            identifier: published
+            operator: ''
+            identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -825,9 +880,8 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: boolean
           entity_type: node
-          entity_field: status
+          plugin_id: node_status
       filter_groups:
         operator: AND
         groups:
@@ -1166,6 +1220,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

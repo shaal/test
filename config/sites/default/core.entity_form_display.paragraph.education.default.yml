@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.education.field_education_institution
+    - field.field.paragraph.education.field_education_institution_ref
     - field.field.paragraph.education.field_education_type
     - paragraphs.paragraphs_type.education
 id: paragraph.education.default
@@ -11,13 +11,14 @@ targetEntityType: paragraph
 bundle: education
 mode: default
 content:
-  field_education_institution:
+  field_education_institution_ref:
     weight: 1
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   field_education_type:
     weight: 0

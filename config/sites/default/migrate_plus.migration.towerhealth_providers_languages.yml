@@ -14,9 +14,8 @@ migration_group: null
 label: 'Import tower health provider languages spoken'
 source:
   plugin: csv
-  path: modules/custom/towerhealth_msow_migration/data/tbl_Dir_Practitioner_Languages.csv
-  delimiter: ','
-  enclosure: '"'
+  path: 'public://directory/Find_Provider_Dir_Languages.txt'
+  delimiter: '|'
   header_row_count: 1
   ids:
     - practioner_id

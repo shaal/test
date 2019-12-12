@@ -5,17 +5,24 @@
 
 {% set main_content_base_class = main_content_base_class|default('main-content') %}
 {% set main_content_modifiers = [] %}
-  
+
 {% set page_base_class = page_base_class|default('page') %}
 {% set page_modifiers = [] %}
-
 
 {% if top_sidebar or bottom_sidebar %}
   {% set page_modifiers = page_modifiers|merge(['with-sidebar']) %}
 {% endif %}
 
-{% if full_width == false %}
+{% if (full_width == false) and (centered == false) %}
   {% set page_modifiers = page_modifiers|merge(['container']) %}
+{% endif %}
+
+{% if centered == true %}
+  {% set page_modifiers = page_modifiers|merge(['container-centered']) %}
+{% endif %}
+
+{% if page_background == true %}
+  {% set main_content_modifiers = main_content_modifiers|merge(['background js-section-animation']) %}
 {% endif %}
 
 <div>
@@ -34,7 +41,7 @@
       {% block page_header %}{% endblock %}
       </div>
     {% endif %}
-    
+
     <div {{ bem(page_base_class, (page_modifiers), page_blockname) }}>
       {% if top_sidebar %}
         <aside class="top-sidebar" role="complementary">
@@ -45,13 +52,19 @@
       <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
         {% block page_content %}{% endblock %}
       </div>
-      
+
       {% if bottom_sidebar %}
         <aside class="bottom-sidebar" role="complementary">
           {% block bottom_page_sidebar %}{% endblock %}
         </aside>
       {% endif %}
     </div>
+    
+    {% if full_content %}
+      <div class="full-content">
+        {% block full_content %}{% endblock %}
+      </div>
+    {% endif %}
 
   </main>
 

@@ -1,0 +1,17 @@
+.teaser-list {
+  @include grid;
+  
+  .listing-results + .banner-message {
+    margin-top: -1em;
+  }
+  
+  .banner-message {
+    margin-bottom: 3em;
+  }
+}
+
+.listing-results {
+  @include adjust-font-size-to($label, .9);
+  margin-bottom: 2em;
+  width: 100%;
+}

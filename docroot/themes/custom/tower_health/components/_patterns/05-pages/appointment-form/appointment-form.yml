@@ -1,0 +1,151 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      text: "Request an Appointment"
+  title: Request an Appointment
+  lede: Maecenas vel sapien tellus. Nulla finibus vestibulum ante. Fusce porta tortor eget lacus congue tempor. Aliquam ut posuere lorem.
+  style: secondary
+
+emergency_banner: If this is a medical emergency, please call 911.
+
+doctor_reference: 'Dr. Susan Jones'
+
+rich_text:
+  -
+    paragraph_content:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+form_sections:
+  - section_heading: Patient Information
+    section_heading_level: 2
+    section_items:
+      -
+        width: twoFifth
+        title: First Name
+        type: text
+      -
+        width: oneFifth
+        title: Middle Initial
+        type: text
+        optional: true
+      -
+        width: twoFifth
+        title: Last Name
+        type: text
+      -
+        width: oneThird
+        title: Gender
+        type: select
+        info: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        info_id: gender_info
+        children:
+          - title: Choose an Option
+            attributes: selected disabled
+          - title: Male
+          - title: Female
+          - title: Prefer not to say
+      -
+        width: oneThird
+        title: Date of Birth
+        type: date
+      -
+        width: oneThird
+        title: 'I am requesting an appointment for:'
+        type: radio
+        orientation: inline
+        conditional_control: appt-for-condition
+        children:
+          - title: Myself
+            id: appt
+          - title: Someone Else
+            id: appt
+      -
+        width: half
+        title: Your Name
+        type: text
+        conditional_result: appt-for-condition
+      -
+        width: half
+        title: Relationship to Patient
+        type: text
+        conditional_result: appt-for-condition
+  - section_heading: Contact Information
+    section_heading_level: 2
+    section_items:
+      -
+        width: half
+        title: Primary Phone
+        type: text
+        placeholder: 123-456-7890
+      -
+        width: half
+        title: Secondary Phone
+        type: text
+        placeholder: 123-456-7890
+        optional: true
+      -
+        width: half
+        title: E-mail Address
+        type: text
+      -
+        width: half
+        title: I prefer to be contacted via
+        type: radio
+        orientation: inline
+        children:
+          - title: Phone
+            id: contact
+          - title: Email
+            id: contact
+          - title: No Preference
+            id: contact
+  - section_heading: Appointment & Insurance Information
+    section_heading_level: 2
+    section_items:
+      -
+        width: half
+        title: Preferred Appointment Date
+        info: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        info_id: date_info
+        type: date
+        optional: true
+      -
+        width: half
+        title: Specialty or Service
+        type: select
+        optional: true
+        children:
+          - title: Choose an Option
+            attributes: selected disabled
+          - title: Primary Care
+          - title: Cardiology
+          - title: Orthopedics
+          - title: Pediatrics
+      -
+        width: full
+        title: 'Preferred Appointment Days'
+        info: 'In case your preferred date is unavailable, help us understand other dates that you may be available.'
+        info_id: day_info
+        type: checkbox
+        orientation: inline
+        id: day
+        children:
+          - title: Monday
+            id: day
+          - title: Tuesday
+            id: day
+          - title: Wednesday
+            id: day
+          - title: Thursday
+            id: day
+          - title: Friday
+            id: day
+          - title: Saturday
+            id: day
+
+button:
+  text: "Request an Appointment"
+  url: "#"
