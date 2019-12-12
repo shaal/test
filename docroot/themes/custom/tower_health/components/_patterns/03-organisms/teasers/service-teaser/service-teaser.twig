@@ -4,11 +4,14 @@
 
   <div class="teaser__content--simple">
     {{ service.details.text }}
+    
+    {% if service.details.related %}
     <div class="related-items">
       <span>Related Conditions:</span>
       {% for condition in service.details.related %}
         {{ condition }}{% if not loop.last %},  {% endif %}
       {% endfor %}
     </div>
+    {% endif %}
   </div>
 </div>
