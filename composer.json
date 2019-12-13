@@ -125,7 +125,7 @@
                 "node_title_help_text_inline_entity_form_entity_form_alter loads NodeType even when not referencing nodes (https://www.drupal.org/project/node_title_help_text/issues/307031)": "https://www.drupal.org/files/issues/2019-07-25/ief-only-nodes.patch"
             },
             "drupal/menu_item_extras": {
-                "MenuItemExtrasCommands breaks drush 8.x": "https://www.drupal.org/files/issues/2019-11-13/3090785-15.patch"
+                "MenuItemExtrasCommands breaks drush 8.x (https://www.drupal.org/project/menu_item_extras/issues/3090785)": "https://www.drupal.org/files/issues/2019-11-13/3090785-15.patch"
             }
         }
     }
