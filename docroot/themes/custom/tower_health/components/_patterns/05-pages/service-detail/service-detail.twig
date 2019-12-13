@@ -1,6 +1,6 @@
 {% embed "@templates/_default.twig" with {
   page_header: TRUE,
-  top_sidebar: true,
+  top_sidebar: TRUE,
   bottom_sidebar: TRUE,
   full_content: true,
   full_width: false
@@ -10,11 +10,11 @@
     {% include "@organisms/basic-header/basic-header.twig" %}
   {% endblock %}
   
-  {% block top_sidebar %}
-    Find a Provider
-    
-    Find a Location
-    
+  {% block top_page_sidebar %}
+    {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
+      cta_list: cta_list
+    }%}
+        
     {% if section_nav_items %}
       {% include "@molecules/menus/section-menu/section-menu.twig" with {
         items: section_nav_items

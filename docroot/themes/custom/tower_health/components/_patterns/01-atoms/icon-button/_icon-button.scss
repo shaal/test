@@ -59,7 +59,9 @@
   }
   
   &.icon-button--list {
-    margin-left: 2em;
+    @include breakpoint($bp2 899px) {
+      margin-left: 2em;
+    }
   }
 
   &.icon-button--small {
