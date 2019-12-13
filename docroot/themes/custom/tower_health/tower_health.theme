@@ -30,25 +30,24 @@ function tower_health_preprocess_menu(&$variables) {
 }
 
 /**
- * Provide variables for location teaser
+ * Provide variables for location teaser.
  */
 function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
   if ($node->field_location_image->entity) {
     $variables['src'] = file_create_url($node->field_location_image->entity->field_media_image->entity->uri->value);
     $variables['alt'] = $node->field_location_image->entity->field_media_image->entity->alt;
-  } else {
+  }
+  else {
     $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
     $variables['alt'] = "Location placeholder image";
   }
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
-
   $locality = $node->field_location_address->locality;
   $administrative_area = $node->field_location_address->administrative_area;
   $address_1 = $node->field_location_address->address_line1;
   $address_2 = $locality . ', ' . $administrative_area;
   $url = "https://www.google.com/maps/place/" . str_replace(' ', '+', $address_1) . '+' . $locality . '+' . $administrative_area;
-
   $variables['address1'] = $address_1;
   $variables['address2'] = $address_2;
   $variables['url'] = $url;
