@@ -45,6 +45,8 @@ items:
     value: '#c2b6d9'
   - name: $wisdom-ltst
     value: '#ded7eb'
+  - name: $growth-drk
+    value: '#51692B'
   - name: $growth-aa
     value: '#627f34'
   - name: $growth-lg

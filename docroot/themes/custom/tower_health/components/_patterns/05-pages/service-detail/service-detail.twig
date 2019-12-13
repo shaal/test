@@ -30,12 +30,11 @@
       items: link_list.items,
     } %}
     
-    
   {% endblock %}
   
   {% block bottom_page_sidebar %}
     <div class="sidebar--growth js-section-animation">
-      Related Services
+      {% include "@molecules/sidebar-list/sidebar-list.twig" %}
     </div>
   {% endblock %}
   

@@ -65,4 +65,14 @@ link_list:
     - text: "Urogynecology"
       link: "/"
     - text: "Fertility Care"
-      link: "/"   
+      link: "/" 
+sidebar_label: Related Services
+sidebar_items:
+  - name: Urgent Care
+    link: '#'
+  - name: Emergency Care
+    link: '#'
+  - name: Family Medicine
+    link: '#'
+  - name: Reconstructive Surgery
+    link: '#'  
