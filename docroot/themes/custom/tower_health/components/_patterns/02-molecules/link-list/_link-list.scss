@@ -18,11 +18,21 @@
       width: calc(((100vw - 1500px) / 2) + 2em);
     }
   }
+  
+  &.link-list--secondary {
+    padding: 1em 0;
+  }
 }
 
 .link-list__title {
   color: $primary-dark;
   margin-bottom: 1em;
+  
+  .link-list--secondary & {
+    @include adjust-font-size-to($sm-heading, 1);
+    @extend %track-out;
+    text-transform: uppercase;
+  }
 }
 
 .link-list__wrapper {
