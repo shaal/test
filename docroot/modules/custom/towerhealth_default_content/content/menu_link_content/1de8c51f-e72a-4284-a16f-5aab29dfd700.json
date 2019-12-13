@@ -1,25 +1,25 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/65\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/36\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/main"
         }
     },
     "id": [
         {
-            "value": 65
+            "value": 36
         }
     ],
     "uuid": [
         {
-            "value": "6c3755a3-acac-46af-bf10-dc3ecf2c0260"
+            "value": "1de8c51f-e72a-4284-a16f-5aab29dfd700"
         }
     ],
     "revision_id": [
         {
-            "value": 65
+            "value": 36
         }
     ],
     "langcode": [
@@ -30,12 +30,12 @@
     ],
     "bundle": [
         {
-            "value": "menu_link_content"
+            "target_id": "main"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-11-27T17:50:07+00:00",
+            "value": "2019-11-26T21:36:52+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -46,13 +46,13 @@
     ],
     "title": [
         {
-            "value": "Privacy Policy",
+            "value": "Women's Health",
             "lang": "en"
         }
     ],
     "menu_name": [
         {
-            "value": "footer-detail"
+            "value": "main"
         }
     ],
     "link": [
@@ -74,7 +74,7 @@
     ],
     "weight": [
         {
-            "value": 0
+            "value": -43
         }
     ],
     "expanded": [
@@ -82,9 +82,14 @@
             "value": false
         }
     ],
+    "parent": [
+        {
+            "value": "menu_link_content:cab8bfa4-24e5-4a6d-93cc-6d6e05608fa9"
+        }
+    ],
     "changed": [
         {
-            "value": "2019-11-27T17:50:07+00:00",
+            "value": "2019-12-04T18:25:06+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -107,6 +112,11 @@
                 "title": "| Tower Health",
                 "canonical_url": "http:\/\/default\/node"
             }
+        }
+    ],
+    "field_main_link_type": [
+        {
+            "value": "default"
         }
     ]
 }

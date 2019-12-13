@@ -4,19 +4,15 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  
+
   @include breakpoint($bp3) {
     margin-left: 2em;
     position: static;
-    
+
     .main-menu--sub-1 {
       border-top: 2px solid $primary-dark;
     }
-    
-    &--secondary .main-menu--sub-1 {
-      border-top: 2px solid $trust-aa;
-    }
-    
+
     &:active,
     &:hover,
     &:focus {
@@ -35,25 +31,12 @@
         }
       }
     }
-    
-    &--secondary:active,
-    &--secondary:hover,
-    &--secondary:focus {
-      > .main-menu__link {
-        &::after {
-          border: 8px solid $trust-aa;
-          border-top-color: transparent;
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-        }
-      }
-    }
-    
+
     &:first-child {
       margin-left: 0;
     }
   }
-  
+
   @include breakpoint($bp3) {
     border-top: none;
     display: inline-block;
@@ -72,19 +55,38 @@
   }
 }
 
+.main-menu__item--secondary {
+  .main-menu--sub-1 {
+    border-top: 2px solid $trust-aa;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    > .main-menu__link {
+      &::after {
+        border: 8px solid $trust-aa;
+        border-top-color: transparent;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+      }
+    }
+  }
+}
+
 .main-menu__item:not(.main-menu__item--sub) {
-  
+
   @include breakpoint($bp3 $bp4) {
     @include adjust-font-size-to($sm-text, .8);
   }
-  
+
   /* set default color of links */
   > a {
     &:link,
     &:visited {
       color: $primary-dark;
       text-decoration: none;
-      
+
       @include breakpoint($bp3) {
         border-top: 4px solid transparent;
         margin-top: -4px;
@@ -97,7 +99,7 @@
       background-color: $primary-dark;
       color: $white;
       text-decoration: none;
-      
+
       @include breakpoint($bp3) {
         border-top: 4px solid $primary-dark;
         color: $primary-dark;
@@ -134,13 +136,13 @@
       }
     }
   }
-  
+
   &.is-active > .expand-sub {
     &::after {
       border-top-color: transparent;
       border-bottom: 8px solid $primary-dark;
     }
-    
+
     &:active,
     &:hover,
     &:focus {
@@ -167,7 +169,7 @@
       background-color: $trust-aa;
       color: $white;
       text-decoration: none;
-      
+
       @include breakpoint($bp3) {
         border-top: 4px solid $trust-aa;
         color: $trust-aa;
@@ -203,13 +205,13 @@
       }
     }
   }
-  
+
   &.is-active > .expand-sub {
     &::after {
       border-top-color: transparent;
       border-bottom: 8px solid $trust-aa;
     }
-    
+
     &:active,
     &:hover,
     &:focus {
@@ -269,7 +271,7 @@
 // LI (Nested)
 .main-menu__item--sub {
   border-top: 0;
-  
+
   @include breakpoint($bp3) {
     display: block;
     margin: 0;

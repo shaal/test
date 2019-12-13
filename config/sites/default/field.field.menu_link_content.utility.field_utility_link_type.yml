@@ -1,0 +1,23 @@
+uuid: daf41dbd-bd9c-4b40-9f98-d5af1dc183c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_utility_link_type
+    - system.menu.utility
+  module:
+    - options
+id: menu_link_content.utility.field_utility_link_type
+field_name: field_utility_link_type
+entity_type: menu_link_content
+bundle: utility
+label: 'Link type'
+description: 'Select the type for this link. Default links are displayed in dark blue text, MyTowerHealth links use the MyTowerHealth logo image, and Call to Action links are displayed in white text on a dark blue background.'
+required: false
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,69 @@
+uuid: dc8faadd-8edb-49fe-9560-71f44e5aadae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_main_autocomplete_form
+    - field.field.menu_link_content.main.field_main_label
+    - field.field.menu_link_content.main.field_main_link_type
+    - system.menu.main
+  module:
+    - field_group
+    - link
+    - menu_item_extras
+third_party_settings:
+  field_group:
+    group_main_alternative_elements:
+      children:
+        - field_main_label
+        - field_main_autocomplete_form
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Select an autocomplete form or label to display in place of a menu link. Add "route:<nolink>" for the link. '
+        required_fields: true
+      label: 'Alternative Elements'
+      region: content
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  field_main_autocomplete_form:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_main_label:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_main_link_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

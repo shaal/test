@@ -18,13 +18,9 @@
       <div>
         <div class="footer__info__social">
           {% block social %}
-            {% for icon in footer_social %}
-              {% include "@atoms/social-icon/social-icon.twig" with {
-                title: icon.title,
-                url: icon.url,
-                svg: icon.svg
-              } %}
-            {% endfor %}
+            {% include "@molecules/menus/footer-social-menu/footer-social-menu.twig" with {
+              items: footer_social
+            } %}
           {% endblock %}
         </div>
         <div class="footer__info__contact">

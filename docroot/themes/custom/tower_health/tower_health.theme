@@ -4,3 +4,27 @@
  * @file
  * Functions to support theming in the Pattern Lab theme.
  */
+
+use Drupal\block\Entity\Block;
+
+/**
+ * Adds a body class by role.
+ */
+function tower_health_preprocess_html(&$variables) {
+  foreach ($variables['user']->getRoles() as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
+}
+
+/**
+ * Load the utility menu into a variable.
+ */
+function tower_health_preprocess_menu(&$variables) {
+  $utility_nav_block = Block::load('tower_health_utility');
+  $utility_nav_block_view = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($utility_nav_block);
+  if ($utility_nav_block_view) {
+    $variables['utility_nav'] = $utility_nav_block_view;
+  }
+}
