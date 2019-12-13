@@ -4,7 +4,7 @@
             "href": "http:\/\/default\/admin\/structure\/menu\/item\/76\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/footer"
         }
     },
     "id": [
@@ -30,7 +30,7 @@
     ],
     "bundle": [
         {
-            "value": "menu_link_content"
+            "target_id": "footer"
         }
     ],
     "revision_created": [

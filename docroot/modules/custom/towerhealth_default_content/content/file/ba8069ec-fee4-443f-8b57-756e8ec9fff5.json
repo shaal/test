@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/social-icons\/social-youtube.svg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ba8069ec-fee4-443f-8b57-756e8ec9fff5"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b43ed808-af06-4a0b-8796-d98c3926896b"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "social-youtube.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/social-icons\/social-youtube.svg",
+            "url": "\/sites\/default\/files\/social-icons\/social-youtube.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 669
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-10T16:56:15+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-10T16:56:22+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}
