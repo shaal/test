@@ -108,6 +108,7 @@ hidden:
   field_insurance_ref: true
   field_profile_board_certified: true
   field_profile_education: true
+  field_profile_epic_id: true
   field_profile_first_name: true
   field_profile_gender: true
   field_profile_job_title: true

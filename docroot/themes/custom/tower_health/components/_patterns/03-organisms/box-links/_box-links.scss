@@ -26,10 +26,9 @@
   &:hover,
   &:focus,
   &:active {
-    
     .box-link__background {
       @include trans;
-      transform: scale(1.05); 
+      transform: scale(1.05);
       
       &::before {
         background: linear-gradient(to top, $primary-dark, rgba($primary-dark, .6));
@@ -84,7 +83,7 @@
   
   @include breakpoint($bp3) {
     &::before {
-      background: linear-gradient(to top, $primary-dark, rgba($primary-dark, .3));      
+      background: linear-gradient(to top, $primary-dark, rgba($primary-dark, .3));
     }
   }
 }
@@ -138,14 +137,12 @@
 }
 
 .cssanimations {
-
   .box-link {
     opacity: 0;
   }
 
   // animating in
   .in-view {
-
     .box-link {
       opacity: 1;
       animation: fadeInUp .65s ease-in-out forwards;

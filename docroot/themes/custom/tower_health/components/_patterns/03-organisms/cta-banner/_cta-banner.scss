@@ -149,7 +149,7 @@
       
       @include breakpoint($bp3) {
         @include adjust-font-size-to($xxxl-heading, 1.75);
-      } 
+      }
 
       span {
         display: block;
@@ -157,7 +157,7 @@
         
         &:last-child {
           font-weight: 600;
-        }       
+        }
       }
     }
     
@@ -206,7 +206,7 @@
       
       @include breakpoint(0 899px) {
         animation: fadeInRight .65s ease-in-out forwards;
-      } 
+      }
       
       &::before {
         @include transition(opacity, .85s, ease-out);

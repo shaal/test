@@ -1,0 +1,39 @@
+{{ attach_library('tower_health/reviews') }}
+<section id="ratings" class="review-listing js-section-animation">
+  <div class="review-summary">
+    <h2 class="review-summary__title">Ratings & Reviews</h2>
+    <a class="review-summary__link" href="{{review_url}}">About our Ratings & Criteria</a>
+    <div class="review-summary__rating">
+      <span class="review-summary__label">Overall Rating</span>
+      {% include "@molecules/ratings-count/ratings-count.twig" %}
+    </div>
+  </div>
+  {% set expand = 'false' %}
+  {% for item in reviews %}
+  {% if loop.length > 5 %}
+  {% set expand = 'true' %}
+  {% endif %}
+  {% endfor %}
+  <div class="review-summary__total">
+    {{count}} Reviews
+  </div>  
+  <ul id="review-list" class="review-listing__list" {% if expand == 'true' %}aria-expanded="false"{% endif %}>
+    {% for item in reviews %}
+      <li class="review-listing__item {% if loop.index > 5 %}is-hidden{% endif %}">
+        {% include "@molecules/review/review.twig" with {
+          rating: item.rating,
+          review: item.review,
+          date: item.date
+       } %}
+      </li>
+    {% endfor %}
+  </ul>
+  
+  {% if expand == 'true' %}
+    <button type="button" class="review-listing__toggle" aria-controls="review-list">
+      <span class="view">View</span>
+      <span class="hide">Hide</span>
+      all reviews
+    </button>
+  {% endif %}
+</section>

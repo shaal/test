@@ -23,6 +23,7 @@ content:
     weight: 101
     region: content
 hidden:
+  field_basic_components: true
   field_media: true
   field_reference_access_control: true
   field_text: true

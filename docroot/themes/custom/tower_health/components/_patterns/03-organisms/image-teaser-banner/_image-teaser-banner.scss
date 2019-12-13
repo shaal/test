@@ -120,7 +120,6 @@
 
 
 .cssanimations {
-
   .image-teaser__content,
   .image-teaser__image {
     opacity: 0;
@@ -128,7 +127,6 @@
 
   // animating in
   .in-view {
-
     &:not(.image-teaser--reverse) .image-teaser__content,
     &.image-teaser--reverse .image-teaser__image {
       animation: fadeInLeft .65s ease-in-out forwards;

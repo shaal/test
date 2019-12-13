@@ -1,0 +1,55 @@
+<div class="provider-details {% if detail.sidebar == 'true' %}provider-details--side{% endif %}">
+  
+  {% if detail.label %}
+  <h2 class="provider-detail__label">{{detail.label}}</h2>
+  {% endif %}
+  
+  {% if detail.info %}
+    {% include "@molecules/toggle-tip/toggle-tip.twig"  with {
+      info: detail.info,
+      info_id: detail.info_id
+    }%}
+  {% endif %}
+  <ul class="provider-detail__items">
+  {% for item in detail.items %}
+  <li class="provider-detail__item">
+    {% if item.label %}
+      <span class="provider-detail__item-label">{{ item.label }}</span>
+    {% endif %}
+    {% if item.link %}
+      <a class="provider-detail__item-link" href="{{item.link.url}}">{{item.link.text}}</a>
+    {% endif %}
+    
+    {% if item.buttonLink %}
+      <a class="button" href="{{item.buttonLink.url}}">{{item.buttonLink.text}}</a>
+    {% endif %}
+    
+    {% if item.title %}
+      <h3 class="provider-detail__item-title">{{ item.title }}</h3>
+    {% endif %}
+    {% if item.text %}
+      {{ item.text }}
+    {% endif %}
+    {% if item.info %}
+      {% include "@molecules/toggle-tip/toggle-tip.twig"  with {
+        info: item.info,
+        info_id: item.info_id
+      }%}
+    {% endif %}
+    {% if item.meta %}
+      <span class="provider-detail__item-meta">{{ item.meta }}</span>
+    {% endif %}
+    {% if item.type == 'location' %}
+      {% include "@organisms/teasers/location-teaser--small/location-teaser--small.twig"  with {
+        name: item.name,
+        address_rows: item.address_rows,
+        direction_url: item.direction_url,
+        phones: item.phones,
+        cta: item.cta
+      }%}
+    {% endif %}
+  </li>
+  
+  {% endfor %}
+  </ul>
+</div>
