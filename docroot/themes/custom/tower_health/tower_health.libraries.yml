@@ -2,9 +2,11 @@ global:
   css:
     theme:
       dist/style.css: {}
+      'https://use.typekit.net/aqk4svu.css': { type: external }
+
   js:
     dist/00-base/global/animations/animation.js: {}
-    components/js/modernizer-custom.js: {}
+    components/js/modernizr-custom.js: {}
 
 main-menu:
   js:
@@ -26,11 +28,11 @@ chosen:
   js:
     dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
     dist/01-atoms/05-forms/chosen/chosen-select.js: {}
-    
+
 listFilters:
   js:
     dist/03-organisms/listings/listing-filter/listing-filters.js: {}
-    
+
 autocomplete:
   js:
     dist/02-molecules/autocomplete-dropdown/autocomplete.js: {}
@@ -46,7 +48,7 @@ accordion:
 tabs:
   js:
     dist/02-molecules/menus/tabs/tabs.js: {}
-    
+
 toggle-tips:
   js:
     dist/02-molecules/toggle-tip/toggle-tip.js: {}

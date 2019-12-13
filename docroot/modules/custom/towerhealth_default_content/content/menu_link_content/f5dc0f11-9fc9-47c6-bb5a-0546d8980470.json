@@ -1,25 +1,25 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/66\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/91\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/main"
         }
     },
     "id": [
         {
-            "value": 66
+            "value": 91
         }
     ],
     "uuid": [
         {
-            "value": "8b5e9f4a-47a6-4620-9c3b-789c9d7dd4f8"
+            "value": "f5dc0f11-9fc9-47c6-bb5a-0546d8980470"
         }
     ],
     "revision_id": [
         {
-            "value": 66
+            "value": 91
         }
     ],
     "langcode": [
@@ -30,12 +30,12 @@
     ],
     "bundle": [
         {
-            "value": "menu_link_content"
+            "target_id": "main"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-11-27T17:50:23+00:00",
+            "value": "2019-12-06T21:58:28+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -46,18 +46,18 @@
     ],
     "title": [
         {
-            "value": "Patient Rights & Responsibilities",
+            "value": "Featured Locations",
             "lang": "en"
         }
     ],
     "menu_name": [
         {
-            "value": "footer-detail"
+            "value": "main"
         }
     ],
     "link": [
         {
-            "uri": "internal:\/",
+            "uri": "route:<nolink>",
             "title": "",
             "options": []
         }
@@ -69,12 +69,12 @@
     ],
     "rediscover": [
         {
-            "value": true
+            "value": false
         }
     ],
     "weight": [
         {
-            "value": 1
+            "value": -49
         }
     ],
     "expanded": [
@@ -82,9 +82,14 @@
             "value": false
         }
     ],
+    "parent": [
+        {
+            "value": "menu_link_content:9c8c102f-73e6-49ce-9a4b-3df87380c0c6"
+        }
+    ],
     "changed": [
         {
-            "value": "2019-11-27T17:50:23+00:00",
+            "value": "2019-12-06T21:58:38+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -101,12 +106,28 @@
             "lang": "en"
         }
     ],
+    "view_mode": [
+        {
+            "value": "default",
+            "lang": "en"
+        }
+    ],
     "metatag": [
         {
             "value": {
                 "title": "| Tower Health",
                 "canonical_url": "http:\/\/default\/node"
             }
+        }
+    ],
+    "field_main_label": [
+        {
+            "value": "Featured Locations"
+        }
+    ],
+    "field_main_link_type": [
+        {
+            "value": "default"
         }
     ]
 }

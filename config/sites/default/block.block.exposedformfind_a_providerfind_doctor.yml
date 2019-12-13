@@ -11,7 +11,7 @@ dependencies:
 id: exposedformfind_a_providerfind_doctor
 theme: tower_health
 region: header
-weight: -2
+weight: -3
 provider: null
 plugin: 'views_exposed_filter_block:find_a_provider-find_doctor'
 settings:
@@ -19,5 +19,5 @@ settings:
   label: ''
   provider: views
   label_display: visible
-  views_label: 'Find a doctor'
+  views_label: 'Find a Provider'
 visibility: {  }
