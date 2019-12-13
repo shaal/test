@@ -75,4 +75,19 @@ sidebar_items:
   - name: Family Medicine
     link: '#'
   - name: Reconstructive Surgery
-    link: '#'  
+    link: '#' 
+cards:
+  - type: null
+    image: null
+    title:  Community Outreach Clinic
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: About the Clinic
+  - type: null
+    image: null
+    title:  Beginnings Maternity Center
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: About the Center

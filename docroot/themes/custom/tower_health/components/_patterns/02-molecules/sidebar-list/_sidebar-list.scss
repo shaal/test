@@ -15,10 +15,16 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  
+  @include breakpoint($bp1 $bp3) {
+    column-count: 2;
+    column-gap: 1em;
+  }
 }
 
 .sidebar-list__list-item {
   margin-bottom: .25em;
+  break-inside: avoid;
   
   a:link,
   a:visited {
