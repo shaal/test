@@ -10,6 +10,8 @@
   border: 1px solid $primary-dark;
   font-size: 16px;
   margin-bottom: 1em;
+  font-weight: 300;
+  background-color: $white;
 
   @include breakpoint($bp3) {
     height: 70px;
@@ -30,7 +32,7 @@
 %label,
 label {
   @include adjust-font-size-to($label);
-  font-weight: 300;
+  font-weight: 500;
   color: $primary-dark;
   display: block;
   margin-bottom: 0;
@@ -54,7 +56,7 @@ input[type="week"] {
 
 legend {
   @include adjust-font-size-to($label, .8);
-  font-weight: 700;
+  font-weight: 300;
   color: $gray-dark;
   margin-bottom: rhythm(.45);
 }

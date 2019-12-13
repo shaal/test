@@ -4,11 +4,16 @@
   &:active,
   &:hover,
   &:focus {
-    color: $growth-aa;
+    color: $primary-dark;
     text-decoration: underline;
   }
 }
 
 .link {
   @include link;
+}
+
+.link--small {
+  @include adjust-font-size-to($crumb, .7);
+  font-style: italic;
 }

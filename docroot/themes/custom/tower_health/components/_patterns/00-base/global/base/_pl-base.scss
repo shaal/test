@@ -13,6 +13,7 @@
   }
 
   .sg-pattern {
+    @extend %clearfix;
     clear: left;
   }
 

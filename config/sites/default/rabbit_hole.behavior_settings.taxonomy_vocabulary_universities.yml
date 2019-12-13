@@ -1,0 +1,11 @@
+uuid: 1e54fd5c-274c-4ffd-8dc7-3185becd59fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.universities
+id: taxonomy_vocabulary_universities
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

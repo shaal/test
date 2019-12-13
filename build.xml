@@ -63,6 +63,9 @@
         <!-- Include styleguide resources in the theme. This approach will symlink
              resources in development environments, and copy them for artifact builds. -->
         <phingcall target="build-styleguide" />
+
+        <!-- Make migrate files directory -->
+        <phingcall target="migrate-directory-files" />
     </target>
 
     <!-- Target: install-styleguide
@@ -73,6 +76,17 @@
         <exec command="yarn" dir="${styleguide.root}" />
     </target>
 
+    <!-- Target: migrate-directory-files
+         Copies directory migration files from production to make available locally.
+         -->
+    <target name="migrate-directory-files">
+        <if>
+            <not><available file="${migrate_directory.root}" type='dir' /></not>
+            <then>
+                <mkdir dir="${migrate_directory.root}" />
+            </then>
+        </if>
+    </target>
 
     <!-- Target: build-styleguide
          Builds the styleguide
@@ -153,7 +167,10 @@
 
     <!-- Target: migrate -->
     <target name="migrate" description="Run the migrations.">
-        <echo>Configure this target to load sample data and run the migrations.</echo>
+        <drush command="mim towerhealth_locations" />
+        <drush command="mim towerhealth_providers" />
+        <drush command="mim towerhealth_providers_languages" />
+        <drush command="mim towerhealth_ratings" />
     </target>
 
 

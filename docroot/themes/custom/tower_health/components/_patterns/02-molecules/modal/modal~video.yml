@@ -1,0 +1,4 @@
+modal:
+  type: video
+  reference: https://www.youtube.com/embed/_GEN4fybvA0
+  label: Watch Video

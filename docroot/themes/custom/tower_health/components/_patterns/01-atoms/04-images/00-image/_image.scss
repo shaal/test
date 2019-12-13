@@ -14,5 +14,29 @@ figure {
 }
 
 .figure__caption {
+  @include adjust-font-size-to($label, .9);
   font-style: italic;
+  color: $gray;
+}
+
+.figure--inline {
+  margin: 1em 0;
+  
+  .figure__caption {
+    margin-top: .5em;
+  }
+  
+  @include breakpoint($bp3) {
+    &.figure--left {
+      max-width: 50%;
+      margin-right: 1em;
+      float: left;
+    }
+    
+    &.figure--right {
+      max-width: 50%;
+      margin-left: 1em;
+      float: right;
+    }
+  }
 }

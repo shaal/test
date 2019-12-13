@@ -1,0 +1,25 @@
+uuid: e1fdcbe7-1875-4741-9a5d-d81e73de71b2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c3e329c0-28dc-4167-88bd-13d05111cfb8'
+  module:
+    - block_content
+  theme:
+    - tower_health
+id: tower_health_footer_detail_menu
+theme: tower_health
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:c3e329c0-28dc-4167-88bd-13d05111cfb8'
+settings:
+  id: 'block_content:c3e329c0-28dc-4167-88bd-13d05111cfb8'
+  label: 'Footer detail menu'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

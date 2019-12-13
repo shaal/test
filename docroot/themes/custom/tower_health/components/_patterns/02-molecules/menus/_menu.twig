@@ -24,9 +24,9 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
+{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, menu_name) }}
 
-{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
+{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname, menu_name) %}
   {% import _self as menus %}
   {% if items %}
 
@@ -47,11 +47,49 @@
     } %}
       {% block list_content %}
         {% for item in items %}
-          {% include "@molecules/menus/_menu-item.twig" with {
-            li_base_class: item_base_class,
-            li_modifiers: item_modifiers,
-            li_blockname: item_blockname,
-          } %}
+          {% if item.entity.field_main_autocomplete_form.value %}
+            <div class='main-menu__item--form'>
+              {% include "@atoms/01-links/link/link.twig" with {
+                link_url: item.url,
+                link_content: item.entity.field_main_label.value
+              }%}
+              {% set autocomplete = item.entity.field_main_autocomplete_form.value  %}
+              {% if autocomplete == "provider" %}
+                {{ drupal_entity('block', 'exposedformfind_a_providerfind_doctor') }}
+              {% elseif autocomplete == "service" %}
+                {{ drupal_entity('block', 'exposedformfind_a_servicefind_service') }}
+              {% elseif autocomplete == "location" %}
+                {{ drupal_entity('block', 'exposedformfind_a_locationfind_location') }}
+              {% endif %}
+            </div>
+          {% elseif item.entity.field_main_label.value %}
+            <div class="main-menu__list-label">
+              {{ item.entity.field_main_label.value }}
+            </div>
+          {% elseif item.type == 'form' and menu_name == 'main-menu' %}
+            <div class='main-menu__item--form'>
+              {% include "@atoms/01-links/link/link.twig" with {
+                link_url: item.link_url,
+                link_content: item.link_content
+              }%}
+              <form class="main-menu__form">
+                {% include "@molecules/autocomplete-dropdown/autocomplete.twig" with {
+                  autocomplete: item.autocomplete
+                }%}
+                <input class="button button--small button--primary" type="submit" value="{{ item.button_label }}">
+              </form>
+            </div>
+          {% elseif item.type == 'label' and menu_name == 'main-menu' %}
+            <div class="main-menu__list-label">
+              {{ item.label }}
+            </div>
+          {% else %}
+            {% include "@molecules/menus/_menu-item.twig" with {
+              li_base_class: item_base_class,
+              li_modifiers: item_modifiers,
+              li_blockname: item_blockname,
+            } %}
+          {% endif %}
         {% endfor %}
         {% if menu_level == 1 %}
           <button class="close-nav close-nav--child">Close Child Navigation Drawer</button>

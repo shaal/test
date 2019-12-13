@@ -1,0 +1,5 @@
+modal:
+  type: inline
+  reference: inline-modal
+  content: This is an example of an inline modal window.
+  label: Open Modal

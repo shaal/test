@@ -1,0 +1,19 @@
+.banner-message {
+  @include adjust-font-size-to($sm-text, .9);
+  margin: .5em 0 1em;
+  padding: 1em;
+  text-align: center;
+  background-color: $off-white;
+  border-radius: 8px;
+  font-weight: 300;
+  display: block;
+  width: 100%;
+
+  
+  &--secondary {
+    background-color: transparent;
+    border: 4px solid $trust-ltst;
+    font-weight: 600;
+  }
+}
+

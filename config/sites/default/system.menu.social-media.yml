@@ -1,0 +1,8 @@
+uuid: b88d1862-e3ac-40a1-95ea-37e9c4ea4e56
+langcode: en
+status: true
+dependencies: {  }
+id: social-media
+label: 'Social Media'
+description: 'This menu provides links to all of our social media pages.'
+locked: false

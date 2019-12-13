@@ -1,0 +1,29 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: TRUE,
+  bottom_sidebar: TRUE,
+  full_width: false
+}%}
+  
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" with {
+      breadcrumb: header.breadcrumb
+    } %}
+  {% endblock %}
+  
+  {% block top_page_sidebar %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Navigation",
+    } %}
+  {% endblock %}
+  
+  {% block page_content %}
+    {% include "@molecules/rich-text/rich-text.twig" %}
+  {% endblock %}
+  
+  {% block bottom_page_sidebar %}
+    {% include "@templates/_place-holder.twig" with {
+      "place_holder": "Optional Sidebar Content",
+    } %}
+  {% endblock %}
+{% endembed %}

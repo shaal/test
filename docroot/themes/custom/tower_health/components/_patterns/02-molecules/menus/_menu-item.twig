@@ -17,6 +17,14 @@
   {% set item_modifiers = item_modifiers|merge([modifier]) %}
 {% endfor %}
 
+{% if item.entity.field_utility_link_type.value %}
+  {% set item_modifiers = item_modifiers|merge([item.entity.field_utility_link_type.value]) %}
+{% endif %}
+
+{% if item.entity.field_main_link_type.value %}
+  {% set item_modifiers = item_modifiers|merge([item.entity.field_main_link_type.value]) %}
+{% endif %}
+
 {% embed "@atoms/03-lists/_list-item.twig" with {
   "list_item_label": item_label,
   "li_base_class": item_base_class|default(menu_class ~ '__item'),
@@ -32,7 +40,7 @@
     } %}
     {% if item.below %}
       <button class="expand-sub">Toggle Menu</button>
-      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname) }}
+      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, original_item_modifiers, item_blockname, menu_name) }}
     {% endif %}
   {% endblock %}
 {% endembed %}

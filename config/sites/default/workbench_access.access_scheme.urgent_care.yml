@@ -1,0 +1,19 @@
+uuid: 7d61b547-0103-4401-a8be-7b953e8f3db0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.field_location_type
+    - taxonomy.vocabulary.location_type
+id: urgent_care
+label: 'Urgent Care'
+plural_label: 'Urgent Care'
+scheme: taxonomy
+scheme_settings:
+  vocabularies:
+    - location_type
+  fields:
+    -
+      entity_type: node
+      bundle: location
+      field: field_location_type

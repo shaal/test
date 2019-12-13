@@ -1,6 +1,6 @@
 .cta-banner-list {
   @include grid;
-  
+  position: relative;
   margin-top: 1em;
   margin-bottom: 3em;
   display: flex;
@@ -10,6 +10,7 @@
 
   @include breakpoint($bp3) {
     flex-wrap: nowrap;
+    margin-bottom: 1em;
   }
 }
 
@@ -17,11 +18,12 @@
   padding: 2em 0 1em;
   width: 100%;
   position: relative;
+  z-index: 1;
 
   @include breakpoint($bp3) {
     border-top: 6px solid $growth;
-    padding: 3em 0 5em;
-    width: 60%;
+    padding: 3em 0 5em 2em;
+    width: 50%;
     max-width: 55%;
     
     &::before {
@@ -33,70 +35,63 @@
       width: 2em;
       top: -6px;
       
-      @include breakpoint($bp5) {
-        width: calc( 2em + (100vw - 1500px) );
-        left: calc( -2em - (100vw - 1500px) );
+      @include breakpoint($bp6) {
+        width: calc(1.5em + (100vw - 1500px));
+        left: calc(-1.5em - (100vw - 1500px));
       }
     }
   }
   
   @include breakpoint($bp5) {
-    padding: 5em 0;
+    padding: 4em 0 0 2em;
   }
 }
 
 .cta-banner-list__title {
-  font-size: .9em;
+  @extend %track-in;
+  @include adjust-font-size-to($xl-heading, 1.45);
   text-transform: uppercase;
   font-weight: 600;
   color: $primary-dark;
   word-wrap: break-word;
   margin: 0;
   
-  &.first {
+  @include breakpoint($bp0) {
+    @include adjust-font-size-to($xxl-heading, 1.5);
+  }
+  
+  @include breakpoint($bp3) {
+    @include adjust-font-size-to($xxxl-heading, 1.75);
+  }
+  
+  @include breakpoint($bp5) {
+    @include adjust-font-size-to($hero-heading, 1.95);
+  }
+  
+  @include breakpoint($bp6) {
+    @include adjust-font-size-to($lg-hero-heading, 2);
+  }
+  
+  span {
+    @include breakpoint($bp4) {
+      display: block;
+    }
+  }
+  
+  .first {
     font-weight: 300;
   }
   
-  &.second {
+  .second {
     font-weight: 500;
   }
 
-  &.third {
+  .third {
     color: $trust-aa;
   }
   
-  @include breakpoint($bp0) {
-    font-size: 1em;
-  }
-
-  @include breakpoint("425px") {
-    font-size: 1.15em;
-  }
-
-  @include breakpoint($bp2) {
-    font-size: 1.25em;
-    line-height: 1em;
-  }
-
-  @include breakpoint("775px") {
-    font-size: 1.5em;
-  }
-
   @include breakpoint($bp3) {
-    font-size: 1.2em;
     display: block;
-  }
-
-  @include breakpoint($bp4) {
-    font-size: 1.4em;
-  }
-  
-  @include breakpoint(1400px) {
-    font-size: 1.6em;
-  }
-
-  @include breakpoint($bp5) {
-    font-size: 1.75em;
   }
 }
 
@@ -106,32 +101,34 @@
   margin-bottom: 1.5em;
   font-weight: 500;
   
-  @include breakpoint($bp3) {
-     @include adjust-font-size-to($md-heading, 1.2);
-   }
+  @include breakpoint($bp4) {
+    @include adjust-font-size-to($md-heading, 1.2);
+  }
 }
 
 .cta-banner-list__background {
-  width: 100%;
-  position: absolute;
-  opacity: 40%;
-  z-index: -10;
-  top: -20%;
-  left: -20%;
-  
+  display: none;
+  visibility: hidden;
+
   @include breakpoint($bp2) {
-    width: 60%;
-    left: 10%;
-  }
-
-  @include breakpoint($bp3) {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: 0;
     width: 100%;
-    top: -20%;
+    top: -10%;
     left: 0;
+    max-width: 400px;
+  }
+  
+  @include breakpoint($bp3) {
+    top: -15%;
+    left: 15%;
+    max-width: 500px;
   }
 
-  @include breakpoint($bp4) {
-    top: -40%;
+  @include breakpoint($bp5) {
+    top: -20%;
     left: 20%;
   }
 }
@@ -152,9 +149,14 @@
   }
 
   @include breakpoint($bp3) {
-    width: 33%;
+    width: 38%;
     margin-left: auto;
-    margin-top: 4.5em;
+    margin-top: 4em;
+  }
+  
+  @include breakpoint($bp4) {
+    margin-left: auto;
+    margin-top: 3em;
   }
 
   &::after {
@@ -175,8 +177,8 @@
       left: 30%;
     }
     
-    @include breakpoint($bp5) {
-      right: calc(  ( (100vw - 1500px) / -2 ) - 30px );
+    @include breakpoint($bp6) {
+      right: calc(((100vw - 1500px) / -2) - 1.5em);
     }
   }
 }
@@ -189,34 +191,26 @@
   .cta-banner-list__content,
   .cta-banner-list__background,
   .cta-banner-list__buttons,
-  .icon-button  {
+  .cta-banner-list__buttons .icon-button {
     opacity: 0;
   }
   
   // animating in
   .in-view {
-    .cta-banner-list__content {
-      animation: fadeInLeft 1s ease-in-out forwards;
+    &.cta-banner-list__content {
+      animation: fadeInLeft .65s ease-in-out forwards;
     }
     
-    .cta-banner-list__background {
-      animation: fadeinSlight 1.25s ease-in-out .75s forwards;
+    &.cta-banner-list__background {
+      animation: fadeinSlight .85s ease-in-out .5s forwards;
     }
     
-    .cta-banner-list__buttons {
-      animation: fadein 1s ease-in-out forwards;
+    &.cta-banner-list__buttons {
+      animation: fadein .65s ease-in-out forwards;
     }
     
-    .icon-button {
-      animation: fadeInRight .5s ease-in-out forwards;
-    }
-    @for $i from 1 through 6 {
-      .icon-button:nth-child(#{$i}) {
-        // Delay the animation. Delay increases as items loop.
-        animation-delay: .25 + ($i * (1s / 12));
-      }
+    &.icon-button {
+      animation: fadeInRight .35s ease-in-out forwards;
     }
   }
 }
-
-
