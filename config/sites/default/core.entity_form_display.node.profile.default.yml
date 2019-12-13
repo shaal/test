@@ -170,13 +170,9 @@ content:
     region: content
   field_area_interest_ref:
     weight: 15
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+    settings: {  }
     third_party_settings: {  }
-    type: readonly_field_widget
+    type: options_select
     region: content
   field_insurance_ref:
     weight: 17
@@ -190,23 +186,15 @@ content:
     region: content
   field_location_ref:
     weight: 13
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+    settings: {  }
     third_party_settings: {  }
-    type: readonly_field_widget
+    type: options_select
     region: content
   field_medical_specialties_ref:
     weight: 16
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+    settings: {  }
     third_party_settings: {  }
-    type: readonly_field_widget
+    type: options_select
     region: content
   field_profile_board_certified:
     weight: 19
@@ -261,13 +249,10 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_image:
-    type: readonly_field_widget
+    type: media_library_widget
     weight: 12
     settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+      media_types: {  }
     third_party_settings: {  }
     region: content
   field_profile_job_title:
@@ -283,12 +268,10 @@ content:
   field_profile_languages:
     weight: 10
     settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: readonly_field_widget
+    type: string_textfield
     region: content
   field_profile_last_name:
     weight: 3
@@ -414,12 +397,9 @@ content:
   field_rating_overall:
     weight: 31
     settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+      placeholder: ''
     third_party_settings: {  }
-    type: readonly_field_widget
+    type: number
     region: content
   moderation_state:
     type: moderation_state_default
