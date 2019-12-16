@@ -22,6 +22,7 @@ img:
   src: "../../images/people/hoerst-karen.jpg"
   alt: "Karen A. Hoerst, MD"
 accepting_patients: true
+appt_label: Request an Appointment
 appt_phone: 
   number: "4846288888"
   label: "484-628-HELP"
