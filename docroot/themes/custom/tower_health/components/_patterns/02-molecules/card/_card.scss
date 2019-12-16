@@ -5,7 +5,7 @@
   background-color: $white;
   box-shadow: 0 4px 8px rgba($black, .25);
   border-radius: 0 0 8px 8px;
-  margin-bottom: 1em;  
+  margin-bottom: 1em;
   border-top: 6px solid $trust;
 }
 
@@ -38,7 +38,7 @@
   a:link,
   a:visited {
     color: $gray-dark;
-    text-decoration: none; 
+    text-decoration: none;
   }
   
   a:active,
@@ -49,7 +49,7 @@
   }
 }
 
-.card__desc{
+.card__desc {
   @include adjust-font-size-to($sm-text, .95);
 }
 
