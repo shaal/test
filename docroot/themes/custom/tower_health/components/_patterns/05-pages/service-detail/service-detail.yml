@@ -13,15 +13,27 @@ header:
   image:
     url: '../../images/AdobeStock_254696350_Preview.jpeg'
   cta:
-    label: Request an Appointment
     button:
-      label: Make an Appointment Online
+      label: Request an Appointment
       url: "#"
       icon: 'th-cal.svg'
     text: or call
     link:
       url: "#"
       label: "484-628-HELP"
+section_items:
+  - title: "Sub-item One"
+    url: "/"
+  - title: "Sub-item Two"
+    url: "/"
+  - title: "Sub-item Three"
+    url: "/"
+  - title: "Sub-item Four"
+    url: "/"
+  - title: "Sub-item Five"
+    url: "/"
+  - title: "Sub-item Six"
+    url: "/"
 rich_text:
   -
     type: heading
@@ -96,7 +108,26 @@ story:
     src: "../../images/AdobeStock_202001962_Preview.jpeg"
     alt: alt text
   label: Patient Story
-  quote: The therapists are absolutely committed to making it work. They would go above and beyond to make Page comfortable. They would even involve visiting family and friends in her therapy sessions.
+  quote: '"The therapists are absolutely committed to making it work. They would go above and beyond to make Page comfortable. They would even involve visiting family and friends in her therapy sessions."'
   cta:
     link: '#'
     label: Read Page's Story
+recognitionItems:
+  - image:
+      src: "../../images/award-1.jpg"
+      alt: "Healthgrades America's 100 best hospitals, 2017-2019"
+  - title: '‘A’ Hospital Safety Grade'
+    desc: 'The Leapfrog Group has awarded Tower Health an ‘A’ Hospital Safety Grade, their highest award, for Fall 2019.'
+  - image:
+      src: "../../images/award-2.png"
+      alt: "US News & World Report, Best National Hospital - Pulmonology"
+image_callout:
+  orientation: reverse
+  img:
+    src: "../../images/stroke-award.jpg"
+    alt: "Alternative Text"
+  title: "2019 Get with the Guidelines Stroke Gold Plus Award"
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur asperiores ratione dignissimos qui esse nesciunt, tempore aut, deserunt distinctio eligendi odit placeat veniam nostrum id autem beatae natus ab! Repudiandae."
+  links:
+    - url: "/"
+      text: "Our Guidelines"

@@ -15,9 +15,9 @@
       cta_list: cta_list
     }%}
         
-    {% if section_nav_items %}
+    {% if section_items %}
       {% include "@molecules/menus/section-menu/section-menu.twig" with {
-        items: section_nav_items
+        items: section_items,
       } %}
     {% endif %}
   {% endblock %}
@@ -48,6 +48,17 @@
       quote: story.quote,
       cta: story.cta
     } %}
+    
+    {% include "@organisms/recognition-row/recognition-row.twig" %}
+    
+    {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
+      orientation: image_callout.orientation,
+      img: image_callout.img,
+      title: image_callout.title,
+      text: image_callout.text,
+      links: image_callout.links,
+    } %}
+    
   {% endblock %}
   
 {% endembed %}
