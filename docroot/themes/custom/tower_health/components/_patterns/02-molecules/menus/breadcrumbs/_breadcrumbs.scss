@@ -19,6 +19,7 @@
 
   &.hero {
     @include grid;
+    margin-top: 2em;
     
     &::before {
       left: 0;

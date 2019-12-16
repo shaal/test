@@ -225,6 +225,10 @@
       flex: 1 1 72%;
     }
   }
+  
+  .basic-header--list & {
+    max-width: none;
+  }
 }
 
 .basic-header__lede {
