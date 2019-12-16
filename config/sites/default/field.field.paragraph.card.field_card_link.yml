@@ -1,0 +1,23 @@
+uuid: da04dc0e-647c-45fb-810a-5e60c46cd652
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_link
+    - paragraphs.paragraphs_type.card
+  module:
+    - link
+id: paragraph.card.field_card_link
+field_name: field_card_link
+entity_type: paragraph
+bundle: card
+label: Link
+description: 'Where would you like the visitor to go? This can be within Tower Health or external links.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

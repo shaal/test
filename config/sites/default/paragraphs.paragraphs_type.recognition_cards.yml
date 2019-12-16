@@ -1,0 +1,9 @@
+uuid: debcc991-9690-48fd-a2b6-bc01d453a7e1
+langcode: en
+status: true
+dependencies: {  }
+id: recognition_cards
+label: 'Recognition Cards'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
