@@ -155,7 +155,7 @@
   
   .basic-header--img & {
     border-bottom: 0;
-    background-color: $trust-aa;
+    background-color: $primary-dark;
     padding: 2em 2em 2em 0;
     border-radius: 0 8px 8px 0;
     margin-top: auto;
@@ -168,7 +168,7 @@
       width: 2em;
       border-bottom: 0;
       left: -2em;
-      background-color: $trust-aa;
+      background-color: $primary-dark;
       height: 100%;
       
       @include breakpoint($bp6) {
@@ -179,10 +179,10 @@
     
     @include breakpoint($bp2) {
       bottom: auto;
-      background-color: rgba($trust-aa, .9);
+      background-color: rgba($primary-dark, .9);
       
       &::before {
-        background-color: rgba($trust-aa, .9);
+        background-color: rgba($primary-dark, .9);
       }
     }
     
@@ -253,46 +253,12 @@
     width: 28%;
     flex: 1 1 28%;
   }
-  
-  @include breakpoint($bp3 $bp4) {
-    .icon-button {
-      @include adjust-font-size-to($sm-text, .75);
-      padding: .5em 1.5em .5em .75em;
-      
-      svg {
-        width: 35px;
-        height: 45px;
-      }
-      
-      .icon-button__container {
-        margin-left: -27px;
-      }
-    }
-  }
-  
-  .basic-header--img & {
-    .icon-button {
-      svg {
-        fill: $white;
-      }
-      
-      color: $white;
-      background-color: $primary-dark;
-    }
-    
-    .icon-button:active,
-    .icon-button:focus,
-    .icon-button:hover {
-      background-color: darken($primary-dark, 5%);
-      
-    }
-  }
 }
 
 .basic-header__cta__label {
   @include adjust-font-size-to($label, .75);
   margin-top: 0;
-  margin-bottom: 1em;
+  margin-bottom: .75em;
   text-transform: uppercase;
   width: 100%;
   
@@ -303,7 +269,7 @@
 
 .basic-header__cta__text {
   @include adjust-font-size-to($sm-text, .85);
-  margin: 0 1em;
+  margin: .5em 1em;
   
   .basic-header--img & {
     color: $white;

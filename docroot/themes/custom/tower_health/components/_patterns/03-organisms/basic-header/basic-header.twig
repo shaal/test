@@ -33,11 +33,7 @@
         <h2 class="basic-header__cta__label">{{ header.cta.label }}</h2>
         {% endif %}
         {% if header.cta.button %}
-        {% include "@atoms/icon-button/icon-button.twig" with {
-          text: header.cta.button.label,
-          url: header.cta.button.url,
-          icon: header.cta.button.icon
-        } %}
+          <a class="button" href="{{header.cta.button.url}}">{{header.cta.button.label}}</a>
         {% endif %}
         {% if header.cta.text or header.cta.link %}
           <span class="basic-header__cta__text">
