@@ -36,11 +36,11 @@ function tower_health_preprocess_menu(&$variables) {
 function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
 
-  // set button icon
+  // Set button icon.
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
 
   if ($node instanceof Drupal\node\Entity\Node) {
-    // preprocess image variables
+    // Preprocess image variables.
     $media = $node->field_location_image->entity;
     if ($media instanceof Drupal\media\Entity\Media && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
       $file = $media->field_media_image->entity;
@@ -52,12 +52,12 @@ function tower_health_preprocess_node__location(&$variables) {
       }
     }
     else {
-      // fallback if no image uploaded
+      // Fallback if no image uploaded.
       $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
       $variables['alt'] = "Location placeholder image";
     }
 
-    // preprocess address variables
+    // Preprocess address variables.
     if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
       $locality = $node->field_location_address->locality;
       $administrative_area = $node->field_location_address->administrative_area;
