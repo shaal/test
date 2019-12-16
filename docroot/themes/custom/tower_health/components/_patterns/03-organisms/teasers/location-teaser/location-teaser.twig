@@ -2,11 +2,7 @@
 
   <div class="teaser__image-container">
     <div class="teaser__image">
-      {% if location.img.img %}
-        <a href="{{ url }}">{{ location.img.img }}</a>
-      {% else %}
-        <a href="{{ url }}"><img src="{% if location.img %}{{ location.img.src }}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ location.img.alt }}"></a>
-      {% endif %}
+      <a href="{{ url }}"><img src="{% if location.img %}{{ location.img.src }}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ location.img.alt }}"></a>
     </div>
   </div>
 
