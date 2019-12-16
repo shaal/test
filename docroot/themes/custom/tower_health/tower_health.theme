@@ -40,6 +40,7 @@ function tower_health_preprocess_node__profile(&$variables) {
 
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
   $variables['href'] = Url::fromUri('internal:/');
+  $variables['icon_path'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
   if ($node instanceof Drupal\node\Entity\Node) {
     // Preprocess address.

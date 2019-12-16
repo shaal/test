@@ -9,7 +9,8 @@
   {% if provider.details.rating %}
   <div class="teaser__rating">
     {% include "@molecules/ratings-count/ratings-count.twig" with {
-      "rating": provider.details.rating
+      "rating": provider.details.rating,
+      "icon": provider.details.icon,
     } %}
   </div>
   {% endif %}
