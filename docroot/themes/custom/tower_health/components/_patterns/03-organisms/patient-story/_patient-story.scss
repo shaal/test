@@ -1,23 +1,26 @@
 .patient-story {
   margin: 2em 0;
   background-color: $primary-dark;
+  
+  @include breakpoint(700px) {
+    margin: 3em 0;
+  }
 }
 
 .patient-story__container {
   @include grid;
   
-  @include breakpoint($bp2) {
+  @include breakpoint(700px) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 }
 
 .patient-story__image {
-  width: 30%;
+  width: 60%;
   position: relative;
-  margin-top: -2em;
-  margin-bottom: -2em;
+  margin: -2em auto 0;
   
   img {
     position: relative;
@@ -42,17 +45,42 @@
     bottom: -10px;
     left: -10px;
   }
+  
+  @include breakpoint(700px) {
+    width: 40%;
+    margin-bottom: -2em;
+  }
+  
+  @include breakpoint($bp4) {
+    width: 30%;
+  }
+  
+  .patient-story--reverse & {
+    @include breakpoint(700px) {
+      order: 2;
+    }
+  }
 }
 
 .patient-story__content {
+  padding: 3em 0;
   
-  @include breakpoint($bp2) {
+  @include breakpoint(700px) {
     width: 60%;
-    padding-left: 2em;
+    padding: 3em 2em;
+    flex: 1 1 60%;
   }
   
-  @include breakpoint($bp3) {
+  @include breakpoint($bp4) {
     width: 70%;
+    padding: 3em;
+    flex: 1 1 70%;
+  }
+  
+  .patient-story--reverse & {
+    @include breakpoint(700px) {
+      order: 1;
+    }
   }
 }
 
@@ -64,6 +92,7 @@
   font-weight: 600;
   color: $white;
   border-top: 4px solid $growth;
+  padding-top: .25em;
 }
 
 .patient-story__quote {
@@ -81,9 +110,22 @@
   text-transform: uppercase;
   font-weight: 600;
   
+  svg {
+    height: .75em;
+    width: .75em;
+    fill: $trust-ltst;
+  }
+  
   &:link,
   &:visited {
     color: $trust-ltst;
     text-decoration: none;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: underline;
   }
 }
