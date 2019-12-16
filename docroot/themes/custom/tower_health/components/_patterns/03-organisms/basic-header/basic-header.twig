@@ -1,4 +1,4 @@
-<header class='basic-header {% if header.style == 'secondary' %}basic-header--secondary{% endif %}{% if header.style == 'list' %}basic-header--list{% endif %}{% if header.image %} basic-header--img{% endif %}{% if header.cta %} basic-header--cta{% endif %}' {% if header.image %}style="background-image: url({{header.image.url}});"{% endif %}>
+<header class='basic-header js-section-animation {% if header.style == 'secondary' %}basic-header--secondary{% endif %}{% if header.style == 'list' %}basic-header--list{% endif %}{% if header.image %} basic-header--img{% endif %}{% if header.cta %} basic-header--cta{% endif %}' {% if header.image %}style="background-image: url({{header.image.url}});"{% endif %}>
   <div class="basic-header__container">
     {% if header.breadcrumb %}
     {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {

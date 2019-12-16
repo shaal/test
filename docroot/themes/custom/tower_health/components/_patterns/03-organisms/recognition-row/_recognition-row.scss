@@ -100,4 +100,13 @@
   }
 }
 
+.cssanimations {
+  .recognition__item {
+    opacity: 0;
+  }
+  
+  .recognition__item.in-view {
+    animation: fadeInUp .5s ease .25s forwards;
+  }
+}
 

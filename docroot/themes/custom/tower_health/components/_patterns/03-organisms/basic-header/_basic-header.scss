@@ -291,3 +291,29 @@
     text-decoration: underline;
   }
 }
+
+// annimations
+
+.cssanimations {
+  .basic-header,
+  .basic-header__header,
+  .basic-header__cta {
+    opacity: 0;
+  }
+  
+  .basic-header.in-view {
+    animation: fadein .5s ease forwards;
+
+    .basic-header__header {
+      animation: fadeInUp .5s ease .25s forwards;
+    }
+  
+    .basic-header__cta {
+      animation: fadeInUp .5s ease .25s forwards;
+      
+      @include breakpoint($bp4) {
+        animation: fadeInRightScale .5s ease .25s forwards;
+      }
+    }
+  }
+}

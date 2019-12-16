@@ -115,7 +115,14 @@
     .review-listing,
     .provider-header__first,
     .provider-header__card,
-    .provider-header__cta {
+    .provider-header__cta,
+    .basic-header,
+    .basic-header__header,
+    .basic-header__cta,
+    .card,
+    .recognition__item,
+    .patient-story__image,
+    .patient-story__content  {
       opacity: 1;
       transition: none;
       animation: none;

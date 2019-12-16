@@ -129,3 +129,33 @@
     text-decoration: underline;
   }
 }
+
+.cssanimations {
+  .patient-story__image,
+  .patient-story__content {
+    opacity: 0;
+  }
+  
+  .patient-story.in-view {
+    &:not(.patient-story--reverse) .patient-story__image {
+      
+      @include breakpoint(700px) {
+        animation: fadeInLeftScale .65s ease-in-out forwards;
+        opacity: 1; 
+      }
+    }
+
+    .patient-story__image {
+      animation: fadeInUp .65s ease-in-out .25s forwards;
+
+      @include breakpoint(700px) {
+        animation: fadeInRightScale .65s ease-in-out forwards;
+        opacity: 1;
+      }
+    }
+    
+    .patient-story__content {
+      animation: fadeInUp .65s ease .25s forwards;
+    }
+  }
+}

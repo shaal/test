@@ -60,3 +60,12 @@
   text-decoration: none;
 }
 
+.cssanimations {
+  .card {
+    opacity: 0;
+  }
+  
+  .card.in-view {
+    animation: fadeInUp .5s ease .25s forwards;
+  }
+}

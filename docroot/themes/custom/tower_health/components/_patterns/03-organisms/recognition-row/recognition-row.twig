@@ -1,7 +1,7 @@
 <section class="recognition grid">
   <div class="recognition__items">
     {% for item in recognitionItems %}
-      <div class="recognition__item">
+      <div class="recognition__item js-section-animation">
       {% if item.image %}
         <div class="recognition__image-wrapper">
           <img class="recognition__image" src="{{item.image.src}}" alt="{{item.image.alt}}" />
