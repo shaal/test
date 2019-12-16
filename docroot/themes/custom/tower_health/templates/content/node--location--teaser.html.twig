@@ -74,6 +74,7 @@
 {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
     "location": {
       "img": {
+        "img": image,
         "src": src,
         "alt": alt,
       },
@@ -85,7 +86,7 @@
         "fax": content.field_location_fax,
       },
       "link": {
-        "url": url,
+        "href": href,
         "text": "Directions",
         "icon": icon,
       }

@@ -2,7 +2,11 @@
 
   <div class="teaser__image-container">
     <div class="teaser__image">
-      <a href="{{ url }}"><img src="{% if location.img %}{{ location.img.src }}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ location.img.alt }}"></a>
+      {% if location.img.img %}
+        <a href="{{ url }}">{{ location.img.img }}</a>
+      {% else %}
+        <a href="{{ url }}"><img src="{% if location.img %}{{ location.img.src }}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ location.img.alt }}"></a>
+      {% endif %}
     </div>
   </div>
 
@@ -24,7 +28,7 @@
     </div>
     <div class="teaser__button">
       {% include "@atoms/icon-button/icon-button.twig" with {
-        "url": location.link.url,
+        "url": location.link.href,
         "icon": location.link.icon,
         "text": location.link.text,
         "variation": "small",
