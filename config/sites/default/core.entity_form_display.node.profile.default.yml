@@ -416,7 +416,7 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: readonly_field_widget
     region: content
   moderation_state:
     type: moderation_state_default
