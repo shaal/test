@@ -40,6 +40,14 @@
   
   {% block full_content %}
     {% include "@organisms/card-group/card-group.twig" %}
+    
+    {% include "@organisms/patient-story/patient-story.twig" with {
+      image: story.image,
+      label: story.label,
+      type: story.type,
+      quote: story.quote,
+      cta: story.cta
+    } %}
   {% endblock %}
   
 {% endembed %}

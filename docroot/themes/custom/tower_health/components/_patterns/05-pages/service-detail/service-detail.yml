@@ -91,3 +91,12 @@ cards:
     url:
       link: '#'
       label: About the Center
+story:
+  image:
+    src: "../../images/AdobeStock_202001962_Preview.jpeg"
+    alt: alt text
+  label: Patient Story
+  quote: The therapists are absolutely committed to making it work. They would go above and beyond to make Page comfortable. They would even involve visiting family and friends in her therapy sessions.
+  cta:
+    link: '#'
+    label: Read Page's Story
