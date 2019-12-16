@@ -17,20 +17,28 @@
   <div class="teaser__content">
     <div class="teaser__content__info">
       <div class="teaser__section">
-        <h3 class="teaser-label">Specialties</h3>
-        {{ provider.details.specialties }}
+        {% if provider.details.specialties[0] %}
+          <h3 class="teaser-label">Specialties</h3>
+          {{ provider.details.specialties }}
+        {% endif %}
       </div>
       <div class="teaser__section">
-        <h3 class="teaser-label">Clinical Areas of Focus</h3>
-        {{ provider.details.focus }}
+        {% if provider.details.focus %}
+          <h3 class="teaser-label">Clinical Areas of Focus</h3>
+          {{ provider.details.focus }}
+        {% endif %}
       </div>
       <div class="teaser__section teaser__section--small">
-        <h3 class="teaser-label">Location</h3>
-        {{ provider.details.location }}
+        {% if provider.details.location %}
+          <h3 class="teaser-label">Location</h3>
+          {{ provider.details.location }}
+        {% endif %}
       </div>
       <div class="teaser__section teaser__section--small">
-        <h3 class="teaser-label">Languages</h3>
-        {{ provider.details.language }}
+        {% if provider.details.language[0] %}
+          <h3 class="teaser-label">Languages</h3>
+          {{ provider.details.language }}
+        {% endif %}
       </div>
     </div>
     {% if provider.link %}
