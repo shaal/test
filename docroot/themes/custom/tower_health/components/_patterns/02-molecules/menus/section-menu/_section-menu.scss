@@ -42,7 +42,6 @@
 
   @include breakpoint($bp3) {
     display: block;
-    margin-top: 5em;
   }
 }
 
@@ -54,10 +53,6 @@
   @include breakpoint($bp3) {
     background-color: transparent;
     margin-left: 0;
-  }
-
-  @include breakpoint($bp4) {
-    margin-top: 6em;
   }
 
   &::after {
