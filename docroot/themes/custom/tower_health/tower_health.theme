@@ -53,5 +53,5 @@ function tower_health_preprocess_node__profile(&$variables) {
     $variables['alt'] = "Provider placeholder image";
   }
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
-  $variables['url'] = Url::fromUri('internal:/');
+  $variables['href'] = Url::fromUri('internal:/');
 }

@@ -8,7 +8,7 @@ The Provider teaser is a teaser view for a provider content type. It contains an
 #### Variables
 ~~~
 location:
-  img: 
+  img:
     src: media / optional
     alt: short text / required if src provided
   details:
@@ -19,5 +19,5 @@ location:
     language: short text / required
     rating: number / optional
   link:
-    url: href / required  
+    href: href / required  
 ~~~
