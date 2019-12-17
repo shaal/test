@@ -14,11 +14,13 @@ dependencies:
     - field.field.node.location.field_location_insurance
     - field.field.node.location.field_location_phone_number
     - field.field.node.location.field_location_type
+    - field.field.node.location.field_metatags
     - field.field.node.location.field_services_ref
     - node.type.location
   module:
     - address
     - entity_reference_revisions
+    - metatag
     - office_hours
     - telephone
     - text
@@ -123,6 +125,13 @@ content:
       title: ''
     third_party_settings: {  }
     type: telephone_link
+    region: content
+  field_metatags:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_services_ref:
     weight: 9

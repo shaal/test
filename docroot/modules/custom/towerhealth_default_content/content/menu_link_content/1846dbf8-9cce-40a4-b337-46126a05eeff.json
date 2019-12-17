@@ -1,25 +1,25 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/68\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/28\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/main"
         }
     },
     "id": [
         {
-            "value": 68
+            "value": 28
         }
     ],
     "uuid": [
         {
-            "value": "1c907352-8892-4f97-a76f-38daa8ffbae0"
+            "value": "1846dbf8-9cce-40a4-b337-46126a05eeff"
         }
     ],
     "revision_id": [
         {
-            "value": 68
+            "value": 28
         }
     ],
     "langcode": [
@@ -30,12 +30,12 @@
     ],
     "bundle": [
         {
-            "value": "menu_link_content"
+            "target_id": "main"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-11-27T17:50:54+00:00",
+            "value": "2019-11-26T21:34:53+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -46,13 +46,13 @@
     ],
     "title": [
         {
-            "value": "Employees",
+            "value": "Find a Provider",
             "lang": "en"
         }
     ],
     "menu_name": [
         {
-            "value": "footer-detail"
+            "value": "main"
         }
     ],
     "link": [
@@ -74,17 +74,17 @@
     ],
     "weight": [
         {
-            "value": 3
+            "value": 0
         }
     ],
     "expanded": [
         {
-            "value": false
+            "value": true
         }
     ],
     "changed": [
         {
-            "value": "2019-11-27T17:50:54+00:00",
+            "value": "2019-12-04T18:21:21+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -101,12 +101,23 @@
             "lang": "en"
         }
     ],
+    "view_mode": [
+        {
+            "value": "default",
+            "lang": "en"
+        }
+    ],
     "metatag": [
         {
             "value": {
                 "title": "| Tower Health",
                 "canonical_url": "http:\/\/default\/node"
             }
+        }
+    ],
+    "field_main_link_type": [
+        {
+            "value": "default"
         }
     ]
 }

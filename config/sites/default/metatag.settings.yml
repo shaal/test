@@ -1,0 +1,8 @@
+entity_type_groups:
+  node:
+    location:
+      schema_medical_business: schema_medical_business
+    page:
+      basic: basic
+    profile:
+      schema_physician: schema_physician

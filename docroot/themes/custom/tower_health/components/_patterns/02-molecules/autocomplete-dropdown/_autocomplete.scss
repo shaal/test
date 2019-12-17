@@ -1,4 +1,4 @@
-.autocomplete-container {
+ .autocomplete-container {
   position: relative;
 }
 
@@ -18,14 +18,38 @@
   top: 98%;
   display: none;
   visibility: hidden;
-  
+
+  &.drupal,
   &.is-active {
     display: block;
     visibility: visible;
+    width: calc(100% - 175px - 1em) !important;
+
+    @include breakpoint($bp3) {
+      width: calc(100% - 205px - 1em) !important;
+    }
   }
-  
+
   @include breakpoint($bp3) {
     max-height: 400px;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    @include trans();
+    color: $trust-aa;
+  }
+
+  a:active,
+  a:hover {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+
+  a:focus {
+    color: $primary-dark;
+    text-decoration: underline;
   }
 }
 
@@ -39,14 +63,56 @@
 }
 
 .autocomplete-search__item {
+  &.ui-menu-item {
+    list-style-image: none;
+  }
+
+  .autocomplete-search & a.ui-state-active,
+  .autocomplete-search & a.ui-menu-item-wrapper,
+  &.ui-menu a,
+  &.ui-menu a.ui-state-active,
   a {
     display: block;
+    border: none;
+    background: none;
+    font-weight: 300;
+    margin: 0;
     padding: .15em 0;
   }
-  
+
   @include breakpoint(0 $bp3) {
+    .autocomplete-search & a.ui-state-active,
+    .autocomplete-search & a.ui-menu-item-wrapper,
+    &.ui-menu a,
+    &.ui-menu a.ui-state-active,
     a {
+      margin: 0;
       padding: .5em 0;
     }
+  }
+}
+
+// Drupal form styles
+
+#views-exposed-form-find-a-provider-find-doctor,
+#views-exposed-form-find-a-location-find-location,
+#views-exposed-form-find-a-service-find-service {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .form-item {
+    margin-right: 1em;
+    flex-grow: 1;
+  }
+}
+
+#edit-submit-find-a-provider,
+#edit-submit-find-a-service,
+#edit-submit-find-a-location {
+  width: 175px;
+
+  @include breakpoint($bp3) {
+    width: 205px;
   }
 }

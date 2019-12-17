@@ -9,6 +9,6 @@ location:
     phone: "484-555-5555"
     fax: "484-555-5556"
   link:
-    url: "/"
+    href: "/"
     text: "Directions"
     icon: "th-find-hospital.svg"

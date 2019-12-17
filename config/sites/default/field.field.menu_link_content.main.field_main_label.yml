@@ -1,0 +1,19 @@
+uuid: 6b0a5b6f-3d10-4a0e-8ffb-efc13e8ae785
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_main_label
+    - system.menu.main
+id: menu_link_content.main.field_main_label
+field_name: field_main_label
+entity_type: menu_link_content
+bundle: main
+label: Label
+description: 'Add a label to display in place of this menu link'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
