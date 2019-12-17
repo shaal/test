@@ -48,7 +48,7 @@ function tower_health_preprocess_node__location(&$variables) {
       $file = $media->field_media_image->entity;
       if ($file instanceof EntityInterface) {
         $url = $file->uri->value;
-        $image = ImageStyle::load('medium')->buildUrl($url);
+        $image = ImageStyle::load('teaser_image')->buildUrl($url);
         $variables['src'] = $image;
         $variables['alt'] = $file->alt;
       }
@@ -69,6 +69,15 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['address1'] = $address_1;
       $variables['address2'] = $address_2;
       $variables['href'] = $href;
+    }
+
+    // Preprocess phone numbers.
+    if ($node->hasField('field_location_phone_number') && !$node->get('field_location_phone_number')->isEmpty()) {
+      $variables['phone'] = $node->field_location_phone_number->value;
+    }
+
+    if ($node->hasField('field_location_fax') && !$node->get('field_location_fax')->isEmpty()) {
+      $variables['fax'] = $node->field_location_fax->value;
     }
   }
 }
