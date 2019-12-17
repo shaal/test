@@ -1,0 +1,65 @@
+.file-download {
+  margin-top: 5em;
+  
+  @include breakpoint($bp2) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.file-download__image {
+  display: block;
+  background-color: $white;
+  
+  @include breakpoint($bp2) {
+    width: 30%;
+    flex: 1 0 30%;
+  }
+}
+
+.file-download__content {
+  padding: 2em;
+  border: 6px solid $trust-ltst;
+  border-radius: 6px;
+  
+  @include breakpoint($bp2) {
+    width: 70%;
+    flex: 1 0 70%;
+  }
+}
+
+.file-download__title {
+  @include adjust-font-size-to($md-heading, 1.1);
+  margin-top: 0;
+  margin-bottom: .25em;
+  
+  a:link,
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:active,
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+}
+
+.file-download__desc {
+  @include adjust-font-size-to($sm-text, .9);
+  margin-bottom: .75em;
+}
+
+.file-download__cta {
+  @include adjust-font-size-to($label, .8);
+  @extend %track-out;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;  
+
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
