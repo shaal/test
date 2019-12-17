@@ -9,6 +9,8 @@ use Drupal\block\Entity\Block;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\node\NodeInterface;
+use Drupal\core\entity\EntityInterface;
 
 /**
  * Adds a body class by role.
@@ -42,7 +44,7 @@ function tower_health_preprocess_node__profile(&$variables) {
   $variables['href'] = Url::fromUri('internal:/');
   $variables['icon_path'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
-  if ($node instanceof Drupal\node\Entity\Node) {
+  if ($node instanceof NodeInterface) {
     // Preprocess address.
     if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
       $address = $node->field_location_ref->entity;
@@ -66,9 +68,9 @@ function tower_health_preprocess_node__profile(&$variables) {
 
     if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
       $media = $node->field_profile_image->entity;
-      if ($media instanceof Drupal\media\Entity\Media && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
         $file = $media->field_media_image->entity;
-        if ($file instanceof Drupal\file\Entity\File) {
+        if ($file instanceof EntityInterface) {
           $url = $file->uri->value;
           $image = ImageStyle::load('medium')->buildUrl($url);
           $variables['src'] = $image;
