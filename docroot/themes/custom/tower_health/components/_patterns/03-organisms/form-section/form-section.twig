@@ -10,16 +10,27 @@
   {% endif %}
   {% for item in section_items %}
     <div class="form-section__item {% if item.width %}form-section__item--{{ item.width }}{% endif %} {% if item.conditional_result %}form-section__item--conditional{% endif %}" {% if item.conditional_result %}data-cond-by="{{item.conditional_result}}"{% endif %} {% if item.conditional_control %}data-cond="{{item.conditional_control}}" data-cond-met="false"{% endif %}>
-      {% include "@atoms/05-forms/_form-label.twig"  with {
-        title: item.title
-      }%}
+      {% if item.type != 'drupal-facet' %}
+        {% include "@atoms/05-forms/_form-label.twig" with {
+          title: item.title
+        }%}
+      {% endif %}
       {% if item.info %}
         {% include "@molecules/toggle-tip/toggle-tip.twig"  with {
           info: item.info,
           info_id: item.info_id
         }%}
       {% endif %}
-      {% if item.type == 'radio' %}
+      {% if item.type == 'drupal-facet' %}
+        <div class="facets-widget-chosen-dropdown">
+          <ul {{ attributes }}>
+          {% for element in item.elements %}
+            <li {{ element.attributes }}>{{ element.value }}</li>
+          {% endfor %}
+          </ul>
+          <label id="facet_specialties_label">{{ item.title }}</label>
+        </div>
+      {% elseif item.type == 'radio' %}
         <ul class="form-item--radios {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
         {% for key, item in item.children %}
           {% include "@atoms/05-forms/radio/_radio-item.twig" with {

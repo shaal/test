@@ -11,8 +11,8 @@ dependencies:
     - tower_health
 id: exposedformfind_a_locationfind_location
 theme: tower_health
-region: content
-weight: -10
+region: page_header
+weight: -9
 provider: null
 plugin: 'views_exposed_filter_block:find_a_location-find_location'
 settings:

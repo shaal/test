@@ -10,8 +10,8 @@ dependencies:
     - tower_health
 id: search
 theme: tower_health
-region: header
-weight: -8
+region: page_header
+weight: -11
 provider: null
 plugin: 'views_exposed_filter_block:search-page_1'
 settings:

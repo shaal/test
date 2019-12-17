@@ -3,23 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.towerhealth
+    - search_api.index.acquia_search_index
     - views.view.find_a_provider
   module:
     - search_api
 id: specialties
-name: 'Medical Specialties » Taxonomy term » Name » String '
+name: Specialties
 url_alias: specialties
 weight: -3
 min_count: 1
-show_only_one_result: true
+show_only_one_result: false
 field_identifier: provider_specialties_name_string
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
 widget:
-  type: dropdown
+  type: choden_dropdown_widget
   config:
     show_numbers: false
-    default_option_label: Choose
+    soft_limit: '0'
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+    show_reset_link: 0
+    reset_text: 'Show all'
+    hide_reset_when_no_selection: 0
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
@@ -54,4 +60,4 @@ processor_configs:
     settings: {  }
 empty_behavior:
   behavior: none
-show_title: false
+show_title: true

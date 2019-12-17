@@ -1,6 +1,6 @@
 uuid: 2ac91fe9-3ab1-415f-9ad9-e79737f6eaf6
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -9,8 +9,8 @@ dependencies:
     - tower_health
 id: clearfilters
 theme: tower_health
-region: content
-weight: -7
+region: page_filters
+weight: -3
 provider: null
 plugin: clear_filters
 settings:
