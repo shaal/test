@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.field_basic_components
     - field.field.node.page.field_media
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
     - node.type.page
@@ -12,6 +13,7 @@ dependencies:
   module:
     - content_moderation
     - media_library
+    - metatag
     - paragraphs
     - path
     - text
@@ -46,6 +48,12 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_metatags:
+    weight: 126
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_reference_access_control:
     weight: 123

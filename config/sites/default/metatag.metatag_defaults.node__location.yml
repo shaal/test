@@ -1,0 +1,16 @@
+uuid: 63597824-0a75-4252-9ffc-1f88e941c99d
+langcode: en
+status: true
+dependencies: {  }
+id: node__location
+label: 'Content: Location'
+tags:
+  schema_medical_business_name: '[node:title]'
+  schema_medical_business_opening_hours_specification: 'a:4:{s:5:"@type";s:25:"OpeningHoursSpecification";s:9:"dayOfWeek";s:34:"[tower_health:location_hours_days]";s:5:"opens";s:38:"[tower_health:location_hours_starting]";s:6:"closes";s:36:"[tower_health:location_hours_ending]";}'
+  schema_medical_business_telephone: '[node:field_location_phone_number]'
+  schema_medical_business_description: '[node:field_location_summary]'
+  schema_medical_business_fax_number: '[node:field_location_fax]'
+  schema_medical_business_address: 'a:6:{s:5:"@type";s:13:"PostalAddress";s:13:"streetAddress";s:43:"[node:field_location_address:address_line1]";s:15:"addressLocality";s:38:"[node:field_location_address:locality]";s:13:"addressRegion";s:49:"[node:field_location_address:administrative_area]";s:10:"postalCode";s:41:"[node:field_location_address:postal_code]";s:14:"addressCountry";s:42:"[node:field_location_address:country_code]";}'
+  schema_medical_business_amenity_feature: '[node:field_services_ref]'
+  schema_medical_business_image: 'a:2:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:29:"[tower_health:location_photo]";}'
+  schema_medical_business_type: MedicalBusiness
