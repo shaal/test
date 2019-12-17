@@ -1,48 +1,34 @@
 .service-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $white;
   border-radius: $rd-brd-lg;
   box-shadow: $shadow;
-  margin: 1em 0;
-}
-
-.service-tile__title {
-  @include adjust-font-size-to($md-heading, 1.1);
-  padding: 1.5rem 0 .5rem 1.5rem;
-  margin-top: 0;
-  margin-bottom: .5em;
-  margin-right: 1rem;
-  border-bottom: 4px solid $growth;
+  margin: .5em 0;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  width: 100%;
   
-  a:link,
-  a:visited {
+  &:link,
+  &:visited {
     text-decoration: none;
   }
   
-  a:active,
-  a:hover,
-  a:focus {
-    text-decoration: underline;
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: $trust-aa;
+    color: $white;
+    transform: scale(1.025);
+  }
+  
+  @include breakpoint($bp2) {
+    min-height: 110px;
   }
 }
 
-.service-tile__subservices {
-  list-style: none;
+.service-tile__title {
+  @include adjust-font-size-to($sm-heading, 1.1);
   margin: 0;
-  padding: 0 1.5rem 1.5rem;
-  
-  a:link,
-  a:visited {
-    color: $gray-dark;
-  }
-  
-  a:active,
-  a:hover,
-  a:focus {
-    color: $trust-aa;
-  }
-  
-  @include breakpoint($bp1 $bp2) {
-    column-count: 2;
-    column-gap: 1em;
-  }
 }
