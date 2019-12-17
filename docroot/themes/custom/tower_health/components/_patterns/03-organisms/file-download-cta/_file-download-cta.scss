@@ -1,30 +1,43 @@
 .file-download {
-  margin-top: 5em;
+  border: 6px solid $trust-ltst;
+  border-radius: 6px;
+  margin-top: 6em;
+  margin-bottom: 2em;
+  padding: 2em;
   
   @include breakpoint($bp2) {
     display: flex;
-    align-items: center;
+    margin-top: 2em;
   }
 }
 
 .file-download__image {
   display: block;
   background-color: $white;
+  margin: 0 auto;
+  max-width: 250px;
+  margin-top: -6em;
+  
+  img {
+    box-shadow: 0 2px 5px rgba($black, 0.25);
+  }
   
   @include breakpoint($bp2) {
+    margin-top: 0;
     width: 30%;
     flex: 1 0 30%;
   }
 }
 
 .file-download__content {
-  padding: 2em;
-  border: 6px solid $trust-ltst;
-  border-radius: 6px;
+  margin-top: 2em;
   
   @include breakpoint($bp2) {
     width: 70%;
     flex: 1 0 70%;
+    padding-left: 2em;
+    align-self: center;
+    margin-top: 0;
   }
 }
 
@@ -55,7 +68,7 @@
   @extend %track-out;
   font-weight: 600;
   text-transform: uppercase;
-  text-decoration: none;  
+  text-decoration: none;
 
   &:active,
   &:hover,
