@@ -7,6 +7,8 @@
 
 use Drupal\block\Entity\Block;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\node\NodeInterface;
+use Drupal\core\entity\EntityInterface;
 
 /**
  * Adds a body class by role.
@@ -39,12 +41,12 @@ function tower_health_preprocess_node__location(&$variables) {
   // Set button icon.
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
 
-  if ($node instanceof Drupal\node\Entity\Node) {
+  if ($node instanceof NodeInterface) {
     // Preprocess image variables.
     $media = $node->field_location_image->entity;
-    if ($media instanceof Drupal\media\Entity\Media && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+    if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
       $file = $media->field_media_image->entity;
-      if ($file instanceof Drupal\file\Entity\File) {
+      if ($file instanceof EntityInterface) {
         $url = $file->uri->value;
         $image = ImageStyle::load('medium')->buildUrl($url);
         $variables['src'] = $image;
