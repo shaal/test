@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.page.field_basic_components
     - field.field.node.page.field_media
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
     - node.type.page
   module:
     - entity_reference_revisions
+    - metatag
     - text
     - user
 _core:
@@ -41,6 +43,13 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+    region: content
+  field_metatags:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_text:
     weight: 3

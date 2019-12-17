@@ -6,4 +6,3 @@ id: node__page
 label: 'Content: Basic page'
 tags:
   title: '[node:title] | [site:name]'
-  description: '[node:body]'
