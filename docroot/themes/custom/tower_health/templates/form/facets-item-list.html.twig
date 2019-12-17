@@ -34,10 +34,4 @@ set item = {
 }
 %}
 
-{% set section_items = {'items' : item} %}
-
-{% include "@organisms/form-section/form-section.twig" with {
-section_heading_level: null,
-section_heading: null,
-section_items: section_items
-} %}
+{% include "@molecules/form-section-item/_form-section-item.twig" with item %}

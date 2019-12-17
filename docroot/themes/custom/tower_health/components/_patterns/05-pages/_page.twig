@@ -64,7 +64,9 @@
   {% block page_header %}
     {{ page.breadcrumb }}
     {{ page.page_header }}
-    {{ page.page_filters }}
+    {% if page.page_filters %}
+      {{ page.page_filters }}
+    {% endif %}
   {% endblock %}
 
   {% block top_sidebar %}

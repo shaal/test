@@ -9,27 +9,29 @@
   } %}
   {% endif %}
 
-  {% for teaser in teasers %}
-    {% if teaser.type == "provider" %}
-      {% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
-          "provider": teaser
-        } %}
-    {% elseif teaser.type == "location" %}
-      {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
-          "location": teaser
-        } %}
-    {% elseif teaser.type == "article" %}
-      {% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
-          "article": teaser,
-        } %}
-    {% elseif teaser.type == "service" %}
-      {% include "@organisms/teasers/service-teaser/service-teaser.twig" with {
-          "service": teaser,
-        } %}
-    {% else %}
-      {% include "@organisms/teasers/basic-teaser/basic-teaser.twig" with {
-          "basic": teaser,
-        } %}
-    {% endif %}
-  {% endfor %}
+  {% block teasers %}
+    {% for teaser in teasers %}
+      {% if teaser.type == "provider" %}
+        {% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
+            "provider": teaser
+          } %}
+      {% elseif teaser.type == "location" %}
+        {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
+            "location": teaser
+          } %}
+      {% elseif teaser.type == "article" %}
+        {% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
+            "article": teaser,
+          } %}
+      {% elseif teaser.type == "service" %}
+        {% include "@organisms/teasers/service-teaser/service-teaser.twig" with {
+            "service": teaser,
+          } %}
+      {% else %}
+        {% include "@organisms/teasers/basic-teaser/basic-teaser.twig" with {
+            "basic": teaser,
+          } %}
+      {% endif %}
+    {% endfor %}
+  {% endblock %}
 </div>

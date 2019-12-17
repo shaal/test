@@ -13,7 +13,10 @@
  */
 #}
 {% extends "@organisms/listings/listing-filter/listing-filter.twig" %}
-
+{% set form_sections = content %}
+{% set filter_url = drupal_url('/find-a-provider') %}
 {% block filter_items %}
-  {{ content }}
+  <div class="form-section">
+    {{ form_sections }}
+  </div>
 {% endblock %}
