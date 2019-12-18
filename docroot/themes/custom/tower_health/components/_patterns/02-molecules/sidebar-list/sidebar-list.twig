@@ -1,0 +1,14 @@
+<aside class="sidebar-list">
+  <h2 class="sidebar-list__title">{{ sidebar_label }}</h2>
+  <ul class="sidebar-list__list">
+    {% for item in sidebar_items %}
+      <li class="sidebar-list__list-item">
+        {% if item.link %}
+          <a href="{{ item.link }}">{{ item.name }}</a>
+        {% else %}
+          {{ item.name}}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</aside>
