@@ -1,18 +1,11 @@
 <section class="recognition grid">
   <div class="recognition__items">
     {% for item in recognitionItems %}
-      <div class="recognition__item js-section-animation">
-      {% if item.image %}
-        <div class="recognition__image-wrapper">
-          <img class="recognition__image" src="{{item.image.src}}" alt="{{item.image.alt}}" />
-        </div>
-      {% else %} 
-        <h2 class="recognition__title">{{ item.title }}</h2>
-        <div class="recognition__desc">
-          {{ item.desc }}
-        </div>
-      {% endif %}
-      </div>
+      {% include "@molecules/recognition-card/recognition-card.twig" with {
+        image: item.image,
+        title: item.title,
+        desc: item.desc
+      } %}
     {% endfor %}
   </div>
 </section>
