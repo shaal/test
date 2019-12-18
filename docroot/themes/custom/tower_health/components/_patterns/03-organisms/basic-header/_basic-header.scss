@@ -292,6 +292,21 @@
   }
 }
 
+.basic-header__link {
+  @include adjust-font-size-to($label, .8);
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: .5em;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 // annimations
 
 .cssanimations {
@@ -317,3 +332,4 @@
     }
   }
 }
+

@@ -8,14 +8,14 @@
   @include adjust-font-size-to($crumb, .65);
   background-color: $white;
   padding: .75em;
-  border-radius: 8px;
+  border-radius: $rd-brd-lg;
   width: 200px;
   max-width: 50vw;
   z-index: 5;
   border: 1px solid $off-white;
   position: absolute;
   bottom: 100%;
-  box-shadow: 0 2px 4px rgba($black, .25);
+  box-shadow: $shadow;
   display: none;
   visibility: hidden;
   

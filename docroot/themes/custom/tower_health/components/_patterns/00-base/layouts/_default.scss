@@ -197,10 +197,10 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   padding: 1.5em 0 1.5em 1.5em;
   margin-bottom: 0;
   position: relative;
-  border-radius: 8px;
+  border-radius: $rd-brd-lg;
   
   @include breakpoint($bp3) {
-    border-radius: 8px 0 0 8px;
+    border-radius: $rd-brd-lg 0 0 $rd-brd-lg;
   }
   
   &::after {

@@ -9,7 +9,7 @@
   align-items: center;
   background-color: $trust-ltst;
   padding: .75em 2em;
-  border-radius: 5px;
+  border-radius: $rd-brd-sm;
   margin: 0.35em 0;
   text-decoration: none;
   font-weight: 600;
@@ -96,7 +96,7 @@
 .icon-button:hover,
 .icon-button:focus {
   transform: scale(1.025);
-  box-shadow: 0 2px 5px rgba($black, 0.25);
+  box-shadow: $shadow;
   background-color: $trust-aa;
   color: $white;
 }

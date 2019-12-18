@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.location.field_location_insurance
     - field.field.node.location.field_location_phone_number
     - field.field.node.location.field_location_type
+    - field.field.node.location.field_metatags
     - field.field.node.location.field_services_ref
     - node.type.location
     - workflows.workflow.default
@@ -21,6 +22,7 @@ dependencies:
     - content_moderation
     - field_group
     - media_library
+    - metatag
     - paragraphs
     - path
     - readonly_field_widget
@@ -248,6 +250,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_metatags:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_services_ref:
     weight: 16
