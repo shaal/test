@@ -1,0 +1,148 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "2nd Level"
+    3:
+      text: "3rd Level"
+  title: Conditions & Services
+  style: list
+  link:
+    url: '#core-services'
+    label: Browse Core Services
+  form:
+    label: "Search All Services"
+    placeholder: "Search by Condition or Service"
+    button: "Search Services"
+boxes:
+  - title: "McGlinn Cancer Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_193543982_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Tower Health Transplant Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care."
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_271545252_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Weight Loss Surgery & Wellness Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Center"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_204599156_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Miller Regional Heart Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Center"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_239096192_Preview.jpeg"
+      alt: "Alternative text"
+services_header: Core Services
+services_id: core-services
+services_lede: Below is a list of our core services. The list is not exhaustive, so if you are having trouble finding what you are looking for please search in the above search box.
+services:
+  - name: "Cancer Program"
+    url: '#'
+  - name: "Heart & Vascular"
+    url: '#'
+  - name: "Orthopedic Surgery & Orthopedics"
+    url: '#'
+  - name: "Neurology & Neurosurgery, Neuroscience"
+    url: '#'
+  - name: "Pediatrics"
+    url: '#'
+  - name: "Primary Care"
+    url: '#'
+  - name: "Women's Health"
+    url: '#'
+  - name: "Allergy & Asthma"
+    url: '#'
+  - name: "Anesthesiology"
+    url: '#'
+  - name: "Behavioral Health"
+    url: '#'
+  - name: "Dermatology"
+    url: '#'
+  - name: "Diabetes"
+    url: '#'
+  - name: "Diagnostic Testing"
+    url: '#'
+  - name: "Digestive Health"
+    url: '#'
+  - name: "Ear, Nose, & Throat"
+    url: '#'
+  - name: "Emergency Medicine & Trauma"
+    url: '#'
+  - name: "Eye & Vision"
+    url: '#'
+  - name: "Foot & Ankle"
+    url: '#'
+  - name: "Homecare"
+    url: '#'
+  - name: "Hospice and Palliative Care"
+    url: '#'
+  - name: "Imaging"
+    url: '#'
+  - name: "Infectious Disease"
+    url: '#'
+  - name: "Infusion Therapy/Services"
+    url: '#'
+  - name: "Kidney Disease Care"
+    url: '#'
+  - name: "Nutrition"
+    url: '#'
+  - name: "Occupational Health"
+    url: '#'
+  - name: "Obstetrics, Gynecology, & Maternity Care"
+    url: '#'
+  - name: "Oral Health"
+    url: '#'
+  - name: "Pain Management"
+    url: '#'
+  - name: "Plastic and Reconstructive Surgery"
+    url: '#'
+  - name: "Pulmonology"
+    url: '#'
+  - name: "Rehabilitation & Physical Therapy"
+    url: '#'
+  - name: "Rheumatology"
+    url: '#'
+  - name: "Speech & Hearing"
+    url: '#'
+  - name: "Support Services"
+    url: '#'
+  - name: "Surgery"
+    url: '#'
+  - name: "Transplant Surgery"
+    url: '#'
+  - name: "Urgent Care"
+    url: '#'
+  - name: "Urology"
+    url: '#'
+  - name: "Weight Management"
+    url: '#'
+  - name: "Wellness"
+    url: '#'
+  - name: "Wound Care"
+    url: '#'
+cta:
+  title: "Need Help? We're Here."
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
+  link:
+    url: "/"
+    text: "484-628-HELP"
+    icon: "th-cal.svg"
+    variation: "right"

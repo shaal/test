@@ -80,6 +80,13 @@ $mono: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 $base-font-family: $sans; // The font family set on the html element.
 $font-monospace: $mono;
 
+$menu-shadow: 0 0 4px rgba($black, .25);
+$inset-shadow: inset 1px 1px 3px rgba($gray-dark, .15);
+$shadow: 0 2px 5px rgba($black, 0.25);
+
+$rd-brd-sm: 4px;
+$rd-brd-lg: 8px;
+
 // =============================================================================
 // Breakpoint Variables
 //
