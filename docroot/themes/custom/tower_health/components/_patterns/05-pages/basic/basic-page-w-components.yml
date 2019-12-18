@@ -23,7 +23,7 @@ rich_text:
       "Lorem <em>ipsum dolor sit amet</em>, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
 sidebarCard:
   title: Dolor sit amet
-  desc: 'This is an optional Sidebar Call to Action Card. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+  desc: 'This is an optional Sidebar Call to Action Card. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. '
   cta:
     url: '#'
     label: 'Read the Story'
@@ -199,4 +199,11 @@ article_cards:
     desc: "The month-long event will raise awareness for men's health, McGlinn Cancer Institute, and show support for the many patients undergoing cancer treatment and experiencing hair loss."
     date: Nov. 1, 2019
     url: "#"
-
+cta:
+  title: "Need Help? We're Here."
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
+  link:
+    url: "/"
+    text: "484-628-HELP"
+    icon: "th-cal.svg"
+    variation: "right"

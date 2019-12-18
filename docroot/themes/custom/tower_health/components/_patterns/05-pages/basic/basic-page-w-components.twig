@@ -76,6 +76,12 @@
     {% include "@organisms/card-group/card-group--article.twig" with {
       cards: article_cards
     } %}
+    
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
+      "title": cta.title,
+      "text": cta.text,
+      "link": cta.link
+    } %}
 
   {% endblock %}
 {% endembed %}

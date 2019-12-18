@@ -24,7 +24,7 @@ cards:
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
     url:
       link: '#'
-      label: MyTowerHealth
+      label: Request an Appointment
   - type: null
     image: 
       src: "../../images/AdobeStock_228148798_Preview.jpeg"
@@ -33,7 +33,7 @@ cards:
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
     url:
       link: '#'
-      label: Appointment Form
+      label: Request an Appointment
   - type: null
     image: 
       src: "../../images/AdobeStock_239096192_Preview.jpeg"
@@ -44,8 +44,8 @@ cards:
       link: '#'
       label: Search our Providers
 text_callout:
-  title: "Insurance & Payment Information"
+  title: "Pay my Bill"
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
   button:
-    text: "Insurances Accepted"
+    text: "Pay My Bill"
     url: "/"
