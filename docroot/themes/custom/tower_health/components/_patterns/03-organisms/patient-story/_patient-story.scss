@@ -84,22 +84,12 @@
   }
 }
 
-.patient-story__label {
-  @include adjust-font-size-to($label, .8);
-  @extend %track-out;
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: $white;
-  border-top: 4px solid $growth;
-  padding-top: .25em;
-}
-
 .patient-story__quote {
   @include adjust-font-size-to($sm-heading, 1.15);
   font-weight: 300;
-  margin: 1em 0;
-  padding: 0;
+  margin: 0 0 .25em;
+  padding: 0 0 1em;
+  border-bottom: 4px solid $trust;
   font-style: italic;
   color: $white;
 }
@@ -109,6 +99,7 @@
   @extend %track-out;
   text-transform: uppercase;
   font-weight: 600;
+  float: right;
   
   svg {
     height: .75em;
