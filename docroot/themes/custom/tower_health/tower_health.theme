@@ -97,12 +97,19 @@ function tower_health_preprocess_node__profile(&$variables) {
   if ($node instanceof NodeInterface) {
     // Preprocess address.
     if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
-      $address = $node->field_location_ref->entity;
-      $locality = $address->field_location_address->locality;
-      $administrative_area = $address->field_location_address->administrative_area;
-      $location = $locality . ", " . $administrative_area;
+      $location_refs = $node->get('field_location_ref')->getValue();
+      $locations = [];
+      foreach ($location_refs as $id => $location) {
+        $address = $node->field_location_ref[$id]->entity;
+        $locality = $address->field_location_address->locality;
+        $administrative_area = $address->field_location_address->administrative_area;
+        $location = $locality . " " . $administrative_area;
+        if (!in_array($location, $locations)) {
+          $locations[] = $location;
+        }
+      }
       if ($location) {
-        $variables['location'] = $location;
+        $variables['location'] = implode(", ", $locations);
       }
     }
 
