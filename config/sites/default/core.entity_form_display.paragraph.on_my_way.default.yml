@@ -1,0 +1,44 @@
+uuid: bc59cee7-9165-4807-8691-3224e601a3f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.on_my_way.field_omw_description
+    - field.field.paragraph.on_my_way.field_omw_header
+    - field.field.paragraph.on_my_way.field_omw_link
+    - paragraphs.paragraphs_type.on_my_way
+  module:
+    - link
+    - text
+id: paragraph.on_my_way.default
+targetEntityType: paragraph
+bundle: on_my_way
+mode: default
+content:
+  field_omw_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_omw_header:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_omw_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

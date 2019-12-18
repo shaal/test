@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_location_components
     - node.type.location
+    - paragraphs.paragraphs_type.on_my_way
   module:
     - entity_reference_revisions
 id: node.location.field_location_components
@@ -21,9 +22,16 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      on_my_way: on_my_way
     target_bundles_drag_drop:
       education:
         weight: 2
+        enabled: false
+      on_my_way:
+        enabled: true
+        weight: 5
+      rating_comments:
+        weight: 6
         enabled: false
 field_type: entity_reference_revisions

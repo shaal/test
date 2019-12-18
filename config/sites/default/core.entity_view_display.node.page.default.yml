@@ -3,10 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.page.field_basic_components
     - field.field.node.page.field_media
+    - field.field.node.page.field_metatags
+    - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
     - node.type.page
   module:
+    - entity_reference_revisions
+    - metatag
     - text
     - user
 _core:
@@ -17,28 +22,47 @@ bundle: page
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
+    region: content
     settings: {  }
+    third_party_settings: {  }
+  field_basic_components:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     region: content
   field_media:
     type: entity_reference_entity_view
-    weight: 102
+    weight: 2
     label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
+  field_metatags:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_text:
-    weight: 103
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   links:
-    weight: 101
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  field_reference_access_control: true
   search_api_excerpt: true

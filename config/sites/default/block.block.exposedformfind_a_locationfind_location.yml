@@ -5,14 +5,13 @@ dependencies:
   config:
     - views.view.find_a_location
   module:
-    - system
     - views
   theme:
     - tower_health
 id: exposedformfind_a_locationfind_location
 theme: tower_health
-region: content
-weight: -10
+region: header
+weight: -4
 provider: null
 plugin: 'views_exposed_filter_block:find_a_location-find_location'
 settings:
@@ -20,10 +19,5 @@ settings:
   label: ''
   provider: views
   label_display: visible
-  views_label: 'Find a location'
-visibility:
-  request_path:
-    id: request_path
-    pages: "/find-a-location\r\n/find-a-location*"
-    negate: false
-    context_mapping: {  }
+  views_label: 'Find a Location'
+visibility: {  }

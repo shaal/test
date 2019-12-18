@@ -1,5 +1,5 @@
 <li class="form-item--checkbox__item">
-  <label for="checkbox{{ key }}">
-    <input id="checkbox{{ key }}" name="checkbox" type="checkbox" checked="checked"> {{ checkbox_item }}
+  <label for="checkbox{{ key }}-{{ checkbox_id }}">
+    <input id="checkbox{{ key }}-{{ checkbox_id }}" name="checkbox" type="checkbox" {% if checked %}checked="checked" {% endif %}> {{ checkbox_item }}
   </label>
 </li>

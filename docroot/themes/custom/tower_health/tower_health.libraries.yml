@@ -2,20 +2,37 @@ global:
   css:
     theme:
       dist/style.css: {}
+      'https://use.typekit.net/aqk4svu.css': { type: external }
+
   js:
     dist/00-base/global/animations/animation.js: {}
-    components/js/modernizer-custom.js: {}
+    components/js/modernizr-custom.js: {}
 
 main-menu:
   js:
     dist/02-molecules/menus/main-menu/main-menu.js: {}
   dependencies:
     - core/drupal
-    
+
+section-menu:
+  js:
+    dist/02-molecules/menus/section-menu/section-menu.js: {}
+  dependencies:
+    - core/drupal
+
 site-header:
   js:
     dist/03-organisms/site/site-header/site-header.js: {}
-    
+
+chosen:
+  js:
+    dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
+    dist/01-atoms/05-forms/chosen/chosen-select.js: {}
+
+listFilters:
+  js:
+    dist/03-organisms/listings/listing-filter/listing-filters.js: {}
+
 autocomplete:
   js:
     dist/02-molecules/autocomplete-dropdown/autocomplete.js: {}
@@ -36,3 +53,16 @@ proximity-facet:
   js:
     https://maps.googleapis.com/maps/api/js?key=AIzaSyBiJAgSBg1FcnMKlH-OUkKKP5obvuqPbB8: { type: external, attributes: { async: true, defer: true }}
     components/js/proximity-facet.js: {}
+
+toggle-tips:
+  js:
+    dist/02-molecules/toggle-tip/toggle-tip.js: {}
+    
+modal:
+  js:
+    components/js/modaal.js: {}
+    dist/02-molecules/modal/modal.js: {}
+
+reviews:
+  js:
+    dist/03-organisms/review-listing/review-listing.js: {}

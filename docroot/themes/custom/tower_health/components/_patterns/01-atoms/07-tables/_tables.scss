@@ -3,10 +3,10 @@ $table-border: $gray-light;
 
 .table {
   border: 1px solid $table-border;
-  border-radius: 4px;
+  border-radius: $rd-brd-sm;
   border-spacing: 0;
   background-color: $table-gray;
-  margin: 1em 0;
+  margin: 2em 0;
   width: 100%;
 }
 
@@ -27,6 +27,8 @@ $table-border: $gray-light;
   font-weight: 700;
   padding: 1.2em;
   text-align: left;
+  border-bottom: 4px solid $growth;
+  background-color: $white;
 }
 
 .table__row {
@@ -38,12 +40,12 @@ $table-border: $gray-light;
   &:first-child {
     th:first-child,
     td:first-child {
-      border-radius: 5px 0 0;
+      border-radius: $rd-brd-sm 0 0;
     }
 
     th:last-child,
     td:last-child {
-      border-radius: 0 5px 0 0;
+      border-radius: 0 $rd-brd-sm 0 0;
     }
   }
 
@@ -57,19 +59,21 @@ $table-border: $gray-light;
     }
 
     td:first-child {
-      border-radius: 0 0 0 5px;
+      border-radius: 0 0 0 $rd-brd-sm;
     }
 
     td:last-child {
-      border-radius: 0 0 5px;
+      border-radius: 0 0 $rd-brd-sm;
     }
   }
 }
 
 .table__footer-cell,
 .table__footer-cell:first-child {
+  @include adjust-font-size-to($label, .9);
   border-bottom: none;
   border-top: 1px solid $table-border;
+  font-weight: 300;
 }
 
 // TODO: BEM selectors should be applied to wysiwyg-created content

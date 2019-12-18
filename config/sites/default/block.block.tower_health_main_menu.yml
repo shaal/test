@@ -13,7 +13,7 @@ _core:
 id: tower_health_main_menu
 theme: tower_health
 region: header
-weight: -10
+weight: -7
 provider: null
 plugin: 'system_menu_block:main'
 settings:
@@ -22,6 +22,6 @@ settings:
   provider: system
   label_display: '0'
   level: 1
-  depth: 1
-  expand_all_items: false
+  depth: 0
+  expand_all_items: true
 visibility: {  }

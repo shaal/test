@@ -16,8 +16,9 @@ migration_group: null
 label: 'Import tower health location content'
 source:
   plugin: csv
-  path: modules/custom/towerhealth_msow_migration/data/tbl_Dir_Offices.csv
-  header_offset: 1
+  path: 'public://directory/Find_Provider_Dir_Offices.txt'
+  delimiter: '|'
+  header_row_count: 1
   ids:
     - location_id
   track_changes: true
@@ -61,15 +62,37 @@ process:
       plugin: get
       source: office_name
     -
+      plugin: towerhealth_utf_8
+    -
       plugin: default_value
       default_value: 'TowerHealth Location'
   field_location_address/country_code:
     plugin: default_value
     default_value: US
-  field_location_address/address_line1: address_1
-  field_location_address/address_line2: address_2
-  field_location_address/locality: city
-  field_location_address/administrative_area: state
+  field_location_address/address_line1:
+    -
+      plugin: get
+      source: address_1
+    -
+      plugin: towerhealth_utf_8
+  field_location_address/address_line2:
+    -
+      plugin: get
+      source: address_2
+    -
+      plugin: towerhealth_utf_8
+  field_location_address/locality:
+    -
+      plugin: get
+      source: city
+    -
+      plugin: towerhealth_utf_8
+  field_location_address/administrative_area:
+    -
+      plugin: get
+      source: state
+    -
+      plugin: towerhealth_utf_8
   field_location_address/postal_code: zip_code
   field_location_phone_number: phone_number
   field_location_id: location_id

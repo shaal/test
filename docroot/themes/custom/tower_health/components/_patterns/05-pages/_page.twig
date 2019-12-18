@@ -44,30 +44,38 @@
  */
 #}
 
-{% if page.sidebar|render %} {# this may or may not correctly filter sidebar #}
+{% if page.sidebar_first|render or page.sidebar_second|render %} {# this may or may not correctly filter sidebar #}
   {% set sidebar = TRUE %}
 {% endif %}
 
 {% extends "@templates/_default.twig" %}
-  {% block page_header %}
+  {% block site_header %}
     {% if page.header %}
       {{ page.header }}
     {% endif %}
   {% endblock %}
 
   {% block page_system %}
-    {{ page.breadcrumb }}
     {{ page.highlighted }}
     {{ page.help }}
     {{ messages }}
   {% endblock %}
-
-  {% block page_sidebar %}
-    {{ page.sidebar }}
+  
+  {% block page_header %}
+    {{ page.breadcrumb }}
+    {{ page.page_header }}
   {% endblock %}
 
+  {% block top_sidebar %}
+    {{ page.sidebar_first }}
+  {% endblock %}
+  
   {% block page_content %}
     {{ page.content }}
+  {% endblock %}
+  
+  {% block bottom_sidebar %}
+    {{ page.sidebar_second }}
   {% endblock %}
 
   {% block page_footer %}

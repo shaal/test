@@ -1,0 +1,27 @@
+uuid: 2bff558d-a9c0-4743-bde1-f0d57994de3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility
+  module:
+    - menu_block
+  theme:
+    - tower_health
+id: tower_health_utility
+theme: tower_health
+region: header
+weight: -8
+provider: null
+plugin: 'menu_block:utility'
+settings:
+  id: 'menu_block:utility'
+  label: 'Utility menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'utility:'
+  suggestion: utility
+visibility: {  }

@@ -1,0 +1,10 @@
+{{ attach_library('tower_health/toggle-tip') }}
+<div aria-role="tooltip" class="toggle-tip">
+  <button class="toggle-tip__toggle" aria-controls="{{info_id}}">
+    i
+    <span>Informational Tooltip</span>
+  </button>
+  <div id="{{info_id}}" class="toggle-tip__drawer" aria-expanded="false">
+    {{ info }}
+  </div>
+</div>

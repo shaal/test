@@ -5,6 +5,11 @@
  * Functions to support theming in the Pattern Lab theme.
  */
 
+use Drupal\block\Entity\Block;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\node\NodeInterface;
+use Drupal\core\entity\EntityInterface;
+
 /**
  * Remove variables from exposed provider search form.
  *
@@ -41,6 +46,28 @@ function tower_health_preprocess_block__locationproximityfilter(&$variables, $ho
 }
 
 /**
+ * Adds a body class by role.
+ */
+function tower_health_preprocess_html(&$variables) {
+  foreach ($variables['user']->getRoles() as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
+}
+
+/**
+ * Load the utility menu into a variable.
+ */
+function tower_health_preprocess_menu(&$variables) {
+  $utility_nav_block = Block::load('tower_health_utility');
+  $utility_nav_block_view = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($utility_nav_block);
+  if ($utility_nav_block_view) {
+    $variables['utility_nav'] = $utility_nav_block_view;
+  }
+}
+
+/**
  * Alter proximity block for provider search.
  *
  * {@inheritdoc}
@@ -52,5 +79,55 @@ function tower_health_preprocess_block__providerproximityfilter(&$variables, $ho
   if (array_key_exists('provider_location_latlong', $variables['content']['exposed_form'])) {
     $variables['content']['exposed_form']['provider_location_latlong']['value']['#attributes']['class'] = ['js-set-my-location'];
     $variables['content']['exposed_form']['provider_location_latlong']['distance']['#attributes']['class'] = ['js-set-my-radius'];
+  }
+}
+
+/**
+ * Provide variables for location teaser.
+ */
+function tower_health_preprocess_node__location(&$variables) {
+  $node = $variables['node'];
+
+  // Set button icon.
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
+
+  if ($node instanceof NodeInterface) {
+    // Preprocess image variables.
+    $media = $node->field_location_image->entity;
+    if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+      $file = $media->field_media_image->entity;
+      if ($file instanceof EntityInterface) {
+        $url = $file->uri->value;
+        $image = ImageStyle::load('teaser_image')->buildUrl($url);
+        $variables['src'] = $image;
+        $variables['alt'] = $media->field_media_image->alt;
+      }
+    }
+    else {
+      // Fallback if no image uploaded.
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Location placeholder image";
+    }
+
+    // Preprocess address variables.
+    if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
+      $locality = $node->field_location_address->locality;
+      $administrative_area = $node->field_location_address->administrative_area;
+      $address_1 = $node->field_location_address->address_line1;
+      $address_2 = $locality . ', ' . $administrative_area;
+      $href = "https://www.google.com/maps/place/" . str_replace(' ', '+', $address_1) . '+' . $locality . '+' . $administrative_area;
+      $variables['address1'] = $address_1;
+      $variables['address2'] = $address_2;
+      $variables['href'] = $href;
+    }
+
+    // Preprocess phone numbers.
+    if ($node->hasField('field_location_phone_number') && !$node->get('field_location_phone_number')->isEmpty()) {
+      $variables['phone'] = $node->field_location_phone_number->value;
+    }
+
+    if ($node->hasField('field_location_fax') && !$node->get('field_location_fax')->isEmpty()) {
+      $variables['fax'] = $node->field_location_fax->value;
+    }
   }
 }

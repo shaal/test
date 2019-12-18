@@ -1,0 +1,148 @@
+.ratings-count {
+  @include adjust-font-size-to($crumb, .8);
+  display: flex;
+}
+
+.ratings-count__stars {
+  display: flex;
+  margin-left: .5em;
+  
+  svg {
+    height: 1.5em;
+    width: 1.5em;
+    
+    .star-half-1,
+    .star-half-2 {
+      fill: transparent;
+    }
+  }
+  
+  &--half {
+    svg:nth-of-type(1) {
+      .star-half-1 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--one {
+    svg:nth-of-type(1) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--oneh {
+    svg:nth-of-type(1) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+    
+    svg:nth-of-type(2) {
+      .star-half-1 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--two {
+    svg:nth-of-type(1),
+    svg:nth-of-type(2) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--twoh {
+    svg:nth-of-type(1),
+    svg:nth-of-type(2) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+    
+    svg:nth-of-type(3) {
+      .star-half-1 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--three {
+    svg:nth-of-type(1),
+    svg:nth-of-type(2),
+    svg:nth-of-type(3) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--threeh {
+    svg:nth-of-type(1),
+    svg:nth-of-type(2),
+    svg:nth-of-type(3) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+    
+    svg:nth-of-type(4) {
+      .star-half-1 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--four {
+    svg:nth-of-type(1),
+    svg:nth-of-type(2),
+    svg:nth-of-type(3),
+    svg:nth-of-type(4) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--fourh {
+    svg:nth-of-type(1),
+    svg:nth-of-type(2),
+    svg:nth-of-type(3),
+    svg:nth-of-type(4) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+    
+    svg:nth-of-type(5) {
+      .star-half-1 {
+        fill: $uplifting;
+      }
+    }
+  }
+  
+  &--five {
+    svg:nth-of-type(1),
+    svg:nth-of-type(2),
+    svg:nth-of-type(3),
+    svg:nth-of-type(4),
+    svg:nth-of-type(5) {
+      .star-half-1,
+      .star-half-2 {
+        fill: $uplifting;
+      }
+    }
+  }
+}

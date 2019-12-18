@@ -1,0 +1,182 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "2nd Level"
+    3:
+      text: "3rd Level"
+  title: Find a Service
+  style: list
+  form:
+    label: "Search Services"
+    placeholder: "Search by Condition or Service"
+    button: "Search Services"
+results_shown: 1-10
+results_count: 128
+emergency_banner: If this is a medical emergency, please call 911.
+services:
+  - details:
+      title: "Pediatrics"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Pediatric Cardiology
+        - Pediatric Radiology
+    type: service
+  - details:
+      title: "Breast Health"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Mastitis
+        - Discharge
+        - Mastalgia
+        - Fibroadenomas
+        - Breast Lumps
+        - Breast Cysts
+    type: "service"
+  - details:
+      title: "Behavioral Health"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Stress
+        - Depression
+        - Anxiety
+        - Addiction
+        - ADHD
+        - Learning Disabilities
+        - Mood Disorders
+    type: "service"
+  - details:
+      title: "Blood Services"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Blood Donation
+        - Blood Clots
+        - Blood Transfusions
+        - Aplastic Anemia
+        - Autoimmune Blood Disorders
+        - Hemophilia
+        - Idiopathic Thrombocytopenia Purpura (ITP)
+        - Immunodeficiency Syndromes
+        - Leukemias
+        - Lymphomas
+        - Neutropenia
+        - Thrombocytosis
+        - Thalassemia
+        - Sickle Cell Disease
+    type: "service"
+  - details:
+      title: "Wound Healing"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Burns
+        - Ostomy Care
+        - Wound Care
+        - Decompression Illness
+        - Gas Embolism
+        - Gas Ganngrene
+        - Acute traumatic Peripheral ischemia
+        - Crash Injury
+        - Cyanide Poisoning
+        - Diabetic Wounds
+    type: "service"
+  - details:
+      title: "Lab Services"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+    type: "service"
+  - details:
+      title: "Gynecology"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Menopause
+        - Amenorrhea
+        - Abnormal Pap Smears
+        - Dysmenorrhea
+        - Menorrhagia
+        - Uterine Fibroids
+        - Pelvic Pain
+        - Post-menopausal Bleeding
+    type: "service"
+  - details:
+      title: "Dermatology"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Melanoma
+        - Eczema
+        - Psoriasis
+        - Rashes
+        - Skin Infections
+        - Warts
+        - Acne
+        - Hair Loss
+        - Nail Disorders
+        - Rosacea
+    type: "service"
+  - details:
+      title: "Ear, Nose and Throat"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Ear Infection
+        - Balance Disorder
+        - Tinnitus
+        - Allergies
+        - Sinus Infections
+        - Voice Disorders
+    type: "service"
+  - details:
+      title: "Gastroenterology"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Acid Refulux
+        - Celiac Disease
+        - Cirrhosis
+        - Crohn's Disease
+        - Diverticulitis
+        - Diverticulosis
+        - Fecal Incontinence
+        - Gallstones
+        - GERD
+        - Hemmorrhoids
+        - Inflammatory Bowel Disease
+    type: "service"
+  - details:
+      title: "Podiatry"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit leo vitae nunc volutpat tristique at et lorem. Pellentesque non consectetur tellus, quis rhoncus odio. Duis consequat sem ac accumsan dictum. Aliquam rutrum non nibh vel commodo. Cras eleifend dapibus ultrices...."
+      related:
+        - Athlete's Foot
+        - Arthritis
+        - Bunions
+        - Corns
+        - Calluses
+        - Fractures
+        - Haglund's Deformity
+        - Hammer Toes
+        - Heel Spurs
+        - Inngrown Toennails
+    type: "service"
+  
+current: 4
+items:
+  pages:
+    1:
+      href: "#"
+    2:
+      href: "#"
+    3:
+      href: "#"
+    4:
+      href: "#"
+    5:
+      href: "#"
+  previous: true
+  next: true
+cta:
+  title: "Find a Provider"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
+  link:
+    url: "/"
+    text: "Find a Provider"
+    icon: "th-find-provider.svg"
+    variation: "right"

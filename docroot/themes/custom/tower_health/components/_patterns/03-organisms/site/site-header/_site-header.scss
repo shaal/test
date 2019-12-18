@@ -3,7 +3,7 @@
   @extend %clearfix;
   z-index: 99;
   position: relative;
-  
+
   @include breakpoint($bp3) {
     margin-bottom: 2em;
   }
@@ -25,10 +25,10 @@
   .toggle-expand {
     margin-left: auto;
   }
-  
+
   @include breakpoint($bp3) {
     flex-wrap: wrap;
-        
+
     .header-logo {
       padding-top: 1em;
       padding-bottom: 0;
@@ -36,18 +36,19 @@
       width: 30%;
     }
   }
-  
-  @include breakpoint($bp4) {
+
+  @include breakpoint($nav-breakpoint) {
     flex-wrap: nowrap;
-    
+  }
+
+  @include breakpoint($bp4) {
     .header-logo {
       max-width: 300px;
       width: 25%;
     }
   }
-  
+
   @include breakpoint($bp5) {
-    
     .header-logo {
       max-width: 325px;
       width: 30%;
@@ -57,125 +58,17 @@
 
 .header__right {
   display: flex;
-  
+
   @include breakpoint($bp3) {
     margin-left: auto;
     width: 100%;
     justify-content: flex-end;
   }
-  
+
   @include breakpoint($bp4) {
     max-width: 70%;
     width: auto;
     flex-grow: 1;
-  }
-}
-
-// Utility Menu Styles
-.utility {
-  order: 2;
-  
-  @include breakpoint($bp3) {
-    position: absolute;
-    top: 0;
-    right: 4.5em;
-    order: 0;
-  }
-}
-
-.utility-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-  @include breakpoint($bp3) {
-    display: block;
-  }
-}
-
-.utility-menu__item {
-  display: inline-block;
-  
-  @include breakpoint(0 899px) {
-    order: 2;
-  }
-}
-
-.utility-menu__link {
-  @include adjust-font-size-to($label, .9);
-  display: inline-block;
-  padding: 1em .5em;
-  margin-right: 1em;
-  font-weight: 600;
-  
-  &:link,
-  &:visited {
-    color: $primary-dark;
-    text-decoration: none;
-  }
-  
-  &:active,
-  &:hover,
-  &:focus {
-    color: $trust-aa;
-    text-decoration: underline;
-  }
-}
-
-.utility-menu__link--mytower {
-  color: transparent;
-  background: url('../pattern-lab/public/images/mytowerhealth-logo.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  
-  &:link,
-  &:visited {
-    color: transparent;
-  }
-  
-  &:active,
-  &:hover,
-  &:focus {
-    transform: scale(1.05);
-  }
-}
-
-.utility-menu__link--cta {
-  @extend %track-out;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: white;
-  background-color: $primary-dark;
-  padding: 1em 1em;
-  
-  &:link,
-  &:visited {
-    color: $white;
-  }
-  
-  &:active,
-  &:hover,
-  &:focus {
-    background-color: $trust-aa;
-    color: $white;
-    text-decoration: none;
-  }
-  
-  @include breakpoint(0 899px) {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-}
-
-.utility-menu__item--cta {
-  @include breakpoint(0 899px) {
-    order: 1;
-    width: 100%;
   }
 }
 
@@ -193,23 +86,31 @@
   z-index: 5;
   padding: 1em 2em 2em;
   border-top: 1px solid $trust-ltr;
-  
+
   .header__search.is-active & {
     display: block;
     visibility: visible;
   }
-  
+
   @include breakpoint($bp3) {
     top: 0;
     margin-top: 1em;
   }
-  
-  @include breakpoint($bp4) {
+
+  @include breakpoint($nav-breakpoint) {
     border-top: 4px solid $growth;
     margin-top: 0;
-    width: 70%;
+    width: 73%;
     left: auto;
     padding: 1em 2em 2em 0;
+  }
+
+  @include breakpoint($nav-breakpoint 1070px) {
+    top: 74px;
+  }
+
+  @include breakpoint(1070px) {
+    width: 70%;
   }
 }
 
@@ -234,46 +135,51 @@
   appearance: none;
   background-color: $white;
   padding: 1.5em 1em;
-  
+
   svg {
     height: 1.9em;
     width: 1.9em;
     fill: $trust-aa;
   }
-  
+
   &:active,
   &:hover,
   &:focus {
     outline: none;
-    
+
     svg {
       fill: $growth;
     }
   }
-  
+
   @include breakpoint($bp3) {
     position: absolute;
     right: 2em;
     top: 0;
     background-color: $trust-ltst;
-    padding: 1em 1.25em .75em 1em;
+    padding: .9em 1.25em .5em 1em;
     z-index: 20;
-    
+    border-radius: 0 0 $rd-brd-lg $rd-brd-lg;
+
     svg {
       height: 1.5em;
       width: 1.5em;
       fill: $primary-dark;
     }
-    
+
     &:active,
     &:hover,
     &:focus {
       background-color: $trust-aa;
-      
+
       svg {
         fill: $white;
       }
     }
+  }
+
+  @include breakpoint($bp4) {
+    padding: .9em 1.25em .5em 1em;
   }
 }
 
@@ -287,9 +193,128 @@
 
 .close-nav--mobile {
   order: 3;
-  
+
   @include breakpoint($bp3) {
     display: none;
     visibility: hidden;
+  }
+}
+
+// Utility Menu Styles
+.utility {
+  order: 2;
+
+  @include breakpoint($bp3) {
+    position: absolute;
+    top: 0;
+    right: 4.5em;
+    order: 0;
+  }
+}
+
+.utility-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include breakpoint($bp3) {
+    display: block;
+  }
+}
+
+.utility-menu__item {
+  display: inline-block;
+
+  @include breakpoint(0 899px) {
+    order: 2;
+  }
+}
+
+.utility-menu__link {
+  @include adjust-font-size-to($label, .9);
+  display: inline-block;
+  padding: 1em .5em;
+  margin-right: 1em;
+  font-weight: 600;
+
+  &:link,
+  &:visited {
+    color: $primary-dark;
+    text-decoration: none;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $trust-aa;
+    text-decoration: underline;
+  }
+}
+
+.utility-menu__link--mytower {
+  color: transparent;
+  background: url('../pattern-lab/public/images/mytowerhealth-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include breakpoint(0 899px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5em;
+  }
+
+  &:link,
+  &:visited {
+    color: transparent;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.utility-menu__link--cta {
+  @extend %track-out;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  background-color: $primary-dark;
+  padding: 1em 1em .75em;
+
+  &:link,
+  &:visited {
+    color: $white;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: $trust-aa;
+    color: $white;
+    text-decoration: none;
+  }
+
+  @include breakpoint(0 899px) {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  @include breakpoint($bp3) {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+.utility-menu__item--cta {
+  @include breakpoint(0 899px) {
+    order: 1;
+    width: 100%;
   }
 }

@@ -1,0 +1,25 @@
+uuid: 797f4ebc-cc24-43e6-a65d-7111ae8fd9f4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b195138f-471c-4d4b-9e69-56110649f82d'
+  module:
+    - block_content
+  theme:
+    - tower_health
+id: footer_legal_disclaimer
+theme: tower_health
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:b195138f-471c-4d4b-9e69-56110649f82d'
+settings:
+  id: 'block_content:b195138f-471c-4d4b-9e69-56110649f82d'
+  label: 'Footer legal disclaimer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,48 @@
+<div class="teaser js-section-animation">
+  <div class="teaser__image-container">
+    <div class="teaser__image">
+      <a href="{{ url }}"><img src="{% if provider.img %}{{provider.img.src}}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ provider.img.alt}}"></a>
+    </div>
+  </div>
+  <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
+
+  {% if provider.details.rating %}
+  <div class="teaser__rating">
+    {% include "@molecules/ratings-count/ratings-count.twig" with {
+      "rating": provider.details.rating
+    } %}
+  </div>
+  {% endif %}
+
+  <div class="teaser__content">
+    <div class="teaser__content__info">
+      <div class="teaser__section">
+        <h3 class="teaser-label">Specialties</h3>
+        {{ provider.details.specialties }}
+      </div>
+      <div class="teaser__section">
+        <h3 class="teaser-label">Clinical Areas of Focus</h3>
+        {{ provider.details.focus }}
+      </div>
+      <div class="teaser__section teaser__section--small">
+        <h3 class="teaser-label">Location</h3>
+        {{ provider.details.location }}
+      </div>
+      <div class="teaser__section teaser__section--small">
+        <h3 class="teaser-label">Languages</h3>
+        {{ provider.details.language }}
+      </div>
+    </div>
+    {% if provider.link %}
+    <div class="teaser__button">
+      {% include "@atoms/icon-button/icon-button.twig" with {
+        "url": provider.link.url,
+        "icon": provider.link.icon,
+        "text": provider.link.text,
+        "variation": "small",
+      } %}
+    </div>
+   {% endif %}
+  </div>
+
+</div>

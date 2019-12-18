@@ -61,6 +61,27 @@ You can refresh/reset your local Drupal site at any time. SSH into your VM and t
 
 Additional information on developing for Drupal within this environment is in [docs/general/drupal_development.md](docs/general/drupal_development.md).
 
+## Migrate Providers / Locations
+Directory data is stored on the productions server in the public files directory. These files are updated from TowerHealth via an internal SFTP job.
+You can pull down this data and run the migrations yourself by doing the following.
+
+Inside vagrant
+1. `vagrant ssh`
+1. `phing build`
+1. `exit`
+
+Outside vagrant
+1. Login in to Acquia and go to your account and the credentials tab.
+1. Follow the instructions to download the Drush 8 site aliases for all of your sites.
+1. Confirm that you can access the production site by running `drush @towerhealth.prod status`
+1. Go to the root of this project.
+1. Run the following:
+  1. `drush rsync @towerhealth.prod:files/directory  ./docroot/sites/default/files/directory/`
+
+Running migrations
+1. `vagrant ssh`
+1. `phing migrate`
+
 ## Deployment
 
 ``Run phing artifact.``
