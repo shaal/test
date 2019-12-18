@@ -1,6 +1,5 @@
 .card--sidebar {
   padding: 1.5em;
-  border-color: $growth;
   
   .card__title {
     @include adjust-font-size-to($sm-heading, 1.15);
