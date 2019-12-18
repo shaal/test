@@ -1,0 +1,21 @@
+uuid: 209aaace-800a-45eb-a5d1-3b0ebd296ce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_intro
+    - node.type.service
+  module:
+    - text
+id: node.service.field_service_intro
+field_name: field_service_intro
+entity_type: node
+bundle: service
+label: 'Short intro'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
