@@ -103,7 +103,7 @@ function tower_health_preprocess_node__profile(&$variables) {
         $address = $node->field_location_ref[$id]->entity;
         $locality = $address->field_location_address->locality;
         $administrative_area = $address->field_location_address->administrative_area;
-        $location = $locality . " " . $administrative_area;
+        $location = $locality . ", " . $administrative_area;
         if (!in_array($location, $locations)) {
           $locations[] = $location;
         }
