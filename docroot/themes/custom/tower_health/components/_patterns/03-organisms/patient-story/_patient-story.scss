@@ -1,0 +1,161 @@
+.patient-story {
+  margin: 2em 0;
+  background-color: $primary-dark;
+  
+  @include breakpoint(700px) {
+    margin: 4em 0;
+  }
+}
+
+.patient-story__container {
+  @include grid;
+  
+  @include breakpoint(700px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.patient-story__image {
+  width: 60%;
+  position: relative;
+  margin: -2em auto 0;
+  
+  img {
+    position: relative;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .objectfit & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  &::before {
+    content: ' ';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: $growth;
+    bottom: -10px;
+    left: -10px;
+  }
+  
+  @include breakpoint(700px) {
+    width: 40%;
+    margin-bottom: -2em;
+  }
+  
+  @include breakpoint($bp4) {
+    width: 30%;
+  }
+  
+  .patient-story--reverse & {
+    @include breakpoint(700px) {
+      order: 2;
+    }
+  }
+}
+
+.patient-story__content {
+  padding: 3em 0;
+  
+  @include breakpoint(700px) {
+    width: 60%;
+    padding: 3em 2em;
+    flex: 1 1 60%;
+  }
+  
+  @include breakpoint($bp4) {
+    width: 70%;
+    padding: 3em;
+    flex: 1 1 70%;
+  }
+  
+  .patient-story--reverse & {
+    @include breakpoint(700px) {
+      order: 1;
+    }
+  }
+}
+
+.patient-story__label {
+  @include adjust-font-size-to($label, .8);
+  @extend %track-out;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $white;
+  border-top: 4px solid $growth;
+  padding-top: .25em;
+}
+
+.patient-story__quote {
+  @include adjust-font-size-to($sm-heading, 1.15);
+  font-weight: 300;
+  margin: 1em 0;
+  padding: 0;
+  font-style: italic;
+  color: $white;
+}
+
+.patient-story__cta {
+  @include adjust-font-size-to($label, .8);
+  @extend %track-out;
+  text-transform: uppercase;
+  font-weight: 600;
+  
+  svg {
+    height: .75em;
+    width: .75em;
+    fill: $trust-ltst;
+  }
+  
+  &:link,
+  &:visited {
+    color: $trust-ltst;
+    text-decoration: none;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+.cssanimations {
+  .patient-story__image,
+  .patient-story__content {
+    opacity: 0;
+  }
+  
+  .patient-story.in-view {
+    &:not(.patient-story--reverse) .patient-story__image {
+      
+      @include breakpoint(700px) {
+        animation: fadeInLeftScale .65s ease-in-out forwards;
+        opacity: 1;
+      }
+    }
+
+    .patient-story__image {
+      animation: fadeInUp .65s ease-in-out .25s forwards;
+
+      @include breakpoint(700px) {
+        animation: fadeInRightScale .65s ease-in-out forwards;
+        opacity: 1;
+      }
+    }
+    
+    .patient-story__content {
+      animation: fadeInUp .65s ease .25s forwards;
+    }
+  }
+}

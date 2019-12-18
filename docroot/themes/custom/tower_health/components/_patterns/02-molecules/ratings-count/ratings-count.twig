@@ -18,15 +18,17 @@
   {% set rating_round = 'fourh' %}
 {% endif %}
 
+{% if icon is empty %}
+  {% set icon = "star.svg" %}
+{% endif %}
+
 <div class="ratings-count">
   {{ rating }} of 5
   <div class="ratings-count__stars ratings-count__stars--{{rating_round}}">
-    {% include 'star.svg' %}
-    {% include 'star.svg' %}
-    {% include 'star.svg' %}
-    {% include 'star.svg' %}
-    {% include 'star.svg' %}
+    {% include icon %}
+    {% include icon %}
+    {% include icon %}
+    {% include icon %}
+    {% include icon %}
   </div>
 </div>
-
-

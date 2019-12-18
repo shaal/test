@@ -1,0 +1,23 @@
+<div class="patient-story {% if type %}patient-story--{{type}}{% endif %} js-section-animation">
+  <div class="patient-story__container">
+    {% if image %}
+    <div class="patient-story__image">
+      {% if cta %}<a href="{{ cta.link }}">{% endif %}
+      <img src="{{ image.src }}" alt="{{ image.alt }}" />
+      {% if cta %}</a>{% endif %}
+    </div>
+    {% endif %}
+    <div class="patient-story__content">
+      {% if label %}
+      <span class="patient-story__label">{{ label }}</span>
+      {% endif %}
+      <blockquote  class="patient-story__quote">
+        {{ quote }}
+      </blockquote>
+      
+      {% if cta %}
+        <a class="patient-story__cta" href="{{cta.link}}">{{ cta.label }} {% include "@base/icons/arrow.svg" %}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

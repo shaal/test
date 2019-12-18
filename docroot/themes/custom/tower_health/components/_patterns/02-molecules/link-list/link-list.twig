@@ -1,4 +1,4 @@
-<div class="link-list js-section-animation">
+<div class="link-list {% if type %}link-list--{{type}} {% endif %}js-section-animation">
   <h2 class="link-list__title">{{ title }}</h2>
   <ul class="link-list__wrapper">
     {% for item in items %}

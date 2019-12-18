@@ -6,8 +6,8 @@ The CTA (Call to Action) Banner component contains two titles (one optional), an
 
 #### Variables
 ~~~
-title_1: text / required
-title_2: text / optional
+title_1: text / optional
+title_2: text / required
 subtitle: text / optional
 img:
   src: media / required

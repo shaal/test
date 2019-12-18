@@ -1,8 +1,18 @@
 ---
 el: ".card"
-title: "Card default variation"
+title: "Card"
 ---
-## Card
-_Title and subtext_
+#### Description
+The Card component has an optional image, title, optional description, and an optional link.
 
-A card
+#### Variables
+~~~
+image:
+  src: media / required
+  alt: text / required
+title: short text / required
+desc: short text / optional
+url:
+  link: href / optional
+  label: short text / optional
+~~~
