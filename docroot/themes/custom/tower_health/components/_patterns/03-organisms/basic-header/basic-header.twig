@@ -18,6 +18,7 @@
       <span class="basic-header__lede">{{ header.lede}}</span>
       {% endif %}
       
+      {# this link is used exclusively for the services listing page as an anchor link #}
       {% if header.link %}
         <a class="basic-header__link" href="{{ header.link.url }}">{{ header.link.label }}</a>
       {% endif %}
