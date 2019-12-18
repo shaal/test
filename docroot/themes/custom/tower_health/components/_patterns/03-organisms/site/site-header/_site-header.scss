@@ -159,7 +159,7 @@
     background-color: $trust-ltst;
     padding: .9em 1.25em .5em 1em;
     z-index: 20;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 $rd-brd-lg $rd-brd-lg;
 
     svg {
       height: 1.5em;

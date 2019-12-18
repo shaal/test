@@ -17,6 +17,10 @@
       <span class="basic-header__lede">{{ header.lede}}</span>
       {% endif %}
       
+      {% if header.link %}
+        <a class="basic-header__link" href="{{ header.link.url }}">{{ header.link.label }}</a>
+      {% endif %}
+      
       {% if header.form %}
         {% include "@organisms/listings/listing-search/listing-search.twig" with {
           label: header.form.label,

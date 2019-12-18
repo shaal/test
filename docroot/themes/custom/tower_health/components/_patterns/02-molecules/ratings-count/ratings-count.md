@@ -1,4 +1,5 @@
 ---
+el: ".service-tile"
 title: 'Ratings Count'
 ---
 #### Description

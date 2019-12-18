@@ -84,3 +84,18 @@
 .basic-header__lede {
   @include adjust-font-size-to($xs-heading, 1.1);
 }
+
+.basic-header__link {
+  @include adjust-font-size-to($label, .8);
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: .5em;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}

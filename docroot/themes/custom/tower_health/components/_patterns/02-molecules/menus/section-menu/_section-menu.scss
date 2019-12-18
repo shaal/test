@@ -1,6 +1,6 @@
 .section-toggle-expand {
   background-color: $primary-dark;
-  border-radius: 8px;
+  border-radius: $rd-brd-lg;
   width: 100%;
   padding: .5em 0;
   
@@ -112,7 +112,7 @@
 
 .section-nav {
   background-color: $trust-ltst;
-  border-radius: 5px;
+  border-radius: $rd-brd-sm;
   line-height: 1em;
   font-weight: 700;
 

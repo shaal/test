@@ -62,7 +62,7 @@
   right: 0;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 5px;
+  border-radius: $rd-brd-sm;
   
   display: flex;
   flex-direction: column;
@@ -77,7 +77,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border-radius: 5px;
+    border-radius: $rd-brd-sm;
     background: linear-gradient(to top, $primary-dark, rgba($primary-dark, .6));
   }
   
