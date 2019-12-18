@@ -50,7 +50,7 @@
 }
 
 .card__desc {
-  @include adjust-font-size-to($sm-text, .95);
+  @include adjust-font-size-to($sm-text, .9);
 }
 
 .card__cta {
