@@ -23,7 +23,8 @@
           align-items: stretch;
         }
         
-        .card__content {
+        .card--image .card__content,
+        .card--video .card__content {
           width: 70%;
         }
         

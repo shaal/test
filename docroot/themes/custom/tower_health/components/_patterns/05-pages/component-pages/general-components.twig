@@ -67,6 +67,15 @@
     {% include "@organisms/card-group/card-group--video.twig" with {
       cards: video_cards
     } %}
+    
+    {% include "@molecules/rich-text/rich-text.twig" with {
+      rich_text_full_width: true,
+      rich_text: paragraph_rich_text
+    } %}
+    
+    {% include "@organisms/card-group/card-group--article.twig" with {
+      cards: article_cards
+    } %}
 
   {% endblock %}
 {% endembed %}
