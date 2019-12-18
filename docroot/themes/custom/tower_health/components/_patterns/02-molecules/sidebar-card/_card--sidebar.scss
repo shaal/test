@@ -6,3 +6,12 @@
     @include adjust-font-size-to($sm-heading, 1.15);
   }
 }
+
+.cssanimations {
+  .card.card--sidebar.in-view {
+    
+    @include breakpoint($bp2) {
+      animation: fadeInRight .5s ease .25s forwards;
+    }
+  }
+}
