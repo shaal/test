@@ -1,0 +1,188 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "Parent"
+    2:
+      url: "#"
+      text: "This Page"
+  title: Page Title Goes Here
+  lede: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe aspernatur quam, debitis deserunt distinctio voluptatem corporis.
+  image:
+    url: '../../images/AdobeStock_194014777_Preview.jpeg'
+  cta: null
+rich_text:
+  -
+    paragraph_content:
+      "Optional Rich Text Body Area. Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis <a href='#'>nostrud exercitation ullamco</a> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  -
+    paragraph_content:
+      "Lorem <em>ipsum dolor sit amet</em>, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
+sidebarCard:
+  title: Dolor sit amet
+  desc: 'This is an optional Sidebar Call to Action Card. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+  cta:
+    url: '#'
+    label: 'Read the Story'
+cards:
+  - type: null
+    image: 
+      src: "../../images/AdobeStock_197996622_Preview.jpeg"
+      alt: "Alt Text"
+    title:  Lorem ipsum dolor sit amet
+    desc: 'This is a card group component. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: Call to Action
+  - type: null
+    image: 
+      src: "../../images/AdobeStock_228148798_Preview.jpeg"
+      alt: "Alt Text"
+    title:  Consectetur Adipisicing
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: Read the Story
+  - type: null
+    image: 
+      src: "../../images/AdobeStock_239096192_Preview.jpeg"
+      alt: "Alt Text"
+    title:  Accusantium quis, ducimus
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: Call to Action
+text_callout:
+  title: "Lorem ipsum dolor sit amet"
+  text: "This is a text teaser banner component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
+  button:
+    text: "Call to Action"
+    url: "/"
+image_callout:
+  orientation: reverse
+  img:
+    src: "../../images/locations/stchris.jpg"
+    alt: "Alternative Text"
+  title: "Tower Health and Drexel University to Assume Ownership of St. Christopher's Hospital for Children"
+  text: "Tower Health and Drexel University have entered into an agreement to acquire St. Christopher's Hospital for Children, ensuring that the health care provider will continue its role as a vital resource for families in North Philadelphia and the region following its sale in bankruptcy court"
+  links:
+    - url: "/"
+      text: "About the Acquisition"
+paragraph_rich_text:
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "This is an Example of Rich Text Paragraph."
+  -
+    paragraph_content:
+      "Optional Rich Text paragraph. Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis <a href='#'>nostrud exercitation ullamco</a> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  -
+    paragraph_content:
+      "Lorem <em>ipsum dolor sit amet</em>, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
+
+boxes:
+  - title: "Lorem ipsum dolor sit amet"
+    text: "This is a box links component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
+    link:
+      text: "More About This"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_193543982_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Lorem ipsum dolor sit amet"
+    text: "This is a box links component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
+    link:
+      text: "More About This"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_271545252_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Lorem ipsum dolor sit amet"
+    text: "This is a box links component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
+    link:
+      text: "More About This"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_239096192_Preview.jpeg"
+      alt: "Alternative text"
+  - title: "Lorem ipsum dolor sit amet"
+    text: "This is a box links component. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
+    link:
+      text: "More About This"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_204599156_Preview.jpeg"
+      alt: "Alternative text"
+story:
+  image:
+    src: "../../images/AdobeStock_202001962_Preview.jpeg"
+    alt: alt text
+  quote: '"The therapists are absolutely committed to making it work. They would go above and beyond to make Page comfortable. They would even involve visiting family and friends in her therapy sessions."'
+  cta:
+    link: '#'
+    label: Read Page's Story
+recognitionItems:
+  - image:
+      src: "../../images/award-1.jpg"
+      alt: "Healthgrades America's 100 best hospitals, 2017-2019"
+  - title: '‘A’ Hospital Safety Grade'
+    desc: 'The Leapfrog Group has awarded Tower Health an ‘A’ Hospital Safety Grade, their highest award, for Fall 2019.'
+  - image:
+      src: "../../images/award-2.png"
+      alt: "US News & World Report, Best National Hospital - Pulmonology"
+file: 
+  url: '#'
+  image:
+    src: '../../images/2019-Tower-CHNA-01.png'
+    alt: 'Alternative Text'
+  title: 'Tower Health Community Health Needs Assessment'
+  desc: 'This is an optional file download cta component. Community Health Needs Assessments (CHNA) are required of tax-exempt hospitals as a result of the Patient Protection and Affordable Care Act. These assessments, done every three years, create an important opportunity to improve the health of communities. Working alongside community stakeholders, we can and will use the CHNA data to develop programs that meets the needs of our community.'
+  downloadLabel: Download the PDF
+video_cards:
+  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    thumbnail:
+      src: ../../images/video-placeholder-1.png
+      alt: Advanced Stroke Care Video
+    doctor: Karen Hoerst, MD
+    title: Advanced Stroke Care
+    desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
+  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    thumbnail:
+      src: ../../images/video-placeholder-1.png
+      alt: Advanced Stroke Care Video
+    doctor: Karen Hoerst, MD
+    title: Advanced Stroke Care
+    desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
+  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    thumbnail:
+      src: ../../images/video-placeholder-1.png
+      alt: Advanced Stroke Care Video
+    doctor: Karen Hoerst, MD
+    title: Advanced Stroke Care
+    desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
+  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    thumbnail:
+      src: ../../images/video-placeholder-1.png
+      alt: Advanced Stroke Care Video
+    doctor: Karen Hoerst, MD
+    title: Advanced Stroke Care
+    desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
+  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    thumbnail:
+      src: ../../images/video-placeholder-1.png
+      alt: Advanced Stroke Care Video
+    doctor: Karen Hoerst, MD
+    title: Advanced Stroke Care
+    desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
+  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    thumbnail:
+      src: ../../images/video-placeholder-1.png
+      alt: Advanced Stroke Care Video
+    doctor: Karen Hoerst, MD
+    title: Advanced Stroke Care
+    desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.

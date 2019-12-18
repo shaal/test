@@ -16,11 +16,11 @@
       
       &:nth-child(1):nth-last-child(1) {
         flex: 0 1 100%;
-        flex-direction: row;
-        align-items: stretch;
         
-        .card__image-link {
-          width: 30%;
+        &.card--simple,
+        .card__link {
+          flex-direction: row;
+          align-items: stretch;
         }
         
         .card__content {
@@ -28,7 +28,8 @@
         }
         
         .card__image {
-          height: 100%;
+          height: auto;
+          width: 30%;
         }
       }
     }
