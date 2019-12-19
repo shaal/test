@@ -17,7 +17,7 @@ header:
 form_sections:
   - section_items:
       -
-        width: oneFifth
+        width: oneSixth
         title: Specialty
         type: select
         chosen: true
@@ -36,7 +36,7 @@ form_sections:
           - title: Breast Health
           - title: Gastroenterology
       -
-        width: oneFifth
+        width: oneSixth
         title: Gender
         type: select
         chosen: true
@@ -44,7 +44,7 @@ form_sections:
           - title: Male
           - title: Female
       -
-        width: oneFifth
+        width: oneSixth
         title: Languages
         type: select
         chosen: true
@@ -56,7 +56,17 @@ form_sections:
           - title: French
           - title: Arabic
       -
-        width: oneFifth
+        width: oneSixth
+        title: Insurance
+        type: select
+        chosen: true
+        multiple: true
+        children:
+          - title: Aetna
+          - title: Humana
+          - title: Blue Cross Blue Shield
+      -
+        width: oneSixth
         title: Zip Code
         type: text
         placeholder: '000000'
@@ -64,7 +74,7 @@ form_sections:
           label: Use my location
           url: '#'
       -
-        width: oneFifth
+        width: oneSixth
         title: Distance
         type: select
         children:
