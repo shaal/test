@@ -11,59 +11,37 @@ breadcrumb:
       text: "Location Name"
 hero:
   type: "Hospital"
-  name: "Reading Hospital"
-  address_1: "420 S. Fifth Avenue"
-  address_2: "West Reading, PA 19611"
+  name: "Brandywine Valley Cardiology"
+  address_1: "471 Pequea Avenue"
+  address_2: "Honey Brook, PA 19344"
   directions:
     link: "/"
     icon: "th-find-hospital.svg"
-    text: "Directions"
+    text: "Map & Directions"
     variation: "small"
   phones:
     - label: Main
       numbers:
-        - number: 484-628-8000
-    - label: Appointments
+        - number: 610-384-2211
+    - label: Fax
       numbers:
-        - number: 484-628-4357
-          label: 484-628-HELP (4357)
-        - number: 866-988-4357
+        - number: 610-384-2340
   img:
-    src: "../../images/locations/Reading-Hospital.jpg"
+    src: "../../images/locations/brandywine-cardiology.png"
     alt: "Alternative Text"
   classes: "growth top-left"
-omw_callout:
-  title: "Heading to our Emergency Room? Let us know your are on your way"
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra dui quis."
-  button:
-    text: "Save my Place in Line"
-    url: "/"
 link_list:
   title: "Services We Offer"
   items:
-    - text: "Cancer Care"
+    - text: "Cardiology"
       link: "/"
-    - text: "Weight Management"
+    - text: "Heart & Vascular"
       link: "/"
-    - text: Heart & Vascular Care
+    - text: Cardiac Rehabilitation
       link: "/"
-    - text: "Diagnostic Testing"
+    - text: "Heart Risk Assessment"
       link: "/"
-    - text: "Joint & Bone Care"
-      link: "/"
-    - text: "Rehabilitation & Physical Therapy"
-      link: "/"
-    - text: "Emergency & Trauma"
-      link: "/"
-    - text: "Urgent Care"
-      link: "/"
-    - text: "Primary Care"
-      link: "/"
-    - text: "Women's Health"
-      link: "/"
-    - text: "Transplant"
-      link: "/"
-    - text: "Pediatrics"
+    - text: "Electrophysiology"
       link: "/"
 hours:
   label: "Hours"
@@ -83,39 +61,6 @@ hours:
       hours: "8 a.m. - 8 p.m."
     - title: "Sunday"
       hours: "Closed"
-boxes:
-  - title: "McGlinn Cancer Institute"
-    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
-    link:
-      text: "About the Institute"
-      url: "/"
-    img:
-      src: "../../images/AdobeStock_193543982_Preview.jpeg"
-      alt: "Alternative text"
-  - title: "Tower Health Transplant Institute"
-    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care."
-    link:
-      text: "About the Institute"
-      url: "/"
-    img:
-      src: "../../images/AdobeStock_271545252_Preview.jpeg"
-      alt: "Alternative text"
-  - title: "Miller Regional Heart Center"
-    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
-    link:
-      text: "About the Center"
-      url: "/"
-    img:
-      src: "../../images/AdobeStock_239096192_Preview.jpeg"
-      alt: "Alternative text"
-  - title: "Weight Loss Surgery & Wellness Center"
-    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
-    link:
-      text: "About the Center"
-      url: "/"
-    img:
-      src: "../../images/AdobeStock_204599156_Preview.jpeg"
-      alt: "Alternative text"
 image_callout:
   orientation: reverse
   img:
@@ -126,9 +71,3 @@ image_callout:
   links:
     - url: "/"
       text: "About the Acquisition"
-text_callout:
-  title: "Insurance & Payment Information"
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
-  button:
-    text: "Insurances Accepted"
-    url: "/"

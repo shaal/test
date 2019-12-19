@@ -38,6 +38,12 @@
   {% endblock %}
 
   {% block full_content %}
+    {% include "@organisms/omw-callout/omw-callout.twig" with {
+      title: omw_callout.title,
+        text: omw_callout.text,
+        button: omw_callout.button,
+    } %}
+    
     {% include "@organisms/box-links/box-links.twig" with {
         boxes: boxes,
       } %}

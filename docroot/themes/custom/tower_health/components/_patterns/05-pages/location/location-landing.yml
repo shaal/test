@@ -17,7 +17,7 @@ hero:
   directions:
     link: "/"
     icon: "th-find-hospital.svg"
-    text: "Directions"
+    text: "Map & Directions"
     variation: "small"
   phones:
     - label: Main
@@ -154,3 +154,9 @@ image_callout:
   links:
     - url: "/"
       text: "About the Acquisition"
+omw_callout:
+  title: "Heading to our Emergency Room? Let us know your are on your way"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra dui quis."
+  button:
+    text: "Save my Place in Line"
+    url: "/"
