@@ -19,10 +19,12 @@
   display: none;
   visibility: hidden;
 
-  &.drupal,
   &.is-active {
     display: block;
     visibility: visible;
+  }
+  
+  &.drupal.is-active {
     width: calc(100% - 175px - 1em) !important;
 
     @include breakpoint($bp3) {
