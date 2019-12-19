@@ -15,7 +15,7 @@
   
   @include breakpoint($bp3) {
     padding-top: 3em;
-    width: 60%;
+    width: 70%;
     border-top: 6px solid $trust-ltst;
     
     &::before {
@@ -51,8 +51,8 @@
 
   @include breakpoint($bp3) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     width: 30%;
-    margin-left: auto;
+    padding-left: 1em;
   }
 }
