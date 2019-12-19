@@ -1,7 +1,7 @@
 {% if rich_text_full_width == true %}
 <div class="grid grid--sm-centered">
-  <div>
 {% endif %}
+  <div class="text-wrap">
 {% for item in rich_text %}
   {% if item.type == "blockquote" %}
     {% include "@atoms/02-text/text/02-blockquote.twig" with {
@@ -43,7 +43,7 @@
     }%}
   {% endif %}
 {% endfor %}
-{% if rich_text_full_width == true %}
   </div>
+{% if rich_text_full_width == true %}
 </div>
 {% endif %}
