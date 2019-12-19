@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_location_ref
     - field.field.node.service.field_medical_specialties_ref
+    - field.field.node.service.field_ref_core_service
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_flex
     - field.field.node.service.field_service_intro
@@ -53,6 +54,7 @@ third_party_settings:
     group_core_service:
       children:
         - field_service_core_bool
+        - field_ref_core_service
       parent_name: group_vertical_tabs
       weight: 7
       format_type: tab
@@ -139,6 +141,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_ref_core_service:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_service_core_bool:
     weight: 9
     settings: {  }

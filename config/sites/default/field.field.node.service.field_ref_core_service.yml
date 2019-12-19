@@ -1,0 +1,29 @@
+uuid: ad644f77-b13c-47e5-8b6b-5f49ab2c084a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_core_service
+    - node.type.service
+    - taxonomy.vocabulary.core_service
+id: node.service.field_ref_core_service
+field_name: field_ref_core_service
+entity_type: node
+bundle: service
+label: 'Core Service'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      core_service: core_service
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
