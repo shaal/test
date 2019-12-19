@@ -61,6 +61,10 @@ hours:
       hours: "8 a.m. - 8 p.m."
     - title: "Sunday"
       hours: "Closed"
+cta_list:
+  - text: "Providers at this Location"
+    url: "/"
+    icon: "th-find-provider.svg"
 image_callout:
   orientation: reverse
   img:

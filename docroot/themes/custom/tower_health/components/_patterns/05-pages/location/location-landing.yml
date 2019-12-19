@@ -62,8 +62,6 @@ link_list:
 section_items:
   - title: "About"
     url: "/"
-  - title: "Our Doctors"
-    url: "/"
   - title: "Patients & Families"
     url: "/"
     below:
@@ -112,6 +110,10 @@ section_items:
     url: "/"
   - title: "Events & Classes"
     url: "/"
+cta_list:
+  - text: "Providers at this Location"
+    url: "/"
+    icon: "th-find-provider.svg"
 boxes:
   - title: "McGlinn Cancer Institute"
     text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"

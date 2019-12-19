@@ -25,6 +25,9 @@
   {% endblock %}
 
   {% block top_page_sidebar %}
+    {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
+      cta_list: cta_list
+    }%}
     {% include "@molecules/hours-block/hours-block.twig" with {
         label: hours.label,
         hours: hours.hours,

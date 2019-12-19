@@ -56,7 +56,7 @@ rich_text:
 cta_list:
   - text: "Find a Provider"
     url: "/"
-    icon: "th-my-tower.svg"
+    icon: "th-find-provider.svg"
   - text: "Find a Location"
     url: "/"
     icon: "th-find-hospital.svg"
