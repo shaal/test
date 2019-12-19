@@ -1,7 +1,7 @@
 <div class="box-links js-section-animation">
   <div class="box-links-wrapper">
     {% for box in boxes %}
-      <a class="box-link" href="{{ link.url }}">
+      <a class="box-link {% if box.color %}box-link--{{box.color}}{% endif %}" href="{{ link.url }}">
         <div class="box-link__background" style='background-image: url("{{ box.img.src }}");'></div>
         
         <div class="box-link__content">
@@ -11,7 +11,6 @@
           </div>
           <span class="box-link__cta">{{ box.link.text }}</span>
         </div>
-        
       </a>
     {% endfor %}
   </div>

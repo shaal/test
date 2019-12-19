@@ -58,7 +58,43 @@
     
     .box-link__content {
       @include trans;
-      border-color: $growth;
+      border-color: $trust;
+    }
+    
+    &.box-link--healing {
+      .box-link__content {
+        border-color: $healing;
+      }
+    }
+    
+    &.box-link--uplifting {
+      .box-link__content {
+        border-color: $uplifting;
+      }
+    }
+    
+    &.box-link--wisdom {
+      .box-link__content {
+        border-color: $wisdom;
+      }
+    }
+    
+    &.box-link--tranquil {
+      .box-link__content {
+        border-color: $tranquil;
+      }
+    }
+    
+    &.box-link--energy {
+      .box-link__content {
+        border-color: $energy;
+      }
+    }
+    
+    &.box-link--growth {
+      .box-link__content {
+        border-color: $growth;
+      }
     }
   }
 }
@@ -102,8 +138,56 @@
   border-bottom: 4px solid $growth;
   position: relative;
   
+  .box-link--healing & {
+    border-color: $healing;
+  }
+  
+  .box-link--uplifting & {
+    border-color: $uplifting;
+  }
+  
+  .box-link--wisdom & {
+    border-color: $wisdom;
+  }
+  
+  .box-link--tranquil & {
+    border-color: $tranquil;
+  }
+  
+  .box-link--energy & {
+    border-color: $energy;
+  }
+  
+  .box-link--growth & {
+    border-color: $growth;
+  }
+  
   @include breakpoint($bp3) {
     border-color: $trust;
+    
+    .box-link--healing & {
+      border-color: $healing;
+    }
+    
+    .box-link--uplifting & {
+      border-color: $uplifting;
+    }
+    
+    .box-link--wisdom & {
+      border-color: $wisdom;
+    }
+    
+    .box-link--tranquil & {
+      border-color: $tranquil;
+    }
+    
+    .box-link--energy & {
+      border-color: $energy;
+    }
+    
+    .box-link--growth & {
+      border-color: $growth;
+    }
   }
 }
 
@@ -129,7 +213,7 @@
 .box-link__cta {
   @include adjust-font-size-to($label, .9);
   @extend %track-out;
-  color: $growth-med;
+  color: $trust-ltr;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: .5em;
@@ -139,6 +223,30 @@
     @include trans;
     height: 0;
     opacity: 0;
+  }
+  
+  .box-link--healing & {
+    color: $healing-ltr;
+  }
+  
+  .box-link--uplifting & {
+    color: $uplifting-ltr;
+  }
+  
+  .box-link--wisdom & {
+    color: $wisdom-ltr;
+  }
+  
+  .box-link--tranquil & {
+    color: $tranquil-ltr;
+  }
+  
+  .box-link--energy & {
+    color: $energy-ltr;
+  }
+  
+  .box-link--growth & {
+    color: $growth-ltr;
   }
 }
 
