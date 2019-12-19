@@ -1,8 +1,8 @@
-uuid: 8f3adc69-990d-4dcb-9680-9251e4618431
+uuid: b4927243-12a3-40a8-8e45-b9fca1986792
 langcode: en
 status: true
 dependencies: {  }
-name: 'Core Service'
-vid: core_service
+name: 'Core Services'
+vid: core_services
 description: 'A taxonomy of services to allow a user to search the site and find medical offerings from Tower Health.'
 weight: 0

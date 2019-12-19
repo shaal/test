@@ -1,17 +1,17 @@
-uuid: ad644f77-b13c-47e5-8b6b-5f49ab2c084a
+uuid: 8b364588-e1da-44d4-9460-742760fbe2db
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_ref_core_service
+    - field.storage.node.field_service_core_ref
     - node.type.service
-    - taxonomy.vocabulary.core_service
-id: node.service.field_ref_core_service
-field_name: field_ref_core_service
+    - taxonomy.vocabulary.core_services
+id: node.service.field_service_core_ref
+field_name: field_service_core_ref
 entity_type: node
 bundle: service
 label: 'Core Service'
-description: ''
+description: 'These are the services that are offered by Tower Health.'
 required: true
 translatable: false
 default_value: {  }
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      core_service: core_service
+      core_services: core_services
     sort:
       field: name
       direction: asc
