@@ -25,13 +25,14 @@
   {% endblock %}
 
   {% block top_page_sidebar %}
+    {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
+      cta_list: cta_list
+    }%}
+    
     {% include "@molecules/menus/section-menu/section-menu.twig" with {
         items: section_items,
       } %}
       
-    {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
-      cta_list: cta_list
-    }%}
   {% endblock %}
 
   {% block page_content %}
