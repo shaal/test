@@ -237,7 +237,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
     content: '';
     display: block;
     position: absolute;
-    background: url(/pattern-lab/public/images/th-mark.svg);
+    background: url(../pattern-lab/public/images/th-mark.svg);
     background-size: 80%;
     background-position: 100% 20%;
     background-repeat: no-repeat;
