@@ -82,6 +82,7 @@
   z-index: 5;
   padding: 1em 2em 2em;
   border-top: 1px solid $trust-ltr;
+  box-shadow: $shadow;
 
   .header__search.is-active & {
     display: block;
@@ -96,9 +97,11 @@
   @include breakpoint($nav-breakpoint) {
     border-top: 4px solid $growth;
     margin-top: 0;
-    width: 73%;
+    width: 69%;
+    margin-right: 2em;
     left: auto;
-    padding: 1em 2em 2em 0;
+    padding: 1em 2em 2em;
+    border-radius: 0 0 $rd-brd-lg $rd-brd-lg;
   }
 
   @include breakpoint($nav-breakpoint 1070px) {
@@ -106,7 +109,7 @@
   }
 
   @include breakpoint(1070px) {
-    width: 70%;
+    width: 67%;
   }
 }
 
