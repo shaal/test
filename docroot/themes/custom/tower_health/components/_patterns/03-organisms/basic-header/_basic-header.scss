@@ -231,8 +231,15 @@
   }
 }
 
+.basic-header__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .basic-header__lede {
   @include adjust-font-size-to($xs-heading, 1.1);
+  display: block;
+  margin-top: .5em;
 }
 
 .basic-header__cta {
