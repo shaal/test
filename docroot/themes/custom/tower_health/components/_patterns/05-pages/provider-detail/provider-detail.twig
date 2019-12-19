@@ -1,7 +1,7 @@
 {% embed "@templates/_default.twig" with {
   page_header: TRUE,
-  top_sidebar: FALSE,
-  bottom_sidebar: TRUE,
+  top_sidebar: TRUE,
+  bottom_sidebar: FALSE,
   full_width: false,
   page_background: true
 }%}
@@ -9,6 +9,35 @@
   {% block page_header %}
     
     {% include "@organisms/provider-header/provider-header.twig" %}
+  {% endblock %}
+  
+  {% block top_page_sidebar %}
+    <div class="sidebar--growth js-section-animation">
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: language,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: contact,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: insurance,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: employed,
+        'detail.sidebar': 'true'
+      } %}
+      
+      {% include "@molecules/provider-details/provider-details.twig" with {
+        detail: affiliation,
+        'detail.sidebar': 'true'
+      } %}
+    </div>
   {% endblock %}
   
   {% block page_content %}
@@ -39,32 +68,4 @@
     
   {% endblock %}
   
-  {% block bottom_page_sidebar %}
-    <div class="sidebar--growth js-section-animation">
-      {% include "@molecules/provider-details/provider-details.twig" with {
-        detail: language,
-        'detail.sidebar': 'true'
-      } %}
-      
-      {% include "@molecules/provider-details/provider-details.twig" with {
-        detail: contact,
-        'detail.sidebar': 'true'
-      } %}
-      
-      {% include "@molecules/provider-details/provider-details.twig" with {
-        detail: insurance,
-        'detail.sidebar': 'true'
-      } %}
-      
-      {% include "@molecules/provider-details/provider-details.twig" with {
-        detail: employed,
-        'detail.sidebar': 'true'
-      } %}
-      
-      {% include "@molecules/provider-details/provider-details.twig" with {
-        detail: affiliation,
-        'detail.sidebar': 'true'
-      } %}
-    </div>
-  {% endblock %}
 {% endembed %}
