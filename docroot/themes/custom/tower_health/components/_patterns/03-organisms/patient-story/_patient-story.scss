@@ -2,8 +2,8 @@
   margin: 2em 0;
   background-color: $primary-dark;
   
-  @include breakpoint(700px) {
-    margin: 4em 0;
+  @include breakpoint($bp2) {
+    margin: 5em 0;
   }
 }
 
