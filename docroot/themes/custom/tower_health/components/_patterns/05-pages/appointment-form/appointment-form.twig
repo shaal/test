@@ -19,7 +19,7 @@
 
     {% if doctor_reference %}
       {% include "@molecules/banner-message/banner-message.twig" with {
-        banner_text: "You are currently requesting an appointment with " ~ doctor_reference,
+        banner_text: "You are currently requesting an appointment with <strong>" ~ doctor_reference ~ "</strong>",
         banner_type: 'secondary'
       } %}
     {% endif %}
