@@ -121,6 +121,8 @@
     height: auto;
     visibility: visible;
     overflow: visible;
+    padding-bottom: 1em;
+    padding-top: 1em;
 
     @include breakpoint($bp3) {
       visibility: visible;
@@ -190,7 +192,7 @@
   display: flex;
   align-items: stretch;
   flex-direction: column;
-  margin: 1em;
+  margin: 0 1em 1em;
 
   .autocomplete-container {
     width: 100%;
@@ -245,4 +247,9 @@
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: .5em;
+  padding: 0 1em;
+  
+  @include breakpoint($bp3) {
+    padding: 0;
+  }
 }
