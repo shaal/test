@@ -20,13 +20,17 @@
       <div class="teaser__section">
         {% if provider.details.specialties[0] %}
           <h3 class="teaser-label">Specialties</h3>
-          {{ provider.details.specialties }}
+          {% include "@atoms/fields/_multi-field-with-comma.twig" with {
+            "items": provider.details.specialties,
+          } %}
         {% endif %}
       </div>
       <div class="teaser__section">
         {% if provider.details.focus[0] %}
           <h3 class="teaser-label">Clinical Areas of Focus</h3>
-          {{ provider.details.focus }}
+          {% include "@atoms/fields/_multi-field-with-comma.twig" with {
+            "items": provider.details.focus,
+          } %}
         {% endif %}
       </div>
       <div class="teaser__section teaser__section--small">
@@ -38,7 +42,9 @@
       <div class="teaser__section teaser__section--small">
         {% if provider.details.language[0] %}
           <h3 class="teaser-label">Languages</h3>
-          {{ provider.details.language }}
+          {% include "@atoms/fields/_multi-field-with-comma.twig" with {
+            "items": provider.details.language,
+          } %}
         {% endif %}
       </div>
     </div>

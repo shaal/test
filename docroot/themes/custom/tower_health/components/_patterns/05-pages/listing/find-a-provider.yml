@@ -100,10 +100,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: "Oral and Maxillofacial Surgery"
-      focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      specialties: 
+        - "Oral and Maxillofacial Surgery"
+      focus: 
+        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '4.2'
     type: "provider"
   - img:
@@ -116,10 +119,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: "Pediatrics"
-      focus: "Child Development, Preventative Medicine"
+      specialties: 
+        - "Pediatrics"
+      focus: 
+        - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '3.25'
     type: "provider"
   - img: null
@@ -130,10 +136,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties: "Plastic Surgery"
-      focus: "Wound healing, Hyperbaric Medicine"
+      specialties: 
+        - "Plastic Surgery"
+      focus: 
+        - "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '2'
     type: "provider"
   - img:
@@ -146,10 +155,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: "Oral and Maxillofacial Surgery"
-      focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      specialties: 
+        - "Oral and Maxillofacial Surgery"
+      focus: 
+        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: null
     type: "provider"
   - img:
@@ -162,10 +174,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: "Pediatrics"
-      focus: "Child Development, Preventative Medicine"
+      specialties: 
+        - "Pediatrics"
+      focus: 
+        - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '1.75'
     type: "provider"
   - img: null
@@ -176,10 +191,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties: "Plastic Surgery"
-      focus: "Wound healing, Hyperbaric Medicine"
+      specialties: 
+        - "Plastic Surgery"
+      focus: 
+        - "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '4.2'
     type: "provider"
   - img:
@@ -192,10 +210,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: "Oral and Maxillofacial Surgery"
-      focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      specialties: 
+        - "Oral and Maxillofacial Surgery"
+      focus: 
+        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '5'
     type: "provider"
   - img:
@@ -208,10 +229,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: "Pediatrics"
-      focus: "Child Development, Preventative Medicine"
+      specialties: 
+        - "Pediatrics"
+      focus: 
+        - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '3'
     type: "provider"
   - img: null
@@ -222,10 +246,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties: "Plastic Surgery"
-      focus: "Wound healing, Hyperbaric Medicine"
+      specialties: 
+        - "Plastic Surgery"
+      focus: 
+        - "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '4.2'
     type: "provider"
   - img:
@@ -238,10 +265,13 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: "Pediatrics"
-      focus: "Child Development, Preventative Medicine"
+      specialties: 
+        - "Pediatrics"
+      focus: 
+        - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '1'
     type: "provider"
 current: 4
