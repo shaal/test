@@ -11,6 +11,7 @@ use Drupal\Core\Url;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
 use Drupal\core\entity\EntityInterface;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Adds a body class by role.
@@ -110,6 +111,50 @@ function tower_health_preprocess_node__profile(&$variables) {
       }
       if ($location) {
         $variables['location'] = implode(", ", $locations);
+      }
+    }
+
+    // Preprocess specialties.
+    if ($node->hasField('field_medical_specialties_ref') && !$node->get('field_medical_specialties_ref')->isEmpty()) {
+      $specialty_refs = $node->get('field_medical_specialties_ref')->getValue();
+      $specialties = [];
+      foreach ($specialty_refs as $id => $specialty) {
+        $entity = $node->field_medical_specialties_ref[$id]->entity;
+        $tid = $entity->tid->value;
+        $term = Term::load($tid);
+        $name = $term->getName();
+        array_push($specialties, $name);
+      }
+      if ($specialties) {
+        $variables['specialties'] = $specialties;
+      }
+    }
+
+    // Preprocess focus.
+    if ($node->hasField('field_area_interest_ref') && !$node->get('field_area_interest_ref')->isEmpty()) {
+      $focus_refs = $node->get('field_area_interest_ref')->getValue();
+      $focuses = [];
+      foreach ($focus_refs as $id => $focus) {
+        $entity = $node->field_area_interest_ref[$id]->entity;
+        $tid = $entity->tid->value;
+        $term = Term::load($tid);
+        $name = $term->getName();
+        array_push($focuses, $name);
+      }
+      if ($focuses) {
+        $variables['focuses'] = $focuses;
+      }
+    }
+
+    // Preprocess languages.
+    if ($node->hasField('field_profile_languages') && !$node->get('field_profile_languages')->isEmpty()) {
+      $languages = $node->get('field_profile_languages')->getValue();
+      $language_names = [];
+      foreach ($languages as $language) {
+        array_push($language_names, $language['value']);
+      }
+      if ($language_names) {
+        $variables['languages'] = $language_names;
       }
     }
 
