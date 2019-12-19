@@ -54,7 +54,8 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
     @include bp3 {
       display: grid;
-      grid-gap: $gutter;
+      grid-column-gap: $gutter;
+      grid-row-gap: 0;
       grid-template-columns: 6fr 0 30%;
       grid-auto-rows: auto 1fr;
 
