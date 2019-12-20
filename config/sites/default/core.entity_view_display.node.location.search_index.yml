@@ -131,5 +131,6 @@ hidden:
   content_moderation_control: true
   field_location_id: true
   field_location_image: true
+  field_metatags: true
   links: true
   search_api_excerpt: true
