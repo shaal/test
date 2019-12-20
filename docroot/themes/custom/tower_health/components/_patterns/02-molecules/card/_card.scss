@@ -138,9 +138,7 @@
   &:active,
   &:hover,
   &:focus {
-    
-    .card--video__image {      
-      
+    .card--video__image {
       &::after {
         transition: all .5s ease;
         opacity: 1;
