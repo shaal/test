@@ -48,10 +48,12 @@
           {% block top_page_sidebar %}{% endblock %}
         </aside>
       {% endif %}
-
+      
+      {% if page_content %}
       <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
         {% block page_content %}{% endblock %}
       </div>
+     {% endif %}
 
       {% if bottom_sidebar %}
         <aside class="bottom-sidebar" role="complementary">
