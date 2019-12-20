@@ -1,0 +1,14 @@
+<div class="card card--article js-section-animation">
+  <a class="card__link" href="{{ url }}">
+    <div class='card__content'>
+      <h2 class="card__title">{{ title }}</h2>
+      {% if date %}
+      <span class="card__meta">{{ date }}</span>
+      {% endif %}
+      <div class="card__desc">
+        {{ desc }}
+      </div>
+      <span class="card__cta">Read the Story</span>
+    </div>
+  </a>
+</div>

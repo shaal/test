@@ -1,0 +1,10 @@
+<section class="card-group grid">
+  {% for card in cards %}
+    {% include "@molecules/article-card/article-card.twig" with {
+      url: card.url,
+      date: card.date,
+      title: card.title,
+      desc: card.desc
+    } %}
+  {% endfor %}
+</section>
