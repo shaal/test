@@ -18,23 +18,23 @@
 (function ($) { // REMOVE IF DRUPAL.
 
   // Use context instead of document IF DRUPAL.
-  var review_toggle = $('.review-listing__toggle');
-  var reviews = $('.review-listing');
-  var review_drawer = $('.review-listing__list');
+  var review_toggle = $('.review-listing__read-more');
+  var review = $('.review');
+  var review_drawer = $('.review__drawer');
 
   // Mobile Review Show/Hide.
   function openReviews() {
-    reviews.addClass('is-active');
+    review.addClass('is-active');
     review_drawer.attr("aria-expanded", "true");
   }
   
   function closeReviews() {
-    reviews.removeClass('is-active');
+    review.removeClass('is-active');
     review_drawer.attr("aria-expanded", "false");
   }
     
   review_toggle.on('click', function() {
-    if ( reviews.hasClass('is-active') ) {
+    if ( review.hasClass('is-active') ) {
       closeReviews();
     } else {
       openReviews();

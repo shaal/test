@@ -4,6 +4,26 @@
   .ratings-count {
     margin-bottom: 1em;
   }
+
+  .read-less {
+    display: none;
+    visibility: hidden;
+  }
+
+  &.is-active {
+    .read-less {
+      color: blue;
+      display: inline;
+      visibility: visible;
+    }
+    .read-more {
+      display: none;
+      visibility: hidden;
+    }
+    .review__drawer.is-closed {
+      max-height: none;
+    }
+  }
   
   @include breakpoint($bp3) {
     display: flex;
@@ -28,4 +48,23 @@
   display: block;
   margin-top: .5em;
   font-style: italic;
+}
+
+.review__drawer {
+  &.is-closed {
+    max-height: 125px;
+    overflow: hidden;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 25px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, #F5F5F5 0%, #F5F5F5 10%, rgba(#f5f5f5, 0) 100% );
+    }
+  }
 }
