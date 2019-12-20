@@ -58,43 +58,7 @@
     
     .box-link__content {
       @include trans;
-      border-color: $trust;
-    }
-    
-    &.box-link--healing {
-      .box-link__content {
-        border-color: $healing;
-      }
-    }
-    
-    &.box-link--uplifting {
-      .box-link__content {
-        border-color: $uplifting;
-      }
-    }
-    
-    &.box-link--wisdom {
-      .box-link__content {
-        border-color: $wisdom;
-      }
-    }
-    
-    &.box-link--tranquil {
-      .box-link__content {
-        border-color: $tranquil;
-      }
-    }
-    
-    &.box-link--energy {
-      .box-link__content {
-        border-color: $energy;
-      }
-    }
-    
-    &.box-link--growth {
-      .box-link__content {
-        border-color: $growth;
-      }
+      transform: scale(1.05);
     }
   }
 }
@@ -135,7 +99,7 @@
   flex-direction: column;
   padding: 2em 0 0 2em;
   margin-right: 2em;
-  border-bottom: 4px solid $growth;
+  border-bottom: 4px solid $trust;
   position: relative;
   
   .box-link--healing & {
