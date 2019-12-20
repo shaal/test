@@ -1,5 +1,5 @@
 .basic-header {
-  margin: 1em 0 2em;
+  margin: 1em 0 0;
   
   &.basic-header--list {
     margin-bottom: 0;
@@ -8,16 +8,17 @@
 
 .basic-header--secondary {
   background-color: rgba($trust-ltst, .4);
+  margin-bottom: 2em;
 }
 
 .basic-header--img {
   position: relative;
   background-position: center;
   background-size: cover;
-  margin-bottom: 250px;
+  margin-bottom: 225px;
   
   &.basic-header--cta {
-    margin-bottom: 300px;
+    margin-bottom: 250px;
   }
   
   @include breakpoint($bp2) {
