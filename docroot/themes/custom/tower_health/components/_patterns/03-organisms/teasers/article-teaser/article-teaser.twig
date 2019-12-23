@@ -5,8 +5,10 @@
   <div class="teaser__content--simple">
     <span class="article-date">{{ article.details.date }}</span>
     <div class="teaser__content__desc">{{ article.details.text }}</div>
+    {% if article.details.tags %}
     {% for item in article.details.tags %}
       <span class="teaser-tag">{{ item }}</span>
     {% endfor %}
+    {% endif %}
   </div>
 </div>

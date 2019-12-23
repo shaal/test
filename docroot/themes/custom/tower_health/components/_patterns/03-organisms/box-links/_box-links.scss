@@ -1,7 +1,7 @@
 .box-links {
   position: relative;
   background: linear-gradient(to top, transparent, transparent 10%, $trust-ltst 10%, $trust-ltst 90%, transparent 90%, transparent);
-  margin: 4em 0;
+  margin: 2em 0;
 }
 
 .box-links-wrapper {
@@ -14,18 +14,28 @@
 .box-link {
   width: 100%;
   margin-bottom: 1em;
-  min-height: 350px;
+  min-height: 300px;
   position: relative;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2em;
+  
+  text-decoration: none;
+  
   @include trans;
 
   @include breakpoint($bp3) {
-    width: 48%;
-    min-height: 400px;
+    width: 49%;
+    min-height: 350px;
   }
   
   &:hover,
   &:focus,
   &:active {
+    text-decoration: none;
+    
     .box-link__background {
       @include trans;
       transform: scale(1.05);
@@ -43,12 +53,48 @@
     }
     
     .box-link__text {
-      margin-bottom: 2em;
+      margin-bottom: 1em;
     }
     
     .box-link__content {
       @include trans;
-      border-color: $growth;
+      border-color: $trust;
+    }
+    
+    &.box-link--healing {
+      .box-link__content {
+        border-color: $healing;
+      }
+    }
+    
+    &.box-link--uplifting {
+      .box-link__content {
+        border-color: $uplifting;
+      }
+    }
+    
+    &.box-link--wisdom {
+      .box-link__content {
+        border-color: $wisdom;
+      }
+    }
+    
+    &.box-link--tranquil {
+      .box-link__content {
+        border-color: $tranquil;
+      }
+    }
+    
+    &.box-link--energy {
+      .box-link__content {
+        border-color: $energy;
+      }
+    }
+    
+    &.box-link--growth {
+      .box-link__content {
+        border-color: $growth;
+      }
     }
   }
 }
@@ -63,11 +109,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: $rd-brd-sm;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 2em;
   
   &::before {
     content: '';
@@ -89,6 +130,7 @@
 }
 
 .box-link__content {
+  @include trans;
   display: flex;
   flex-direction: column;
   padding: 2em 0 0 2em;
@@ -96,8 +138,56 @@
   border-bottom: 4px solid $growth;
   position: relative;
   
+  .box-link--healing & {
+    border-color: $healing;
+  }
+  
+  .box-link--uplifting & {
+    border-color: $uplifting;
+  }
+  
+  .box-link--wisdom & {
+    border-color: $wisdom;
+  }
+  
+  .box-link--tranquil & {
+    border-color: $tranquil;
+  }
+  
+  .box-link--energy & {
+    border-color: $energy;
+  }
+  
+  .box-link--growth & {
+    border-color: $growth;
+  }
+  
   @include breakpoint($bp3) {
     border-color: $trust;
+    
+    .box-link--healing & {
+      border-color: $healing;
+    }
+    
+    .box-link--uplifting & {
+      border-color: $uplifting;
+    }
+    
+    .box-link--wisdom & {
+      border-color: $wisdom;
+    }
+    
+    .box-link--tranquil & {
+      border-color: $tranquil;
+    }
+    
+    .box-link--energy & {
+      border-color: $energy;
+    }
+    
+    .box-link--growth & {
+      border-color: $growth;
+    }
   }
 }
 
@@ -110,7 +200,7 @@
 
 .box-link__text {
   color: $white;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   
   @include breakpoint($bp3) {
     @include trans;
@@ -123,7 +213,7 @@
 .box-link__cta {
   @include adjust-font-size-to($label, .9);
   @extend %track-out;
-  color: $growth-med;
+  color: $trust-ltr;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: .5em;
@@ -133,6 +223,30 @@
     @include trans;
     height: 0;
     opacity: 0;
+  }
+  
+  .box-link--healing & {
+    color: $healing-ltr;
+  }
+  
+  .box-link--uplifting & {
+    color: $uplifting-ltr;
+  }
+  
+  .box-link--wisdom & {
+    color: $wisdom-ltr;
+  }
+  
+  .box-link--tranquil & {
+    color: $tranquil-ltr;
+  }
+  
+  .box-link--energy & {
+    color: $energy-ltr;
+  }
+  
+  .box-link--growth & {
+    color: $growth-ltr;
   }
 }
 
