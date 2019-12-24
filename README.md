@@ -125,5 +125,8 @@ The styleguide is built using [Emulsify](https://www.drupal.org/project/emulsify
 * [Performance testing](docs/performance_testing.md)
 
 
+## Notes
+    * chmod -R 777 docroot/sites/default/files
+
 ----
 Copyright 2019 Palantir.net, Inc.
