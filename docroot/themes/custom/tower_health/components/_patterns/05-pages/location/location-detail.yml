@@ -126,9 +126,3 @@ image_callout:
   links:
     - url: "/"
       text: "About the Acquisition"
-text_callout:
-  title: "Insurance & Payment Information"
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
-  button:
-    text: "Insurances Accepted"
-    url: "/"

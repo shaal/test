@@ -1,12 +1,68 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: $white;
   box-shadow: $shadow;
   border-radius: 0 0 $rd-brd-lg $rd-brd-lg;
   margin-bottom: 1em;
   border-top: 6px solid $trust;
+  
+  &.card--simple {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  &.card--simple.card--image,
+  &.card--simple.card--video {
+    justify-content: flex-start;
+  }
+}
+
+.card__link {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  
+  .card--image &,
+  .card--video & {
+    justify-content: flex-start;
+  }
+  
+  .card__title,
+  .card__desc,
+  .card__meta {
+    color: $gray-dark;
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    
+    .card__title {
+      color: $gray-dark;
+      text-decoration: underline;
+    }
+    
+    .card__desc,
+    .card__meta {
+      color: $gray-dark;
+      text-decoration: none;
+    }
+    
+    .card__cta {
+      text-decoration: underline;
+    }
+    
+    .card__image {
+      img {
+        transition: all 1s ease;
+        transform: scale(1.05);
+      }
+    }
+  }
 }
 
 .card__image {
@@ -15,6 +71,7 @@
   overflow: hidden;
   
   img {
+    transition: all .5s ease;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -33,7 +90,7 @@
 .card__title {
   @include adjust-font-size-to($md-heading, 1.25);
   margin-top: 0;
-  margin-bottom: .25em;
+  margin-bottom: 0;
   
   a:link,
   a:visited {
@@ -49,8 +106,16 @@
   }
 }
 
+.card__meta {
+  @include adjust-font-size-to($label, .9);
+  display: block;
+  margin-bottom: .25em;
+  font-style: italic;
+}
+
 .card__desc {
-  @include adjust-font-size-to($sm-text, .95);
+  @include adjust-font-size-to($sm-text, .9);
+  margin-top: .25em;
 }
 
 .card__cta {
@@ -60,6 +125,63 @@
   text-decoration: none;
 }
 
+// article cards
+.card--article {
+  border-color: $primary-dark;
+}
+
+// video cards
+.card--video {
+  text-decoration: none;
+  border-top: 6px solid $growth;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    
+    .card--video__image {      
+      
+      &::after {
+        transition: all .5s ease;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.card--video__image {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: url(/pattern-lab/public/images/play.svg);
+    background-size: 70px 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .75;
+    transition: all .5s ease;
+  }
+}
+
+// sidebar cards
+.card--sidebar {
+  padding: 1.5em;
+  
+  .card__title {
+    @include adjust-font-size-to($sm-heading, 1.15);
+  }
+}
+
+// animations
 .cssanimations {
   .card {
     opacity: 0;
@@ -68,4 +190,12 @@
   .card.in-view {
     animation: fadeInUp .5s ease .25s forwards;
   }
+  
+  .card.card--sidebar.in-view {
+    
+    @include breakpoint($bp2) {
+      animation: fadeInRight .5s ease .25s forwards;
+    }
+  }
 }
+
