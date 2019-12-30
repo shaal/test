@@ -8,8 +8,7 @@
   margin-left: .5em;
   
   svg {
-    height: 1.5em;
-    width: 1.5em;
+    height: 19px;
     
     .star-half-1,
     .star-half-2 {
@@ -20,7 +19,7 @@
   &--half {
     svg:nth-of-type(1) {
       .star-half-1 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -29,7 +28,7 @@
     svg:nth-of-type(1) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -38,13 +37,13 @@
     svg:nth-of-type(1) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
     
     svg:nth-of-type(2) {
       .star-half-1 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -54,7 +53,7 @@
     svg:nth-of-type(2) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -64,13 +63,13 @@
     svg:nth-of-type(2) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
     
     svg:nth-of-type(3) {
       .star-half-1 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -81,7 +80,7 @@
     svg:nth-of-type(3) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -92,13 +91,13 @@
     svg:nth-of-type(3) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
     
     svg:nth-of-type(4) {
       .star-half-1 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -110,7 +109,7 @@
     svg:nth-of-type(4) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -122,13 +121,13 @@
     svg:nth-of-type(4) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
     
     svg:nth-of-type(5) {
       .star-half-1 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }
@@ -141,7 +140,7 @@
     svg:nth-of-type(5) {
       .star-half-1,
       .star-half-2 {
-        fill: $uplifting;
+        fill: $ratings;
       }
     }
   }

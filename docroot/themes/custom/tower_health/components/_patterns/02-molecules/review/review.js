@@ -18,28 +18,56 @@
 (function ($) { // REMOVE IF DRUPAL.
 
   // Use context instead of document IF DRUPAL.
-  var review_toggle = $('.review-listing__read-more');
-  var review = $('.review');
-  var review_drawer = $('.review__drawer');
 
-  // Mobile Review Show/Hide.
-  function openReviews() {
-    review.addClass('is-active');
-    review_drawer.attr("aria-expanded", "true");
-  }
-  
-  function closeReviews() {
-    review.removeClass('is-active');
-    review_drawer.attr("aria-expanded", "false");
-  }
-    
-  review_toggle.on('click', function() {
-    if ( review.hasClass('is-active') ) {
-      closeReviews();
-    } else {
-      openReviews();
-    }
-  });
+    var showChar = 250;
+    var ellipsestext = "...";
+    var moretext = "Read More";
+    var lesstext = "Read Less";
+    var morelink = ".review-more-link";
+    $('.more').each(function() {
+      var content = $(this).html();
+      var c = content.substr(0, showChar);
+      var h = content.substr(showChar-1, content.length - showChar);
+      var html = c + '&nbsp;<span class="more-ellipses">'+ellipsestext+'</span>&nbsp;<span class="more-content"><span>' + h + '</span><a href="" class="review-more-link">'+moretext+'</a></span>';
+
+      $(this).html(html);
+
+    });
+
+    $(morelink).click(function(){
+      //when the BUTTON is clicked or open, this is activated
+      if($(this).hasClass("less")) {
+        //Removes "less" from href class="more-link less"
+        $(this).removeClass("less");
+        //Changes text back to "Read More"
+        $(this).html(moretext);
+        $(this).parent().parent().attr("aria-expanded", "false");
+      } else {
+        //Adds class to href class="more-link less"
+        $(this).addClass("less");
+        $(this).html(lesstext);
+        $(this).parent().parent().attr("aria-expanded", "true");
+      }
+      //This triggers the ellipses swap
+      $(this).parent().prev().toggle();
+      $(this).prev().toggle();
+      return false;
+    });
+
+    $(".review__drawer").click(function(){
+      if($(this).find(morelink).hasClass("less")) {
+        $(this).find(morelink).removeClass("less");
+        $(this).find(morelink).html(moretext);
+        $(this).attr("aria-expanded", "false");
+      } else {
+        $(this).find(morelink).addClass("less");
+        $(this).find(morelink).html(lesstext);
+        $(this).attr("aria-expanded", "true");
+      }
+      $(this).children(".more-ellipses").toggle();
+      $(this).children(".more-content").children("span").toggle();
+      return false;
+    });
 
 })(jQuery); // REMOVE IF DRUPAL.
 

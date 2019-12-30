@@ -16,10 +16,12 @@
       display: inline;
       visibility: visible;
     }
+
     .read-more {
       display: none;
       visibility: hidden;
     }
+
     .review__drawer.is-closed {
       max-height: none;
     }
@@ -55,6 +57,7 @@
     max-height: 125px;
     overflow: hidden;
     position: relative;
+
     &::after {
       content: '';
       display: block;
@@ -64,7 +67,28 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, #F5F5F5 0%, #F5F5F5 10%, rgba(#f5f5f5, 0) 100% );
+      background: linear-gradient(to top, #f5f5f5 0%, #f5f5f5 10%, rgba(#f5f5f5, 0) 100%);
     }
   }
+}
+
+.review.test:focus-within {
+  border: thin solid black;
+}
+
+.review-more-link {
+  padding-left: 3px;
+
+  &:focus {
+    content: '';
+  }
+}
+
+a.more-link {
+  text-decoration: none;
+  outline: none;
+}
+
+.more-content span {
+  display: none;
 }
