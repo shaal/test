@@ -1,5 +1,5 @@
 .basic-header {
-  margin: 1em 0 2em;
+  margin: 1em 0 0;
   
   &.basic-header--list {
     margin-bottom: 0;
@@ -8,16 +8,17 @@
 
 .basic-header--secondary {
   background-color: rgba($trust-ltst, .4);
+  margin-bottom: 2em;
 }
 
 .basic-header--img {
   position: relative;
   background-position: center;
   background-size: cover;
-  margin-bottom: 250px;
+  margin-bottom: 175px;
   
   &.basic-header--cta {
-    margin-bottom: 300px;
+    margin-bottom: 250px;
   }
   
   @include breakpoint($bp2) {
@@ -159,7 +160,7 @@
     padding: 2em 2em 2em 0;
     border-radius: 0 $rd-brd-lg $rd-brd-lg 0;
     margin-top: auto;
-    bottom: -200px;
+    bottom: -150px;
     
     &::before {
       position: absolute;
@@ -231,8 +232,15 @@
   }
 }
 
+.basic-header__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .basic-header__lede {
   @include adjust-font-size-to($xs-heading, 1.1);
+  display: block;
+  margin-top: .5em;
 }
 
 .basic-header__cta {

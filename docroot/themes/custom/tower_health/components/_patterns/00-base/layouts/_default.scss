@@ -196,12 +196,13 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 .sidebar--growth {
   background-color: $growth-ltst;
   padding: 1.5em 0 1.5em 1.5em;
-  margin-bottom: 0;
+  margin-bottom: 2em;
   position: relative;
   border-radius: $rd-brd-lg;
   
   @include breakpoint($bp3) {
     border-radius: $rd-brd-lg 0 0 $rd-brd-lg;
+    margin-bottom: 0;
   }
   
   &::after {
@@ -238,7 +239,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
     content: '';
     display: block;
     position: absolute;
-    background: url(/pattern-lab/public/images/th-mark.svg);
+    background: url(../pattern-lab/public/images/th-mark.svg);
     background-size: 80%;
     background-position: 100% 20%;
     background-repeat: no-repeat;

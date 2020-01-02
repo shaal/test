@@ -2,7 +2,8 @@
   page_header: TRUE,
   top_sidebar: TRUE,
   full_content: TRUE,
-  full_width: false
+  full_width: false,
+  page_content: TRUE
 } %}
 
   {% block page_header %}
@@ -25,9 +26,14 @@
   {% endblock %}
 
   {% block top_page_sidebar %}
+    {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
+      cta_list: cta_list
+    }%}
+    
     {% include "@molecules/menus/section-menu/section-menu.twig" with {
         items: section_items,
       } %}
+      
   {% endblock %}
 
   {% block page_content %}
@@ -38,6 +44,12 @@
   {% endblock %}
 
   {% block full_content %}
+    {% include "@organisms/omw-callout/omw-callout.twig" with {
+      title: omw_callout.title,
+        text: omw_callout.text,
+        button: omw_callout.button,
+    } %}
+    
     {% include "@organisms/box-links/box-links.twig" with {
         boxes: boxes,
       } %}
