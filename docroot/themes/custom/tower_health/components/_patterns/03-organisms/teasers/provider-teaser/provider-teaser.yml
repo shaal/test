@@ -3,7 +3,7 @@ provider:
     src: "../../images/people/Roland-Donald.jpg"
     alt: "Alternative Text"
   link:
-    url: "/"
+    href: "/"
     text: "Request an Appointment"
     icon: "th-cal.svg"
   details:

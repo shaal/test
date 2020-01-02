@@ -1,0 +1,132 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "Conditions & Services"
+    3:
+      text: "3rd Level"
+  title: Women's Health
+  lede: From puberty to menopause and beyond, you’ll find sensitive, expert care for women at Tower Health. Partner with compassionate caregivers who understand and address your evolving needs.
+  image:
+    url: '../../images/AdobeStock_254696350_Preview.jpeg'
+  cta:
+    button:
+      label: Request an Appointment
+      url: "#"
+      icon: 'th-cal.svg'
+    text: or call
+    link:
+      url: "#"
+      label: "484-628-HELP"
+section_items:
+  - title: "Sub-item One"
+    url: "/"
+  - title: "Sub-item Two"
+    url: "/"
+  - title: "Sub-item Three"
+    url: "/"
+  - title: "Sub-item Four"
+    url: "/"
+  - title: "Sub-item Five"
+    url: "/"
+  - title: "Sub-item Six"
+    url: "/"
+rich_text:
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "Collaborative care for your evolving needs." 
+  -
+    paragraph_content:
+      "Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis <a href='#'>nostrud exercitation ullamco</a> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  -
+    type: heading
+    heading_level:
+      3
+    heading:
+      "A Team Approach to Care"
+  -
+    paragraph_content:
+      "Lorem <em>ipsum dolor sit amet</em>, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
+cta_list:
+  - text: "Find a Provider"
+    url: "/"
+    icon: "th-my-tower.svg"
+  - text: "Find a Location"
+    url: "/"
+    icon: "th-find-hospital.svg"
+link_list:
+  type: secondary
+  title: "Our Services"
+  items:
+    - text: "Breast health"
+      link: "#"
+    - text: "Gynecology"
+      link: "/"
+    - text: Midwifery
+      link: "/"
+    - text: "Osteoporosis & Bone Health"
+      link: "/"
+    - text: "Pregnancy & Birth"
+      link: "/"
+    - text: "Urogynecology"
+      link: "/"
+    - text: "Fertility Care"
+      link: "/" 
+sidebar_label: Related Services
+sidebar_items:
+  - name: Urgent Care
+    link: '#'
+  - name: Emergency Care
+    link: '#'
+  - name: Family Medicine
+    link: '#'
+  - name: Reconstructive Surgery
+    link: '#' 
+cards:
+  - type: null
+    image: null
+    title:  Community Outreach Clinic
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: About the Clinic
+  - type: null
+    image: null
+    title:  Beginnings Maternity Center
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: About the Center
+story:
+  image:
+    src: "../../images/AdobeStock_202001962_Preview.jpeg"
+    alt: alt text
+  quote: '"The therapists are absolutely committed to making it work. They would go above and beyond to make Page comfortable. They would even involve visiting family and friends in her therapy sessions."'
+  cta:
+    link: '#'
+    label: Read Page's Story
+recognitionItems:
+  - image:
+      src: "../../images/award-1.jpg"
+      alt: "Healthgrades America's 100 best hospitals, 2017-2019"
+  - title: '‘A’ Hospital Safety Grade'
+    desc: 'The Leapfrog Group has awarded Tower Health an ‘A’ Hospital Safety Grade, their highest award, for Fall 2019.'
+  - image:
+      src: "../../images/award-2.png"
+      alt: "US News & World Report, Best National Hospital - Pulmonology"
+image_callout:
+  orientation: reverse
+  img:
+    src: "../../images/stroke-award.jpg"
+    alt: "Alternative Text"
+  title: "2019 Get with the Guidelines Stroke Gold Plus Award"
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur asperiores ratione dignissimos qui esse nesciunt, tempore aut, deserunt distinctio eligendi odit placeat veniam nostrum id autem beatae natus ab! Repudiandae."
+  links:
+    - url: "/"
+      text: "Our Guidelines"

@@ -29,7 +29,7 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 
 ## Getting Started
 
-1. Clone the project from github: `git clone https://github.com/palantirnet/towerhealth.git`
+1. Clone the project from github: `git clone git@github.com:palantirnet/towerhealth.git`
 1. From inside the project root, run:
 
   ```
@@ -124,6 +124,9 @@ The styleguide is built using [Emulsify](https://www.drupal.org/project/emulsify
 * [Performance Budget](https://docs.google.com/spreadsheets/d/1pKr3cJxcpQ6R88b-w2oBWSqCAs1-klD_HS_lpcu4yug/edit#gid=1700686844)
 * [Performance testing](docs/performance_testing.md)
 
+
+## Notes
+    * chmod -R 777 docroot/sites/default/files
 
 ----
 Copyright 2019 Palantir.net, Inc.

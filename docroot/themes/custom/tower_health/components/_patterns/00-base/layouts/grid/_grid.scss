@@ -10,6 +10,10 @@
   @include grid;
 }
 
+.grid--sm-centered {
+  max-width: 1200px;
+}
+
 %grid-container,
 .grid-container {
   max-width: 1500px;

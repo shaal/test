@@ -422,10 +422,7 @@ content:
   field_rating_overall:
     weight: 31
     settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+      placeholder: ''
     third_party_settings: {  }
     type: readonly_field_widget
     region: content

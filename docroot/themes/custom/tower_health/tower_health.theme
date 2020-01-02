@@ -6,6 +6,8 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
 use Drupal\core\entity\EntityInterface;
@@ -128,6 +130,65 @@ function tower_health_preprocess_node__location(&$variables) {
 
     if ($node->hasField('field_location_fax') && !$node->get('field_location_fax')->isEmpty()) {
       $variables['fax'] = $node->field_location_fax->value;
+    }
+  }
+}
+
+/**
+ * Provide variables for provider teaser.
+ */
+function tower_health_preprocess_node__profile(&$variables) {
+  $node = $variables['node'];
+
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+  $variables['href'] = Url::fromUri('internal:/');
+  $variables['icon_path'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+
+  if ($node instanceof NodeInterface) {
+    // Preprocess address.
+    if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
+      $location_refs = $node->get('field_location_ref')->getValue();
+      $locations = [];
+      foreach ($location_refs as $id => $location) {
+        $address = $node->field_location_ref[$id]->entity;
+        $locality = $address->field_location_address->locality;
+        $administrative_area = $address->field_location_address->administrative_area;
+        $location = $locality . ", " . $administrative_area;
+        if (!in_array($location, $locations)) {
+          $locations[] = $location;
+        }
+      }
+      if ($location) {
+        $variables['location'] = implode(", ", $locations);
+      }
+    }
+
+    // Preprocess image.
+    if ($node->field_profile_image->entity) {
+      $variables['src'] = file_create_url($node->field_profile_image->entity->field_media_image->entity->uri->value);
+      $variables['alt'] = $node->field_profile_image->entity->field_media_image->entity->alt;
+    }
+    else {
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
+    }
+
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+      $media = $node->field_profile_image->entity;
+      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+        $file = $media->field_media_image->entity;
+        if ($file instanceof EntityInterface) {
+          $url = $file->uri->value;
+          $image = ImageStyle::load('teaser_image')->buildUrl($url);
+          $variables['src'] = $image;
+          $variables['alt'] = $media->field_media_image->alt;
+        }
+      }
+    }
+    else {
+      // Fallback if no image uploaded.
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
     }
   }
 }

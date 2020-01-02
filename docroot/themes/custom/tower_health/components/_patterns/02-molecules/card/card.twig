@@ -1,0 +1,23 @@
+<div class="card{% if card.type %} card--{{card.type}}{% endif %}{% if card.image %} card--image{% endif %} js-section-animation {% if card.url.link == null %}card--simple{% endif %}" >
+  {% if card.url.link %}<a class="card__link" href="{{ card.url.link }}">{% endif %}
+  {% if card.image %}
+  <div class="card__image">
+    <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" />
+  </div>
+  {% endif %}
+  <div class="card__content">
+    
+    <h2 class="card__title">{{ card.title }}</h2>
+    
+    {% if card.desc %}
+    <div class="card__desc">
+      {{ card.desc }}
+    </div>
+    {% endif %}
+    
+    {% if card.url.link %}
+      <span class="card__cta">{{ card.url.label }}</span>
+    {% endif %}
+  </div>
+  {% if card.url.link %}</a>{% endif %}
+</div>

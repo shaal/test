@@ -37,11 +37,9 @@
         {% endif %}
       </div>
       
-      {% if accepting_patients == 'true' %}
       <div class="provider-header__cta js-section-animation">
-        <h2 class="provider-header__cta__label">Request an Appointment</h2>
         {% include "@atoms/icon-button/icon-button.twig" with {
-          text: "Make an Appointment Online",
+          text: appt_label,
           url: appt_url,
           icon: "th-cal.svg"
         } %}
@@ -49,7 +47,6 @@
         or call <a class="provider-header__cta__link" href="tel+1{{appt_phone.number}}">{{ appt_phone.label }}</a>
         </span>
       </div>
-      {% endif %}
       
     </div>
     
