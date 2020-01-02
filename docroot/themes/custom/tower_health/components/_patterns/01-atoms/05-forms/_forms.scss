@@ -31,7 +31,7 @@
 
 %label,
 label {
-  @include adjust-font-size-to($label);
+  @include adjust-font-size-to($label, .7);
   font-weight: 500;
   color: $primary-dark;
   display: block;

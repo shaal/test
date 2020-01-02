@@ -3,6 +3,7 @@
   flex-direction: column;
   position: relative;
   width: 100%;
+  margin: 1em 0;
   
   @include breakpoint($bp2 899px) {
     flex-direction: row;
@@ -10,6 +11,10 @@
     
     .icon-button {
       width: 43%;
+      
+      &:nth-child(1):nth-last-child(1) {
+        width: 100%;
+      }
     }
   }
 

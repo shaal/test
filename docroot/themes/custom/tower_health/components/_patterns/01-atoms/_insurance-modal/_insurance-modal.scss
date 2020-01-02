@@ -1,0 +1,24 @@
+.modal--insurances__title {
+  @include adjust-font-size-to($sm-heading, 1.1);
+  @extend %track-out;
+  margin-top: 0;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  border-bottom: 4px solid $trust;
+  text-transform: uppercase;
+  color: $primary-dark;
+}
+
+.modal--insurances__list {
+  @include adjust-font-size-to($sm-text, .9);
+  margin: 0;
+  
+  @include breakpoint($bp3) {
+    column-count: 2;
+    column-gap: 4em;
+    
+    li {
+      break-inside: avoid;
+    }
+  }
+}

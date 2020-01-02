@@ -48,6 +48,13 @@
   {% set sidebar = TRUE %}
 {% endif %}
 
+{% if page.content %}
+  {% set content = page.content|render %}
+  {% if content %}
+    {% set page_content = TRUE %}
+  {% endif %}
+{% endif %}
+
 {% extends "@templates/_default.twig" %}
   {% block site_header %}
     {% if page.header %}
@@ -71,7 +78,7 @@
   {% endblock %}
   
   {% block page_content %}
-    {{ page.content }}
+    {{ content }}
   {% endblock %}
   
   {% block bottom_sidebar %}

@@ -42,10 +42,13 @@ teasers:
       variation: "small"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: "Oral and Maxillofacial Surgery"
-      focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      specialties: 
+        - "Oral and Maxillofacial Surgery"
+      focus: 
+        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '4.2'
     type: "provider"
   - details:
@@ -65,9 +68,10 @@ teasers:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
       variation: "small"
     type: location
@@ -86,7 +90,7 @@ teasers:
       fax: "484-555-5556"
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
       variation: "small"
     type: location
@@ -107,10 +111,13 @@ teasers:
       variation: "small"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: "Pediatrics"
-      focus: "Child Development, Preventative Medicine"
+      specialties: 
+        - "Pediatrics"
+      focus: 
+        - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '5'
     type: "provider"
   - img:
@@ -123,10 +130,13 @@ teasers:
       variation: "small"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: "Oral and Maxillofacial Surgery"
-      focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      specialties: 
+        - "Oral and Maxillofacial Surgery"
+      focus: 
+        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: "English"
+      language: 
+        - "English"
       rating: '4.2'
     type: "provider"
   - details:
@@ -148,7 +158,7 @@ teasers:
       fax: "484-555-5556"
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
       variation: "small"
     type: location
