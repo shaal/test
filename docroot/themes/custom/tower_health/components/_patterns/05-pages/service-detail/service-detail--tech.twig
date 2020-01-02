@@ -1,8 +1,8 @@
 {% embed "@templates/_default.twig" with {
   page_header: TRUE,
   top_sidebar: TRUE,
-  bottom_sidebar: TRUE,
-  full_content: true,
+  bottom_sidebar: FALSE,
+  full_content: FALSE,
   full_width: false,
   page_content: TRUE
 }%}
@@ -27,29 +27,8 @@
     {% include "@molecules/rich-text/rich-text.twig" %}
   {% endblock %}
   
-  {% block bottom_page_sidebar %}
-    <div class="sidebar--growth js-section-animation">
-      {% include "@molecules/sidebar-list/sidebar-list.twig" %}
-    </div>
-  {% endblock %}
-  
   {% block full_content %}
-    {% include "@organisms/card-group/card-group.twig" %}
-    
-    {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
-      orientation: image_callout.orientation,
-      img: image_callout.img,
-      title: image_callout.title,
-      text: image_callout.text,
-      links: image_callout.links,
-    } %}
-    
-    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
-      "title": cta.title,
-      "text": cta.text,
-      "link": cta.link
-    } %}
-    
+
   {% endblock %}
   
 {% endembed %}
