@@ -24,43 +24,53 @@
     var moretext = "Read More";
     var lesstext = "Read Less";
     var morelink = ".review-more-link";
+    var target = ".review-expand-header";
     $('.more').each(function() {
       var content = $(this).html();
       var c = content.substr(0, showChar);
       var h = content.substr(showChar-1, content.length - showChar);
-      var html = c + '&nbsp;<span class="more-ellipses">'+ellipsestext+'</span>&nbsp;<span class="more-content"><span>' + h + '</span><a href="" class="review-more-link">'+moretext+'</a></span>';
-
+      var html = c + '&nbsp;<span class="more-ellipses">'+ellipsestext+'</span>&nbsp;<span class="more-content"><span>'+ h +'</span></span><div class="review-expand-header"><div class="review-expand-content-fade"></div><a href="" class="review-more-link">'+moretext+'</a></div>';
       $(this).html(html);
 
     });
 
     $(morelink).click(function(){
       //when the BUTTON is clicked or open, this is activated
-      if($(this).hasClass("less")) {
+      if($(this).parent().hasClass("less")) {
         //Removes "less" from href class="more-link less"
-        $(this).removeClass("less");
+        $(this).parent().removeClass("less");
+        //Toggle fade
+        $(this).prev().toggle();
         //Changes text back to "Read More"
         $(this).html(moretext);
         $(this).parent().parent().attr("aria-expanded", "false");
       } else {
-        //Adds class to href class="more-link less"
-        $(this).addClass("less");
+        //Adds "less" to link review-expand-header
+        $(this).parent().addClass("less");
+        //Toggle fade
+        $(this).prev().toggle();
+        //Toggle display text
         $(this).html(lesstext);
         $(this).parent().parent().attr("aria-expanded", "true");
       }
       //This triggers the ellipses swap
-      $(this).parent().prev().toggle();
-      $(this).prev().toggle();
+      $(this).parent().parent().next().toggle();
+      //This triggers the content show
+      $(this).parent().prev().children("span").toggle();
       return false;
     });
 
     $(".review__drawer").click(function(){
-      if($(this).find(morelink).hasClass("less")) {
-        $(this).find(morelink).removeClass("less");
+      if($(this).find(target).hasClass("less")) {
+        $(this).find(target).removeClass("less");
+        //Toggle fade
+        $(this).find(target).children("div").toggle();
         $(this).find(morelink).html(moretext);
         $(this).attr("aria-expanded", "false");
       } else {
-        $(this).find(morelink).addClass("less");
+        $(this).find(target).addClass("less");
+        //Toggle fade
+        $(this).find(target).children("div").toggle();
         $(this).find(morelink).html(lesstext);
         $(this).attr("aria-expanded", "true");
       }
