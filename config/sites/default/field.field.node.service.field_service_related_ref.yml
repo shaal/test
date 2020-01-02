@@ -11,7 +11,7 @@ entity_type: node
 bundle: service
 label: 'Related Services'
 description: 'These are related services.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

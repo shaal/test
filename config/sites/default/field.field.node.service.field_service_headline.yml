@@ -11,7 +11,7 @@ entity_type: node
 bundle: service
 label: 'Intro Headline'
 description: 'Give a short description of the service.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

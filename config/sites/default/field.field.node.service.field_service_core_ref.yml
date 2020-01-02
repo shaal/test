@@ -12,7 +12,7 @@ entity_type: node
 bundle: service
 label: 'Core Service'
 description: 'These are the services that are offered by Tower Health.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

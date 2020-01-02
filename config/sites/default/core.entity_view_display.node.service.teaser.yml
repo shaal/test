@@ -26,5 +26,12 @@ hidden:
   field_area_of_care_ref: true
   field_body: true
   field_conditions_ref: true
+  field_location_ref: true
   field_medical_specialties_ref: true
+  field_service_core_bool: true
+  field_service_core_ref: true
+  field_service_flex: true
+  field_service_headline: true
+  field_service_intro: true
+  field_service_related_ref: true
   search_api_excerpt: true
