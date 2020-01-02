@@ -61,6 +61,10 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['alt'] = "Location placeholder image";
     }
 
+    if ($node->hasField('field_location_hours') && !$node->get('field_location_hours')->isEmpty()) {
+      $variables['hours'] = TRUE;
+    }
+
     // Preprocess address variables.
     if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
       $locality = $node->field_location_address->locality;
@@ -101,11 +105,13 @@ function tower_health_preprocess_node__profile(&$variables) {
       $locations = [];
       foreach ($location_refs as $id => $location) {
         $address = $node->field_location_ref[$id]->entity;
-        $locality = $address->field_location_address->locality;
-        $administrative_area = $address->field_location_address->administrative_area;
-        $location = $locality . ", " . $administrative_area;
-        if (!in_array($location, $locations)) {
-          $locations[] = $location;
+        if ($address instanceof EntityInterface && $address->hasField('field_location_address') && !$address->get('field_location_address')->isEmpty()) {
+          $locality = $address->field_location_address->locality;
+          $administrative_area = $address->field_location_address->administrative_area;
+          $location = $locality . ", " . $administrative_area;
+          if (!in_array($location, $locations)) {
+            $locations[] = $location;
+          }
         }
       }
       if ($location) {
@@ -119,10 +125,12 @@ function tower_health_preprocess_node__profile(&$variables) {
       $specialties = [];
       foreach ($specialty_refs as $id => $specialty) {
         $entity = $node->field_medical_specialties_ref[$id]->entity;
-        $tid = $entity->tid->value;
-        $term = Term::load($tid);
-        $name = $term->getName();
-        array_push($specialties, $name);
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          array_push($specialties, $name);
+        }
       }
       if ($specialties) {
         $variables['specialties'] = $specialties;
@@ -135,10 +143,12 @@ function tower_health_preprocess_node__profile(&$variables) {
       $focuses = [];
       foreach ($focus_refs as $id => $focus) {
         $entity = $node->field_area_interest_ref[$id]->entity;
-        $tid = $entity->tid->value;
-        $term = Term::load($tid);
-        $name = $term->getName();
-        array_push($focuses, $name);
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          array_push($focuses, $name);
+        }
       }
       if ($focuses) {
         $variables['focuses'] = $focuses;
@@ -158,7 +168,7 @@ function tower_health_preprocess_node__profile(&$variables) {
     }
 
     // Preprocess image.
-    if ($node->field_profile_image->entity) {
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
       $variables['src'] = file_create_url($node->field_profile_image->entity->field_media_image->entity->uri->value);
       $variables['alt'] = $node->field_profile_image->entity->field_media_image->entity->alt;
     }
