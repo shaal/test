@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_location_geo
     - field.storage.node.field_services_ref
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
@@ -14,9 +15,10 @@ dependencies:
     - field.storage.node.field_location_ref
     - field.storage.node.field_profile_languages
     - field.storage.node.field_profile_type
-    - search_api.server.acquia_search_server
+    - search_api.server.local_development
     - core.entity_view_mode.node.search_index
   module:
+    - search_api_location
     - node
     - taxonomy
     - search_api_solr
@@ -29,6 +31,14 @@ name: 'Acquia Search Solr Index'
 description: ''
 read_only: true
 field_settings:
+  location_latlon:
+    label: 'Location Geo » LatLong Pair'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_geo:latlon'
+    type: location
+    dependencies:
+      config:
+        - field.storage.node.field_location_geo
   location_services_specialty_condition_name:
     label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -121,6 +131,17 @@ field_settings:
         - taxonomy
         - taxonomy
         - taxonomy
+  provider_location_latlong:
+    label: 'Location » Content » Location Geo » LatLong Pair'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_ref:entity:field_location_geo:latlon'
+    type: location
+    dependencies:
+      config:
+        - field.storage.node.field_location_ref
+        - field.storage.node.field_location_geo
+      module:
+        - node
   provider_location_title_string:
     label: 'Location » Content » Title'
     datasource_id: 'entity:node'
@@ -275,6 +296,7 @@ processor_settings:
   ignorecase:
     all_fields: true
     fields:
+      - location_latlon
       - location_services_specialty_condition_name
       - location_services_specialty_condition_synonym
       - location_services_title
@@ -283,6 +305,7 @@ processor_settings:
       - name
       - profile_gender_string
       - provider_insurance_groups_insurance_company_string
+      - provider_location_latlong
       - provider_location_title_string
       - provider_profile_languages_string
       - provider_profile_type

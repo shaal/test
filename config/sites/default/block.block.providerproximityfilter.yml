@@ -1,26 +1,23 @@
-uuid: 5bdc62e5-692d-431f-aac3-827cb618668a
+uuid: 8e56e643-1a49-45bb-ab3f-aa5e0d43d116
 langcode: en
 status: true
 dependencies:
-  config:
-    - facets.facet.provider_type
   module:
-    - facets
     - system
+    - towerhealth_misc
   theme:
     - tower_health
-id: providertype
+id: providerproximityfilter
 theme: tower_health
 region: content
-weight: 2
+weight: 1
 provider: null
-plugin: 'facet_block:provider_type'
+plugin: provider_proximity_filter
 settings:
-  id: 'facet_block:provider_type'
-  label: 'Provider Type'
-  provider: facets
+  id: provider_proximity_filter
+  label: 'Provider Zip Code'
+  provider: towerhealth_misc
   label_display: visible
-  block_id: providertype
 visibility:
   request_path:
     id: request_path

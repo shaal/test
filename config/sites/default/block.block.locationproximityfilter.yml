@@ -1,0 +1,26 @@
+uuid: 3728d27e-aa4d-4992-995e-7ef69055abc7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: locationproximityfilter
+theme: tower_health
+region: content
+weight: -2
+provider: null
+plugin: location_proximity_filter
+settings:
+  id: location_proximity_filter
+  label: 'Location Zip Code'
+  provider: towerhealth_misc
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }
