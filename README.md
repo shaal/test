@@ -18,6 +18,7 @@ The development environment is based on [palantirnet/the-vagrant](https://github
 
 * Mac OS X >= 10.10. _This stack may run under other host operating systems, but is not regularly tested. For details on installing these dependencies on your Mac, see our [Mac setup doc [internal]](https://github.com/palantirnet/documentation/wiki/Mac-Setup)._
 * [Composer](https://getcomposer.org)
+  * Update to the newest version: `brew composer update`
 * [virtualBox](https://www.virtualbox.org/wiki/Downloads) >= 5.0
 * [ansible](https://github.com/ansible/ansible) `brew install ansible`
 * [vagrant](https://www.vagrantup.com/) >= 2.1.0
