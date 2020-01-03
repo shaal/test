@@ -109,8 +109,9 @@
 .card__meta {
   @include adjust-font-size-to($label, .9);
   display: block;
-  margin-bottom: .25em;
+  margin-bottom: .5em;
   font-style: italic;
+  font-weight: 600;
 }
 
 .card__desc {
