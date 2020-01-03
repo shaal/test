@@ -32,7 +32,7 @@
         "drupal-pattern-lab/attach-library-twig-extension": "^1.1",
         "drupal-pattern-lab/bem-twig-extension": "^1.0",
         "drupal-pattern-lab/unified-twig-extensions": "^0.1.0",
-        "drupal/acquia_connector": "^1.16",
+        "drupal/acquia_connector": "1.16",
         "drupal/address": "^1.6",
         "drupal/admin_toolbar": "^2.0",
         "drupal/auto_entitylabel": "^3.0@beta",
@@ -79,7 +79,6 @@
         "drupal/workbench_menu_access": "^1.1",
         "drupal/workbench_tabs": "^1.3",
         "flow/jsonpath": "^0.4.0",
-        "palantirnet/the-vagrant": "2.5",
         "sainsburys/guzzle-oauth2-plugin": "^3.0"
     },
     "require-dev": {
@@ -90,6 +89,7 @@
         "drupal/coder": "^8.3.6",
         "drupal/core-dev": "^8.8",
         "drupal/drupal-extension": "^3.1",
+        "palantirnet/the-vagrant": "2.5",
         "palantirnet/the-build": "^2.2.1"
     },
     "suggest": {
