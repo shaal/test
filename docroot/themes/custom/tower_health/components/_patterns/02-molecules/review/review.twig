@@ -1,9 +1,9 @@
 {{ attach_library('tower_health/reviews') }}
-<div class='review' {% if review|length > 250 %}tabindex="0"{% endif %}>
+<div class='review' {% if review|length > 350 %}tabindex="0"{% endif %}>
   {% include "@molecules/ratings-count/ratings-count.twig" %}
   <div class="review__text">
     <span class="review__date">Reviewed on {{ date }}</span>
-	<div class="review__drawer{% if review|length > 250 %} more{% endif %}" id="review-drawer--{{ loop.index }}"{% if review|length > 250 %} aria-expanded="false"{% endif %}>
+	<div class="review__drawer{% if review|length > 350 %} more{% endif %}" id="review-drawer--{{ loop.index }}"{% if review|length > 350 %} aria-expanded="false"{% endif %}>
 		{{ review }}
 	</div>
   </div>

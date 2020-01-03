@@ -3,10 +3,14 @@
   display: flex;
 }
 
+.review-listing__list .ratings-count__stars {
+  margin-top: .8em;
+}
+
 .ratings-count__stars {
   display: flex;
-  margin-left: .5em;
-  
+  order: 1;
+ 
   svg {
     height: 19px;
     

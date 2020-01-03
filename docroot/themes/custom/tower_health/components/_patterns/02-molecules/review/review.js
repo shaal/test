@@ -19,7 +19,7 @@
 
   // Use context instead of document IF DRUPAL.
 
-    var showChar = 250;
+    var showChar = 350;
     var ellipsestext = "...";
     var moretext = "Read More";
     var lesstext = "Read Less";
@@ -28,8 +28,8 @@
     $('.more').each(function() {
       var content = $(this).html();
       var c = content.substr(0, showChar);
-      var h = content.substr(showChar-1, content.length - showChar);
-      var html = c + '&nbsp;<span class="more-ellipses">'+ellipsestext+'</span>&nbsp;<span class="more-content"><span>'+ h +'</span></span><div class="review-expand-header"><div class="review-expand-content-fade"></div><a href="" class="review-more-link">'+moretext+'</a></div>';
+      var h = content.substr(showChar+1, content.length - showChar);
+      var html = c + '<span class="more-ellipses">&nbsp;'+ ellipsestext +'</span><span class="more-content"><span>'+ h +'</span></span><div class="review-expand-header"><div class="review-expand-content-fade"></div><a href="" class="review-more-link">'+ moretext +'</a></div>';
       $(this).html(html);
 
     });
@@ -54,7 +54,7 @@
         $(this).parent().parent().attr("aria-expanded", "true");
       }
       //This triggers the ellipses swap
-      $(this).parent().parent().next().toggle();
+      $(this).parent().prev().prev().toggle();
       //This triggers the content show
       $(this).parent().prev().children("span").toggle();
       return false;
