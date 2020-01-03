@@ -112,6 +112,12 @@
   margin-bottom: .5em;
   font-style: italic;
   font-weight: 600;
+  
+  .card--article & {
+    display: inline-block;
+    border-bottom: 4px solid $growth;
+    margin-bottom: 1em;
+  }
 }
 
 .card__desc {
