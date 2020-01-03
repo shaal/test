@@ -3,16 +3,13 @@
   display: flex;
 }
 
-.review-listing__list .ratings-count__stars {
-  margin-top: .8em;
-}
-
 .ratings-count__stars {
   display: flex;
-  order: 1;
- 
+  margin-left: .5em;
+  
   svg {
-    height: 19px;
+    height: 1.5em;
+    width: 1.5em;
     
     .star-half-1,
     .star-half-2 {

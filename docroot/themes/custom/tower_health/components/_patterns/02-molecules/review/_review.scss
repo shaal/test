@@ -83,21 +83,8 @@
   transition: opacity .4s ease-out;
 }
 
-.review.test:focus-within {
-  border: thin solid black;
-}
-
-.review-more-link {
-  padding-left: 3px;
-
-  &:focus {
-    content: '';
-  }
-}
-
-a.more-link {
-  text-decoration: none;
-  outline: none;
+a.review-more-link {
+  @include adjust-font-size-to($label, .75);
 }
 
 .more-content span {
