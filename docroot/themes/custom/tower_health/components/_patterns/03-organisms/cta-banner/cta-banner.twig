@@ -9,10 +9,10 @@
   <div class="cta-banner__content">
   
     <h1 class="cta-banner__title">
+      {% if title_1 %}
       <span>{{ title_1 }}</span>
-      {% if title_2 %}
-      <span>{{ title_2 }}</span>
       {% endif %}
+      <span>{{ title_2 }}</span>
     </h1>
     {% if subtitle %}
     <span class="cta-banner__subtitle">

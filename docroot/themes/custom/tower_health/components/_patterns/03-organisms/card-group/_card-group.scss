@@ -1,0 +1,51 @@
+.card-group {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  
+  @include breakpoint($bp2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    
+    @include breakpoint($bp2) {
+      flex: 0 1 49%;
+      
+      &:nth-child(1):nth-last-child(1) {
+        flex: 0 1 100%;
+        
+        &.card--simple,
+        .card__link {
+          flex-direction: row;
+          align-items: stretch;
+        }
+        
+        .card--image .card__content,
+        .card--video .card__content {
+          width: 70%;
+        }
+        
+        .card__image {
+          height: auto;
+          width: 30%;
+        }
+      }
+    }
+    
+    @include breakpoint($bp4) {
+      flex: 0 1 32%;
+      
+      &:nth-child(1):nth-last-child(2),
+      &:nth-child(2):nth-last-child(1) {
+        flex: 0 1 49%;
+      }
+      
+      &:nth-child(1):nth-last-child(1) {
+        flex: 0 1 100%;
+      }
+    }
+  }
+}

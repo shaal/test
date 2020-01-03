@@ -34,4 +34,4 @@ Feature: Location Content Type
     Then I should not see the text "Location ID"
     Then I should see the text "Location Type"
     Then I should see the text "On My Way"
-    Then I should not see the text "Phone number"
+    Then I should see the text "Phone number"

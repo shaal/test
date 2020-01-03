@@ -1,9 +1,5 @@
 .hours-block {
   margin-top: 2em;
-  
-  @include breakpoint($bp3) {
-    margin-top: 6em;
-  }
 }
 
 .hours-block__label {

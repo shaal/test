@@ -147,6 +147,17 @@
         span {
           display: block;
         }
+        
+        a:link,
+        a:visited {
+          text-decoration: none;
+        }
+        
+        a:active,
+        a:hover,
+        a:focus {
+          text-decoration: underline;
+        }
       }
 
       .footer__info__social {

@@ -1,7 +1,8 @@
 .link-list {
   padding: 2em 0;
   position: relative;
-  margin-top: 3em;
+  margin-top: 1em;
+  margin-bottom: 3em;
   border-top: 6px solid $growth;
 
   &::before {
@@ -18,11 +19,22 @@
       width: calc(((100vw - 1500px) / 2) + 2em);
     }
   }
+  
+  &.link-list--secondary {
+    padding: 1em 0;
+  }
 }
 
 .link-list__title {
   color: $primary-dark;
+  margin-top: .5em;
   margin-bottom: 1em;
+  
+  .link-list--secondary & {
+    @include adjust-font-size-to($sm-heading, 1);
+    @extend %track-out;
+    text-transform: uppercase;
+  }
 }
 
 .link-list__wrapper {

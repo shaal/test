@@ -1,4 +1,5 @@
 ---
+el: ".banner-message"
 title: 'Banner Message'
 ---
 #### Description

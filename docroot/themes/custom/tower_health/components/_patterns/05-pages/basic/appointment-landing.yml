@@ -1,0 +1,51 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      text: "Make an Appointment"
+  title: Make an Appointment
+  lede: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe aspernatur quam, debitis deserunt distinctio voluptatem corporis.
+  image:
+    url: '../../images/AdobeStock_194014777_Preview.jpeg'
+  cta:
+    label: Select an Option or Call
+    button:
+      label: 484-628-HELP
+      url: "#"
+banner_text: If this is a medical emergency, please call 911.
+cards:
+  - type: null
+    image: 
+      src: "../../images/AdobeStock_197996622_Preview.jpeg"
+      alt: "Alt Text"
+    title:  Current Patients
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: Request an Appointment
+  - type: null
+    image: 
+      src: "../../images/AdobeStock_228148798_Preview.jpeg"
+      alt: "Alt Text"
+    title:  New Patients
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: Request an Appointment
+  - type: null
+    image: 
+      src: "../../images/AdobeStock_239096192_Preview.jpeg"
+      alt: "Alt Text"
+    title:  Find a Provider
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    url:
+      link: '#'
+      label: Search our Providers
+text_callout:
+  title: "Pay my Bill"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."
+  button:
+    text: "Pay My Bill"
+    url: "/"

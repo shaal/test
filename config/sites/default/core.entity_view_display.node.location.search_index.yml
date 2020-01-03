@@ -129,6 +129,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_location_geo: true
   field_location_id: true
   field_location_image: true
   links: true

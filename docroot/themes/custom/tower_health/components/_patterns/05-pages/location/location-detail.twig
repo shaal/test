@@ -2,7 +2,8 @@
   page_header: TRUE,
   top_sidebar: TRUE,
   full_content: TRUE,
-  full_width: false
+  full_width: false,
+  page_content: TRUE
 } %}
 
   {% block page_header %}
@@ -25,6 +26,9 @@
   {% endblock %}
 
   {% block top_page_sidebar %}
+    {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
+      cta_list: cta_list
+    }%}
     {% include "@molecules/hours-block/hours-block.twig" with {
         label: hours.label,
         hours: hours.hours,
@@ -41,35 +45,12 @@
   {% endblock %}
 
   {% block full_content %}
-    {% include "@organisms/omw-callout/omw-callout.twig" with {
-      title: omw_callout.title,
-        text: omw_callout.text,
-        button: omw_callout.button,
-      } %}
-
-    {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
-        img: image_callout.img,
-        title: image_callout.title,
-        text: image_callout.text,
-        links: image_callout.links,
-      } %}
-
-    {% include "@organisms/box-links/box-links.twig" with {
-        boxes: boxes,
-      } %}
-
     {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
         orientation: image_callout.orientation,
         img: image_callout.img,
         title: image_callout.title,
         text: image_callout.text,
         links: image_callout.links,
-      } %}
-
-    {% include "@organisms/text-teaser-banner/text-teaser-banner.twig" with {
-        title: text_callout.title,
-        text: text_callout.text,
-        button: text_callout.button,
       } %}
   {% endblock %}
 

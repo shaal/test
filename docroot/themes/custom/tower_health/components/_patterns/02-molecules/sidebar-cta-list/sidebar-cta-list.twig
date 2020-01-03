@@ -1,0 +1,11 @@
+<div class="sidebar-cta-list js-section-animation">
+  {% for item in cta_list %}
+    {% include "@atoms/icon-button/icon-button.twig" with {
+      "url": item.url,
+      "icon": item.icon,
+      "text": item.text,
+      "animated": "true",
+      "variation": "list" 
+    } %}
+  {% endfor %}
+</div>

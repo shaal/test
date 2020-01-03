@@ -1,0 +1,88 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: FALSE,
+  bottom_sidebar: TRUE,
+  full_width: FALSE,
+  full_content: TRUE,
+  page_content: TRUE
+}%}
+
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" %}
+  {% endblock %}
+  
+  {% block page_content %}
+    {% include "@molecules/rich-text/rich-text.twig" %}
+  {% endblock %}
+  
+  {% block bottom_page_sidebar %}
+    {% include "@molecules/sidebar-card/card--sidebar.twig" with {
+      title: sidebarCard.title,
+      desc: sidebarCard.desc,
+      cta: sidebarCard.cta
+    } %}
+  {% endblock %}
+  
+  {% block full_content %}
+    {% include "@organisms/card-group/card-group.twig" %}
+    {% include "@organisms/text-teaser-banner/text-teaser-banner.twig" with {
+        title: text_callout.title,
+        text: text_callout.text,
+        button: text_callout.button,
+      } %}
+      
+    {% include "@organisms/image-teaser-banner/image-teaser-banner.twig" with {
+      img: image_callout.img,
+      title: image_callout.title,
+      text: image_callout.text,
+      links: image_callout.links,
+    } %}
+    
+    {% include "@molecules/rich-text/rich-text.twig" with {
+      rich_text_full_width: true,
+      rich_text: paragraph_rich_text
+    } %}
+    
+    {% include "@organisms/recognition-row/recognition-row.twig" %}
+    
+    {% include "@organisms/file-download-cta/file-download-cta.twig" with {
+      url: file.url,
+      image: file.image,
+      title: file.title,
+      desc: file.desc,
+      downloadLabel: file.downloadLabel
+    } %}
+    
+    {% include "@organisms/box-links/box-links.twig" with {
+      boxes: boxes,
+    } %}
+    
+    {% include "@organisms/patient-story/patient-story.twig" with {
+      image: story.image,
+      label: story.label,
+      type: story.type,
+      quote: story.quote,
+      cta: story.cta
+    } %}
+    
+    {% include "@organisms/card-group/card-group--video.twig" with {
+      cards: video_cards
+    } %}
+    
+    {% include "@molecules/rich-text/rich-text.twig" with {
+      rich_text_full_width: true,
+      rich_text: paragraph_rich_text
+    } %}
+    
+    {% include "@organisms/card-group/card-group--article.twig" with {
+      cards: article_cards
+    } %}
+    
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
+      "title": cta.title,
+      "text": cta.text,
+      "link": cta.link
+    } %}
+
+  {% endblock %}
+{% endembed %}

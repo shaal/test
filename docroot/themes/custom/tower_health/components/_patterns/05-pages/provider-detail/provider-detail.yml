@@ -22,6 +22,7 @@ img:
   src: "../../images/people/hoerst-karen.jpg"
   alt: "Karen A. Hoerst, MD"
 accepting_patients: true
+appt_label: Request an Appointment
 appt_phone: 
   number: "4846288888"
   label: "484-628-HELP"
@@ -109,12 +110,68 @@ contact:
 insurance:
   sidebar: true
   items:
-    - buttonLink:
-        url: "#"
-        text: 'Insurances Accepted'
+    - insurance:
+        type: insurance
+        label: Insurances Accepted
+        reference: insurances
+        items:
+          - "Aetna HMO"
+          - "Aetna HMO (Open Access)"
+          - "Aetna HMO / Health Network Only"
+          - "Aetna PEBTF PPO"
+          - "Aetna QPOS"
+          - "Aetna Savings Plus"
+          - "Aetna Select"
+          - "Aetna Signature"
+          - "Aetna Value Performance Network"
+          - "Aetna Voluntary Plans"
+          - "Aetna Whole Health"
+          - "Choice POS, Choice - POS (Aetna HealthFund), Choice POS II, Choice POS II (Aetna HealthFund)"
+          - "Elect Choice EPO"
+          - "Health Network Only & Health Network Option"
+          - "International Medical"
+          - "Managed Choice, Managed Choice - Open Access, Managed Choice POS"
+          - "Mercy Preferred Choice POSII, Mercy Preferred Choice Select, Mercy Preferred Elect Choice EPO"
+          - "Mercy Preferred Managed Choice & Mercy Preferred Open Choice (PPO)"
+          - "Open Access - Elect Choice, Open Access EPO"
+          - "Open Access POS, Open Access EPO Plus (Broad) & Open Access POS II (Broad)"
+          - "Open Choice PPO & Open Choice PPO - Aetna HealthFund"
+          - "Peak Preference Select HNOnly on the Altius Network and Peak Preference Select HNOption on the Altius Network"
+          - "Preferred - Open Choice PPO, Preferred Choice POS II, Preferred Select"
+          - "Preferred Elect Choice EPO, Preferred Managed Choice"
+          - "Premier Care - Network & Premier Care Network Plus"
+          - "AmeriHealth Administrators"
+          - "Capital Blue Cross: CareConnect – PinnacleHealth ACA Network"
+          - "Capital Blue Cross: Comprehensive"
+          - "Capital Blue Cross: POS"
+          - "Capital Blue Cross: PPO"
+          - "Capital Blue Cross: PPO Choice"
+          - "Capital Blue Cross: Traditional"
+          - "Capital Blue Cross: HMO"
+          - "Cigna"
+          - "Coventry"
+          - "EHP Significa Network"
+          - "First Health Network"
+          - "Great West"
+          - "HealthAmerica/Health Assurance"
+          - "Highmark Blue Shield (NOTE: standard tier)"
+          - "Keystone Health Plan Central"
+          - "Keystone Health Plan East"
+          - "Tower Health PPO"
+          - "TriCare"
+          - "Unitedhealthcare Navigate"
+          - "All Savers"
+          - "Unitedhealthcare Catalyst"
+          - "Unitedhealthcare Choice and Choice Plus"
+          - "Unitedhealthcare Choice Advance and Choice Plus Advance"
+          - "Unitedhealthcare Options PPO plans"
+          - "Unitedhealthcare Tiered Benefit Plans"
+          - "Unitedhealthcare MD-IPA Plan"
+          - "Unitedhealthcare Student Resources"
+          - "UHC Compass Rose PPO Plan"
       meta: 'Please check with your insurance provider before booking an appointment.'
 employed:
-  label: Employed By
+  label: Member of
   sidebar: true
   items:
     - text: Tower Health Medical Group

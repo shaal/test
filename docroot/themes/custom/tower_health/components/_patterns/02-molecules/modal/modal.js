@@ -19,14 +19,12 @@
   
   // inline modal (custom)
   $(".modal--inline").modaal();
+  $(".modal--insurance").modaal();
   
   // video modal
   $('.modal--video').modaal({
     type: 'video'
   });
-  
-  
-  
 
 })(jQuery); // REMOVE IF DRUPAL.
 

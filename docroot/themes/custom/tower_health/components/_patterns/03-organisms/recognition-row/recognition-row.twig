@@ -1,0 +1,11 @@
+<section class="recognition grid">
+  <div class="recognition__items">
+    {% for item in recognitionItems %}
+      {% include "@molecules/recognition-card/recognition-card.twig" with {
+        image: item.image,
+        title: item.title,
+        desc: item.desc
+      } %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,7 +1,11 @@
 .provider-header {
-  margin: 0 auto 3em;
+  margin: 1em auto 3em;
   padding: 1em 0 2em;
   background-color: rgba($trust-ltst, .4);
+  
+  .breadcrumbs.hero {
+    margin-top: 0;
+  }
 }
 
 .provider-header__content {

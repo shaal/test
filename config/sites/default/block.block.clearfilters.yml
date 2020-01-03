@@ -1,0 +1,26 @@
+uuid: 2ac91fe9-3ab1-415f-9ad9-e79737f6eaf6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: clearfilters
+theme: tower_health
+region: content
+weight: -7
+provider: null
+plugin: clear_filters
+settings:
+  id: clear_filters
+  label: 'Clear filters'
+  provider: towerhealth_misc
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*\r\n/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }
