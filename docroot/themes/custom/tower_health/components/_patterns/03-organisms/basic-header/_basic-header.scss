@@ -281,7 +281,11 @@
 
 .basic-header__cta__text {
   @include adjust-font-size-to($sm-text, .85);
-  margin: .5em 1em;
+  margin: 1em;
+  
+  @include breakpoint($bp3) {
+    margin: 1em 1em 0;
+  }
   
   .basic-header--img & {
     color: $white;
@@ -334,7 +338,7 @@
     .basic-header__cta {
       animation: fadeInUp .5s ease .25s forwards;
       
-      @include breakpoint($bp4) {
+      @include breakpoint($bp3) {
         animation: fadeInRightScale .5s ease .25s forwards;
       }
     }
