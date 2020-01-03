@@ -300,7 +300,6 @@
   
   .basic-header--img & {
     color: $white;
-    text-decoration: underline;
   }
 }
 
@@ -311,6 +310,11 @@
   text-decoration: none;
   display: inline-block;
   margin-bottom: .5em;
+  
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
   
   &:active,
   &:hover,
