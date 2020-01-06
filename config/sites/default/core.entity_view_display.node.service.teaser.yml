@@ -34,4 +34,5 @@ hidden:
   field_service_headline: true
   field_service_intro: true
   field_service_related_ref: true
+  field_metatags: true
   search_api_excerpt: true
