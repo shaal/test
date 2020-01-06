@@ -93,6 +93,16 @@
     }
   }
   
+  &--oneSixth {
+    @include breakpoint($bp3) {
+      width: 30%;
+    }
+    
+    @include breakpoint($bp4) {
+      width: 15.5%;
+    }
+  }
+  
   .form-item--inline {
     display: flex;
     margin-top: 1em;
@@ -105,7 +115,7 @@
   
   label {
     display: inline-block;
-    margin-right: 1em;
+    margin-right: .25em;
   }
 }
 

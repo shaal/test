@@ -1,0 +1,27 @@
+uuid: a572a996-48d8-4ccb-b07c-78d42028ad4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_service_core_bool
+field_name: field_service_core_bool
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: 'False'
+    -
+      value: 1
+      label: 'True'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

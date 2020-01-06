@@ -1,0 +1,36 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: FALSE,
+  bottom_sidebar: FALSE,
+  full_width: FALSE,
+  full_content: TRUE
+}%}
+
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" %}
+  {% endblock %}
+  {% block page_content %}
+    {% include "@molecules/rich-text/rich-text.twig" %}
+  {% endblock %}
+  {% block full_content %}
+    {% include "@organisms/card-group/card-group--video.twig" %}
+    
+    {% include "@organisms/text-teaser-banner/text-teaser-banner.twig" with {
+      title: text_callout.title,
+      text: text_callout.text,
+      button: text_callout.button,
+    } %}
+    
+    {% include "@molecules/rich-text/rich-text.twig" with {
+      rich_text_full_width: true,
+      rich_text: paragraph_rich_text
+    } %}
+    
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
+      "title": cta.title,
+      "text": cta.text,
+      "link": cta.link
+    } %}
+    
+  {% endblock %}
+{% endembed %}

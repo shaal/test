@@ -46,7 +46,6 @@ Feature: Location Content Type
     Then I should not see the text "Job Title"
     Then I should not see the text "Languages"
     Then I should not see the text "Overall Rating"
-    Then I should not see the text "Phone Number"
     Then I should not see the text "Professional Title"
     Then I should not see the text "Provider Type"
     Then I should not see the text "Rating count"

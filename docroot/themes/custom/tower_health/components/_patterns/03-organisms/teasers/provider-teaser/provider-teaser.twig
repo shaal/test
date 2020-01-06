@@ -9,7 +9,8 @@
   {% if provider.details.rating %}
   <div class="teaser__rating">
     {% include "@molecules/ratings-count/ratings-count.twig" with {
-      "rating": provider.details.rating
+      "rating": provider.details.rating,
+      "icon": provider.details.icon,
     } %}
   </div>
   {% endif %}
@@ -17,26 +18,40 @@
   <div class="teaser__content">
     <div class="teaser__content__info">
       <div class="teaser__section">
-        <h3 class="teaser-label">Specialties</h3>
-        {{ provider.details.specialties }}
+        {% if provider.details.specialties[0] %}
+          <h3 class="teaser-label">Specialties</h3>
+          {% include "@atoms/fields/_multi-field-with-comma.twig" with {
+            "items": provider.details.specialties,
+          } %}
+        {% endif %}
       </div>
       <div class="teaser__section">
-        <h3 class="teaser-label">Clinical Areas of Focus</h3>
-        {{ provider.details.focus }}
+        {% if provider.details.focus[0] %}
+          <h3 class="teaser-label">Clinical Areas of Focus</h3>
+          {% include "@atoms/fields/_multi-field-with-comma.twig" with {
+            "items": provider.details.focus,
+          } %}
+        {% endif %}
       </div>
       <div class="teaser__section teaser__section--small">
-        <h3 class="teaser-label">Location</h3>
-        {{ provider.details.location }}
+        {% if provider.details.location %}
+          <h3 class="teaser-label">Location</h3>
+          {{ provider.details.location }}
+        {% endif %}
       </div>
       <div class="teaser__section teaser__section--small">
-        <h3 class="teaser-label">Languages</h3>
-        {{ provider.details.language }}
+        {% if provider.details.language[0] %}
+          <h3 class="teaser-label">Languages</h3>
+          {% include "@atoms/fields/_multi-field-with-comma.twig" with {
+            "items": provider.details.language,
+          } %}
+        {% endif %}
       </div>
     </div>
     {% if provider.link %}
     <div class="teaser__button">
       {% include "@atoms/icon-button/icon-button.twig" with {
-        "url": provider.link.url,
+        "url": provider.link.href,
         "icon": provider.link.icon,
         "text": provider.link.text,
         "variation": "small",

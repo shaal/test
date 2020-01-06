@@ -2,7 +2,7 @@
 
 %input {
   display: block;
-  border-radius: 3px;
+  border-radius: $rd-brd-sm;
   max-width: 100%;
   width: 100%;
   height: 60px;
@@ -31,7 +31,7 @@
 
 %label,
 label {
-  @include adjust-font-size-to($label);
+  @include adjust-font-size-to($label, .7);
   font-weight: 500;
   color: $primary-dark;
   display: block;

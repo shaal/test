@@ -20,8 +20,11 @@
       <a class="provider-detail__item-link" href="{{item.link.url}}">{{item.link.text}}</a>
     {% endif %}
     
-    {% if item.buttonLink %}
-      <a class="button" href="{{item.buttonLink.url}}">{{item.buttonLink.text}}</a>
+    {% if item.insurance %}
+      {% include "@molecules/modal/modal.twig"  with {
+        modal: item.insurance,
+        class: "button"
+      }%}
     {% endif %}
     
     {% if item.title %}

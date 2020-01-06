@@ -79,7 +79,7 @@ locations:
       fax: "484-555-5556"
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -91,9 +91,10 @@ locations:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -105,9 +106,10 @@ locations:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -119,9 +121,10 @@ locations:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -133,9 +136,10 @@ locations:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -147,9 +151,10 @@ locations:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -161,9 +166,10 @@ locations:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -175,9 +181,10 @@ locations:
       address2: "West Reading, PA 19611"
       phone: "484-555-5555"
       fax: "484-555-5556"
+      hours: true
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -191,7 +198,7 @@ locations:
       fax: "484-555-5556"
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
   - img:
@@ -205,7 +212,7 @@ locations:
       fax: "484-555-5556"
     link:
       url: "/"
-      text: "Directions"
+      text: "Map & Directions"
       icon: "th-find-hospital.svg"
     type: location
 current: 4

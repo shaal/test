@@ -1,0 +1,43 @@
+.sidebar-cta-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 1em 0;
+  
+  @include breakpoint($bp2 899px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    .icon-button {
+      width: 43%;
+      
+      &:nth-child(1):nth-last-child(1) {
+        width: 100%;
+      }
+    }
+  }
+
+  &::after {
+    content: " ";
+    background-color: $primary-dark;
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 50%;
+    right: -2em;
+    z-index: -5;
+
+    @include breakpoint($bp2) {
+      left: 60%;
+    }
+    
+    @include breakpoint($bp3) {
+      left: 30%;
+    }
+    
+    @include breakpoint($bp6) {
+      right: calc(((100vw - 1500px) / -2) - 1.5em);
+    }
+  }
+}

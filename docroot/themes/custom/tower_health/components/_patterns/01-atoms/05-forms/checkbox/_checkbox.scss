@@ -19,13 +19,13 @@
       width: 25px;
       background-color: $white;
       border: 1px solid rgba($gray-lighter, .7);
-      border-radius: 4px;
-      box-shadow: inset 1px 1px 3px rgba($gray-dark, .15);
+      border-radius: $rd-brd-sm;
+      box-shadow: $inset-shadow;
     }
 
     &:checked::after {
       position: absolute;
-      background: url('/pattern-lab/public/images/checkbox.svg');
+      background: url('../pattern-lab/public/images/checkbox.svg');
       background-size: contain;
       background-position: center;
       top: 1px;

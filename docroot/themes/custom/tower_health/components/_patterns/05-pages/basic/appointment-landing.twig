@@ -1,0 +1,25 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: FALSE,
+  bottom_sidebar: FALSE,
+  full_width: FALSE,
+  centered: true,
+  full_content: TRUE,
+  page_content: TRUE
+}%}
+
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" %}
+  {% endblock %}
+  {% block page_content %}
+    {% include "@molecules/banner-message/banner-message.twig" %}
+  {% endblock %}
+  {% block full_content %}
+    {% include "@organisms/card-group/card-group.twig" %}
+    {% include "@organisms/text-teaser-banner/text-teaser-banner.twig" with {
+        title: text_callout.title,
+        text: text_callout.text,
+        button: text_callout.button,
+      } %}
+  {% endblock %}
+{% endembed %}

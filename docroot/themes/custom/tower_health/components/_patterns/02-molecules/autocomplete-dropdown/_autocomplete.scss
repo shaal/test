@@ -1,4 +1,4 @@
- .autocomplete-container {
+.autocomplete-container {
   position: relative;
 }
 
@@ -7,7 +7,7 @@
   margin: 0;
   padding: .5em 1.5em 2em;
   background-color: $white;
-  box-shadow: 0 4px 4px rgba($black, .25);
+  box-shadow: $shadow;
   border: 1px solid $primary-dark;
   border-top: 1px solid $trust-ltst;
   max-height: 250px;
@@ -19,10 +19,12 @@
   display: none;
   visibility: hidden;
 
-  &.drupal,
   &.is-active {
     display: block;
     visibility: visible;
+  }
+  
+  &.drupal.is-active {
     width: calc(100% - 175px - 1em) !important;
 
     @include breakpoint($bp3) {

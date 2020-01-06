@@ -6,6 +6,46 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Url;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\node\NodeInterface;
+use Drupal\core\entity\EntityInterface;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Remove variables from exposed provider search form.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__exposedformfind_a_providerfind_doctor(&$variables, $hook) {
+  unset($variables['content']['provider_location_latlong']);
+  unset($variables['content']['facets']);
+}
+
+/**
+ * Remove variables from exposed location search form.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__exposedformfind_a_locationfind_location(&$variables, $hook) {
+  unset($variables['content']['location_latlon']);
+  unset($variables['content']['facets']);
+}
+
+/**
+ * Alter proximity block for location search.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__locationproximityfilter(&$variables, $hook) {
+  if (array_key_exists('submit', $variables['content']['exposed_form']['actions'])) {
+    $variables['content']['exposed_form']['actions']['submit']['#value'] = 'Apply';
+  }
+  if (array_key_exists('location_latlon', $variables['content']['exposed_form'])) {
+    $variables['content']['exposed_form']['location_latlon']['value']['#attributes']['class'] = ['js-set-my-location'];
+    $variables['content']['exposed_form']['location_latlon']['distance']['#attributes']['class'] = ['js-set-my-radius'];
+  }
+}
 
 /**
  * Adds a body class by role.
@@ -26,5 +66,183 @@ function tower_health_preprocess_menu(&$variables) {
     ->view($utility_nav_block);
   if ($utility_nav_block_view) {
     $variables['utility_nav'] = $utility_nav_block_view;
+  }
+}
+
+/**
+ * Alter proximity block for provider search.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__providerproximityfilter(&$variables, $hook) {
+  if (array_key_exists('submit', $variables['content']['exposed_form']['actions'])) {
+    $variables['content']['exposed_form']['actions']['submit']['#value'] = 'Apply';
+  }
+  if (array_key_exists('provider_location_latlong', $variables['content']['exposed_form'])) {
+    $variables['content']['exposed_form']['provider_location_latlong']['value']['#attributes']['class'] = ['js-set-my-location'];
+    $variables['content']['exposed_form']['provider_location_latlong']['distance']['#attributes']['class'] = ['js-set-my-radius'];
+  }
+}
+
+/**
+ * Provide variables for location teaser.
+ */
+function tower_health_preprocess_node__location(&$variables) {
+  $node = $variables['node'];
+
+  // Set button icon.
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
+
+  if ($node instanceof NodeInterface) {
+    // Preprocess image variables.
+    $media = $node->field_location_image->entity;
+    if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+      $file = $media->field_media_image->entity;
+      if ($file instanceof EntityInterface) {
+        $url = $file->uri->value;
+        $image = ImageStyle::load('teaser_image')->buildUrl($url);
+        $variables['src'] = $image;
+        $variables['alt'] = $media->field_media_image->alt;
+      }
+    }
+    else {
+      // Fallback if no image uploaded.
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Location placeholder image";
+    }
+
+    if ($node->hasField('field_location_hours') && !$node->get('field_location_hours')->isEmpty()) {
+      $variables['hours'] = TRUE;
+    }
+
+    // Preprocess address variables.
+    if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
+      $locality = $node->field_location_address->locality;
+      $administrative_area = $node->field_location_address->administrative_area;
+      $address_1 = $node->field_location_address->address_line1;
+      $address_2 = $locality . ', ' . $administrative_area;
+      $href = "https://www.google.com/maps/place/" . str_replace(' ', '+', $address_1) . '+' . $locality . '+' . $administrative_area;
+      $variables['address1'] = $address_1;
+      $variables['address2'] = $address_2;
+      $variables['href'] = $href;
+    }
+
+    // Preprocess phone numbers.
+    if ($node->hasField('field_location_phone_number') && !$node->get('field_location_phone_number')->isEmpty()) {
+      $variables['phone'] = $node->field_location_phone_number->value;
+    }
+
+    if ($node->hasField('field_location_fax') && !$node->get('field_location_fax')->isEmpty()) {
+      $variables['fax'] = $node->field_location_fax->value;
+    }
+  }
+}
+
+/**
+ * Provide variables for provider teaser.
+ */
+function tower_health_preprocess_node__profile(&$variables) {
+  $node = $variables['node'];
+
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+  $variables['href'] = Url::fromUri('internal:/');
+  $variables['icon_path'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+
+  if ($node instanceof NodeInterface) {
+    // Preprocess address.
+    if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
+      $location_refs = $node->get('field_location_ref')->getValue();
+      $locations = [];
+      foreach ($location_refs as $id => $location) {
+        $address = $node->field_location_ref[$id]->entity;
+        if ($address instanceof EntityInterface && $address->hasField('field_location_address') && !$address->get('field_location_address')->isEmpty()) {
+          $locality = $address->field_location_address->locality;
+          $administrative_area = $address->field_location_address->administrative_area;
+          $location = $locality . ", " . $administrative_area;
+          if (!in_array($location, $locations)) {
+            $locations[] = $location;
+          }
+        }
+      }
+      if ($location) {
+        $variables['location'] = implode(", ", $locations);
+      }
+    }
+
+    // Preprocess specialties.
+    if ($node->hasField('field_medical_specialties_ref') && !$node->get('field_medical_specialties_ref')->isEmpty()) {
+      $specialty_refs = $node->get('field_medical_specialties_ref')->getValue();
+      $specialties = [];
+      foreach ($specialty_refs as $id => $specialty) {
+        $entity = $node->field_medical_specialties_ref[$id]->entity;
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          array_push($specialties, $name);
+        }
+      }
+      if ($specialties) {
+        $variables['specialties'] = $specialties;
+      }
+    }
+
+    // Preprocess focus.
+    if ($node->hasField('field_area_interest_ref') && !$node->get('field_area_interest_ref')->isEmpty()) {
+      $focus_refs = $node->get('field_area_interest_ref')->getValue();
+      $focuses = [];
+      foreach ($focus_refs as $id => $focus) {
+        $entity = $node->field_area_interest_ref[$id]->entity;
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          array_push($focuses, $name);
+        }
+      }
+      if ($focuses) {
+        $variables['focuses'] = $focuses;
+      }
+    }
+
+    // Preprocess languages.
+    if ($node->hasField('field_profile_languages') && !$node->get('field_profile_languages')->isEmpty()) {
+      $languages = $node->get('field_profile_languages')->getValue();
+      $language_names = [];
+      foreach ($languages as $language) {
+        array_push($language_names, $language['value']);
+      }
+      if ($language_names) {
+        $variables['languages'] = $language_names;
+      }
+    }
+
+    // Preprocess image.
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+      $variables['src'] = file_create_url($node->field_profile_image->entity->field_media_image->entity->uri->value);
+      $variables['alt'] = $node->field_profile_image->entity->field_media_image->entity->alt;
+    }
+    else {
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
+    }
+
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+      $media = $node->field_profile_image->entity;
+      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+        $file = $media->field_media_image->entity;
+        if ($file instanceof EntityInterface) {
+          $url = $file->uri->value;
+          $image = ImageStyle::load('teaser_image')->buildUrl($url);
+          $variables['src'] = $image;
+          $variables['alt'] = $media->field_media_image->alt;
+        }
+      }
+    }
+    else {
+      // Fallback if no image uploaded.
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
+    }
   }
 }
