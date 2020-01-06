@@ -1,0 +1,19 @@
+uuid: c1092be8-37dc-4cf9-ba76-7c9fb6b155ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_hp_title__first
+    - paragraphs.paragraphs_type.homepage_hero
+id: paragraph.homepage_hero.field_hero_hp_title__first
+field_name: field_hero_hp_title__first
+entity_type: paragraph
+bundle: homepage_hero
+label: 'Title (first)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

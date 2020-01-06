@@ -1,0 +1,21 @@
+uuid: ab726194-e4c5-4d24-b56d-86a047cf5a17
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_hero_hp_title__last
+field_name: field_hero_hp_title__last
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
