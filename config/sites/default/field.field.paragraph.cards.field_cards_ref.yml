@@ -1,0 +1,43 @@
+uuid: c96e14e4-bb0f-434c-b9e2-e3caf66336cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards_ref
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.cards
+  module:
+    - entity_reference_revisions
+id: paragraph.cards.field_cards_ref
+field_name: field_cards_ref
+entity_type: paragraph
+bundle: cards
+label: Cards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card: card
+    target_bundles_drag_drop:
+      card:
+        enabled: true
+        weight: 6
+      cards:
+        weight: 7
+        enabled: false
+      education:
+        weight: 8
+        enabled: false
+      on_my_way:
+        weight: 9
+        enabled: false
+      rating_comments:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,26 +1,26 @@
-uuid: a0596ebb-7138-436e-8916-6904a658d6b9
+uuid: 8b364588-e1da-44d4-9460-742760fbe2db
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_medical_specialties_ref
+    - field.storage.node.field_service_core_ref
     - node.type.service
-    - taxonomy.vocabulary.medical_specialty
-id: node.service.field_medical_specialties_ref
-field_name: field_medical_specialties_ref
+    - taxonomy.vocabulary.core_services
+id: node.service.field_service_core_ref
+field_name: field_service_core_ref
 entity_type: node
 bundle: service
-label: 'Medical Specialty'
-description: ''
+label: 'Core Service'
+description: 'These are the services that are offered by Tower Health.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      medical_specialty: medical_specialty
+      core_services: core_services
     sort:
       field: name
       direction: asc

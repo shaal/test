@@ -1,0 +1,9 @@
+uuid: 6e6bb10d-6b5d-4931-a7f7-b8c9279aa213
+langcode: en
+status: true
+dependencies: {  }
+id: card
+label: Card
+icon_uuid: null
+description: 'A short description.'
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: fd65b558-286d-4804-82ad-ec29265b3425
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_story_link
+    - paragraphs.paragraphs_type.patient_story
+  module:
+    - link
+id: paragraph.patient_story.field_story_link
+field_name: field_story_link
+entity_type: paragraph
+bundle: patient_story
+label: Link
+description: 'Where should this link take the visitor?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

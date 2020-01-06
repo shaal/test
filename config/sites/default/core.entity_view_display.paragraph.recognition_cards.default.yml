@@ -1,0 +1,25 @@
+uuid: b6809c8f-77dd-4fb7-a460-5d557cf63f36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recognition_cards.field_recog_cards_ref
+    - paragraphs.paragraphs_type.recognition_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.recognition_cards.default
+targetEntityType: paragraph
+bundle: recognition_cards
+mode: default
+content:
+  field_recog_cards_ref:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

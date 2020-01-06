@@ -1,0 +1,56 @@
+uuid: 160aeb19-f0d0-47c3-b831-d9778325ee30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_flex
+    - node.type.service
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.patient_story
+    - paragraphs.paragraphs_type.recognition_cards
+  module:
+    - entity_reference_revisions
+id: node.service.field_service_flex
+field_name: field_service_flex
+entity_type: node
+bundle: service
+label: 'Flexible components'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cards: cards
+      patient_story: patient_story
+      recognition_cards: recognition_cards
+    target_bundles_drag_drop:
+      card:
+        weight: -13
+        enabled: false
+      cards:
+        enabled: true
+        weight: -12
+      patient_story:
+        enabled: true
+        weight: -11
+      education:
+        weight: -10
+        enabled: false
+      on_my_way:
+        weight: -9
+        enabled: false
+      rating_comments:
+        weight: -8
+        enabled: false
+      recognition_card:
+        weight: 15
+        enabled: false
+      recognition_cards:
+        enabled: true
+        weight: 16
+field_type: entity_reference_revisions

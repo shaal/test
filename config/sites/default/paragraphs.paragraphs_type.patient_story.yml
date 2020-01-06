@@ -1,0 +1,9 @@
+uuid: 286cea3e-6e89-467f-8531-bffc967e89e4
+langcode: en
+status: true
+dependencies: {  }
+id: patient_story
+label: 'Patient Story'
+icon_uuid: null
+description: 'Include a Patient Story within the webpage.'
+behavior_plugins: {  }
