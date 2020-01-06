@@ -147,6 +147,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_location_geo: true
   field_location_id: true
   field_location_type: true
   search_api_excerpt: true

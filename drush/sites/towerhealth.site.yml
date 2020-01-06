@@ -1,2 +1,64 @@
-# This is a placeholder file used to track when towerhealth.aliases.drushrc.php was converted.
-# If you delete towerhealth.aliases.drushrc.php, then you may delete this file.
+# Application 'towerhealth', environment 'dev'.
+dev:
+  root: /var/www/html/towerhealth.dev/docroot
+  ac-site: towerhealth
+  ac-env: dev
+  ac-realm: prod
+  uri: towerhealthdev.prod.acquia-sites.com
+  dev.livedev:
+    parent: '@towerhealth.dev'
+    root: /mnt/gfs/towerhealth.dev/livedev/docroot
+  host: towerhealthdev.ssh.prod.acquia-sites.com
+  user: towerhealth.dev
+  paths:
+    drush-script: drush9
+
+
+# Application 'towerhealth', environment 'prod'.
+prod:
+  root: /var/www/html/towerhealth.prod/docroot
+  ac-site: towerhealth
+  ac-env: prod
+  ac-realm: prod
+  uri: towerhealth.prod.acquia-sites.com
+  prod.livedev:
+    parent: '@towerhealth.prod'
+    root: /mnt/gfs/towerhealth.prod/livedev/docroot
+  host: towerhealth.ssh.prod.acquia-sites.com
+  user: towerhealth.prod
+  paths:
+    drush-script: drush9
+
+
+# Application 'towerhealth', environment 'ra'.
+ra:
+  root: /var/www/html/towerhealth.ra/docroot
+  ac-site: towerhealth
+  ac-env: ra
+  ac-realm: prod
+  uri: towerhealthra.prod.acquia-sites.com
+  ra.livedev:
+    parent: '@towerhealth.ra'
+    root: /mnt/gfs/towerhealth.ra/livedev/docroot
+  host: towerhealthra.ssh.prod.acquia-sites.com
+  user: towerhealth.ra
+  paths:
+    drush-script: drush9
+
+
+# Application 'towerhealth', environment 'test'.
+test:
+  root: /var/www/html/towerhealth.test/docroot
+  ac-site: towerhealth
+  ac-env: test
+  ac-realm: prod
+  uri: towerhealthstg.prod.acquia-sites.com
+  test.livedev:
+    parent: '@towerhealth.test'
+    root: /mnt/gfs/towerhealth.test/livedev/docroot
+  host: towerhealthstg.ssh.prod.acquia-sites.com
+  user: towerhealth.test
+  paths:
+    drush-script: drush9
+
+
