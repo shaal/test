@@ -10,7 +10,7 @@
   </div>
   {% set expand = 'false' %}
   {% for item in reviews %}
-  {% if loop.length > 2 %}
+  {% if loop.length > 5 %}
   {% set expand = 'true' %}
   {% endif %}
   {% endfor %}
@@ -33,7 +33,7 @@
     <button type="button" class="review-listing__toggle" aria-controls="review-list">
       <span class="view">View</span>
       <span class="hide">Hide</span>
-      all reviews
+      more reviews
     </button>
   {% endif %}
 </section>

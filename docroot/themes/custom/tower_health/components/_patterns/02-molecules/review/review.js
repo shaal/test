@@ -24,6 +24,9 @@
     var moretext = "Read More";
     var lesstext = "Read Less";
     var morelink = ".review-more-link";
+    var morecon = ".more-content";
+    var conlink = ".review__drawer";
+    var ellipse = ".more-ellipses";
     var target = ".review-expand-header";
     $('.more').each(function() {
       var content = $(this).html();
@@ -53,14 +56,15 @@
         $(this).html(lesstext);
         $(this).parent().parent().attr("aria-expanded", "true");
       }
-      //This triggers the ellipses swap
+      //This triggers the ellipses show/hide
       $(this).parent().prev().prev().toggle();
-      //This triggers the content show
+      //This triggers the content overflow show/hide
       $(this).parent().prev().children("span").toggle();
       return false;
     });
 
-    $(".review__drawer").click(function(){
+    $(conlink).click(function(){
+      //when the review DIV is clicked or open, this is activated
       if($(this).find(target).hasClass("less")) {
         $(this).find(target).removeClass("less");
         //Toggle fade
@@ -74,8 +78,10 @@
         $(this).find(morelink).html(lesstext);
         $(this).attr("aria-expanded", "true");
       }
-      $(this).children(".more-ellipses").toggle();
-      $(this).children(".more-content").children("span").toggle();
+      //This triggers the ellipses show/hide
+      $(this).children(ellipse).toggle();
+      //This triggers the content overflow show/hide
+      $(this).children(morecon).children("span").toggle();
       return false;
     });
 
