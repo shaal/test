@@ -129,7 +129,7 @@ cards:
   - type: null
     image: null
     title: Breast Self-exam Instruction
-    desc: 'While you’re meeting everyone else’s needs, it’s important that you don’t neglect your own health. This guide will help you understand your options.'
+    desc: "While you're meeting everyone else's needs, it's important that you don't neglect your own health. This guide will help you understand your options."
     url:
       link: '#'
       label: Tests & Screenings Guide
