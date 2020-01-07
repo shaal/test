@@ -78,13 +78,8 @@
             <span class="visually-hidden">{{ 'Next page'|t }}</span>
             <span>
               {{ items.next.text|default('Next'|t) }}
-<<<<<<< HEAD
-              {% if arrow-next.svg %}
-                {% include "arrow-next.svg" %}
-=======
               {% if arrow_next %}
                 {% include arrow_next %}
->>>>>>> a41155e21f65c91e9b3c76f8980144a328e07a7c
               {% endif %}
             </span>
           </a>
