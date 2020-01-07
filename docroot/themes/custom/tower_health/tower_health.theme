@@ -276,3 +276,21 @@ function tower_health_preprocess_node__profile(&$variables) {
     }
   }
 }
+
+function tower_health_preprocess_paragraph__rating_comments(&$variables) {
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+}
+
+function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+
+  $reviews = [];
+  foreach ($variables['items'] as $id => $item) {
+    $paragraph = $item["content"]["#paragraph"];
+    $reviews[$id]["review"] = strip_tags($paragraph->field_rating_comment_body->value);
+    $reviews[$id]["rating"] = $paragraph->field_rating_comment_rating->value;
+    $reviews[$id]["date"] = date("F Y", strtotime($paragraph->field_rating_comment_date->value));
+  }
+
+  $variables["reviews"] = $reviews;
+}

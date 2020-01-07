@@ -16,7 +16,7 @@
   {% endfor %}
   <div class="review-summary__total">
     {{count}} Reviews
-  </div>  
+  </div>
   <ul id="review-list" class="review-listing__list" {% if expand == 'true' %}aria-expanded="false"{% endif %}>
     {% for item in reviews %}
       <li class="review-listing__item {% if loop.index > 5 %}is-hidden{% endif %}">
@@ -28,7 +28,7 @@
       </li>
     {% endfor %}
   </ul>
-  
+
   {% if expand == 'true' %}
     <button type="button" class="review-listing__toggle" aria-controls="review-list">
       <span class="view">View</span>
