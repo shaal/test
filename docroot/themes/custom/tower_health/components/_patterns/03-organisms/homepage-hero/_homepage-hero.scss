@@ -18,6 +18,28 @@
   @include breakpoint(1050px) {
     margin-bottom: 4em;
   }
+
+  h1 {
+    @extend %track-in;
+    @include adjust-font-size-to($xl-heading, 1.45);
+    margin: 0;
+
+    @include breakpoint($bp0) {
+      @include adjust-font-size-to($xxl-heading, 1.5);
+    }
+
+    @include breakpoint($bp3) {
+      @include adjust-font-size-to($xxxl-heading, 1.75);
+    }
+
+    @include breakpoint($bp5) {
+      @include adjust-font-size-to($hero-heading, 1.95);
+    }
+
+    @include breakpoint($bp6) {
+      @include adjust-font-size-to($lg-hero-heading, 2);
+    }
+  }
 }
 
 .homepage-hero__container {
@@ -71,28 +93,6 @@
   @include breakpoint($bp6) {
     width: 80%;
     padding: 2.25em 32% 2.25em 2em;
-  }
-
-  h1 {
-    @extend %track-in;
-    @include adjust-font-size-to($xl-heading, 1.45);
-    margin: 0;
-
-    @include breakpoint($bp0) {
-      @include adjust-font-size-to($xxl-heading, 1.5);
-    }
-
-    @include breakpoint($bp3) {
-      @include adjust-font-size-to($xxxl-heading, 1.75);
-    }
-
-    @include breakpoint($bp5) {
-      @include adjust-font-size-to($hero-heading, 1.95);
-    }
-
-    @include breakpoint($bp6) {
-      @include adjust-font-size-to($lg-hero-heading, 2);
-    }
   }
 }
 
