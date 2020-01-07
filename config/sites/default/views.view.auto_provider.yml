@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.acquia_search_index
+    - search_api.index.towerhealth
   module:
     - search_api
 id: auto_provider
@@ -35,7 +35,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: 'Search Providers'
+          submit_button: Apply
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -187,7 +187,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Find a Provider'
+            label: 'Fulltext search'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -198,9 +198,6 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              article_editor: '0'
-              editor: '0'
-              publisher: '0'
               administrator: '0'
             placeholder: ''
             operator_limit_selection: false
