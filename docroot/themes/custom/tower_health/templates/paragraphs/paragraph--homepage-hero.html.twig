@@ -45,15 +45,11 @@
   "subtitle": content.field_hero_hp_subtitle,
 } %}
   {% block form %}
-    {{ drupal_view('auto_provider') }}
+    {{ drupal_entity('block', 'exposedformfind_a_providerfind_doctor') }}
   {% endblock %}
 
   {% block image_background %}
-    <div class="image-background growth top-left">
-      <picture class="image">
-        {{ content.field_hero_hp_image }}
-      </picture>
-    </div>
+    {{ content.field_hero_hp_image }}
   {% endblock %}
 
 {% endembed %}
