@@ -1,0 +1,127 @@
+.care-circle {
+  position: relative;
+  height: 0;
+  padding-bottom: 50%;
+}
+
+.care-circle__list {
+  margin: 75px auto 0;
+  border: solid 4px $trust-ltst;
+  // border-image: url(../pattern-lab/public/images/border-arrow.svg);
+  // border-image-slice: 8;
+  // border-image-width: 4;
+  // border-image-outset: 2;
+  // border-image-repeat: space;
+  
+  .care-circle--3 & {
+    
+    @include breakpoint($bp2) {
+      @include on-circle($item-count: 3, $circle-size: 425px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp3) {
+      @include on-circle($item-count: 3, $circle-size: 375px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp4) {
+      @include on-circle($item-count: 3, $circle-size: 625px, $item-size: 150px);
+    }
+  }
+  
+  .care-circle--4 & {
+    @include breakpoint($bp2) {
+      @include on-circle($item-count: 4, $circle-size: 425px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp3) {
+      @include on-circle($item-count: 4, $circle-size: 375px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp4) {
+      @include on-circle($item-count: 4, $circle-size: 625px, $item-size: 150px);
+    }
+  }
+  
+  .care-circle--5 & {
+    @include breakpoint($bp2) {
+      @include on-circle($item-count: 5, $circle-size: 425px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp3) {
+      @include on-circle($item-count: 5, $circle-size: 375px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp4) {
+      @include on-circle($item-count: 5, $circle-size: 625px, $item-size: 150px);
+    }
+  }
+  
+  .care-circle--6 & {
+    @include breakpoint($bp2) {
+      @include on-circle($item-count: 6, $circle-size: 425px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp3) {
+      @include on-circle($item-count: 6, $circle-size: 375px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp4) {
+      @include on-circle($item-count: 6, $circle-size: 625px, $item-size: 150px);
+    }
+  }
+  
+  .care-circle--7 & {
+    @include breakpoint($bp2) {
+      @include on-circle($item-count: 7, $circle-size: 425px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp3) {
+      @include on-circle($item-count: 7, $circle-size: 375px, $item-size: 130px);
+    }
+    
+    @include breakpoint($bp4) {
+      @include on-circle($item-count: 7, $circle-size: 625px, $item-size: 150px);
+    }
+  }
+  
+  .care-circle--8 & {
+    @include breakpoint($bp2) {
+      @include on-circle($item-count: 8, $circle-size: 425px, $item-size: 150px);
+    }
+    
+    @include breakpoint($bp3) {
+      @include on-circle($item-count: 8, $circle-size: 375px, $item-size: 130px);
+    }
+    
+    @include breakpoint($bp4) {
+      @include on-circle($item-count: 8, $circle-size: 625px, $item-size: 150px);
+    }
+  }
+}
+
+.care-circle__item {
+  
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 50%;
+    top: 50%;
+    height: 30px;
+    width: 15px;
+    background: url(../pattern-lab/public/images/border-arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.care-circle__item__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  background-color: $off-white;
+  padding: 2em;
+}

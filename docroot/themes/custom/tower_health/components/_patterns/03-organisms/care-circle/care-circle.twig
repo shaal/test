@@ -1,0 +1,26 @@
+<div class="care-circle care-circle--{{ items|length }}" >
+  {% if title %}
+  <h2>
+    {% if url %}
+    <a href="{{ url }}">{{ title }}</a>
+    {% else %}
+    {{ title }}
+    {% endif %}
+  </h2>
+  {% endif %}
+  
+  <ul class="care-circle__list">
+    {% for item in items %}
+      <li class="care-circle__item {% if item.color %}care-circle__item--{{color}}{% endif %}">
+        {% if item.url %}<a href="{{ item.url }}">{% endif %}
+        <span class="care-circle__item__inner">
+        {% if item.icon %}
+          {{ item.icon }}
+        {% endif %}
+        {{ item.label }}
+        </span>
+        {% if item.url %}</a>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
