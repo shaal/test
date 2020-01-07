@@ -3,13 +3,18 @@ provider:
     src: "../../images/people/Roland-Donald.jpg"
     alt: "Alternative Text"
   link:
-    url: "/"
+    href: "/"
     text: "Request an Appointment"
     icon: "th-cal.svg"
   details:
     name: "Donald E. Roland, MD, DMD"
-    specialties: "Oral and Maxillofacial Surgery"
-    focus: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+    specialties: 
+      - "Oral and Maxillofacial Surgery"
+    focus: 
+      - "Cranio-facial clefts"
+      - "Rhinoplasty"
+      - "Genioplasty"
     location: "Pottstown, PA"
-    language: "English"
+    language: 
+      - "English"
     rating: '4.2'

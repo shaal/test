@@ -11,3 +11,5 @@ items:
       href: "#"
   previous: true
   next: true
+arrow_next: "arrow-next.svg"
+arrow_previous: "arrow-prev.svg"

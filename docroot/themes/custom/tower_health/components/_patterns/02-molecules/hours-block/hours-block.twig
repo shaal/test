@@ -5,5 +5,7 @@
       <li class="hours-block__day"><span>{{ hour.title }}:</span> {{ hour.hours }}</li>
     {% endfor %}
   </ul>
+  {% if text %}
   <span class="hours-block__text">{{ text }}</span>
+  {% endif %}
 </div>

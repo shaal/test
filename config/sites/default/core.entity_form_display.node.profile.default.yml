@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.profile.field_insurance_ref
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
+    - field.field.node.profile.field_metatags
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
     - field.field.node.profile.field_profile_epic_id
@@ -35,6 +36,7 @@ dependencies:
     - content_moderation
     - field_group
     - media_library
+    - metatag
     - path
     - readonly_field_widget
 third_party_settings:
@@ -207,6 +209,12 @@ content:
       show_description: false
     third_party_settings: {  }
     type: readonly_field_widget
+    region: content
+  field_metatags:
+    weight: 41
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_profile_board_certified:
     weight: 19
@@ -414,10 +422,7 @@ content:
   field_rating_overall:
     weight: 31
     settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+      placeholder: ''
     third_party_settings: {  }
     type: readonly_field_widget
     region: content
@@ -469,6 +474,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
   url_redirects:

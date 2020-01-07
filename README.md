@@ -18,6 +18,7 @@ The development environment is based on [palantirnet/the-vagrant](https://github
 
 * Mac OS X >= 10.10. _This stack may run under other host operating systems, but is not regularly tested. For details on installing these dependencies on your Mac, see our [Mac setup doc [internal]](https://github.com/palantirnet/documentation/wiki/Mac-Setup)._
 * [Composer](https://getcomposer.org)
+  * Update to the newest version: `brew composer update`
 * [virtualBox](https://www.virtualbox.org/wiki/Downloads) >= 5.0
 * [ansible](https://github.com/ansible/ansible) `brew install ansible`
 * [vagrant](https://www.vagrantup.com/) >= 2.1.0
@@ -29,7 +30,7 @@ If you update Vagrant, you may need to update your vagrant plugins with `vagrant
 
 ## Getting Started
 
-1. Clone the project from github: `git clone https://github.com/palantirnet/towerhealth.git`
+1. Clone the project from github: `git clone git@github.com:palantirnet/towerhealth.git`
 1. From inside the project root, run:
 
   ```
@@ -124,6 +125,9 @@ The styleguide is built using [Emulsify](https://www.drupal.org/project/emulsify
 * [Performance Budget](https://docs.google.com/spreadsheets/d/1pKr3cJxcpQ6R88b-w2oBWSqCAs1-klD_HS_lpcu4yug/edit#gid=1700686844)
 * [Performance testing](docs/performance_testing.md)
 
+
+## Notes
+    * chmod -R 777 docroot/sites/default/files
 
 ----
 Copyright 2019 Palantir.net, Inc.

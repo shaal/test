@@ -4,9 +4,12 @@ drupal.towerhealth_misc.radio-widget:
     js/radio-widget.js: {}
   dependencies:
     - facets/widget
+<<<<<<< HEAD
 drupal.towerhealth_misc.chosen-dropdown-widget:
   version: VERSION
   js:
     js/chosen-dropdown-widget.js: {}
   dependencies:
     - facets/widget
+=======
+>>>>>>> a41155e21f65c91e9b3c76f8980144a328e07a7c

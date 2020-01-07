@@ -52,8 +52,8 @@
   padding: 1em 1em 2em 1em;
   background-color: $white;
   border: 3px solid $growth;
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba($black, 0.15);
+  border-radius: $rd-brd-sm;
+  box-shadow: $shadow;
   z-index: 2;
   margin-bottom: 2em;
 

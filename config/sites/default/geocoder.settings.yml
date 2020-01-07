@@ -11,7 +11,7 @@ plugins_options:
     username: ''
     locale: ''
   googlemaps:
-    apikey: AlzaSyDXzB-0EtA-tyG7CCNHqs0BEkUNgjnaRGY
+    apikey: AIzaSyDXzB-0EtA-tyG7CCNHqs0BEkUNgjnaRGY
     locale: ''
     region: ''
     usessl: true

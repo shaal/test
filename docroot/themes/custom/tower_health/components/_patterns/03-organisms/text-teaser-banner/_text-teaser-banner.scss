@@ -2,8 +2,8 @@
   @include grid;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 6em;
-  margin-bottom: 4em;
+  margin-top: 4em;
+  margin-bottom: 6em;
   
   @include breakpoint($bp3) {
     align-items: flex-end;
@@ -15,7 +15,7 @@
   
   @include breakpoint($bp3) {
     padding-top: 3em;
-    width: 60%;
+    width: 70%;
     border-top: 6px solid $trust-ltst;
     
     &::before {
@@ -51,8 +51,8 @@
 
   @include breakpoint($bp3) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     width: 30%;
-    margin-left: auto;
+    padding-left: 1em;
   }
 }

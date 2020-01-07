@@ -1,0 +1,36 @@
+uuid: 1a246a91-43de-42a1-b481-87048e3ff0e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.utility.field_utility_link_type
+    - system.menu.utility
+  module:
+    - link
+    - menu_item_extras
+id: menu_link_content.utility.default
+targetEntityType: menu_link_content
+bundle: utility
+mode: default
+content:
+  field_utility_link_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

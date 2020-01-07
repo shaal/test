@@ -1,8 +1,12 @@
 {{ attach_library('tower_health/modal') }}
-<a href="{% if modal.type == 'inline' %}#{% endif %}{{modal.reference}}" class="modal {% if modal.type %}modal--{{modal.type}}{% endif %}">{{ modal.label }}</a>
+<a href="{% if modal.type == 'inline' or modal.type == 'insurance' %}#{% endif %}{{modal.reference}}" class="modal {% if modal.type %}modal--{{modal.type}}{% endif %} {{ class }}">{{ modal.label }}</a>
 
 {% if modal.type == 'inline' %}
   <div id="{{modal.reference}}" class="modal__inline-window">
     {{ modal.content }}
   </div>
+{% endif %}
+
+{% if modal.type == 'insurance' %}
+  {% include "@atoms/_insurance-modal/_insurance-modal.twig" with { items: modal.items } %}
 {% endif %}

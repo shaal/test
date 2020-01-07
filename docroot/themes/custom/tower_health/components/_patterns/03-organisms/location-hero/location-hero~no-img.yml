@@ -5,7 +5,7 @@ address_2: "West Reading, PA 19611"
 directions:
   link: "/"
   icon: "th-find-hospital.svg"
-  text: "Directions"
+  text: "Map & Directions"
   variation: "small"
 phones:
   - label: Main

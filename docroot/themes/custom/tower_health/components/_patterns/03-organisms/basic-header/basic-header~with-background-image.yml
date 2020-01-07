@@ -1,0 +1,14 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "2nd Level"
+    3:
+      text: "3rd Level"
+  title: This is a Basic Page Header.
+  lede: Sed quam dolor, feugiat ac ante a, maximus faucibus mi. Fusce id accumsan ante, sit amet mollis mi. Quisque eu enim tempus, iaculis purus quis, commodo purus. Aliquam commodo id quam quis cursus
+  image:
+    url: '../../images/AdobeStock_254696350_Preview.jpeg'

@@ -1,20 +1,52 @@
 boxes:
-  - title: "McGlinn Cancer Institute"
+  - color: growth
+    title: "McGlinn Cancer Institute"
     text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
     link:
       text: "About the Institute"
       url: "/"
     img:
       src: "../../images/AdobeStock_193543982_Preview.jpeg"
-      alt: "Alternative text"
-  - title: "Tower Health Transplant Institute"
+  - color: healing
+    title: "Tower Health Transplant Institute"
     text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
     link:
       text: "About the Institute"
       url: "/"
     img:
       src: "../../images/AdobeStock_271545252_Preview.jpeg"
-      alt: "Alternative text"
+  - color: uplifting
+    title: "Miller Regional Heart Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Center"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_239096192_Preview.jpeg"
+  - color: wisdom
+    title: "Weight Loss Surgery & Wellness Center"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Center"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_204599156_Preview.jpeg"
+  - color: tranquil
+    title: "McGlinn Cancer Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_193543982_Preview.jpeg"
+  - color: energy
+    title: "Tower Health Transplant Institute"
+    text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+    link:
+      text: "About the Institute"
+      url: "/"
+    img:
+      src: "../../images/AdobeStock_271545252_Preview.jpeg"
   - title: "Miller Regional Heart Center"
     text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
     link:
@@ -22,7 +54,6 @@ boxes:
       url: "/"
     img:
       src: "../../images/AdobeStock_239096192_Preview.jpeg"
-      alt: "Alternative text"
   - title: "Weight Loss Surgery & Wellness Center"
     text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
     link:
@@ -30,4 +61,3 @@ boxes:
       url: "/"
     img:
       src: "../../images/AdobeStock_204599156_Preview.jpeg"
-      alt: "Alternative text"

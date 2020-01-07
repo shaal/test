@@ -210,13 +210,10 @@
 
     <!-- Target: tower-health-code-sniffer -->
     <target name="tower-health-code-sniffer">
-        <phpcodesniffer
-                standard="${drupal_code_sniffer.standard}"
-                haltonerror="${drupal_code_sniffer.haltonerror}"
-                verbosity="1">
-            <!-- Drupal code -->
-            <fileset dir="${build.dir}/${drupal.root}" includesfile="${drupal_code_sniffer.files}" expandsymboliclinks="true" />
-        </phpcodesniffer>
+        <!-- Run PHP Code Beautifier and Fixer. -->
+        <property name="phpcbf.command" value="vendor/bin/phpcbf --standard=${phpcs.standard} --ignore=${phpcs.ignore} --extensions=${phpcs.extensions} ${phpcs.filelist}" />
+        <echo msg="$> ${phpcbf.command}" />
+        <exec command="${phpcbf.command}" logoutput="true" checkreturn="false" />
     </target>
 
     <!-- Target: tower-health-run-phplint -->
@@ -243,7 +240,7 @@
     <!-- Target: code-fix -->
     <target name="code-fix" description="Run the automated code fixer.">
         <!-- Run PHP Code Beautifier and Fixer. -->
-        <property name="phpcbf.command" value="vendor/bin/phpcbf --standard=${phpcs.standard} --ignore=${phpcs.ignore} ${phpcs.directories}" />
+        <property name="phpcbf.command" value="vendor/bin/phpcbf --standard=${phpcs.standard} --extensions=${phpcs.extensions} --ignore=${phpcs.ignore} ${phpcs.filelist}" />
         <echo msg="$> ${phpcbf.command}" />
         <exec command="${phpcbf.command}" logoutput="true" checkreturn="false" />
     </target>

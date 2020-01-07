@@ -96,8 +96,10 @@
       var $offset = $('.main-menu').offset();
       var $top = $offset.top + 'px';
       $('.header__search-drawer').css('top', $top);
+      $('.role-anonymous .header__search-drawer').css('top', $top);
+      $(':not(role-anonymous) .header__search-drawer').css('top','88px');
     } else {
-      $('.header__search-drawer').css('top', ' ');
+      $('.header__search-drawer').css('top', '100%');
     }
   });
 

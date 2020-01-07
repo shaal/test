@@ -113,7 +113,7 @@
   max-width: 1000px;
   border-radius: 0;
   background: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: $shadow;
   cursor: auto;
 }
 
@@ -177,7 +177,7 @@
   left: 23px;
   width: 4px;
   height: 22px;
-  border-radius: 4px;
+  border-radius: $rd-brd-sm;
   background: #fff;
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
@@ -225,7 +225,7 @@
   padding: 10px 15px;
   color: #fff;
   background: #555;
-  border-radius: 3px;
+  border-radius: $rd-brd-sm;
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
 }
@@ -368,7 +368,7 @@
   left: 25px;
   width: 4px;
   height: 18px;
-  border-radius: 4px;
+  border-radius: $rd-brd-sm;
   background: #fff;
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;

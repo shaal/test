@@ -1,4 +1,5 @@
 ---
+el: ".pager"
 title: 'Pager'
 ---
 #### Description

@@ -1,0 +1,21 @@
+uuid: 24b8a67b-a0da-4f3e-a388-b7889c0f8097
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_main_autocomplete_form
+    - system.menu.main
+  module:
+    - options
+id: menu_link_content.main.field_main_autocomplete_form
+field_name: field_main_autocomplete_form
+entity_type: menu_link_content
+bundle: main
+label: 'Autocomplete form'
+description: 'Select a search form to display in place of this menu link'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
