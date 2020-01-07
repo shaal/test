@@ -1,6 +1,6 @@
-title_1: "Coordinated,"
-title_2: "Convenient,"
-title_3: "Effective."
+title__first: "Coordinated,"
+title__middle: "Convenient,"
+title__last: "Effective."
 subtitle: "Connecting you to your healthiest."
 img:
   src: "../../images/th-hero-image.jpg"
@@ -8,7 +8,7 @@ img:
 classes: "growth top-left"
 autocomplete:
   label: Find a Provider
-  input_class: 
+  input_class:
   type: find-provider
   placeholder: Search by Name, Specialty, or Condition
   id: edit-find-provider
