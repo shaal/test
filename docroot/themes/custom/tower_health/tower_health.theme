@@ -144,9 +144,9 @@ function tower_health_preprocess_node__location(&$variables) {
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
 
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+  $variables['cal_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
   $variables['href'] = Url::fromUri('internal:/');
-  $variables['icon_path'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
   if ($node instanceof NodeInterface) {
     // Preprocess address.
