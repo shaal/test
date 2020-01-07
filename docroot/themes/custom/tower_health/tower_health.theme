@@ -179,7 +179,7 @@ function tower_health_preprocess_node__profile(&$variables) {
           $tid = $entity->tid->value;
           $term = Term::load($tid);
           $name = $term->getName();
-          array_push($specialties, $name);
+          $specialties[$id]['text'] = $name;
         }
       }
       if ($specialties) {
@@ -197,7 +197,7 @@ function tower_health_preprocess_node__profile(&$variables) {
           $tid = $entity->tid->value;
           $term = Term::load($tid);
           $name = $term->getName();
-          array_push($focuses, $name);
+          $focuses[$id]['text'] = $name;
         }
       }
       if ($focuses) {
@@ -209,8 +209,8 @@ function tower_health_preprocess_node__profile(&$variables) {
     if ($node->hasField('field_profile_languages') && !$node->get('field_profile_languages')->isEmpty()) {
       $languages = $node->get('field_profile_languages')->getValue();
       $language_names = [];
-      foreach ($languages as $language) {
-        array_push($language_names, $language['value']);
+      foreach ($languages as $id => $language) {
+        $language_names[$id]['text'] = $language['value'];
       }
       if ($language_names) {
         $variables['languages'] = $language_names;

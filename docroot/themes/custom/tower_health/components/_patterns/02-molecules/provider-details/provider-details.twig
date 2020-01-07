@@ -1,9 +1,9 @@
 <div class="provider-details {% if detail.sidebar == 'true' %}provider-details--side{% endif %}">
-  
+
   {% if detail.label %}
   <h2 class="provider-detail__label">{{detail.label}}</h2>
   {% endif %}
-  
+
   {% if detail.info %}
     {% include "@molecules/toggle-tip/toggle-tip.twig"  with {
       info: detail.info,
@@ -19,14 +19,14 @@
     {% if item.link %}
       <a class="provider-detail__item-link" href="{{item.link.url}}">{{item.link.text}}</a>
     {% endif %}
-    
+
     {% if item.insurance %}
       {% include "@molecules/modal/modal.twig"  with {
         modal: item.insurance,
         class: "button"
       }%}
     {% endif %}
-    
+
     {% if item.title %}
       <h3 class="provider-detail__item-title">{{ item.title }}</h3>
     {% endif %}
@@ -52,7 +52,7 @@
       }%}
     {% endif %}
   </li>
-  
+
   {% endfor %}
   </ul>
 </div>
