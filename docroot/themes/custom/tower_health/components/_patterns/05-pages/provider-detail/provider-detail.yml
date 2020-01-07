@@ -1,3 +1,5 @@
+show_site_header: TRUE
+show_site_footer: TRUE
 breadcrumb:
   class: "hero"
   breadcrumb:

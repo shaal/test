@@ -27,10 +27,12 @@
 
 <div>
   <a class="element-focusable" href="#main-content">Jump to Page Content</a>
-  {% block site_header %}
-    {% include "@organisms/site/site-header/site-header.twig" %}
-  {% endblock %}
-
+  {% if show_site_header %}
+    {% block site_header %}
+      {% include "@organisms/site/site-header/site-header.twig" %}
+    {% endblock %}
+  {% endif %}
+  
   {% block page_system %}
   {% endblock %}
 
@@ -48,7 +50,7 @@
           {% block top_page_sidebar %}{% endblock %}
         </aside>
       {% endif %}
-      
+
       {% if page_content %}
       <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
         {% block page_content %}{% endblock %}
@@ -61,7 +63,7 @@
         </aside>
       {% endif %}
     </div>
-    
+
     {% if full_content %}
       <div class="full-content">
         {% block full_content %}{% endblock %}
@@ -70,7 +72,9 @@
 
   </main>
 
-  {% block page_footer %}
-    {% include "@organisms/site/site-footer/site-footer.twig" %}
-  {% endblock %}
+  {% if show_site_footer %}
+    {% block page_footer %}
+      {% include "@organisms/site/site-footer/site-footer.twig" %}
+    {% endblock %}
+  {% endif %}
 </div>
