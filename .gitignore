@@ -40,3 +40,5 @@
 # Ignore virtual environment and artifacts
 .vagrant/
 /artifacts/
+.editorconfig
+.gitattributes

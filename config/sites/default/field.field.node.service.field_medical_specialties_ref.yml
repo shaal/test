@@ -10,7 +10,7 @@ id: node.service.field_medical_specialties_ref
 field_name: field_medical_specialties_ref
 entity_type: node
 bundle: service
-label: 'Medical Specialties'
+label: 'Medical Specialty'
 description: ''
 required: false
 translatable: true

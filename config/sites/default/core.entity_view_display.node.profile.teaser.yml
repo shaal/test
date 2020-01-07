@@ -105,6 +105,7 @@ content:
 hidden:
   field_affiliations_ref: true
   field_insurance_ref: true
+  field_metatags: true
   field_profile_board_certified: true
   field_profile_education: true
   field_profile_epic_id: true

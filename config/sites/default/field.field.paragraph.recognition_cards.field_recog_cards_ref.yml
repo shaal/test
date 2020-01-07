@@ -1,0 +1,52 @@
+uuid: 0babc60f-30da-4694-8578-f3a876fbd294
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recog_cards_ref
+    - paragraphs.paragraphs_type.recognition_card
+    - paragraphs.paragraphs_type.recognition_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.recognition_cards.field_recog_cards_ref
+field_name: field_recog_cards_ref
+entity_type: paragraph
+bundle: recognition_cards
+label: Cards
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      recognition_card: recognition_card
+    target_bundles_drag_drop:
+      card:
+        weight: 9
+        enabled: false
+      cards:
+        weight: 10
+        enabled: false
+      education:
+        weight: 11
+        enabled: false
+      on_my_way:
+        weight: 12
+        enabled: false
+      patient_story:
+        weight: 13
+        enabled: false
+      rating_comments:
+        weight: 14
+        enabled: false
+      recognition_card:
+        enabled: true
+        weight: 15
+      recognition_cards:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions
