@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_hero_hp_title__last
+    - field.storage.paragraph.field_hero_hp_title__bottom
     - paragraphs.paragraphs_type.homepage_hero
-id: paragraph.homepage_hero.field_hero_hp_title__last
-field_name: field_hero_hp_title__last
+id: paragraph.homepage_hero.field_hero_hp_title__bottom
+field_name: field_hero_hp_title__bottom
 entity_type: paragraph
 bundle: homepage_hero
-label: 'Title (last)'
+label: 'Title (bottom)'
 description: ''
 required: true
 translatable: false
