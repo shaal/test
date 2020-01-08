@@ -17,12 +17,14 @@
         "heading_base_class": "homepage-hero__subtitle",
       } %}
       {% endif %}
-      {% block form %}
-        <form class="homepage-hero__content__form">
-          {% include "@molecules/autocomplete-dropdown/autocomplete.twig" %}
-          <button class="button button--primary" type="submit">Search Providers</button>
-        </form>
-      {% endblock %}
+      <div class="homepage-hero__content__form">
+        {% block form %}
+          <form class="homepage-hero__content__form">
+            {% include "@molecules/autocomplete-dropdown/autocomplete.twig" %}
+            <button class="button button--primary" type="submit">Search Providers</button>
+          </form>
+        {% endblock %}
+      </div>
     </div>
     <div class="homepage-hero__image">
       {% block image_background %}

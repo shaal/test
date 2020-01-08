@@ -31,14 +31,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_hero_hp_title__top:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_hero_hp_title__bottom:
     weight: 3
     settings:
@@ -49,6 +41,14 @@ content:
     region: content
   field_hero_hp_title__middle:
     weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hero_hp_title__top:
+    weight: 1
     settings:
       size: 60
       placeholder: ''

@@ -5,11 +5,11 @@ dependencies: {  }
 name: 900x900
 label: 900x900
 effects:
-  e4b4b3f7-437d-4374-8ee9-77461a8e6c79:
-    uuid: e4b4b3f7-437d-4374-8ee9-77461a8e6c79
-    id: image_scale
-    weight: 1
+  95d06929-9a40-4ab0-99b7-2f6dda40cff1:
+    uuid: 95d06929-9a40-4ab0-99b7-2f6dda40cff1
+    id: image_scale_and_crop
+    weight: 2
     data:
       width: 900
       height: 900
-      upscale: false
+      anchor: center-center

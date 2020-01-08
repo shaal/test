@@ -5,9 +5,9 @@ dependencies:
   config:
     - field.field.paragraph.homepage_hero.field_hero_hp_image
     - field.field.paragraph.homepage_hero.field_hero_hp_subtitle
-    - field.field.paragraph.homepage_hero.field_hero_hp_title__top
     - field.field.paragraph.homepage_hero.field_hero_hp_title__bottom
     - field.field.paragraph.homepage_hero.field_hero_hp_title__middle
+    - field.field.paragraph.homepage_hero.field_hero_hp_title__top
     - paragraphs.paragraphs_type.homepage_hero
 id: paragraph.homepage_hero.default
 targetEntityType: paragraph
@@ -19,20 +19,12 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: responsive_image
+      view_mode: homepage_hero
       link: false
     third_party_settings: {  }
     region: content
   field_hero_hp_subtitle:
     weight: 4
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_hero_hp_title__top:
-    weight: 1
     label: hidden
     settings:
       link_to_entity: false
@@ -49,6 +41,14 @@ content:
     region: content
   field_hero_hp_title__middle:
     weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_hp_title__top:
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false

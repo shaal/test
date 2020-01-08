@@ -132,9 +132,18 @@
   position: relative;
   z-index: 4;
 
+  #views-exposed-form-find-a-provider-find-doctor {
+    display: block;
+  }
+
+  input.button,
   button {
     @include adjust-font-size-to($label, .8);
     padding: 1em 1.5em;
+  }
+
+  #edit-submit-find-a-provider {
+    width: inherit;
   }
 
   @include breakpoint($bp3) {
