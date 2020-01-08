@@ -297,6 +297,11 @@ function tower_health_preprocess_paragraph__rating_comments(&$variables) {
 function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
+  $rating = $variables['element']['#object']->field_rating_overall->value;
+  if ($rating) {
+    $variables['rating'] = $rating;
+  }
+
   $reviews = [];
   foreach ($variables['items'] as $id => $item) {
     $paragraph = $item["content"]["#paragraph"];
