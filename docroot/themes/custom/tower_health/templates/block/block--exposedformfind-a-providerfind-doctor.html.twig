@@ -29,7 +29,7 @@
 <div {{ bem('block') }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
+    <label{{ title_attributes }}>{{ label }}</label>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
