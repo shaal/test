@@ -7,21 +7,30 @@ items:
   - icon: Heart
     url: "#"
     label: Step 2
+    color: healing
   - icon: Heart
     url: "#"
     label: Step 3
+    color: uplifting
   - icon: Heart
     url: "#"
     label: Step 4
+    color: wisdom
   - icon: Heart
     url: "#"
     label: Step 5
+    color: growth
   - icon: Heart
     url: "#"
     label: Step 6
+    color: tranquil
   - icon: Heart
     url: "#"
     label: Step 7
-
+    color: energy
+  - icon: Heart
+    url: "#"
+    label: Step 8
+    color: pink
 
 

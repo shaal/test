@@ -11,7 +11,7 @@
   
   <ul class="care-circle__list">
     {% for item in items %}
-      <li class="care-circle__item {% if item.color %}care-circle__item--{{color}}{% endif %}">
+      <li class="care-circle__item {% if item.color %}care-circle__item--{{ item.color }}{% endif %}">
         {% if item.url %}<a href="{{ item.url }}">{% endif %}
         <span class="care-circle__item__inner">
         {% if item.icon %}
