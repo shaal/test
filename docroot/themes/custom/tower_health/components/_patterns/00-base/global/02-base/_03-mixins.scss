@@ -174,7 +174,7 @@
 /// @param {Integer} $item-count - Number of items on the circle
 /// @param {Length} $circle-size - Large circle size
 /// @param {Length} $item-size - Single item size
-@mixin on-circle($item-count, $circle-size, $item-size) {
+@mixin on-circle($item-count, $circle-size, $item-size, $arrowy) {
   position: relative;
   width:  $circle-size;
   height: $circle-size;
@@ -193,8 +193,15 @@
   
     $angle: (360 / $item-count);
     $rot: 0;
-
+    $offset: 120;
+    $arrowx: (((((3.14 * $circle-size) / $item-count) - ($item-size / $item-count)) / 2) + 7.5 );
+    
+    @if $item-count == 3 {
+      $offset: 140;
+    };
+    
     @for $i from 1 through $item-count {
+      
       &:nth-of-type(#{$i}) {
         transform: 
           rotate($rot * 1deg) 
@@ -203,11 +210,11 @@
           
         &::after {
           transform: 
-            rotate(($angle * $i) + $angle * 1deg)
-            translate(100px , -36px );
+            rotate( $offset + ($angle * ($i - 1)) * 1deg)
+            translate($arrowx , $arrowy);
         }
       }
-
+      
       $rot: $rot + $angle;
     }
     

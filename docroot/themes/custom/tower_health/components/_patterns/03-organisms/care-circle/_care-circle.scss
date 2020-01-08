@@ -7,111 +7,382 @@
 .care-circle__list {
   margin: 75px auto 0;
   border: solid 4px $trust-ltst;
-  // border-image: url(../pattern-lab/public/images/border-arrow.svg);
-  // border-image-slice: 8;
-  // border-image-width: 4;
-  // border-image-outset: 2;
-  // border-image-repeat: space;
+  list-style: none;
+  padding: 0;
+  
+  @include breakpoint(0 $bp2) {
+    display: flex;
+    justify-content: center;
+    margin: 0 2em;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    border: none;
+  }
   
   .care-circle--3 & {
     
     @include breakpoint($bp2) {
-      @include on-circle($item-count: 3, $circle-size: 425px, $item-size: 150px);
+      @include on-circle($item-count: 3, $circle-size: 425px, $item-size: 150px, $arrowy: -67px);
     }
     
     @include breakpoint($bp3) {
-      @include on-circle($item-count: 3, $circle-size: 375px, $item-size: 150px);
+      @include on-circle($item-count: 3, $circle-size: 375px, $item-size: 150px, $arrowy: -58px);
     }
     
     @include breakpoint($bp4) {
-      @include on-circle($item-count: 3, $circle-size: 625px, $item-size: 150px);
+      @include on-circle($item-count: 3, $circle-size: 625px, $item-size: 150px, $arrowy: -99px);
     }
   }
   
   .care-circle--4 & {
     @include breakpoint($bp2) {
-      @include on-circle($item-count: 4, $circle-size: 425px, $item-size: 150px);
+      @include on-circle($item-count: 4, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
     
     @include breakpoint($bp3) {
-      @include on-circle($item-count: 4, $circle-size: 375px, $item-size: 150px);
+      @include on-circle($item-count: 4, $circle-size: 375px, $item-size: 150px, $arrowy: -20px);
     }
     
     @include breakpoint($bp4) {
-      @include on-circle($item-count: 4, $circle-size: 625px, $item-size: 150px);
+      @include on-circle($item-count: 4, $circle-size: 625px, $item-size: 150px, $arrowy: -36px);
     }
   }
   
   .care-circle--5 & {
     @include breakpoint($bp2) {
-      @include on-circle($item-count: 5, $circle-size: 425px, $item-size: 150px);
+      @include on-circle($item-count: 5, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
     
     @include breakpoint($bp3) {
-      @include on-circle($item-count: 5, $circle-size: 375px, $item-size: 150px);
+      @include on-circle($item-count: 5, $circle-size: 375px, $item-size: 150px, $arrowy: -20px);
     }
     
     @include breakpoint($bp4) {
-      @include on-circle($item-count: 5, $circle-size: 625px, $item-size: 150px);
+      @include on-circle($item-count: 5, $circle-size: 625px, $item-size: 150px, $arrowy: -36px);
     }
   }
   
   .care-circle--6 & {
     @include breakpoint($bp2) {
-      @include on-circle($item-count: 6, $circle-size: 425px, $item-size: 150px);
+      @include on-circle($item-count: 6, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
     
     @include breakpoint($bp3) {
-      @include on-circle($item-count: 6, $circle-size: 375px, $item-size: 150px);
+      @include on-circle($item-count: 6, $circle-size: 375px, $item-size: 150px, $arrowy: -20px);
     }
     
     @include breakpoint($bp4) {
-      @include on-circle($item-count: 6, $circle-size: 625px, $item-size: 150px);
+      @include on-circle($item-count: 6, $circle-size: 625px, $item-size: 150px, $arrowy: -36px);
     }
   }
   
   .care-circle--7 & {
     @include breakpoint($bp2) {
-      @include on-circle($item-count: 7, $circle-size: 425px, $item-size: 150px);
+      @include on-circle($item-count: 7, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
     
     @include breakpoint($bp3) {
-      @include on-circle($item-count: 7, $circle-size: 375px, $item-size: 130px);
+      @include on-circle($item-count: 7, $circle-size: 375px, $item-size: 130px, $arrowy: -20px);
     }
     
     @include breakpoint($bp4) {
-      @include on-circle($item-count: 7, $circle-size: 625px, $item-size: 150px);
+      @include on-circle($item-count: 7, $circle-size: 625px, $item-size: 150px, $arrowy: -36px);
     }
   }
   
   .care-circle--8 & {
     @include breakpoint($bp2) {
-      @include on-circle($item-count: 8, $circle-size: 425px, $item-size: 150px);
+      @include on-circle($item-count: 8, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
     
     @include breakpoint($bp3) {
-      @include on-circle($item-count: 8, $circle-size: 375px, $item-size: 130px);
+      @include on-circle($item-count: 8, $circle-size: 375px, $item-size: 130px, $arrowy: -20px);
     }
     
     @include breakpoint($bp4) {
-      @include on-circle($item-count: 8, $circle-size: 625px, $item-size: 150px);
+      @include on-circle($item-count: 8, $circle-size: 625px, $item-size: 150px, $arrowy: -36px);
     }
   }
 }
 
 .care-circle__item {
   
+  @include breakpoint(0 $bp2) {
+    position: relative;
+    height: 0;
+    width: 40%;
+    padding: 0 0 40%;
+    margin: 1em 5%;
+    
+    
+    &:nth-of-type(1) {
+      
+      &::after {
+        position: absolute;
+        top: 40%;
+        top: calc(50% - 15px);
+        right: -18%;
+      }
+    }
+    
+    // Mobile positioning if there are 3 align-items
+    .care-circle--3 & {
+      &:nth-of-type(2) {
+        // bottom right
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 18%;
+          transform: rotate(120deg);
+        }
+      }
+      
+      &:nth-of-type(3) {
+        // bottom left
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 9%;
+          transform: rotate(-120deg);
+        }
+      }
+    }
+    
+    .care-circle--4 & {
+      &:nth-of-type(2) {
+        // down
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(90deg);
+        }
+      }
+      
+      &:nth-of-type(3) {
+        order: 4;
+        
+        // left
+        &::after {
+          position: absolute;
+          top: 40%;
+          top: calc(50% - 15px);
+          left: -18%;
+          transform: rotate(180deg);
+        }
+      }
+      
+      &:nth-of-type(4) {
+        order: 3;
+        
+        // up
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(270deg);
+        }
+      }
+    }
+    
+    .care-circle--5 & {
+      &:nth-of-type(2) {
+        
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(90deg);
+        }
+      }
+      
+      &:nth-of-type(3) {
+        order: 4;
+        
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 18%;
+          transform: rotate(120deg);
+        }
+      }
+      
+      &:nth-of-type(4) {
+        order: 5;
+        
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 9%;
+          transform: rotate(-120deg);
+        }
+      }
+      
+      &:nth-of-type(5) {
+        order: 3;
+        
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(270deg);
+        }
+      }
+    }
+    
+    .care-circle--6 & {
+      &:nth-of-type(2) {
+        
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(90deg);
+        }
+      }
+      
+      &:nth-of-type(3) {
+        order: 4;
+        
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(90deg);
+        }
+      }
+      
+      &:nth-of-type(4) {
+        order: 6;
+        
+        &::after {
+          position: absolute;
+          top: 40%;
+          top: calc(50% - 15px);
+          left: -18%;
+          transform: rotate(180deg);
+        }
+      }
+      
+      &:nth-of-type(5) {
+        order: 5;
+        
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(270deg);
+        }
+      }
+      
+      &:nth-of-type(6) {
+        order: 3;
+        
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(270deg);
+        }
+      }
+    }
+    
+    .care-circle--7 & {
+      &:nth-of-type(2) {
+        
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(90deg);
+        }
+      }
+      
+      &:nth-of-type(3) {
+        order: 4;
+        
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(90deg);
+        }
+      }
+      
+      &:nth-of-type(4) {
+        order: 6;
+        
+        &::after {
+          position: absolute;
+          bottom: -2em;
+          left: 18%;
+          transform: rotate(120deg);
+        }
+      }
+      
+      &:nth-of-type(5) {
+        order: 7;
+        
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 9%;
+          transform: rotate(-120deg);
+        }
+      }
+      
+      &:nth-of-type(6) {
+        order: 5;
+        
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(270deg);
+        }
+      }
+      
+      &:nth-of-type(7) {
+        order: 3;
+        
+        &::after {
+          position: absolute;
+          top: -2em;
+          left: 45%;
+          left: calc(50% - 15px);
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+  
   &::after {
-    position: absolute;
     content: '';
     display: block;
-    left: 50%;
-    top: 50%;
     height: 30px;
     width: 15px;
     background: url(../pattern-lab/public/images/border-arrow.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    
+    @include breakpoint($bp2) {
+      position: absolute;
+      left: 50%; // fallback
+      top: 50%; // fallback
+      left: calc(50% - 7px);
+      top: calc(50% - 15px);
+    }
   }
 }
 
@@ -124,4 +395,12 @@
   border-radius: 100%;
   background-color: $off-white;
   padding: 2em;
+  
+  @include breakpoint(0 $bp2) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
