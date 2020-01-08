@@ -12,6 +12,28 @@
     flex-wrap: nowrap;
     margin-bottom: 1em;
   }
+
+  h1 {
+    @extend %track-in;
+    @include adjust-font-size-to($xl-heading, 1.45);
+    margin: 0;
+
+    @include breakpoint($bp0) {
+      @include adjust-font-size-to($xxl-heading, 1.5);
+    }
+
+    @include breakpoint($bp3) {
+      @include adjust-font-size-to($xxxl-heading, 1.75);
+    }
+
+    @include breakpoint($bp5) {
+      @include adjust-font-size-to($hero-heading, 1.95);
+    }
+
+    @include breakpoint($bp6) {
+      @include adjust-font-size-to($lg-hero-heading, 2);
+    }
+  }
 }
 
 .cta-banner-list__content {
@@ -25,7 +47,7 @@
     padding: 3em 0 5em 2em;
     width: 50%;
     max-width: 55%;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -34,65 +56,44 @@
       left: -2em;
       width: 2em;
       top: -6px;
-      
+
       @include breakpoint($bp6) {
         width: calc(1.5em + (100vw - 1500px));
         left: calc(-1.5em - (100vw - 1500px));
       }
     }
   }
-  
+
   @include breakpoint($bp5) {
     padding: 4em 0 0 2em;
   }
 }
 
 .cta-banner-list__title {
-  @extend %track-in;
-  @include adjust-font-size-to($xl-heading, 1.45);
-  text-transform: uppercase;
-  font-weight: 600;
   color: $primary-dark;
+  text-transform: uppercase;
   word-wrap: break-word;
-  margin: 0;
-  
-  @include breakpoint($bp0) {
-    @include adjust-font-size-to($xxl-heading, 1.5);
-  }
-  
-  @include breakpoint($bp3) {
-    @include adjust-font-size-to($xxxl-heading, 1.75);
-  }
-  
-  @include breakpoint($bp5) {
-    @include adjust-font-size-to($hero-heading, 1.95);
-  }
-  
-  @include breakpoint($bp6) {
-    @include adjust-font-size-to($lg-hero-heading, 2);
-  }
-  
-  span {
-    @include breakpoint($bp4) {
-      display: block;
-    }
-  }
-  
-  .first {
-    font-weight: 300;
-  }
-  
-  .second {
-    font-weight: 500;
-  }
 
-  .third {
-    color: $trust-aa;
-  }
-  
   @include breakpoint($bp3) {
     display: block;
   }
+
+  @include breakpoint($bp4) {
+    display: block;
+  }
+}
+
+.cta-banner-list__title--first {
+  font-weight: 300;
+}
+
+.cta-banner-list__title--second {
+  font-weight: 500;
+}
+
+.cta-banner-list__title--third {
+  color: $trust-aa;
+  font-weight: 600;
 }
 
 .cta-banner-list__subtitle {
@@ -100,7 +101,7 @@
   margin-top: 0.5em;
   margin-bottom: 1.5em;
   font-weight: 500;
-  
+
   @include breakpoint($bp4) {
     @include adjust-font-size-to($md-heading, 1.2);
   }
@@ -120,7 +121,7 @@
     left: 0;
     max-width: 400px;
   }
-  
+
   @include breakpoint($bp3) {
     top: -15%;
     left: 15%;
@@ -138,11 +139,11 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  
+
   @include breakpoint($bp2 899px) {
     flex-direction: row;
     flex-wrap: wrap;
-    
+
     .icon-button {
       width: 43%;
     }
@@ -153,7 +154,7 @@
     margin-left: auto;
     margin-top: 4em;
   }
-  
+
   @include breakpoint($bp4) {
     margin-left: auto;
     margin-top: 3em;
@@ -172,11 +173,11 @@
     @include breakpoint($bp2) {
       left: 60%;
     }
-    
+
     @include breakpoint($bp3) {
       left: 30%;
     }
-    
+
     @include breakpoint($bp6) {
       right: calc(((100vw - 1500px) / -2) - 1.5em);
     }
@@ -186,7 +187,7 @@
 // Animations
 
 .cssanimations {
-  
+
   // default states
   .cta-banner-list__content,
   .cta-banner-list__background,
@@ -194,21 +195,21 @@
   .cta-banner-list__buttons .icon-button {
     opacity: 0;
   }
-  
+
   // animating in
   .in-view {
     &.cta-banner-list__content {
       animation: fadeInLeft .65s ease-in-out forwards;
     }
-    
+
     &.cta-banner-list__background {
       animation: fadeinSlight .85s ease-in-out .5s forwards;
     }
-    
+
     &.cta-banner-list__buttons {
       animation: fadein .65s ease-in-out forwards;
     }
-    
+
     &.icon-button {
       animation: fadeInRight .35s ease-in-out forwards;
     }

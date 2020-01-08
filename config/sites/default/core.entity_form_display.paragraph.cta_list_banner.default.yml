@@ -1,0 +1,65 @@
+uuid: bb9bb890-1bac-49bd-a64f-b27ac51cc94d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta_list_banner.field_cta_list_links
+    - field.field.paragraph.cta_list_banner.field_cta_list_subtitle
+    - field.field.paragraph.cta_list_banner.field_cta_list_title_bottom
+    - field.field.paragraph.cta_list_banner.field_cta_list_title_middle
+    - field.field.paragraph.cta_list_banner.field_cta_list_title_top
+    - paragraphs.paragraphs_type.cta_list_banner
+  module:
+    - paragraphs
+id: paragraph.cta_list_banner.default
+targetEntityType: paragraph
+bundle: cta_list_banner
+mode: default
+content:
+  field_cta_list_links:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_cta_list_subtitle:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cta_list_title_bottom:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cta_list_title_middle:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cta_list_title_top:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
