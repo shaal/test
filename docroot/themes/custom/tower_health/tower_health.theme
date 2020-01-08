@@ -252,15 +252,13 @@ function tower_health_preprocess_node__profile(&$variables) {
       $educations = $node->get('field_profile_education')->referencedEntities();
       $education_items = [];
       foreach ($educations as $id => $education) {
-        // dump($education);
-        $education_items[$id]['title'] = "TEST";
-        $education_items[$id]['text'] = $education->entity->field_education_type->value;
+        $education_items[$id]['title'] = $education->field_education_institution_ref->entity->name->value;
+        $education_items[$id]['text'] = $education->field_education_type->value;
       }
       if ($education_items) {
         $variables['education'] = $education_items;
       }
     }
-
 
     // Preprocess image.
     if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
