@@ -9,6 +9,6 @@ Feature: Homepage Hero Paragraph
     When I visit "/admin/structure/paragraphs_type/homepage_hero/fields"
     Then I should see the text "Image"
     Then I should see the text "Subtitle"
-    Then I should see the text "Title (first)"
-    Then I should see the text "Title (last)"
+    Then I should see the text "Title (top)"
     Then I should see the text "Title (middle)"
+    Then I should see the text "Title (bottom)"
