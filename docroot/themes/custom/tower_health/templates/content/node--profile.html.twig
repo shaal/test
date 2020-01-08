@@ -71,7 +71,7 @@
  */
 #}
 
-{% include "@pages/provider-detail/provider-detail.twig" with {
+{% include "@organisms/provider-header/provider-header.twig" with {
   "name": label,
   "lead_title": content.field_profile_job_title,
   "rating": content.field_rating_overall.0['#markup'],
@@ -86,67 +86,100 @@
     "label": content.field_profile_phone.0["#title"]
   },
   "appt_url": "#",
-  "appt_icon": cal_icon,
-  "specialties": {
+  "appt_icon": cal_icon
+} %}
+
+<div class="sidebar--growth js-section-animation">
+  {% include "@molecules/provider-details/provider-details.twig" with {
+    "detail": {
+      "label": "Languages"|t,
+      "sidebar": true,
+      "items": languages
+    }
+  } %}
+
+  {% include "@molecules/provider-details/provider-details.twig" with {
+    "detail": {
+      "label": "Contact Information",
+      "sidebar": true,
+      "items": [
+        {
+          "label": "Main:"|t,
+          "link": {
+            "text": content.field_profile_phone.0["#title"],
+            "url": content.field_profile_phone.0["#uri"]
+          }
+        },
+        {
+          "label": "Fax:"|t
+        }
+      ]
+    }
+  } %}
+
+  {% include "@molecules/provider-details/provider-details.twig" with {
+    "detail": {
+      "sidebar": true,
+      "items": {
+        "type": "insurance",
+        "label": "Insurances Accepted"|t,
+        "reference": "insurances",
+        "items": {
+
+        }
+      }
+    }
+  } %}
+
+  {% include "@molecules/provider-details/provider-details.twig" with {
+    "detail": {
+      "label": "Member of"|t,
+      "sidebar": true
+    }
+  } %}
+
+  {% include "@molecules/provider-details/provider-details.twig" with {
+    "detail": {
+      "label": "Hospital Affiliation"|t,
+      "sidebar": true,
+      "items": affiliations
+    }
+  } %}
+</div>
+
+{% include "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
     "label": "Specialties"|t,
     "items": specialties
-  },
-  "focus": {
+  }
+} %}
+
+{% include "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
     "label": "Clinical Areas of Focus"|t,
     "info": "Lorem ipsum",
     "info_id": "areas-focus",
     "items": focuses
-  },
-  "locations": {
+  }
+} %}
+
+{% include "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
     "label": "Locations"|t
-  },
-  "certification": {
+  }
+} %}
+
+{% include "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
     "label": "Board Certifications"|t,
     "items": certifications
-  },
-  "education": {
-    "label": "Education"|t
-  },
-  "language": {
-    "label": "Languages"|t,
-    "sidebar": true,
-    "items": languages
-  },
-  "contact": {
-    "label": "Contact Information",
-    "sidebar": true,
-    "items": [
-      {
-        "label": "Main:"|t,
-        "link": {
-          "text": content.field_profile_phone.0["#title"],
-          "url": content.field_profile_phone.0["#uri"]
-        }
-      },
-      {
-        "label": "Fax:"|t
-      }
-    ]
-  },
-  "insurance": {
-    "sidebar": true,
-    "items": {
-      "type": "insurance",
-      "label": "Insurances Accepted"|t,
-      "reference": "insurances",
-      "items": {
+  }
+} %}
 
-      }
-    }
-  },
-  "employed": {
-    "label": "Member of"|t,
-    "sidebar": true
-  },
-  "affiliation": {
-    "label": "Hospital Affiliation"|t,
-    "sidebar": true,
-    "items": affiliations
+{% include "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
+    "label": "Education"|t,
+    "items": education
   }
 } %}
 
