@@ -1,0 +1,59 @@
+uuid: 03f371d3-8155-46a3-a04b-f3e3d98d17eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_hero.field_hero_hp_image
+    - field.field.paragraph.homepage_hero.field_hero_hp_subtitle
+    - field.field.paragraph.homepage_hero.field_hero_hp_title__bottom
+    - field.field.paragraph.homepage_hero.field_hero_hp_title__middle
+    - field.field.paragraph.homepage_hero.field_hero_hp_title__top
+    - paragraphs.paragraphs_type.homepage_hero
+id: paragraph.homepage_hero.default
+targetEntityType: paragraph
+bundle: homepage_hero
+mode: default
+content:
+  field_hero_hp_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: homepage_hero
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hero_hp_subtitle:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_hp_title__bottom:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_hp_title__middle:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_hp_title__top:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true
