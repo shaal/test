@@ -301,6 +301,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -397,7 +399,7 @@ display:
             radius_units: km
           plugin_id: search_api_location
       sorts: {  }
-      title: Search
+      title: 'Find a Provider'
       header: {  }
       footer: {  }
       empty: {  }

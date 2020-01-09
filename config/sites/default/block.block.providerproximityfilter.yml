@@ -10,7 +10,7 @@ dependencies:
 id: providerproximityfilter
 theme: tower_health
 region: page_filters
-weight: -5
+weight: -7
 provider: null
 plugin: provider_proximity_filter
 settings:

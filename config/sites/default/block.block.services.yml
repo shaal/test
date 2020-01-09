@@ -11,7 +11,7 @@ dependencies:
 id: services
 theme: tower_health
 region: page_filters
-weight: -11
+weight: -14
 provider: null
 plugin: 'facet_block:services'
 settings:

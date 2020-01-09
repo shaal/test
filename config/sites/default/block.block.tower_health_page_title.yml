@@ -2,6 +2,8 @@ uuid: 2e862c00-3c05-48b6-953b-9210a9199691
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - tower_health
 _core:
@@ -9,7 +11,7 @@ _core:
 id: tower_health_page_title
 theme: tower_health
 region: page_header
-weight: -12
+weight: -15
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,9 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*\r\n/find-a-provider\r\n/find-a-provider*"
+    negate: true
+    context_mapping: {  }

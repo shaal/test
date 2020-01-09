@@ -11,7 +11,7 @@ dependencies:
 id: exposedformfind_a_servicefind_service
 theme: tower_health
 region: header
-weight: 0
+weight: -10
 provider: null
 plugin: 'views_exposed_filter_block:find_a_service-find_service'
 settings:

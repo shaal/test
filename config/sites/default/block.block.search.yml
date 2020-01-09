@@ -1,17 +1,18 @@
 uuid: 8589fce6-7055-42ed-9850-2653e61327b2
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.search
   module:
+    - system
     - views
   theme:
     - tower_health
 id: search
 theme: tower_health
-region: page_header
-weight: -11
+region: header
+weight: -8
 provider: null
 plugin: 'views_exposed_filter_block:search-page_1'
 settings:
@@ -20,4 +21,9 @@ settings:
   provider: views
   label_display: visible
   views_label: 'General Search'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search*"
+    negate: false
+    context_mapping: {  }

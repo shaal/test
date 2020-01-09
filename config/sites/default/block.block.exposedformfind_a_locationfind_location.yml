@@ -1,17 +1,18 @@
 uuid: ea0cb78c-4b25-4e2f-a63b-0cfb40079fd1
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.find_a_location
   module:
+    - system
     - views
   theme:
     - tower_health
 id: exposedformfind_a_locationfind_location
 theme: tower_health
-region: page_header
-weight: -9
+region: header
+weight: -7
 provider: null
 plugin: 'views_exposed_filter_block:find_a_location-find_location'
 settings:
@@ -20,4 +21,9 @@ settings:
   provider: views
   label_display: visible
   views_label: 'Find a Location'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }
