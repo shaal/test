@@ -6,9 +6,9 @@
   {% block page_content %}
     
     {% include "@organisms/homepage-hero/homepage-hero.twig" with {
-      title_1: hero.title_1,
-      title_2: hero.title_2,
-      title_3: hero.title_3,
+      title__first: hero.title__first,
+      title__middle: hero.title__middle,
+      title__last: hero.title__last,
       subtitle: hero.subtitle,
       img: hero.img,
       classes: hero.classes,

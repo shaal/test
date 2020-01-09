@@ -1,9 +1,9 @@
 site_title: true
 
 hero:
-  title_1: "Coordinated,"
-  title_2: "Convenient,"
-  title_3: "Effective."
+  title__first: "Coordinated,"
+  title__middle: "Convenient,"
+  title__last: "Effective."
   subtitle: "Connecting you to your healthiest."
   img:
     src: "../../images/th-hero-image.jpg"
