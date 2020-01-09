@@ -1,0 +1,29 @@
+uuid: b4a60798-5a06-4c94-acd9-d573472fbf38
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.find_a_location
+  module:
+    - system
+    - views
+  theme:
+    - tower_health
+id: location_search_box
+theme: tower_health
+region: page_header
+weight: -14
+provider: null
+plugin: 'views_exposed_filter_block:find_a_location-find_location'
+settings:
+  id: 'views_exposed_filter_block:find_a_location-find_location'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }

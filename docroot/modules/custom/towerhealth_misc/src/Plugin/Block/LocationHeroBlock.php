@@ -7,15 +7,15 @@ use Drupal\views\Views;
 use Drupal\Core\Url;
 
 /**
- * Provides a 'DynamicFilterBlock' block.
+ * Provides a 'Location search block for hero region' block.
  *
  * @Block(
- *  id = "location_proximity_filter",
- *  admin_label = @Translation("Location proximity filter"),
+ *  id = "location_hero_block",
+ *  admin_label = @Translation("Location hero block"),
  *  category = "Views"
  * )
  */
-class LocationProximityBlock extends BlockBase {
+class LocationHeroBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -41,29 +41,15 @@ class LocationProximityBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['find_location_search']);
+    unset($form['location_latlon']);
+    unset($form['facets']);
+    $form['find_location_search']['#attributes']['data-id'] = 'location-hero-block';
 
-    $form['#id'] = 'views-exposed-form-find-a-location-find-location-proximity';
+    $form['#id'] = 'views-exposed-form-find-a-location-find-location-hero';
 
     $build['exposed_form'] = $form;
 
-    $build['exposed_form']['#attributes']['class'][] = 'form-section__item--group';
-
-    $url = Url::fromRoute('view.' . $view_id . '.' . $view_display_id);
-    $location_link = [
-      '#title' => t('Use my location'),
-      '#type' => 'link',
-      '#attributes' => [
-        'class' => [
-          'js-use-my-location',
-          'link',
-          'link--small',
-        ],
-        'data-view' => 'views-exposed-form-find-a-location-find-location',
-      ],
-      '#url' => $url,
-    ];
-    $build['exposed_form']['actions']['location_link'] = $location_link;
+    $build['exposed_form']['#attributes']['class'][] = 'listing-search';
 
     return $build;
   }

@@ -38,7 +38,13 @@ function towerhealth_misc_views_query_alter(ViewExecutable $view, QueryPluginBas
  * {@inheritdoc}
  */
 function towerhealth_misc_form_alter(&$form, &$form_state, $form_id) {
-  if ($form['#id'] == 'views-exposed-form-find-a-location-find-location') {
+  $id = $form['#id'];
+  $location_forms = [
+    'header' => 'views-exposed-form-find-a-location-find-location',
+    'proximity' => 'views-exposed-form-find-a-location-find-location-proximity',
+    'hero' => 'views-exposed-form-find-a-location-find-location-hero'
+  ];
+  if (in_array($id, $location_forms)) {
     $view_id = 'find_a_location';
     $view_display_id = 'find_location';
 
@@ -48,7 +54,7 @@ function towerhealth_misc_form_alter(&$form, &$form_state, $form_id) {
 
     $form = towerhealth_misc_query_add_facets($form, $view);
   }
-  elseif ($form['#id'] == 'views-exposed-form-find-a-provider-find-doctor') {
+  elseif ($id == 'views-exposed-form-find-a-provider-find-doctor') {
     $view_id = 'find_a_provider';
     $view_display_id = 'find_doctor';
 
@@ -106,12 +112,10 @@ function towerhealth_misc_query_add_facets(array $form, $view) {
  * Implements hook_theme_suggestions_form_element().
  */
 function towerhealth_misc_theme_suggestions_form_element(array $variables) {
-  //dump($variables);
   $suggestions = ['form_element__type__' . $variables['element']['#type']];
-  if (isset($variables['element']['#id'])) {
-    $suggestions[] = 'form_element__' . $variables['element']['#id'];
+  if (isset($variables['element']['#attributes']['data-id'])) {
+    $suggestions[] = 'form_element__' . $variables['element']['#attributes']['data-id'];
   }
-  //dump($suggestions);
 
   return $suggestions;
 }
@@ -120,9 +124,8 @@ function towerhealth_misc_theme_suggestions_form_element(array $variables) {
  * Implementation of hook_preprocess_form_element().
  */
 function towerhealth_misc_preprocess_form_element(&$variables, $hook, &$info) {
-  //$info['template'] = 'form-element--user-login';
-  if (isset($variables['element']['#id']) && $variables['element']['#id'] == 'edit-find-location-search') {
-    $info['template'] = 'form-element--' . $variables['element']['#id'];
+  if (isset($variables['element']['#attributes']['data-id']) && $variables['element']['#attributes']['data-id'] == 'location-hero-block') {
+    $info['template'] = 'form-element--' . $variables['element']['#attributes']['data-id'];
   }
 }
 

@@ -47,10 +47,7 @@ function tower_health_preprocess_block__provider_search_box(&$variables, $hook) 
  *
  * {@inheritdoc}
  */
-function tower_health_preprocess_block__location_search_box(&$variables, $hook) {
-  unset($variables['content']['location_latlon']);
-  unset($variables['content']['facets']);
-  dump($variables);
+function tower_health_preprocess_block__location_hero_block(&$variables, $hook) {
   $variables['content']['find_location_search']['#attributes']['class'][] = 'listing-search__input';
 }
 
