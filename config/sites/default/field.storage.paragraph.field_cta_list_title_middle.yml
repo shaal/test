@@ -1,0 +1,21 @@
+uuid: f5106d10-5794-4c3c-9b27-5a62a7f3d0bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_cta_list_title_middle
+field_name: field_cta_list_title_middle
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

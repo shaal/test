@@ -1,28 +1,32 @@
 <section class="cta-banner-list">
   <div class="cta-banner-list__content js-section-animation">
-    <h1 class="cta-banner-list__title">
-      {% if title_1 %}
-        <span class="first">{{ title_1 }}</span>
+    <h1>
+      {% if title_top %}
+        <span class="cta-banner-list__title cta-banner-list__title--first">{{ title_top }}</span>
       {% endif %}
-      {% if title_2 %}
-        <span class="second">{{ title_2 }}</span>
+      {% if title_middle %}
+        <span class="cta-banner-list__title cta-banner-list__title--second">{{ title_middle }}</span>
       {% endif %}
-        <span class="third">{{ title_3 }}</span>
+        <span class="cta-banner-list__title cta-banner-list__title--third">{{ title_bottom }}</span>
     </h1>
     {% if subtitle %}
       <h2 class="cta-banner-list__subtitle">{{ subtitle }}</h2>
     {% endif %}
   </div>
-  <img class="cta-banner-list__background js-section-animation" src="../../images/th-mark.svg" />
+  {% block image_background %}
+    <img class="cta-banner-list__background js-section-animation" src="../../images/th-mark.svg" />
+  {% endblock %}
   <div class="cta-banner-list__buttons js-section-animation">
-    {% for link in links %}
-      {% include "@atoms/icon-button/icon-button.twig" with {
-        "url": link.url,
-        "icon": link.icon,
-        "text": link.text,
-        "animated": "true",
-        "variation": "list" 
-      } %}
-    {% endfor %}
+    {% block icon_buttons %}
+      {% for link in links %}
+        {% include "@atoms/icon-button/icon-button.twig" with {
+          "url": link.url,
+          "icon": link.icon,
+          "text": link.text,
+          "animated": "true",
+          "variation": "list"
+        } %}
+      {% endfor %}
+    {% endblock %}
   </div>
 </section>
