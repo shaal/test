@@ -3,6 +3,17 @@
   padding: 2em 0;
   border-top: 1px solid $off-white;
   border-bottom: 1px solid $off-white;
+  
+  &.care-circle__banner--full {
+    border: none;
+    padding: 0;
+    margin: 2em 0;
+    
+    @include breakpoint($bp3) {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .care-circle {
@@ -58,6 +69,16 @@
   border: solid 3px $off-white;
   list-style: none;
   padding: 0;
+  
+  .care-circle__banner--full & {
+    @include breakpoint($bp3) {
+      margin: 75px;
+    }
+    
+    @include breakpoint($bp4) {
+      margin: 95px;
+    }
+  }
   
   @include breakpoint(0 $bp2) {
     display: flex;
@@ -614,14 +635,27 @@
 }
 
 .care-circle__text {
+  @include adjust-font-size-to($sm-text, .9);
   margin-top: 2em;
   
   @include breakpoint($bp2) {
     margin-top: 6em;
   }
+  
+  .care-circle__banner--full & {
+    @include breakpoint($bp3) {
+      margin-top: 0;
+      margin-left: 2em;
+    }
+    
+    @include breakpoint($bp4) {
+      margin-left: 3em;
+    }
+  }
 }
 
 .care-circle__text__title {
+  @include adjust-font-size-to($md-heading, 1.25);
   margin-top: 0;
   margin-bottom: .25em;
 }
