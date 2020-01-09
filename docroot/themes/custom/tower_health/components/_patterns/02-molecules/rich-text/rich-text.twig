@@ -1,8 +1,8 @@
 {% if rich_text_full_width == true %}
   <div class="grid grid--sm-centered">
 {% endif %}
-  <div class="text-wrap">
-    {% block content %}
+  <div class="rich-text">
+    {% block rich_text %}
       {% for item in rich_text %}
         {% if item.type == "blockquote" %}
           {% include "@atoms/02-text/text/02-blockquote.twig" with {
