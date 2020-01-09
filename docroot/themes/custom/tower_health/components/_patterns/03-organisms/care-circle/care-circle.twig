@@ -1,26 +1,50 @@
-<div class="care-circle care-circle--{{ items|length }}" >
-  {% if title %}
-  <h2>
-    {% if url %}
-    <a href="{{ url }}">{{ title }}</a>
-    {% else %}
-    {{ title }}
+{% if fullWidth == true %}
+<div class="grid">
+  <div class="care-circle__banner care-circle__banner--full">
+{% else %}
+  <div class="care-circle__banner">
+{% endif %}
+  <div class="care-circle care-circle--{{ items|length }}" >
+    {% if title %}
+    <div class="care-circle__content">
+      <h2 class='care-circle__title'>
+        {% if url %}
+        <a href="{{ url }}">{{ title }}</a>
+        {% else %}
+        {{ title }}
+        {% endif %}
+      </h2>
+    </div>
     {% endif %}
-  </h2>
+    
+    <ul class="care-circle__list">
+      {% for item in items %}
+        <li class="care-circle__item {% if item.color %}care-circle__item--{{ item.color }}{% endif %}">
+          {% if item.url %}<a href="{{ item.url }}">{% endif %}
+          <span class="care-circle__item__inner">
+          {% if item.icon %}
+            <img class='care-circle__item__icon' src="{{ item.icon }}" alt='{{ item.icon_alt }}'/>
+          {% endif %}
+          {{ item.label }}
+          </span>
+          {% if item.url %}</a>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  
+  {% if content %}
+  <div class="care-circle__text">
+    {% if content.title %}
+    <h3 class="care-circle__text__title">{{ content.title }}</h3>
+    {% endif %}
+    {{ content.text }}
+  </div>
   {% endif %}
   
-  <ul class="care-circle__list">
-    {% for item in items %}
-      <li class="care-circle__item {% if item.color %}care-circle__item--{{ item.color }}{% endif %}">
-        {% if item.url %}<a href="{{ item.url }}">{% endif %}
-        <span class="care-circle__item__inner">
-        {% if item.icon %}
-          {{ item.icon }}
-        {% endif %}
-        {{ item.label }}
-        </span>
-        {% if item.url %}</a>{% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+{% if fullWidth == true %}
+  </div>
 </div>
+{% else %}
+</div>
+{% endif %}

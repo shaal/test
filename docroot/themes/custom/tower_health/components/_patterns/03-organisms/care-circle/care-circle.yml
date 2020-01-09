@@ -1,36 +1,46 @@
-title: null
+title: Compassionate Care Principles
 url: "#"
 items:
-  - icon: Heart
+  - icon: ../../images/icons/th-bill.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 1
-  - icon: Heart
+    label: Find a Provider
+  - icon: ../../images/icons/th-cal.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 2
+    label: Schedule an Appointment
     color: healing
-  - icon: Heart
+  - icon: ../../images/icons/th-emergency-time.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 3
+    label: Attend Appointment
     color: uplifting
-  - icon: Heart
+  - icon: ../../images/icons/th-find-hospital.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 4
+    label: Follow-up with Provider
     color: wisdom
-  - icon: Heart
+  - icon: ../../images/icons/th-find-provider.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 5
+    label: Recieve treatment
     color: growth
-  - icon: Heart
+  - icon: ../../images/icons/th-medal.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 6
+    label: Review Forms in MyTowerHealth
     color: tranquil
-  - icon: Heart
+  - icon: ../../images/icons/th-my-tower.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 7
+    label: Leave a Review
     color: energy
-  - icon: Heart
+  - icon: ../../images/icons/th-services.svg
+    icon_alt: alt text
     url: "#"
-    label: Step 8
+    label: Schedule Follow-up
     color: pink
-
+content:
+  title: Lorem ipsum dolor sit amet
+  text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam aut perferendis, eum odio doloremque rerum cupiditate libero excepturi sit ea esse labore blanditiis alias, molestiae a reiciendis. Accusantium, aliquam?
 
