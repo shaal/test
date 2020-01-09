@@ -1,0 +1,9 @@
+uuid: 96bbd83e-2f0a-43a8-b4c1-c8de00f8018c
+langcode: en
+status: true
+dependencies: {  }
+id: rich_text
+label: 'Rich Text'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
