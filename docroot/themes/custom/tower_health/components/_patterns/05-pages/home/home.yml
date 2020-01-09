@@ -72,7 +72,7 @@ cta_list:
     
 
 cta_banner:
-  title_2: "Manage your Care, Anywhere."
+  title__bottom: "Manage your Care, Anywhere."
   subtitle: With the MyTowerHeath patient portal, you can talk to your doctor, manage appointments and safely access your health information. Anytime. Even on your phone.
   img:
     src: "../../images/th-cta-image.jpg"
