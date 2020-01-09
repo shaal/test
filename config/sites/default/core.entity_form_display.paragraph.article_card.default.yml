@@ -1,0 +1,25 @@
+uuid: d2ea68a0-3abe-4e2c-ac4f-daf22a7eaf93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.article_card.field_article_card_ref
+    - paragraphs.paragraphs_type.article_card
+id: paragraph.article_card.default
+targetEntityType: paragraph
+bundle: article_card
+mode: default
+content:
+  field_article_card_ref:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
