@@ -46,9 +46,9 @@ hero:
 
 
 cta_list:
-  title_1: "Innovative,"
-  title_2: "Accessible"
-  title_3: "Healthcare."
+  title_top: "Innovative,"
+  title_middle: "Accessible"
+  title_bottom: "Healthcare."
   subtitle: "Connecting you to the services you need."
   links:
     - text: "MyTowerHealth"
