@@ -1,4 +1,4 @@
-<div class="form-section__item {% if item.width %}form-section__item--{{ item.width }}{% endif %} {% if item.conditional_result %}form-section__item--conditional{% endif %}" {% if item.conditional_result %}data-cond-by="{{item.conditional_result}}"{% endif %} {% if item.conditional_control %}data-cond="{{item.conditional_control}}" data-cond-met="false"{% endif %}>
+<div class="form-section__item {% if item.type == 'child_container' %}form-section__item--group {% endif %}{% if item.width %}form-section__item--{{ item.width }}{% endif %} {% if item.conditional_result %}form-section__item--conditional{% endif %}" {% if item.conditional_result %}data-cond-by="{{item.conditional_result}}"{% endif %} {% if item.conditional_control %}data-cond="{{item.conditional_control}}" data-cond-met="false"{% endif %}>
   {% if item.type != 'drupal-facet' %}
     {% include "@atoms/05-forms/_form-label.twig" with {
     title: item.title
@@ -49,6 +49,10 @@
         </optgroup>
       </select>
     </div>
+  {% elseif item.type == 'child_container' %}
+    {% for item in item.section_child %}
+      {% include "@molecules/form-section-item/_form-section-item.twig" %}
+    {% endfor %}
   {% elseif item.type == 'textfield' %}
     <textarea name="{{ item.name}}"></textarea>
   {% else %}

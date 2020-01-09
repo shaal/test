@@ -33,13 +33,49 @@ function tower_health_preprocess_block__exposedformfind_a_locationfind_location(
 }
 
 /**
+ * Remove variables from exposed provider search form.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__provider_search_box(&$variables, $hook) {
+  unset($variables['content']['provider_location_latlong']);
+  unset($variables['content']['facets']);
+}
+
+/**
+ * Remove variables from exposed location search form.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__location_search_box(&$variables, $hook) {
+  unset($variables['content']['location_latlon']);
+  unset($variables['content']['facets']);
+  dump($variables);
+  $variables['content']['find_location_search']['#attributes']['class'][] = 'listing-search__input';
+}
+
+/**
  * Alter proximity block for location search.
  *
  * {@inheritdoc}
  */
 function tower_health_preprocess_block__locationproximityfilter(&$variables, $hook) {
+  if (array_key_exists('location_latlon', $variables['content']['exposed_form'])) {
+    unset($variables['content']['exposed_form']['location_latlon']['value']['#field_prefix']);
+    $variables['content']['exposed_form']['location_latlon']['value']['#attributes']['placeholder'] = '000000';
+    $variables['content']['exposed_form']['location_latlon']['value']['#title'] = t('Zip Code');
+
+    $distance = $variables['content']['exposed_form']['location_latlon']['distance'];
+
+    unset($distance['from']['#field_prefix']);
+    $distance['from']['#title'] = t('Distance');
+
+    unset($variables['content']['exposed_form']['location_latlon']['distance']);
+    $variables['content']['exposed_form']['location_latlon']['distance'] = $distance;
+  }
   if (array_key_exists('submit', $variables['content']['exposed_form']['actions'])) {
     $variables['content']['exposed_form']['actions']['submit']['#value'] = 'Apply';
+    $variables['content']['exposed_form']['actions']['submit']['#attributes']['class'][] = 'element-invisible';
   }
   if (array_key_exists('location_latlon', $variables['content']['exposed_form'])) {
     $variables['content']['exposed_form']['location_latlon']['value']['#attributes']['class'] = ['js-set-my-location'];
@@ -77,10 +113,23 @@ function tower_health_preprocess_menu(&$variables) {
 function tower_health_preprocess_block__providerproximityfilter(&$variables, $hook) {
   if (array_key_exists('submit', $variables['content']['exposed_form']['actions'])) {
     $variables['content']['exposed_form']['actions']['submit']['#value'] = 'Apply';
+    $variables['content']['exposed_form']['actions']['submit']['#attributes']['class'][] = 'element-invisible';
   }
   if (array_key_exists('provider_location_latlong', $variables['content']['exposed_form'])) {
     $variables['content']['exposed_form']['provider_location_latlong']['value']['#attributes']['class'] = ['js-set-my-location'];
     $variables['content']['exposed_form']['provider_location_latlong']['distance']['#attributes']['class'] = ['js-set-my-radius'];
+
+    unset($variables['content']['exposed_form']['provider_location_latlong']['value']['#field_prefix']);
+    $variables['content']['exposed_form']['provider_location_latlong']['value']['#attributes']['placeholder'] = '000000';
+    $variables['content']['exposed_form']['provider_location_latlong']['value']['#title'] = t('Zip Code');
+
+    $distance = $variables['content']['exposed_form']['provider_location_latlong']['distance'];
+
+    unset($distance['from']['#field_prefix']);
+    $distance['from']['#title'] = t('Distance');
+
+    unset($variables['content']['exposed_form']['provider_location_latlong']['distance']);
+    $variables['content']['exposed_form']['provider_location_latlong']['distance'] = $distance;
   }
 }
 

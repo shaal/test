@@ -24,13 +24,19 @@
  * @ingroup themeable
  */
 #}
-
+{% if facet.id == 'services' or facet.id == 'location_type' %}
+  {% set width = 'oneQuarter' %}
+{% elseif facet.id == 'specialties' or facet.id == 'gender' or facet.id == 'languages' or facet.id == 'insurance_provider' %}
+  {% set width = 'oneSixth' %}
+{% else %}
+  {% set width = 'full' %}
+{% endif %}
 {%
 set item = {
   'type': 'drupal-facet',
   'title': facet.name,
   'elements': items,
-  'width': 'oneFifth'
+  'width': width
 }
 %}
 

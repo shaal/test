@@ -55,6 +55,13 @@
   {% endif %}
 {% endif %}
 
+{% if page.page_header %}
+  {% set region_page_header = page.page_header|render %}
+  {% if ≈ %}
+    {% set page_header = true %}
+  {% endif %}
+{% endif %}
+
 {% extends "@templates/_default.twig" %}
   {% block site_header %}
     {% if page.header %}
@@ -70,7 +77,7 @@
   
   {% block page_header %}
     {{ page.breadcrumb }}
-    {{ page.page_header }}
+    {{ region_page_header }}
     {% if page.page_filters %}
       {{ page.page_filters }}
     {% endif %}

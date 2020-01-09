@@ -25,15 +25,15 @@
  * @see template_preprocess_block()
  */
 #}
-
-{{ attach_library('tower_health/proximity-facet') }}
-
-<div {{ bem('item', ['group', 'oneHalf'], 'form-section') }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content|without('find_location_search')}}
-
-    <a href="#" class="js-use-my-location link link--small" data-view="views-exposed-form-find-a-location-find-location">{{ 'Use my location'|t }}</a>
-  {% endblock %}
-</div>
+{% set header = [] %}
+{% set header = header|merge({
+'title': label,
+'style': 'list',
+})
+%}
+{% extends "@organisms/basic-header/basic-header.twig" %}
+{% block form %}
+  <div class="listing-search">
+    {{ content }}
+  </div>
+{% endblock %}

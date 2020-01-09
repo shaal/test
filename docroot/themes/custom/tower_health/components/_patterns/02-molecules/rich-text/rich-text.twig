@@ -2,47 +2,49 @@
 <div class="grid grid--sm-centered">
 {% endif %}
   <div class="text-wrap">
-{% for item in rich_text %}
-  {% if item.type == "blockquote" %}
-    {% include "@atoms/02-text/text/02-blockquote.twig" with {
-      blockquote_content: item.blockquote_content,
-      blockquote_modifiers: item.blockquote_modifiers
-    }%}
-  {% elseif item.type == "image" %}
-    {% include "@atoms/04-images/00-image/figure.twig" with {
-      img_url: item.img_url,
-      img_src: item.img_src,
-      img_alt: item.img_alt,
-      img_caption: item.img_caption,
-      output_image_tag: item.output_image_tag,
-      image_figure_modifiers: item.image_figure_modifiers
-    } %}
-  {% elseif item.type == "video" %}
-    {% include "@atoms/08-video/video.twig" with {
-      video_content: item.video_content
-    } %}
-  {% elseif item.type == "table" %}
-    {% include "@atoms/07-tables/tables.twig" %}
-  {% elseif item.type == "ul" %}
-    {% include "@atoms/03-lists/00-ul.twig" with {
-    ul_items: item.ul_items
-    }%}
-  {% elseif item.type == "ol" %}
-    {% include "@atoms/03-lists/01-ol.twig"  with {
-    ol_items: item.ol_items
-    }%}
-  {% elseif item.type == "heading" %}
-    {% include "@atoms/02-text/00-headings/_heading.twig"  with {
-    heading_level: item.heading_level,
-    heading: item.heading,
-    heading_url: item.heading_url
-    }%}
-  {% else %}
-    {% include "@atoms/02-text/text/01-paragraph.twig" with {
-      paragraph_content: item.paragraph_content
-    }%}
-  {% endif %}
-{% endfor %}
+    {% block content %}
+      {% for item in rich_text %}
+        {% if item.type == "blockquote" %}
+          {% include "@atoms/02-text/text/02-blockquote.twig" with {
+            blockquote_content: item.blockquote_content,
+            blockquote_modifiers: item.blockquote_modifiers
+          }%}
+        {% elseif item.type == "image" %}
+          {% include "@atoms/04-images/00-image/figure.twig" with {
+            img_url: item.img_url,
+            img_src: item.img_src,
+            img_alt: item.img_alt,
+            img_caption: item.img_caption,
+            output_image_tag: item.output_image_tag,
+            image_figure_modifiers: item.image_figure_modifiers
+          } %}
+        {% elseif item.type == "video" %}
+          {% include "@atoms/08-video/video.twig" with {
+            video_content: item.video_content
+          } %}
+        {% elseif item.type == "table" %}
+          {% include "@atoms/07-tables/tables.twig" %}
+        {% elseif item.type == "ul" %}
+          {% include "@atoms/03-lists/00-ul.twig" with {
+          ul_items: item.ul_items
+          }%}
+        {% elseif item.type == "ol" %}
+          {% include "@atoms/03-lists/01-ol.twig"  with {
+          ol_items: item.ol_items
+          }%}
+        {% elseif item.type == "heading" %}
+          {% include "@atoms/02-text/00-headings/_heading.twig"  with {
+          heading_level: item.heading_level,
+          heading: item.heading,
+          heading_url: item.heading_url
+          }%}
+        {% else %}
+          {% include "@atoms/02-text/text/01-paragraph.twig" with {
+            paragraph_content: item.paragraph_content
+          }%}
+        {% endif %}
+      {% endfor %}
+    {% endblock %}
   </div>
 {% if rich_text_full_width == true %}
 </div>
