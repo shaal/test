@@ -1,0 +1,19 @@
+uuid: 72ddf11c-0174-4c05-a3f4-e3a9ab093808
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_list_title_middle
+    - paragraphs.paragraphs_type.cta_list_banner
+id: paragraph.cta_list_banner.field_cta_list_title_middle
+field_name: field_cta_list_title_middle
+entity_type: paragraph
+bundle: cta_list_banner
+label: 'Title (middle)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
