@@ -250,6 +250,7 @@
 
   // Down triangle
   &::after {
+    @extend %element-focusable;
     content: "";
     display: block;
     margin-right: -6px;
