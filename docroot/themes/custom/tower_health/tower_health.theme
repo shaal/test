@@ -57,6 +57,14 @@ function tower_health_preprocess_html(&$variables) {
 }
 
 /**
+ * Adds node title to paragraphs.
+ */
+function tower_health_preprocess_paragraph(&$variables){
+  $node = \Drupal::request()->attributes->get('node');
+  $variables['node_title'] = $node->getTitle();
+}
+
+/**
  * Load the utility menu into a variable.
  */
 function tower_health_preprocess_menu(&$variables) {

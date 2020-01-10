@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_basic_components
-    - field.field.node.page.field_media
     - field.field.node.page.field_metatags
     - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
@@ -33,15 +32,6 @@ content:
     settings:
       view_mode: default
       link: ''
-    third_party_settings: {  }
-    region: content
-  field_media:
-    type: entity_reference_entity_view
-    weight: 2
-    label: above
-    settings:
-      view_mode: default
-      link: false
     third_party_settings: {  }
     region: content
   field_metatags:
