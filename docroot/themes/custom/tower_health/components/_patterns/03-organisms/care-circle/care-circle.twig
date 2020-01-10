@@ -19,16 +19,13 @@
     
     <ul class="care-circle__list">
       {% for item in items %}
-        <li class="care-circle__item {% if item.color %}care-circle__item--{{ item.color }}{% endif %}">
-          {% if item.url %}<a href="{{ item.url }}">{% endif %}
-          <span class="care-circle__item__inner">
-          {% if item.icon %}
-            <img class='care-circle__item__icon' src="{{ item.icon }}" alt='{{ item.icon_alt }}'/>
-          {% endif %}
-          {{ item.label }}
-          </span>
-          {% if item.url %}</a>{% endif %}
-        </li>
+        {% include "@molecules/care-circle-item/care-circle-item.twig" with {
+          "icon": item.icon,
+          "icon_alt": item.icon_alt,
+          "url": item.url,
+          "label": item.label,
+          "color": item.color
+        } %}
       {% endfor %}
     </ul>
   </div>
