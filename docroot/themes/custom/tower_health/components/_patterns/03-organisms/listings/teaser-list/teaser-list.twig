@@ -1,6 +1,8 @@
 <div class="teaser-list">
   <div class='listing-results'>
-    Showing {{ results_shown}} of {{ results_count }} results{% if results_term %} for "<strong>{{ results_term }}</strong>"{% endif %}.
+    {% block results %}
+      Showing {{ results_shown}} of {{ results_count }} results{% if results_term %} for "<strong>{{ results_term }}</strong>"{% endif %}.
+    {% endblock %}
   </div>
 
   {% if emergency_banner %}

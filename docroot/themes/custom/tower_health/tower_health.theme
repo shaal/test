@@ -13,6 +13,27 @@ use Drupal\core\entity\EntityInterface;
 use Drupal\taxonomy\Entity\Term;
 
 /**
+ * Set page variables.
+ */
+function tower_health_preprocess_page(&$variables) {
+  // Set the full width setting for any view page.
+  $full_width_pages = [
+    'view.find_a_location.find_location',
+    'view.find_a_provider.find_doctor',
+  ];
+
+  // Get the current route name.
+  $current_route_name = \Drupal::service('current_route_match')->getRouteName();
+
+  // Set page template variables.
+  if (in_array($current_route_name, $full_width_pages)) {
+    $variables['page_header'] = TRUE;
+    $variables['full_width'] = TRUE;
+    $variables['page_content'] = TRUE;
+  }
+}
+
+/**
  * Remove variables from exposed provider search form.
  *
  * {@inheritdoc}
