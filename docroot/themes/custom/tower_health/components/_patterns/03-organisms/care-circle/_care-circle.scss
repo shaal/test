@@ -31,11 +31,19 @@
     text-decoration: none;
   }
   
+  a:active,
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+  
   @include breakpoint($bp2) {
     // 425
     @include adjust-font-size-to($md-heading, 1.1);
     max-width: 275px;
     margin: 0;
+    
+    z-index: 3;
   }
   
   @include breakpoint($bp3) {
