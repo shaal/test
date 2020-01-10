@@ -1,18 +1,18 @@
-uuid: fe7b996d-5aed-4371-978b-a269ea53033c
+uuid: f75b7ccc-4fc2-41b6-bf0a-2ebb39c7db80
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_basic_components
+    - field.storage.node.field_basic_sidebar
     - node.type.page
   module:
     - entity_reference_revisions
-id: node.page.field_basic_components
-field_name: field_basic_components
+id: node.page.field_basic_sidebar
+field_name: field_basic_sidebar
 entity_type: node
 bundle: page
-label: Components
-description: 'Add components to this page.'
+label: Sidebar
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -23,47 +23,47 @@ settings:
     negate: 0
     target_bundles: null
     target_bundles_drag_drop:
-      education:
-        weight: 3
-        enabled: false
-      rating_comments:
-        weight: 4
-        enabled: false
       basic_header:
-        weight: 11
-        enabled: false
-      card:
-        weight: 12
-        enabled: false
-      cards:
-        weight: 13
-        enabled: false
-      homepage_hero:
-        weight: 15
-        enabled: false
-      on_my_way:
         weight: 16
         enabled: false
-      patient_story:
+      card:
         weight: 17
         enabled: false
-      cta_banner:
-        weight: 19
+      cards:
+        weight: 18
         enabled: false
-      recognition_card:
+      cta_banner:
         weight: 19
         enabled: false
       cta_list_banner:
         weight: 20
         enabled: false
-      recognition_cards:
-        weight: 20
+      education:
+        weight: 21
         enabled: false
       header_cta:
         weight: 22
         enabled: false
+      homepage_hero:
+        weight: 23
+        enabled: false
       icon_button:
         weight: 24
+        enabled: false
+      on_my_way:
+        weight: 25
+        enabled: false
+      patient_story:
+        weight: 26
+        enabled: false
+      rating_comments:
+        weight: 27
+        enabled: false
+      recognition_card:
+        weight: 28
+        enabled: false
+      recognition_cards:
+        weight: 29
         enabled: false
       rich_text:
         weight: 30

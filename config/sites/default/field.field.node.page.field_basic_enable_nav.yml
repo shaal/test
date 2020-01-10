@@ -1,0 +1,23 @@
+uuid: c89af79a-e1fd-49c8-99b2-42844946244d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_enable_nav
+    - node.type.page
+id: node.page.field_basic_enable_nav
+field_name: field_basic_enable_nav
+entity_type: node
+bundle: page
+label: 'Enable Sidebar Navigation'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

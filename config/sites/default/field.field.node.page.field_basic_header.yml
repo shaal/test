@@ -1,0 +1,75 @@
+uuid: fa434997-5586-4f04-b945-83099a14b75e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_header
+    - node.type.page
+    - paragraphs.paragraphs_type.basic_header
+    - paragraphs.paragraphs_type.homepage_hero
+  module:
+    - entity_reference_revisions
+id: node.page.field_basic_header
+field_name: field_basic_header
+entity_type: node
+bundle: page
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      basic_header: basic_header
+      homepage_hero: homepage_hero
+    target_bundles_drag_drop:
+      basic_header:
+        enabled: true
+        weight: 16
+      card:
+        weight: 17
+        enabled: false
+      cards:
+        weight: 18
+        enabled: false
+      cta_banner:
+        weight: 19
+        enabled: false
+      cta_list_banner:
+        weight: 20
+        enabled: false
+      education:
+        weight: 21
+        enabled: false
+      header_cta:
+        weight: 22
+        enabled: false
+      homepage_hero:
+        enabled: true
+        weight: 23
+      icon_button:
+        weight: 24
+        enabled: false
+      on_my_way:
+        weight: 25
+        enabled: false
+      patient_story:
+        weight: 26
+        enabled: false
+      rating_comments:
+        weight: 27
+        enabled: false
+      recognition_card:
+        weight: 28
+        enabled: false
+      recognition_cards:
+        weight: 29
+        enabled: false
+      rich_text:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

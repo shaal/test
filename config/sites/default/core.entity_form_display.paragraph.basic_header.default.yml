@@ -21,13 +21,21 @@ third_party_settings:
         - field_basic_header_cta_ref
       parent_name: ''
       weight: 4
-      format_type: fieldset
+      format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         required_fields: true
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        effect: none
+        speed: fast
+        attributes: ''
+        formatter: closed
       label: 'Call To Action'
 id: paragraph.basic_header.default
 targetEntityType: paragraph
@@ -41,7 +49,7 @@ content:
       title: 'Call To Action'
       title_plural: 'Call To Action'
       edit_mode: open
-      add_mode: button
+      add_mode: select
       form_display_mode: default
       default_paragraph_type: header_cta
     third_party_settings: {  }

@@ -11,7 +11,7 @@ id: node.page.field_text
 field_name: field_text
 entity_type: node
 bundle: page
-label: Text
+label: Body
 description: ''
 required: false
 translatable: false
