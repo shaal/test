@@ -49,6 +49,11 @@
       justify-content: flex-end;
       margin-left: 3em;
 
+      &__summary {
+        order: 1;
+        margin-left: .5em;
+      }
+
       .ratings-count__stars {
         width: 100%;
       }
