@@ -10,9 +10,25 @@ dependencies:
     - field.field.paragraph.basic_header.field_basic_header_style
     - paragraphs.paragraphs_type.basic_header
   module:
+    - field_group
     - link
     - media_library
     - paragraphs
+third_party_settings:
+  field_group:
+    group_call_to_action:
+      children:
+        - field_basic_header_cta_ref
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Call To Action'
 id: paragraph.basic_header.default
 targetEntityType: paragraph
 bundle: basic_header
@@ -20,14 +36,14 @@ mode: default
 content:
   field_basic_header_cta_ref:
     type: entity_reference_paragraphs
-    weight: 4
+    weight: 5
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
+      title: 'Call To Action'
+      title_plural: 'Call To Action'
       edit_mode: open
-      add_mode: dropdown
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: header_cta
     third_party_settings: {  }
     region: content
   field_basic_header_img:
