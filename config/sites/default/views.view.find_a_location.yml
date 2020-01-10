@@ -410,7 +410,17 @@ display:
             label: ''
           plugin_id: search_api
       title: 'Find a Location'
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          content: 'Showing @start - @end of @total results'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships: {  }

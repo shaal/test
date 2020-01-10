@@ -1,11 +1,10 @@
 uuid: 45b28758-90ef-4925-a25a-7cab59b9b23e
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.find_a_provider
   module:
-    - system
     - views
   theme:
     - tower_health
@@ -19,11 +18,6 @@ settings:
   id: 'views_exposed_filter_block:find_a_provider-find_doctor'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: 'Find a Provider'
-visibility:
-  request_path:
-    id: request_path
-    pages: "/find-a-provider\r\n/find-a-provider*"
-    negate: false
-    context_mapping: {  }
+visibility: {  }

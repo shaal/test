@@ -1,26 +1,23 @@
-uuid: b4a60798-5a06-4c94-acd9-d573472fbf38
+uuid: 1974bf27-210a-47c6-ab46-8d6336524b2e
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.find_a_location
   module:
     - system
-    - views
+    - towerhealth_misc
   theme:
     - tower_health
-id: location_search_box
+id: locationheroblock
 theme: tower_health
 region: page_header
 weight: -14
 provider: null
-plugin: 'views_exposed_filter_block:find_a_location-find_location'
+plugin: location_hero_block
 settings:
-  id: 'views_exposed_filter_block:find_a_location-find_location'
-  label: ''
-  provider: views
+  id: location_hero_block
+  label: 'Search Locations'
+  provider: towerhealth_misc
   label_display: visible
-  views_label: ''
 visibility:
   request_path:
     id: request_path
