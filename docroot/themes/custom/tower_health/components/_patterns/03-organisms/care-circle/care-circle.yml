@@ -25,21 +25,6 @@ items:
     url: "#"
     label: Recieve treatment
     color: growth
-  - icon: ../../images/icons/th-medal.svg
-    icon_alt: alt text
-    url: "#"
-    label: Review Forms in MyTowerHealth
-    color: tranquil
-  - icon: ../../images/icons/th-my-tower.svg
-    icon_alt: alt text
-    url: "#"
-    label: Leave a Review
-    color: energy
-  - icon: ../../images/icons/th-services.svg
-    icon_alt: alt text
-    url: "#"
-    label: Schedule Follow-up
-    color: pink
 content:
   title: Lorem ipsum dolor sit amet
   text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam aut perferendis, eum odio doloremque rerum cupiditate libero excepturi sit ea esse labore blanditiis alias, molestiae a reiciendis. Accusantium, aliquam?
