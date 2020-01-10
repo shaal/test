@@ -1,4 +1,8 @@
-<div class="card{% if card.type %} card--{{card.type}}{% endif %}{% if card.image.src %} card--image{% endif %} js-section-animation {% if card.url.link == null %}card--simple{% endif %}" >
+<div class="card js-section-animation
+  {% if card.type %} card--{{ card.type }}{% endif %}
+  {% if card.image.src %} card--image{% endif %}
+  {% if card.url.link == null %} card--simple{% endif %}">
+
   {% if card.url.link %}
     <a class="card__link" href="{{ card.url.link }}">
   {% endif %}

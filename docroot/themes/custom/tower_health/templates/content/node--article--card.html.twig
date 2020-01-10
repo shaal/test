@@ -70,28 +70,17 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-  'node',
-  'node--type-' ~ node.bundle|clean_class,
-  node.isPromoted() ? 'node--promoted',
-  node.isSticky() ? 'node--sticky',
-  not node.isPublished() ? 'node--unpublished',
-  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-]
-%}
-<div{{ attributes.addClass(classes) }}>
-  {% embed "@molecules/card/card.twig" with {
-    "card": {
-      "date": content.field_article_date,
-      "type": node.gettype,
-      "title": label,
-      "desc": content.field_article_teaser,
-      "url": {
-        "label": "Read the Story"|t,
-        "link": path('entity.node.canonical', {'node': node.id}),
-      },
-    }
-  } %}
-  {% endembed %}
-</div>
+{% embed "@molecules/card/card.twig" with {
+  "card": {
+    "date": content.field_article_date|render,
+    "type": node.gettype,
+    "title": label,
+    "desc": content.field_article_teaser|render,
+    "url": {
+      "label": "Read the Story"|t,
+      "link": path('entity.node.canonical', {'node': node.id}),
+    },
+  }
+} %}
+{% endembed %}
+
