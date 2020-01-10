@@ -176,18 +176,18 @@
 /// @param {Length} $item-size - Single item size
 @mixin on-circle($item-count, $circle-size, $item-size, $arrowy) {
   position: relative;
-  width:  $circle-size;
+  width: $circle-size;
   height: $circle-size;
   padding: 0;
-  border-radius: 50%; 
-  list-style: none;       
+  border-radius: 50%;
+  list-style: none;
   
   > * {
     display: flex;
     position: absolute;
-    top:  50%; 
+    top: 50%;
     left: 50%;
-    width:  $item-size;
+    width: $item-size;
     height: $item-size;
     margin: -($item-size / 2);
   
@@ -198,25 +198,17 @@
     
     @if $item-count == 3 {
       $offset: 140;
-    };
-    
+    }
+
     @for $i from 1 through $item-count {
-      
       &:nth-of-type(#{$i}) {
-        transform: 
-          rotate($rot * 1deg) 
-          translate($circle-size / 2) 
-          rotate($rot * -1deg);
+        transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
           
         &::after {
-          transform: 
-            rotate( $offset + ($angle * ($i - 1)) * 1deg)
-            translate($arrowx , $arrowy);
+          transform: rotate($offset + ($angle * ($i - 1)) * 1deg) translate($arrowx, $arrowy);
         }
       }
-      
       $rot: $rot + $angle;
     }
-    
   }
 }
