@@ -14,7 +14,9 @@
 #}
 {% extends "@organisms/listings/listing-filter/listing-filter.twig" %}
 {% set form_sections = content %}
-{% set filter_url = drupal_url('/find-a-provider') %}
+{% block clear_link %}
+  {{ drupal_block('clear_filters') }}
+{% endblock %}
 {% block filter_items %}
   <div class="form-section">
     {{ form_sections }}

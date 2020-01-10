@@ -63,6 +63,21 @@ function tower_health_preprocess_block__provider_search_box(&$variables, $hook) 
   unset($variables['content']['facets']);
 }
 
+
+/**
+ * Remove variables from exposed location search form.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__facets(&$variables, $hook) {
+  $content = $variables['content'];
+
+  // Get rid of the container element if empty.
+  if (isset($content[0]['#type']) && $content[0]['#type'] == 'container') {
+    $variables['content'] = $content[0][0];
+  }
+}
+
 /**
  * Remove variables from exposed location search form.
  *

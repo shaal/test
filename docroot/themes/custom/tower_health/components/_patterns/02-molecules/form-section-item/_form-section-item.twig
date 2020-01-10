@@ -14,9 +14,13 @@
     <div class="facets-widget-chosen-dropdown">
       <label id="facet_specialties_label">{{ item.title }}</label>
       <ul {{ attributes }}>
-        {% for element in item.elements %}
-          <li {{ element.attributes }}>{{ element.value }}</li>
-        {% endfor %}
+        {% if item.elements %}
+          {% for element in item.elements %}
+            <li {{ element.attributes }}>{{ element.value }}</li>
+          {% endfor %}
+        {% else %}
+
+        {% endif %}
       </ul>
     </div>
   {% elseif item.type == 'radio' %}

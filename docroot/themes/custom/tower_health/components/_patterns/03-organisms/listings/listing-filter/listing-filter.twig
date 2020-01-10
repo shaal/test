@@ -8,8 +8,10 @@
     </button>
     <div id="list-filters" class="filter-grid-wrapper">
       <div class="filter__labels">
-        <span>{{ 'Filter'|t }}</span>
-        <a href="{{ filter_url }}">{{ 'Clear Filters'|t }}</a>
+        {% block clear_link %}
+          <span>{{ 'Filter'|t }}</span>
+          <a href="{{ filter_url }}">{{ 'Clear Filters'|t }}</a>
+        {% endblock %}
       </div>
       <div class="filter__items">
         {% block filter_items %}
