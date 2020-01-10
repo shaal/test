@@ -43,4 +43,7 @@
  * @see html.html.twig
  */
 #}
-{% include "@pages/_page.twig" %}
+{% include "@pages/_page.twig" with {
+  page_header: page.page_header,
+  page_content: node.field_basic_components.entity|view,
+}%}
