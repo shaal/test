@@ -108,11 +108,11 @@
     }
     
     @include breakpoint($bp3) {
-      @include on-circle($item-count: 3, $circle-size: 375px, $item-size: 150px, $arrowy: -58px);
+      @include on-circle($item-count: 3, $circle-size: 375px, $item-size: 150px, $arrowy: -60px);
     }
     
     @include breakpoint($bp4) {
-      @include on-circle($item-count: 3, $circle-size: 575px, $item-size: 175px, $arrowy: -99px);
+      @include on-circle($item-count: 3, $circle-size: 575px, $item-size: 175px, $arrowy: -92px);
     }
   }
   
