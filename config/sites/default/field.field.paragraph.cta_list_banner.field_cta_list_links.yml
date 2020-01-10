@@ -1,0 +1,58 @@
+uuid: 26ca2f81-8a88-4067-b459-7a04dd53e5f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_list_links
+    - paragraphs.paragraphs_type.cta_list_banner
+    - paragraphs.paragraphs_type.icon_button
+  module:
+    - entity_reference_revisions
+id: paragraph.cta_list_banner.field_cta_list_links
+field_name: field_cta_list_links
+entity_type: paragraph
+bundle: cta_list_banner
+label: Links
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      icon_button: icon_button
+    target_bundles_drag_drop:
+      card:
+        weight: 10
+        enabled: false
+      cards:
+        weight: 11
+        enabled: false
+      cta_list_banner:
+        weight: 12
+        enabled: false
+      education:
+        weight: 13
+        enabled: false
+      on_my_way:
+        weight: 14
+        enabled: false
+      icon_button:
+        enabled: true
+        weight: 15
+      patient_story:
+        weight: 15
+        enabled: false
+      rating_comments:
+        weight: 16
+        enabled: false
+      recognition_card:
+        weight: 17
+        enabled: false
+      recognition_cards:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

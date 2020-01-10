@@ -1,0 +1,34 @@
+uuid: 7c43c9e3-c271-455d-b6b7-3a8126759994
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_button.field_icon_button
+    - field.field.paragraph.icon_button.field_icon_link
+    - paragraphs.paragraphs_type.icon_button
+  module:
+    - link
+    - media_library
+id: paragraph.icon_button.default
+targetEntityType: paragraph
+bundle: icon_button
+mode: default
+content:
+  field_icon_button:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_icon_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

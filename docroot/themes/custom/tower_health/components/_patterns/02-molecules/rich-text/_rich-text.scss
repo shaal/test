@@ -1,7 +1,51 @@
-.text-wrap {
+.rich-text {
   margin-bottom: 3em;
-  
+
   .grid--sm-centered & {
     margin-top: 2em;
+  }
+
+  ul {
+    @extend .ul !optional;
+  }
+
+  ol {
+    @extend .ol !optional;
+  }
+
+  li {
+    @extend .list-item !optional;
+  }
+
+  p {
+    @extend .paragraph !optional;
+  }
+
+  blockquote {
+    @extend .blockquote !optional;
+  }
+
+  hr {
+    @extend .hr !optional;
+  }
+
+  figure {
+    @extend .figure !optional;
+  }
+
+  table {
+    @extend .table !optional;
+
+    th {
+      @extend .table__heading-cell !optional;
+    }
+
+    tr {
+      @extend .table__row !optional;
+    }
+
+    td {
+      @extend .table__cell !optional;
+    }
   }
 }

@@ -1,0 +1,9 @@
+uuid: a44b636d-f95c-49fd-8d1a-224f79825d91
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_hero
+label: 'Homepage Hero'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

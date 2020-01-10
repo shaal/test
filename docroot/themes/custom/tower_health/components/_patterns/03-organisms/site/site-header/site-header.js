@@ -92,12 +92,12 @@
     if ( $(window).width() > 900 && $(window).innerWidth() < 1025 ) {
       var $logo = $('.header-logo').innerHeight();
       $('.header__search-drawer').css('top', $logo);
-    } else if ( $(window).innerWidth() > 1025 ) {
+    } else if ( $(window).innerWidth() >= 1025 ) {
       var $offset = $('.main-menu').offset();
       var $top = $offset.top + 'px';
-      $('.header__search-drawer').css('top', $top);
       $('.role-anonymous .header__search-drawer').css('top', $top);
-      $(':not(role-anonymous) .header__search-drawer').css('top','88px');
+      $(':not(role-anonymous) .header__search-drawer').css('top','77px');
+      $('.styleguide .header__search-drawer').css('top', $top);
     } else {
       $('.header__search-drawer').css('top', '100%');
     }
