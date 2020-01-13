@@ -38,24 +38,26 @@
         {% endif %}
       </div>
 
-      {% if header.cta %}
-        <div class="basic-header__cta js-section-animation">
-          {% if header.cta.label %}
-            <h2 class="basic-header__cta__label">{{ header.cta.label }}</h2>
-          {% endif %}
-          {% if header.cta.button %}
-            <a class="button" href="{{ header.cta.button.url }}">{{ header.cta.button.label }}</a>
-          {% endif %}
-          {% if header.cta.text or header.cta.link %}
-            <span class="basic-header__cta__text">
-          {{ header.cta.text }}
-              {% if header.cta.link %}
-                <a class="basic-header__cta__link" href="tel+1{{ header.cta.link.number }}">{{ header.cta.link.label }}</a>
-              {% endif %}
-          </span>
-          {% endif %}
-        </div>
-      {% endif %}
+      {% block header_cta %}
+        {% if header.cta %}
+          <div class="basic-header__cta js-section-animation">
+            {% if header.cta.label %}
+              <h2 class="basic-header__cta__label">{{ header.cta.label }}</h2>
+            {% endif %}
+            {% if header.cta.button %}
+              <a class="button" href="{{ header.cta.button.url }}">{{ header.cta.button.label }}</a>
+            {% endif %}
+            {% if header.cta.text or header.cta.link %}
+              <span class="basic-header__cta__text">
+            {{ header.cta.text }}
+                {% if header.cta.link %}
+                  <a class="basic-header__cta__link" href="tel+1{{ header.cta.link.number }}">{{ header.cta.link.label }}</a>
+                {% endif %}
+            </span>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endblock %}
     </div>
 
   </div>
