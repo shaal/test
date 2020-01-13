@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_cards_ref
+    - paragraphs.paragraphs_type.article_card
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.cards
   module:
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       card: card
+      article_card: article_card
     target_bundles_drag_drop:
       card:
         enabled: true
@@ -39,5 +41,20 @@ settings:
         enabled: false
       rating_comments:
         weight: 10
+        enabled: false
+      article_card:
+        enabled: true
+        weight: 11
+      homepage_hero:
+        weight: 15
+        enabled: false
+      patient_story:
+        weight: 17
+        enabled: false
+      recognition_card:
+        weight: 19
+        enabled: false
+      recognition_cards:
+        weight: 20
         enabled: false
 field_type: entity_reference_revisions

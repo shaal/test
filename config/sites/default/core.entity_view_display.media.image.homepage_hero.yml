@@ -1,0 +1,31 @@
+uuid: cd6dbc54-acd7-4093-ad61-25a61d391cce
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.homepage_hero
+    - field.field.media.image.field_media_image
+    - image.style.900x900
+    - media.type.image
+  module:
+    - image
+id: media.image.homepage_hero
+targetEntityType: media
+bundle: image
+mode: homepage_hero
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 900x900
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,19 @@
+uuid: 87c10512-0fbc-4309-9e02-5bd52dcd144b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_hp_subtitle
+    - paragraphs.paragraphs_type.homepage_hero
+id: paragraph.homepage_hero.field_hero_hp_subtitle
+field_name: field_hero_hp_subtitle
+entity_type: paragraph
+bundle: homepage_hero
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

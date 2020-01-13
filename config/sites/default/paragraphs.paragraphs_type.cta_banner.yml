@@ -1,0 +1,9 @@
+uuid: 78a2b7b1-d482-4020-8069-f464199f5ed3
+langcode: en
+status: true
+dependencies: {  }
+id: cta_banner
+label: 'CTA Banner'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

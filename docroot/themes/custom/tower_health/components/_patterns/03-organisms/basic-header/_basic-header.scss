@@ -152,12 +152,16 @@
       margin-left: auto;
       margin-right: auto;
     }
+    
+    .listing-search {
+      margin-top: 1.5em;
+    }
   }
   
   .basic-header--img & {
     border-bottom: 0;
     background-color: $primary-dark;
-    padding: 2em 2em 2em 0;
+    padding: 2.35em 2em 2.35em 0;
     border-radius: 0 $rd-brd-lg $rd-brd-lg 0;
     margin-top: auto;
     bottom: -150px;
@@ -281,7 +285,11 @@
 
 .basic-header__cta__text {
   @include adjust-font-size-to($sm-text, .85);
-  margin: .5em 1em;
+  margin: 1em;
+  
+  @include breakpoint($bp3) {
+    margin: 1em 1em 0;
+  }
   
   .basic-header--img & {
     color: $white;
@@ -296,7 +304,6 @@
   
   .basic-header--img & {
     color: $white;
-    text-decoration: underline;
   }
 }
 
@@ -307,6 +314,11 @@
   text-decoration: none;
   display: inline-block;
   margin-bottom: .5em;
+  
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
   
   &:active,
   &:hover,
@@ -334,7 +346,7 @@
     .basic-header__cta {
       animation: fadeInUp .5s ease .25s forwards;
       
-      @include breakpoint($bp4) {
+      @include breakpoint($bp3) {
         animation: fadeInRightScale .5s ease .25s forwards;
       }
     }
