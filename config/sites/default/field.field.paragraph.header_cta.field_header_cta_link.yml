@@ -12,7 +12,7 @@ field_name: field_header_cta_link
 entity_type: paragraph
 bundle: header_cta
 label: Link
-description: ''
+description: 'Enter a link http://domain.com/link or an internal link or a tel:3178675309'
 required: false
 translatable: false
 default_value: {  }

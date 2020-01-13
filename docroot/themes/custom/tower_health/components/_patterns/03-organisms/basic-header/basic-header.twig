@@ -1,16 +1,17 @@
 <header class='basic-header js-section-animation
   {% if header.style == 'secondary' %} basic-header--secondary{% endif %}
   {% if header.style == 'list' %} basic-header--list{% endif %}
-  {% if header.image %} basic-header--img{% endif %}
+  {% if header.image.url %} basic-header--img{% endif %}
   {% if header.cta %} basic-header--cta{% endif %}'
-  {% if header.image %} style="background-image: url({{ header.image.url }});"{% endif %}>
+  {% if header.image.url %} style="background-image: url({{ header.image.url }});"{% endif %}>
   <div class="basic-header__container">
-    {% if header.breadcrumb %}
-      {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
-        breadcrumb: header.breadcrumb
-      } %}
-    {% endif %}
-
+    {% block breadcrumb %}
+      {% if header.breadcrumb %}
+        {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+          breadcrumb: header.breadcrumb
+        } %}
+      {% endif %}
+    {% endblock %}
     <div class='basic-header__content {% if header.class %}{{ class }}{% endif %}'>
       <div class="basic-header__header">
         {% include "@atoms/02-text/00-headings/_heading.twig" with {
@@ -43,13 +44,13 @@
             <h2 class="basic-header__cta__label">{{ header.cta.label }}</h2>
           {% endif %}
           {% if header.cta.button %}
-            <a class="button" href="{{header.cta.button.url}}">{{header.cta.button.label}}</a>
+            <a class="button" href="{{ header.cta.button.url }}">{{ header.cta.button.label }}</a>
           {% endif %}
           {% if header.cta.text or header.cta.link %}
             <span class="basic-header__cta__text">
           {{ header.cta.text }}
               {% if header.cta.link %}
-                <a class="basic-header__cta__link" href="tel+1{{header.cta.link.number}}">{{ header.cta.link.label }}</a>
+                <a class="basic-header__cta__link" href="tel+1{{ header.cta.link.number }}">{{ header.cta.link.label }}</a>
               {% endif %}
           </span>
           {% endif %}
