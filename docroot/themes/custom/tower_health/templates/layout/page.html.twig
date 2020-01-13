@@ -45,5 +45,8 @@
 #}
 {% include "@pages/_page.twig" with {
   page_header: page.page_header,
+  full_width: node.field_basic_enable_nav.value ? 'FALSE' : 'TRUE',
   page_content: node.field_basic_components.entity|view,
+  top_sidebar: node.field_basic_sidebar.entity|view,
+  bottom_sidebar: node.field_basic_sidebar.entity|view,
 }%}
