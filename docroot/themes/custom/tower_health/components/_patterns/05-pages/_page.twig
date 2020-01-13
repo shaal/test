@@ -44,11 +44,13 @@
  */
 #}
 
+
 {% if page.sidebar_first|render or page.sidebar_second|render %} {# this may or may not correctly filter sidebar #}
   {% set sidebar = TRUE %}
 {% endif %}
 
 {% if page.content %}
+
   {% set content = page.content|render %}
   {% if content %}
     {% set page_content = TRUE %}
@@ -67,7 +69,7 @@
     {{ page.help }}
     {{ messages }}
   {% endblock %}
-  
+
   {% block page_header %}
     {{ page.breadcrumb }}
     {{ page.page_header }}
@@ -76,11 +78,11 @@
   {% block top_sidebar %}
     {{ page.sidebar_first }}
   {% endblock %}
-  
+
   {% block page_content %}
     {{ content }}
   {% endblock %}
-  
+
   {% block bottom_sidebar %}
     {{ page.sidebar_second }}
   {% endblock %}
