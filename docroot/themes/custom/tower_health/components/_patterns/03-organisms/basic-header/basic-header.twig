@@ -40,22 +40,20 @@
 
       {% block header_cta %}
         {% if header.cta %}
-          <div class="basic-header__cta js-section-animation">
-            {% if header.cta.label %}
-              <h2 class="basic-header__cta__label">{{ header.cta.label }}</h2>
-            {% endif %}
-            {% if header.cta.button %}
-              <a class="button" href="{{ header.cta.button.url }}">{{ header.cta.button.label }}</a>
-            {% endif %}
-            {% if header.cta.text or header.cta.link %}
-              <span class="basic-header__cta__text">
-            {{ header.cta.text }}
-                {% if header.cta.link %}
-                  <a class="basic-header__cta__link" href="tel+1{{ header.cta.link.number }}">{{ header.cta.link.label }}</a>
-                {% endif %}
-            </span>
-            {% endif %}
-          </div>
+          {% include "@molecules/header-cta/header-cta.twig" with {
+            header_cta: {
+              label: header.cta.label,
+              button: {
+                url: header.cta.button.url,
+                label: header.cta.button.label,
+              },
+              text: header.cta.text,
+              link: {
+                url: "tel+1" ~ header.cta.link.number,
+                label: header.cta.link.label,
+              },
+            }
+            } %}
         {% endif %}
       {% endblock %}
     </div>
