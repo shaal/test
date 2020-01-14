@@ -102,15 +102,6 @@ function tower_health_preprocess_block__providerproximityfilter(&$variables, $ho
 }
 
 /**
- * Add page theme suggestions.
- */
-function tower_health_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    $suggestions[] = 'page__' . $node->bundle();
-  }
-}
-
-/**
  * Preprocess provider medical specialties.
  */
 function _get_specialties($node, &$variables) {
