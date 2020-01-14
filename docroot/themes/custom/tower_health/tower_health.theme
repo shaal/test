@@ -114,12 +114,9 @@ function tower_health_theme_suggestions_region_alter(array &$suggestions, array 
  * Add icon variable.
  */
 function tower_health_theme_preprocess_region__page_header(&$variables) {
-  $variables['cal_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
-
-  dump($variables);
+  $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-
     $variables['name'] = $node->title->value;
   }
 }
@@ -129,10 +126,7 @@ function tower_health_theme_preprocess_region__page_header(&$variables) {
  */
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
-  $variables['cal_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';;
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
-  $variables['href'] = Url::fromUri('internal:/');
-
+  
   if ($node instanceof NodeInterface) {
     // Preprocess address.
     if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
@@ -239,7 +233,7 @@ function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
 
   // Set button icon.
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
+  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
 
   if ($node instanceof NodeInterface) {
     // Preprocess image variables.
@@ -287,11 +281,11 @@ function tower_health_preprocess_node__location(&$variables) {
 }
 
 function tower_health_preprocess_paragraph__rating_comments(&$variables) {
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 }
 
 function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
   $rating = $variables['element']['#object']->field_rating_overall->value;
   if ($rating) {

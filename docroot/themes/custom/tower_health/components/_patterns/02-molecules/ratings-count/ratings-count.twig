@@ -21,12 +21,12 @@
 <div class="ratings-count">
   {{ rating }} of 5
   <div class="ratings-count__stars ratings-count__stars--{{rating_round}}">
-    {% if icon %}
-      {% include icon %}
-      {% include icon %}
-      {% include icon %}
-      {% include icon %}
-      {% include icon %}
+    {% if rating_icon %}
+      {% include rating_icon %}
+      {% include rating_icon %}
+      {% include rating_icon %}
+      {% include rating_icon %}
+      {% include rating_icon %}
     {% endif %}
   </div>
 </div>
