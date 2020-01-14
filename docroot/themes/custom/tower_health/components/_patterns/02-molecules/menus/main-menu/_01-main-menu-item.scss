@@ -129,10 +129,10 @@
     &:active,
     &:hover,
     &:focus {
-      background-color: $primary-dark;
+      background-color: transparent;
 
       &::after {
-        border: 8px solid $white;
+        border: 8px solid $primary-dark;
         border-bottom-color: transparent;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
@@ -198,10 +198,10 @@
     &:active,
     &:hover,
     &:focus {
-      background-color: $trust-aa;
+      background-color: transparent;
 
       &::after {
-        border: 8px solid $white;
+        border: 8px solid $primary-dark;
         border-bottom-color: transparent;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
@@ -246,11 +246,18 @@
       clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
     }
     clip: rect(1px, 1px, 1px, 1px);
+
+    &:active,
+    &:focus {
+      clip: auto;
+      height: 20px;
+      width: 10px;
+      overflow: hidden;
+    }
   }
 
   // Down triangle
   &::after {
-    @extend %element-focusable;
     content: "";
     display: block;
     margin-right: -6px;
