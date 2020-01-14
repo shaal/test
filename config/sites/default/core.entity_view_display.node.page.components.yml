@@ -1,8 +1,9 @@
-uuid: 49036bbb-7a22-4c3e-a07d-9a258a005688
+uuid: dcee2960-0aa1-406b-8f09-7da9aed7d33d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.components
     - field.field.node.page.field_basic_components
     - field.field.node.page.field_basic_enable_nav
     - field.field.node.page.field_basic_header
@@ -13,22 +14,15 @@ dependencies:
     - node.type.page
   module:
     - entity_reference_revisions
-    - metatag
-    - text
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
-id: node.page.default
+id: node.page.components
 targetEntityType: node
 bundle: page
-mode: default
+mode: components
 content:
-  content_moderation_control:
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_basic_sidebar:
+  field_basic_components:
     type: entity_reference_revisions_entity_view
     weight: 0
     label: hidden
@@ -37,28 +31,13 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_metatags:
-    weight: 4
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
-  field_text:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  links:
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
-  field_basic_components: true
+  content_moderation_control: true
   field_basic_enable_nav: true
   field_basic_header: true
+  field_basic_sidebar: true
+  field_metatags: true
   field_reference_access_control: true
+  field_text: true
+  links: true
   search_api_excerpt: true
