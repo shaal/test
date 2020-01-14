@@ -43,9 +43,8 @@
  * @see html.html.twig
  */
 #}
-{% set page_base_class = 'page page--container' %}
 {% set full_with = 'false' %}
-{{ dd(page.sidebar_second) }}
+
 {% include "@pages/_page.twig" with {
   page_header: page.page_header,
   page_content: page.content,
