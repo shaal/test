@@ -249,28 +249,6 @@ function _get_image($node, &$variables) {
 }
 
 /**
- * Preprocess provider accepted insurance.
- */
-function _get_insurance($node, &$variables) {
-  if ($node->hasField('field_insurance_ref') && !$node->get('field_insurance_ref')->isEmpty()) {
-    $insurance_policies = $node->get('field_insurance_ref')->getValue();
-    $accepted_policies = [];
-    foreach ($insurance_policies as $id => $policy) {
-      $entity = $node->field_insurance_ref[$id]->entity;
-      if ($entity instanceof EntityInterface) {
-        $tid = $entity->tid->value;
-        $term = Term::load($tid);
-        $name = $term->getName();
-        array_push($accepted_policies, $name);
-      }
-    }
-    if ($accepted_policies) {
-      $variables['policies'] = $accepted_policies;
-    }
-  }
-}
-
-/**
  * Preprocess provider detail page.
  */
 function tower_health_preprocess_page__profile(&$variables) {
@@ -281,28 +259,25 @@ function tower_health_preprocess_page__profile(&$variables) {
 
     $variables['title'] = $node->title->value;
     $variables['lede'] = $node->field_profile_job_title->value;
-    $variables['phone'] = $node->field_profile_phone->value;
     $variables['rating'] = $node->field_rating_overall->value;
     $variables['review_amt'] = $node->field_rating_count->value;
     _get_specialties($node, $variables);
     _get_focuses($node, $variables);
-    _get_languages($node, $variables);
     _get_affiliations($node, $variables);
     _get_certifications($node, $variables);
     _get_education($node, $variables);
     _get_image($node, $variables);
-    _get_insurance($node, $variables);
-
-    $review_items = $node->get('field_rating_comments_ref')->referencedEntities();
-    $reviews = [];
-    foreach ($review_items as $id => $review) {
-      $reviews[$id]["review"] = strip_tags($review->field_rating_comment_body->value);
-      $reviews[$id]["rating"] = $review->field_rating_comment_rating->value;
-      $reviews[$id]["date"] = date("F Y", strtotime($review->field_rating_comment_date->value));
-    }
-    $variables['reviews'] = $reviews;
   }
 }
+
+/**
+ * Add region theme suggestions.
+ */
+ function tower_health_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+   if ($node = \Drupal::routeMatch()->getParameter('node')) {
+     $suggestions[] = 'region__' . $variables['elements']['#region'] . '__' . $node->bundle();
+   }
+ }
 
 /**
  * Provide variables for provider teaser.
@@ -404,4 +379,62 @@ function tower_health_preprocess_paragraph__rating_comments(&$variables) {
 
 function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+
+  $rating = $variables['element']['#object']->field_rating_overall->value;
+  if ($rating) {
+    $variables['rating'] = $rating;
+  }
+
+  $reviews = [];
+  foreach ($variables['items'] as $id => $item) {
+    $paragraph = $item["content"]["#paragraph"];
+    $reviews[$id]["review"] = strip_tags($paragraph->field_rating_comment_body->value);
+    $reviews[$id]["rating"] = $paragraph->field_rating_comment_rating->value;
+    $reviews[$id]["date"] = date("F Y", strtotime($paragraph->field_rating_comment_date->value));
+  }
+
+  $variables["reviews"] = $reviews;
+}
+
+/**
+ * Provide variables for profile language field template.
+ */
+function tower_health_preprocess_field__field_profile_languages(&$variables) {
+  $languages = [];
+  foreach($variables['items'] as $id => $language) {
+    $language_name = $language['content']['#context']['value'];
+    $languages[$id]['text'] = $language_name;
+  }
+
+  $variables['languages'] = $languages;
+}
+
+/**
+ * Provide variables for profile phone field template.
+ */
+function tower_health_preprocess_field__field_profile_phone(&$variables) {
+  $variables['phone'] = $variables['items'][0]['content']['#title'];
+  $variables['url'] = $variables['items'][0]['content']['#url'];
+}
+
+/**
+ * Provide variables for profile accepted insurance field template.
+ */
+function tower_health_preprocess_field__field_insurance_ref(&$variables) {
+  $accepted_policies = [];
+  foreach ($variables['items'] as $policy) {
+    array_push($accepted_policies, $policy['content']['#title']);
+  }
+  $variables['policies'] = $accepted_policies;
+}
+
+/**
+ * Provide variables for profile accepted insurance field template.
+ */
+function tower_health_preprocess_field__field_affiliations_ref(&$variables) {
+  $affiliations = [];
+  foreach ($variables['items'] as $id => $affiliation) {
+    $affiliations[$id]['text'] = $affiliation['content']['#title'];
+  }
+  $variables['affiliations'] = $affiliations;
 }

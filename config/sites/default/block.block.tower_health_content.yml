@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   module:
+    - ctools
+    - node
     - system
   theme:
     - tower_health
@@ -19,4 +21,24 @@ settings:
   label: 'Main page content'
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      location: location
+      page: page
+      service: service
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+      location: location
+      page: page
+      service: service
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

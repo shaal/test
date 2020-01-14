@@ -38,26 +38,34 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
     {% if page_header %}
       <div class="page-header">
-      {% block page_header %}{% endblock %}
+      {% block page_header %}
+        {{ page_header }}
+      {% endblock %}
       </div>
     {% endif %}
 
     <div {{ bem(page_base_class, (page_modifiers), page_blockname) }}>
       {% if top_sidebar %}
         <aside class="top-sidebar" role="complementary">
-          {% block top_page_sidebar %}{% endblock %}
+          {% block top_page_sidebar %}
+            {{ top_sidebar }}
+          {% endblock %}
         </aside>
       {% endif %}
 
       {% if page_content %}
       <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
-        {% block page_content %}{% endblock %}
+        {% block page_content %}
+          {{ page_content }}
+        {% endblock %}
       </div>
      {% endif %}
 
       {% if bottom_sidebar %}
         <aside class="bottom-sidebar" role="complementary">
-          {% block bottom_page_sidebar %}{% endblock %}
+          {% block bottom_page_sidebar %}
+            {{ bottom_sidebar }}
+          {% endblock %}
         </aside>
       {% endif %}
     </div>

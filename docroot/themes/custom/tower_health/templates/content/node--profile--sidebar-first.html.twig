@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: The title of the node.
+ * - label: (optional) The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -70,117 +70,4 @@
  *   in different view modes.
  */
 #}
-
-{% include "@organisms/provider-header/provider-header.twig" with {
-  "name": label,
-  "lead_title": content.field_profile_job_title,
-  "rating": content.field_rating_overall.0['#markup'],
-  "review_amt": content.field_rating_count,
-  "img": {
-    "src": src,
-    "alt": alt,
-  },
-  "appt_label": "Request an Appointment"|t,
-  "appt_phone": {
-    "number": content.field_profile_phone.0["#title"],
-    "label": content.field_profile_phone.0["#title"]
-  },
-  "appt_url": "#",
-  "appt_icon": cal_icon
-} %}
-
-<div class="sidebar--growth js-section-animation">
-  {% include "@molecules/provider-details/provider-details.twig" with {
-    "detail": {
-      "label": "Languages"|t,
-      "sidebar": true,
-      "items": languages
-    }
-  } %}
-
-  {% include "@molecules/provider-details/provider-details.twig" with {
-    "detail": {
-      "label": "Contact Information",
-      "sidebar": true,
-      "items": [
-        {
-          "label": "Main:"|t,
-          "link": {
-            "text": content.field_profile_phone.0["#title"],
-            "url": content.field_profile_phone.0["#uri"]
-          }
-        },
-        {
-          "label": "Fax:"|t
-        }
-      ]
-    }
-  } %}
-
-  {% include "@molecules/provider-details/provider-details.twig" with {
-    "detail": {
-      "sidebar": true,
-      "items": {
-        "type": "insurance",
-        "label": "Insurances Accepted"|t,
-        "reference": "insurances",
-        "items": {
-
-        }
-      }
-    }
-  } %}
-
-  {% include "@molecules/provider-details/provider-details.twig" with {
-    "detail": {
-      "label": "Member of"|t,
-      "sidebar": true
-    }
-  } %}
-
-  {% include "@molecules/provider-details/provider-details.twig" with {
-    "detail": {
-      "label": "Hospital Affiliation"|t,
-      "sidebar": true,
-      "items": affiliations
-    }
-  } %}
-</div>
-
-{% include "@molecules/provider-details/provider-details.twig" with {
-  "detail": {
-    "label": "Specialties"|t,
-    "items": specialties
-  }
-} %}
-
-{% include "@molecules/provider-details/provider-details.twig" with {
-  "detail": {
-    "label": "Clinical Areas of Focus"|t,
-    "info": "Lorem ipsum",
-    "info_id": "areas-focus",
-    "items": focuses
-  }
-} %}
-
-{% include "@molecules/provider-details/provider-details.twig" with {
-  "detail": {
-    "label": "Locations"|t
-  }
-} %}
-
-{% include "@molecules/provider-details/provider-details.twig" with {
-  "detail": {
-    "label": "Board Certifications"|t,
-    "items": certifications
-  }
-} %}
-
-{% include "@molecules/provider-details/provider-details.twig" with {
-  "detail": {
-    "label": "Education"|t,
-    "items": education
-  }
-} %}
-
-{{ content.field_rating_comments_ref }}
+{{ content }}

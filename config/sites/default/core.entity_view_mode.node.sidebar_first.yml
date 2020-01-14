@@ -1,0 +1,10 @@
+uuid: ac6116ad-ad73-4527-ba27-3bc0414ca05d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sidebar_first
+label: 'Sidebar First'
+targetEntityType: node
+cache: true
