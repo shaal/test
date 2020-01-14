@@ -1,56 +1,62 @@
-<header class='basic-header js-section-animation {% if header.style == 'secondary' %}basic-header--secondary{% endif %}{% if header.style == 'list' %}basic-header--list{% endif %}{% if header.image %} basic-header--img{% endif %}{% if header.cta %} basic-header--cta{% endif %}' {% if header.image %}style="background-image: url({{header.image.url}});"{% endif %}>
+<header class='basic-header js-section-animation
+  {% if header.style == 'secondary' %} basic-header--secondary{% endif %}
+  {% if header.style == 'list' %} basic-header--list{% endif %}
+  {% if header.image.url %} basic-header--img{% endif %}
+  {% if header.cta %} basic-header--cta{% endif %}'
+  {% if header.image.url %} style="background-image: url({{ header.image.url }});"{% endif %}>
   <div class="basic-header__container">
-    {% if header.breadcrumb %}
-    {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
-      breadcrumb: header.breadcrumb
-    } %}
-    {% endif %}
-
-    <div class='basic-header__content {% if header.class %}{{ class }}{% endif %}'>
-      <div class="basic-header__header">
-      {% include "@atoms/02-text/00-headings/_heading.twig" with {
-        "heading_level": 1,
-        "heading": header.title,
-        "heading_base_class": "basic-header__title"
-      } %}
-      
-      {% if header.lede %}
-      <span class="basic-header__lede">{{ header.lede}}</span>
-      {% endif %}
-      
-      {# this link is used exclusively for the services listing page as an anchor link #}
-      {% if header.link %}
-        <a class="basic-header__link" href="{{ header.link.url }}">{{ header.link.label }}</a>
-      {% endif %}
-      
-      {% if header.form %}
-        {% include "@organisms/listings/listing-search/listing-search.twig" with {
-          label: header.form.label,
-          placeholder: header.form.placeholder,
-          button: header.form.button
+    {% block breadcrumb %}
+      {% if header.breadcrumb %}
+        {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+          breadcrumb: header.breadcrumb
         } %}
       {% endif %}
+    {% endblock %}
+    <div class='basic-header__content {% if header.class %}{{ class }}{% endif %}'>
+      <div class="basic-header__header">
+        {% include "@atoms/02-text/00-headings/_heading.twig" with {
+          "heading_level": 1,
+          "heading": header.title,
+          "heading_base_class": "basic-header__title"
+        } %}
+
+        {% if header.lede %}
+          <span class="basic-header__lede">{{ header.lede }}</span>
+        {% endif %}
+
+        {# this link is used exclusively for the services listing page as an anchor link #}
+        {% if header.link %}
+          <a class="basic-header__link" href="{{ header.link.url }}">{{ header.link.label }}</a>
+        {% endif %}
+
+        {% if header.form %}
+          {% include "@organisms/listings/listing-search/listing-search.twig" with {
+            label: header.form.label,
+            placeholder: header.form.placeholder,
+            button: header.form.button
+          } %}
+        {% endif %}
       </div>
-      
-      {% if header.cta %}
-      <div class="basic-header__cta js-section-animation">
-        {% if header.cta.label %}
-        <h2 class="basic-header__cta__label">{{ header.cta.label }}</h2>
+
+      {% block header_cta %}
+        {% if header.cta %}
+          {% include "@molecules/header-cta/header-cta.twig" with {
+            header_cta: {
+              label: header.cta.label,
+              button: {
+                url: header.cta.button.url,
+                label: header.cta.button.label,
+              },
+              text: header.cta.text,
+              link: {
+                url: "tel+1" ~ header.cta.link.number,
+                label: header.cta.link.label,
+              },
+            }
+            } %}
         {% endif %}
-        {% if header.cta.button %}
-          <a class="button" href="{{header.cta.button.url}}">{{header.cta.button.label}}</a>
-        {% endif %}
-        {% if header.cta.text or header.cta.link %}
-          <span class="basic-header__cta__text">
-          {{ header.cta.text }}
-          {% if header.cta.link %}
-          <a class="basic-header__cta__link" href="tel+1{{header.cta.link.number}}">{{ header.cta.link.label }}</a>
-          {% endif %}
-          </span>
-        {% endif %}
-      </div>
-      {% endif %}
+      {% endblock %}
     </div>
-    
+
   </div>
 </header>
