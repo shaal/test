@@ -45,10 +45,10 @@
     <div {{ bem(page_base_class, (page_modifiers), page_blockname) }}>
       {% if top_sidebar %}
         <aside class="top-sidebar" role="complementary">
-          {% block top_page_sidebar %}{% endblock %}
+          {% block top_sidebar %}{% endblock %}
         </aside>
       {% endif %}
-      
+
       {% if page_content %}
       <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
         {% block page_content %}{% endblock %}
@@ -57,11 +57,11 @@
 
       {% if bottom_sidebar %}
         <aside class="bottom-sidebar" role="complementary">
-          {% block bottom_page_sidebar %}{% endblock %}
+          {% block bottom_sidebar %}{% endblock %}
         </aside>
       {% endif %}
     </div>
-    
+
     {% if full_content %}
       <div class="full-content">
         {% block full_content %}{% endblock %}

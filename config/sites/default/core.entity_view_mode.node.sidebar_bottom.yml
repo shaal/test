@@ -1,0 +1,10 @@
+uuid: 279fd89a-eb65-427d-a0e3-77d31562f7bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sidebar_bottom
+label: 'Sidebar bottom'
+targetEntityType: node
+cache: true
