@@ -45,6 +45,15 @@
       var id = $(this).data('drupal-facet-id');
       // Add aria-labelledby attribute to reference label.
       $dropdown.attr('aria-labelledby', "facet_"+id+"_label");
+      var default_option_label = settings.facets.dropdown_widget[id]['facet-default-option-label'];
+
+      // Add empty text option first.
+      var $default_option = $('<option />')
+       .attr('value', '')
+       .text(default_option_label);
+       $dropdown.append($default_option);
+
+      $ul.prepend('<li class="default-option element-invisible"><a href="." class="element-invisible">' + default_option_label + '</a></li>');
 
       var has_active = false;
       $links.each(function () {
@@ -68,6 +77,7 @@
       $dropdown.on('change.facets', function () {
         var anchor = $($ul).find("[data-drupal-facet-item-id='" + $(this).find(':selected').data('drupalFacetItemId') + "']");
         var $linkElement = (anchor.length > 0) ? $(anchor) : $ul.find('.default-option a');
+        //console.log($linkElement);
         var url = $linkElement.attr('href');
 
         $(this).trigger('facets_filter', [ url ]);

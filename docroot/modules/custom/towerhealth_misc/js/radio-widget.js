@@ -29,7 +29,7 @@
 
         // Add correct CSS selector for the widget. The Facets JS API will
         // register handlers on that element.
-        $widget.addClass('js-facets-widget');
+        $widget.addClass('form-item--radios form-item--inline');
 
         // Transform links to radio buttons.
         $widgetLinks.each(Drupal.facets.makeRadioButton);
@@ -48,6 +48,7 @@
    * Replace a link with a checked checkbox.
    */
   Drupal.facets.makeRadioButton = function () {
+    console.log($(this));
     var $link = $(this);
     var active = $link.hasClass('is-active');
     var description = $link.html();
@@ -76,7 +77,7 @@
       label.find('.js-facet-deactivate').remove();
     }
 
-    $link.before(radio).before(label).hide();
+    $link.before(label).before(radio).hide();
 
   };
 

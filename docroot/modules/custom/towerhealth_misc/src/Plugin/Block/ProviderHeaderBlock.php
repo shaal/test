@@ -7,15 +7,15 @@ use Drupal\views\Views;
 use Drupal\Core\Url;
 
 /**
- * Provides a 'Provider proximity filter' block.
+ * Provides a 'Provider search block for header region' block.
  *
  * @Block(
- *  id = "provider_proximity_filter",
- *  admin_label = @Translation("Provider proximity filter"),
+ *  id = "provider_header_block",
+ *  admin_label = @Translation("Provider header block"),
  *  category = "Views"
  * )
  */
-class ProviderProximityBlock extends BlockBase {
+class ProviderHeaderBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -41,34 +41,27 @@ class ProviderProximityBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['find_doctor_search']);
+    unset($form['provider_location_latlong']);
+    unset($form['facets']);
+    $form['#id'] = 'views-exposed-form-find-a-provider-find-provider-header';
+    $form['#attributes']['class'][] = 'main-menu__form';
 
-    $form['#id'] = 'views-exposed-form-find-a-provider-find-doctor-proximity';
+    $form['actions']['#attributes']['data-id'] = 'provider_header_block';
+    // Set the submit button classes
+    if (isset($form['actions']['submit']['#attributes']['class'])) {
+      $classes = $form['actions']['submit']['#attributes']['class'];
+    }
+    else {
+      $classes = [];
+    }
+
+    $form['actions']['submit']['#attributes']['class'] = array_merge($classes,[
+      'button',
+      'button--small',
+      'button--primary',
+    ]);
 
     $build['exposed_form'] = $form;
-
-    $build['exposed_form']['#attributes']['class'] = [
-      'form-section__item--group',
-      'form-section__item--oneThird',
-      'form-section__item',
-    ];
-
-    $url = Url::fromRoute('view.' . $view_id . '.' . $view_display_id);
-
-    $location_link = [
-      '#title' => t('Use my location'),
-      '#type' => 'link',
-      '#attributes' => [
-        'class' => [
-          'js-use-my-location',
-          'link',
-          'link--small',
-        ],
-        'data-view' => 'views-exposed-form-find-a-provider-find-doctor-proximity',
-      ],
-      '#url' => $url,
-    ];
-    $build['exposed_form']['actions']['location_link'] = $location_link;
 
     return $build;
   }

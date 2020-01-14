@@ -25,15 +25,4 @@
  * @see template_preprocess_block()
  */
 #}
-{% set header = [] %}
-{% set header = header|merge({
-'title': label,
-'style': 'list',
-})
-%}
-{% extends "@organisms/basic-header/basic-header.twig" %}
-{% block form %}
-  <div class="listing-search">
-    {{ content }}
-  </div>
-{% endblock %}
+{{ content }}

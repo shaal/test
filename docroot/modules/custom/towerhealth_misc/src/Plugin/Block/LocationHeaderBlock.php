@@ -7,15 +7,15 @@ use Drupal\views\Views;
 use Drupal\Core\Url;
 
 /**
- * Provides a 'Location search block for hero region' block.
+ * Provides a 'Location search block for header region' block.
  *
  * @Block(
- *  id = "location_hero_block",
- *  admin_label = @Translation("Location hero block"),
+ *  id = "location_header_block",
+ *  admin_label = @Translation("Location header block"),
  *  category = "Views"
  * )
  */
-class LocationHeroBlock extends BlockBase {
+class LocationHeaderBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -43,14 +43,26 @@ class LocationHeroBlock extends BlockBase {
 
     unset($form['location_latlon']);
     unset($form['facets']);
-    $form['find_location_search']['#attributes']['data-id'] = 'location-hero-block';
-    $form['find_location_search']['#attributes']['class'][] = 'listing-search__input';
 
-    $form['#id'] = 'views-exposed-form-find-a-location-find-location-hero';
+    $form['#id'] = 'views-exposed-form-find-a-location-find-location-header';
+    $form['#attributes']['class'][] = 'main-menu__form';
+
+    $form['actions']['#attributes']['data-id'] = 'location_header_block';
+    // Set the submit button classes
+    if (isset($form['actions']['submit']['#attributes']['class'])) {
+      $classes = $form['actions']['submit']['#attributes']['class'];
+    }
+    else {
+      $classes = [];
+    }
+
+    $form['actions']['submit']['#attributes']['class'] = array_merge($classes,[
+      'button',
+      'button--small',
+      'button--primary',
+    ]);
 
     $build['exposed_form'] = $form;
-
-    $build['exposed_form']['#attributes']['class'][] = 'listing-search';
 
     return $build;
   }

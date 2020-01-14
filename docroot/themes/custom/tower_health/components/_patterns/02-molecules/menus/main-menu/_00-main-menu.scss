@@ -194,9 +194,11 @@
   flex-direction: column;
   margin: 0 1em 1em;
 
+  .form-item,
   .autocomplete-container {
     width: 100%;
     z-index: 10;
+    position: relative;
 
     label {
       font-weight: 600;
@@ -212,6 +214,7 @@
     flex-direction: row;
     align-items: flex-end;
 
+    .form-item,
     .autocomplete-container {
       padding-right: .5em;
     }
@@ -225,6 +228,7 @@
       margin-bottom: 0;
     }
 
+    .form-actions,
     .button {
       padding: 1.5em 1.5em;
     }
@@ -233,6 +237,7 @@
   @include breakpoint($bp3) {
     margin: 0 0 1em 0;
 
+    .form-actions,
     .button {
       padding: 1.6em 1.5em;
     }

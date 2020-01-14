@@ -1,0 +1,20 @@
+uuid: 38ed4429-9299-4467-abea-d3783831f84a
+langcode: en
+status: true
+dependencies:
+  module:
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: location_header_block
+theme: tower_health
+region: header
+weight: 0
+provider: null
+plugin: location_header_block
+settings:
+  id: location_header_block
+  label: 'Location header block'
+  provider: towerhealth_misc
+  label_display: '0'
+visibility: {  }

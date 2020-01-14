@@ -7,15 +7,15 @@ use Drupal\views\Views;
 use Drupal\Core\Url;
 
 /**
- * Provides a 'Location search block for hero region' block.
+ * Provides a 'Location search block for header region' block.
  *
  * @Block(
- *  id = "location_hero_block",
- *  admin_label = @Translation("Location hero block"),
+ *  id = "services_header_block",
+ *  admin_label = @Translation("Services header block"),
  *  category = "Views"
  * )
  */
-class LocationHeroBlock extends BlockBase {
+class ServicesHeaderBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -25,8 +25,8 @@ class LocationHeroBlock extends BlockBase {
     // and try to decide if we're on a Views page.
     /** @var \Symfony\Component\HttpFoundation\ParameterBag $currentRouteParameters */
 
-    $view_id = 'find_a_location';
-    $view_display_id = 'find_location';
+    $view_id = 'find_a_service';
+    $view_display_id = 'find_service';
 
     /** @var \Drupal\views\ViewExecutable $view */
     $view = Views::getView($view_id);
@@ -41,16 +41,25 @@ class LocationHeroBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['location_latlon']);
-    unset($form['facets']);
-    $form['find_location_search']['#attributes']['data-id'] = 'location-hero-block';
-    $form['find_location_search']['#attributes']['class'][] = 'listing-search__input';
+    $form['#id'] = 'views-exposed-form-find-a-service-find-service-header';
+    $form['#attributes']['class'][] = 'main-menu__form';
 
-    $form['#id'] = 'views-exposed-form-find-a-location-find-location-hero';
+    $form['actions']['#attributes']['data-id'] = 'services_header_block';
+    // Set the submit button classes
+    if (isset($form['actions']['submit']['#attributes']['class'])) {
+      $classes = $form['actions']['submit']['#attributes']['class'];
+    }
+    else {
+      $classes = [];
+    }
+
+    $form['actions']['submit']['#attributes']['class'] = array_merge($classes,[
+      'button',
+      'button--small',
+      'button--primary',
+    ]);
 
     $build['exposed_form'] = $form;
-
-    $build['exposed_form']['#attributes']['class'][] = 'listing-search';
 
     return $build;
   }

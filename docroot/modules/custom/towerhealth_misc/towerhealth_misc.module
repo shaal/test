@@ -39,12 +39,7 @@ function towerhealth_misc_views_query_alter(ViewExecutable $view, QueryPluginBas
  */
 function towerhealth_misc_form_alter(&$form, &$form_state, $form_id) {
   $id = $form['#id'];
-  $location_forms = [
-    'header' => 'views-exposed-form-find-a-location-find-location',
-    'proximity' => 'views-exposed-form-find-a-location-find-location-proximity',
-    'hero' => 'views-exposed-form-find-a-location-find-location-hero'
-  ];
-  if (in_array($id, $location_forms)) {
+  if ($id == 'views-exposed-form-find-a-location-find-location') {
     $view_id = 'find_a_location';
     $view_display_id = 'find_location';
 
@@ -111,8 +106,30 @@ function towerhealth_misc_query_add_facets(array $form, $view) {
 /**
  * Implements hook_theme_suggestions_form_element().
  */
+function towerhealth_misc_theme_suggestions_container(array $variables) {
+  $suggestions = [];
+
+  if (isset($variables['element']['#attributes']['#type'])) {
+    $suggestions[] =['container__' . $variables['element']['#type']];
+  }
+
+  if (isset($variables['element']['#attributes']['data-id'])) {
+    $suggestions[] = 'container__' . $variables['element']['#attributes']['data-id'];
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_form_element().
+ */
 function towerhealth_misc_theme_suggestions_form_element(array $variables) {
-  $suggestions = ['form_element__type__' . $variables['element']['#type']];
+  $suggestions = [];
+
+  if (isset($variables['element']['#attributes']['#type'])) {
+    $suggestions = ['form_element__type__' . $variables['element']['#type']];
+  }
+
   if (isset($variables['element']['#attributes']['data-id'])) {
     $suggestions[] = 'form_element__' . $variables['element']['#attributes']['data-id'];
   }
@@ -124,26 +141,8 @@ function towerhealth_misc_theme_suggestions_form_element(array $variables) {
  * Implementation of hook_preprocess_form_element().
  */
 function towerhealth_misc_preprocess_form_element(&$variables, $hook, &$info) {
-  if (isset($variables['element']['#attributes']['data-id']) && $variables['element']['#attributes']['data-id'] == 'location-hero-block') {
+  $form_elements = ['provider-hero-block', 'location-hero-block', 'services-hero-block'];
+  if (isset($variables['element']['#attributes']['data-id']) && in_array($variables['element']['#attributes']['data-id'], $form_elements)) {
     $info['template'] = 'form-element--' . $variables['element']['#attributes']['data-id'];
   }
 }
-
-/**
- * Implements hook_theme_suggestions_form_element_label().
- */
-/*function towerhealth_misc_theme_suggestions_form_element_label(array $variables) {
-  $suggestions = [];
-  if (isset($variables['element']['#form_element_type'])) {
-    $suggestions[] = 'form_element_label__type__' . $variables['element']['#form_element_type'];
-  }
-  if (isset($variables['element']['#form_id'])) {
-    $suggestions[] = 'form_element_label__form-id__' . $variables['element']['#form_id'];
-  }
-  if (isset($variables['element']['#form_element_type']) && isset($variables['element']['#form_id'])) {
-    $suggestions[] = 'form_element_label__' . $variables['element']['#form_id'] . '__' . $variables['element']['#form_element_type'];
-  }
-
-  return $suggestions;
-}
-*/

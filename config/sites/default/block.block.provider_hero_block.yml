@@ -1,26 +1,23 @@
-uuid: 489cd226-8e3f-40a7-87db-4da31a900634
+uuid: 5ce4221f-57c5-414b-ab69-7d58ca3f2b83
 langcode: en
 status: true
 dependencies:
-  config:
-    - views.view.find_a_provider
   module:
     - system
-    - views
+    - towerhealth_misc
   theme:
     - tower_health
-id: provider_search_box
+id: provider_hero_block
 theme: tower_health
 region: page_header
-weight: -13
+weight: 0
 provider: null
-plugin: 'views_exposed_filter_block:find_a_provider-find_doctor'
+plugin: provider_hero_block
 settings:
-  id: 'views_exposed_filter_block:find_a_provider-find_doctor'
-  label: ''
-  provider: views
+  id: provider_hero_block
+  label: 'Search Providers'
+  provider: towerhealth_misc
   label_display: visible
-  views_label: ''
 visibility:
   request_path:
     id: request_path

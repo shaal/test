@@ -25,7 +25,13 @@
  * @see template_preprocess_block()
  */
 #}
-{{ attach_library('tower_health/proximity-facet') }}
-{% block content %}
-  {{ content|without('find_doctor_search')}}
+{% set header = [] %}
+{% set header = header|merge({
+    'title': label,
+    'style': 'list',
+  })
+%}
+{% extends "@organisms/basic-header/basic-header.twig" %}
+{% block form %}
+  {{ content }}
 {% endblock %}

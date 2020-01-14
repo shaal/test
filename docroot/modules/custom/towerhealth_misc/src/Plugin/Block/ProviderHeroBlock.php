@@ -7,15 +7,15 @@ use Drupal\views\Views;
 use Drupal\Core\Url;
 
 /**
- * Provides a 'Provider proximity filter' block.
+ * Provides a 'Provider search block for hero region' block.
  *
  * @Block(
- *  id = "provider_proximity_filter",
- *  admin_label = @Translation("Provider proximity filter"),
+ *  id = "provider_hero_block",
+ *  admin_label = @Translation("Provider hero block"),
  *  category = "Views"
  * )
  */
-class ProviderProximityBlock extends BlockBase {
+class ProviderHeroBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -41,34 +41,16 @@ class ProviderProximityBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['find_doctor_search']);
+    unset($form['provider_location_latlong']);
+    unset($form['facets']);
+    $form['find_doctor_search']['#attributes']['class'][] = 'listing-search__input';
+    $form['find_doctor_search']['#attributes']['data-id'] = 'provider-hero-block';
 
-    $form['#id'] = 'views-exposed-form-find-a-provider-find-doctor-proximity';
+    $form['#id'] = 'views-exposed-form-find-a-provider-find-provider-hero';
 
     $build['exposed_form'] = $form;
 
-    $build['exposed_form']['#attributes']['class'] = [
-      'form-section__item--group',
-      'form-section__item--oneThird',
-      'form-section__item',
-    ];
-
-    $url = Url::fromRoute('view.' . $view_id . '.' . $view_display_id);
-
-    $location_link = [
-      '#title' => t('Use my location'),
-      '#type' => 'link',
-      '#attributes' => [
-        'class' => [
-          'js-use-my-location',
-          'link',
-          'link--small',
-        ],
-        'data-view' => 'views-exposed-form-find-a-provider-find-doctor-proximity',
-      ],
-      '#url' => $url,
-    ];
-    $build['exposed_form']['actions']['location_link'] = $location_link;
+    $build['exposed_form']['#attributes']['class'][] = 'listing-search';
 
     return $build;
   }
