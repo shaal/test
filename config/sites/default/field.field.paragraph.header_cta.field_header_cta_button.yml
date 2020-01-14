@@ -1,0 +1,23 @@
+uuid: 526184ca-d460-4a9a-adb2-e77a72fffa72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header_cta_button
+    - paragraphs.paragraphs_type.header_cta
+  module:
+    - link
+id: paragraph.header_cta.field_header_cta_button
+field_name: field_header_cta_button
+entity_type: paragraph
+bundle: header_cta
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

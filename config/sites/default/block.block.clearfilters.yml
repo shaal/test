@@ -10,7 +10,7 @@ dependencies:
 id: clearfilters
 theme: tower_health
 region: content
-weight: -7
+weight: -14
 provider: null
 plugin: clear_filters
 settings:

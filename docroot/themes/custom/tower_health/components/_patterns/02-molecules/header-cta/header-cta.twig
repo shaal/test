@@ -1,0 +1,16 @@
+<div class="header-cta js-section-animation">
+  {% if header_cta.label %}
+    <h2 class="header-cta__label">{{ header_cta.label }}</h2>
+  {% endif %}
+  {% if header_cta.button %}
+    <a class="button" href="{{ header_cta.button.url }}">{{ header_cta.button.label }}</a>
+  {% endif %}
+  {% if header_cta.text or header_cta.link %}
+    <span class="header-cta__text">
+      {{ header_cta.text }}
+      {% if header_cta.link %}
+        <a class="header-cta__link" href="tel+1{{ header_cta.link.number }}">{{ header_cta.link.label }}</a>
+      {% endif %}
+    </span>
+  {% endif %}
+</div>
