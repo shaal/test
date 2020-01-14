@@ -288,9 +288,10 @@ function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
   $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
   $rating = $variables['element']['#object']->field_rating_overall->value;
-  if ($rating) {
-    $variables['rating'] = $rating;
-  }
+  $variables['rating'] = $rating;
+
+  $count = $variables['element']['#object']->field_rating_count->value;
+  $variables['count'] = $count;
 
   $reviews = [];
   foreach ($variables['items'] as $id => $item) {
