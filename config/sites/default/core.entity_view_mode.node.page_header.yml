@@ -1,0 +1,10 @@
+uuid: fec730f9-2aeb-4a72-9ec7-cf64fcba9fd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.page_header
+label: 'Page header'
+targetEntityType: node
+cache: true

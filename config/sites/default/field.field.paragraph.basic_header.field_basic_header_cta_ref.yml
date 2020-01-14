@@ -1,0 +1,61 @@
+uuid: 1987d8f3-203b-454b-9349-13a5c6529e98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_basic_header_cta_ref
+    - paragraphs.paragraphs_type.basic_header
+    - paragraphs.paragraphs_type.header_cta
+  module:
+    - entity_reference_revisions
+id: paragraph.basic_header.field_basic_header_cta_ref
+field_name: field_basic_header_cta_ref
+entity_type: paragraph
+bundle: basic_header
+label: 'Call To Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      header_cta: header_cta
+    target_bundles_drag_drop:
+      basic_header:
+        weight: 12
+        enabled: false
+      card:
+        weight: 13
+        enabled: false
+      cards:
+        weight: 14
+        enabled: false
+      education:
+        weight: 15
+        enabled: false
+      header_cta:
+        enabled: true
+        weight: 16
+      homepage_hero:
+        weight: 17
+        enabled: false
+      on_my_way:
+        weight: 18
+        enabled: false
+      patient_story:
+        weight: 19
+        enabled: false
+      rating_comments:
+        weight: 20
+        enabled: false
+      recognition_card:
+        weight: 21
+        enabled: false
+      recognition_cards:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

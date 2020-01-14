@@ -27,6 +27,7 @@ regions:
   breadcrumb: 'Breadcrumb'
   page_header: 'Page Header'
   content: 'Content'  # the content region is required
+  full_content: 'Components'
   sidebar_first: 'Sidebar First'
   sidebar_second: 'Sidebar Second'
   footer: Footer

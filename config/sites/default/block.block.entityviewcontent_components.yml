@@ -1,0 +1,23 @@
+uuid: b7af0c32-f46b-47af-9f6f-08ab9959a0dc
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - tower_health
+id: entityviewcontent_components
+theme: tower_health
+region: header
+weight: 0
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Entity view (Content)'
+  provider: ctools
+  label_display: '0'
+  view_mode: components
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

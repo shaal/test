@@ -57,6 +57,23 @@ function tower_health_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function tower_health_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Adds node title to paragraphs.
+ */
+function tower_health_preprocess_paragraph__basic_header(&$variables){
+  $node = \Drupal::request()->attributes->get('node');
+  $variables['node_title'] = $node->getTitle();
+}
+
+/**
  * Load the utility menu into a variable.
  */
 function tower_health_preprocess_menu(&$variables) {
