@@ -265,7 +265,7 @@ function _get_insurance($node, &$variables) {
 /**
  * Preprocess provider detail page.
  */
-function tower_health_preprocess_page(&$variables) {
+function tower_health_preprocess_page__profile(&$variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $variables['cal_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
     $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
