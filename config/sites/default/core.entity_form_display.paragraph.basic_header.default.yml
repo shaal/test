@@ -49,9 +49,9 @@ content:
       title: 'Call To Action'
       title_plural: 'Call To Action'
       edit_mode: open
-      add_mode: select
+      add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: header_cta
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_basic_header_img:

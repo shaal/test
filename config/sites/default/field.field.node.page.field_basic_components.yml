@@ -5,6 +5,14 @@ dependencies:
   config:
     - field.storage.node.field_basic_components
     - node.type.page
+    - paragraphs.paragraphs_type.basic_header
+    - paragraphs.paragraphs_type.education
+    - paragraphs.paragraphs_type.homepage_hero
+    - paragraphs.paragraphs_type.icon_button
+    - paragraphs.paragraphs_type.on_my_way
+    - paragraphs.paragraphs_type.patient_story
+    - paragraphs.paragraphs_type.rating_comments
+    - paragraphs.paragraphs_type.recognition_card
   module:
     - entity_reference_revisions
 id: node.page.field_basic_components
@@ -20,18 +28,26 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
-    target_bundles: null
+    negate: 1
+    target_bundles:
+      education: education
+      rating_comments: rating_comments
+      basic_header: basic_header
+      homepage_hero: homepage_hero
+      on_my_way: on_my_way
+      patient_story: patient_story
+      recognition_card: recognition_card
+      icon_button: icon_button
     target_bundles_drag_drop:
       education:
+        enabled: true
         weight: 3
-        enabled: false
       rating_comments:
+        enabled: true
         weight: 4
-        enabled: false
       basic_header:
+        enabled: true
         weight: 11
-        enabled: false
       card:
         weight: 12
         enabled: false
@@ -39,20 +55,20 @@ settings:
         weight: 13
         enabled: false
       homepage_hero:
+        enabled: true
         weight: 15
-        enabled: false
       on_my_way:
+        enabled: true
         weight: 16
-        enabled: false
       patient_story:
+        enabled: true
         weight: 17
-        enabled: false
       cta_banner:
         weight: 19
         enabled: false
       recognition_card:
+        enabled: true
         weight: 19
-        enabled: false
       cta_list_banner:
         weight: 20
         enabled: false
@@ -63,8 +79,8 @@ settings:
         weight: 22
         enabled: false
       icon_button:
+        enabled: true
         weight: 24
-        enabled: false
       rich_text:
         weight: 30
         enabled: false

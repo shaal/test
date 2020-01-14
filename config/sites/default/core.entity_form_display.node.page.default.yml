@@ -14,10 +14,86 @@ dependencies:
     - workflows.workflow.default
   module:
     - content_moderation
+    - field_group
     - metatag
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_ver:
+      children:
+        - group_description
+        - group_header
+        - group_sidebar_and_navigation
+        - group_components
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Vertical tabs'
+    group_components:
+      children:
+        - field_basic_components
+      parent_name: group_ver
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Components
+    group_sidebar_and_navigation:
+      children:
+        - field_basic_enable_nav
+        - field_basic_sidebar
+      parent_name: group_ver
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Sidebar and Nav'
+    group_description:
+      children:
+        - title
+        - field_text
+      parent_name: group_ver
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: false
+      label: Description
+    group_header:
+      children:
+        - field_basic_header
+      parent_name: group_ver
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Header
 _core:
   default_config_hash: sb0qCkzU_8mNq29NehYAU8jCBXWPLeX0UN8sYFVGVcw
 id: node.page.default
@@ -27,13 +103,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_basic_components:
     type: entity_reference_paragraphs
-    weight: 2
+    weight: 1
     settings:
       title: Components
       title_plural: Components
@@ -44,7 +120,7 @@ content:
     third_party_settings: {  }
     region: content
   field_basic_enable_nav:
-    weight: 3
+    weight: 4
     settings:
       display_label: true
     third_party_settings: {  }
@@ -52,19 +128,19 @@ content:
     region: content
   field_basic_header:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 3
     settings:
       title: 'Header or Hero'
       title_plural: 'Header or Heros'
       edit_mode: open
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: _none
+      default_paragraph_type: basic_header
     third_party_settings: {  }
     region: content
   field_basic_sidebar:
     type: entity_reference_paragraphs
-    weight: 4
+    weight: 5
     settings:
       title: Sidebar
       title_plural: Sidebars
@@ -75,19 +151,19 @@ content:
     third_party_settings: {  }
     region: content
   field_metatags:
-    weight: 15
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   field_reference_access_control:
-    weight: 14
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_text:
-    weight: 13
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -96,13 +172,13 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 10
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -110,26 +186,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 11
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 2
     region: content
     settings:
       size: 60
@@ -137,7 +213,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -146,7 +222,7 @@ content:
       match_limit: 10
     third_party_settings: {  }
   url_redirects:
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
