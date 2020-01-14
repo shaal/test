@@ -36,7 +36,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: 'Find a location'
+          submit_button: 'Search Locations'
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -149,7 +149,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search Locations'
+            label: 'Find a Location'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -418,7 +418,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
+          empty: true
           content: 'Showing @start - @end of @total results'
           plugin_id: result
       footer: {  }
