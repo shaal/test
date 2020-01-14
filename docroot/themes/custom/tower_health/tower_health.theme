@@ -126,7 +126,7 @@ function tower_health_theme_preprocess_region__page_header(&$variables) {
  */
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
-  
+
   if ($node instanceof NodeInterface) {
     // Preprocess address.
     if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
@@ -382,13 +382,12 @@ function tower_health_preprocess_field__field_profile_board_certified(&$variable
 /**
  * Provide variables for profile education field template.
  */
-function tower_health_preprocess_field__field_education_institution_ref(&$variables) {
+function tower_health_preprocess_field__field_profile_education(&$variables) {
   $educations = [];
   foreach ($variables['items'] as $id => $education) {
-    // dump($education['content']);
-    // $paragraph = $education["content"]["#paragraph"];
-    // $educations[$id]['title'] = $paragraph->field_education_institution_ref->entity->name->value;
-    // $educations[$id]['text'] = $paragraph->field_education_type->value;
+    $paragraph = $education["content"]["#paragraph"];
+    $educations[$id]['title'] = $paragraph->field_education_institution_ref->entity->name->value;
+    $educations[$id]['text'] = $paragraph->field_education_type->value;
   }
   $variables['educations'] = $educations;
 }
