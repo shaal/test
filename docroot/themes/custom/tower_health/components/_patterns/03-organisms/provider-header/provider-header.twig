@@ -1,9 +1,11 @@
 <div class="provider-header">
 
-  {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
-    class: breadcrumb.class,
-    breadcrumb: breadcrumb.breadcrumb,
-  } %}
+  {% block breadcrumb %}
+    {% include "@molecules/menus/breadcrumbs/breadcrumbs.twig" with {
+      class: breadcrumb.class,
+      breadcrumb: breadcrumb.breadcrumb,
+    } %}
+  {% endblock %}
 
   <div class="provider-header__content">
     <div class="provider-header__first js-section-animation">
