@@ -38,6 +38,4 @@
  * @ingroup themeable
  */
 #}
-{% for item in items %}
-  {{ item.content }}
-{% endfor %}
+{% include '@tower_health/fields/field-clean.html.twig' %}
