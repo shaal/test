@@ -284,6 +284,15 @@ function tower_health_preprocess_page__profile(&$variables) {
     _get_education($node, $variables);
     _get_image($node, $variables);
     _get_insurance($node, $variables);
+
+    $review_items = $node->get('field_rating_comments_ref')->referencedEntities();
+    $reviews = [];
+    foreach ($review_items as $id => $review) {
+      $reviews[$id]["review"] = strip_tags($review->field_rating_comment_body->value);
+      $reviews[$id]["rating"] = $review->field_rating_comment_rating->value;
+      $reviews[$id]["date"] = date("F Y", strtotime($review->field_rating_comment_date->value));
+    }
+    $variables['reviews'] = $reviews;
   }
 }
 
@@ -387,19 +396,4 @@ function tower_health_preprocess_paragraph__rating_comments(&$variables) {
 
 function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
   $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
-
-  $rating = $variables['element']['#object']->field_rating_overall->value;
-  if ($rating) {
-    $variables['rating'] = $rating;
-  }
-
-  $reviews = [];
-  foreach ($variables['items'] as $id => $item) {
-    $paragraph = $item["content"]["#paragraph"];
-    $reviews[$id]["review"] = strip_tags($paragraph->field_rating_comment_body->value);
-    $reviews[$id]["rating"] = $paragraph->field_rating_comment_rating->value;
-    $reviews[$id]["date"] = date("F Y", strtotime($paragraph->field_rating_comment_date->value));
-  }
-
-  $variables["reviews"] = $reviews;
 }
