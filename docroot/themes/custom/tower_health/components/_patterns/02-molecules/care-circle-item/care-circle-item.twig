@@ -1,0 +1,10 @@
+<li class="care-circle__item {% if color %}care-circle__item--{{ color }}{% endif %}">
+   {% if url %}<a href="{{ url }}">{% endif %}
+   <span class="care-circle__item__inner">
+   {% if icon %}
+     <img class='care-circle__item__icon' src="{{ icon }}" alt='{{ icon_alt }}'/>
+   {% endif %}
+      <span class="care-circle__item__label">{{ label }}</span>
+   </span>
+   {% if url %}</a>{% endif %}
+ </li>
