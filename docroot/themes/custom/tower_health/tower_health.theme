@@ -273,11 +273,25 @@ function tower_health_preprocess_page__profile(&$variables) {
 /**
  * Add region theme suggestions.
  */
- function tower_health_theme_suggestions_region_alter(array &$suggestions, array $variables) {
-   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-     $suggestions[] = 'region__' . $variables['elements']['#region'] . '__' . $node->bundle();
-   }
- }
+function tower_health_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'region__' . $variables['elements']['#region'] . '__' . $node->bundle();
+  }
+}
+
+/**
+ * Add icon variable.
+ */
+function tower_health_theme_preprocess_region__page_header(&$variables) {
+  $variables['cal_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+
+  dump($variables);
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+    $variables['name'] = $node->title->value;
+  }
+}
 
 /**
  * Provide variables for provider teaser.
@@ -429,7 +443,7 @@ function tower_health_preprocess_field__field_insurance_ref(&$variables) {
 }
 
 /**
- * Provide variables for profile accepted insurance field template.
+ * Provide variables for profile affiliations field template.
  */
 function tower_health_preprocess_field__field_affiliations_ref(&$variables) {
   $affiliations = [];
@@ -437,4 +451,51 @@ function tower_health_preprocess_field__field_affiliations_ref(&$variables) {
     $affiliations[$id]['text'] = $affiliation['content']['#title'];
   }
   $variables['affiliations'] = $affiliations;
+}
+
+/**
+ * Provide variables for profile specialties field template.
+ */
+function tower_health_preprocess_field__field_medical_specialties_ref(&$variables) {
+  $specialties = [];
+  foreach ($variables['items'] as $id => $specialty) {
+    $specialties[$id]['text'] = $specialty['content']['#title'];
+  }
+  $variables['specialties'] = $specialties;
+}
+
+/**
+ * Provide variables for profile focus field template.
+ */
+function tower_health_preprocess_field__field_area_interest_ref(&$variables) {
+  $focuses = [];
+  foreach ($variables['items'] as $id => $focus) {
+    $focuses[$id]['text'] = $focus['content']['#title'];
+  }
+  $variables['focuses'] = $focuses;
+}
+
+/**
+ * Provide variables for profile certifications field template.
+ */
+function tower_health_preprocess_field__field_profile_board_certified(&$variables) {
+  $certifications = [];
+  foreach ($variables['items'] as $id => $certification) {
+    $certifications[$id]['title'] = $certification['content']['#context']['value'];
+  }
+  $variables['certifications'] = $certifications;
+}
+
+/**
+ * Provide variables for profile education field template.
+ */
+function tower_health_preprocess_field__field_education_institution_ref(&$variables) {
+  $educations = [];
+  foreach ($variables['items'] as $id => $education) {
+    // dump($education['content']);
+    // $paragraph = $education["content"]["#paragraph"];
+    // $educations[$id]['title'] = $paragraph->field_education_institution_ref->entity->name->value;
+    // $educations[$id]['text'] = $paragraph->field_education_type->value;
+  }
+  $variables['educations'] = $educations;
 }

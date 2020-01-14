@@ -45,5 +45,6 @@
 #}
 {% include "@pages/_page.twig" with {
   "appt_icon": cal_icon,
-  top_sidebar: page.sidebar_first ?? ''
+  "page_header": page.page_header,
+  "top_sidebar": page.sidebar_first ?? ''
 } %}
