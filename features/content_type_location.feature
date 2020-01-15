@@ -17,7 +17,6 @@ Feature: Location Content Type
     Then I should see the text "Insurance Information"
     Then I should see the text "Location ID"
     Then I should see the text "Location Type"
-    Then I should see the text "On My Way"
     Then I should see the text "Phone number"
 
   Scenario: Verify that migrated location fields are read only
@@ -33,5 +32,4 @@ Feature: Location Content Type
     Then I should see the text "Insurance Information"
     Then I should not see the text "Location ID"
     Then I should see the text "Location Type"
-    Then I should see the text "On My Way"
     Then I should see the text "Phone number"
