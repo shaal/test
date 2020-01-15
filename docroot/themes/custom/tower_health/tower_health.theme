@@ -163,6 +163,23 @@ function tower_health_preprocess_region__page_header(&$variables) {
       $variables['address_1'] = $node->field_location_address->address_line1;
       $variables['address_2'] = $node->field_location_address->locality . ', ' . $node->field_location_address->administrative_area . ' ' . $node->field_location_address->postal_code;
       $variables['phone'] = $node->field_location_phone_number->value;
+      if ($node->hasField('field_location_image') && !$node->get('field_location_image')->isEmpty()) {
+        $media = $node->field_location_image->entity;
+        if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+          $file = $media->field_media_image->entity;
+          if ($file instanceof EntityInterface) {
+            $url = $file->uri->value;
+            $image = ImageStyle::load('location_header_image')->buildUrl($url);
+            $variables['src'] = $image;
+            $variables['alt'] = $media->field_media_image->alt;
+          }
+        }
+      }
+      else {
+        // Fallback if no image uploaded.
+        $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+        $variables['alt'] = "Location placeholder image";
+      }
     }
   }
 }

@@ -13,6 +13,8 @@
  */
 #}
 
+{{ drupal_block('system_breadcrumb_block') }}
+
 {% include "@organisms/location-hero/location-hero.twig" with {
   "type": type,
   "name": name,
@@ -40,11 +42,12 @@
           "number": appointment_phone,
           "label": appointment_phone_label
         }
-      ],
-      "img": {
-        "src": "",
-        "alt": ""
-      }
+      ]
     }
-  ]
+  ],
+  "img": {
+    "src": src,
+    "alt": alt
+  },
+  "classes": "growth top-left"
 } %}

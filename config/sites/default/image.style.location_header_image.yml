@@ -1,0 +1,15 @@
+uuid: 8e5105fe-bd42-47d6-82bb-21696052e5b1
+langcode: en
+status: true
+dependencies: {  }
+name: location_header_image
+label: 'Location Header Image'
+effects:
+  d196e94c-f23f-408d-809f-afc8e7e62a5d:
+    uuid: d196e94c-f23f-408d-809f-afc8e7e62a5d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 630
+      height: 630
+      anchor: center-center
