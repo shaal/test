@@ -6,6 +6,7 @@ dependencies:
     - facets.facet.location_type
   module:
     - facets
+    - system
   theme:
     - tower_health
 id: locationtype
@@ -20,4 +21,9 @@ settings:
   provider: facets
   label_display: visible
   block_id: locationtype
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }

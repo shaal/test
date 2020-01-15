@@ -3,6 +3,7 @@ langcode: en
 status: false
 dependencies:
   module:
+    - system
     - towerhealth_misc
   theme:
     - tower_health
@@ -17,4 +18,9 @@ settings:
   label: 'Clear filters'
   provider: towerhealth_misc
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-provider\r\n/find-a-provider*\r\n/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }
