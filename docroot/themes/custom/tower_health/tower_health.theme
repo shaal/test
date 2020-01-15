@@ -124,6 +124,8 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
  */
 function tower_health_preprocess_region__page_header(&$variables) {
   $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+  $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
+  $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $variables['name'] = $node->title->value;
     if ($node->bundle() == 'profile') {
