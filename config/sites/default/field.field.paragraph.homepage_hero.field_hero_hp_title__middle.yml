@@ -10,7 +10,7 @@ field_name: field_hero_hp_title__middle
 entity_type: paragraph
 bundle: homepage_hero
 label: 'Title (middle)'
-description: ''
+description: 'Recommend less than 15 characters per line.'
 required: false
 translatable: false
 default_value: {  }
