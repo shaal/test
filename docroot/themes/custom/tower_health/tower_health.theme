@@ -111,6 +111,15 @@ function tower_health_theme_suggestions_region_alter(array &$suggestions, array 
 }
 
 /**
+ * Add breadcrumb theme suggestions.
+ */
+function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'breadcrumb__' . $node->bundle();
+  }
+}
+
+/**
  * Add icon variable.
  */
 function tower_health_preprocess_region__page_header(&$variables) {
