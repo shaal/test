@@ -35,7 +35,13 @@
  *
  * @see template_preprocess_field()
  */
+
+ @TODO: THIS CAN BE REMOVED IF WYWSIWYG BEM CLASSES CAN BE APPLIED
 #}
-{% for item in items %}
-  {{ item.text }}{% if not loop.last %}, {% endif %}
-{% endfor %}
+
+{% include "@organisms/review-listing/review-listing.twig" with {
+  "rating_icon": rating_icon,
+  "reviews": reviews,
+  "rating": rating,
+  "count": count
+} %}

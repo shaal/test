@@ -71,25 +71,23 @@
  */
 #}
 
-{% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
-    "provider": {
-      "img": {
-        "src": src,
-        "alt": alt,
+{% include "@organisms/teasers/location-teaser--small/location-teaser--small.twig" with {
+    "name": label,
+    "address_rows": [address1, address2],
+    "direction_url": href,
+    "button_icon": button_icon,
+    "phones": [
+      {
+        "label": "Main"|t,
+        "number": phone
       },
-      "details": {
-        "name": label,
-        "specialties": specialties,
-        "language": languages,
-        "focus": focuses,
-        "location": location,
-        "rating": content.field_rating_overall.0['#markup'],
-        "rating_icon": rating_icon
-      },
-      "link": {
-        "url": url,
-        "text": "Request an Appointment"|t,
-        "button_icon": button_icon
+      {
+        "label": "Fax"|t,
+        "number": fax
       }
+    ],
+    "cta": {
+      "url": location_providers_url,
+      "label": "View other providers at this location"|t
     }
 } %}

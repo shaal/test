@@ -36,6 +36,17 @@
  * @see template_preprocess_field()
  */
 #}
-{% for item in items %}
-  {{ item.text }}{% if not loop.last %}, {% endif %}
-{% endfor %}
+
+{% embed "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
+    "label": "Locations"|t
+  }
+} %}
+
+  {% block location %}
+    {% for item in items %}
+      {{ item.content }}
+    {% endfor %}
+  {% endblock %}
+
+{% endembed %}

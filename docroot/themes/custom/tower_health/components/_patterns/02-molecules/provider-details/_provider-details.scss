@@ -32,6 +32,13 @@
   .button {
     margin-bottom: .5em;
   }
+
+  span,
+  .provider-detail__item-meta {
+    @include adjust-font-size-to($label, .8);
+    font-style: italic;
+    display: block;
+  }
 }
 
 .provider-detail__item-label {
@@ -43,8 +50,4 @@
   margin-bottom: 0;
 }
 
-.provider-detail__item-meta {
-  @include adjust-font-size-to($label, .8);
-  font-style: italic;
-  display: block;
-}
+

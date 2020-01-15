@@ -1,8 +1,9 @@
-uuid: c8aac4b5-f521-4820-9f0c-dcfd91cf62b7
+uuid: eaf1cc11-917e-47b3-b5db-fdb9098f363d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.sidebar_first
     - field.field.node.profile.field_affiliations_ref
     - field.field.node.profile.field_area_interest_ref
     - field.field.node.profile.field_insurance_ref
@@ -32,17 +33,48 @@ dependencies:
     - field.field.node.profile.field_rating_overall
     - node.type.profile
   module:
+    - telephone
     - user
-id: node.profile.default
+id: node.profile.sidebar_first
 targetEntityType: node
 bundle: profile
-mode: default
-content: {  }
+mode: sidebar_first
+content:
+  field_affiliations_ref:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_insurance_ref:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_profile_languages:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_profile_phone:
+    weight: 1
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
 hidden:
   content_moderation_control: true
-  field_affiliations_ref: true
   field_area_interest_ref: true
-  field_insurance_ref: true
   field_location_ref: true
   field_medical_specialties_ref: true
   field_metatags: true
@@ -53,11 +85,9 @@ hidden:
   field_profile_gender: true
   field_profile_image: true
   field_profile_job_title: true
-  field_profile_languages: true
   field_profile_last_name: true
   field_profile_middle_name: true
   field_profile_npi: true
-  field_profile_phone: true
   field_profile_practid: true
   field_profile_professional_title: true
   field_profile_scheduling: true

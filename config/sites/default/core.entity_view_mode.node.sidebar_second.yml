@@ -1,0 +1,10 @@
+uuid: 4c8d03a2-ed22-41f3-8088-a57c3658aa21
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sidebar_second
+label: 'Sidebar Second'
+targetEntityType: node
+cache: true

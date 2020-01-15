@@ -36,6 +36,23 @@
  * @see template_preprocess_field()
  */
 #}
-{% for item in items %}
-  {{ item.text }}{% if not loop.last %}, {% endif %}
-{% endfor %}
+
+{% include "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
+    "label": "Contact Information"|t,
+    "sidebar": true,
+    "items": [
+      {
+        "label": "Main:"|t,
+        "link": {
+          "url": url,
+          "text": phone
+        }
+      },
+      {
+        "label": "Fax:"|t,
+        "text": ""
+      }
+    ]
+  }
+} %}

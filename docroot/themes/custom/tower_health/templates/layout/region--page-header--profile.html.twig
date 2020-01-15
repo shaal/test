@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+{% embed "@organisms/provider-header/provider-header.twig" with {
+  "img": {
+    "src": src,
+    "alt": alt
+  },
+  "name": name,
+  "lead_title": lead_title,
+  "provider_video": provider_video,
+  "rating": rating,
+  "review_amt": review_amt,
+  "appt_phone": {
+    "number": phone,
+    "label": phone
+  },
+  "appt_url": "#",
+  "appt_label": "Request an Appointment"|t
+} %}
+
+  {% block breadcrumb %}
+    {{ drupal_block('system_breadcrumb_block') }}
+  {% endblock %}
+
+{% endembed %}

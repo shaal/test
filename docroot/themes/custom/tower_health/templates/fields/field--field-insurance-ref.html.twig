@@ -36,6 +36,20 @@
  * @see template_preprocess_field()
  */
 #}
-{% for item in items %}
-  {{ item.text }}{% if not loop.last %}, {% endif %}
-{% endfor %}
+
+{% include "@molecules/provider-details/provider-details.twig" with {
+  "detail": {
+    "sidebar": true,
+    "items": {
+      "insurance": {
+        "insurance": {
+          "type": "insurance",
+          "label": "Insurances Accepted",
+          "reference": "insurances",
+          "items": policies,
+        },
+        "meta": "Please check with your insurance provider before booking an appointment."
+      }
+    }
+  }
+} %}

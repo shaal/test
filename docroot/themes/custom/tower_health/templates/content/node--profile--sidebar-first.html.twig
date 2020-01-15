@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: The title of the node.
+ * - label: (optional) The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -70,26 +70,4 @@
  *   in different view modes.
  */
 #}
-
-{% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
-    "provider": {
-      "img": {
-        "src": src,
-        "alt": alt,
-      },
-      "details": {
-        "name": label,
-        "specialties": specialties,
-        "language": languages,
-        "focus": focuses,
-        "location": location,
-        "rating": content.field_rating_overall.0['#markup'],
-        "rating_icon": rating_icon
-      },
-      "link": {
-        "url": url,
-        "text": "Request an Appointment"|t,
-        "button_icon": button_icon
-      }
-    }
-} %}
+{{ content }}

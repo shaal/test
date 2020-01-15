@@ -3,11 +3,12 @@ lead_title: "Medical Director, Stroke Program"
 rating: 4.9
 review_amt: 36
 provider_video: "https://www.youtube.com/embed/d3ZLhedUtkA"
-img: 
+img:
   src: "../../images/people/hoerst-karen.jpg"
   alt: "Karen A. Hoerst, MD"
 accepting_patients: true
-appt_phone: 
+appt_phone:
   number: "4846288888"
   label: "484-628-HELP"
 appt_url: "#"
+appt_icon: "th-cal.svg"

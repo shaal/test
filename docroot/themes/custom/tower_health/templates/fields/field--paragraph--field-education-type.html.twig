@@ -33,9 +33,12 @@
  * - field_type: The type of the field.
  * - label_display: The display settings for the label.
  *
+ *
  * @see template_preprocess_field()
+ *
+ * No wrappers for cards. It just doesn't flow with flexbox.
  */
 #}
 {% for item in items %}
-  {{ item.text }}{% if not loop.last %}, {% endif %}
+  {{ item.content }}
 {% endfor %}
