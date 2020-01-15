@@ -37,6 +37,7 @@ dependencies:
     - field_group
     - media_library
     - metatag
+    - paragraphs
     - path
     - readonly_field_widget
 third_party_settings:
@@ -192,13 +193,9 @@ content:
     region: content
   field_location_ref:
     weight: 13
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+    settings: {  }
     third_party_settings: {  }
-    type: readonly_field_widget
+    type: options_select
     region: content
   field_medical_specialties_ref:
     weight: 16
@@ -227,13 +224,15 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_education:
-    type: readonly_field_widget
+    type: entity_reference_paragraphs
     weight: 14
     settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
     region: content
   field_profile_epic_id:
@@ -422,7 +421,10 @@ content:
   field_rating_overall:
     weight: 31
     settings:
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
     type: readonly_field_widget
     region: content

@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - ctools
-    - node
     - system
   theme:
     - tower_health
@@ -20,25 +19,12 @@ settings:
   id: system_main_block
   label: 'Main page content'
   provider: system
-  label_display: '0'
+  label_display: visible
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
-      article: article
-      location: location
-      page: page
-      service: service
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-  node_type:
-    id: node_type
-    bundles:
-      article: article
-      location: location
-      page: page
-      service: service
-    negate: false
+      profile: profile
+    negate: true
     context_mapping:
       node: '@node.node_route_context:node'

@@ -49,12 +49,13 @@ content:
     type: entity_reference_label
     region: content
   field_location_ref:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 2
     region: content
     label: hidden
     settings:
-      link: true
+      view_mode: teaser_small
+      link: false
     third_party_settings: {  }
   field_medical_specialties_ref:
     weight: 0
@@ -81,6 +82,15 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
+  field_rating_comments_ref:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
 hidden:
   content_moderation_control: true
   field_affiliations_ref: true
@@ -102,7 +112,6 @@ hidden:
   field_profile_type: true
   field_profile_video: true
   field_rating_comment_count: true
-  field_rating_comments_ref: true
   field_rating_count: true
   field_rating_overall: true
   links: true
