@@ -20,4 +20,11 @@ settings:
   view_mode: page_header
   context_mapping:
     entity: '@node.node_route_context:node'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      location: location
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
