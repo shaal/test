@@ -264,7 +264,7 @@ function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
 
   // Set button icon.
-  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
+  $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
 
   if ($node instanceof NodeInterface) {
     // Preprocess image variables.
