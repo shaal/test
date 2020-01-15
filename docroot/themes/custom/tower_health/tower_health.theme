@@ -366,9 +366,18 @@ function tower_health_preprocess_field__field_profile_phone(&$variables) {
  */
 function tower_health_preprocess_field__field_insurance_ref(&$variables) {
   $accepted_policies = [];
+
   foreach ($variables['items'] as $policy) {
-    array_push($accepted_policies, $policy['content']['#title']);
+    $values = $policy['content']['#options']['entity']->get('field_insurance_company')->getValue();
+    foreach ($values as $value) {
+      $term = Term::load($value['target_id']);
+      $name = $term->getName();
+      if (!in_array($name, $accepted_policies)) {
+        $accepted_policies[] = $name;
+      }
+    }
   }
+  sort($accepted_policies);
   $variables['policies'] = $accepted_policies;
 }
 
