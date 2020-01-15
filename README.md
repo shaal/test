@@ -73,7 +73,7 @@ Inside vagrant
 
 Outside vagrant
 1. Login in to Acquia and go to your account and the credentials tab.
-1. Follow the instructions to download the Drush 8 site aliases for all of your sites.
+1. Follow the instructions to download the Drush 9 site aliases for all of your sites.
 1. Confirm that you can access the production site by running `drush @towerhealth.prod status`
 1. Go to the root of this project.
 1. Run the following:
