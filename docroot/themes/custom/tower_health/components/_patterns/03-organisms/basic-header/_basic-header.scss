@@ -1,6 +1,6 @@
 .basic-header {
   margin: 1em 0 0;
-  
+
   &.basic-header--list {
     position: relative;
     margin-bottom: 0;
@@ -24,21 +24,21 @@
   background-position: center;
   background-size: cover;
   margin-bottom: 175px;
-  
+
   &.basic-header--cta {
     margin-bottom: 250px;
   }
-  
+
   @include breakpoint($bp2) {
     margin-bottom: 2em;
   }
-  
+
   @include breakpoint($bp3) {
     &.basic-header--cta {
       margin-bottom: 2em;
     }
   }
-  
+
   // background for breadcrumb contrast
   &::after {
     content: '';
@@ -50,12 +50,12 @@
     background: linear-gradient(170deg, $primary-dark, transparent 30%, transparent);
     z-index: 1;
   }
-  
+
   .breadcrumbs {
     z-index: 2;
     margin-bottom: 3em;
   }
-  
+
   .breadcrumb__item,
   .breadcrumb__link,
   .breadcrumb__link:link,
@@ -64,7 +64,7 @@
     color: $white;
     text-shadow: 0 2px 15px $primary-dark;
   }
-  
+
   .breadcrumb__item::after {
     background: url('../pattern-lab/public/images/arrow--white.svg');
     background-size: contain;
@@ -79,20 +79,20 @@
   padding-top: 1em;
   padding-bottom: 2em;
   z-index: 2;
-  
+
   .basic-header--list & {
     padding-bottom: 0;
   }
-  
+
   .basic-header--img & {
     min-height: 300px;
     padding-bottom: 1em;
-    
+
     @include breakpoint($bp2) {
       min-height: 500px;
     }
   }
-  
+
   .basic-header--cta & {
     align-items: flex-start;
   }
@@ -104,7 +104,7 @@
   border-bottom: 6px solid $trust-ltst;
   position: relative;
   z-index: 2;
-  
+
   &::before {
     content: '';
     display: block;
@@ -115,53 +115,57 @@
     left: -2em;
     bottom: -6px;
     z-index: 2;
-    
+
     @include breakpoint($bp6) {
       width: calc(1.9em + (100vw - 1500px));
       left: calc(-1.9em - (100vw - 1500px));
     }
   }
-  
+
   .basic-header--secondary & {
     border-color: $trust;
-    
+
     &::before {
       border-color: $trust;
     }
   }
-  
+
   .basic-header--cta & {
     width: 100%;
-    
+
     @include breakpoint($bp3) {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
   }
-  
+
   .basic-header--list & {
     text-align: center;
     border-bottom: 0;
-    
+
     &::before {
       display: none;
       visibility: hidden;
     }
-    
+
     .basic-header__title {
       @include adjust-font-size-to($xxxl-heading, 1.5);
       text-transform: uppercase;
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .basic-header__lede {
       margin-left: auto;
       margin-right: auto;
     }
+    
+    .listing-search {
+      margin-top: 1.5em;
+    }
   }
-  
+
   .basic-header--img & {
     border-bottom: 0;
     background-color: $primary-dark;
@@ -169,7 +173,7 @@
     border-radius: 0 $rd-brd-lg $rd-brd-lg 0;
     margin-top: auto;
     bottom: -150px;
-    
+
     &::before {
       position: absolute;
       top: 0;
@@ -179,43 +183,43 @@
       left: -2em;
       background-color: $primary-dark;
       height: 100%;
-      
+
       @include breakpoint($bp6) {
         width: calc(1.9em + (100vw - 1500px));
         left: calc(-1.9em - (100vw - 1500px));
       }
     }
-    
+
     @include breakpoint($bp2) {
       bottom: auto;
       background-color: rgba($primary-dark, .9);
-      
+
       &::before {
         background-color: rgba($primary-dark, .9);
       }
     }
-    
+
     @include breakpoint($bp4) {
       width: 70%;
     }
-    
+
     .basic-header__title {
       margin-top: 0;
       color: $white;
     }
-    
+
     .basic-header__lede {
       color: $white;
     }
   }
-  
+
   .basic-header--img.basic-header--cta & {
     bottom: -250px;
-    
+
     @include breakpoint($bp3) {
       bottom: auto;
     }
-    
+
     @include breakpoint($bp4) {
       width: 100%;
     }
@@ -225,16 +229,16 @@
 .basic-header__header {
   display: block;
   max-width: 1000px;
-  
+
   .basic-header--cta & {
-    
+
     @include breakpoint($bp3) {
       margin-right: 2.5em;
       width: 72%;
       flex: 1 1 72%;
     }
   }
-  
+
   .basic-header--list & {
     max-width: none;
   }
@@ -251,66 +255,6 @@
   margin-top: .5em;
 }
 
-.basic-header__cta {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 1.5em 0 0;
-  padding: 1.5em 0 0;
-  text-align: center;
-  position: relative;
-  z-index: 3;
-  border-top: 1px solid $trust-ltst;
-  
-  @include breakpoint($bp3) {
-    border: none;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-    width: 28%;
-    flex: 1 1 28%;
-  }
-}
-
-.basic-header__cta__label {
-  @include adjust-font-size-to($label, .75);
-  margin-top: 0;
-  margin-bottom: .75em;
-  text-transform: uppercase;
-  width: 100%;
-  
-  .basic-header--img & {
-    color: $white;
-  }
-}
-
-.basic-header__cta__text {
-  @include adjust-font-size-to($sm-text, .85);
-  margin: 1em;
-  
-  @include breakpoint($bp3) {
-    margin: 1em 1em 0;
-  }
-  
-  .basic-header--img & {
-    color: $white;
-  }
-}
-
-.basic-header__cta__link {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: uppercase;
-  
-  .basic-header--img & {
-    color: $white;
-  }
-}
-
 .basic-header__link {
   @include adjust-font-size-to($label, .8);
   text-transform: uppercase;
@@ -318,12 +262,12 @@
   text-decoration: none;
   display: inline-block;
   margin-bottom: .5em;
-  
+
   &:link,
   &:visited {
     text-decoration: none;
   }
-  
+
   &:active,
   &:hover,
   &:focus {
@@ -346,10 +290,10 @@
     .basic-header__header {
       animation: fadeInUp .5s ease .25s forwards;
     }
-  
+
     .basic-header__cta {
       animation: fadeInUp .5s ease .25s forwards;
-      
+
       @include breakpoint($bp3) {
         animation: fadeInRightScale .5s ease .25s forwards;
       }

@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - system
+    - ctools
   theme:
     - tower_health
 _core:
@@ -25,3 +26,10 @@ visibility:
     pages: "/find-a-location\r\n/find-a-location*\r\n/find-a-provider\r\n/find-a-provider*"
     negate: true
     context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

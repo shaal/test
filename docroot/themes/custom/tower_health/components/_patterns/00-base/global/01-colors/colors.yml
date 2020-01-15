@@ -61,6 +61,8 @@ items:
     value: '#cedeb3'
   - name: $growth-ltst
     value: '#e4edd7'
+  - name: $tranquil-aa
+    value: '#247e84'
   - name: $tranquil
     value: '#3fc1cb'
   - name: $tranquil-med
@@ -71,6 +73,8 @@ items:
     value: '#b9e3e9'
   - name: $tranquil-ltst
     value: '#dbf0f4'
+  - name: $energy-aa
+    value: '#be5409'
   - name: $energy
     value: '#f47820'
   - name: $energy-med

@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_basic_components
+    - field.field.node.page.field_basic_enable_nav
+    - field.field.node.page.field_basic_header
+    - field.field.node.page.field_basic_sidebar
+    - field.field.node.page.field_metatags
+    - field.field.node.page.field_reference_access_control
+    - field.field.node.page.field_text
     - node.type.page
   module:
     - user
@@ -24,6 +31,9 @@ content:
     region: content
 hidden:
   field_basic_components: true
+  field_basic_enable_nav: true
+  field_basic_header: true
+  field_basic_sidebar: true
   field_media: true
   field_metatags: true
   field_reference_access_control: true

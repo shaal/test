@@ -1,8 +1,8 @@
 {% if rich_text_full_width == true %}
-<div class="grid grid--sm-centered">
+  <div class="grid grid--sm-centered">
 {% endif %}
-  <div class="text-wrap">
-    {% block content %}
+  <div class="rich-text">
+    {% block rich_text %}
       {% for item in rich_text %}
         {% if item.type == "blockquote" %}
           {% include "@atoms/02-text/text/02-blockquote.twig" with {
@@ -26,17 +26,17 @@
           {% include "@atoms/07-tables/tables.twig" %}
         {% elseif item.type == "ul" %}
           {% include "@atoms/03-lists/00-ul.twig" with {
-          ul_items: item.ul_items
+            ul_items: item.ul_items
           }%}
         {% elseif item.type == "ol" %}
           {% include "@atoms/03-lists/01-ol.twig"  with {
-          ol_items: item.ol_items
+            ol_items: item.ol_items
           }%}
         {% elseif item.type == "heading" %}
           {% include "@atoms/02-text/00-headings/_heading.twig"  with {
-          heading_level: item.heading_level,
-          heading: item.heading,
-          heading_url: item.heading_url
+            heading_level: item.heading_level,
+            heading: item.heading,
+            heading_url: item.heading_url
           }%}
         {% else %}
           {% include "@atoms/02-text/text/01-paragraph.twig" with {
@@ -47,5 +47,5 @@
     {% endblock %}
   </div>
 {% if rich_text_full_width == true %}
-</div>
+  </div>
 {% endif %}

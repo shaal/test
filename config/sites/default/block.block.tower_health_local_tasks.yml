@@ -9,7 +9,7 @@ _core:
 id: tower_health_local_tasks
 theme: tower_health
 region: content
-weight: -11
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

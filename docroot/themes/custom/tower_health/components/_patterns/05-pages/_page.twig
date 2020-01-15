@@ -74,7 +74,7 @@
     {{ page.help }}
     {{ messages }}
   {% endblock %}
-  
+
   {% block page_header %}
     {{ page.breadcrumb }}
     {{ region_page_header }}
@@ -86,13 +86,17 @@
   {% block top_sidebar %}
     {{ page.sidebar_first }}
   {% endblock %}
-  
+
   {% block page_content %}
     {{ content }}
   {% endblock %}
-  
+
   {% block bottom_sidebar %}
     {{ page.sidebar_second }}
+  {% endblock %}
+
+  {% block full_content %}
+    {{ page.full_content }}
   {% endblock %}
 
   {% block page_footer %}

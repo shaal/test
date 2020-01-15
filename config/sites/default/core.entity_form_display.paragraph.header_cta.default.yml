@@ -1,0 +1,52 @@
+uuid: 04e6ddd4-e0e1-4758-a063-741ac0c11984
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.header_cta.field_header_cta_button
+    - field.field.paragraph.header_cta.field_header_cta_label
+    - field.field.paragraph.header_cta.field_header_cta_link
+    - field.field.paragraph.header_cta.field_header_cta_text
+    - paragraphs.paragraphs_type.header_cta
+  module:
+    - link
+id: paragraph.header_cta.default
+targetEntityType: paragraph
+bundle: header_cta
+mode: default
+content:
+  field_header_cta_button:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_header_cta_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_header_cta_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_header_cta_text:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

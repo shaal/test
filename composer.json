@@ -131,6 +131,9 @@
             },
             "drupal/node_title_help_text": {
                 "node_title_help_text_inline_entity_form_entity_form_alter loads NodeType even when not referencing nodes (https://www.drupal.org/project/node_title_help_text/issues/307031)": "https://www.drupal.org/files/issues/2019-07-25/ief-only-nodes.patch"
+            },
+            "drupal/core": {
+                "EditorMediaDialog triggers an \"undefined index\" notice for data-view-mode (https://www.drupal.org/project/drupal/issues/3100470)": "https://www.drupal.org/files/issues/2019-12-30/3100470-18.patch"
             }
         }
     }

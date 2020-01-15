@@ -11,7 +11,7 @@ _core:
 id: tower_health_help
 theme: tower_health
 region: content
-weight: -10
+weight: -3
 provider: null
 plugin: help_block
 settings:

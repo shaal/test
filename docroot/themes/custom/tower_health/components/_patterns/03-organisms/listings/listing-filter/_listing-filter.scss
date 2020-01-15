@@ -113,6 +113,7 @@
 }
 
 .filter__items {
+  width: 100%;
 
   @include breakpoint($bp3) {
     flex: 0 1 90%;
@@ -132,6 +133,10 @@
 
   .form-item__dropdown::after {
     top: 1.15em;
+  }
+  
+  .form-item__dropdown {
+    margin-bottom: .25em;
   }
 
   .chosen-container-multi .chosen-drop {
