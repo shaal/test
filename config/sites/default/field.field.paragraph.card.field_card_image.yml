@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: card
 label: Image
 description: 'Image to display within your content section.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
