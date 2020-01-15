@@ -45,6 +45,13 @@ class ProviderProximityBlock extends BlockBase {
 
     $form['#id'] = 'views-exposed-form-find-a-provider-find-doctor-proximity';
 
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'form-autocomplete';
+    $form['#attributes']['class'] = $classes;
+
     $build['exposed_form'] = $form;
 
     $build['exposed_form']['#attributes']['class'] = [

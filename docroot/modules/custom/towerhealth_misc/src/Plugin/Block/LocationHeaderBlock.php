@@ -45,7 +45,14 @@ class LocationHeaderBlock extends BlockBase {
     unset($form['facets']);
 
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-header';
-    $form['#attributes']['class'][] = 'main-menu__form';
+
+    // Set the classes.
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'main-menu__form';
+    $form['#attributes']['class'] = $classes;
 
     $form['actions']['#attributes']['data-id'] = 'location_header_block';
     // Set the submit button classes

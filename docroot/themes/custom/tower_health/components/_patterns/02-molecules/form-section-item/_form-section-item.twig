@@ -1,5 +1,5 @@
 <div class="form-section__item {% if item.type == 'child_container' %}form-section__item--group {% endif %}{% if item.width %}form-section__item--{{ item.width }}{% endif %} {% if item.conditional_result %}form-section__item--conditional{% endif %}" {% if item.conditional_result %}data-cond-by="{{item.conditional_result}}"{% endif %} {% if item.conditional_control %}data-cond="{{item.conditional_control}}" data-cond-met="false"{% endif %}>
-  {% if item.type != 'drupal-facet' %}
+  {% if item.type != 'drupal-facet-chosen' %}
     {% include "@atoms/05-forms/_form-label.twig" with {
     title: item.title
     }%}
@@ -10,7 +10,7 @@
     info_id: item.info_id
     }%}
   {% endif %}
-  {% if item.type == 'drupal-facet' %}
+  {% if item.type == 'drupal-facet-chosen' %}
     <div class="facets-widget-chosen-dropdown">
       <label id="facet_specialties_label">{{ item.title }}</label>
       <ul {{ attributes }}>
@@ -18,11 +18,17 @@
           {% for element in item.elements %}
             <li {{ element.attributes }}>{{ element.value }}</li>
           {% endfor %}
-        {% else %}
-
         {% endif %}
       </ul>
     </div>
+  {% elseif item.type == 'drupal-facet' %}
+    <ul {{ attributes }}>
+      {% if item.elements %}
+        {% for element in item.elements %}
+          <li {{ element.attributes }}>{{ element.value }}</li>
+        {% endfor %}
+      {% endif %}
+    </ul>
   {% elseif item.type == 'radio' %}
     <ul class="form-item--radios {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
       {% for key, item in item.children %}

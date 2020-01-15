@@ -42,7 +42,14 @@ class ServicesHeaderBlock extends BlockBase {
     $form = $exposed_form->renderExposedForm(TRUE);
 
     $form['#id'] = 'views-exposed-form-find-a-service-find-service-header';
-    $form['#attributes']['class'][] = 'main-menu__form';
+
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'form-autocomplete';
+    $classes[] = 'main-menu__form';
+    $form['#attributes']['class'] = $classes;
 
     $form['actions']['#attributes']['data-id'] = 'services_header_block';
     // Set the submit button classes

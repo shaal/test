@@ -24,18 +24,18 @@
  * @ingroup themeable
  */
 #}
-{% if facet.id == 'services' or facet.id == 'location_type' %}
-  {% set width = 'oneQuarter' %}
-{% elseif facet.id == 'specialties' or facet.id == 'gender' or facet.id == 'languages' or facet.id == 'insurance_provider' %}
-  {% set width = 'oneSixth' %}
-{% else %}
-  {% set width = 'full' %}
-{% endif %}
+{% set width = 'full' %}
+{% set radios = [] %}
+{% for item in items %}
+  {% set radios = radios|merge([{attributes: item.attributes.addClass('form-item--radio__item'), value: item.value}])%}
+{% endfor %}
 {%
 set item = {
-  'type': 'drupal-facet-chosen',
+  'type': 'drupal-facet',
+  'info': 'Lorem ipsum help text'|t,
+  'info_id': 'type',
   'title': facet.name,
-  'elements': items,
+  'elements': radios,
   'width': width
 }
 %}

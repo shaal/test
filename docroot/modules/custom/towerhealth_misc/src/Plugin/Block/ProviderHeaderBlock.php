@@ -44,7 +44,14 @@ class ProviderHeaderBlock extends BlockBase {
     unset($form['provider_location_latlong']);
     unset($form['facets']);
     $form['#id'] = 'views-exposed-form-find-a-provider-find-provider-header';
-    $form['#attributes']['class'][] = 'main-menu__form';
+
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'form-autocomplete';
+    $classes[] = 'main-menu__form';
+    $form['#attributes']['class'] = $classes;
 
     $form['actions']['#attributes']['data-id'] = 'provider_header_block';
     // Set the submit button classes

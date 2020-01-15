@@ -48,6 +48,14 @@ class LocationHeroBlock extends BlockBase {
 
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-hero';
 
+    // Set classes.
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'form-autocomplete';
+    $form['#attributes']['class'] = $classes;
+
     $build['exposed_form'] = $form;
 
     $build['exposed_form']['#attributes']['class'][] = 'listing-search';

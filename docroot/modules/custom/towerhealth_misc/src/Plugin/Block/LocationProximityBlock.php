@@ -45,9 +45,15 @@ class LocationProximityBlock extends BlockBase {
 
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-proximity';
 
-    $build['exposed_form'] = $form;
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'form-autocomplete';
+    $classes[] = 'form-section__item--group';
+    $form['#attributes']['class'] = $classes;
 
-    $build['exposed_form']['#attributes']['class'][] = 'form-section__item--group';
+    $build['exposed_form'] = $form;
 
     $url = Url::fromRoute('view.' . $view_id . '.' . $view_display_id);
     $location_link = [

@@ -39,6 +39,13 @@ class ProviderHeroBlock extends BlockBase {
     /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
     $exposed_form = $display->getPlugin('exposed_form');
 
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'form-autocomplete';
+    $form['#attributes']['class'] = $classes;
+
     $form = $exposed_form->renderExposedForm(TRUE);
 
     unset($form['provider_location_latlong']);

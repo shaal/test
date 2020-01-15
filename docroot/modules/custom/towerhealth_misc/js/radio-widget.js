@@ -48,12 +48,14 @@
    * Replace a link with a checked checkbox.
    */
   Drupal.facets.makeRadioButton = function () {
-    console.log($(this));
     var $link = $(this);
     var active = $link.hasClass('is-active');
     var description = $link.html();
     var href = $link.attr('href');
     var id = $link.data('drupal-facet-item-id');
+
+    // Add classes to link.
+    $link.addClass('form-item--radio__item');
 
     var radio = $('<input type="radio" class="radio-checkbox">')
       .attr('id', id)
@@ -64,12 +66,13 @@
     radio.on('change.facets', function (e) {
       e.preventDefault();
 
-      var $widget = $(this).closest('.js-facets-widget');
+      var $widget = $(this).parents('.form-item--radio__item').find('a');
 
       $(this).parents('.facet-item').siblings().find('.radio-checkbox').attr('checked', false);
 
       Drupal.facets.disableFacet($widget);
-      $widget.trigger('facets_filter', [href]);
+
+      window.location.replace(href);
     });
 
     if (active) {
@@ -77,7 +80,9 @@
       label.find('.js-facet-deactivate').remove();
     }
 
-    $link.before(label).before(radio).hide();
+    radio.appendTo(label);
+
+    $link.before(label).hide();
 
   };
 
