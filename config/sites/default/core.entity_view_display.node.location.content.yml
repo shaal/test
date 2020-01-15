@@ -1,8 +1,9 @@
-uuid: 93ea3e11-8b14-49a3-86f7-36c792739cf8
+uuid: a2bdcb41-c01c-4f2b-8ea9-15ae49807370
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.content
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_components
@@ -19,20 +20,31 @@ dependencies:
     - field.field.node.location.field_services_ref
     - node.type.location
   module:
+    - text
     - user
-id: node.location.default
+id: node.location.content
 targetEntityType: node
 bundle: location
-mode: default
+mode: content
 content:
-  content_moderation_control:
+  field_location_body:
     weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    type: text_default
+    region: content
+  field_services_ref:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
 hidden:
+  content_moderation_control: true
   field_location_address: true
-  field_location_body: true
   field_location_components: true
   field_location_fax: true
   field_location_find_us: true
@@ -44,6 +56,5 @@ hidden:
   field_location_phone_number: true
   field_location_type: true
   field_metatags: true
-  field_services_ref: true
   links: true
   search_api_excerpt: true

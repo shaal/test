@@ -123,31 +123,43 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
  * Add icon variable.
  */
 function tower_health_preprocess_region__page_header(&$variables) {
-  $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
   $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     $variables['name'] = $node->title->value;
-    $variables['lead_title'] = $node->field_profile_job_title->value;
-    $variables['provider_video'] = $node->field_profile_video->value;
-    $variables['rating'] = $node->field_rating_overall->value;
-    $variables['review_amt'] = $node->field_rating_count->value;
-    $variables['phone'] = $node->field_profile_phone->value;
-    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
-      $media = $node->field_profile_image->entity;
-      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
-        $file = $media->field_media_image->entity;
-        if ($file instanceof EntityInterface) {
-          $url = $file->uri->value;
-          $image = ImageStyle::load('teaser_image')->buildUrl($url);
-          $variables['src'] = $image;
-          $variables['alt'] = $media->field_media_image->alt;
+    if ($node->bundle() == 'profile') {
+      $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+      $variables['lead_title'] = $node->field_profile_job_title->value;
+      $variables['provider_video'] = $node->field_profile_video->value;
+      $variables['rating'] = $node->field_rating_overall->value;
+      $variables['review_amt'] = $node->field_rating_count->value;
+      $variables['phone'] = $node->field_profile_phone->value;
+      if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+        $media = $node->field_profile_image->entity;
+        if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+          $file = $media->field_media_image->entity;
+          if ($file instanceof EntityInterface) {
+            $url = $file->uri->value;
+            $image = ImageStyle::load('teaser_image')->buildUrl($url);
+            $variables['src'] = $image;
+            $variables['alt'] = $media->field_media_image->alt;
+          }
         }
       }
+      else {
+        // Fallback if no image uploaded.
+        $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+        $variables['alt'] = "Provider placeholder image";
+      }
     }
-    else {
-      // Fallback if no image uploaded.
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
-      $variables['alt'] = "Provider placeholder image";
+    if ($node->bundle() == 'location') {
+      $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
+      if (!$node->get('field_location_type')->isEmpty()) {
+        $term = Term::load($node->field_location_type->entity->tid->value);
+        $name = $term->getName();
+        $variables['type'] = $name;
+      }
+      $variables['address_1'] = $node->field_location_address->address_line1;
+      $variables['address_2'] = $node->field_location_address->locality . ', ' . $node->field_location_address->administrative_area . ' ' . $node->field_location_address->postal_code;
     }
   }
 }

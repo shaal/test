@@ -1,8 +1,9 @@
-uuid: 93ea3e11-8b14-49a3-86f7-36c792739cf8
+uuid: 55048781-c81e-4ad7-a6ab-ed218644e743
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.sidebar_first
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_components
@@ -19,25 +20,48 @@ dependencies:
     - field.field.node.location.field_services_ref
     - node.type.location
   module:
+    - office_hours
     - user
-id: node.location.default
+id: node.location.sidebar_first
 targetEntityType: node
 bundle: location
-mode: default
+mode: sidebar_first
 content:
-  content_moderation_control:
+  field_location_hours:
     weight: 0
-    region: content
-    settings: {  }
+    label: hidden
+    settings:
+      show_closed: all
+      office_hours_first_day: ''
+      day_format: long
+      time_format: g
+      closed_format: Closed
+      separator:
+        days: '<br />'
+        grouped_days: ' - '
+        day_hours: ': '
+        hours_hours: '-'
+        more_hours: ', '
+      current_status:
+        position: ''
+        open_text: 'Currently open!'
+        closed_text: 'Currently closed'
+      compress: false
+      grouped: false
+      schema:
+        enabled: 0
+      timezone_field: ''
     third_party_settings: {  }
+    type: office_hours
+    region: content
 hidden:
+  content_moderation_control: true
   field_location_address: true
   field_location_body: true
   field_location_components: true
   field_location_fax: true
   field_location_find_us: true
   field_location_geo: true
-  field_location_hours: true
   field_location_id: true
   field_location_image: true
   field_location_insurance: true
