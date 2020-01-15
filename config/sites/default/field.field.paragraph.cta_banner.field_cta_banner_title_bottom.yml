@@ -10,7 +10,7 @@ field_name: field_cta_banner_title_bottom
 entity_type: paragraph
 bundle: cta_banner
 label: 'Title (bottom)'
-description: ''
+description: 'Recommend less than 15 characters per line.'
 required: true
 translatable: false
 default_value: {  }
