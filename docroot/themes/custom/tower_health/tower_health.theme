@@ -308,6 +308,11 @@ function tower_health_preprocess_node__location(&$variables) {
     if ($node->hasField('field_location_fax') && !$node->get('field_location_fax')->isEmpty()) {
       $variables['fax'] = $node->field_location_fax->value;
     }
+
+    // Preprocess other providers link.
+    $location_name = strtolower($node->title->value);
+    $location_providers_url = urlencode("/find-a-provider?providers[0]=location:" . $location_name);
+    $variables['location_providers_url'] = $location_providers_url;
   }
 }
 
