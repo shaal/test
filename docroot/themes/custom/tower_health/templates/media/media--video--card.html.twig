@@ -71,7 +71,7 @@
  */
 #}
 {% embed "@molecules/video-card/video-card.twig" with {
-    "meta": content.field_media_author|render,
+    "meta": content.field_media_author,
     "type": media.bundle.value.0.target_id,
     "title": name,
     "thumbnail": {
@@ -81,7 +81,7 @@
     "desc": content.field_media_description|render,
     "url": {
       "label": "Watch the Video"|t,
-      "link": path('entity.media.canonical', {'media': media.id}),
+      "link": media.field_media_oembed_video.value,
     },
 } %}
 {% endembed %}
