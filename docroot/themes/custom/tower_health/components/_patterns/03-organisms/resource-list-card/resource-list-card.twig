@@ -1,0 +1,21 @@
+<div class="resource-list-card">
+  {% if title or text %}
+  <div class="resource-list-card__header">
+    <h2 class="resource-list-card__title">{{ title }}</h2>
+    <div class="resource-list-card__desc">
+      {{ text }}
+    </div>
+  </div>
+  {% endif %}
+  <ul class='resource-list-card__list'>
+    {% for item in items %}
+      {% include "@molecules/resource-list-item/resource-list-item.twig" with {
+        url: item.url,
+        title: item.title,
+        filetype: item.filetype,
+        desc: item.desc,
+        target: item.target
+      } %}
+    {% endfor %}
+  </ul>
+</div>
