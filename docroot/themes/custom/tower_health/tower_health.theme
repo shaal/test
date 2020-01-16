@@ -493,3 +493,14 @@ function tower_health_preprocess_field__field_location_hours(&$variables) {
   }
   $variables['hours'] = $hours;
 }
+
+/**
+ * Provide variables for location services template.
+ */
+function tower_health_preprocess_field__field_services_ref(&$variables) {
+  $services = [];
+  foreach ($variables['items'] as $id => $service) {
+    $services[$id]['text'] = $service['content'];
+  }
+  $variables['services'] = $services;
+}
