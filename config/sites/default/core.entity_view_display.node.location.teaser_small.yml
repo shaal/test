@@ -1,0 +1,72 @@
+uuid: b103ac9d-d6ab-4243-a41a-8e05ddee6d3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_small
+    - field.field.node.location.field_location_address
+    - field.field.node.location.field_location_body
+    - field.field.node.location.field_location_components
+    - field.field.node.location.field_location_fax
+    - field.field.node.location.field_location_find_us
+    - field.field.node.location.field_location_geo
+    - field.field.node.location.field_location_hours
+    - field.field.node.location.field_location_id
+    - field.field.node.location.field_location_image
+    - field.field.node.location.field_location_insurance
+    - field.field.node.location.field_location_phone_number
+    - field.field.node.location.field_location_type
+    - field.field.node.location.field_metatags
+    - field.field.node.location.field_services_ref
+    - node.type.location
+  module:
+    - address
+    - telephone
+    - user
+id: node.location.teaser_small
+targetEntityType: node
+bundle: location
+mode: teaser_small
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_location_address:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_location_fax:
+    weight: 3
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_location_phone_number:
+    weight: 2
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+hidden:
+  field_location_body: true
+  field_location_components: true
+  field_location_find_us: true
+  field_location_geo: true
+  field_location_hours: true
+  field_location_id: true
+  field_location_image: true
+  field_location_insurance: true
+  field_location_type: true
+  field_metatags: true
+  field_services_ref: true
+  links: true
+  search_api_excerpt: true

@@ -102,13 +102,174 @@ function tower_health_preprocess_block__providerproximityfilter(&$variables, $ho
 }
 
 /**
+ * Add region theme suggestions.
+ */
+function tower_health_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'region__' . $variables['elements']['#region'] . '__' . $node->bundle();
+  }
+}
+
+/**
+ * Add breadcrumb theme suggestions.
+ */
+function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'breadcrumb__' . $node->bundle();
+  }
+}
+
+/**
+ * Provide variables for provider teaser.
+ */
+function tower_health_preprocess_node__profile(&$variables) {
+  $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
+
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
+    // Preprocess address.
+    if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
+      $location_refs = $node->get('field_location_ref')->getValue();
+      $locations = [];
+      foreach ($location_refs as $id => $location) {
+        $address = $node->field_location_ref[$id]->entity;
+        if ($address instanceof EntityInterface && $address->hasField('field_location_address') && !$address->get('field_location_address')->isEmpty()) {
+          $locality = $address->field_location_address->locality;
+          $administrative_area = $address->field_location_address->administrative_area;
+          $location = $locality . ", " . $administrative_area;
+          if (!in_array($location, $locations)) {
+            $locations[] = $location;
+          }
+        }
+      }
+      if ($location) {
+        $variables['location'] = implode(", ", $locations);
+      }
+    }
+
+    // Preprocess specialties.
+    if ($node->hasField('field_medical_specialties_ref') && !$node->get('field_medical_specialties_ref')->isEmpty()) {
+      $specialty_refs = $node->get('field_medical_specialties_ref')->getValue();
+      $specialties = [];
+      foreach ($specialty_refs as $id => $specialty) {
+        $entity = $node->field_medical_specialties_ref[$id]->entity;
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          $specialties[$id]['text'] = $name;
+        }
+      }
+    }
+    if ($specialties) {
+      $variables['specialties'] = $specialties;
+    }
+
+    // Preprocess focuses.
+    if ($node->hasField('field_area_interest_ref') && !$node->get('field_area_interest_ref')->isEmpty()) {
+      $focus_refs = $node->get('field_area_interest_ref')->getValue();
+      $focuses = [];
+      foreach ($focus_refs as $id => $focus) {
+        $entity = $node->field_area_interest_ref[$id]->entity;
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          $focuses[$id]['text'] = $name;
+        }
+      }
+      if ($focuses) {
+        $variables['focuses'] = $focuses;
+      }
+    }
+
+    // Preprocess languages.
+    if ($node->hasField('field_profile_languages') && !$node->get('field_profile_languages')->isEmpty()) {
+      $languages = $node->get('field_profile_languages')->getValue();
+      $language_names = [];
+      foreach ($languages as $id => $language) {
+        $language_names[$id]['text'] = $language['value'];
+      }
+      if ($language_names) {
+        $variables['languages'] = $language_names;
+      }
+    }
+
+    // Preprocess profile image.
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+      $variables['src'] = file_create_url($node->field_profile_image->entity->field_media_image->entity->uri->value);
+      $variables['alt'] = $node->field_profile_image->entity->field_media_image->entity->alt;
+    }
+    else {
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
+    }
+
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+      $media = $node->field_profile_image->entity;
+      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+        $file = $media->field_media_image->entity;
+        if ($file instanceof EntityInterface) {
+          $url = $file->uri->value;
+          $image = ImageStyle::load('teaser_image')->buildUrl($url);
+          $variables['src'] = $image;
+          $variables['alt'] = $media->field_media_image->alt;
+        }
+      }
+    }
+    else {
+      // Fallback if no image uploaded.
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
+    }
+  }
+  elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
+    $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+    $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+    $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
+    $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
+
+    $variables['name'] = $node->title->value;
+    if (!$node->get('field_profile_job_title')->isEmpty()) {
+      $variables['lead_title'] = $node->field_profile_job_title->value;
+    }
+    if (!$node->get('field_profile_video')->isEmpty()) {
+      $variables['provider_video'] = $node->field_profile_video->value;
+    }
+    if (!$node->get('field_rating_overall')->isEmpty()) {
+      $variables['rating'] = $node->field_rating_overall->value;
+    }
+    if (!$node->get('field_rating_count')->isEmpty()) {
+      $variables['review_amt'] = $node->field_rating_count->value;
+    }
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+      $media = $node->field_profile_image->entity;
+      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+        $file = $media->field_media_image->entity;
+        if ($file instanceof EntityInterface) {
+          $url = $file->uri->value;
+          $image = ImageStyle::load('teaser_image')->buildUrl($url);
+          $variables['src'] = $image;
+          $variables['alt'] = $media->field_media_image->alt;
+        }
+      }
+    }
+    else {
+      // Fallback if no image uploaded.
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
+    }
+  }
+}
+
+/**
  * Provide variables for location teaser.
  */
 function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
 
   // Set button icon.
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
+  $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
 
   if ($node instanceof NodeInterface) {
     // Preprocess image variables.
@@ -152,114 +313,132 @@ function tower_health_preprocess_node__location(&$variables) {
     if ($node->hasField('field_location_fax') && !$node->get('field_location_fax')->isEmpty()) {
       $variables['fax'] = $node->field_location_fax->value;
     }
+
+    // Preprocess other providers link.
+    $location_name = strtolower($node->title->value);
+    $location_providers_url = urlencode("/find-a-provider?providers[0]=location:" . $location_name);
+    $variables['location_providers_url'] = $location_providers_url;
   }
 }
 
+function tower_health_preprocess_paragraph__rating_comments(&$variables) {
+  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+}
+
+function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
+  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+
+  $rating = $variables['element']['#object']->field_rating_overall->value;
+  $variables['rating'] = $rating;
+
+  $count = $variables['element']['#object']->field_rating_count->value;
+  $variables['count'] = $count;
+
+  $reviews = [];
+  foreach ($variables['items'] as $id => $item) {
+    $paragraph = $item["content"]["#paragraph"];
+    $reviews[$id]["review"] = strip_tags($paragraph->field_rating_comment_body->value);
+    $reviews[$id]["rating"] = $paragraph->field_rating_comment_rating->value;
+    $reviews[$id]["date"] = date("F Y", strtotime($paragraph->field_rating_comment_date->value));
+  }
+
+  $variables["reviews"] = $reviews;
+}
+
 /**
- * Provide variables for provider teaser.
+ * Provide variables for profile language field template.
  */
-function tower_health_preprocess_node__profile(&$variables) {
-  $node = $variables['node'];
+function tower_health_preprocess_field__field_profile_languages(&$variables) {
+  $languages = [];
+  foreach($variables['items'] as $id => $language) {
+    $language_name = $language['content']['#context']['value'];
+    $languages[$id]['text'] = $language_name;
+  }
 
-  $variables['icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
-  $variables['href'] = Url::fromUri('internal:/');
-  $variables['icon_path'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+  $variables['languages'] = $languages;
+}
 
-  if ($node instanceof NodeInterface) {
-    // Preprocess address.
-    if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
-      $location_refs = $node->get('field_location_ref')->getValue();
-      $locations = [];
-      foreach ($location_refs as $id => $location) {
-        $address = $node->field_location_ref[$id]->entity;
-        if ($address instanceof EntityInterface && $address->hasField('field_location_address') && !$address->get('field_location_address')->isEmpty()) {
-          $locality = $address->field_location_address->locality;
-          $administrative_area = $address->field_location_address->administrative_area;
-          $location = $locality . ", " . $administrative_area;
-          if (!in_array($location, $locations)) {
-            $locations[] = $location;
-          }
-        }
-      }
-      if ($location) {
-        $variables['location'] = implode(", ", $locations);
-      }
-    }
+/**
+ * Provide variables for profile phone field template.
+ */
+function tower_health_preprocess_field__field_profile_phone(&$variables) {
+  $variables['phone'] = $variables['items'][0]['content']['#title'];
+  $variables['url'] = $variables['items'][0]['content']['#url'];
+}
 
-    // Preprocess specialties.
-    if ($node->hasField('field_medical_specialties_ref') && !$node->get('field_medical_specialties_ref')->isEmpty()) {
-      $specialty_refs = $node->get('field_medical_specialties_ref')->getValue();
-      $specialties = [];
-      foreach ($specialty_refs as $id => $specialty) {
-        $entity = $node->field_medical_specialties_ref[$id]->entity;
-        if ($entity instanceof EntityInterface) {
-          $tid = $entity->tid->value;
-          $term = Term::load($tid);
-          $name = $term->getName();
-          array_push($specialties, $name);
-        }
-      }
-      if ($specialties) {
-        $variables['specialties'] = $specialties;
-      }
-    }
+/**
+ * Provide variables for profile accepted insurance field template.
+ */
+function tower_health_preprocess_field__field_insurance_ref(&$variables) {
+  $accepted_policies = [];
 
-    // Preprocess focus.
-    if ($node->hasField('field_area_interest_ref') && !$node->get('field_area_interest_ref')->isEmpty()) {
-      $focus_refs = $node->get('field_area_interest_ref')->getValue();
-      $focuses = [];
-      foreach ($focus_refs as $id => $focus) {
-        $entity = $node->field_area_interest_ref[$id]->entity;
-        if ($entity instanceof EntityInterface) {
-          $tid = $entity->tid->value;
-          $term = Term::load($tid);
-          $name = $term->getName();
-          array_push($focuses, $name);
-        }
+  foreach ($variables['items'] as $policy) {
+    $values = $policy['content']['#options']['entity']->get('field_insurance_company')->getValue();
+    foreach ($values as $value) {
+      $term = Term::load($value['target_id']);
+      $name = $term->getName();
+      if (!in_array($name, $accepted_policies)) {
+        $accepted_policies[] = $name;
       }
-      if ($focuses) {
-        $variables['focuses'] = $focuses;
-      }
-    }
-
-    // Preprocess languages.
-    if ($node->hasField('field_profile_languages') && !$node->get('field_profile_languages')->isEmpty()) {
-      $languages = $node->get('field_profile_languages')->getValue();
-      $language_names = [];
-      foreach ($languages as $language) {
-        array_push($language_names, $language['value']);
-      }
-      if ($language_names) {
-        $variables['languages'] = $language_names;
-      }
-    }
-
-    // Preprocess image.
-    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
-      $variables['src'] = file_create_url($node->field_profile_image->entity->field_media_image->entity->uri->value);
-      $variables['alt'] = $node->field_profile_image->entity->field_media_image->entity->alt;
-    }
-    else {
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
-      $variables['alt'] = "Provider placeholder image";
-    }
-
-    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
-      $media = $node->field_profile_image->entity;
-      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
-        $file = $media->field_media_image->entity;
-        if ($file instanceof EntityInterface) {
-          $url = $file->uri->value;
-          $image = ImageStyle::load('teaser_image')->buildUrl($url);
-          $variables['src'] = $image;
-          $variables['alt'] = $media->field_media_image->alt;
-        }
-      }
-    }
-    else {
-      // Fallback if no image uploaded.
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
-      $variables['alt'] = "Provider placeholder image";
     }
   }
+  sort($accepted_policies);
+  $variables['policies'] = $accepted_policies;
+}
+
+/**
+ * Provide variables for profile affiliations field template.
+ */
+function tower_health_preprocess_field__field_affiliations_ref(&$variables) {
+  $affiliations = [];
+  foreach ($variables['items'] as $id => $affiliation) {
+    $affiliations[$id]['text'] = $affiliation['content'];
+  }
+  $variables['affiliations'] = $affiliations;
+}
+
+/**
+ * Provide variables for profile specialties field template.
+ */
+function tower_health_preprocess_field__field_medical_specialties_ref(&$variables) {
+  $specialties = [];
+  foreach ($variables['items'] as $id => $specialty) {
+    $specialties[$id]['text'] = $specialty['content'];
+  }
+  $variables['specialties'] = $specialties;
+}
+
+/**
+ * Provide variables for profile focus field template.
+ */
+function tower_health_preprocess_field__field_area_interest_ref(&$variables) {
+  $focuses = [];
+  foreach ($variables['items'] as $id => $focus) {
+    $focuses[$id]['text'] = $focus['content'];
+  }
+  $variables['focuses'] = $focuses;
+}
+
+/**
+ * Provide variables for profile certifications field template.
+ */
+function tower_health_preprocess_field__field_profile_board_certified(&$variables) {
+  $certifications = [];
+  foreach ($variables['items'] as $id => $certification) {
+    $certifications[$id]['title'] = $certification['content'];
+  }
+  $variables['certifications'] = $certifications;
+}
+
+/**
+ * Provide variables for profile education field template.
+ */
+function tower_health_preprocess_field__field_profile_education(&$variables) {
+  $educations = [];
+  foreach ($variables['items'] as $id => $education) {
+    $paragraph = $education['content']['#paragraph'];
+    $educations[$id]['title'] = $paragraph->field_education_institution_ref->entity->name->value;
+    $educations[$id]['text'] = $paragraph->field_education_type->value;
+  }
+  $variables['educations'] = $educations;
 }
