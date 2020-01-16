@@ -121,10 +121,10 @@ rich_text:
     paragraph_content:
       "Our mammography program is accredited by the American College of Radiology. All of our personnel and facilities are certified by the Food and Drug Administration under the Mammography Quality Standards Act. The majority of our mammography technologists have also obtained advanced level certification in mammography from the American Registry of Radiologic Technologists."
 cta_list:
-  - text: "Find a Provider"
+  - text: "Mammography Providers"
     url: "/"
     icon: "th-find-provider.svg"
-  - text: "Find a Location"
+  - text: "Mammography Locations"
     url: "/"
     icon: "th-find-hospital.svg"
 sidebar_label: Related Services

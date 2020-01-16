@@ -44,11 +44,13 @@
  */
 #}
 
+
 {% if page.sidebar_first|render or page.sidebar_second|render %} {# this may or may not correctly filter sidebar #}
   {% set sidebar = TRUE %}
 {% endif %}
 
 {% if page.content %}
+
   {% set content = page.content|render %}
   {% if content %}
     {% set page_content = TRUE %}

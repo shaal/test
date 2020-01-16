@@ -10,7 +10,6 @@
     banner_text: emergency_banner
   } %}
   {% endif %}
-
   {% block teasers %}
     {% for teaser in teasers %}
       {% if teaser.type == "provider" %}
@@ -28,6 +27,10 @@
       {% elseif teaser.type == "service" %}
         {% include "@organisms/teasers/service-teaser/service-teaser.twig" with {
             "service": teaser,
+          } %}
+      {% elseif teaser.type == "video" %}
+        {% include "@organisms/teasers/video-teaser/video-teaser.twig" with {
+            "video": teaser,
           } %}
       {% else %}
         {% include "@organisms/teasers/basic-teaser/basic-teaser.twig" with {
