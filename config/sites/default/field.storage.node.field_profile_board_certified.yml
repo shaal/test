@@ -1,20 +1,19 @@
-uuid: 9bbaed68-4b85-410e-ab96-e3b3588d2296
+uuid: aae1be4a-4e8b-4995-b062-481828b5fc99
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - text
 id: node.field_profile_board_certified
 field_name: field_profile_board_certified
 entity_type: node
-type: string
+type: text
 settings:
   max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+module: text
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

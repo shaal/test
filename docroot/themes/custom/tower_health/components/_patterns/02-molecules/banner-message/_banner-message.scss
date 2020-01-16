@@ -3,13 +3,14 @@
   margin: .5em 0 1em;
   padding: 1em;
   text-align: center;
-  background-color: rgba($ed, .5);
-  border-radius: $rd-brd-lg;
+  background-color: rgba($ed, .4);
   font-weight: 300;
   display: block;
   width: 100%;
+  border-top: 4px solid $ed;
   
   &--secondary {
+    border-color: $growth;
     background-color: $off-white;
   }
 }

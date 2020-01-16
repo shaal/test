@@ -34,6 +34,7 @@ dependencies:
     - node.type.profile
   module:
     - entity_reference_revisions
+    - text
     - user
 id: node.profile.content
 targetEntityType: node
@@ -44,7 +45,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -61,18 +62,17 @@ content:
     weight: 0
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_profile_board_certified:
+    type: text_default
     weight: 3
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_profile_education:
     type: entity_reference_revisions_entity_view
     weight: 4
