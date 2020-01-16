@@ -1,8 +1,9 @@
-uuid: c4bc9b10-9c00-4eec-b280-795a4f772d21
+uuid: d52d89ac-2ec7-4460-83fb-91309598936a
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.sidebar_card
     - field.field.paragraph.card.field_card_description
     - field.field.paragraph.card.field_card_image
     - field.field.paragraph.card.field_card_link
@@ -10,10 +11,10 @@ dependencies:
     - paragraphs.paragraphs_type.card
   module:
     - link
-id: paragraph.card.default
+id: paragraph.card.sidebar_card
 targetEntityType: paragraph
 bundle: card
-mode: default
+mode: sidebar_card
 content:
   field_card_description:
     weight: 1
@@ -22,17 +23,8 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_card_image:
-    type: entity_reference_entity_view
-    weight: 2
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
   field_card_link:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       trim_length: 80
@@ -52,4 +44,5 @@ content:
     type: string
     region: content
 hidden:
+  field_card_image: true
   search_api_excerpt: true

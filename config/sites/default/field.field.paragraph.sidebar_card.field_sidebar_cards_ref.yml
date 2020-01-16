@@ -1,18 +1,18 @@
-uuid: f75b7ccc-4fc2-41b6-bf0a-2ebb39c7db80
+uuid: 87282c83-8a9f-43dd-b8d0-d3962a460788
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_basic_sidebar
-    - node.type.page
+    - field.storage.paragraph.field_sidebar_cards_ref
+    - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.sidebar_card
   module:
     - entity_reference_revisions
-id: node.page.field_basic_sidebar
-field_name: field_basic_sidebar
-entity_type: node
-bundle: page
-label: Sidebar
+id: paragraph.sidebar_card.field_sidebar_cards_ref
+field_name: field_sidebar_cards_ref
+entity_type: paragraph
+bundle: sidebar_card
+label: Card
 description: ''
 required: false
 translatable: false
@@ -23,57 +23,57 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      sidebar_card: sidebar_card
+      card: card
     target_bundles_drag_drop:
-      basic_header:
-        weight: 16
-        enabled: false
-      card:
-        weight: 17
-        enabled: false
       article_card:
         weight: 18
         enabled: false
-      cards:
-        weight: 18
-        enabled: false
-      cta_banner:
+      basic_header:
         weight: 19
         enabled: false
-      cta_list_banner:
+      card:
+        enabled: true
         weight: 20
-        enabled: false
-      education:
+      cards:
         weight: 21
         enabled: false
-      header_cta:
+      cta_banner:
         weight: 22
         enabled: false
-      homepage_hero:
+      cta_list_banner:
         weight: 23
         enabled: false
-      icon_button:
+      education:
         weight: 24
         enabled: false
-      on_my_way:
+      header_cta:
         weight: 25
         enabled: false
-      patient_story:
+      homepage_hero:
         weight: 26
         enabled: false
-      rating_comments:
+      icon_button:
         weight: 27
         enabled: false
-      recognition_card:
+      on_my_way:
         weight: 28
         enabled: false
-      recognition_cards:
+      patient_story:
         weight: 29
         enabled: false
-      rich_text:
+      rating_comments:
         weight: 30
         enabled: false
+      recognition_card:
+        weight: 31
+        enabled: false
+      recognition_cards:
+        weight: 32
+        enabled: false
+      rich_text:
+        weight: 33
+        enabled: false
       sidebar_card:
-        enabled: true
         weight: 34
+        enabled: false
 field_type: entity_reference_revisions

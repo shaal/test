@@ -1,4 +1,4 @@
-uuid: 32d05c9e-9d49-4ebc-965a-72658953d7d1
+uuid: 85f1efa5-a7b9-402d-84ef-954783298412
 langcode: en
 status: true
 dependencies:
@@ -6,25 +6,25 @@ dependencies:
     - ctools
   theme:
     - tower_health
-id: sidebar_first
+id: entityviewcontent_sidebar_bottom
 theme: tower_health
-region: sidebar_first
+region: sidebar_second
 weight: -17
 provider: null
 plugin: 'entity_view:node'
 settings:
   id: 'entity_view:node'
-  label: 'Sidebar First Content'
+  label: 'Sidebar Second Content'
   provider: ctools
   label_display: '0'
-  view_mode: sidebar_first
+  view_mode: sidebar_second
   context_mapping:
     entity: '@node.node_route_context:node'
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
-      profile: profile
+      page: page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'

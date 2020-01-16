@@ -1,0 +1,9 @@
+uuid: 783438ed-8254-4118-869b-10480bf495da
+langcode: en
+status: true
+dependencies: {  }
+id: sidebar_card
+label: 'Sidebar Card'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
