@@ -120,45 +120,13 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
 }
 
 /**
- * Add icon variable.
- */
-function tower_health_preprocess_region__page_header(&$variables) {
-  $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
-  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
-  if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    $variables['name'] = $node->title->value;
-    $variables['lead_title'] = $node->field_profile_job_title->value;
-    $variables['provider_video'] = $node->field_profile_video->value;
-    $variables['rating'] = $node->field_rating_overall->value;
-    $variables['review_amt'] = $node->field_rating_count->value;
-    $variables['phone'] = $node->field_profile_phone->value;
-    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
-      $media = $node->field_profile_image->entity;
-      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
-        $file = $media->field_media_image->entity;
-        if ($file instanceof EntityInterface) {
-          $url = $file->uri->value;
-          $image = ImageStyle::load('teaser_image')->buildUrl($url);
-          $variables['src'] = $image;
-          $variables['alt'] = $media->field_media_image->alt;
-        }
-      }
-    }
-    else {
-      // Fallback if no image uploaded.
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
-      $variables['alt'] = "Provider placeholder image";
-    }
-  }
-}
-
-/**
  * Provide variables for provider teaser.
  */
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
 
-  if ($node instanceof NodeInterface) {
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
     // Preprocess address.
     if ($node->hasField('field_location_ref') && !$node->get('field_location_ref')->isEmpty()) {
       $location_refs = $node->get('field_location_ref')->getValue();
@@ -237,6 +205,43 @@ function tower_health_preprocess_node__profile(&$variables) {
       $variables['alt'] = "Provider placeholder image";
     }
 
+    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
+      $media = $node->field_profile_image->entity;
+      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+        $file = $media->field_media_image->entity;
+        if ($file instanceof EntityInterface) {
+          $url = $file->uri->value;
+          $image = ImageStyle::load('teaser_image')->buildUrl($url);
+          $variables['src'] = $image;
+          $variables['alt'] = $media->field_media_image->alt;
+        }
+      }
+    }
+    else {
+      // Fallback if no image uploaded.
+      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Provider placeholder image";
+    }
+  }
+  elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
+    $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+    $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+    $variables['name'] = $node->title->value;
+    if (!$node->get('field_profile_job_title')->isEmpty()) {
+      $variables['lead_title'] = $node->field_profile_job_title->value;
+    }
+    if (!$node->get('field_profile_video')->isEmpty()) {
+      $variables['provider_video'] = $node->field_profile_video->value;
+    }
+    if (!$node->get('field_rating_overall')->isEmpty()) {
+      $variables['rating'] = $node->field_rating_overall->value;
+    }
+    if (!$node->get('field_rating_count')->isEmpty()) {
+      $variables['review_amt'] = $node->field_rating_count->value;
+    }
+    if (!$node->get('field_profile_phone')->isEmpty()) {
+      $variables['phone'] = $node->field_profile_phone->value;
+    }
     if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
       $media = $node->field_profile_image->entity;
       if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
@@ -387,7 +392,7 @@ function tower_health_preprocess_field__field_insurance_ref(&$variables) {
 function tower_health_preprocess_field__field_affiliations_ref(&$variables) {
   $affiliations = [];
   foreach ($variables['items'] as $id => $affiliation) {
-    $affiliations[$id]['text'] = $affiliation['content']['#title'];
+    $affiliations[$id]['text'] = $affiliation['content'];
   }
   $variables['affiliations'] = $affiliations;
 }
@@ -398,7 +403,7 @@ function tower_health_preprocess_field__field_affiliations_ref(&$variables) {
 function tower_health_preprocess_field__field_medical_specialties_ref(&$variables) {
   $specialties = [];
   foreach ($variables['items'] as $id => $specialty) {
-    $specialties[$id]['text'] = $specialty['content']['#title'];
+    $specialties[$id]['text'] = $specialty['content'];
   }
   $variables['specialties'] = $specialties;
 }
@@ -409,7 +414,7 @@ function tower_health_preprocess_field__field_medical_specialties_ref(&$variable
 function tower_health_preprocess_field__field_area_interest_ref(&$variables) {
   $focuses = [];
   foreach ($variables['items'] as $id => $focus) {
-    $focuses[$id]['text'] = $focus['content']['#title'];
+    $focuses[$id]['text'] = $focus['content'];
   }
   $variables['focuses'] = $focuses;
 }
@@ -420,7 +425,7 @@ function tower_health_preprocess_field__field_area_interest_ref(&$variables) {
 function tower_health_preprocess_field__field_profile_board_certified(&$variables) {
   $certifications = [];
   foreach ($variables['items'] as $id => $certification) {
-    $certifications[$id]['title'] = $certification['content']['#context']['value'];
+    $certifications[$id]['title'] = $certification['content'];
   }
   $variables['certifications'] = $certifications;
 }
@@ -431,7 +436,7 @@ function tower_health_preprocess_field__field_profile_board_certified(&$variable
 function tower_health_preprocess_field__field_profile_education(&$variables) {
   $educations = [];
   foreach ($variables['items'] as $id => $education) {
-    $paragraph = $education["content"]["#paragraph"];
+    $paragraph = $education['content']['#paragraph'];
     $educations[$id]['title'] = $paragraph->field_education_institution_ref->entity->name->value;
     $educations[$id]['text'] = $paragraph->field_education_type->value;
   }
