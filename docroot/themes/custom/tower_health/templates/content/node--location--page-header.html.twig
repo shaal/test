@@ -71,26 +71,41 @@
  */
 #}
 
-{% embed "@organisms/provider-header/provider-header.twig" with {
+{{ drupal_block('system_breadcrumb_block') }}
+
+{% include "@organisms/location-hero/location-hero.twig" with {
+  "type": type,
+  "name": name,
+  "address_1": address_1,
+  "address_2": address_2,
+  "directions": {
+    "link": "",
+    "button_icon": button_icon,
+    "text": "Map & Directions"|t,
+    "variation": small
+  },
+  "phones": [
+    {
+      "label": "Main"|t,
+      "numbers": [
+        {
+          "number": phone
+        }
+      ]
+    },
+    {
+      "label": "Appointments"|t,
+      "numbers": [
+        {
+          "number": appointment_phone,
+          "label": appointment_phone_label
+        }
+      ]
+    }
+  ],
   "img": {
     "src": src,
     "alt": alt
   },
-  "name": name,
-  "lead_title": lead_title,
-  "provider_video": provider_video,
-  "rating": rating,
-  "review_amt": review_amt,
-  "appt_phone": {
-    "number": appointment_phone,
-    "label": appointment_phone_label
-  },
-  "appt_url": "#",
-  "appt_label": "Request an Appointment"|t
+  "classes": "growth top-left"
 } %}
-
-  {% block breadcrumb %}
-    {{ drupal_block('system_breadcrumb_block') }}
-  {% endblock %}
-
-{% endembed %}
