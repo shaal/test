@@ -74,6 +74,20 @@ function tower_health_preprocess_paragraph__basic_header(&$variables){
 }
 
 /**
+ * Provide icon variable for rating comments paragraph.
+ */
+function tower_health_preprocess_paragraph__image_teaser_banner(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $link_field = $paragraph->field_image_banner_links;
+  $links = [];
+  foreach ($link_field as $id => $link) {
+    $links[$id]['text'] = $link->title;
+    $links[$id]['url'] = Url::fromUri($link->uri);
+  }
+  $variables['links'] = $links;
+}
+
+/**
  * Load the utility menu into a variable.
  */
 function tower_health_preprocess_menu(&$variables) {
