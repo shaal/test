@@ -275,12 +275,12 @@ function tower_health_preprocess_node__profile(&$variables) {
 function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
+  $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
   // Preprocess other providers link.
   $location_name = strtolower($node->title->value);
   $location_providers_url = urlencode("/find-a-provider?providers[0]=location:" . $location_name);
   $variables['location_providers_url'] = $location_providers_url;
   if ($node instanceof NodeInterface && $view_mode == 'teaser') {
-    $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
     // Preprocess image variables.
     $media = $node->field_location_image->entity;
     if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
@@ -320,7 +320,6 @@ function tower_health_preprocess_node__location(&$variables) {
     }
   }
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
-    $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
     $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
     $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
     $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
