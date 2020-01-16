@@ -9,7 +9,7 @@ dependencies:
 id: sidebar_first
 theme: tower_health
 region: sidebar_first
-weight: 0
+weight: -17
 provider: null
 plugin: 'entity_view:node'
 settings:
@@ -20,4 +20,11 @@ settings:
   view_mode: sidebar_first
   context_mapping:
     entity: '@node.node_route_context:node'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

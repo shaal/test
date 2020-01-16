@@ -1,9 +1,9 @@
-uuid: dd8ab4b6-1329-4727-9c51-a50a4e7c32d9
+uuid: d6610255-6ac2-4b73-896c-6eb95763d142
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.sidebar_bottom
+    - core.entity_view_mode.node.sidebar_second
     - field.field.node.page.field_basic_components
     - field.field.node.page.field_basic_enable_nav
     - field.field.node.page.field_basic_header
@@ -17,20 +17,20 @@ dependencies:
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
-id: node.page.sidebar_bottom
+id: node.page.sidebar_second
 targetEntityType: node
 bundle: page
-mode: sidebar_bottom
+mode: sidebar_second
 content:
   field_basic_sidebar:
     type: entity_reference_revisions_entity_view
     weight: 0
+    region: content
     label: hidden
     settings:
-      view_mode: default
+      view_mode: sidebar_card
       link: ''
     third_party_settings: {  }
-    region: content
 hidden:
   content_moderation_control: true
   field_basic_components: true

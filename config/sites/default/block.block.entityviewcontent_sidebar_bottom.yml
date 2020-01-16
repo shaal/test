@@ -9,15 +9,22 @@ dependencies:
 id: entityviewcontent_sidebar_bottom
 theme: tower_health
 region: sidebar_second
-weight: 0
+weight: -17
 provider: null
 plugin: 'entity_view:node'
 settings:
   id: 'entity_view:node'
-  label: 'Entity view (Content)'
+  label: 'Sidebar Second Content'
   provider: ctools
   label_display: '0'
-  view_mode: sidebar_bottom
+  view_mode: sidebar_second
   context_mapping:
     entity: '@node.node_route_context:node'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
