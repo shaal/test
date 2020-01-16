@@ -14,6 +14,12 @@
   {% block page_content %}
     {% include "@molecules/rich-text/rich-text.twig" %}
     
+    {% include "@organisms/resource-list-card/resource-list-card.twig" with {
+      title: resources.title,
+      text: resources.text,
+      items: resources.items
+    } %}
+    
     {% include "@organisms/care-circle/care-circle.twig" with {
       title: careCircle.title,
       url: careCircle.url,
