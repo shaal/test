@@ -38,12 +38,11 @@
  * @ingroup themeable
  */
 #}
-{% include '@organisms/image-teaser-banner/image-teaser-banner.twig' with {
-  "img": {
-    "src": file_url(paragraph.field_image_banner_image_ref.entity.field_media_image.entity.fileuri),
-    "alt": paragraph.field_image_banner_image_ref.entity.field_media_image.entity.alt.value
-  },
-  "title": content.field_image_banner_title,
-  "text": content.field_image_banner_desc,
-  "links": links
+{% include '@organisms/text-teaser-banner/text-teaser-banner.twig' with {
+  "title": content.field_text_teaser_title,
+  "text": content.field_text_teaser_desc,
+  "button": {
+    "url": content.field_text_teaser_link.0['#url'],
+    "text": content.field_text_teaser_link.0['#title']
+  }
 }%}
