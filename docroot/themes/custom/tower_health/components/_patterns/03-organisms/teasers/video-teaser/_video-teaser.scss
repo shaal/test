@@ -1,0 +1,83 @@
+.teaser--simple.teaser--video {
+  
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: $gray-dark;
+  }
+  
+  a:active,
+  a:hover,
+  a:focus {
+    
+    .teaser__name--simple {
+      text-decoration: underline;
+    }
+    
+    .teaser__video-thumb::after {
+      transition: all .5s ease;
+      opacity: 1;
+    }
+  }
+  
+  .modal--video {
+    @include breakpoint($bp2) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  
+  .teaser__meta {
+    @include adjust-font-size-to($sm-text, 1);
+    font-weight: 600;
+    font-style: italic;
+    display: block;
+    margin-bottom: .25em;
+  }
+  
+  .teaser__name--simple {
+    color: $primary-dark;
+    margin-bottom: .15em;
+    
+    @include breakpoint($bp2) {
+      margin-top: 0;
+    }
+  }
+  
+  .teaser__video-thumb {
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../pattern-lab/public/images/play.svg);
+      background-size: 50px 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .75;
+      transition: all .5s ease;
+    }
+    
+    @include breakpoint($bp2) {
+      flex: 1 0 30%;
+      margin-left: 2em;
+      order: 2;
+    }
+  }
+  
+  .teaser__container {
+    width: 100%;
+    
+    @include breakpoint($bp2) {
+      order: 1;
+    }
+  }
+}

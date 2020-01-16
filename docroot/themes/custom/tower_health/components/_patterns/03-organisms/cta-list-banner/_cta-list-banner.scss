@@ -191,9 +191,14 @@
   // default states
   .cta-banner-list__content,
   .cta-banner-list__background,
-  .cta-banner-list__buttons,
-  .cta-banner-list__buttons .icon-button {
+  .cta-banner-list__buttons {
     opacity: 0;
+  }
+  
+  .cta-banner-list__buttons .icon-button {
+    @include breakpoint($bp2) {
+      opacity: 0;
+    }
   }
 
   // animating in
@@ -211,7 +216,10 @@
     }
 
     &.icon-button {
-      animation: fadeInRight .35s ease-in-out forwards;
+      
+      @include breakpoint($bp2) {
+        animation: fadeInRight .35s ease-in-out forwards;
+      }
     }
   }
 }

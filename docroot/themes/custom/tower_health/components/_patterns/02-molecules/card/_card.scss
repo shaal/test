@@ -26,7 +26,8 @@
   text-decoration: none;
   
   .card--image &,
-  .card--video & {
+  .card--video &,
+  .card--article & {
     justify-content: flex-start;
   }
   
