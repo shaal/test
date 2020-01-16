@@ -54,6 +54,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_metatags:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_service_core_bool:
     weight: 107
     label: above
@@ -100,13 +107,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_metatags:
-    weight: 104
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
     region: content
   links:
     weight: 100

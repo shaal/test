@@ -38,7 +38,9 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
     {% if page_header %}
       <div class="page-header">
-      {% block page_header %}{% endblock %}
+      {% block page_header %}
+        {{ page_header }}
+      {% endblock %}
       </div>
     {% endif %}
 
@@ -51,7 +53,9 @@
 
       {% if page_content %}
       <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
-        {% block page_content %}{% endblock %}
+        {% block page_content %}
+          {{ page_content }}
+        {% endblock %}
       </div>
      {% endif %}
 

@@ -17,16 +17,17 @@ review_amt: 36
 provider_video:
   type: video
   reference: https://www.youtube.com/embed/d3ZLhedUtkA
-  label: Provider Video 
-img: 
+  label: Provider Video
+img:
   src: "../../images/people/hoerst-karen.jpg"
   alt: "Karen A. Hoerst, MD"
 accepting_patients: true
 appt_label: Request an Appointment
-appt_phone: 
+appt_phone:
   number: "4846288888"
   label: "484-628-HELP"
 appt_url: "#"
+appt_icon: "th-cal.svg"
 
 specialties:
   label: Specialties
@@ -47,7 +48,7 @@ locations:
   items:
     - type: location
       name: "McGlinn Cancer Institute"
-      address_rows: 
+      address_rows:
         - "420 S. Fifth Avenue"
         - "West Reading, PA 19611"
       direction_url: '#'
@@ -61,7 +62,7 @@ locations:
         label: "View Other Providers at this Location"
     - type: location
       name: "Reading Hospital"
-      address_rows: 
+      address_rows:
         - "420 S. Fifth Avenue"
         - "West Reading, PA 19611"
       direction_url: '#'
