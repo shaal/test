@@ -119,8 +119,16 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
   }
 }
 
+function tower_health_preprocess_region__sidebar_first(&$variables)  {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if ($node->bundle() == 'location') {
+      $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-provider.svg';
+    }
+  }
+}
+
 /**
- * Provide variables for provider teaser.
+ * Provide variables for provider nodes.
  */
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
@@ -262,7 +270,7 @@ function tower_health_preprocess_node__profile(&$variables) {
 }
 
 /**
- * Provide variables for location teaser.
+ * Provide variables for location nodes.
  */
 function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
@@ -342,9 +350,6 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
       $variables['alt'] = "Location placeholder image";
     }
-  }
-  elseif ($node instanceof EntityInterface && $view_mode == 'sidebar_first') {
-    $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-provider.svg';
   }
 }
 

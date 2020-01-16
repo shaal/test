@@ -32,7 +32,7 @@ content:
     label: hidden
     settings:
       show_closed: all
-      office_hours_first_day: ''
+      office_hours_first_day: '1'
       day_format: long
       time_format: g
       closed_format: Closed
@@ -40,7 +40,7 @@ content:
         days: '<br />'
         grouped_days: ' - '
         day_hours: ': '
-        hours_hours: '-'
+        hours_hours: ' - '
         more_hours: ', '
       current_status:
         position: ''
