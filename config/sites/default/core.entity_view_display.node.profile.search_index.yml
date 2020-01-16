@@ -9,8 +9,10 @@ dependencies:
     - field.field.node.profile.field_insurance_ref
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
+    - field.field.node.profile.field_metatags
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_epic_id
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
     - field.field.node.profile.field_profile_image
@@ -85,14 +87,6 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-  field_profile_board_certified:
-    type: string
-    weight: 9
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_profile_education:
     type: entity_reference_revisions_entity_view
     weight: 6
@@ -134,6 +128,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_metatags: true
+  field_profile_board_certified: true
   field_profile_epic_id: true
   field_profile_first_name: true
   field_profile_image: true

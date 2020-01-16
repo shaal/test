@@ -1,0 +1,123 @@
+uuid: d9d8114c-52bb-4c42-8a5f-4540fba68aa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.page_header
+    - field.field.node.profile.field_affiliations_ref
+    - field.field.node.profile.field_area_interest_ref
+    - field.field.node.profile.field_insurance_ref
+    - field.field.node.profile.field_location_ref
+    - field.field.node.profile.field_medical_specialties_ref
+    - field.field.node.profile.field_metatags
+    - field.field.node.profile.field_profile_board_certified
+    - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_epic_id
+    - field.field.node.profile.field_profile_first_name
+    - field.field.node.profile.field_profile_gender
+    - field.field.node.profile.field_profile_image
+    - field.field.node.profile.field_profile_job_title
+    - field.field.node.profile.field_profile_languages
+    - field.field.node.profile.field_profile_last_name
+    - field.field.node.profile.field_profile_middle_name
+    - field.field.node.profile.field_profile_npi
+    - field.field.node.profile.field_profile_phone
+    - field.field.node.profile.field_profile_practid
+    - field.field.node.profile.field_profile_professional_title
+    - field.field.node.profile.field_profile_scheduling
+    - field.field.node.profile.field_profile_type
+    - field.field.node.profile.field_profile_video
+    - field.field.node.profile.field_rating_comment_count
+    - field.field.node.profile.field_rating_comments_ref
+    - field.field.node.profile.field_rating_count
+    - field.field.node.profile.field_rating_overall
+    - image.style.medium
+    - node.type.profile
+  module:
+    - media
+    - telephone
+    - user
+id: node.profile.page_header
+targetEntityType: node
+bundle: profile
+mode: page_header
+content:
+  field_profile_image:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_profile_job_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_profile_phone:
+    weight: 5
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_profile_video:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_rating_count:
+    weight: 4
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_rating_overall:
+    weight: 3
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden:
+  content_moderation_control: true
+  field_affiliations_ref: true
+  field_area_interest_ref: true
+  field_insurance_ref: true
+  field_location_ref: true
+  field_medical_specialties_ref: true
+  field_metatags: true
+  field_profile_board_certified: true
+  field_profile_education: true
+  field_profile_epic_id: true
+  field_profile_first_name: true
+  field_profile_gender: true
+  field_profile_languages: true
+  field_profile_last_name: true
+  field_profile_middle_name: true
+  field_profile_npi: true
+  field_profile_practid: true
+  field_profile_professional_title: true
+  field_profile_scheduling: true
+  field_profile_type: true
+  field_rating_comment_count: true
+  field_rating_comments_ref: true
+  links: true
+  search_api_excerpt: true
