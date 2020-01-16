@@ -226,6 +226,9 @@ function tower_health_preprocess_node__profile(&$variables) {
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
     $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
     $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+    $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
+    $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
+
     $variables['name'] = $node->title->value;
     if (!$node->get('field_profile_job_title')->isEmpty()) {
       $variables['lead_title'] = $node->field_profile_job_title->value;
@@ -238,9 +241,6 @@ function tower_health_preprocess_node__profile(&$variables) {
     }
     if (!$node->get('field_rating_count')->isEmpty()) {
       $variables['review_amt'] = $node->field_rating_count->value;
-    }
-    if (!$node->get('field_profile_phone')->isEmpty()) {
-      $variables['phone'] = $node->field_profile_phone->value;
     }
     if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
       $media = $node->field_profile_image->entity;
