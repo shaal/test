@@ -4,12 +4,12 @@
   &.basic-header--list {
     position: relative;
     margin-bottom: 0;
-    z-index: 100;
+    z-index: 3;
 
     .basic-header__header,
     .basic-header__content {
       position: relative;
-      z-index: 100;
+      z-index: 3;
     }
   }
 }

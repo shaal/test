@@ -23,7 +23,7 @@
 
   @include breakpoint($bp3) {
     display: block;
-    z-index: 1;
+    z-index: 10;
     position: static;
   }
 }

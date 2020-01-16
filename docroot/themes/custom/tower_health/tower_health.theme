@@ -167,6 +167,8 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
+  $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
+  $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
   if ($node instanceof NodeInterface && $view_mode == 'teaser') {
     // Preprocess address.
@@ -266,8 +268,6 @@ function tower_health_preprocess_node__profile(&$variables) {
     }
   }
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
-    $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-cal.svg';
-    $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
     $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
     $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
 
@@ -415,12 +415,15 @@ function tower_health_preprocess_field__field_insurance_ref(&$variables) {
   $accepted_policies = [];
 
   foreach ($variables['items'] as $policy) {
-    $values = $policy['content']['#options']['entity']->get('field_insurance_company')->getValue();
-    foreach ($values as $value) {
-      $term = Term::load($value['target_id']);
-      $name = $term->getName();
-      if (!in_array($name, $accepted_policies)) {
-        $accepted_policies[] = $name;
+    $insurance_entity = $policy['content']['#options']['entity'];
+    if ($insurance_entity instanceof EntityInterface && $insurance_entity->hasField('field_insurance_company') && !$insurance_entity->get('field_insurance_company')->isEmpty()) {
+      $values = $insurance_entity->get('field_insurance_company')->getValue();
+      foreach ($values as $value) {
+        $term = Term::load($value['target_id']);
+        $name = $term->getName();
+        if (!in_array($name, $accepted_policies)) {
+          $accepted_policies[] = $name;
+        }
       }
     }
   }

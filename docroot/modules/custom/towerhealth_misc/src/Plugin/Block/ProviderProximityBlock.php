@@ -56,7 +56,7 @@ class ProviderProximityBlock extends BlockBase {
 
     $build['exposed_form']['#attributes']['class'] = [
       'form-section__item--group',
-      'form-section__item--oneThird',
+      'form-section__item--oneSixth-twoColumns',
       'form-section__item',
     ];
 

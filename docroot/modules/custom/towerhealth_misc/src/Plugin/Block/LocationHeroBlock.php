@@ -58,6 +58,8 @@ class LocationHeroBlock extends BlockBase {
 
     $build['exposed_form'] = $form;
 
+    $build['exposed_form']['actions']['#attributes']['class'][] = 'listing-search__actions';
+
     $build['exposed_form']['#attributes']['class'][] = 'listing-search';
 
     return $build;

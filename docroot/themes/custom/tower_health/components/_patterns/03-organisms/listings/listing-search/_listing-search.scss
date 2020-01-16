@@ -51,3 +51,11 @@
     width: calc(100% - 225px);
   }
 }
+
+.listing-search__actions {
+  width: 100%;
+
+  @include breakpoint($bp2) {
+    width: 225px;
+  }
+}
