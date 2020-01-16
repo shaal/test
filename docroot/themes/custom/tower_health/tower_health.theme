@@ -280,6 +280,19 @@ function tower_health_preprocess_node__location(&$variables) {
   $location_name = strtolower($node->title->value);
   $location_providers_url = urlencode("/find-a-provider?providers[0]=location:" . $location_name);
   $variables['location_providers_url'] = $location_providers_url;
+  if ($node instanceof NodeInterface && $view_mode == 'teaser_small') {
+    // Preprocess address variables.
+    if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
+      $locality = $node->field_location_address->locality;
+      $administrative_area = $node->field_location_address->administrative_area;
+      $address_1 = $node->field_location_address->address_line1;
+      $address_2 = $locality . ', ' . $administrative_area;
+      $href = "https://www.google.com/maps/place/" . str_replace(' ', '+', $address_1) . '+' . $locality . '+' . $administrative_area;
+      $variables['address1'] = $address_1;
+      $variables['address2'] = $address_2;
+      $variables['href'] = $href;
+    }
+  }
   if ($node instanceof NodeInterface && $view_mode == 'teaser') {
     // Preprocess image variables.
     $media = $node->field_location_image->entity;
