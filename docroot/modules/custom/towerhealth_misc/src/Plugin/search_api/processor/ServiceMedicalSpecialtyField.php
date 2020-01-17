@@ -61,7 +61,7 @@ class ServiceMedicalSpecialtyField extends ProcessorPluginBase {
 
       $terms = $entity->get('field_medical_specialties_ref')->getValue();
 
-      foreach($terms as $term) {
+      foreach ($terms as $term) {
         $tid = $term['target_id'];
 
         $specialty_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
@@ -77,7 +77,7 @@ class ServiceMedicalSpecialtyField extends ProcessorPluginBase {
               $entity_ids = $query->execute();
 
               if (!empty($entity_ids)) {
-                foreach($entity_ids as $id) {
+                foreach ($entity_ids as $id) {
                   $service = \Drupal::entityTypeManager()->getStorage('node')->load($id);
 
                   $keys[] = $service->getTitle();
