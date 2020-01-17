@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_location_ref
     - field.field.node.service.field_medical_specialties_ref
+    - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
+    - field.field.node.service.field_service_header
     - field.field.node.service.field_service_headline
     - field.field.node.service.field_service_intro
     - field.field.node.service.field_service_related_ref
@@ -18,8 +20,8 @@ dependencies:
   module:
     - content_moderation
     - field_group
-    - paragraphs
     - metatag
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -27,13 +29,14 @@ third_party_settings:
     group_vertical_tabs:
       children:
         - group_description
+        - group_header
         - group_core_service
         - group_related_services
         - group_related_locations
         - group_medical_specialties_condit
         - group_flexible_components
       parent_name: ''
-      weight: 10
+      weight: 0
       format_type: tabs
       format_settings:
         id: ''
@@ -63,7 +66,7 @@ third_party_settings:
         - field_service_core_bool
         - field_service_core_ref
       parent_name: group_vertical_tabs
-      weight: 7
+      weight: 8
       format_type: tab
       format_settings:
         id: ''
@@ -78,7 +81,7 @@ third_party_settings:
         - field_conditions_ref
         - field_medical_specialties_ref
       parent_name: group_vertical_tabs
-      weight: 10
+      weight: 11
       format_type: tab
       format_settings:
         id: ''
@@ -92,7 +95,7 @@ third_party_settings:
       children:
         - field_service_flex
       parent_name: group_vertical_tabs
-      weight: 11
+      weight: 12
       format_type: tab
       format_settings:
         id: ''
@@ -106,7 +109,7 @@ third_party_settings:
       children:
         - field_service_related_ref
       parent_name: group_vertical_tabs
-      weight: 8
+      weight: 9
       format_type: tab
       format_settings:
         id: ''
@@ -120,7 +123,7 @@ third_party_settings:
       children:
         - field_location_ref
       parent_name: group_vertical_tabs
-      weight: 9
+      weight: 10
       format_type: tab
       format_settings:
         id: ''
@@ -130,6 +133,20 @@ third_party_settings:
         required_fields: true
       label: 'Related Locations'
       region: content
+    group_header:
+      children:
+        - field_service_header
+      parent_name: group_vertical_tabs
+      weight: 7
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Header
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -180,7 +197,7 @@ content:
       match_limit: 10
     third_party_settings: {  }
   field_metatags:
-    weight: 124
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -213,6 +230,18 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+  field_service_header:
+    type: entity_reference_paragraphs
+    weight: 10
+    settings:
+      title: 'Page Header'
+      title_plural: 'Page Header'
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: basic_header
+    third_party_settings: {  }
+    region: content
   field_service_headline:
     weight: 1
     settings:
