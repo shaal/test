@@ -36,7 +36,7 @@ class ClearFilters extends BlockBase {
 
     $build['content']['title'] = [
       '#type' => 'markup',
-      '#markup' => '<h2>' . t('Filter By:') . '</h2>',
+      '#markup' => '<span>' . t('Filter') . '</span>',
     ];
 
     $route = 'view.' . $view_id . '.' . $view_display_id;

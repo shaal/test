@@ -1,0 +1,84 @@
+<div class="form-section__item {% if item.type == 'child_container' %}form-section__item--group {% endif %}{% if item.width %}form-section__item--{{ item.width }}{% endif %} {% if item.conditional_result %}form-section__item--conditional{% endif %}" {% if item.conditional_result %}data-cond-by="{{item.conditional_result}}"{% endif %} {% if item.conditional_control %}data-cond="{{item.conditional_control}}" data-cond-met="false"{% endif %}>
+  {% if item.type != 'drupal-facet-chosen' and item.type != 'drupal-facet' %}
+    {% include "@atoms/05-forms/_form-label.twig" with {
+      title: item.title
+    }%}
+  {% else %}
+    <label>{{ item.title }}</label>
+  {% endif %}
+  {% if item.info %}
+    {% include "@molecules/toggle-tip/toggle-tip.twig"  with {
+    info: item.info,
+    info_id: item.info_id
+    }%}
+  {% endif %}
+  {% if item.type == 'drupal-facet-chosen' %}
+    <div class="facets-widget-chosen-dropdown form-item__dropdown">
+      <ul {{ attributes }}>
+        {% if item.elements %}
+          {% for element in item.elements %}
+            <li {{ element.attributes }}>{{ element.value }}</li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  {% elseif item.type == 'drupal-facet' %}
+    <ul {{ attributes.removeClass('form-item__label') }}>
+      {% if item.elements %}
+        {% for element in item.elements %}
+          <li {{ element.attributes }}>{{ element.value }}</li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  {% elseif item.type == 'radio' %}
+    <ul class="form-item--radios {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
+      {% for key, item in item.children %}
+        {% include "@atoms/05-forms/radio/_radio-item.twig" with {
+        "radio_item": item.title,
+        "radio_id": item.id
+        } %}
+      {% endfor %}
+    </ul>
+  {% elseif item.type == 'checkbox' %}
+    <ul class="form-item--checkboxes {% if item.orientation == 'inline' %}form-item--inline {% endif %}">
+      {% for key, item in item.children %}
+        {% include "@atoms/05-forms/checkbox/_checkbox-item.twig" with {
+        "checkbox_item": item.title,
+        "checkbox_id": item.id,
+        } %}
+      {% endfor %}
+    </ul>
+  {% elseif item.type == 'select' %}
+    <div class="form-item__dropdown">
+      <select class="form-item__select {% if item.chosen %}chosen-select{% endif %}" {% if item.multiple %}multiple {% endif %}>
+        <optgroup label="{{ item.name }}">
+          {% for item in item.children %}
+            {% include "@atoms/05-forms/select/_select-item.twig" with {
+            "select_item": item.title
+            } %}
+          {% endfor %}
+        </optgroup>
+      </select>
+    </div>
+  {% elseif item.type == 'child_container' %}
+    {% for item in item.section_child %}
+      {% include "@molecules/form-section-item/_form-section-item.twig" %}
+    {% endfor %}
+  {% elseif item.type == 'textfield' %}
+    <textarea name="{{ item.name}}"></textarea>
+  {% else %}
+    <input type="{{item.type}}" name="{{ item.name}}" {% if item.placeholder %} placeholder="{{item.placeholder}}" {% endif %}/>
+  {% endif %}
+
+  {% if item.link == true %}
+    {% include "@atoms/01-links/link/link.twig" with {
+    "link_url": item.link.url,
+    "link_content": item.link.label,
+    "link_modifiers": ['small']
+    } %}
+  {% endif %}
+
+  {% if item.optional == true %}
+    <span class="form-section__optional">Optional</span>
+  {% endif %}
+</div>

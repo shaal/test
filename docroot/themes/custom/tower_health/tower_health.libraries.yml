@@ -29,7 +29,7 @@ chosen:
     dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
     dist/01-atoms/05-forms/chosen/chosen-select.js: {}
 
-listFilters:
+list_filters:
   js:
     dist/03-organisms/listings/listing-filter/listing-filters.js: {}
 

@@ -131,6 +131,16 @@
     padding: .65em 1.35em 0 1em;
   }
 
+  .chosen-search-input {
+    width: calc(100% - 2.7em) !important;
+  }
+
+  .chosen-container .search-choice,
+  .chosen-container .chosen-results .active-result,
+  .facet-item__value {
+    text-transform: capitalize;
+  }
+
   .form-item__dropdown::after {
     top: 1.15em;
   }
@@ -153,6 +163,16 @@
 
     @include breakpoint($bp3) {
       margin-right: 1%;
+    }
+
+    &--group {
+      .form-section__item {
+        margin-right: 0;
+
+        @include breakpoint($bp4) {
+          margin-right: 1%;
+        }
+      }
     }
   }
 
