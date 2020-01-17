@@ -1,0 +1,25 @@
+uuid: 54a75f71-b31f-46f8-b4c1-35b767d95eb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_box_link_reference.field_box_link_ref
+    - paragraphs.paragraphs_type.image_box_link_reference
+id: paragraph.image_box_link_reference.default
+targetEntityType: paragraph
+bundle: image_box_link_reference
+mode: default
+content:
+  field_box_link_ref:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

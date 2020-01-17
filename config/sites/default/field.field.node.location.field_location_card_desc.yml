@@ -1,0 +1,21 @@
+uuid: b527565f-6499-4b00-92eb-4f7e7df313d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_card_desc
+    - node.type.location
+  module:
+    - text
+id: node.location.field_location_card_desc
+field_name: field_location_card_desc
+entity_type: node
+bundle: location
+label: 'Card Description'
+description: 'Description to display when this page is referenced as a card on other pages'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

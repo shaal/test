@@ -1,9 +1,9 @@
-uuid: 5423192b-3e2f-4489-9b73-632f31f40457
+uuid: 8a3ab40b-7875-497d-a18d-844191903e6c
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.components
+    - core.entity_view_mode.node.image_box_reference
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_card_cta
@@ -23,51 +23,49 @@ dependencies:
     - field.field.node.location.field_services_ref
     - node.type.location
   module:
-    - entity_reference_revisions
     - text
     - user
-id: node.location.components
+id: node.location.image_box_reference
 targetEntityType: node
 bundle: location
-mode: components
+mode: image_box_reference
 content:
-  field_location_components:
-    type: entity_reference_revisions_entity_view
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-  field_location_find_us:
-    type: entity_reference_revisions_entity_view
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-  field_location_insurance:
-    type: text_default
+  field_location_card_cta:
+    type: string
     weight: 2
     region: content
     label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_location_card_desc:
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    type: text_default
+    region: content
+  field_location_card_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
 hidden:
   content_moderation_control: true
   field_location_address: true
   field_location_body: true
-  field_location_card_cta: true
-  field_location_card_desc: true
-  field_location_card_image: true
+  field_location_components: true
   field_location_fax: true
+  field_location_find_us: true
   field_location_geo: true
   field_location_hours: true
   field_location_id: true
   field_location_image: true
+  field_location_insurance: true
   field_location_phone_number: true
   field_location_type: true
   field_metatags: true

@@ -6,6 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser_small
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
+    - field.field.node.location.field_location_card_cta
+    - field.field.node.location.field_location_card_desc
+    - field.field.node.location.field_location_card_image
     - field.field.node.location.field_location_components
     - field.field.node.location.field_location_fax
     - field.field.node.location.field_location_find_us
@@ -58,6 +61,9 @@ content:
     region: content
 hidden:
   field_location_body: true
+  field_location_card_cta: true
+  field_location_card_desc: true
+  field_location_card_image: true
   field_location_components: true
   field_location_find_us: true
   field_location_geo: true

@@ -1,0 +1,19 @@
+uuid: d9c845b5-6fc8-486a-ac40-29b2dea5577a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_card_cta
+    - node.type.location
+id: node.location.field_location_card_cta
+field_name: field_location_card_cta
+entity_type: node
+bundle: location
+label: 'Card CTA'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

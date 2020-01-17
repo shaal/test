@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_image_box_links_ref
     - paragraphs.paragraphs_type.box_links
     - paragraphs.paragraphs_type.image_box_link_custom
+    - paragraphs.paragraphs_type.image_box_link_reference
   module:
     - entity_reference_revisions
 id: paragraph.box_links.field_image_box_links_ref
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       image_box_link_custom: image_box_link_custom
+      image_box_link_reference: image_box_link_reference
     target_bundles_drag_drop:
       article_card:
         weight: 20
@@ -70,6 +72,9 @@ settings:
       patient_story:
         weight: 33
         enabled: false
+      image_box_link_reference:
+        enabled: true
+        weight: 34
       rating_comments:
         weight: 34
         enabled: false
