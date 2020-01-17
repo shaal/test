@@ -20,22 +20,22 @@ content:
   field_story_image:
     type: entity_reference_entity_view
     weight: 2
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: patient_story
       link: false
     third_party_settings: {  }
     region: content
   field_story_image_pos:
     weight: 4
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_story_link:
     weight: 3
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -47,14 +47,14 @@ content:
     region: content
   field_story_quote:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_story_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
