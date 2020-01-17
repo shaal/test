@@ -2,7 +2,15 @@
   margin: 1em 0 0;
 
   &.basic-header--list {
+    position: relative;
     margin-bottom: 0;
+    z-index: 3;
+
+    .basic-header__header,
+    .basic-header__content {
+      position: relative;
+      z-index: 3;
+    }
   }
 }
 

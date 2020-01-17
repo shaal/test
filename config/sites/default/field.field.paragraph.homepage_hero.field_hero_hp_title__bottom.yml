@@ -10,7 +10,7 @@ field_name: field_hero_hp_title__bottom
 entity_type: paragraph
 bundle: homepage_hero
 label: 'Title (bottom)'
-description: ''
+description: 'Recommend less than 15 characters per line.'
 required: true
 translatable: false
 default_value: {  }

@@ -6,12 +6,13 @@ dependencies:
     - facets.facet.services
   module:
     - facets
+    - system
   theme:
     - tower_health
 id: services
 theme: tower_health
-region: content
-weight: -10
+region: page_filters
+weight: -14
 provider: null
 plugin: 'facet_block:services'
 settings:
@@ -20,4 +21,9 @@ settings:
   provider: facets
   label_display: visible
   block_id: services
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }

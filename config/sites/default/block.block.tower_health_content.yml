@@ -19,4 +19,11 @@ settings:
   label: 'Main page content'
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      profile: profile
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
