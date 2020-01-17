@@ -82,5 +82,21 @@
             "value": true,
             "lang": "en"
         }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Peripheral Neuropathy | Tower Health",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/7"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
     ]
 }

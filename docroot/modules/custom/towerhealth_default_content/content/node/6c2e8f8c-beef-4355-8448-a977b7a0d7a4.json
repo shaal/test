@@ -1,0 +1,438 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/services\/womens-services?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/service"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_conditions_ref": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_core_ref": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/239?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_flex": [
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_header": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_related_ref": [
+            {
+                "href": "http:\/\/default\/services\/urgent-care?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/services\/emergency-care?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/services\/family-medicine?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/services\/reconstructive-surgery?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 7
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6c2e8f8c-beef-4355-8448-a977b7a0d7a4"
+        }
+    ],
+    "vid": [
+        {
+            "value": 58
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "service"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-01-17T19:05:42+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3e8ba544-2bae-4989-aa6f-40cb4fb52716"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3e8ba544-2bae-4989-aa6f-40cb4fb52716"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_conditions_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/condition"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4c6ba21d-2475-4f7a-8025-4a6266eaa73c"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/condition"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "89b18362-6d09-42fc-b167-c808d54b92cb"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_core_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/239?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/core_services"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e30c1ea9-1eab-46dc-a82a-441c254d8170"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_flex": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/cards"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3f68358c-c700-4c97-9626-f9762677601d"
+                    }
+                ],
+                "target_revision_id": "207"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/patient_story"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8f04087d-7023-416a-9caf-779b64d42992"
+                    }
+                ],
+                "target_revision_id": "208"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/recognition_cards"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ecc595d7-7fd0-45ec-8443-29e7014cf838"
+                    }
+                ],
+                "target_revision_id": "212"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/anchored_cta_block"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "26c23f85-f292-4e2f-99bb-2e263e6b8ba9"
+                    }
+                ],
+                "target_revision_id": "214"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_header": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/basic_header"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "671c6c89-3280-475f-b886-6cc294311915"
+                    }
+                ],
+                "target_revision_id": "216"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/service\/field_service_related_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/services\/urgent-care?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/service"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d832f67d-5c46-4ef4-8fbf-658802b1feb7"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/services\/emergency-care?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/service"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cdd26a7e-5e8d-4a08-bd6c-d55c3f54b9ac"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/services\/family-medicine?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/service"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a0fa410c-8a2f-49b3-aaf8-49d0a5007bde"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/services\/reconstructive-surgery?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/service"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6894193b-b433-4fce-a3cb-3def4df9304e"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Women's Services",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-16T22:50:16+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-17T19:05:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Women's Services | Tower Health",
+                "canonical_url": "http:\/\/default\/services\/womens-services"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/services\/womens-services",
+            "pid": 12,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "rh_action": [
+        {
+            "value": "bundle_default"
+        }
+    ],
+    "rh_redirect_response": [
+        {
+            "value": 301
+        }
+    ],
+    "field_body": [
+        {
+            "value": "<h3>A Team Approach to Care<\/h3>\r\n\r\n<p>Lorem&nbsp;<em>ipsum dolor sit amet<\/em>, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<h3>A Team Approach to Care<\/h3>\n\n<p>Lorem\u00a0<em>ipsum dolor sit amet<\/em>, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna.<\/p>",
+            "lang": "en"
+        }
+    ],
+    "field_service_core_bool": [
+        {
+            "value": 1
+        }
+    ],
+    "field_service_headline": [
+        {
+            "value": "Collaborative care for your evolving needs."
+        }
+    ],
+    "field_service_intro": [
+        {
+            "value": "<p>Cag Lorem ipsum dolor sit amet,&nbsp;<strong>consectetur adipisicing elit<\/strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis&nbsp;<a href=\"https:\/\/palantirnet.github.io\/towerhealth\/pattern-lab\/public\/patterns\/05-pages-service-detail-service-detail\/05-pages-service-detail-service-detail.html?1579214818186#\">nostrud exercitation ullamco<\/a>&nbsp;laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Cag Lorem ipsum dolor sit amet,\u00a0<strong>consectetur adipisicing elit<\/strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\u00a0<a href=\"https:\/\/palantirnet.github.io\/towerhealth\/pattern-lab\/public\/patterns\/05-pages-service-detail-service-detail\/05-pages-service-detail-service-detail.html?1579214818186#\">nostrud exercitation ullamco<\/a>\u00a0laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
+        }
+    ]
+}

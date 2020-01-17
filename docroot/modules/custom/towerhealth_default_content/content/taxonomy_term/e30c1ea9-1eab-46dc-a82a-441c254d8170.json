@@ -1,28 +1,28 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/239?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/condition"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/core_services"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/condition\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/core_services\/parent": [
             null
         ]
     },
     "tid": [
         {
-            "value": 4
+            "value": 239
         }
     ],
     "uuid": [
         {
-            "value": "89b18362-6d09-42fc-b167-c808d54b92cb"
+            "value": "e30c1ea9-1eab-46dc-a82a-441c254d8170"
         }
     ],
     "revision_id": [
         {
-            "value": 4
+            "value": 239
         }
     ],
     "langcode": [
@@ -33,12 +33,12 @@
     ],
     "vid": [
         {
-            "target_id": "condition"
+            "target_id": "core_services"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-08-30T15:54:47+00:00",
+            "value": "2020-01-16T22:51:43+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -50,7 +50,7 @@
     ],
     "name": [
         {
-            "value": "Conjunctivitis",
+            "value": "Women's Health",
             "lang": "en"
         }
     ],
@@ -60,13 +60,13 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/condition\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/core_services\/parent": [
             null
         ]
     },
     "changed": [
         {
-            "value": "2019-10-01T14:38:30+00:00",
+            "value": "2020-01-16T22:51:43+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -86,8 +86,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Conjunctivitis | Tower Health",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/4"
+                "title": "Women's Health | Tower Health",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/239"
             }
         }
     ],
