@@ -29,13 +29,15 @@
           <a class="basic-header__link" href="{{ header.link.url }}">{{ header.link.label }}</a>
         {% endif %}
 
-        {% if header.form %}
-          {% include "@organisms/listings/listing-search/listing-search.twig" with {
+        {% block form %}
+          {% if header.form %}
+            {% include "@organisms/listings/listing-search/listing-search.twig" with {
             label: header.form.label,
             placeholder: header.form.placeholder,
             button: header.form.button
-          } %}
-        {% endif %}
+            } %}
+          {% endif %}
+        {% endblock %}
       </div>
 
       {% block header_cta %}

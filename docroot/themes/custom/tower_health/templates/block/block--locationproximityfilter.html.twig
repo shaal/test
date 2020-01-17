@@ -28,13 +28,10 @@
 
 {{ attach_library('tower_health/proximity-facet') }}
 
-<div {{ bem('block') }}>
+<div {{ bem('item', ['oneHalf'], 'form-section') }}>
   {{ title_prefix }}
-  <h2{{ title_attributes.addClass('h2') }}>{{ 'Zip Code'|t }}</h2>
   {{ title_suffix }}
   {% block content %}
     {{ content|without('find_location_search')}}
-
-    <a href="#" class="js-use-my-location" data-view="views-exposed-form-find-a-provider-find-doctor">{{ 'Use my location'|t }}</a>
   {% endblock %}
 </div>

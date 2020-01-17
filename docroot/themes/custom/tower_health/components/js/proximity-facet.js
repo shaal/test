@@ -46,4 +46,22 @@
     }
   };
 
+  /**
+   * Turns all facet links into radio buttons.
+   */
+  Drupal.behaviors.proximitySubmitFilter = {
+    attach: function (context, settings) {
+      // Find all checkbox facet links and give them a checkbox.
+      var locationInput = $('.js-set-my-location', context);
+
+      if (locationInput.length > 0) {
+        locationInput.keyup(function() {
+          if (($(this).val().length === 5)) {
+            $(this).parents('form').submit();
+          }
+        });
+      }
+    }
+  };
+
 })(jQuery, Drupal, drupalSettings);

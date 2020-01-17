@@ -2,7 +2,6 @@
   {% if card.type %} card--{{ card.type }}{% endif %}
   {% if card.image %} card--image{% endif %}
   {% if card.url.link == null %} card--simple{% endif %}">
-
   {% if card.url.link %}
     <a class="card__link" href="{{ card.url.link }}">
   {% endif %}

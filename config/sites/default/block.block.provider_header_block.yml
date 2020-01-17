@@ -1,0 +1,20 @@
+uuid: 9b01b4de-c993-408d-98f0-8dbf589139ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: provider_header_block
+theme: tower_health
+region: header
+weight: 0
+provider: null
+plugin: provider_header_block
+settings:
+  id: provider_header_block
+  label: 'Provider header block'
+  provider: towerhealth_misc
+  label_display: '0'
+visibility: {  }

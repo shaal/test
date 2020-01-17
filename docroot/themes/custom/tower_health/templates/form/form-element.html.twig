@@ -56,4 +56,8 @@
     errors ? 'form-item--error',
   ]
 %}
+{% set id = element['#id'] %}
+{% if id == 'edit-location-latlon-value' or id == 'edit-location-latlon-distance-from' or id == 'edit-provider-location-latlong-value' or id == 'edit-provider-location-latlong-distance-from'%}
+  {% set classes = classes|merge(['form-section__item', 'form-section__item--oneHalf']) %}
+{% endif %}
 {% include "@atoms/05-forms/_form-element.twig" %}

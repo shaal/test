@@ -43,6 +43,10 @@
 {% endif %}
 {% embed "@molecules/card/card.twig" with {
   "card": {
+    "image": {
+      "src": file_url(paragraph.field_card_image.entity.field_media_image.entity.fileuri),
+      "alt": paragraph.field_card_image.entity.field_media_image.entity.alt.value
+    },
     "date": content.field_card_date|render,
     "title": content.field_card_title|render,
     "desc": content.field_card_description|render,

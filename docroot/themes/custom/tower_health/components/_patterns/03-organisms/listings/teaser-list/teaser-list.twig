@@ -1,6 +1,8 @@
 <div class="teaser-list">
   <div class='listing-results'>
-    Showing {{ results_shown}} of {{ results_count }} results{% if results_term %} for "<strong>{{ results_term }}</strong>"{% endif %}.
+    {% block results %}
+      Showing {{ results_shown}} of {{ results_count }} results{% if results_term %} for "<strong>{{ results_term }}</strong>"{% endif %}.
+    {% endblock %}
   </div>
 
   {% if emergency_banner %}
@@ -8,32 +10,33 @@
     banner_text: emergency_banner
   } %}
   {% endif %}
-
-  {% for teaser in teasers %}
-    {% if teaser.type == "provider" %}
-      {% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
-          "provider": teaser
-        } %}
-    {% elseif teaser.type == "location" %}
-      {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
-          "location": teaser
-        } %}
-    {% elseif teaser.type == "article" %}
-      {% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
-          "article": teaser,
-        } %}
-    {% elseif teaser.type == "service" %}
-      {% include "@organisms/teasers/service-teaser/service-teaser.twig" with {
-          "service": teaser,
-        } %}
-    {% elseif teaser.type == "video" %}
-      {% include "@organisms/teasers/video-teaser/video-teaser.twig" with {
-          "video": teaser,
-        } %}
-    {% else %}
-      {% include "@organisms/teasers/basic-teaser/basic-teaser.twig" with {
-          "basic": teaser,
-        } %}
-    {% endif %}
-  {% endfor %}
+  {% block teasers %}
+    {% for teaser in teasers %}
+      {% if teaser.type == "provider" %}
+        {% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
+            "provider": teaser
+          } %}
+      {% elseif teaser.type == "location" %}
+        {% include "@organisms/teasers/location-teaser/location-teaser.twig" with {
+            "location": teaser
+          } %}
+      {% elseif teaser.type == "article" %}
+        {% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
+            "article": teaser,
+          } %}
+      {% elseif teaser.type == "service" %}
+        {% include "@organisms/teasers/service-teaser/service-teaser.twig" with {
+            "service": teaser,
+          } %}
+      {% elseif teaser.type == "video" %}
+        {% include "@organisms/teasers/video-teaser/video-teaser.twig" with {
+            "video": teaser,
+          } %}
+      {% else %}
+        {% include "@organisms/teasers/basic-teaser/basic-teaser.twig" with {
+            "basic": teaser,
+          } %}
+      {% endif %}
+    {% endfor %}
+  {% endblock %}
 </div>
