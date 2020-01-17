@@ -80,12 +80,12 @@ third_party_settings:
       weight: 11
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Medical Specialties / Conditions'
+        id: ''
+        classes: ''
+      label: Conditions
       region: content
     group_flexible_components:
       children:
