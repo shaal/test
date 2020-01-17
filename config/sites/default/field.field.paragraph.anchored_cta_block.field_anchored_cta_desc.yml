@@ -1,0 +1,21 @@
+uuid: c398919b-f53c-4367-9b51-29c483e7e37c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchored_cta_desc
+    - paragraphs.paragraphs_type.anchored_cta_block
+  module:
+    - text
+id: paragraph.anchored_cta_block.field_anchored_cta_desc
+field_name: field_anchored_cta_desc
+entity_type: paragraph
+bundle: anchored_cta_block
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

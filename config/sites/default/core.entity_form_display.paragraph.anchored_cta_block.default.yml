@@ -1,0 +1,48 @@
+uuid: baafae05-cb73-45b3-906a-72d65a003a73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.anchored_cta_block.field_anchored_cta_desc
+    - field.field.paragraph.anchored_cta_block.field_anchored_cta_link
+    - field.field.paragraph.anchored_cta_block.field_anchored_cta_title
+    - paragraphs.paragraphs_type.anchored_cta_block
+  module:
+    - paragraphs
+    - text
+id: paragraph.anchored_cta_block.default
+targetEntityType: paragraph
+bundle: anchored_cta_block
+mode: default
+content:
+  field_anchored_cta_desc:
+    weight: 1
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_anchored_cta_link:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: 'Icon Button'
+      title_plural: 'Icon Button'
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: icon_button
+    third_party_settings: {  }
+    region: content
+  field_anchored_cta_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
