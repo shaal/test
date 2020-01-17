@@ -5,19 +5,18 @@ dependencies:
   config:
     - field.field.paragraph.video_card.field_card_video_ref
     - paragraphs.paragraphs_type.video_card
+  module:
+    - media_library
 id: paragraph.video_card.default
 targetEntityType: paragraph
 bundle: video_card
 mode: default
 content:
   field_card_video_ref:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 0
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
     region: content
 hidden:
