@@ -1,0 +1,29 @@
+uuid: c215158c-a7eb-48e9-b405-c704b62f4886
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.box_links.field_image_box_links_ref
+    - paragraphs.paragraphs_type.box_links
+  module:
+    - paragraphs
+id: paragraph.box_links.default
+targetEntityType: paragraph
+bundle: box_links
+mode: default
+content:
+  field_image_box_links_ref:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

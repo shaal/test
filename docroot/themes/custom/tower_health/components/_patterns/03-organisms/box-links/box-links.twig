@@ -1,17 +1,13 @@
 <div class="box-links js-section-animation">
   <div class="box-links-wrapper">
     {% for box in boxes %}
-      <a class="box-link {% if box.color %}box-link--{{box.color}}{% endif %}" href="{{ link.url }}">
-        <div class="box-link__background" style='background-image: url("{{ box.img.src }}");'></div>
-        
-        <div class="box-link__content">
-          <h3 class="box-link__title">{{ box.title }}</h3>
-          <div class="box-link__text">
-            {{ box.text }}
-          </div>
-          <span class="box-link__cta">{{ box.link.text }}</span>
-        </div>
-      </a>
+      {% include "@organisms/image-box-link/image-box-link.twig" with {
+        "color": box.color,
+        "title": box.title,
+        "text": box.text,
+        "link": box.link,
+        "image": box.image
+      }%}
     {% endfor %}
   </div>
 </div>

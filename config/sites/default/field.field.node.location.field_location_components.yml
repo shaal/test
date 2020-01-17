@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.storage.node.field_location_components
     - node.type.location
+    - paragraphs.paragraphs_type.box_links
     - paragraphs.paragraphs_type.image_teaser_banner
     - paragraphs.paragraphs_type.on_my_way
+    - paragraphs.paragraphs_type.text_teaser_banner
   module:
     - entity_reference_revisions
 id: node.location.field_location_components
@@ -25,7 +27,9 @@ settings:
     negate: 0
     target_bundles:
       on_my_way: on_my_way
+      box_links: box_links
       image_teaser_banner: image_teaser_banner
+      text_teaser_banner: text_teaser_banner
     target_bundles_drag_drop:
       education:
         weight: 2
@@ -51,6 +55,9 @@ settings:
       cta_banner:
         weight: 22
         enabled: false
+      box_links:
+        enabled: true
+        weight: 23
       cta_list_banner:
         weight: 23
         enabled: false
@@ -69,6 +76,9 @@ settings:
       patient_story:
         weight: 30
         enabled: false
+      image_box_link_custom:
+        weight: 32
+        enabled: false
       recognition_card:
         weight: 32
         enabled: false
@@ -78,4 +88,7 @@ settings:
       rich_text:
         weight: 34
         enabled: false
+      text_teaser_banner:
+        enabled: true
+        weight: 36
 field_type: entity_reference_revisions
