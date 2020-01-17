@@ -70,6 +70,10 @@
  *   in different view modes.
  */
 #}
+
+{% set youtube_id = media.field_media_oembed_video.value|split('v=', 2) %}
+{% set youtube_uri = "//www.youtube.com/embed/" ~ youtube_id['1'] %}
+
 {% embed "@molecules/video-card/video-card.twig" with {
     "meta": content.field_media_author,
     "type": media.bundle.value.0.target_id,
@@ -81,7 +85,7 @@
     "desc": content.field_media_description|render,
     "url": {
       "label": "Watch the Video"|t,
-      "link": media.field_media_oembed_video.value,
+      "link": youtube_uri,
     },
 } %}
 {% endembed %}
