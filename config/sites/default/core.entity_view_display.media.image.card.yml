@@ -1,22 +1,24 @@
-uuid: acb9e479-a036-446e-a660-7ca406bf89fe
+uuid: 43ce0d05-dc22-42e7-9131-af56016e5f00
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.card
     - field.field.media.image.field_media_image
+    - image.style.900x900
     - media.type.image
   module:
     - image
-id: media.image.default
+id: media.image.card
 targetEntityType: media
 bundle: image
-mode: default
+mode: card
 content:
   field_media_image:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: 900x900
       image_link: ''
     third_party_settings: {  }
     type: image

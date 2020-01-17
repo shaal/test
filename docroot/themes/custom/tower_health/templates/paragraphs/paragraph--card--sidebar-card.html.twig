@@ -36,24 +36,16 @@
  * @ingroup themeable
  */
 #}
-{% if content.field_card_image|render %}
-  {% set image = content.field_card_image %}
-{% else %}
-  {% set image = '' %}
-{% endif %}
 {% embed "@molecules/card/card.twig" with {
   "card": {
     "date": content.field_card_date|render,
+    "type": node.gettype,
     "title": content.field_card_title|render,
     "desc": content.field_card_description|render,
-    "image": image,
     "url": {
       "label": content.field_card_link.0['#title'],
       "link": content.field_card_link.0['#url'],
     },
   }
 } %}
-  {% block image %}
-    {{ content.field_card_image }}
-  {% endblock %}
 {% endembed %}
