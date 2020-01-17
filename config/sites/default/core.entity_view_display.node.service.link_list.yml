@@ -6,8 +6,6 @@ dependencies:
     - core.entity_view_mode.node.link_list
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
-    - field.field.node.service.field_location_ref
-    - field.field.node.service.field_medical_specialties_ref
     - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
@@ -28,8 +26,6 @@ hidden:
   content_moderation_control: true
   field_body: true
   field_conditions_ref: true
-  field_location_ref: true
-  field_medical_specialties_ref: true
   field_metatags: true
   field_service_core_bool: true
   field_service_core_ref: true

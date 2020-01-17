@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
-    - field.field.node.service.field_location_ref
-    - field.field.node.service.field_medical_specialties_ref
     - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
@@ -32,7 +30,6 @@ third_party_settings:
         - group_header
         - group_core_service
         - group_related_services
-        - group_related_locations
         - group_medical_specialties_condit
         - group_flexible_components
       parent_name: ''
@@ -79,7 +76,6 @@ third_party_settings:
     group_medical_specialties_condit:
       children:
         - field_conditions_ref
-        - field_medical_specialties_ref
       parent_name: group_vertical_tabs
       weight: 11
       format_type: tab
@@ -119,20 +115,6 @@ third_party_settings:
         required_fields: true
       label: 'Related Services'
       region: content
-    group_related_locations:
-      children:
-        - field_location_ref
-      parent_name: group_vertical_tabs
-      weight: 10
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: 'Related Locations'
-      region: content
     group_header:
       children:
         - field_service_header
@@ -169,26 +151,6 @@ content:
   field_conditions_ref:
     type: entity_reference_autocomplete
     weight: 10
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    third_party_settings: {  }
-  field_location_ref:
-    weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_medical_specialties_ref:
-    type: entity_reference_autocomplete
-    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
