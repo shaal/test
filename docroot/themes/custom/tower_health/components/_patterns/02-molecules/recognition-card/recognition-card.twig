@@ -1,7 +1,9 @@
 <div class="recognition-card js-section-animation">
 {% if image %}
   <div class="recognition__image-wrapper">
-    <img class="recognition__image" src="{{image.src}}" alt="{{image.alt}}" />
+    {% block image %}
+      <img src="{{image.src}}" alt="{{image.alt}}" />
+    {% endblock %}
   </div>
 {% else %} 
   <h2 class="recognition__title">{{ title }}</h2>
