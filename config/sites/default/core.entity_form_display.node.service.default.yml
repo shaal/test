@@ -7,6 +7,10 @@ dependencies:
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_location_ref
     - field.field.node.service.field_medical_specialties_ref
+    - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_card_cta
+    - field.field.node.service.field_service_card_desc
+    - field.field.node.service.field_service_card_image
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
@@ -18,8 +22,9 @@ dependencies:
   module:
     - content_moderation
     - field_group
-    - paragraphs
+    - media_library
     - metatag
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -32,6 +37,7 @@ third_party_settings:
         - group_related_locations
         - group_medical_specialties_condit
         - group_flexible_components
+        - group_card_data
       parent_name: ''
       weight: 10
       format_type: tabs
@@ -130,6 +136,22 @@ third_party_settings:
         required_fields: true
       label: 'Related Locations'
       region: content
+    group_card_data:
+      children:
+        - field_service_card_image
+        - field_service_card_desc
+        - field_service_card_cta
+      parent_name: group_vertical_tabs
+      weight: 12
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Card Data'
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -184,6 +206,29 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
+  field_service_card_cta:
+    weight: 129
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_service_card_desc:
+    weight: 128
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_service_card_image:
+    type: media_library_widget
+    weight: 127
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   field_service_core_bool:
     weight: 9

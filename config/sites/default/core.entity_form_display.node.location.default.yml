@@ -148,6 +148,7 @@ third_party_settings:
       children:
         - field_location_card_image
         - field_location_card_desc
+        - field_location_card_cta
       parent_name: group_vertical_tabs
       weight: 29
       format_type: tab
@@ -189,7 +190,7 @@ content:
     type: text_textarea
     region: content
   field_location_card_cta:
-    weight: 36
+    weight: 14
     settings:
       size: 60
       placeholder: ''
