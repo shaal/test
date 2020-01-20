@@ -40,7 +40,7 @@
 #}
 {% include '@organisms/image-teaser-banner/image-teaser-banner.twig' with {
   "img": {
-    "src": file_url(paragraph.field_image_banner_image_ref.entity.field_media_image.entity.fileuri),
+    "src": file_url(paragraph.field_image_banner_image_ref.entity.field_media_image.entity.uri.value|image_style('image_teaser_banner')),
     "alt": paragraph.field_image_banner_image_ref.entity.field_media_image.entity.alt.value
   },
   "title": content.field_image_banner_title,
