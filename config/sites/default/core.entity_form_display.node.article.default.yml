@@ -6,12 +6,11 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_date
     - field.field.node.article.field_article_teaser
-    - field.field.node.article.field_metatags
+    - field.field.node.article.field_article_type_ref
     - node.type.article
   module:
     - content_moderation
     - datetime
-    - metatag
     - path
     - text
 id: node.article.default
@@ -49,11 +48,15 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_metatags:
-    weight: 12
-    settings: {  }
+  field_article_type_ref:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: metatag_firehose
+    type: entity_reference_autocomplete
     region: content
   moderation_state:
     type: moderation_state_default

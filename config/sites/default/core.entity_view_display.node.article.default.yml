@@ -6,11 +6,10 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_date
     - field.field.node.article.field_article_teaser
-    - field.field.node.article.field_metatags
+    - field.field.node.article.field_article_type_ref
     - node.type.article
   module:
     - datetime
-    - metatag
     - text
     - user
 id: node.article.default
@@ -41,12 +40,13 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_metatags:
-    weight: 102
-    label: hidden
-    settings: {  }
+  field_article_type_ref:
+    weight: 105
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    type: metatag_empty_formatter
+    type: entity_reference_label
     region: content
   links:
     weight: 100
