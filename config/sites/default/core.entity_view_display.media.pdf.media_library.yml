@@ -1,20 +1,17 @@
-uuid: c9eee11c-425e-43f2-889c-f6a8b548c9eb
+uuid: cc19d361-f150-487a-9995-af5d28afa18b
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
-    - field.field.media.video.field_media_author
-    - field.field.media.video.field_media_description
-    - field.field.media.video.field_media_oembed_video
-    - field.field.media.video.field_media_srt
+    - field.field.media.pdf.field_media_file_1
     - image.style.medium
-    - media.type.video
+    - media.type.pdf
   module:
     - image
-id: media.video.media_library
+id: media.pdf.media_library
 targetEntityType: media
-bundle: video
+bundle: pdf
 mode: media_library
 content:
   thumbnail:
@@ -28,10 +25,7 @@ content:
     region: content
 hidden:
   created: true
-  field_media_author: true
-  field_media_description: true
-  field_media_oembed_video: true
-  field_media_srt: true
+  field_media_file_1: true
   name: true
   search_api_excerpt: true
   uid: true

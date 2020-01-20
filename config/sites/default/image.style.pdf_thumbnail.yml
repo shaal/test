@@ -1,0 +1,15 @@
+uuid: a0c1b236-a28f-42be-a380-a4a90c6c21cb
+langcode: en
+status: true
+dependencies: {  }
+name: pdf_thumbnail
+label: 'PDF Thumbnail'
+effects:
+  04e64cac-f84a-4085-9054-81df015c6a77:
+    uuid: 04e64cac-f84a-4085-9054-81df015c6a77
+    id: image_scale
+    weight: 1
+    data:
+      width: 250
+      height: null
+      upscale: false
