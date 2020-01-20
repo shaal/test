@@ -413,11 +413,6 @@ function tower_health_preprocess_node__location(&$variables) {
         }
       }
     }
-    else {
-      // Fallback if no image uploaded.
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
-      $variables['alt'] = "Location placeholder image";
-    }
 
     // Preprocess other providers link.
     $location_name = strtolower($node->title->value);
