@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.image_teaser_banner.field_image_banner_desc
+    - field.field.paragraph.image_teaser_banner.field_image_banner_display
     - field.field.paragraph.image_teaser_banner.field_image_banner_image_ref
     - field.field.paragraph.image_teaser_banner.field_image_banner_links
     - field.field.paragraph.image_teaser_banner.field_image_banner_title
     - paragraphs.paragraphs_type.image_teaser_banner
   module:
     - link
+    - options
     - text
 id: paragraph.image_teaser_banner.default
 targetEntityType: paragraph
@@ -22,6 +24,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_image_banner_display:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
     region: content
   field_image_banner_image_ref:
     type: entity_reference_entity_view

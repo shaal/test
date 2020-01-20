@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.image_teaser_banner.field_image_banner_desc
+    - field.field.paragraph.image_teaser_banner.field_image_banner_display
     - field.field.paragraph.image_teaser_banner.field_image_banner_image_ref
     - field.field.paragraph.image_teaser_banner.field_image_banner_links
     - field.field.paragraph.image_teaser_banner.field_image_banner_title
@@ -24,6 +25,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_image_banner_display:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_image_banner_image_ref:
     type: media_library_widget
