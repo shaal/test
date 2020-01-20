@@ -1,0 +1,27 @@
+uuid: 1083651a-c11a-42bd-bf88-9d9eb6b9e2f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_srt
+    - media.type.video
+  module:
+    - file
+id: media.video.field_media_srt
+field_name: field_media_srt
+entity_type: media
+bundle: video
+label: 'SRT File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: txt
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

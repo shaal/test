@@ -113,10 +113,10 @@ rich_text:
       12:
         content: "Spa-like surroundings"      
 cta_list:
-  - text: "Find a Provider"
+  - text: "Breast Health Providers"
     url: "/"
     icon: "th-find-provider.svg"
-  - text: "Find a Location"
+  - text: "Breast Health Locations"
     url: "/"
     icon: "th-find-hospital.svg"
 sidebar_label: Related Services

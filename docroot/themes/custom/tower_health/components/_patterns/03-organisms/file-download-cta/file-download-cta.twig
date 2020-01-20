@@ -1,15 +1,16 @@
 <div class="grid">
   <article class="file-download">
-    <a class="file-download__image" href="{{url}}"><img src="{{ image.src }}" alt="{{ image.alt }}" /></a>
-    
+    {% if image %}
+      <a class="file-download__image" href="{{ file.url }}">
+        <img src="{{ image.src }}" alt="{{ image.alt }}" />
+      </a>
+    {% endif %}
     <div class="file-download__content">
-      <h2 class='file-download__title'><a href="{{url}}">{{ title }}</a></h2>
-      
-      <div class='file-download__desc'>
-        {{ desc }}
-      </div>
-      
-      <a class='file-download__cta' href="{{url}}">{{ downloadLabel }}</a>
+      <h2 class='file-download__title'>
+        <a href="{{ file.url }}">{{ title }}</a>
+      </h2>
+      <div class='file-download__desc'>{{ desc }}</div>
+      <a class='file-download__cta' href="{{ file.url }}">{{ file.label }}</a>
     </div>
   </article>
 </div>

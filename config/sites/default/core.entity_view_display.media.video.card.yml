@@ -1,0 +1,65 @@
+uuid: 9a0af6aa-ae5c-49f6-adbc-7f87346570ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.card
+    - field.field.media.video.field_media_author
+    - field.field.media.video.field_media_description
+    - field.field.media.video.field_media_oembed_video
+    - field.field.media.video.field_media_srt
+    - media.type.video
+  module:
+    - image
+    - media
+    - text
+id: media.video.card
+targetEntityType: media
+bundle: video
+mode: card
+content:
+  field_media_author:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_media_description:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_media_oembed_video:
+    type: oembed
+    weight: 3
+    label: hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  thumbnail:
+    type: image_url
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_srt: true
+  search_api_excerpt: true
+  uid: true

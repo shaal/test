@@ -26,13 +26,6 @@
  */
 #}
 
-<div {{ bem('block') }}>
-  {{ title_prefix }}
-  {% if label %}
-    <label{{ title_attributes }}>{{ label }}</label>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</div>
+{% block content %}
+  {{ content }}
+{% endblock %}

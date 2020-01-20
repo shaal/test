@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.page.field_text
     - node.type.page
   module:
-    - entity_reference_revisions
     - metatag
     - text
     - user
@@ -24,35 +23,26 @@ bundle: page
 mode: default
 content:
   content_moderation_control:
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_basic_sidebar:
-    type: entity_reference_revisions_entity_view
-    weight: 0
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_metatags:
-    weight: 4
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_text:
-    weight: 1
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   links:
-    weight: 3
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -60,5 +50,6 @@ hidden:
   field_basic_components: true
   field_basic_enable_nav: true
   field_basic_header: true
+  field_basic_sidebar: true
   field_reference_access_control: true
   search_api_excerpt: true

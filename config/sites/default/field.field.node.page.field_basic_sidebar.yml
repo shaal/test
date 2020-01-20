@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_basic_sidebar
     - node.type.page
+    - paragraphs.paragraphs_type.sidebar_card
   module:
     - entity_reference_revisions
 id: node.page.field_basic_sidebar
@@ -21,13 +22,17 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      sidebar_card: sidebar_card
     target_bundles_drag_drop:
       basic_header:
         weight: 16
         enabled: false
       card:
         weight: 17
+        enabled: false
+      article_card:
+        weight: 18
         enabled: false
       cards:
         weight: 18
@@ -68,4 +73,7 @@ settings:
       rich_text:
         weight: 30
         enabled: false
+      sidebar_card:
+        enabled: true
+        weight: 34
 field_type: entity_reference_revisions

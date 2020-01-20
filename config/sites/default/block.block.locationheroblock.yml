@@ -1,4 +1,4 @@
-uuid: 2ac91fe9-3ab1-415f-9ad9-e79737f6eaf6
+uuid: 1974bf27-210a-47c6-ab46-8d6336524b2e
 langcode: en
 status: true
 dependencies:
@@ -7,20 +7,20 @@ dependencies:
     - towerhealth_misc
   theme:
     - tower_health
-id: clearfilters
+id: locationheroblock
 theme: tower_health
-region: content
+region: page_header
 weight: -14
 provider: null
-plugin: clear_filters
+plugin: location_hero_block
 settings:
-  id: clear_filters
-  label: 'Clear filters'
+  id: location_hero_block
+  label: 'Search Locations'
   provider: towerhealth_misc
-  label_display: '0'
+  label_display: visible
 visibility:
   request_path:
     id: request_path
-    pages: "/find-a-provider\r\n/find-a-provider*\r\n/find-a-location\r\n/find-a-location*"
+    pages: "/find-a-location\r\n/find-a-location*"
     negate: false
     context_mapping: {  }

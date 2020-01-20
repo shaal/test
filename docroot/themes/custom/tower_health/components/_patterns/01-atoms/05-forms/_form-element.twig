@@ -44,11 +44,14 @@
  * @see template_preprocess_form_element()
  */
 #}
+{% if classes is empty %}
+  {% set classes = [] %}
+{% endif %}
 {%
-  set classes = [
+  set classes = classes|merge([
     'js-form-item',
     'form-item',
-  ]
+  ])
 %}
 {%
   set description_classes = [

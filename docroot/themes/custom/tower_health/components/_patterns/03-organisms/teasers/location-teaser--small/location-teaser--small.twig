@@ -1,6 +1,6 @@
 <div class="teaser--small location js-section-animation">
   <h3 class="teaser__name"><a href="{{ url }}">{{ name }}</a></h3>
-  
+
   <div class="teaser--small__content">
     <div class="teaser--small__content__info">
       <div class="teaser__section">
@@ -13,12 +13,15 @@
           "icon": 'th-find-hospital.svg',
           "text": 'Directions',
           "variation": "small",
+          "target": "_blank"
         } %}
       </div>
       <div class="teaser__section">
         {% for item in phones %}
-        <span class="teaser-label">{{ item.label }}</span>
-        <span>{{ item.number }}</span>
+          {% if item.number %}
+            <span class="teaser-label">{{ item.label }}</span>
+            <span>{{ item.number }}</span>
+          {% endif %}
         {% endfor %}
       </div>
     </div>

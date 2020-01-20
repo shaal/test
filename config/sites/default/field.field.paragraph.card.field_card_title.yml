@@ -10,8 +10,8 @@ field_name: field_card_title
 entity_type: paragraph
 bundle: card
 label: Title
-description: 'The main "title" to display.'
-required: true
+description: ''
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
