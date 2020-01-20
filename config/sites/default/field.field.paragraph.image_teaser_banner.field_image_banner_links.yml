@@ -12,7 +12,7 @@ field_name: field_image_banner_links
 entity_type: paragraph
 bundle: image_teaser_banner
 label: Links
-description: ''
+description: 'Add up to 4 links to display on this banner'
 required: false
 translatable: false
 default_value: {  }
