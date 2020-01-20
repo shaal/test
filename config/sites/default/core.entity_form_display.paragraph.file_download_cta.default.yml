@@ -1,0 +1,50 @@
+uuid: 958d1f46-f2a3-44cb-abb2-9923895888c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.file_download_cta.field_file_download_cta_desc
+    - field.field.paragraph.file_download_cta.field_file_download_cta_file
+    - field.field.paragraph.file_download_cta.field_file_download_cta_image
+    - field.field.paragraph.file_download_cta.field_file_download_cta_title
+    - paragraphs.paragraphs_type.file_download_cta
+  module:
+    - media_library
+id: paragraph.file_download_cta.default
+targetEntityType: paragraph
+bundle: file_download_cta
+mode: default
+content:
+  field_file_download_cta_desc:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_file_download_cta_file:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_file_download_cta_image:
+    type: media_library_widget
+    weight: 2
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_file_download_cta_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

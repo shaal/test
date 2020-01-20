@@ -1,0 +1,9 @@
+uuid: 30797d77-4933-489a-a7f6-336be8b3d3fa
+langcode: en
+status: true
+dependencies: {  }
+id: video_card
+label: 'Video Card'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

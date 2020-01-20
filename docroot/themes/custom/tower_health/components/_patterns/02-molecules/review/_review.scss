@@ -1,26 +1,30 @@
 .review {
   margin-bottom: 2.5em;
-  
+
   .ratings-count {
     margin-bottom: 1em;
   }
-  
+
   @include breakpoint($bp3) {
     display: flex;
     flex-wrap: nowrap;
-    
+
     .ratings-count {
       order: 2;
       flex-direction: column-reverse;
       align-items: flex-end;
       justify-content: flex-end;
       margin-left: 3em;
-      
+
       .ratings-count__stars {
         width: 100%;
       }
     }
   }
+}
+
+.review__text {
+  flex-grow: 1;
 }
 
 .review__date {

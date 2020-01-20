@@ -1,7 +1,10 @@
-videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+type: video
+url:
+  link: https://www.youtube.com/embed/d3ZLhedUtkA
+  label: Watch the Video
 thumbnail:
   src: ../../images/video-placeholder-1.png
   alt: Advanced Stroke Care Video
-doctor: Karen Hoerst, MD
+meta: Karen Hoerst, MD
 title: Advanced Stroke Care
 desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
