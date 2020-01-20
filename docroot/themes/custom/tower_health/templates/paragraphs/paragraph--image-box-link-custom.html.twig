@@ -46,7 +46,7 @@
     "text": content.field_box_link.0['#title']
   },
   "img": {
-    "src": file_url(paragraph.field_box_image.entity.field_media_image.entity.fileuri),
+    "src": file_url(paragraph.field_box_image.entity.field_media_image.entity.uri.value|image_style('image_card')),
     "alt": paragraph.field_box_image.entity.field_media_image.entity.alt.value
   }
 }%}
