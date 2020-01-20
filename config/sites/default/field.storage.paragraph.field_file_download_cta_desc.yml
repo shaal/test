@@ -1,16 +1,16 @@
-uuid: 50ab3117-0942-4e63-81af-76bc286645c7
+uuid: 41dc1b36-097d-4cc0-8d55-18eede976c92
 langcode: en
 status: true
 dependencies:
   module:
-    - link
     - paragraphs
-id: paragraph.field_basic_header_link
-field_name: field_basic_header_link
+id: paragraph.field_file_download_cta_desc
+field_name: field_file_download_cta_desc
 entity_type: paragraph
-type: link
-settings: {  }
-module: link
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

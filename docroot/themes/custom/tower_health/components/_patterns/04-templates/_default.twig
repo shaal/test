@@ -5,6 +5,9 @@
 
 {% set main_content_base_class = main_content_base_class|default('main-content') %}
 {% set main_content_modifiers = [] %}
+{% if add_class %}
+  {% set main_content_modifiers = [add_class] %}
+{% endif %}
 
 {% set page_base_class = page_base_class|default('page') %}
 {% set page_modifiers = [] %}

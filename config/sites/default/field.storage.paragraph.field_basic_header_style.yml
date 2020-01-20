@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: default
-      label: default
+      label: Default
     -
       value: secondary
-      label: secondary
+      label: Shaded
   allowed_values_function: ''
 module: options
 locked: false

@@ -6,11 +6,11 @@
  */
 
 use Drupal\block\Entity\Block;
-use Drupal\Core\Url;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
 use Drupal\core\entity\EntityInterface;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\core\Url;
 
 /**
  * Set page variables.
@@ -97,7 +97,7 @@ function tower_health_theme_suggestions_page_alter(array &$suggestions, array $v
 /**
  * Adds node title to paragraphs.
  */
-function tower_health_preprocess_paragraph__basic_header(&$variables){
+function tower_health_preprocess_paragraph__basic_header(&$variables) {
   $node = \Drupal::request()->attributes->get('node');
   $variables['node_title'] = $node->getTitle();
 }
@@ -332,10 +332,7 @@ function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
   $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
-  // Preprocess other providers link.
-  $location_name = strtolower($node->title->value);
-  $location_providers_url = urlencode("/find-a-provider?providers[0]=location:" . $location_name);
-  $variables['location_providers_url'] = $location_providers_url;
+
   if ($node instanceof NodeInterface && $view_mode == 'teaser_small') {
     // Preprocess address variables.
     if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
@@ -418,6 +415,11 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
       $variables['alt'] = "Location placeholder image";
     }
+
+    // Preprocess other providers link.
+    $location_name = strtolower($node->title->value);
+    $location_providers_url = Url::fromRoute('view.find_a_location.find_location', ['providers[0]' => 'locations:' . strtolower($location_name)]);
+    $variables['location_providers_url'] = $location_providers_url;
   }
 }
 
@@ -456,7 +458,7 @@ function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
  */
 function tower_health_preprocess_field__field_profile_languages(&$variables) {
   $languages = [];
-  foreach($variables['items'] as $id => $language) {
+  foreach ($variables['items'] as $id => $language) {
     $language_name = $language['content']['#context']['value'];
     $languages[$id]['text'] = $language_name;
   }

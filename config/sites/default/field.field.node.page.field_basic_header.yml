@@ -15,7 +15,7 @@ entity_type: node
 bundle: page
 label: Header
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -32,6 +32,9 @@ settings:
         weight: 16
       card:
         weight: 17
+        enabled: false
+      article_card:
+        weight: 18
         enabled: false
       cards:
         weight: 18
@@ -71,5 +74,8 @@ settings:
         enabled: false
       rich_text:
         weight: 30
+        enabled: false
+      sidebar_card:
+        weight: 34
         enabled: false
 field_type: entity_reference_revisions
