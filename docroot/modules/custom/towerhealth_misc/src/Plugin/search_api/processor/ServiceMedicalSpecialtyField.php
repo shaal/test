@@ -58,34 +58,21 @@ class ServiceMedicalSpecialtyField extends ProcessorPluginBase {
     $keys = [];
 
     if ($entity instanceof EntityInterface && $entity->hasField('field_medical_specialties_ref')) {
+      return;
+    }
 
-      $terms = $entity->get('field_medical_specialties_ref')->getValue();
+    $terms = $entity->get('field_medical_specialties_ref')->getValue();
 
-      foreach ($terms as $term) {
-        $tid = $term['target_id'];
+    // Loop through terms.
+    foreach ($terms as $term) {
+      $tid = $term['target_id'];
 
-        $specialty_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+      $specialty_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
 
-        if ($specialty_term instanceof EntityInterface) {
-          if ($specialty_term->hasField('field_related_conditions_ref')  && !$specialty_term->get('field_related_conditions_ref')->isEmpty()) {
-            $conditions = $specialty_term->get('field_related_conditions_ref')->getValue();
-            foreach ($conditions as $condition_term) {
-              $query = \Drupal::service('entity.query')
-                ->get('node')
-                ->condition('type', 'service')
-                ->condition('field_conditions_ref', $condition_term['target_id']);
-              $entity_ids = $query->execute();
+      if ($specialty_term instanceof EntityInterface && $specialty_term->hasField('field_related_conditions_ref') && !$specialty_term->get('field_related_conditions_ref')->isEmpty()) {
+        $conditions = $specialty_term->get('field_related_conditions_ref')->getValue();
 
-              if (!empty($entity_ids)) {
-                foreach ($entity_ids as $id) {
-                  $service = \Drupal::entityTypeManager()->getStorage('node')->load($id);
-
-                  $keys[] = $service->getTitle();
-                }
-              }
-            }
-          }
-        }
+        $keys = $this->findServices($conditions, $keys);
       }
     }
 
@@ -100,6 +87,38 @@ class ServiceMedicalSpecialtyField extends ProcessorPluginBase {
         $field->addValue($key);
       }
     }
+  }
+
+  /**
+   * Find the services of each condition.
+   *
+   * @param array $conditions
+   *   The condtion term to find the related service.
+   * @param array $keys
+   *   The existing keys.
+   *
+   * @return array
+   *   Return the array of keys.
+   */
+  public function findServices($conditions, $keys) {
+    // Loop through conditions.
+    foreach ($conditions as $condition_term) {
+      $query = \Drupal::service('entity.query')
+        ->get('node')
+        ->condition('type', 'service')
+        ->condition('field_conditions_ref', $condition_term['target_id']);
+      $entity_ids = $query->execute();
+
+      if (!empty($entity_ids)) {
+        foreach ($entity_ids as $id) {
+          $service = \Drupal::entityTypeManager()->getStorage('node')->load($id);
+
+          $keys[] = $service->getTitle();
+        }
+      }
+    }
+
+    return $keys;
   }
 
 }
