@@ -13,7 +13,7 @@ const paths = {
   ],
   dist_css: `${themeDir}/dist/css`,
   pattern_lab: `${themeDir}/pattern-lab/public`,
-  theme_images: `${themeDir}/images`,
+  theme_images: `${themeDir}/pattern-lab/public/images`,
   logo: `${themeDir}/logo.png`,
 };
 
