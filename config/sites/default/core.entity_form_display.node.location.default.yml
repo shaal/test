@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
+    - field.field.node.location.field_location_body_components
     - field.field.node.location.field_location_card_cta
     - field.field.node.location.field_location_card_desc
     - field.field.node.location.field_location_card_image
@@ -56,6 +57,7 @@ third_party_settings:
         - field_location_type
         - field_location_image
         - field_location_body
+        - field_location_body_components
       parent_name: group_vertical_tabs
       weight: 23
       format_type: tab
@@ -116,8 +118,7 @@ third_party_settings:
       label: 'Flexible components'
       region: content
     group_how_to_find_us:
-      children:
-        - field_location_find_us
+      children: {  }
       parent_name: group_vertical_tabs
       weight: 27
       format_type: tab
@@ -130,8 +131,7 @@ third_party_settings:
       label: 'How to find us'
       region: content
     group_insurance:
-      children:
-        - field_location_insurance
+      children: {  }
       parent_name: group_vertical_tabs
       weight: 28
       format_type: tab
@@ -187,6 +187,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_location_body_components:
+    type: entity_reference_paragraphs
+    weight: 36
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_location_card_cta:
     weight: 14

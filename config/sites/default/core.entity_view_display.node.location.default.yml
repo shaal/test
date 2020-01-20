@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
+    - field.field.node.location.field_location_body_components
     - field.field.node.location.field_location_card_cta
     - field.field.node.location.field_location_card_desc
     - field.field.node.location.field_location_card_image
@@ -20,6 +21,7 @@ dependencies:
     - field.field.node.location.field_services_ref
     - node.type.location
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.location.default
@@ -34,9 +36,18 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_location_body_components:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_services_ref:
     type: entity_reference_label
-    weight: 1
+    weight: 2
     region: content
     label: hidden
     settings:
