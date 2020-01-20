@@ -30,11 +30,6 @@ function tower_health_preprocess_page(&$variables) {
     $variables['full_width'] = TRUE;
     $variables['page_content'] = TRUE;
   }
-
-  $node = \Drupal::request()->attributes->get('node');
-  if ($node instanceof EntityInterface && $node->bundle() == 'profile') {
-    $variables['add_class'] = 'background js-section-animation';
-  }
 }
 
 /**
