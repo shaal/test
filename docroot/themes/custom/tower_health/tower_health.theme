@@ -178,6 +178,9 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
 function tower_health_preprocess_region__sidebar_first(&$variables)  {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if ($node->bundle() == 'location') {
+      $location_name = strtolower($node->title->value);
+      $location_providers_url = Url::fromRoute('view.find_a_location.find_location', ['providers[0]' => 'locations:' . strtolower($location_name)]);
+      $variables['location_providers_url'] = $location_providers_url;
       $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-provider.svg';
     }
   }
