@@ -10,7 +10,7 @@ field_name: field_header_cta_text
 entity_type: paragraph
 bundle: header_cta
 label: Text
-description: ''
+description: 'Optional text that appears below the button and next to the link.'
 required: false
 translatable: false
 default_value: {  }
