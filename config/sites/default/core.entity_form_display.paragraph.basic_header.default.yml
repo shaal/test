@@ -6,12 +6,10 @@ dependencies:
     - field.field.paragraph.basic_header.field_basic_header_cta_ref
     - field.field.paragraph.basic_header.field_basic_header_img
     - field.field.paragraph.basic_header.field_basic_header_lede
-    - field.field.paragraph.basic_header.field_basic_header_link
     - field.field.paragraph.basic_header.field_basic_header_style
     - paragraphs.paragraphs_type.basic_header
   module:
     - field_group
-    - link
     - media_library
     - paragraphs
 third_party_settings:
@@ -68,14 +66,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
-    region: content
-  field_basic_header_link:
-    weight: 3
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
     region: content
   field_basic_header_style:
     weight: 2

@@ -37,10 +37,16 @@
  */
 #}
 
+{% if content.field_icon_button|render %}
+  {% set button_icon = file_url(content.field_icon_button.0['#media'].field_media_file.entity.uri.value) %}
+{% else %}
+  {% set button_icon = '' %}
+{% endif %}
+
 {% include "@atoms/icon-button/icon-button.twig" with {
   "url": content.field_icon_link.0['#url'],
   "text": content.field_icon_link.0['#title'],
-  "button_icon": file_url(content.field_icon_button.0['#media'].field_media_file.entity.uri.value),
+  "button_icon": button_icon,
   "animated": "true",
   "variation": "list"
 } %}
