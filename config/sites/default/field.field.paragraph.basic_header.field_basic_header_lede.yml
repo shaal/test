@@ -9,7 +9,7 @@ id: paragraph.basic_header.field_basic_header_lede
 field_name: field_basic_header_lede
 entity_type: paragraph
 bundle: basic_header
-label: Lede
+label: Subtitle
 description: ''
 required: false
 translatable: false
