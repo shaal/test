@@ -227,9 +227,9 @@ function tower_health_preprocess_node__profile(&$variables) {
           $specialties[$id]['text'] = $name;
         }
       }
-    }
-    if ($specialties) {
-      $variables['specialties'] = $specialties;
+      if ($specialties) {
+        $variables['specialties'] = $specialties;
+      }
     }
 
     // Preprocess focuses.
