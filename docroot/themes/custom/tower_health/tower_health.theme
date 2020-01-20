@@ -162,6 +162,28 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
 }
 
 /**
+ * Provide variables for article teaser.
+ */
+function tower_health_preprocess_node__article(&$variables) {
+  $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
+
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
+    if ($node->hasField('field_article_type_ref') && !$node->get('field_article_type_ref')->isEmpty()) {
+      $tag_refs = $node->get('field_article_type_ref')->getValue();
+      $tags = [];
+      foreach ($tag_refs as $id => $tag) {
+        $tag = $node->field_article_type_ref[$id]->entity;
+        if ($tag instanceof EntityInterface) {
+          $tags[] = $tag->name->value;
+        }
+      }
+      $variables['tags'] = $tags;
+    }
+  }
+}
+
+/**
  * Provide variables for provider teaser.
  */
 function tower_health_preprocess_node__profile(&$variables) {
