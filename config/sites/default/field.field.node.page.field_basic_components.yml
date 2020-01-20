@@ -63,12 +63,15 @@ settings:
       patient_story:
         enabled: true
         weight: 17
-      cta_banner:
-        weight: 19
-        enabled: false
       recognition_card:
         enabled: true
         weight: 19
+      article_card:
+        weight: 19
+        enabled: false
+      cta_banner:
+        weight: 19
+        enabled: false
       cta_list_banner:
         weight: 20
         enabled: false
@@ -81,7 +84,13 @@ settings:
       icon_button:
         enabled: true
         weight: 24
+      file_download_cta:
+        weight: 26
+        enabled: false
       rich_text:
         weight: 30
+        enabled: false
+      sidebar_card:
+        weight: 36
         enabled: false
 field_type: entity_reference_revisions
