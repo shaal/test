@@ -6,7 +6,6 @@
  */
 
 use Drupal\block\Entity\Block;
-use Drupal\Core\Url;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\node\NodeInterface;
 use Drupal\core\entity\EntityInterface;
@@ -33,7 +32,7 @@ function tower_health_preprocess_page(&$variables) {
   }
 
   $node = \Drupal::request()->attributes->get('node');
-  if ($node->bundle() == 'profile') {
+  if ($node instanceof EntityInterface && $node->bundle() == 'profile') {
     $variables['add_class'] = 'background js-section-animation';
   }
 }
@@ -102,7 +101,7 @@ function tower_health_theme_suggestions_page_alter(array &$suggestions, array $v
 /**
  * Adds node title to paragraphs.
  */
-function tower_health_preprocess_paragraph__basic_header(&$variables){
+function tower_health_preprocess_paragraph__basic_header(&$variables) {
   $node = \Drupal::request()->attributes->get('node');
   $variables['node_title'] = $node->getTitle();
 }
@@ -368,10 +367,16 @@ function tower_health_preprocess_node__location(&$variables) {
   }
 }
 
+/**
+ *
+ */
 function tower_health_preprocess_paragraph__rating_comments(&$variables) {
   $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 }
 
+/**
+ *
+ */
 function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
   $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 
@@ -397,7 +402,7 @@ function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
  */
 function tower_health_preprocess_field__field_profile_languages(&$variables) {
   $languages = [];
-  foreach($variables['items'] as $id => $language) {
+  foreach ($variables['items'] as $id => $language) {
     $language_name = $language['content']['#context']['value'];
     $languages[$id]['text'] = $language_name;
   }
