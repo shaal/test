@@ -38,6 +38,12 @@
  * @ingroup themeable
  */
 #}
+{% if paragraph.field_box_image is not empty %}
+  {% set src = file_url(paragraph.field_box_image.entity.field_media_image.entity.uri.value|image_style('image_card')) %}
+{% else %}
+  {% set src = "" %}
+{% endif %}
+
 {% include '@organisms/image-box-link/image-box-link.twig' with {
   "title": content.field_box_title,
   "text": content.field_box_description,
@@ -46,7 +52,7 @@
     "text": content.field_box_link.0['#title']
   },
   "img": {
-    "src": file_url(paragraph.field_box_image.entity.field_media_image.entity.uri.value|image_style('image_card')),
+    "src": src,
     "alt": paragraph.field_box_image.entity.field_media_image.entity.alt.value
   }
 }%}
