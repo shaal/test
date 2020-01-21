@@ -22,7 +22,7 @@ settings:
   label_display: '0'
   level: 3
   depth: 3
-  expand: 0
+  expand: 1
   parent: 'main-menu-sidebar:'
   suggestion: main_menu_sidebar
 visibility:

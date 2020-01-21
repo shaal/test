@@ -5,7 +5,6 @@ dependencies:
   config:
     - system.menu.main-menu-sidebar
   module:
-    - ctools
     - menu_block
     - system
   theme:
@@ -21,21 +20,14 @@ settings:
   label: 'Main menu sidebar - Level 2'
   provider: menu_block
   label_display: '0'
-  level: 1
+  level: 2
   depth: 3
-  expand: 0
+  expand: 1
   parent: 'main-menu-sidebar:'
   suggestion: main_menu_sidebar
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      profile: profile
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: "/academics\r\n/academics*"
-    negate: false
+    pages: "/academics/academic-departments/*\r\n/medical-professionals\r\n/medical-professionals/*\r\n/services\r\n/services/*"
+    negate: true
     context_mapping: {  }
