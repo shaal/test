@@ -20,7 +20,7 @@ function tower_health_preprocess_page(&$variables) {
   $full_width_pages = [
     'view.find_a_location.find_location',
     'view.find_a_provider.find_doctor',
-    'view.article_listing.article_listing'
+    'view.article_listing.article_listing_page'
   ];
 
   // Get the current route name.
