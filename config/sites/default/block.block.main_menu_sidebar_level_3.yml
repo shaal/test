@@ -1,0 +1,36 @@
+uuid: c8c9ed67-bee1-484d-8fca-9ff15057e886
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu-sidebar
+  module:
+    - ctools
+    - menu_block
+  theme:
+    - tower_health
+id: main_menu_sidebar_level_3
+theme: tower_health
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'menu_block:main-menu-sidebar'
+settings:
+  id: 'menu_block:main-menu-sidebar'
+  label: 'Main menu sidebar - Level 3'
+  provider: menu_block
+  label_display: '0'
+  level: 3
+  depth: 0
+  expand: 0
+  parent: 'main-menu-sidebar:'
+  suggestion: main_menu_sidebar
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      location: location
+      service: service
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
