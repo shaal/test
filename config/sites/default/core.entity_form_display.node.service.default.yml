@@ -146,11 +146,11 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
-        description: ''
+        description: 'The data to display when this page is referenced as a card on other pages.'
         formatter: closed
         required_fields: true
+        id: ''
+        classes: ''
       label: 'Card Data'
 id: node.service.default
 targetEntityType: node

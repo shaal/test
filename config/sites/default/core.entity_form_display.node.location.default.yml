@@ -116,32 +116,6 @@ third_party_settings:
         required_fields: true
       label: 'Flexible components'
       region: content
-    group_how_to_find_us:
-      children: {  }
-      parent_name: group_vertical_tabs
-      weight: 27
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: 'How to find us'
-      region: content
-    group_insurance:
-      children: {  }
-      parent_name: group_vertical_tabs
-      weight: 28
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
-      label: 'Insurance Information'
-      region: content
     group_card_data:
       children:
         - field_location_card_image

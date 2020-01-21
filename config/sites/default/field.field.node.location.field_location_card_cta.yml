@@ -9,8 +9,8 @@ id: node.location.field_location_card_cta
 field_name: field_location_card_cta
 entity_type: node
 bundle: location
-label: 'Card CTA'
-description: ''
+label: 'Call to Action'
+description: 'Optional text that displays beneath the description when a user hovers on the on card when this page is referenced as a card on other pages.'
 required: false
 translatable: false
 default_value: {  }
