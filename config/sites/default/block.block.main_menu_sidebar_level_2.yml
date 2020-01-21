@@ -28,6 +28,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/academics/academic-departments/*\r\n/medical-professionals\r\n/medical-professionals/*\r\n/services\r\n/services/*"
+    pages: "/academics/academic-departments/*\r\n/locations\r\n/locations/*\r\n/services\r\n/services/*"
     negate: true
     context_mapping: {  }
