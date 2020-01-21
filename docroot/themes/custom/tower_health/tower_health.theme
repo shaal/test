@@ -307,6 +307,39 @@ function tower_health_preprocess_node__profile(&$variables) {
 /**
  * Provide variables for location teaser.
  */
+function tower_health_preprocess_node__service(&$variables) {
+  $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
+
+  if ($node instanceof NodeInterface && $view_mode == 'sidebar_first') {
+    $title = $node->getTitle();
+    $provider_icon = drupal_get_path('theme', 'tower_health') . '/components/images/icons/th-find-provider.svg';
+    $location_icon = drupal_get_path('theme', 'tower_health') . '/components/images/icons/th-find-hospital.svg';
+    $cta_list = [];
+
+    if ($node->hasField('field_conditions_ref') && !$node->get('field_conditions_ref')->isEmpty()) {
+      $url = Url::fromRoute('view.find_a_provider.find_doctor', ['providers[0]' => 'service:' . strtolower($title)]);
+      $cta_list[] = [
+        'text' => t('@title Providers', ['@title' => $title]),
+        'url' => $url,
+        'icon' => $provider_icon,
+      ];
+    }
+
+    $url = Url::fromRoute('view.find_a_location.find_location', ['f[0]' => 'services:' . strtolower($title)]);
+    $cta_list[] = [
+      'text' => t('@title Locations', ['@title' => $title]),
+      'url' => $url,
+      'icon' => $location_icon,
+    ];
+
+    $variables['cta_list'] = $cta_list;
+  }
+}
+
+/**
+ * Provide variables for location teaser.
+ */
 function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
 

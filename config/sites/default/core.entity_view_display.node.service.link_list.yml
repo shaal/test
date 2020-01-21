@@ -1,0 +1,38 @@
+uuid: 01b47856-09d7-4b71-beb0-71dc407b52c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.link_list
+    - field.field.node.service.field_body
+    - field.field.node.service.field_conditions_ref
+    - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_core_bool
+    - field.field.node.service.field_service_core_ref
+    - field.field.node.service.field_service_flex
+    - field.field.node.service.field_service_header
+    - field.field.node.service.field_service_headline
+    - field.field.node.service.field_service_intro
+    - field.field.node.service.field_service_related_ref
+    - node.type.service
+  module:
+    - user
+id: node.service.link_list
+targetEntityType: node
+bundle: service
+mode: link_list
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_body: true
+  field_conditions_ref: true
+  field_metatags: true
+  field_service_core_bool: true
+  field_service_core_ref: true
+  field_service_flex: true
+  field_service_header: true
+  field_service_headline: true
+  field_service_intro: true
+  field_service_related_ref: true
+  links: true
+  search_api_excerpt: true

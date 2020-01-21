@@ -1,0 +1,138 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/basic_header"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_cta_ref": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_img": [
+            {
+                "href": "http:\/\/default\/media\/adobestock254696350preview-1jpeg?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 9
+        }
+    ],
+    "uuid": [
+        {
+            "value": "671c6c89-3280-475f-b886-6cc294311915"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 216
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic_header"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-17T01:46:57+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "7"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_service_header"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_cta_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/header_cta"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "86e10d54-e552-40d9-8e7c-74585b074a02"
+                    }
+                ],
+                "target_revision_id": "215"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_img": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/adobestock254696350preview-1jpeg?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "15f57d9d-d6f2-4978-b12a-99154954f637"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_basic_header_lede": [
+        {
+            "value": "From puberty to menopause and beyond, you\u2019ll find sensitive, expert care for women at Tower Health. Partner with compassionate caregivers who understand and address your evolving needs."
+        }
+    ],
+    "field_basic_header_style": [
+        {
+            "value": "default"
+        }
+    ]
+}
