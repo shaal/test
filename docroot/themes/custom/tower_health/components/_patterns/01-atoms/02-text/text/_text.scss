@@ -2,25 +2,30 @@
   @include paragraph;
 }
 
+%blockqoute,
 .blockquote {
   @include adjust-font-size-to($sm-heading, 1.15);
   border-left: 8px solid $growth;
   margin: 1em 0;
   padding: 1em 0 1em 1em;
   font-weight: 600;
-  
+}
+
+%blockqoute--left,
+.blockquote--left {
   @include breakpoint($bp3) {
-    &--left {
-      width: 50%;
-      margin-right: 1em;
-      float: left;
-    }
-    
-    &--right {
-      width: 50%;
-      margin-left: 1em;
-      float: right;
-    }
+    width: 40%;
+    margin-right: 1.5em;
+    float: left;
+  }
+}
+
+%blockqoute--right,
+.blockquote--right {
+  @include breakpoint($bp3) {
+    width: 40%;
+    margin-left: 1.5em;
+    float: right;
   }
 }
 
@@ -37,7 +42,15 @@
   }
 
   blockquote {
-    @extend .blockquote;
+    @extend %blockqoute;
+
+    &.blockquote--left {
+      @extend %blockqoute--left;
+    }
+
+    &.blockquote--right {
+      @extend %blockqoute--right;
+    }
   }
 
   hr {

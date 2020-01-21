@@ -13,6 +13,19 @@
   
   {% block page_content %}
     {% include "@molecules/rich-text/rich-text.twig" %}
+    
+    {% include "@organisms/resource-list-card/resource-list-card.twig" with {
+      title: resources.title,
+      text: resources.text,
+      items: resources.items
+    } %}
+    
+    {% include "@organisms/care-circle/care-circle.twig" with {
+      title: careCircle.title,
+      url: careCircle.url,
+      items: careCircle.items,
+      content: careCircle.content
+    } %}
   {% endblock %}
   
   {% block bottom_page_sidebar %}
@@ -41,6 +54,14 @@
     {% include "@molecules/rich-text/rich-text.twig" with {
       rich_text_full_width: true,
       rich_text: paragraph_rich_text
+    } %}
+    
+    {% include "@organisms/care-circle/care-circle.twig" with {
+      title: careCircleFull.title,
+      url: careCircleFull.url,
+      items: careCircleFull.items,
+      content: careCircleFull.content,
+      fullWidth: careCircleFull.fullWidth
     } %}
     
     {% include "@organisms/recognition-row/recognition-row.twig" %}

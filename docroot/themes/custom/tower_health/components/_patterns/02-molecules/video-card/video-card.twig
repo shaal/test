@@ -1,18 +1,17 @@
-<div class="card card--video js-section-animation">
-  <a class="card__link modal--video" href="{{ videoURL }}">
+<div class="card card--{{ type }} js-section-animation">
+  <a class="card__link modal--{{ type }}" href="{{ url.link }}">
     <div class="card__image card--video__image">
       <img src="{{ thumbnail.src }}" alt="{{ thumbnail.alt }}" />
     </div>
-    
     <div class='card__content'>
       <h2 class="card__title">{{ title }}</h2>
-      {% if doctor %}
-      <span class="card__meta">{{ doctor }}</span>
+      {% if meta %}
+      <span class="card__meta">{{ meta }}</span>
       {% endif %}
       <div class="card__desc">
         {{ desc }}
       </div>
-      <span class="card__cta">Watch the Video</span>
+      <span class="card__cta">{{ url.label }}</span>
     </div>
   </a>
 </div>

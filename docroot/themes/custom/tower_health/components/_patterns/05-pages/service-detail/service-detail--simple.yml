@@ -7,9 +7,14 @@ header:
       url: "#"
       text: "Conditions & Services"
     3:
-      text: "3rd Level"
-  title: Gynecology
-  lede: Find comprehensive, compassionate gynecological care at Tower Health. Our physicians and board-certified team offer years of experience in diagnosing, treating and providing wellness care for a range of conditions, as well as supporting you at every stage in life.
+      url: "#"
+      text: "Women's Services"
+    4:
+      text: "Breast Health"
+  title: Breast Health
+  lede: Individualized, multi-disciplinary care in a comfortable setting, with supportive staff, plus the advantages of working directly with other Tower Health resources like advanced diagnostic imaging and a comprehensive Cancer Center.
+  image:
+    url: '../../images/AdobeStock_228148798_Preview-edit.jpg'
   cta:
     button:
       label: Request an Appointment
@@ -19,164 +24,144 @@ header:
     link:
       url: "#"
       label: "484-628-HELP"
+section_items:
+  - title: "Breast Health"
+    url: "/"
+    in_active_trail: TRUE
+    below:
+      - title: "Mammography"
+        url: "/"
+      - title: "Breast Ultrasounds & Screenings"
+        url: "/"
+      - title: "Breast Evaluations & Consultations"
+        url: "/"
+      - title: "Breast Diagnostic Testing"
+        url: "/"
+      - title: "Second Opinion Consultation"
+        url: "/"
+      - title: "Reconstructive Surgery"
+        url: "/"
+  - title: "Sub-item Two"
+    url: "/"
+  - title: "Sub-item Three"
+    url: "/"
+  - title: "Sub-item Four"
+    url: "/"
+  - title: "Sub-item Five"
+    url: "/"
+  - title: "Sub-item Six"
+    url: "/"
 rich_text:
   -
-    type: heading
-    heading_level:
-      2
-    heading:
-      "Caring, Compassionate Team"
-  -
     paragraph_content:
-      "At Reading Hospital, we are dedicated to providing the highest quality gynecological care"
-  -
-    paragraph_content:
-      "Just like you, we are mothers, daughters, sisters, wives, and friends. As women, we too understand the joy of childbirth and life's milestones experienced by women of all ages. Our personal insight gives us a unique approach to treating our patients and providing the best in women's healthcare."
+      "The idea that an ounce of prevention is worth a pound of cure is no more true than with breast health. While self-examination is recommended for all women, we offers a variety of diagnostic services that can help identify breast issues before they become larger health problems. From mammography to biopsies, we are dedicated to keeping women healthy, educated and informed with regard to the health of their breast tissue."
   -
     type: heading
     heading_level:
       2
     heading:
-      "Gynecology Services"
+      "Cutting-edge Technology & Compassionate Care"
   -
     paragraph_content:
-      "Whether receiving care in our offices and clinics, or getting care at our hospital, turn to Reading Hospital for your gynecological care including:"
+      "At Tower Health we are dedicated to offering women the best in breast health, from the latest technology to compassionate care. We are proud to offer:"
   -
     type: ul
     ul_items:
       1:
-        content: "Well-women exams"
+        content: "Consultation with a surgeon within 48 hours for patients with positive breast biopsies."
       2:
-        content: "Annual pap smears"
+        content: "Minimally invasive diagnostic breast biopsy procedures using ultrasound and stereotactic guidance."
       3:
-        content: "Breast exams"
-      4:
-        content: "Preconceptual counseling and family planning"
-      5:
-        content: "Ultrasounds"
-      6:
-        content: "Contraception counseling – including IUD insertion and birth control prescriptions"
-      7:
-        content: "Menopause and post-menopausal care"
+        content: "The latest in breast imaging technology in a relaxed, peaceful atmosphere"   
+  -
+    paragraph_content:
+      "Our breast health team includes a board-certified surgeon, radiologist, medical oncologist, radiation oncologist, reconstructive surgeon, therapists, support from our Cancer Center (social worker, national clinical trials, current resources) and our breast health coordinator."
+  -
+    paragraph_content:
+      "Your breast health coordinator will facilitate communication and scheduling among all care providers, streamline scheduling process for additional studies, breast biopsies and physician appointments and assist with access to support services. Your doctor will be informed of all results and diagnoses."
   -
     type: heading
     heading_level:
       3
     heading:
-      "Hospital Procedures"
+      "Services & Features"  
   -
     type: ul
     ul_items:
       1:
-        content: "Novasure for heavy bleeding"
+        content: "3D Mammography"
       2:
-        content: "Thermachoice uterine balloon therapy for heavy periods"
+        content: "Digital mammography with computer-aided detection and lower radiation"
       3:
-        content: "Gynecare TVT sling for urinary incontinence"
+        content: "High-resolution breast ultrasound"
       4:
-        content: "Bilateral tubal ligation"
+        content: "Breast evaluations for patients at high risk due to family history or prior cancer"
       5:
-        content: "Essure - no incision, permanent birth control"
+        content: "Minimally invasive diagnostic breast biopsy procedures using ultrasound and stereotactic guidance"
       6:
-        content: "Diagnostic and operative laparoscopy"
+        content: "Quick turn-around time on diagnostic testing and scheduling for biopsies"
       7:
-        content: "Pelvic organ prolapse vaginal surgery"
+        content: "Individualized breast self-exam instruction"
       8:
-        content: "LEEP and cervical cone procedures for cervical dysplasia"
-  -
-    type: heading
-    heading_level:
-      2
-    heading:
-      "Conditions We Treat"
-  -
-    paragraph_content:
-      "Women's health requires comprehensive attention and care. At Reading Hospital, you'll find treatment options for conditions such as:"
-  -
-    type: ul
-    ul_items:
-      1:
-        content: "Amenorrhea – absence of menstrual periods"
-      2:
-        content: "Breast conditions"
-      3:
-        content: "Bladder problems"
-      4:
-        content: "Abnormal pap smears"
-      5:
-        content: "Dysmenorrhea – painful periods"
-      6:
-        content: "Menorrhagia – heavy menstrual periods"
-      7:
-        content: "Prolapse of pelvic organs"
-      8:
-        content: "Infections of the pelvic organs"
+        content: "Consultation with a surgeon within 48 hours for patients with positive breast biopsies"
       9:
-        content: "Uterine fibroids"
+        content: "Second opinion consultation"
       10:
-        content: "Pelvic pain or pain with sex"
+        content: "Consultation for reconstructive surgery"
       11:
-        content: "Post-menopausal bleeding"
+        content: "Improved Patient Privacy"
       12:
-        content: "Uterine hyperplasia and prolapse"
-      13:
-        content: "Sterilization"
+        content: "Spa-like surroundings"      
 cta_list:
-  - text: "Find a Provider"
+  - text: "Breast Health Providers"
     url: "/"
     icon: "th-find-provider.svg"
-  - text: "Find a Location"
+  - text: "Breast Health Locations"
     url: "/"
     icon: "th-find-hospital.svg"
 sidebar_label: Related Services
 sidebar_items:
-  - name: Urogynecology
-    link: '#'
-  - name: Pregnancy & Birth
-    link: '#'
-  - name: Midwifery
-    link: '#'
-  - name: Fertility Care
+  - name: Women's Services
     link: '#' 
+  - name: Imaging Services
+    link: '#'
 cards:
   - type: null
     image: null
-    title:  Community Outreach Clinic
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    title: Breast Self-exam Instruction
+    desc: "While you're meeting everyone else's needs, it's important that you don't neglect your own health. This guide will help you understand your options."
     url:
       link: '#'
-      label: About the Clinic
+      label: Tests & Screenings Guide
   - type: null
     image: null
-    title:  Beginnings Maternity Center
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
+    title:  Breast Support Groups
+    desc: 'Support is never overrated. Our support groups helps you and your family members cope with the trials of breast cancer and provides information and resources on available services. '
     url:
       link: '#'
-      label: About the Center
-story:
-  image:
-    src: "../../images/AdobeStock_202001962_Preview.jpeg"
-    alt: alt text
-  quote: '"The therapists are absolutely committed to making it work. They would go above and beyond to make Page comfortable. They would even involve visiting family and friends in her therapy sessions."'
-  cta:
-    link: '#'
-    label: Read Page's Story
-recognitionItems:
-  - image:
-      src: "../../images/award-1.jpg"
-      alt: "Healthgrades America's 100 best hospitals, 2017-2019"
-  - title: '‘A’ Hospital Safety Grade'
-    desc: 'The Leapfrog Group has awarded Tower Health an ‘A’ Hospital Safety Grade, their highest award, for Fall 2019.'
-  - image:
-      src: "../../images/award-2.png"
-      alt: "US News & World Report, Best National Hospital - Pulmonology"
+      label: About the Group
+  - type: null
+    image: null
+    title:  Clinical Trials
+    desc: 'We partner with Fox Chase Cancer Center to bring you cancer treatment options, including clinical trials.'
+    url:
+      link: '#'
+      label: About the Program
 image_callout:
   orientation: reverse
   img:
-    src: "../../images/stroke-award.jpg"
-    alt: "Alternative Text"
-  title: "2019 Get with the Guidelines Stroke Gold Plus Award"
-  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur asperiores ratione dignissimos qui esse nesciunt, tempore aut, deserunt distinctio eligendi odit placeat veniam nostrum id autem beatae natus ab! Repudiandae."
+    src: "../../images/locations/breast-health07.jpg"
+    alt: "Breast Health Center"
+  title: "Breast Health Center"
+  text: "Our spa-like Breast Health Center offers the latest in breast imaging technology in a relaxed, peaceful atmosphere. It provides a one-stop location for all imaging needs designed for women and centered on women."
   links:
     - url: "/"
-      text: "Our Guidelines"
+      text: "About the Center"
+cta:
+  title: "Need Help? We're Here."
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
+  link:
+    url: "/"
+    text: "484-628-HELP"
+    icon: "th-cal.svg"
+    variation: "right"

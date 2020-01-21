@@ -1,19 +1,21 @@
-uuid: 050b238d-fbb3-44a6-8215-c562dd271073
+uuid: 56364a34-66eb-47ec-8abe-20adcd6e6393
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_profile_board_certified
     - node.type.profile
+  module:
+    - text
 id: node.profile.field_profile_board_certified
 field_name: field_profile_board_certified
 entity_type: node
 bundle: profile
-label: 'Board Certified'
+label: 'Board certified'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: text

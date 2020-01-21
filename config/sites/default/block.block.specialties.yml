@@ -11,15 +11,15 @@ dependencies:
     - tower_health
 id: specialties
 theme: tower_health
-region: content
-weight: -6
+region: page_filters
+weight: -11
 provider: null
 plugin: 'facet_block:specialties'
 settings:
   id: 'facet_block:specialties'
   label: Specialties
   provider: facets
-  label_display: visible
+  label_display: '0'
   block_id: specialties
 visibility:
   request_path:

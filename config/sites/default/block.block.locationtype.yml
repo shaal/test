@@ -6,12 +6,13 @@ dependencies:
     - facets.facet.location_type
   module:
     - facets
+    - system
   theme:
     - tower_health
 id: locationtype
 theme: tower_health
-region: content
-weight: -5
+region: page_filters
+weight: -13
 provider: null
 plugin: 'facet_block:location_type'
 settings:
@@ -20,4 +21,9 @@ settings:
   provider: facets
   label_display: visible
   block_id: locationtype
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*"
+    negate: false
+    context_mapping: {  }

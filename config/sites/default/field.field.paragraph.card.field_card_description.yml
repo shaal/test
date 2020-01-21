@@ -10,8 +10,8 @@ field_name: field_card_description
 entity_type: paragraph
 bundle: card
 label: Description
-description: 'The message you''re trying to define.'
-required: true
+description: ''
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

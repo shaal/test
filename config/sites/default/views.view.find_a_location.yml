@@ -36,7 +36,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: 'Find a location'
+          submit_button: 'Search Locations'
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -149,10 +149,12 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: 'Find a Location'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: find_location_search
             required: false
             remember: false
@@ -160,10 +162,11 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              article_editor: '0'
+              editor: '0'
+              publisher: '0'
               administrator: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -296,6 +299,8 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -404,8 +409,18 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: Search
-      header: {  }
+      title: 'Find a Location'
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: 'Showing @start - @end of @total results'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships: {  }

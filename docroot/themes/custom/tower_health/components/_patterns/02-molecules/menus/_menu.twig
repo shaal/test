@@ -55,11 +55,11 @@
               }%}
               {% set autocomplete = item.entity.field_main_autocomplete_form.value  %}
               {% if autocomplete == "provider" %}
-                {{ drupal_entity('block', 'exposedformfind_a_providerfind_doctor') }}
+                {{ drupal_entity('block', 'provider_header_block') }}
               {% elseif autocomplete == "service" %}
-                {{ drupal_entity('block', 'exposedformfind_a_servicefind_service') }}
+                {{ drupal_entity('block', 'services_header_block') }}
               {% elseif autocomplete == "location" %}
-                {{ drupal_entity('block', 'exposedformfind_a_locationfind_location') }}
+                {{ drupal_entity('block', 'location_header_block') }}
               {% endif %}
             </div>
           {% elseif item.entity.field_main_label.value %}

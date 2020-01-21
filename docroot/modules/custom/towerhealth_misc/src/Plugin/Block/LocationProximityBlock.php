@@ -4,6 +4,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
+use Drupal\Core\Url;
 
 /**
  * Provides a 'DynamicFilterBlock' block.
@@ -42,7 +43,33 @@ class LocationProximityBlock extends BlockBase {
 
     unset($form['find_location_search']);
 
+    $form['#id'] = 'views-exposed-form-find-a-location-find-location-proximity';
+
+    $classes = [];
+    if (isset($form['#attributes']['class'])) {
+      $classes = $form['#attributes']['class'];
+    }
+    $classes[] = 'form-autocomplete';
+    $classes[] = 'form-section__item--group';
+    $form['#attributes']['class'] = $classes;
+
     $build['exposed_form'] = $form;
+
+    $url = Url::fromRoute('view.' . $view_id . '.' . $view_display_id);
+    $location_link = [
+      '#title' => t('Use my location'),
+      '#type' => 'link',
+      '#attributes' => [
+        'class' => [
+          'js-use-my-location',
+          'link',
+          'link--small',
+        ],
+        'data-view' => 'views-exposed-form-find-a-location-find-location',
+      ],
+      '#url' => $url,
+    ];
+    $build['exposed_form']['actions']['location_link'] = $location_link;
 
     return $build;
   }

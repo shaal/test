@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_cards_ref
+    - paragraphs.paragraphs_type.article_card
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.video_card
   module:
     - entity_reference_revisions
 id: paragraph.cards.field_cards_ref
@@ -24,6 +26,8 @@ settings:
     negate: 0
     target_bundles:
       card: card
+      article_card: article_card
+      video_card: video_card
     target_bundles_drag_drop:
       card:
         enabled: true
@@ -40,4 +44,40 @@ settings:
       rating_comments:
         weight: 10
         enabled: false
+      article_card:
+        enabled: true
+        weight: 11
+      homepage_hero:
+        weight: 15
+        enabled: false
+      patient_story:
+        weight: 17
+        enabled: false
+      basic_header:
+        weight: 19
+        enabled: false
+      recognition_card:
+        weight: 19
+        enabled: false
+      recognition_cards:
+        weight: 20
+        enabled: false
+      cta_banner:
+        weight: 22
+        enabled: false
+      cta_list_banner:
+        weight: 23
+        enabled: false
+      header_cta:
+        weight: 25
+        enabled: false
+      icon_button:
+        weight: 27
+        enabled: false
+      rich_text:
+        weight: 33
+        enabled: false
+      video_card:
+        enabled: true
+        weight: 34
 field_type: entity_reference_revisions

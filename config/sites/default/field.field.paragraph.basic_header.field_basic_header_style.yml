@@ -1,0 +1,23 @@
+uuid: 93065e77-a60b-41e5-9ad3-d5312ec3e8fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_basic_header_style
+    - paragraphs.paragraphs_type.basic_header
+  module:
+    - options
+id: paragraph.basic_header.field_basic_header_style
+field_name: field_basic_header_style
+entity_type: paragraph
+bundle: basic_header
+label: 'Background Color'
+description: 'Adjusts the background color of the header.'
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

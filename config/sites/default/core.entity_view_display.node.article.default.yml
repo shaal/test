@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_article_date
+    - field.field.node.article.field_article_teaser
     - field.field.node.article.field_metatags
     - node.type.article
   module:
+    - datetime
     - metatag
     - text
     - user
@@ -22,17 +25,33 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_article_date:
+    weight: 103
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: long_date
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_article_teaser:
+    weight: 104
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_metatags:
     weight: 102
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   search_api_excerpt: true

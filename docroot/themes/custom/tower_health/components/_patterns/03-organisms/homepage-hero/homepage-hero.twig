@@ -2,32 +2,38 @@
   <div class="homepage-hero__container">
     <div class="homepage-hero__content">
       <h1>
-        {% if title_1 %}
-            <span class="title--first">{{ title_1 }}</span>
+        {% if title__first %}
+            <span class="homepage-hero__title homepage-hero__title--first">{{ title__first }}</span>
         {% endif %}
-        {% if title_2 %}
-          <span class="title--middle">{{ title_2 }}</span>
+        {% if title__middle %}
+          <span class="homepage-hero__title homepage-hero__title--middle">{{ title__middle }}</span>
         {% endif %}
-        <span class="title--last">{{ title_3 }}</span>
+        <span class="homepage-hero__title homepage-hero__title--last">{{ title__last }}</span>
       </h1>
       {% if subtitle %}
       {% include "@atoms/02-text/00-headings/_heading.twig" with {
         "heading_level": 2,
         "heading": subtitle,
-        "heading_base_class": "hero_subtitle",
+        "heading_base_class": "homepage-hero__subtitle",
       } %}
       {% endif %}
-      <form class="homepage-hero__content__form">
-        {% include "@molecules/autocomplete-dropdown/autocomplete.twig" %}
-        <button class="button button--primary" type="submit">Search Providers</button>
-      </form>
+      <div class="homepage-hero__content__form">
+        {% block form %}
+          <form class="homepage-hero__content__form">
+            {% include "@molecules/autocomplete-dropdown/autocomplete.twig" %}
+            <button class="button button--primary" type="submit">Search Providers</button>
+          </form>
+        {% endblock %}
+      </div>
     </div>
     <div class="homepage-hero__image">
-      {% include "@molecules/image-background/image-background.twig" with {
-        "img.src": img.src,
-        "img.src": img.alt,
-        "classes": classes,
-      } %}
+      {% block image_background %}
+        {% include "@molecules/image-background/image-background.twig" with {
+          "img.src": img.src,
+          "img.src": img.alt,
+          "classes": classes,
+        } %}
+      {% endblock %}
     </div>
   </div>
 </div>

@@ -14,16 +14,38 @@
     padding: 0;
     margin: 3em auto 3em;
   }
-  
+
   @include breakpoint(1050px) {
     margin-bottom: 4em;
+  }
+
+  h1 {
+    @extend %track-in;
+    @include adjust-font-size-to($xl-heading, 1.45);
+    margin: 0;
+
+    @include breakpoint($bp0) {
+      @include adjust-font-size-to($xxl-heading, 1.5);
+    }
+
+    @include breakpoint($bp3) {
+      @include adjust-font-size-to($xxxl-heading, 1.75);
+    }
+
+    @include breakpoint($bp5) {
+      @include adjust-font-size-to($hero-heading, 1.95);
+    }
+
+    @include breakpoint($bp6) {
+      @include adjust-font-size-to($lg-hero-heading, 2);
+    }
   }
 }
 
 .homepage-hero__container {
   max-width: 1500px;
   width: 100%;
-  
+
   @include breakpoint($bp2) {
     padding: 0 2em;
   }
@@ -52,6 +74,7 @@
     border-radius: $rd-brd-sm;
     width: 75%;
     padding: 2em;
+    min-height: 300px;
   }
 
   @include breakpoint($bp3) {
@@ -61,82 +84,74 @@
     box-shadow: none;
     position: static;
     border-radius: $rd-brd-lg;
+    min-height: 450px;
   }
 
   @include breakpoint($bp4) {
     width: 80%;
     padding: 2.25em 34% 2.25em 2em;
   }
-  
+
   @include breakpoint($bp6) {
     width: 80%;
     padding: 2.25em 32% 2.25em 2em;
+    min-height: 500px;
+  }
+}
+
+.homepage-hero__title {
+  color: $primary-dark;
+  display: block;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+.homepage-hero__title--first {
+  font-weight: 300;
+}
+
+.homepage-hero__title--middle {
+  font-weight: 500;
+}
+
+.homepage-hero__title--last {
+  color: $trust-aa;
+  font-weight: 600;
+}
+
+.homepage-hero__subtitle {
+  @extend %track-in;
+  @include adjust-font-size-to($sm-heading, .9);
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-weight: 500;
+
+  @include breakpoint($bp4) {
+    @include adjust-font-size-to($md-heading, 1.2);
+  }
+}
+
+.homepage-hero__content__form {
+  position: relative;
+  z-index: 4;
+
+  #views-exposed-form-find-a-provider-find-doctor {
+    display: block;
   }
 
-  h1 {
-    @extend %track-in;
-    @include adjust-font-size-to($xl-heading, 1.45);
-    margin: 0;
-    
-    @include breakpoint($bp0) {
-      @include adjust-font-size-to($xxl-heading, 1.5);
-    }
-    
-    @include breakpoint($bp3) {
-      @include adjust-font-size-to($xxxl-heading, 1.75);
-    }
-    
-    @include breakpoint($bp5) {
-      @include adjust-font-size-to($hero-heading, 1.95);
-    }
-    
-    @include breakpoint($bp6) {
-      @include adjust-font-size-to($lg-hero-heading, 2);
-    }
-
-    span {
-      color: $primary-dark;
-      display: block;
-      text-transform: uppercase;
-      font-weight: 500;
-      word-wrap: break-word;
-    }
-
-    .title--first {
-      font-weight: 300;
-    }
-
-    .title--last {
-      color: $trust-aa;
-      font-weight: 600;
-    }
+  input.button,
+  button {
+    @include adjust-font-size-to($label, .8);
+    padding: 1em 1.5em;
   }
 
-  .hero_subtitle {
-    @extend %track-in;
-    @include adjust-font-size-to($sm-heading, .9);
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    font-weight: 500;
-
-    @include breakpoint($bp4) {
-      @include adjust-font-size-to($md-heading, 1.2);
-    }
+  #edit-submit-find-a-provider {
+    width: inherit;
   }
 
-  .homepage-hero__content__form {
-    position: relative;
-    z-index: 4;
-    
-    button {
-      @include adjust-font-size-to($label, .8);
-      padding: 1em 1.5em;
-    }
-
-    @include breakpoint($bp3) {
-      input[type="text"] {
-        height: 60px;
-      }
+  @include breakpoint($bp3) {
+    input[type="text"] {
+      height: 60px;
     }
   }
 }
@@ -179,7 +194,7 @@
     right: calc(( 100vw - 1500px ) / 2 * -1);
     top: -2em;
     left: 55%;
-    
+
     .image-background {
       max-width: 650px;
     }
@@ -188,7 +203,7 @@
 
 // Animations
 .cssanimations {
-  
+
   // default states
   .homepage-hero__content {
     opacity: 0;
@@ -196,7 +211,7 @@
     &::before {
       opacity: 0;
     }
-    
+
     @include breakpoint($bp3) {
       h1,
       h2,
@@ -205,43 +220,43 @@
       }
     }
   }
- 
+
   .homepage-hero__image {
     opacity: 0;
-    
+
     .image-background.top-left .image::before {
       margin: 0;
     }
   }
-  
+
   // animating in
   .in-view {
     .homepage-hero__content {
       @include transition(all, .35s, ease-in);
       opacity: 1;
-      
+
       @include breakpoint(0 899px) {
         animation: fadeInLeft .65s ease-in-out forwards;
       }
-      
+
       @include breakpoint($bp3) {
         h1 {
           animation: fadeInUp .25s ease-in-out  .25s forwards;
         }
-        
+
         h2 {
           animation: fadeInUp .25s ease-in-out  .25s forwards;
         }
-        
+
         form {
           animation: fadeInUp .25s ease-in-out  .35s forwards;
         }
       }
     }
-    
+
     .homepage-hero__image {
       animation: fadeInRightScale .65s ease-in-out forwards;
-      
+
       .image-background.top-left .image::before {
         transition: all .35s ease .25s;
         margin-left: -20px;

@@ -1,0 +1,30 @@
+uuid: 32d05c9e-9d49-4ebc-965a-72658953d7d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - tower_health
+id: sidebar_first
+theme: tower_health
+region: sidebar_first
+weight: -17
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Sidebar First Content'
+  provider: ctools
+  label_display: '0'
+  view_mode: sidebar_first
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      profile: profile
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

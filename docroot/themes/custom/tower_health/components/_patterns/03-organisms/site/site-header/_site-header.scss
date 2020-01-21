@@ -263,7 +263,7 @@
 
   @include breakpoint(0 899px) {
     position: absolute;
-    top: 0;
+    top: -5px;
     right: 0;
     padding: .5em;
   }

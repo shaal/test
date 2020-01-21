@@ -5,6 +5,11 @@ dependencies:
   config:
     - field.storage.node.field_basic_components
     - node.type.page
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.cta_banner
+    - paragraphs.paragraphs_type.cta_list_banner
+    - paragraphs.paragraphs_type.file_download_cta
+    - paragraphs.paragraphs_type.rich_text
   module:
     - entity_reference_revisions
 id: node.page.field_basic_components
@@ -12,7 +17,7 @@ field_name: field_basic_components
 entity_type: node
 bundle: page
 label: Components
-description: 'Add components to this page'
+description: 'Add components to this page.'
 required: false
 translatable: false
 default_value: {  }
@@ -21,12 +26,68 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      cards: cards
+      cta_banner: cta_banner
+      cta_list_banner: cta_list_banner
+      file_download_cta: file_download_cta
+      rich_text: rich_text
     target_bundles_drag_drop:
       education:
         weight: 3
         enabled: false
       rating_comments:
         weight: 4
+        enabled: false
+      basic_header:
+        weight: 11
+        enabled: false
+      card:
+        weight: 12
+        enabled: false
+      cards:
+        enabled: true
+        weight: 13
+      homepage_hero:
+        weight: 15
+        enabled: false
+      on_my_way:
+        weight: 16
+        enabled: false
+      patient_story:
+        weight: 17
+        enabled: false
+      recognition_card:
+        weight: 19
+        enabled: false
+      article_card:
+        weight: 19
+        enabled: false
+      cta_banner:
+        enabled: true
+        weight: 19
+      cta_list_banner:
+        enabled: true
+        weight: 20
+      recognition_cards:
+        weight: 20
+        enabled: false
+      header_cta:
+        weight: 22
+        enabled: false
+      icon_button:
+        weight: 24
+        enabled: false
+      file_download_cta:
+        enabled: true
+        weight: 26
+      rich_text:
+        enabled: true
+        weight: 30
+      sidebar_card:
+        weight: 36
+        enabled: false
+      video_card:
+        weight: 38
         enabled: false
 field_type: entity_reference_revisions

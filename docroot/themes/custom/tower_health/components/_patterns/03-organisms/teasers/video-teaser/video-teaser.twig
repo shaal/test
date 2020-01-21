@@ -1,0 +1,14 @@
+<div class="teaser--simple teaser--video js-section-animation">
+  <a class="modal--video" href="{{ video.details.videoURL }}">
+    <div class="teaser__video-thumb">
+      <img src="{{ video.details.thumb }}" alt='Play video: {{ video.details.title }}' />
+    </div>
+    <div class="teaser__container">
+      <h2 class="teaser__name--simple">{{ video.details.title }}</h2>
+      <span class="teaser__meta">{{ video.details.meta }}</span>
+      <div class="teaser__content--simple">
+        {{ video.details.text }}
+      </div>
+    </div>
+  </a>
+</div>

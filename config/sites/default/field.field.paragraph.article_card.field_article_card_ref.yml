@@ -1,0 +1,28 @@
+uuid: 00f13394-1954-462f-93d2-1a9ec57b9849
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article_card_ref
+    - node.type.article
+    - paragraphs.paragraphs_type.article_card
+id: paragraph.article_card.field_article_card_ref
+field_name: field_article_card_ref
+entity_type: paragraph
+bundle: article_card
+label: Article
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

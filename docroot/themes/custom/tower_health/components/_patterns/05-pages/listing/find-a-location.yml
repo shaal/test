@@ -23,7 +23,7 @@ filters:
 form_sections:
   - section_items:
       -
-        width: oneFifth
+        width: oneQuarter
         title: Services
         type: select
         chosen: true
@@ -33,7 +33,7 @@ form_sections:
           - title: Orthopedics
           - title: Primary Care
       -
-        width: oneFifth
+        width: oneQuarter
         title: Location Type
         type: select
         chosen: true
@@ -46,23 +46,27 @@ form_sections:
           - title: Urgent Care
           - title: Primary Care
       -
-        width: oneFifth
-        title: Zip Code
-        type: text
-        placeholder: '000000'
-        link:
-          label: Use my location
-          url: '#'
-      -
-        width: oneFifth
-        title: Distance
-        type: select
-        children:
-          - title: Choose an Option
-            attributes: selected disabled
-          - title: < 5 Miles
-          - title: < 10 Miles
-          - title: < 25 Miles
+        width: oneHalf
+        type: child_container
+        section_child:
+          -
+            width: oneHalf
+            title: Zip Code
+            type: text
+            placeholder: '000000'
+            link:
+              label: Use my location
+              url: '#'
+          -
+            width: oneHalf
+            title: Distance
+            type: select
+            children:
+              - title: Choose an Option
+                attributes: selected disabled
+              - title: < 5 Miles
+              - title: < 10 Miles
+              - title: < 25 Miles
 results_shown: 1-10
 results_count: 128
 emergency_banner: If this is a medical emergency, please call 911.
