@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   module:
-    - system
     - ctools
+    - system
   theme:
     - tower_health
 _core:
@@ -23,7 +23,7 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/find-a-location\r\n/find-a-location*\r\n/find-a-provider\r\n/find-a-provider*"
+    pages: "/find-a-location\r\n/find-a-location*\r\n/find-a-provider\r\n/find-a-provider*\r\n/news"
     negate: true
     context_mapping: {  }
   'entity_bundle:node':
