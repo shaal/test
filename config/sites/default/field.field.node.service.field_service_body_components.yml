@@ -1,20 +1,19 @@
-uuid: 9d45cbcd-10a9-457b-b957-dc8e1cff68fa
+uuid: f3729331-8bd3-4eb6-ab9f-5340a8804f29
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location_components
-    - node.type.location
+    - field.storage.node.field_service_body_components
+    - node.type.service
     - paragraphs.paragraphs_type.care_circle
-    - paragraphs.paragraphs_type.on_my_way
   module:
     - entity_reference_revisions
-id: node.location.field_location_components
-field_name: field_location_components
+id: node.service.field_service_body_components
+field_name: field_service_body_components
 entity_type: node
-bundle: location
-label: Components
-description: 'Is this location a hospital or center? Add additional components to the page to let the user know more about this location. The available components are: TBD'
+bundle: service
+label: 'Body Components'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -24,18 +23,8 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      on_my_way: on_my_way
       care_circle: care_circle
     target_bundles_drag_drop:
-      education:
-        weight: 2
-        enabled: false
-      on_my_way:
-        enabled: true
-        weight: 5
-      rating_comments:
-        weight: 6
-        enabled: false
       anchored_cta_block:
         weight: 23
         enabled: false
@@ -63,6 +52,9 @@ settings:
       cta_list_banner:
         weight: 31
         enabled: false
+      education:
+        weight: 32
+        enabled: false
       file_download_cta:
         weight: 33
         enabled: false
@@ -75,8 +67,14 @@ settings:
       icon_button:
         weight: 36
         enabled: false
+      on_my_way:
+        weight: 37
+        enabled: false
       patient_story:
         weight: 38
+        enabled: false
+      rating_comments:
+        weight: 39
         enabled: false
       recognition_card:
         weight: 40

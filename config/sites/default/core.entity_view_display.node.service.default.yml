@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_body_components
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.service.field_service_related_ref
     - node.type.service
   module:
+    - entity_reference_revisions
     - metatag
     - text
     - user
@@ -36,11 +38,20 @@ content:
     type: text_default
     region: content
   field_metatags:
-    weight: 5
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_service_body_components:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_service_headline:
     weight: 2

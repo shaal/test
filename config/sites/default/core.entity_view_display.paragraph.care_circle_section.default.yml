@@ -1,0 +1,56 @@
+uuid: 1ca6002a-fa2e-4e5f-b0dd-7a5a37b01f20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.care_circle_section.field_care_circle_section_color
+    - field.field.paragraph.care_circle_section.field_care_circle_section_icon
+    - field.field.paragraph.care_circle_section.field_care_circle_section_link
+    - field.field.paragraph.care_circle_section.field_care_circle_section_title
+    - paragraphs.paragraphs_type.care_circle_section
+  module:
+    - link
+    - options
+id: paragraph.care_circle_section.default
+targetEntityType: paragraph
+bundle: care_circle_section
+mode: default
+content:
+  field_care_circle_section_color:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_care_circle_section_icon:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_care_circle_section_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_care_circle_section_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

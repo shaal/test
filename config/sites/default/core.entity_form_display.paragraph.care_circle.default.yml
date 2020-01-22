@@ -1,0 +1,67 @@
+uuid: 27c2331f-6075-4edf-a511-07f6460698c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.care_circle.field_care_circle_description
+    - field.field.paragraph.care_circle.field_care_circle_text_title
+    - field.field.paragraph.care_circle.field_care_circle_title
+    - field.field.paragraph.care_circle.field_care_circle_title_link
+    - field.field.paragraph.care_circle.field_circle_section_ref
+    - paragraphs.paragraphs_type.care_circle
+  module:
+    - link
+    - paragraphs
+    - text
+id: paragraph.care_circle.default
+targetEntityType: paragraph
+bundle: care_circle
+mode: default
+content:
+  field_care_circle_description:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_care_circle_text_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_care_circle_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_care_circle_title_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_circle_section_ref:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

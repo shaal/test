@@ -1,0 +1,23 @@
+uuid: ae846162-c755-49aa-aacf-3bb68818ed84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_care_circle_section_color
+    - paragraphs.paragraphs_type.care_circle_section
+  module:
+    - options
+id: paragraph.care_circle_section.field_care_circle_section_color
+field_name: field_care_circle_section_color
+entity_type: paragraph
+bundle: care_circle_section
+label: 'Section Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: trust
+default_value_callback: ''
+settings: {  }
+field_type: list_string
