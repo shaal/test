@@ -71,15 +71,6 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
-  field_location_find_us:
-    type: entity_reference_revisions_entity_view
-    weight: 11
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_location_hours:
     weight: 7
     label: hidden
