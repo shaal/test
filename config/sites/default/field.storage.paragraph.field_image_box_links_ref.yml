@@ -1,20 +1,19 @@
-uuid: b6108cb2-1c81-404b-b23f-9d16f742f05c
+uuid: 84068b47-396e-4cdf-acaf-5344055b6363
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
-    - node
     - paragraphs
-id: node.field_location_find_us
-field_name: field_location_find_us
-entity_type: node
+id: paragraph.field_image_box_links_ref
+field_name: field_image_box_links_ref
+entity_type: paragraph
 type: entity_reference_revisions
 settings:
   target_type: paragraph
 module: entity_reference_revisions
 locked: false
-cardinality: 1
+cardinality: 4
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

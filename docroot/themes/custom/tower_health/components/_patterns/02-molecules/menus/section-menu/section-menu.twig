@@ -21,10 +21,12 @@
   </button>
   <nav class="section-nav__container">
     <div id="section-nav" class="section-nav">
-      {% include "@molecules/menus/_menu.twig" with {
-        menu_class: "section-menu",
-        items: section_items
-      } %}
+      {% block section_nav_items %}
+        {% include "@molecules/menus/_menu.twig" with {
+          menu_class: "section-menu",
+          items: section_items
+        } %}
+      {% endblock %}
     </div>
   </nav>
 </div>

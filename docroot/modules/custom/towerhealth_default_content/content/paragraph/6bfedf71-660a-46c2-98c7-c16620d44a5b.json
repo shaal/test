@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/recognition_card"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/recognition_card\/field_recog_card_image": [
-            {
-                "href": "http:\/\/default\/media\/award-1jpg?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -24,7 +19,7 @@
     ],
     "revision_id": [
         {
-            "value": 209
+            "value": 223
         }
     ],
     "langcode": [
@@ -82,24 +77,5 @@
             "value": true,
             "lang": "en"
         }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/recognition_card\/field_recog_card_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/award-1jpg?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "a31aa1db-3a2a-4ebe-9fbe-33e19d8426ea"
-                    }
-                ]
-            }
-        ]
-    }
+    ]
 }

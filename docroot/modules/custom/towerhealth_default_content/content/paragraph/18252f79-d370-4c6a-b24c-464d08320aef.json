@@ -77,5 +77,10 @@
             "value": true,
             "lang": "en"
         }
+    ],
+    "field_basic_header_style": [
+        {
+            "value": "default"
+        }
     ]
 }

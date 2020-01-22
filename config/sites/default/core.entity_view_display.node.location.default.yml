@@ -6,25 +6,22 @@ dependencies:
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_body_components
+    - field.field.node.location.field_location_card_cta
+    - field.field.node.location.field_location_card_desc
+    - field.field.node.location.field_location_card_image
     - field.field.node.location.field_location_components
     - field.field.node.location.field_location_fax
-    - field.field.node.location.field_location_find_us
     - field.field.node.location.field_location_geo
     - field.field.node.location.field_location_hours
     - field.field.node.location.field_location_id
     - field.field.node.location.field_location_image
-    - field.field.node.location.field_location_insurance
     - field.field.node.location.field_location_phone_number
     - field.field.node.location.field_location_type
     - field.field.node.location.field_metatags
     - field.field.node.location.field_services_ref
     - node.type.location
   module:
-    - address
     - entity_reference_revisions
-    - metatag
-    - office_hours
-    - telephone
     - text
     - user
 id: node.location.default
@@ -32,13 +29,10 @@ targetEntityType: node
 bundle: location
 mode: default
 content:
-  content_moderation_control:
+  field_location_body:
+    type: text_default
     weight: 0
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_location_address:
-    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -53,7 +47,7 @@ content:
     region: content
   field_location_body_components:
     type: entity_reference_revisions_entity_view
-    weight: 10
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -147,18 +141,28 @@ content:
   field_services_ref:
     weight: 8
     label: above
+  field_services_ref:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  links:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  content_moderation_control: true
+  field_location_address: true
+  field_location_card_cta: true
+  field_location_card_desc: true
+  field_location_card_image: true
+  field_location_components: true
+  field_location_fax: true
   field_location_geo: true
+  field_location_hours: true
   field_location_id: true
+  field_location_image: true
+  field_location_phone_number: true
   field_location_type: true
+  field_metatags: true
+  links: true
   search_api_excerpt: true

@@ -29,6 +29,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      location: location
       page: page
       profile: profile
       service: service

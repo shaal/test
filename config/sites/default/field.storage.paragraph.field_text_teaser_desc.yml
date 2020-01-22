@@ -1,13 +1,13 @@
-uuid: 4b20b8cf-ed54-41b2-8487-599f3fc02b78
+uuid: f1e1a1a3-8a74-4798-a8cd-c080fd2b338d
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - text
-id: node.field_location_insurance
-field_name: field_location_insurance
-entity_type: node
+id: paragraph.field_text_teaser_desc
+field_name: field_text_teaser_desc
+entity_type: paragraph
 type: text_long
 settings: {  }
 module: text

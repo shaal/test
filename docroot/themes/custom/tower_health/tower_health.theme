@@ -103,6 +103,20 @@ function tower_health_preprocess_paragraph__basic_header(&$variables) {
 }
 
 /**
+ * Provide icon variable for rating comments paragraph.
+ */
+function tower_health_preprocess_paragraph__image_teaser_banner(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $link_field = $paragraph->field_image_banner_links;
+  $links = [];
+  foreach ($link_field as $id => $link) {
+    $links[$id]['text'] = $link->title;
+    $links[$id]['url'] = Url::fromUri($link->uri);
+  }
+  $variables['links'] = $links;
+}
+
+/**
  * Load the utility menu into a variable.
  */
 function tower_health_preprocess_menu(&$variables) {
@@ -161,8 +175,19 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
   }
 }
 
+function tower_health_preprocess_region__sidebar_first(&$variables)  {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if ($node->bundle() == 'location') {
+      $location_name = strtolower($node->title->value);
+      $location_providers_url = Url::fromRoute('view.find_a_location.find_location', ['providers[0]' => 'locations:' . strtolower($location_name)]);
+      $variables['location_providers_url'] = $location_providers_url;
+      $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-provider.svg';
+    }
+  }
+}
+
 /**
- * Provide variables for provider teaser.
+ * Provide variables for provider nodes.
  */
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
@@ -270,7 +295,6 @@ function tower_health_preprocess_node__profile(&$variables) {
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
     $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
     $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
-
     $variables['name'] = $node->title->value;
     if (!$node->get('field_profile_job_title')->isEmpty()) {
       $variables['lead_title'] = $node->field_profile_job_title->value;
@@ -305,7 +329,7 @@ function tower_health_preprocess_node__profile(&$variables) {
 }
 
 /**
- * Provide variables for location teaser.
+ * Provide variables for location nodes.
  */
 function tower_health_preprocess_node__service(&$variables) {
   $node = $variables['node'];
@@ -342,11 +366,23 @@ function tower_health_preprocess_node__service(&$variables) {
  */
 function tower_health_preprocess_node__location(&$variables) {
   $node = $variables['node'];
-
-  // Set button icon.
+  $view_mode = $variables['view_mode'];
   $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
 
-  if ($node instanceof NodeInterface) {
+  if ($node instanceof NodeInterface && $view_mode == 'teaser_small') {
+    // Preprocess address variables.
+    if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
+      $locality = $node->field_location_address->locality;
+      $administrative_area = $node->field_location_address->administrative_area;
+      $address_1 = $node->field_location_address->address_line1;
+      $address_2 = $locality . ', ' . $administrative_area;
+      $href = "https://www.google.com/maps/place/" . str_replace(' ', '+', $address_1) . '+' . $locality . '+' . $administrative_area;
+      $variables['address1'] = $address_1;
+      $variables['address2'] = $address_2;
+      $variables['href'] = $href;
+    }
+  }
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
     // Preprocess image variables.
     $media = $node->field_location_image->entity;
     if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
@@ -363,11 +399,9 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
       $variables['alt'] = "Location placeholder image";
     }
-
     if ($node->hasField('field_location_hours') && !$node->get('field_location_hours')->isEmpty()) {
       $variables['hours'] = TRUE;
     }
-
     // Preprocess address variables.
     if ($node->hasField('field_location_address') && !$node->get('field_location_address')->isEmpty()) {
       $locality = $node->field_location_address->locality;
@@ -379,32 +413,66 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['address2'] = $address_2;
       $variables['href'] = $href;
     }
-
     // Preprocess phone numbers.
     if ($node->hasField('field_location_phone_number') && !$node->get('field_location_phone_number')->isEmpty()) {
       $variables['phone'] = $node->field_location_phone_number->value;
     }
-
     if ($node->hasField('field_location_fax') && !$node->get('field_location_fax')->isEmpty()) {
       $variables['fax'] = $node->field_location_fax->value;
+    }
+  }
+  elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
+    $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
+    $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
+    $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
+    $variables['name'] = $node->title->value;
+    if (!$node->get('field_location_type')->isEmpty()) {
+      $term = Term::load($node->field_location_type->entity->tid->value);
+      $name = $term->getName();
+      $variables['type'] = $name;
+    }
+    $variables['address_1'] = $node->field_location_address->address_line1;
+    $variables['address_2'] = $node->field_location_address->locality . ', ' . $node->field_location_address->administrative_area . ' ' . $node->field_location_address->postal_code;
+    $variables['phone'] = $node->field_location_phone_number->value;
+    if ($node->hasField('field_location_image') && !$node->get('field_location_image')->isEmpty()) {
+      $media = $node->field_location_image->entity;
+      if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
+        $file = $media->field_media_image->entity;
+        if ($file instanceof EntityInterface) {
+          $url = $file->uri->value;
+          $image = ImageStyle::load('location_header_image')->buildUrl($url);
+          $variables['src'] = $image;
+          $variables['alt'] = $media->field_media_image->alt;
+        }
+      }
     }
 
     // Preprocess other providers link.
     $location_name = strtolower($node->title->value);
     $location_providers_url = Url::fromRoute('view.find_a_location.find_location', ['providers[0]' => 'locations:' . strtolower($location_name)]);
     $variables['location_providers_url'] = $location_providers_url;
+
+    // Preprocess directions link
+    $locality = $node->field_location_address->locality;
+    $administrative_area = $node->field_location_address->administrative_area;
+    $address_1 = $node->field_location_address->address_line1;
+    $address_2 = $locality . ', ' . $administrative_area;
+    $href = "https://www.google.com/maps/place/" . str_replace(' ', '+', $address_1) . '+' . $locality . '+' . $administrative_area;
+    $variables['address1'] = $address_1;
+    $variables['address2'] = $address_2;
+    $variables['href'] = $href;
   }
 }
 
 /**
- * Provide rating icons.
+ * Provide icon variable for rating comments paragraph.
  */
 function tower_health_preprocess_paragraph__rating_comments(&$variables) {
   $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
 }
 
 /**
- * Provide variables for provider comments.
+ * Provide variables for profile comments field.
  */
 function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
   $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
@@ -525,4 +593,29 @@ function tower_health_preprocess_field__field_profile_education(&$variables) {
     $educations[$id]['text'] = $paragraph->field_education_type->value;
   }
   $variables['educations'] = $educations;
+}
+
+/**
+ * Provide variables for location hours field template.
+ */
+function tower_health_preprocess_field__field_location_hours(&$variables) {
+  $hours = [];
+  foreach ($variables['items'] as $hour) {
+    foreach ($hour['content']['#office_hours'] as $id => $daily) {
+      $hours[$id]['title'] = $daily['label'];
+      $hours[$id]['hours'] = $daily['formatted_slots'];
+    }
+  }
+  $variables['hours'] = $hours;
+}
+
+/**
+ * Provide variables for location services template.
+ */
+function tower_health_preprocess_field__field_services_ref(&$variables) {
+  $services = [];
+  foreach ($variables['items'] as $id => $service) {
+    $services[$id]['text'] = $service['content'];
+  }
+  $variables['services'] = $services;
 }

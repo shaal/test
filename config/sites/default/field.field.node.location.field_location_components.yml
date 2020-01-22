@@ -5,8 +5,11 @@ dependencies:
   config:
     - field.storage.node.field_location_components
     - node.type.location
+    - paragraphs.paragraphs_type.box_links
+    - paragraphs.paragraphs_type.image_teaser_banner
     - paragraphs.paragraphs_type.care_circle
     - paragraphs.paragraphs_type.on_my_way
+    - paragraphs.paragraphs_type.text_teaser_banner
   module:
     - entity_reference_revisions
 id: node.location.field_location_components
@@ -25,7 +28,10 @@ settings:
     negate: 0
     target_bundles:
       on_my_way: on_my_way
+      box_links: box_links
       care_circle: care_circle
+      image_teaser_banner: image_teaser_banner
+      text_teaser_banner: text_teaser_banner
     target_bundles_drag_drop:
       education:
         weight: 2

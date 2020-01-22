@@ -36,9 +36,7 @@
  *
  * @see template_preprocess_field()
  *
- * No wrappers for cards. It just doesn't flow with flexbox.
+ * No wrappers. It just doesn't flow with flexbox.
  */
 #}
-{% for item in items %}
-  {{ item.content }}
-{% endfor %}
+{% include '@tower_health/fields/field-clean.html.twig' %}
