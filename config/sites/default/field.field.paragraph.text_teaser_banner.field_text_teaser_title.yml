@@ -1,0 +1,19 @@
+uuid: 4c6ba283-abee-4ee6-8bf8-b4ad223a8a70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_teaser_title
+    - paragraphs.paragraphs_type.text_teaser_banner
+id: paragraph.text_teaser_banner.field_text_teaser_title
+field_name: field_text_teaser_title
+entity_type: paragraph
+bundle: text_teaser_banner
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/icon_button"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/icon_button\/field_icon_button": [
-            {
-                "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -24,7 +19,7 @@
     ],
     "revision_id": [
         {
-            "value": 213
+            "value": 227
         }
     ],
     "langcode": [
@@ -83,25 +78,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/icon_button\/field_icon_button": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/svg"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "f0243927-a85e-4b26-84c3-d4c64837b372"
-                    }
-                ]
-            }
-        ]
-    },
     "field_icon_link": [
         {
             "uri": "tel: 484-628-HELP",

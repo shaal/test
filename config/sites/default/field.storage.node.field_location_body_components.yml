@@ -1,4 +1,4 @@
-uuid: b6108cb2-1c81-404b-b23f-9d16f742f05c
+uuid: 6f9bfa78-e27d-4385-b4d8-c121b5dd7078
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_location_find_us
-field_name: field_location_find_us
+id: node.field_location_body_components
+field_name: field_location_body_components
 entity_type: node
 type: entity_reference_revisions
 settings:

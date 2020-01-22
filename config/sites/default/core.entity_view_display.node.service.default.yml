@@ -6,6 +6,10 @@ dependencies:
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_card_cta
+    - field.field.node.service.field_service_card_desc
+    - field.field.node.service.field_service_card_image
+    - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
@@ -15,7 +19,9 @@ dependencies:
     - field.field.node.service.field_service_related_ref
     - node.type.service
   module:
+    - entity_reference_revisions
     - metatag
+    - options
     - text
     - user
 id: node.service.default
@@ -63,6 +69,9 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_service_card_cta: true
+  field_service_card_desc: true
+  field_service_card_image: true
   field_conditions_ref: true
   field_service_core_bool: true
   field_service_core_ref: true

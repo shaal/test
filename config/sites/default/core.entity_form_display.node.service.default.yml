@@ -6,6 +6,10 @@ dependencies:
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_card_cta
+    - field.field.node.service.field_service_card_desc
+    - field.field.node.service.field_service_card_image
+    - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
@@ -18,6 +22,7 @@ dependencies:
   module:
     - content_moderation
     - field_group
+    - media_library
     - metatag
     - paragraphs
     - path
@@ -32,6 +37,7 @@ third_party_settings:
         - group_related_services
         - group_medical_specialties_condit
         - group_flexible_components
+        - group_card_data
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -56,7 +62,7 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: Description
+      label: 'Description'
       region: content
     group_core_service:
       children:
@@ -85,7 +91,7 @@ third_party_settings:
         required_fields: true
         id: ''
         classes: ''
-      label: Conditions
+      label: 'Conditions'
       region: content
     group_flexible_components:
       children:
@@ -128,7 +134,24 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: Header
+      label: 'Header'
+      region: content
+    group_card_data:
+      children:
+        - field_service_card_image
+        - field_service_card_desc
+        - field_service_card_cta
+      parent_name: group_vertical_tabs
+      weight: 12
+      format_type: tab
+      region: content
+      format_settings:
+        description: 'The data to display when this page is referenced as a card on other pages.'
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Card Data'
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -163,6 +186,29 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
+  field_service_card_cta:
+    weight: 129
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_service_card_desc:
+    weight: 128
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_service_card_image:
+    type: media_library_widget
+    weight: 127
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   field_service_core_bool:
     weight: 9

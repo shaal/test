@@ -10,11 +10,6 @@
             {
                 "href": ""
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_img": [
-            {
-                "href": "http:\/\/default\/media\/adobestock254696350preview-1jpeg?_format=hal_json"
-            }
         ]
     },
     "id": [
@@ -29,7 +24,7 @@
     ],
     "revision_id": [
         {
-            "value": 216
+            "value": 230
         }
     ],
     "langcode": [
@@ -104,24 +99,7 @@
                         "value": "86e10d54-e552-40d9-8e7c-74585b074a02"
                     }
                 ],
-                "target_revision_id": "215"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_img": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/adobestock254696350preview-1jpeg?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "15f57d9d-d6f2-4978-b12a-99154954f637"
-                    }
-                ]
+                "target_revision_id": "229"
             }
         ]
     },

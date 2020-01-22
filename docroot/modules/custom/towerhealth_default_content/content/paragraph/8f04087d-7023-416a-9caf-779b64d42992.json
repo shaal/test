@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/patient_story"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/patient_story\/field_story_image": [
-            {
-                "href": "http:\/\/default\/media\/anyjpeg?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -24,7 +19,7 @@
     ],
     "revision_id": [
         {
-            "value": 208
+            "value": 222
         }
     ],
     "langcode": [
@@ -83,25 +78,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/patient_story\/field_story_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/anyjpeg?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "60614d34-6e5f-4fcf-90fa-ba1b5e06f5c8"
-                    }
-                ]
-            }
-        ]
-    },
     "field_story_image_pos": [
         {
             "value": "left"
