@@ -32,6 +32,7 @@ visibility:
       location: location
       page: page
       profile: profile
+      service: service
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'

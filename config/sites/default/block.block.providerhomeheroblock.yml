@@ -1,0 +1,20 @@
+uuid: 3a2619b1-0eba-4e0c-9d3d-8f6b3ceffb34
+langcode: en
+status: true
+dependencies:
+  module:
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: providerhomeheroblock
+theme: tower_health
+region: header
+weight: 0
+provider: null
+plugin: provider_home_hero_block
+settings:
+  id: provider_home_hero_block
+  label: 'Provider home hero block'
+  provider: towerhealth_misc
+  label_display: '0'
+visibility: {  }

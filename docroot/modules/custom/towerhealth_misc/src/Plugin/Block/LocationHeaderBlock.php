@@ -4,7 +4,6 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
-use Drupal\Core\Url;
 
 /**
  * Provides a 'Location search block for header region' block.
@@ -55,7 +54,7 @@ class LocationHeaderBlock extends BlockBase {
     $form['#attributes']['class'] = $classes;
 
     $form['actions']['#attributes']['data-id'] = 'location_header_block';
-    // Set the submit button classes
+    // Set the submit button classes.
     if (isset($form['actions']['submit']['#attributes']['class'])) {
       $classes = $form['actions']['submit']['#attributes']['class'];
     }
@@ -63,7 +62,7 @@ class LocationHeaderBlock extends BlockBase {
       $classes = [];
     }
 
-    $form['actions']['submit']['#attributes']['class'] = array_merge($classes,[
+    $form['actions']['submit']['#attributes']['class'] = array_merge($classes, [
       'button',
       'button--small',
       'button--primary',

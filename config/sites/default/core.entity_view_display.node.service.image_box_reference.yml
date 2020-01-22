@@ -6,8 +6,6 @@ dependencies:
     - core.entity_view_mode.node.image_box_reference
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
-    - field.field.node.service.field_location_ref
-    - field.field.node.service.field_medical_specialties_ref
     - field.field.node.service.field_metatags
     - field.field.node.service.field_service_card_cta
     - field.field.node.service.field_service_card_desc

@@ -1,0 +1,31 @@
+uuid: b8ee3770-7859-4075-8580-4196982bb179
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.patient_story
+    - field.field.media.image.field_media_image
+    - image.style.667x667
+    - media.type.image
+  module:
+    - image
+id: media.image.patient_story
+targetEntityType: media
+bundle: image
+mode: patient_story
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 667x667
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

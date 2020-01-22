@@ -5,15 +5,15 @@ dependencies:
   config:
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
-    - field.field.node.service.field_location_ref
-    - field.field.node.service.field_medical_specialties_ref
     - field.field.node.service.field_metatags
     - field.field.node.service.field_service_card_cta
     - field.field.node.service.field_service_card_desc
     - field.field.node.service.field_service_card_image
+    - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
+    - field.field.node.service.field_service_header
     - field.field.node.service.field_service_headline
     - field.field.node.service.field_service_intro
     - field.field.node.service.field_service_related_ref
@@ -30,116 +30,52 @@ bundle: service
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_body:
-    weight: 101
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_location_ref:
-    weight: 106
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_medical_specialties_ref:
-    weight: 103
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_metatags:
-    weight: 104
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
-  field_service_card_cta:
-    weight: 114
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_service_card_desc:
-    weight: 112
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_service_card_image:
-    type: entity_reference_entity_view
-    weight: 113
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_service_core_bool:
-    weight: 107
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_service_core_ref:
-    weight: 108
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_service_flex:
-    type: entity_reference_revisions_entity_view
-    weight: 104
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_service_headline:
-    weight: 109
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_service_intro:
-    weight: 105
-    label: above
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_service_related_ref:
-    weight: 110
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   links:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_service_card_cta: true
+  field_service_card_desc: true
+  field_service_card_image: true
   field_conditions_ref: true
+  field_service_core_bool: true
+  field_service_core_ref: true
+  field_service_flex: true
+  field_service_header: true
+  field_service_related_ref: true
   search_api_excerpt: true
