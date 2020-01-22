@@ -38,7 +38,8 @@
 #}
 
 {% include "@molecules/care-circle-item/care-circle-item.twig" with {
-  "icon": "",
+  "icon": file_url(content.field_care_circle_section_icon.0['#media'].field_media_file.entity.fileuri),
+  "icon_alt": content.field_care_circle_section_icon.0['#media'].field_media_file.entity.alt,
   "url": content.field_care_circle_section_link.0.url,
   "label": content.field_care_circle_section_title,
   "color": content.field_care_circle_section_color.0
