@@ -18,7 +18,7 @@ mode: default
 content:
   field_care_circle_section_color:
     weight: 3
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
@@ -26,7 +26,7 @@ content:
   field_care_circle_section_icon:
     type: entity_reference_entity_view
     weight: 1
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -34,7 +34,7 @@ content:
     region: content
   field_care_circle_section_link:
     weight: 2
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -46,7 +46,7 @@ content:
     region: content
   field_care_circle_section_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

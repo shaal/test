@@ -63,7 +63,7 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Description'
+      label: Description
       region: content
     group_core_service:
       children:
@@ -92,7 +92,7 @@ third_party_settings:
         required_fields: true
         id: ''
         classes: ''
-      label: 'Conditions'
+      label: Conditions
       region: content
     group_flexible_components:
       children:
@@ -135,8 +135,7 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Header'
-      region: content
+      label: Header
     group_card_data:
       children:
         - field_service_card_image
@@ -198,6 +197,7 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+    region: content
   field_service_card_cta:
     weight: 129
     settings:

@@ -79,10 +79,10 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_conditions_ref: true
   field_service_card_cta: true
   field_service_card_desc: true
   field_service_card_image: true
-  field_conditions_ref: true
   field_service_core_bool: true
   field_service_core_ref: true
   field_service_flex: true
