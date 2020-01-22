@@ -37,17 +37,12 @@
  */
 #}
 
-{% embed "@organisms/care-circle/care-circle.twig" with {
+{% include "@organisms/care-circle/care-circle.twig" with {
   "title": content.field_care_circle_title,
   "url": content.field_care_circle_title_link.0.url,
   "content": {
     "title": content.field_care_circle_text_title,
     "text": content.field_care_circle_description
-  }
+  },
+  "items": items
 } %}
-
-{% block care_circle_items %}
-{{ content.field_circle_section_ref}}
-{% endblock %}
-
-{% endembed %}

@@ -11,6 +11,7 @@ use Drupal\node\NodeInterface;
 use Drupal\core\entity\EntityInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\core\Url;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Set page variables.
@@ -618,4 +619,18 @@ function tower_health_preprocess_field__field_services_ref(&$variables) {
     $services[$id]['text'] = $service['content'];
   }
   $variables['services'] = $services;
+}
+
+/**
+ * Provide variables for location services template.
+ */
+function tower_health_preprocess_paragraph__care_circle(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $circle_refs = $paragraph->field_circle_section_ref->getValue();
+  $items = [];
+  foreach ($circle_refs as $id => $circle) {
+    $entity = Paragraph::load($circle['target_id']);
+    $items[$id]['label'] = $entity->field_care_circle_section_title->value;
+  }
+  $variables['items'] = $items;
 }
