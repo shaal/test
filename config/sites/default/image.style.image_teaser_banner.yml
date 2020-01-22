@@ -1,0 +1,15 @@
+uuid: 5d5617b9-433c-46ef-989c-7dfa8cfdfdb7
+langcode: en
+status: true
+dependencies: {  }
+name: image_teaser_banner
+label: 'Image Teaser Banner'
+effects:
+  cd6a7c07-6d8b-4b00-89dc-7465a49f2e24:
+    uuid: cd6a7c07-6d8b-4b00-89dc-7465a49f2e24
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 860
+      height: 500
+      anchor: center-center

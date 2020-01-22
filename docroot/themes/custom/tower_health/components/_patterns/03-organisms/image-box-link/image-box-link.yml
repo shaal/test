@@ -1,0 +1,8 @@
+color: growth
+title: "McGlinn Cancer Institute"
+text: "Our renowned team provides unsurpassed expertise, leading-edge technology, and exceptional comprehensie transplant care"
+link:
+  text: "About the Institute"
+  url: "/"
+img:
+  src: "../../images/AdobeStock_193543982_Preview.jpeg"

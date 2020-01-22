@@ -1,0 +1,21 @@
+uuid: 42c2ac1e-b247-40fd-a20b-0bb0cd570978
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_card_desc
+    - node.type.service
+  module:
+    - text
+id: node.service.field_service_card_desc
+field_name: field_service_card_desc
+entity_type: node
+bundle: service
+label: 'Card Description'
+description: 'Description shown in card when this service is referenced on other pages'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

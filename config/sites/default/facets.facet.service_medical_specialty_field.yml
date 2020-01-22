@@ -1,0 +1,51 @@
+uuid: de58a880-2b4f-4452-9488-d2f9e603e7d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.acquia_search_index
+    - views.view.find_a_provider
+  module:
+    - search_api
+id: service_medical_specialty_field
+name: 'Service medical specialty field'
+url_alias: service
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: service_medical_specialty_field
+facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
+widget:
+  type: links
+  config:
+    show_numbers: false
+    soft_limit: 0
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+    show_reset_link: false
+    reset_text: 'Show all'
+    hide_reset_when_no_selection: false
+query_operator: or
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false

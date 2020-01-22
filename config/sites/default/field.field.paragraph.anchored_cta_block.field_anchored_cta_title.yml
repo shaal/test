@@ -1,0 +1,19 @@
+uuid: 1aa8088e-5dc5-4df1-bc80-99741687d4e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchored_cta_title
+    - paragraphs.paragraphs_type.anchored_cta_block
+id: paragraph.anchored_cta_block.field_anchored_cta_title
+field_name: field_anchored_cta_title
+entity_type: paragraph
+bundle: anchored_cta_block
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

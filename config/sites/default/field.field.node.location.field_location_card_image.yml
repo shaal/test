@@ -1,0 +1,28 @@
+uuid: 7784b5d4-3936-4d61-99a6-c195c402e36d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_card_image
+    - media.type.image
+    - node.type.location
+id: node.location.field_location_card_image
+field_name: field_location_card_image
+entity_type: node
+bundle: location
+label: 'Card Image'
+description: 'Image to display on card when this page is referenced on other pages'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

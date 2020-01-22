@@ -1,0 +1,138 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/basic_header"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_cta_ref": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_img": [
+            {
+                "href": "http:\/\/default\/media\/adobestock228148798preview-editjpg?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 13
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5d56ee49-a4bf-4381-b3bc-0c020aa970ab"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 34
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic_header"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-17T02:08:28+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "8"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_service_header"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_cta_ref": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/header_cta"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a34a3090-dcea-42ba-963b-a177e95c2b31"
+                    }
+                ],
+                "target_revision_id": "33"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/basic_header\/field_basic_header_img": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/adobestock228148798preview-editjpg?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7a64ebb1-325a-49b3-95f8-57fbffcef267"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_basic_header_lede": [
+        {
+            "value": "Individualized, multi-disciplinary care in a comfortable setting, with supportive staff, plus the advantages of working directly with other Tower Health resources like advanced diagnostic imaging and a comprehensive Cancer Center."
+        }
+    ],
+    "field_basic_header_style": [
+        {
+            "value": "default"
+        }
+    ]
+}

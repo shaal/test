@@ -43,10 +43,12 @@
  * @see html.html.twig
  */
 #}
+{% set full_with = 'false' %}
 
 {% include "@pages/_page.twig" with {
   page_header: page.page_header,
   page_content: page.content,
   full_content: page.full_content,
-  top_sidebar: page.sidebar_first ?? '' ,
+  top_sidebar:  page.sidebar_first ?? '',
+  bottom_sidebar:  page.sidebar_second ?? '',
 }%}
