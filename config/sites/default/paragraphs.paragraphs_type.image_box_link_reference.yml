@@ -1,0 +1,9 @@
+uuid: 9a4a2bb8-8637-4697-8785-fbc60c27efe1
+langcode: en
+status: true
+dependencies: {  }
+id: image_box_link_reference
+label: 'Image Box Link - Reference'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

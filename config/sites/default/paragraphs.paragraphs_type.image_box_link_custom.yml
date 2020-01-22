@@ -1,0 +1,9 @@
+uuid: 62d351db-0209-4852-b0e9-d8a03bcd1ff5
+langcode: en
+status: true
+dependencies: {  }
+id: image_box_link_custom
+label: 'Image Box Link - Custom'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

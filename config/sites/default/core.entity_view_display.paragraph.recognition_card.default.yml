@@ -14,7 +14,7 @@ mode: default
 content:
   field_recog_card_description:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
@@ -22,15 +22,15 @@ content:
   field_recog_card_image:
     type: entity_reference_entity_view
     weight: 3
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: recognition_card
       link: false
     third_party_settings: {  }
     region: content
   field_recog_card_title:
     weight: 2
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

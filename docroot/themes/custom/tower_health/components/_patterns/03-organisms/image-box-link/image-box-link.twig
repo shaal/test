@@ -1,0 +1,11 @@
+<a class="box-link {% if color %}box-link--{{color}}{% endif %}" href="{{ link.url }}">
+  <div class="box-link__background" style='background-image: url("{{ img.src }}");'></div>
+
+  <div class="box-link__content">
+    <h3 class="box-link__title">{{ title }}</h3>
+    <div class="box-link__text">
+      {{ text }}
+    </div>
+    <span class="box-link__cta">{{ link.text }}</span>
+  </div>
+</a>

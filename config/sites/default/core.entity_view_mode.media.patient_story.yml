@@ -1,0 +1,10 @@
+uuid: 69628b7d-93de-4e56-9aee-4a838dd7266a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.patient_story
+label: 'Patient Story'
+targetEntityType: media
+cache: true

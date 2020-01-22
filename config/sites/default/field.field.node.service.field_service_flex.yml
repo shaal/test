@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_service_flex
     - node.type.service
+    - paragraphs.paragraphs_type.anchored_cta_block
     - paragraphs.paragraphs_type.cards
     - paragraphs.paragraphs_type.patient_story
     - paragraphs.paragraphs_type.recognition_cards
@@ -28,6 +29,7 @@ settings:
       cards: cards
       patient_story: patient_story
       recognition_cards: recognition_cards
+      anchored_cta_block: anchored_cta_block
     target_bundles_drag_drop:
       card:
         weight: -13
@@ -53,4 +55,34 @@ settings:
       recognition_cards:
         enabled: true
         weight: 16
+      anchored_cta_block:
+        enabled: true
+        weight: 19
+      article_card:
+        weight: 20
+        enabled: false
+      basic_header:
+        weight: 21
+        enabled: false
+      cta_banner:
+        weight: 24
+        enabled: false
+      cta_list_banner:
+        weight: 25
+        enabled: false
+      header_cta:
+        weight: 27
+        enabled: false
+      homepage_hero:
+        weight: 28
+        enabled: false
+      icon_button:
+        weight: 29
+        enabled: false
+      rich_text:
+        weight: 35
+        enabled: false
+      sidebar_card:
+        weight: 36
+        enabled: false
 field_type: entity_reference_revisions

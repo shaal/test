@@ -1,0 +1,9 @@
+uuid: 0f80bd68-3e09-42bc-94f5-3a471526de30
+langcode: en
+status: true
+dependencies: {  }
+id: anchored_cta_block
+label: 'Anchored CTA Block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

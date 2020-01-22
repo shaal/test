@@ -1,0 +1,10 @@
+uuid: af56928a-cf37-4b05-8970-1572d5538163
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.recognition_card
+label: 'Recognition card'
+targetEntityType: media
+cache: true

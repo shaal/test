@@ -22,10 +22,10 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: icon_button
     third_party_settings: {  }
     region: content
   field_cta_list_subtitle:

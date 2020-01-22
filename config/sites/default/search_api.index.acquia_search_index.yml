@@ -251,6 +251,10 @@ field_settings:
           areas_of_care: ''
           condition: ''
           medical_specialty: ''
+  service_medical_specialty_field:
+    label: 'Service medical specialty field'
+    property_path: service_medical_specialty_field
+    type: string
   synonym:
     label: Synonyms
     datasource_id: 'entity:taxonomy_term'
@@ -328,6 +332,7 @@ processor_settings:
       - provider_specialties_name
       - provider_specialties_name_string
       - rendered_item
+      - service_medical_specialty_field
       - synonym
       - title
       - type
@@ -339,6 +344,7 @@ processor_settings:
   provider_sort_field: {  }
   rendered_item: {  }
   reverse_entity_references: {  }
+  service_medical_specialty_field: {  }
 tracker_settings:
   default:
     indexing_order: fifo

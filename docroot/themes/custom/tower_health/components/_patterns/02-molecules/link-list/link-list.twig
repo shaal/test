@@ -1,10 +1,10 @@
 <div class="link-list {% if type %}link-list--{{type}} {% endif %}js-section-animation">
   <h2 class="link-list__title">{{ title }}</h2>
   <ul class="link-list__wrapper">
-    {% for item in items %}
-      <li class="link-list__link">
-        <a href="{{ item.link }}">{{ item.text }}</a>
-      </li>
-    {% endfor %}
+    {% block items %}
+      {% for item in items %}
+        {% include "@molecules/link-list/link-list-link.twig" with item %}
+      {% endfor %}
+    {% endblock %}
   </ul>
 </div>
