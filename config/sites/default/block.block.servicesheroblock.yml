@@ -1,0 +1,26 @@
+uuid: ecf248ab-4622-4ca5-a72f-9455f56499d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: servicesheroblock
+theme: tower_health
+region: page_header
+weight: 0
+provider: null
+plugin: service_hero_block
+settings:
+  id: service_hero_block
+  label: 'Search Services'
+  provider: towerhealth_misc
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-service\r\n/find-a-service*"
+    negate: false
+    context_mapping: {  }

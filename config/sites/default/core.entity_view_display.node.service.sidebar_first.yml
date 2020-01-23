@@ -34,6 +34,9 @@ hidden:
   content_moderation_control: true
   field_body: true
   field_metatags: true
+  field_service_card_cta: true
+  field_service_card_desc: true
+  field_service_card_image: true
   field_service_core_bool: true
   field_service_core_ref: true
   field_service_flex: true
