@@ -23,7 +23,8 @@
         {% include "@molecules/review/review.twig" with {
           rating: item.rating,
           review: item.review,
-          date: item.date
+          date: item.date,
+          icon: icon
        } %}
       </li>
     {% endfor %}

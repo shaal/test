@@ -1,6 +1,7 @@
 review_url: '#'
 rating: 3.75
 count: 52
+icon: "star.svg"
 reviews:
   - rating: 4
     review: 'Suspendisse imperdiet vitae ante nec gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eleifend eros tincidunt libero consequat vulputate. Donec pharetra nisl eu quam tempus, sed commodo est tincidunt. Phasellus laoreet sem id nisl dignissim, at porttitor mauris tristique. Proin vestibulum massa eget pretium elementum. Aliquam fringilla libero et urna posuere scelerisque. Fusce tristique eget lorem vel aliquet. Proin a orci vel eros laoreet accumsan. Etiam imperdiet ac lectus eu lacinia. Nam blandit, arcu nec condimentum porttitor, tortor elit maximus ligula, in rhoncus metus dolor a ipsum. Pellentesque suscipit iaculis nisi vitae pharetra. In hac habitasse platea dictumst.'
