@@ -31,6 +31,15 @@ function tower_health_preprocess_page(&$variables) {
     $variables['full_width'] = TRUE;
     $variables['page_content'] = TRUE;
   }
+
+  $node = $variables['node'];
+  if ($node instanceof NodeInterface) {
+    $type = $node->getType();
+
+    if ($type == 'page') {
+      $variables['show_side_nav'] = $node->field_basic_enable_nav->value;
+    }
+  }
 }
 
 /**
