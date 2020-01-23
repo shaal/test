@@ -11,8 +11,8 @@ dependencies:
     - tower_health
 id: providertype
 theme: tower_health
-region: content
-weight: 0
+region: page_filters
+weight: -6
 provider: null
 plugin: 'facet_block:provider_type'
 settings:

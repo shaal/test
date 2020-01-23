@@ -1,0 +1,12 @@
+item:
+   -
+    width: oneThird
+    title: Gender
+    type: select
+    info: Lorem ipsum dolor set amet.
+    children:
+      - title: Choose an Option
+        attributes: selected disabled
+      - title: Male
+      - title: Female
+      - title: Prefer not to say

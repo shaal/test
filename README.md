@@ -18,6 +18,7 @@ The development environment is based on [palantirnet/the-vagrant](https://github
 
 * Mac OS X >= 10.10. _This stack may run under other host operating systems, but is not regularly tested. For details on installing these dependencies on your Mac, see our [Mac setup doc [internal]](https://github.com/palantirnet/documentation/wiki/Mac-Setup)._
 * [Composer](https://getcomposer.org)
+  * Update to the newest version: `brew composer update`
 * [virtualBox](https://www.virtualbox.org/wiki/Downloads) >= 5.0
 * [ansible](https://github.com/ansible/ansible) `brew install ansible`
 * [vagrant](https://www.vagrantup.com/) >= 2.1.0
@@ -72,7 +73,7 @@ Inside vagrant
 
 Outside vagrant
 1. Login in to Acquia and go to your account and the credentials tab.
-1. Follow the instructions to download the Drush 8 site aliases for all of your sites.
+1. Follow the instructions to download the Drush 9 site aliases for all of your sites.
 1. Confirm that you can access the production site by running `drush @towerhealth.prod status`
 1. Go to the root of this project.
 1. Run the following:

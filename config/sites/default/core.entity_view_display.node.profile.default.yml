@@ -30,204 +30,88 @@ dependencies:
     - field.field.node.profile.field_rating_comments_ref
     - field.field.node.profile.field_rating_count
     - field.field.node.profile.field_rating_overall
-    - image.style.medium
     - node.type.profile
   module:
     - entity_reference_revisions
-    - media
-    - metatag
-    - options
-    - telephone
+    - text
     - user
 id: node.profile.default
 targetEntityType: node
 bundle: profile
 mode: default
 content:
-  content_moderation_control:
+  field_area_interest_ref:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_location_ref:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: teaser_small
+      link: false
+    third_party_settings: {  }
+  field_medical_specialties_ref:
+    type: entity_reference_label
     weight: 0
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_affiliations_ref:
-    weight: 14
-    label: above
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_area_interest_ref:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_insurance_ref:
-    weight: 19
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_medical_specialties_ref:
-    weight: 2
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_metatags:
-    weight: 22
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
   field_profile_board_certified:
-    weight: 12
-    label: above
-    settings:
-      link_to_entity: false
+    weight: 3
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: text_default
     region: content
   field_profile_education:
     type: entity_reference_revisions_entity_view
-    weight: 3
-    label: above
+    weight: 4
+    region: content
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_profile_epic_id:
-    weight: 21
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_profile_image:
-    type: media_thumbnail
-    weight: 1
-    label: hidden
-    settings:
-      image_style: medium
-      image_link: ''
-    third_party_settings: {  }
-    region: content
-  field_profile_job_title:
-    weight: 7
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_profile_languages:
-    weight: 11
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_profile_phone:
-    weight: 8
-    label: hidden
-    settings:
-      title: ''
-    third_party_settings: {  }
-    type: telephone_link
-    region: content
-  field_profile_practid:
-    weight: 20
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_profile_professional_title:
-    weight: 9
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_profile_type:
-    weight: 10
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_profile_video:
-    type: entity_reference_entity_view
-    weight: 17
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_rating_comment_count:
-    weight: 5
-    label: hidden
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
   field_rating_comments_ref:
     type: entity_reference_revisions_entity_view
-    weight: 16
+    weight: 5
+    region: content
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_rating_count:
-    weight: 4
-    label: hidden
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_rating_overall:
-    weight: 6
-    label: hidden
-    settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_decimal
-    region: content
-  links:
-    weight: 18
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
-  field_location_ref: true
+  content_moderation_control: true
+  field_affiliations_ref: true
+  field_insurance_ref: true
+  field_metatags: true
+  field_profile_epic_id: true
   field_profile_first_name: true
   field_profile_gender: true
+  field_profile_image: true
+  field_profile_job_title: true
+  field_profile_languages: true
   field_profile_last_name: true
   field_profile_middle_name: true
   field_profile_npi: true
+  field_profile_phone: true
+  field_profile_practid: true
+  field_profile_professional_title: true
   field_profile_scheduling: true
+  field_profile_type: true
+  field_profile_video: true
+  field_rating_comment_count: true
+  field_rating_count: true
+  field_rating_overall: true
+  links: true
   search_api_excerpt: true

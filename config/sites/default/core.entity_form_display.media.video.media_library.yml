@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.video.field_media_author
+    - field.field.media.video.field_media_description
     - field.field.media.video.field_media_oembed_video
+    - field.field.media.video.field_media_srt
     - media.type.video
 id: media.video.media_library
 targetEntityType: media
@@ -21,7 +24,10 @@ content:
     region: content
 hidden:
   created: true
+  field_media_author: true
+  field_media_description: true
   field_media_oembed_video: true
+  field_media_srt: true
   path: true
   status: true
   uid: true

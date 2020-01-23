@@ -9,6 +9,7 @@
 
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\Views;
 
 /**
  * Add custom sort order for find a provider search.
@@ -26,5 +27,120 @@ function towerhealth_misc_views_query_alter(ViewExecutable $view, QueryPluginBas
     $query->sort('search_api_relevance', 'DESC');
     // And finally by name.
     $query->sort('title', 'ASC');
+  }
+}
+
+/**
+ * Alter the view exposed form.
+ *
+ * {@inheritdoc}
+ */
+function towerhealth_misc_form_alter(&$form, &$form_state, $form_id) {
+  $id = $form['#id'];
+  if ($id == 'views-exposed-form-find-a-location-find-location') {
+    $view_id = 'find_a_location';
+    $view_display_id = 'find_location';
+
+    /** @var \Drupal\views\ViewExecutable $view */
+    $view = Views::getView($view_id);
+    $view->setDisplay($view_display_id);
+
+    $form = towerhealth_misc_query_add_facets($form, $view);
+  }
+  elseif ($id == 'views-exposed-form-find-a-provider-find-doctor') {
+    $view_id = 'find_a_provider';
+    $view_display_id = 'find_doctor';
+
+    /** @var \Drupal\views\ViewExecutable $view */
+    $view = Views::getView($view_id);
+    $view->setDisplay($view_display_id);
+
+    $form = towerhealth_misc_query_add_facets($form, $view);
+  }
+}
+
+/**
+ * Add query facets originally from search_api.module.
+ *
+ * @param array $form
+ *   Nested array of form elements that comprise the form.
+ * @param object $view
+ *   View object to add facet.
+ *
+ * @return array
+ *   Return the form array.
+ */
+function towerhealth_misc_query_add_facets(array $form, $view) {
+  $query_plugin = $view->getQuery();
+
+  // Retrieve the facet source.
+  $query = $query_plugin->getSearchApiQuery();
+  $display_id = $query->getSearchId(FALSE);
+  $facet_source_id = str_replace(':', '__', 'search_api:' . $display_id);
+  $facet_source = \Drupal::entityTypeManager()
+    ->getStorage('facets_facet_source')
+    ->load($facet_source_id);
+
+  if ($facet_source) {
+    // Get the active facet filters from the query parameters.
+    $filter_key = $facet_source->getFilterKey() ?: 'f';
+    $filters = \Drupal::request()->query->get($filter_key, []);
+    // Iterate through the facet filters.
+    foreach ($filters as $key => $value) {
+      if (!is_string($value)) {
+        continue;
+      }
+      // Add a hidden form field for the facet parameter.
+      $form['facets']["{$filter_key}[$key]"] = [
+        '#type' => 'hidden',
+        '#value' => $value,
+      ];
+    }
+  }
+
+  return $form;
+}
+
+/**
+ * Implements hook_theme_suggestions_form_element().
+ */
+function towerhealth_misc_theme_suggestions_container(array $variables) {
+  $suggestions = [];
+
+  if (isset($variables['element']['#attributes']['#type'])) {
+    $suggestions[] = ['container__' . $variables['element']['#type']];
+  }
+
+  if (isset($variables['element']['#attributes']['data-id'])) {
+    $suggestions[] = 'container__' . $variables['element']['#attributes']['data-id'];
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_form_element().
+ */
+function towerhealth_misc_theme_suggestions_form_element(array $variables) {
+  $suggestions = [];
+
+  if (isset($variables['element']['#attributes']['#type'])) {
+    $suggestions = ['form_element__type__' . $variables['element']['#type']];
+  }
+
+  if (isset($variables['element']['#attributes']['data-id'])) {
+    $suggestions[] = 'form_element__' . $variables['element']['#attributes']['data-id'];
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implementation of hook_preprocess_form_element().
+ */
+function towerhealth_misc_preprocess_form_element(&$variables, $hook, &$info) {
+  $form_elements = ['provider-hero-block', 'location-hero-block', 'services-hero-block'];
+  if (isset($variables['element']['#attributes']['data-id']) && in_array($variables['element']['#attributes']['data-id'], $form_elements)) {
+    $info['template'] = 'form-element--' . $variables['element']['#attributes']['data-id'];
   }
 }

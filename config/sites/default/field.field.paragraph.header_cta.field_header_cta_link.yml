@@ -1,0 +1,23 @@
+uuid: fcdafaec-7e79-4e76-bb32-5da8fe82c48e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header_cta_link
+    - paragraphs.paragraphs_type.header_cta
+  module:
+    - link
+id: paragraph.header_cta.field_header_cta_link
+field_name: field_header_cta_link
+entity_type: paragraph
+bundle: header_cta
+label: Link
+description: 'Enter a link http://domain.com/link or an internal link or a tel:3178675309'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

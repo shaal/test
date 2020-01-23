@@ -13,7 +13,6 @@ description: ''
 tag: ''
 base_table: search_api_index_acquia_search_index
 base_field: search_api_id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -149,17 +148,22 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: 'Find a Service'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
-            identifier: find_location_search
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: find_services_search
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              article_editor: '0'
+              editor: '0'
+              publisher: '0'
               administrator: '0'
             placeholder: ''
           is_grouped: false
@@ -208,6 +212,8 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -247,6 +253,8 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

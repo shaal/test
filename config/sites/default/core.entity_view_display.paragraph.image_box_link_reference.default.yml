@@ -1,0 +1,23 @@
+uuid: c3ff839e-cf44-4556-b70e-841930ee2aaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_box_link_reference.field_box_link_ref
+    - paragraphs.paragraphs_type.image_box_link_reference
+id: paragraph.image_box_link_reference.default
+targetEntityType: paragraph
+bundle: image_box_link_reference
+mode: default
+content:
+  field_box_link_ref:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: image_box_reference
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

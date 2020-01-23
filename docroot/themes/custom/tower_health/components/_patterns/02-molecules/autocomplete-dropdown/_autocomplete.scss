@@ -23,11 +23,6 @@
   &.is-active {
     display: block;
     visibility: visible;
-    width: calc(100% - 175px - 1em) !important;
-
-    @include breakpoint($bp3) {
-      width: calc(100% - 205px - 1em) !important;
-    }
   }
 
   @include breakpoint($bp3) {
@@ -89,30 +84,5 @@
       margin: 0;
       padding: .5em 0;
     }
-  }
-}
-
-// Drupal form styles
-
-#views-exposed-form-find-a-provider-find-doctor,
-#views-exposed-form-find-a-location-find-location,
-#views-exposed-form-find-a-service-find-service {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-
-  .form-item {
-    margin-right: 1em;
-    flex-grow: 1;
-  }
-}
-
-#edit-submit-find-a-provider,
-#edit-submit-find-a-service,
-#edit-submit-find-a-location {
-  width: 175px;
-
-  @include breakpoint($bp3) {
-    width: 205px;
   }
 }

@@ -189,15 +189,15 @@ video_cards:
 article_cards:
   - title: Tower Health Opens New Weight Loss Surgery & Wellness Center
     desc: 'The new facility, Tower Health Weight Loss Surgery & Wellness Center, brings together physicians, dietitians, and psychologists to combine weight loss care at 1220 Broadcasting Road, Suite 100 in Wyomissing.'
-    date: Nov. 1, 2019
+    date: November 1, 2019
     url: "#"
   - title: Reading Hospital Road Run Takes Off on Sunday
     desc: 'Hosted by The Friends of Reading Hospital, the event consists of a half marathon, 5K, and 1-mile fun run/walk that will race down the beautiful and scenic tree-lined streets of West Reading and Wyomissing.'
-    date: Nov. 1, 2019
+    date: December 18, 2019
     url: "#"
   - title: "Reading Hospital CEO, Physicians, Staff Participate in 'No Shave November'"
     desc: "The month-long event will raise awareness for men's health, McGlinn Cancer Institute, and show support for the many patients undergoing cancer treatment and experiencing hair loss."
-    date: Nov. 1, 2019
+    date: January 4, 2020
     url: "#"
 cta:
   title: "Need Help? We're Here."
@@ -207,3 +207,125 @@ cta:
     text: "484-628-HELP"
     icon: "th-cal.svg"
     variation: "right"
+careCircle:
+  title: Compassionate Care Principles
+  url: "#"
+  items:
+    - icon: ../../images/icons/th-bill.svg
+      icon_alt: alt text
+      url: "#"
+      label: Find a Provider
+    - icon: ../../images/icons/th-cal.svg
+      icon_alt: alt text
+      url: "#"
+      label: Schedule an Appointment
+      color: healing
+    - icon: ../../images/icons/th-emergency-time.svg
+      icon_alt: alt text
+      url: "#"
+      label: Attend Appointment
+      color: uplifting
+    - icon: ../../images/icons/th-find-hospital.svg
+      icon_alt: alt text
+      url: "#"
+      label: Follow-up with Provider
+      color: wisdom
+    - icon: ../../images/icons/th-find-provider.svg
+      icon_alt: alt text
+      url: "#"
+      label: Recieve treatment
+      color: growth
+    - icon: ../../images/icons/th-medal.svg
+      icon_alt: alt text
+      url: "#"
+      label: Review Forms in MyTowerHealth
+      color: tranquil
+    - icon: ../../images/icons/th-my-tower.svg
+      icon_alt: alt text
+      url: "#"
+      label: Leave a Review
+      color: energy
+    - icon: ../../images/icons/th-services.svg
+      icon_alt: alt text
+      url: "#"
+      label: Schedule Follow-up
+      color: pink
+  content:
+    title: Lorem ipsum dolor sit amet
+    text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam aut perferendis, eum odio doloremque rerum cupiditate libero excepturi sit ea esse labore blanditiis alias, molestiae a reiciendis. Accusantium, aliquam?
+careCircleFull:
+  fullWidth: true
+  title: Compassionate Care Principles
+  url: "#"
+  items:
+    - icon: ../../images/icons/th-bill.svg
+      icon_alt: alt text
+      url: "#"
+      label: Find a Provider
+    - icon: ../../images/icons/th-cal.svg
+      icon_alt: alt text
+      url: "#"
+      label: Schedule an Appointment
+      color: healing
+    - icon: ../../images/icons/th-emergency-time.svg
+      icon_alt: alt text
+      url: "#"
+      label: Attend Appointment
+      color: uplifting
+    - icon: ../../images/icons/th-find-hospital.svg
+      icon_alt: alt text
+      url: "#"
+      label: Follow-up with Provider
+      color: wisdom
+    - icon: ../../images/icons/th-find-provider.svg
+      icon_alt: alt text
+      url: "#"
+      label: Recieve treatment
+      color: growth
+    - icon: ../../images/icons/th-medal.svg
+      icon_alt: alt text
+      url: "#"
+      label: Review Forms in MyTowerHealth
+      color: tranquil
+    - icon: ../../images/icons/th-my-tower.svg
+      icon_alt: alt text
+      url: "#"
+      label: Leave a Review
+      color: energy
+    - icon: ../../images/icons/th-services.svg
+      icon_alt: alt text
+      url: "#"
+      label: Schedule Follow-up
+      color: pink
+  content:
+    title: Lorem ipsum dolor sit amet
+    text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam aut perferendis, eum odio doloremque rerum cupiditate libero excepturi sit ea esse labore blanditiis alias, molestiae a reiciendis. Accusantium, aliquam?
+resources:
+  title: Forms
+  text: If directed, download and complete these forms to prepare for your visit.
+  items:
+    - url: '#'
+      title: Request for Service
+      filetype: PDF
+      desc: Use this form to ipsum dolor sit amet, consectetur adipisicing elit. Commodi, sed odit non, impedit quo quaerat iusto blanditiis, adipisci deserunt sit voluptates distinctio.
+      target: null
+    - url: '#'
+      title: Medical History Questionnaire
+      filetype: PDF
+      desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint sunt illum facilis laudantium nemo doloremque earum, eaque distinctio recusandae itaque debitis veritatis esse quos minima rerum cumque dignissimos laborum.
+      target: null
+    - url: '#'
+      title: Respirator Questionnaire 
+      filetype: PDF
+      desc: Use this form to ipsum dolor sit amet, consectetur adipisicing elit. Commodi, sed odit non, impedit quo quaerat iusto blanditiis, adipisci deserunt sit voluptates distinctio.
+      target: null
+    - url: '#'
+      title: Medical Respirator Questionnaire - Short Form
+      filetype: PDF
+      desc: null
+      target: null
+    - url: '#'
+      title: Audiometric History Form
+      filetype: PDF
+      desc: null
+      target: null

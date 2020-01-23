@@ -3,7 +3,8 @@
   top_sidebar: TRUE,
   bottom_sidebar: TRUE,
   full_content: true,
-  full_width: false
+  full_width: false,
+  page_content: TRUE
 }%}
   
   {% block page_header %}
@@ -59,6 +60,11 @@
       links: image_callout.links,
     } %}
     
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
+      "title": cta.title,
+      "text": cta.text,
+      "link": cta.link
+    } %}
   {% endblock %}
   
 {% endembed %}

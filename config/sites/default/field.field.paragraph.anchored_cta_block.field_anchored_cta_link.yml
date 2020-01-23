@@ -1,0 +1,82 @@
+uuid: c1accb7c-330b-48cf-9d36-a4bfa98f116c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchored_cta_link
+    - paragraphs.paragraphs_type.anchored_cta_block
+    - paragraphs.paragraphs_type.icon_button
+  module:
+    - entity_reference_revisions
+id: paragraph.anchored_cta_block.field_anchored_cta_link
+field_name: field_anchored_cta_link
+entity_type: paragraph
+bundle: anchored_cta_block
+label: LInk
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      icon_button: icon_button
+    target_bundles_drag_drop:
+      anchored_cta_block:
+        weight: 19
+        enabled: false
+      article_card:
+        weight: 20
+        enabled: false
+      basic_header:
+        weight: 21
+        enabled: false
+      card:
+        weight: 22
+        enabled: false
+      cards:
+        weight: 23
+        enabled: false
+      cta_banner:
+        weight: 24
+        enabled: false
+      cta_list_banner:
+        weight: 25
+        enabled: false
+      education:
+        weight: 26
+        enabled: false
+      header_cta:
+        weight: 27
+        enabled: false
+      homepage_hero:
+        weight: 28
+        enabled: false
+      icon_button:
+        enabled: true
+        weight: 29
+      on_my_way:
+        weight: 30
+        enabled: false
+      patient_story:
+        weight: 31
+        enabled: false
+      rating_comments:
+        weight: 32
+        enabled: false
+      recognition_card:
+        weight: 33
+        enabled: false
+      recognition_cards:
+        weight: 34
+        enabled: false
+      rich_text:
+        weight: 35
+        enabled: false
+      sidebar_card:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

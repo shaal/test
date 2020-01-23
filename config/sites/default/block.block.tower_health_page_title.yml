@@ -2,14 +2,17 @@ uuid: 2e862c00-3c05-48b6-953b-9210a9199691
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
+    - ctools
   theme:
     - tower_health
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: tower_health_page_title
 theme: tower_health
-region: content
-weight: -9
+region: page_header
+weight: -15
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +20,19 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/find-a-location\r\n/find-a-location*\r\n/find-a-provider\r\n/find-a-provider*"
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      location: location
+      page: page
+      profile: profile
+      service: service
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,21 @@
+uuid: 70d3b4f3-a66d-479a-91a8-7231745760ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_story_image_pos
+    - paragraphs.paragraphs_type.patient_story
+  module:
+    - options
+id: paragraph.patient_story.field_story_image_pos
+field_name: field_story_image_pos
+entity_type: paragraph
+bundle: patient_story
+label: 'Image position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

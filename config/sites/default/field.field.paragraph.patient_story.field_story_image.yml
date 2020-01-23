@@ -1,0 +1,28 @@
+uuid: dcc1a724-e598-4ef1-ac74-cbdc5affdc53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_story_image
+    - media.type.image
+    - paragraphs.paragraphs_type.patient_story
+id: paragraph.patient_story.field_story_image
+field_name: field_story_image
+entity_type: paragraph
+bundle: patient_story
+label: Image
+description: 'What image would you like to display?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

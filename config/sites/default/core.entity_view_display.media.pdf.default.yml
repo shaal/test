@@ -1,0 +1,28 @@
+uuid: 27692a45-58f7-4eba-b64f-c116fd30dcc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.pdf.field_media_file_1
+    - media.type.pdf
+  module:
+    - file
+id: media.pdf.default
+targetEntityType: media
+bundle: pdf
+mode: default
+content:
+  field_media_file_1:
+    label: visually_hidden
+    weight: 0
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

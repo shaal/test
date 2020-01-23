@@ -1,0 +1,34 @@
+{% embed "@templates/_default.twig" with {
+  page_header: TRUE,
+  top_sidebar: TRUE,
+  bottom_sidebar: FALSE,
+  full_content: FALSE,
+  full_width: false,
+  page_content: TRUE
+}%}
+  
+  {% block page_header %}
+    {% include "@organisms/basic-header/basic-header.twig" %}
+  {% endblock %}
+  
+  {% block top_page_sidebar %}
+    {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
+      cta_list: cta_list
+    }%}
+        
+    {% if section_items %}
+      {% include "@molecules/menus/section-menu/section-menu.twig" with {
+        items: section_items,
+      } %}
+    {% endif %}
+  {% endblock %}
+  
+  {% block page_content %}
+    {% include "@molecules/rich-text/rich-text.twig" %}
+  {% endblock %}
+  
+  {% block full_content %}
+
+  {% endblock %}
+  
+{% endembed %}

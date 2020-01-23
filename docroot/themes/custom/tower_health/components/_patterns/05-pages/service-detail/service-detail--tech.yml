@@ -1,0 +1,131 @@
+header:
+  breadcrumb:
+    1:
+      url: "#"
+      text: "Home"
+    2:
+      url: "#"
+      text: "Conditions & Services"
+    3:
+      url: "#"
+      text: "Women's Services"
+    4:
+      url: "#"
+      text: "Breast Health"
+    5:
+      text: "Mammography"
+  title: Mammography
+  lede: Identify breast issues before they become larger health problems. We are dedicated to keeping women healthy, educated and informed with regard to the health of their breast tissue.
+  cta:
+    button:
+      label: Request an Appointment
+      url: "#"
+      icon: 'th-cal.svg'
+    text: or call
+    link:
+      url: "#"
+      label: "484-628-HELP"
+section_items:
+  - title: "Breast Health"
+    url: "/"
+    in_active_trail: TRUE
+    below:
+      - title: "Mammography"
+        in_active_trail: TRUE
+        url: "/"
+      - title: "Breast Ultrasounds & Screenings"
+        url: "/"
+      - title: "Breast Evaluations & Consultations"
+        url: "/"
+      - title: "Breast Diagnostic Testing"
+        url: "/"
+      - title: "Second Opinion Consultation"
+        url: "/"
+      - title: "Reconstructive Surgery"
+        url: "/"
+  - title: "Sub-item Two"
+    url: "/"
+  - title: "Sub-item Three"
+    url: "/"
+  - title: "Sub-item Four"
+    url: "/"
+  - title: "Sub-item Five"
+    url: "/"
+  - title: "Sub-item Six"
+    url: "/"
+rich_text:
+  -
+    paragraph_content:
+      "Women without a special condition or history generally begin having annual mammograms at the age of 40. Accurate images are key to maintaining breast health. Talk with your physician about a mammography schedule that is appropriate for you based on your overall health and medical history, risk factors, and personal opinion or preference."
+  -
+    paragraph_content:
+      "We offer multiple types of breast x-rays, called mammograms, to make sure we can detect any problems that may stand between you and good health."
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "Digital Mammography"
+  -
+    paragraph_content:
+      "Uses computers and specially designed digital detectors to produce an image that can be displayed on a high-resolution computer monitor and can be transmitted and stored like any computer file."
+  -
+    paragraph_content:
+      "For patients, having a digital mammogram is very much like having a conventional screen-film mammogram. Both film-based and digital mammography use compression and x-rays to create clear images of the inside of the breast. But digital mammography offers the ability to manipulate images (zoom, adjust the contrast) and potentially reduce radiation exposure, ability to adjust the image’s brightness and contrast reduces the need for retakes due to over or under exposure."
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "Tomosynthesis, or 3D Mammography"
+  -
+    paragraph_content:
+      "Allows doctors to see masses and distortions associated with cancers significantly more clearly than conventional two-dimensional mammography. With <a href='#'>3D mammography [PDF]</a> fine details are more visible and no longer hidden by the tissue above or below."
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "Screening Mammogram"
+  -
+    paragraph_content:
+      "X-ray of the breast used to detect breast changes in women who have no signs of breast cancer. It usually involves two x-rays of each breast. Using a mammogram, it is possible to detect a tumor that cannot be felt."
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "Diagnostic Mammogram"
+  -
+    paragraph_content:
+      "X-ray of the breast used to diagnose unusual breast changes, such as: a lump, pain, nipple thickening or discharge, or a change in breast size or shape. These mammograms are used to evaluate unusual spots detected on a screening mammogram."
+  -
+    type: heading
+    heading_level:
+      2
+    heading:
+      "FDA-approved 3D Mammography"
+  -
+    type: image
+    img_url: "#"
+    img_src: "../../images/FDA-logo_new.jpg"
+    img_alt: "This is the alt text"
+    img_caption: "This is an image caption."
+    output_image_tag: TRUE
+    image_figure_modifiers:
+      1:
+        inline
+      2: 
+        right
+  -
+    paragraph_content:
+      "Our mammography program is accredited by the American College of Radiology. All of our personnel and facilities are certified by the Food and Drug Administration under the Mammography Quality Standards Act. The majority of our mammography technologists have also obtained advanced level certification in mammography from the American Registry of Radiologic Technologists."
+cta_list:
+  - text: "Mammography Providers"
+    url: "/"
+    icon: "th-find-provider.svg"
+  - text: "Mammography Locations"
+    url: "/"
+    icon: "th-find-hospital.svg"
+sidebar_label: Related Services
+sidebar_items: null

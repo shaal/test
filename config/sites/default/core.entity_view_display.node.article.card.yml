@@ -1,0 +1,59 @@
+uuid: b5dd3240-9312-49cb-9619-6f42ceeda2b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.article.body
+    - field.field.node.article.field_article_date
+    - field.field.node.article.field_article_teaser
+    - field.field.node.article.field_metatags
+    - node.type.article
+  module:
+    - datetime
+    - metatag
+    - text
+    - user
+id: node.article.card
+targetEntityType: node
+bundle: article
+mode: card
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_article_date:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: long_date
+    third_party_settings: {  }
+  field_article_teaser:
+    type: text_default
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_metatags:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

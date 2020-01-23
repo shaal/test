@@ -1,9 +1,9 @@
 site_title: true
 
 hero:
-  title_1: "Coordinated,"
-  title_2: "Convenient,"
-  title_3: "Effective."
+  title__first: "Coordinated,"
+  title__middle: "Convenient,"
+  title__last: "Effective."
   subtitle: "Connecting you to your healthiest."
   img:
     src: "../../images/th-hero-image.jpg"
@@ -46,33 +46,33 @@ hero:
 
 
 cta_list:
-  title_1: "Innovative,"
-  title_2: "Accessible"
-  title_3: "Healthcare."
+  title_top: "Innovative,"
+  title_middle: "Accessible"
+  title_bottom: "Healthcare."
   subtitle: "Connecting you to the services you need."
   links:
     - text: "MyTowerHealth"
       url: "/"
-      icon: "th-my-tower.svg"
+      button_icon: "th-my-tower.svg"
     - text: "Conditions & Services"
       url: "/"
-      icon: "th-services.svg"
+      button_icon: "th-services.svg"
     - text: "Find a Hospital or Location"
       url: "/"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     - text: "Request an Appointment"
       url: "/"
-      icon: "th-cal.svg"  
+      button_icon: "th-cal.svg"
     - text: "Bill Pay & Insurance"
       url: "/"
-      icon: "th-bill.svg"
+      button_icon: "th-bill.svg"
     - text: "Urgent Care & Emergency Locations"
       url: "/"
-      icon: "th-emergency-time.svg"
+      button_icon: "th-emergency-time.svg"
     
 
 cta_banner:
-  title_2: "Manage your Care, Anywhere."
+  title__bottom: "Manage your Care, Anywhere."
   subtitle: With the MyTowerHeath patient portal, you can talk to your doctor, manage appointments and safely access your health information. Anytime. Even on your phone.
   img:
     src: "../../images/th-cta-image.jpg"

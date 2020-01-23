@@ -1,0 +1,19 @@
+uuid: 97a79710-3a6c-4395-8775-b275f2115429
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header_cta_label
+    - paragraphs.paragraphs_type.header_cta
+id: paragraph.header_cta.field_header_cta_label
+field_name: field_header_cta_label
+entity_type: paragraph
+bundle: header_cta
+label: Label
+description: 'Optional text that appears above the button'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

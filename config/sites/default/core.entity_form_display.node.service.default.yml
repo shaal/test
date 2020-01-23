@@ -3,18 +3,155 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.service.field_area_of_care_ref
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
-    - field.field.node.service.field_medical_specialties_ref
     - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_card_cta
+    - field.field.node.service.field_service_card_desc
+    - field.field.node.service.field_service_card_image
+    - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_core_bool
+    - field.field.node.service.field_service_core_ref
+    - field.field.node.service.field_service_flex
+    - field.field.node.service.field_service_header
+    - field.field.node.service.field_service_headline
+    - field.field.node.service.field_service_intro
+    - field.field.node.service.field_service_related_ref
     - node.type.service
     - workflows.workflow.default
   module:
     - content_moderation
+    - field_group
+    - media_library
     - metatag
+    - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_vertical_tabs:
+      children:
+        - group_description
+        - group_header
+        - group_core_service
+        - group_related_services
+        - group_medical_specialties_condit
+        - group_flexible_components
+        - group_card_data
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Vertical Tabs'
+      region: content
+    group_description:
+      children:
+        - title
+        - field_service_headline
+        - field_service_intro
+        - field_body
+      parent_name: group_vertical_tabs
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Description'
+      region: content
+    group_core_service:
+      children:
+        - field_service_core_bool
+        - field_service_core_ref
+      parent_name: group_vertical_tabs
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Core Service'
+      region: content
+    group_medical_specialties_condit:
+      children:
+        - field_conditions_ref
+      parent_name: group_vertical_tabs
+      weight: 11
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Conditions'
+      region: content
+    group_flexible_components:
+      children:
+        - field_service_flex
+      parent_name: group_vertical_tabs
+      weight: 12
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Flexible Components'
+      region: content
+    group_related_services:
+      children:
+        - field_service_related_ref
+      parent_name: group_vertical_tabs
+      weight: 9
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Related Services'
+      region: content
+    group_header:
+      children:
+        - field_service_header
+      parent_name: group_vertical_tabs
+      weight: 7
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Header'
+      region: content
+    group_card_data:
+      children:
+        - field_service_card_image
+        - field_service_card_desc
+        - field_service_card_cta
+      parent_name: group_vertical_tabs
+      weight: 12
+      format_type: tab
+      region: content
+      format_settings:
+        description: 'The data to display when this page is referenced as a card on other pages.'
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Card Data'
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -22,48 +159,132 @@ mode: default
 content:
   created:
     type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_conditions_ref:
+    type: entity_reference_autocomplete
     weight: 10
     region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+  field_metatags:
+    weight: 9
     settings: {  }
     third_party_settings: {  }
-  field_area_of_care_ref:
-    weight: 122
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
+    type: metatag_firehose
     region: content
-  field_body:
-    weight: 121
+  field_service_card_cta:
+    weight: 129
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_service_card_desc:
+    weight: 128
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_medical_specialties_ref:
-    weight: 123
+  field_service_card_image:
+    type: media_library_widget
+    weight: 127
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_service_core_bool:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_service_core_ref:
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_metatags:
-    weight: 124
-    settings: {  }
+  field_service_flex:
+    type: entity_reference_paragraphs
+    weight: 10
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: metatag_firehose
+  field_service_header:
+    type: entity_reference_paragraphs
+    weight: 10
+    settings:
+      title: 'Page Header'
+      title_plural: 'Page Header'
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: basic_header
+    third_party_settings: {  }
+    region: content
+  field_service_headline:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_service_intro:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_service_related_ref:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 7
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -71,26 +292,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 8
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -98,17 +319,17 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 6
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
-hidden:
-  field_conditions_ref: true
+hidden: {  }

@@ -1,0 +1,10 @@
+uuid: 5f8b4e01-c85d-4775-8ee2-b43f62973605
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.sidebar_card
+label: 'Sidebar Card'
+targetEntityType: paragraph
+cache: true

@@ -113,6 +113,7 @@
 }
 
 .filter__items {
+  width: 100%;
 
   @include breakpoint($bp3) {
     flex: 0 1 90%;
@@ -130,8 +131,22 @@
     padding: .65em 1.35em 0 1em;
   }
 
+  .chosen-search-input {
+    width: calc(100% - 2.7em) !important;
+  }
+
+  .chosen-container .search-choice,
+  .chosen-container .chosen-results .active-result,
+  .facet-item__value {
+    text-transform: capitalize;
+  }
+
   .form-item__dropdown::after {
     top: 1.15em;
+  }
+  
+  .form-item__dropdown {
+    margin-bottom: .25em;
   }
 
   .chosen-container-multi .chosen-drop {
@@ -144,10 +159,20 @@
   }
 
   .form-section__item {
-    margin-bottom: .5em;
+    margin-bottom: .25em;
 
     @include breakpoint($bp3) {
-      margin-right: 2%;
+      margin-right: 1%;
+    }
+
+    &--group {
+      .form-section__item {
+        margin-right: 0;
+
+        @include breakpoint($bp4) {
+          margin-right: 1%;
+        }
+      }
     }
   }
 

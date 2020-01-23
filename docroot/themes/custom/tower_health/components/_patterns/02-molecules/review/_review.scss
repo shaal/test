@@ -89,6 +89,10 @@
   }
 }
 
+.review__text {
+  flex-grow: 1;
+}
+
 .fade__review {
   position: absolute;
   bottom: 0;

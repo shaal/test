@@ -1,0 +1,40 @@
+uuid: 6834f0ab-8f4d-4102-bda7-34e4a7b4a263
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recognition_card.field_recog_card_description
+    - field.field.paragraph.recognition_card.field_recog_card_image
+    - field.field.paragraph.recognition_card.field_recog_card_title
+    - paragraphs.paragraphs_type.recognition_card
+id: paragraph.recognition_card.default
+targetEntityType: paragraph
+bundle: recognition_card
+mode: default
+content:
+  field_recog_card_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_recog_card_image:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: recognition_card
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_recog_card_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

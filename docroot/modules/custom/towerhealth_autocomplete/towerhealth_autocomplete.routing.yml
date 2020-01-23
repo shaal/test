@@ -12,3 +12,10 @@ towerhealth_autocomplete.autocomplete.findlocation:
     _format: json
   requirements:
     _permission: 'access content'
+towerhealth_autocomplete.autocomplete.findservices:
+  path: /search/autocomplete/services
+  defaults:
+    _controller: \Drupal\towerhealth_autocomplete\Controller\FindLocationController::handleAutocomplete
+    _format: json
+  requirements:
+    _permission: 'access content'

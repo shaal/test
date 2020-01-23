@@ -1,0 +1,28 @@
+.resource-list-item {
+  margin-bottom: 1em;
+}
+
+.resource-list-item__title {
+  @include adjust-font-size-to($text, .9);
+  margin-bottom: 0;
+  
+  a:link,
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:active,
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+  
+  span {
+    @include adjust-font-size-to($crumb, .9);
+    margin-left: .5em;
+  }
+}
+
+.resource-list-item__desc {
+  @include adjust-font-size-to($sm-text, .9);
+}

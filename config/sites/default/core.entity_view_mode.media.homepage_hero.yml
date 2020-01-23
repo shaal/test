@@ -1,0 +1,10 @@
+uuid: 5b8a32ec-12c8-4ff8-a2ae-ec2e16ba5bfb
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.homepage_hero
+label: 'Homepage Hero'
+targetEntityType: media
+cache: true

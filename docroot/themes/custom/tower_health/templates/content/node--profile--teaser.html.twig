@@ -70,7 +70,6 @@
  *   in different view modes.
  */
 #}
-
 {% include "@organisms/teasers/provider-teaser/provider-teaser.twig" with {
     "provider": {
       "img": {
@@ -79,17 +78,17 @@
       },
       "details": {
         "name": label,
-        "specialties": content.field_medical_specialties_ref,
-        "language": content.field_profile_languages,
-        "focus": content.field_area_interest_ref,
+        "specialties": specialties,
+        "language": languages,
+        "focus": focuses,
         "location": location,
         "rating": content.field_rating_overall.0['#markup'],
-        "icon": icon_path,
+        "rating_icon": rating_icon
       },
       "link": {
         "url": url,
         "text": "Request an Appointment"|t,
-        "icon": icon,
+        "icon": button_icon
       }
     }
 } %}

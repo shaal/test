@@ -1,0 +1,64 @@
+uuid: 8fdc55b0-9c97-47da-88ec-80e7a6d0fd54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.patient_story.field_story_image
+    - field.field.paragraph.patient_story.field_story_image_pos
+    - field.field.paragraph.patient_story.field_story_link
+    - field.field.paragraph.patient_story.field_story_quote
+    - field.field.paragraph.patient_story.field_story_title
+    - paragraphs.paragraphs_type.patient_story
+  module:
+    - link
+    - options
+id: paragraph.patient_story.default
+targetEntityType: paragraph
+bundle: patient_story
+mode: default
+content:
+  field_story_image:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: patient_story
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_story_image_pos:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_story_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_story_quote:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_story_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

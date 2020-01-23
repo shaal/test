@@ -1,0 +1,9 @@
+uuid: 34c5c1f2-4af8-483d-9880-4a2eff340a65
+langcode: en
+status: true
+dependencies: {  }
+id: cards
+label: Cards
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

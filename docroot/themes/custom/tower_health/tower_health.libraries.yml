@@ -5,7 +5,7 @@ global:
       'https://use.typekit.net/aqk4svu.css': { type: external }
 
   js:
-    dist/00-base/global/animations/animation.js: {}
+    dist/00-base/global/03-animations/animation.js: {}
     components/js/modernizr-custom.js: {}
 
 main-menu:
@@ -29,7 +29,7 @@ chosen:
     dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
     dist/01-atoms/05-forms/chosen/chosen-select.js: {}
 
-listFilters:
+list_filters:
   js:
     dist/03-organisms/listings/listing-filter/listing-filters.js: {}
 
@@ -48,6 +48,11 @@ accordion:
 tabs:
   js:
     dist/02-molecules/menus/tabs/tabs.js: {}
+
+proximity-facet:
+  js:
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyBiJAgSBg1FcnMKlH-OUkKKP5obvuqPbB8: { type: external, attributes: { async: true, defer: true }}
+    components/js/proximity-facet.js: {}
 
 toggle-tips:
   js:

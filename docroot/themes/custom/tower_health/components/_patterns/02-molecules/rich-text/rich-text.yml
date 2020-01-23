@@ -33,7 +33,6 @@ rich_text:
   -
     paragraph_content:
       "Pellentesque vel ante sit amet odio cursus facilisis vehicula vel felis. In tempor nunc ipsum, ac tincidunt felis auctor et. Cras nisl dolor, aliquam a erat et, molestie facilisis magna. Quisque vel ex blandit, malesuada velit nec, feugiat ex. Ut tristique erat sed erat tempus, ac feugiat velit pulvinar. Pellentesque vehicula ultrices arcu, ac consequat ipsum eleifend vel. Etiam efficitur vestibulum ornare. Cras lacus libero, consequat non nulla non, semper feugiat mauris. Morbi ut lectus congue enim porttitor sodales. Ut ac ligula convallis, blandit dolor malesuada, elementum purus."
-  
   -
     type: image
     img_url: "#"

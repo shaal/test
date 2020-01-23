@@ -1,0 +1,28 @@
+uuid: 336fec0b-2cda-4016-bbb5-106648c25465
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon_button
+    - media.type.svg
+    - paragraphs.paragraphs_type.icon_button
+id: paragraph.icon_button.field_icon_button
+field_name: field_icon_button
+entity_type: paragraph
+bundle: icon_button
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      svg: svg
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

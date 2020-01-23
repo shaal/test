@@ -1,0 +1,25 @@
+uuid: 15b61e61-065d-48cc-a6bd-c0cb05aa945e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sidebar_card.field_sidebar_cards_ref
+    - paragraphs.paragraphs_type.sidebar_card
+  module:
+    - entity_reference_revisions
+id: paragraph.sidebar_card.default
+targetEntityType: paragraph
+bundle: sidebar_card
+mode: default
+content:
+  field_sidebar_cards_ref:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: sidebar_card
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

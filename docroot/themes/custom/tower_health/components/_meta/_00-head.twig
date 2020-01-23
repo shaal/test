@@ -4,7 +4,10 @@
     <title>{{ title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-
+    
+    <!-- Styleguides should not be indexed by search engines. -->
+    <meta name="robots" content="none" />
+    
     <!-- Component styles -->
     <link rel="stylesheet" href="../../../../dist/style.css?{{ cacheBuster }}" media="all" />
     <!-- TH Adobe Font Code -->
@@ -24,7 +27,7 @@
     <!-- End Pattern Lab -->
 
   </head>
-  <body class="{{ bodyClass }}">
+  <body class="{{ bodyClass }} styleguide">
     <!-- for js not found errors in Pattern Lab -->
   	<div class="visually-hidden">
   		<div id="tabs" class="tabs"></div>

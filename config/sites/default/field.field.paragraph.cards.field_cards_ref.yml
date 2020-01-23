@@ -1,0 +1,83 @@
+uuid: c96e14e4-bb0f-434c-b9e2-e3caf66336cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards_ref
+    - paragraphs.paragraphs_type.article_card
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.video_card
+  module:
+    - entity_reference_revisions
+id: paragraph.cards.field_cards_ref
+field_name: field_cards_ref
+entity_type: paragraph
+bundle: cards
+label: Cards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card: card
+      article_card: article_card
+      video_card: video_card
+    target_bundles_drag_drop:
+      card:
+        enabled: true
+        weight: 6
+      cards:
+        weight: 7
+        enabled: false
+      education:
+        weight: 8
+        enabled: false
+      on_my_way:
+        weight: 9
+        enabled: false
+      rating_comments:
+        weight: 10
+        enabled: false
+      article_card:
+        enabled: true
+        weight: 11
+      homepage_hero:
+        weight: 15
+        enabled: false
+      patient_story:
+        weight: 17
+        enabled: false
+      basic_header:
+        weight: 19
+        enabled: false
+      recognition_card:
+        weight: 19
+        enabled: false
+      recognition_cards:
+        weight: 20
+        enabled: false
+      cta_banner:
+        weight: 22
+        enabled: false
+      cta_list_banner:
+        weight: 23
+        enabled: false
+      header_cta:
+        weight: 25
+        enabled: false
+      icon_button:
+        weight: 27
+        enabled: false
+      rich_text:
+        weight: 33
+        enabled: false
+      video_card:
+        enabled: true
+        weight: 34
+field_type: entity_reference_revisions

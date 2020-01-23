@@ -1,13 +1,14 @@
 {% embed "@templates/_default.twig" with {
   full_width: true,
-  page_header: false
+  page_header: false,
+  page_content: TRUE
 } %}
   {% block page_content %}
     
     {% include "@organisms/homepage-hero/homepage-hero.twig" with {
-      title_1: hero.title_1,
-      title_2: hero.title_2,
-      title_3: hero.title_3,
+      title__first: hero.title__first,
+      title__middle: hero.title__middle,
+      title__last: hero.title__last,
       subtitle: hero.subtitle,
       img: hero.img,
       classes: hero.classes,
@@ -15,16 +16,16 @@
     } %}
     
     {% include "@organisms/cta-list-banner/cta-list-banner.twig" with {
-      title_1: cta_list.title_1,
-      title_2: cta_list.title_2,
-      title_3: cta_list.title_3,
+      title_top: cta_list.title_top,
+      title_middle: cta_list.title_middle,
+      title_bottom: cta_list.title_bottom,
       subtitle: cta_list.subtitle,
       links: cta_list.links
     } %}
     
     {% include "@organisms/cta-banner/cta-banner.twig" with {
-      title_1: cta_banner.title_1,
-      title_2: cta_banner.title_2,
+      title__top: cta_banner.title__top,
+      title__bottom: cta_banner.title__bottom,
       subtitle: cta_banner.subtitle,
       img: cta_banner.img,
       classes: cta_banner.classes,

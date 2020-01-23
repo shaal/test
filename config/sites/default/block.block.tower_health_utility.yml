@@ -11,7 +11,7 @@ dependencies:
 id: tower_health_utility
 theme: tower_health
 region: header
-weight: -8
+weight: -11
 provider: null
 plugin: 'menu_block:utility'
 settings:

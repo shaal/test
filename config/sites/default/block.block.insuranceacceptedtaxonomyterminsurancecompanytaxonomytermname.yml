@@ -11,8 +11,8 @@ dependencies:
     - tower_health
 id: insuranceacceptedtaxonomyterminsurancecompanytaxonomytermname
 theme: tower_health
-region: content
-weight: 0
+region: page_filters
+weight: -8
 provider: null
 plugin: 'facet_block:insurance_provider'
 settings:

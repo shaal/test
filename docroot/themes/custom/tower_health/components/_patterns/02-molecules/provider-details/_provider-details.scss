@@ -28,6 +28,23 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  
+  .button {
+    margin-bottom: .5em;
+  }
+
+  span {
+    @include adjust-font-size-to($label, .695);
+    font-style: italic;
+    display: block;
+    font-weight: 300;
+  }
+}
+
+.provider-detail__item-meta {
+  @include adjust-font-size-to($label, .8);
+  font-style: italic;
+  display: block;
 }
 
 .provider-detail__item-label {
@@ -39,8 +56,4 @@
   margin-bottom: 0;
 }
 
-.provider-detail__item-meta {
-  @include adjust-font-size-to($label, .8);
-  font-style: italic;
-  display: block;
-}
+

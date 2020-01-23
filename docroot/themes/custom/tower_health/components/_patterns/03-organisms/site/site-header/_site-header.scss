@@ -79,9 +79,10 @@
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 20;
   padding: 1em 2em 2em;
   border-top: 1px solid $trust-ltr;
+  box-shadow: $shadow;
 
   .header__search.is-active & {
     display: block;
@@ -96,9 +97,11 @@
   @include breakpoint($nav-breakpoint) {
     border-top: 4px solid $growth;
     margin-top: 0;
-    width: 73%;
+    width: 69%;
+    margin-right: 2em;
     left: auto;
-    padding: 1em 2em 2em 0;
+    padding: 1em 2em 2em;
+    border-radius: 0 0 $rd-brd-lg $rd-brd-lg;
   }
 
   @include breakpoint($nav-breakpoint 1070px) {
@@ -106,7 +109,7 @@
   }
 
   @include breakpoint(1070px) {
-    width: 70%;
+    width: 67%;
   }
 }
 
@@ -255,11 +258,12 @@
   background: url('../pattern-lab/public/images/mytowerhealth-logo.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 90%;
+  padding: 1em .5em 0 .5em;
 
   @include breakpoint(0 899px) {
     position: absolute;
-    top: 0;
+    top: -5px;
     right: 0;
     padding: .5em;
   }
@@ -267,12 +271,13 @@
   &:link,
   &:visited {
     color: transparent;
+    border-bottom: 1px solid transparent;
   }
 
   &:active,
   &:hover,
   &:focus {
-    transform: scale(1.05);
+    border-bottom: 1px solid $trust-aa;
   }
 }
 

@@ -244,7 +244,7 @@ class FindCareController extends ControllerBase {
 
     $url = '';
     if ($route && $facet && $value) {
-      $query = $facet . ':' . $value;
+      $query = $facet . ':' . strtolower($value);
       $url = Url::fromRoute($route, [], ['attributes' => ['rel' => 'nofollow'], 'query' => [$query_param => [$query]]])->toString();
     }
 

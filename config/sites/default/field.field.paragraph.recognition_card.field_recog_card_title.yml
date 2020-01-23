@@ -1,0 +1,19 @@
+uuid: 9e2684f4-3c36-4abf-9052-44b13cc93618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recog_card_title
+    - paragraphs.paragraphs_type.recognition_card
+id: paragraph.recognition_card.field_recog_card_title
+field_name: field_recog_card_title
+entity_type: paragraph
+bundle: recognition_card
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

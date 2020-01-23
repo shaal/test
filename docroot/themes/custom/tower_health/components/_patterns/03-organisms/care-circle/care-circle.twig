@@ -1,0 +1,47 @@
+{% if fullWidth == true %}
+<div class="grid">
+  <div class="care-circle__banner care-circle__banner--full">
+{% else %}
+  <div class="care-circle__banner">
+{% endif %}
+  <div class="care-circle care-circle--{{ items|length }}" >
+    {% if title %}
+    <div class="care-circle__content">
+      <h2 class='care-circle__title'>
+        {% if url %}
+        <a href="{{ url }}">{{ title }}</a>
+        {% else %}
+        {{ title }}
+        {% endif %}
+      </h2>
+    </div>
+    {% endif %}
+    
+    <ul class="care-circle__list">
+      {% for item in items %}
+        {% include "@molecules/care-circle-item/care-circle-item.twig" with {
+          "icon": item.icon,
+          "icon_alt": item.icon_alt,
+          "url": item.url,
+          "label": item.label,
+          "color": item.color
+        } %}
+      {% endfor %}
+    </ul>
+  </div>
+  
+  {% if content %}
+  <div class="care-circle__text">
+    {% if content.title %}
+    <h3 class="care-circle__text__title">{{ content.title }}</h3>
+    {% endif %}
+    {{ content.text }}
+  </div>
+  {% endif %}
+  
+{% if fullWidth == true %}
+  </div>
+</div>
+{% else %}
+</div>
+{% endif %}

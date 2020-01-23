@@ -57,7 +57,10 @@
 
 .main-menu__item--secondary {
   .main-menu--sub-1 {
-    border-top: 2px solid $trust-aa;
+    
+    @include breakpoint($bp3) {
+      border-top: 2px solid $trust-aa;
+    }
   }
 
   &:active,
@@ -233,8 +236,10 @@
   background-color: transparent;
   border: none;
   overflow: hidden;
+  border-left: 1px solid $trust-ltr;
 
   @include breakpoint($bp3) {
+    border-left: none;
     position: absolute !important;
     height: 1px;
     width: 1px;

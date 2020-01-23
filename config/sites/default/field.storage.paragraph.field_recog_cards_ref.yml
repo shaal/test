@@ -1,0 +1,20 @@
+uuid: 7731c040-3aa3-44ea-af45-b0ae105e1260
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_recog_cards_ref
+field_name: field_recog_cards_ref
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
