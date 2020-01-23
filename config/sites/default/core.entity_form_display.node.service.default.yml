@@ -54,6 +54,7 @@ third_party_settings:
         - field_service_headline
         - field_service_intro
         - field_body
+        - field_service_body_components
       parent_name: group_vertical_tabs
       weight: 6
       format_type: tab
@@ -189,7 +190,7 @@ content:
     region: content
   field_service_body_components:
     type: entity_reference_paragraphs
-    weight: 28
+    weight: 4
     settings:
       title: Paragraph
       title_plural: Paragraphs
