@@ -31,7 +31,12 @@ function tower_health_preprocess_page(&$variables) {
     $variables['full_width'] = TRUE;
     $variables['page_content'] = TRUE;
   }
+}
 
+/**
+ * Set basic page variables.
+ */
+function tower_health_preprocess_page__page(&$variables) {
   $node = $variables['node'];
   if ($node instanceof NodeInterface) {
     $type = $node->getType();
