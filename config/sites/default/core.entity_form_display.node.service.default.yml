@@ -198,6 +198,7 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     region: content
+    third_party_settings: {  }
   field_service_card_cta:
     weight: 129
     settings:
