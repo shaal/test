@@ -631,6 +631,13 @@ function tower_health_preprocess_paragraph__care_circle(&$variables) {
   foreach ($circle_refs as $id => $circle) {
     $entity = Paragraph::load($circle['target_id']);
     $items[$id]['label'] = $entity->field_care_circle_section_title->value;
+    $items[$id]['color'] = $entity->field_care_circle_section_color->value;
+    if ($entity->field_care_circle_section_link->uri != null) {
+      $items[$id]['url'] = Url::fromUri($entity->field_care_circle_section_link->uri);
+    }
+    $items[$id]['src'] = file_create_url($entity->field_care_circle_section_icon->entity->field_media_file->entity->fileuri);
+    dump($entity->field_care_circle_section_icon->entity->field_media_file->entity->uri->value);
+    $items[$id]['alt'] = $entity->field_care_circle_section_icon->entity->field_media_file->entity->alt;
   }
   $variables['items'] = $items;
 }
