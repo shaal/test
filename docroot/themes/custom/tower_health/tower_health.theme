@@ -626,6 +626,10 @@ function tower_health_preprocess_field__field_services_ref(&$variables) {
  */
 function tower_health_preprocess_paragraph__care_circle(&$variables) {
   $paragraph = $variables['paragraph'];
+  $field_name = $paragraph->parent_field_name->value;
+  if ($field_name == 'field_basic_components' || $field_name == 'field_location_components' || $field_name == 'field_service_flex') {
+    $variables['fullWidth'] = true;
+  }
   $circle_refs = $paragraph->field_circle_section_ref->getValue();
   $items = [];
   foreach ($circle_refs as $id => $circle) {
@@ -635,9 +639,8 @@ function tower_health_preprocess_paragraph__care_circle(&$variables) {
     if ($entity->field_care_circle_section_link->uri != null) {
       $items[$id]['url'] = Url::fromUri($entity->field_care_circle_section_link->uri);
     }
-    $items[$id]['src'] = file_create_url($entity->field_care_circle_section_icon->entity->field_media_file->entity->fileuri);
-    dump($entity->field_care_circle_section_icon->entity->field_media_file->entity->uri->value);
-    $items[$id]['alt'] = $entity->field_care_circle_section_icon->entity->field_media_file->entity->alt;
+    $items[$id]['icon'] = file_create_url($entity->field_care_circle_section_icon->entity->field_media_file->entity->uri->value);
+    $items[$id]['icon_alt'] = $entity->field_care_circle_section_icon->entity->field_media_file->entity->alt;
   }
   $variables['items'] = $items;
 }
