@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.patient_story.field_story_image_pos
     - field.field.paragraph.patient_story.field_story_link
     - field.field.paragraph.patient_story.field_story_quote
-    - field.field.paragraph.patient_story.field_story_title
     - paragraphs.paragraphs_type.patient_story
   module:
     - link
@@ -45,14 +44,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
-    region: content
-  field_story_title:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
 hidden:
   created: true

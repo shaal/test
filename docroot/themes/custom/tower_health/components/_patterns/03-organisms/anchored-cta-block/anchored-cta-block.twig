@@ -7,12 +7,14 @@
       </div>
     </div>
     <div class="anchored-cta-block__buttons">
-      {% include "@atoms/icon-button/icon-button.twig" with {
-        "url": link.url,
-        "icon": link.icon,
-        "text": link.text,
-        "variation": "right"
-      } %}
+      {% block button %}
+        {% include "@atoms/icon-button/icon-button.twig" with {
+          "url": link.url,
+          "icon": link.icon,
+          "text": link.text,
+          "variation": "right"
+        } %}
+      {% endblock %}
     </div>
   </div>
 </div>

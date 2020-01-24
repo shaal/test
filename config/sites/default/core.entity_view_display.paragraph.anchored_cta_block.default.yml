@@ -1,0 +1,43 @@
+uuid: dbcd9469-1c65-4155-a7cf-56cb4c1c1f26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.anchored_cta_block.field_anchored_cta_desc
+    - field.field.paragraph.anchored_cta_block.field_anchored_cta_link
+    - field.field.paragraph.anchored_cta_block.field_anchored_cta_title
+    - paragraphs.paragraphs_type.anchored_cta_block
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.anchored_cta_block.default
+targetEntityType: paragraph
+bundle: anchored_cta_block
+mode: default
+content:
+  field_anchored_cta_desc:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_anchored_cta_link:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_anchored_cta_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

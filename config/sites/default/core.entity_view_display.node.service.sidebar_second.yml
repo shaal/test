@@ -1,0 +1,47 @@
+uuid: cdbf0fe4-f5f7-4187-ab37-1082c0afaf71
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sidebar_second
+    - field.field.node.service.field_body
+    - field.field.node.service.field_conditions_ref
+    - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_card_cta
+    - field.field.node.service.field_service_card_desc
+    - field.field.node.service.field_service_card_image
+    - field.field.node.service.field_service_core_bool
+    - field.field.node.service.field_service_core_ref
+    - field.field.node.service.field_service_flex
+    - field.field.node.service.field_service_header
+    - field.field.node.service.field_service_related_ref
+    - node.type.service
+  module:
+    - user
+id: node.service.sidebar_second
+targetEntityType: node
+bundle: service
+mode: sidebar_second
+content:
+  field_service_related_ref:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  content_moderation_control: true
+  field_body: true
+  field_conditions_ref: true
+  field_metatags: true
+  field_service_card_cta: true
+  field_service_card_desc: true
+  field_service_card_image: true
+  field_service_core_bool: true
+  field_service_core_ref: true
+  field_service_flex: true
+  field_service_header: true
+  links: true
+  search_api_excerpt: true

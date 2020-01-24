@@ -83,6 +83,22 @@
             "lang": "en"
         }
     ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Conjunctivitis | Tower Health",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/4"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
     "rh_action": [
         {
             "value": "bundle_default"

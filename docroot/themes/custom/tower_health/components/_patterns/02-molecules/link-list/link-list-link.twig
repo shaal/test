@@ -1,0 +1,9 @@
+<li class="link-list__link">
+  {% block item %}
+    {% include "@atoms/01-links/link/link.twig" with {
+    "link_url": item.link,
+    "link_content": item.text,
+    "link_base_class": ""
+    }%}
+  {% endblock %}
+</li>

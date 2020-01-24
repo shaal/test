@@ -1,0 +1,28 @@
+uuid: 41332b09-b791-4be3-98bf-6128eae65d62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_banner_image_ref
+    - media.type.image
+    - paragraphs.paragraphs_type.image_teaser_banner
+id: paragraph.image_teaser_banner.field_image_banner_image_ref
+field_name: field_image_banner_image_ref
+entity_type: paragraph
+bundle: image_teaser_banner
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: 9ed0a042-b450-46b8-be50-048578dab87b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.image_box_reference
+label: 'Image Box Reference'
+targetEntityType: node
+cache: true

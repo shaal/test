@@ -1,6 +1,6 @@
 <div class="location-hero js-section-animation">
   <div class="location-hero__container">
-    <div class="location-hero__content {% if img %}image{% endif %}">
+    <div class="location-hero__content {% if img.src is not empty %}image{% endif %}">
       <span class="location-label">{{ type }}</span>
       <h1 class="location-hero__title">{{ name }}</h1>
       <div class="location-details">
@@ -13,7 +13,7 @@
           <div class="location-details__child">
             {% include "@atoms/icon-button/icon-button.twig" with {
               "url": directions.url,
-              "icon": directions.icon,
+              "button_icon": directions.button_icon,
               "text": directions.text,
               "variation": directions.variation,
             } %}
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    {% if img %}
+    {% if img.src is not empty %}
       <div class="location-hero__image">
         {% include "@molecules/image-background/image-background.twig" with {
           "img.src": img.src,

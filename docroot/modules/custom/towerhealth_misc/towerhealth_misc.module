@@ -10,8 +10,6 @@
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Views;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element;
 
 /**
  * Add custom sort order for find a provider search.
@@ -110,7 +108,7 @@ function towerhealth_misc_theme_suggestions_container(array $variables) {
   $suggestions = [];
 
   if (isset($variables['element']['#attributes']['#type'])) {
-    $suggestions[] =['container__' . $variables['element']['#type']];
+    $suggestions[] = ['container__' . $variables['element']['#type']];
   }
 
   if (isset($variables['element']['#attributes']['data-id'])) {

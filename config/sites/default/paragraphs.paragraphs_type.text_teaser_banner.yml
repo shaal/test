@@ -1,0 +1,9 @@
+uuid: 51c09934-af9d-4b81-b4ab-e322531a02d7
+langcode: en
+status: true
+dependencies: {  }
+id: text_teaser_banner
+label: 'Text Teaser Banner'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

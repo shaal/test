@@ -1,0 +1,93 @@
+uuid: 4858c7e9-dca8-42c9-a296-200d25f097f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_box_links_ref
+    - paragraphs.paragraphs_type.box_links
+    - paragraphs.paragraphs_type.image_box_link_custom
+    - paragraphs.paragraphs_type.image_box_link_reference
+  module:
+    - entity_reference_revisions
+id: paragraph.box_links.field_image_box_links_ref
+field_name: field_image_box_links_ref
+entity_type: paragraph
+bundle: box_links
+label: 'Box Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_box_link_custom: image_box_link_custom
+      image_box_link_reference: image_box_link_reference
+    target_bundles_drag_drop:
+      article_card:
+        weight: 20
+        enabled: false
+      basic_header:
+        weight: 21
+        enabled: false
+      box_links:
+        weight: 22
+        enabled: false
+      card:
+        weight: 23
+        enabled: false
+      cards:
+        weight: 24
+        enabled: false
+      cta_banner:
+        weight: 25
+        enabled: false
+      cta_list_banner:
+        weight: 26
+        enabled: false
+      education:
+        weight: 27
+        enabled: false
+      header_cta:
+        weight: 28
+        enabled: false
+      homepage_hero:
+        weight: 29
+        enabled: false
+      icon_button:
+        weight: 30
+        enabled: false
+      image_teaser_banner:
+        weight: 31
+        enabled: false
+      image_box_link_custom:
+        enabled: true
+        weight: 32
+      on_my_way:
+        weight: 32
+        enabled: false
+      patient_story:
+        weight: 33
+        enabled: false
+      image_box_link_reference:
+        enabled: true
+        weight: 34
+      rating_comments:
+        weight: 34
+        enabled: false
+      recognition_card:
+        weight: 35
+        enabled: false
+      recognition_cards:
+        weight: 36
+        enabled: false
+      rich_text:
+        weight: 37
+        enabled: false
+      text_teaser_banner:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,25 @@
+uuid: 4f6d2700-c77a-4f7f-9a42-49eaa5ae3d5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.box_links.field_image_box_links_ref
+    - paragraphs.paragraphs_type.box_links
+  module:
+    - entity_reference_revisions
+id: paragraph.box_links.default
+targetEntityType: paragraph
+bundle: box_links
+mode: default
+content:
+  field_image_box_links_ref:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

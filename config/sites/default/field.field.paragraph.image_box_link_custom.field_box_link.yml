@@ -1,0 +1,23 @@
+uuid: efc8b7ba-9f26-44e2-8f0f-75bdb17bebaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_box_link
+    - paragraphs.paragraphs_type.image_box_link_custom
+  module:
+    - link
+id: paragraph.image_box_link_custom.field_box_link
+field_name: field_box_link
+entity_type: paragraph
+bundle: image_box_link_custom
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

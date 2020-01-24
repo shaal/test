@@ -4,7 +4,6 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
-use Drupal\Core\Url;
 
 /**
  * Provides a 'Location search block for hero region' block.
