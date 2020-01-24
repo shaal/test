@@ -87,7 +87,15 @@
       $ul.after($dropdown).hide();
       Drupal.attachBehaviors($dropdown.parent()[0], Drupal.settings);
 
-      $dropdown.chosen();
+      $dropdown.chosen({
+        width: "100%",
+        placeholder_text_multiple: "Any",
+        placeholder_text_single: "Any",
+        search_contains: true,
+      });
+      console.log($dropdown.parents('form-section__item'));
+
+      $dropdown.parents('.facets-widget-chosen-dropdown').addClass('js-complete');
     });
   };
 
