@@ -15,7 +15,7 @@ provider: null
 plugin: provider_hero_block
 settings:
   id: provider_hero_block
-  label: 'Search Providers'
+  label: 'Find a Provider'
   provider: towerhealth_misc
   label_display: visible
 visibility:

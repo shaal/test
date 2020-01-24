@@ -12,7 +12,7 @@ dependencies:
 id: providertype
 theme: tower_health
 region: page_filters
-weight: -6
+weight: -10
 provider: null
 plugin: 'facet_block:provider_type'
 settings:
