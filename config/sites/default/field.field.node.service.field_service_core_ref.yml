@@ -11,7 +11,7 @@ field_name: field_service_core_ref
 entity_type: node
 bundle: service
 label: 'Core Service'
-description: 'These are the services that are offered by Tower Health.'
+description: 'Which core service does this service belong to?'
 required: false
 translatable: false
 default_value: {  }

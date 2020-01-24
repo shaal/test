@@ -12,7 +12,7 @@ field_name: field_service_core_bool
 entity_type: node
 bundle: service
 label: 'Is this a core service'
-description: ''
+description: 'Is this service a core service?'
 required: false
 translatable: false
 default_value:
