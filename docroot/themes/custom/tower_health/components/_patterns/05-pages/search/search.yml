@@ -56,6 +56,7 @@ teasers:
       location: "Pottstown, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '4.2'
       rating_icon: "star.svg"
     type: "provider"
@@ -128,6 +129,7 @@ teasers:
         - text: "English"
       rating: '5'
       rating_icon: "star.svg"
+      type: 'Midwife'
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -148,6 +150,7 @@ teasers:
         - text: "English"
       rating: '4.2'
       rating_icon: "star.svg"
+      type: 'Doctor'
     type: "provider"
   - details:
       title: "Lessons from the Oncology Center"

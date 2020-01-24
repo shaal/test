@@ -122,6 +122,7 @@ providers:
       location: "Pottstown, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '4.2'
       rating_icon: "star.svg"
     type: "provider"
@@ -142,6 +143,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
+      type: 'Midwife'
       rating: '3.25'
       rating_icon: "star.svg"
     type: "provider"
@@ -161,6 +163,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '2'
       rating_icon: "star.svg"
     type: "provider"
@@ -181,6 +184,7 @@ providers:
       location: "Pottstown, PA"
       language: 
         - text: "English"
+      type: 'Nurse Practitioner'
       rating: null
       rating_icon: "star.svg"
     type: "provider"
@@ -201,6 +205,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '1.75'
       rating_icon: "star.svg"
     type: "provider"
@@ -219,6 +224,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '4.2'
       rating_icon: "star.svg"
     type: "provider"
@@ -239,6 +245,7 @@ providers:
       location: "Pottstown, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '5'
       rating_icon: "star.svg"
     type: "provider"
@@ -259,6 +266,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '3'
       rating_icon: "star.svg"
     type: "provider"
@@ -277,6 +285,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
+      type: 'Physicians Assistant'
       rating: '4.2'
       rating_icon: "star.svg"
     type: "provider"
@@ -297,6 +306,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
+      type: 'Doctor'
       rating: '1'
       rating_icon: "star.svg"
     type: "provider"
