@@ -214,7 +214,7 @@ function tower_health_preprocess_node__profile(&$variables) {
         }
       }
       if ($location) {
-        $variables['location'] = implode(", ", $locations);
+        $variables['location'] = implode("; ", $locations);
       }
     }
 
@@ -615,6 +615,29 @@ function tower_health_preprocess_field__field_services_ref(&$variables) {
     $services[$id]['text'] = $service['content'];
   }
   $variables['services'] = $services;
+}
+
+/**
+ * Alter views.
+ */
+function tower_health_preprocess_views_view(&$variables) {
+  $id = $variables['id'];
+
+  if ($id == 'find_a_provider') {
+    $facets = \Drupal::request()->get('providers');
+    if ($facets and is_array($facets)) {
+      foreach ($facets as $i => $facet) {
+        $arr = explode(':', $facet);
+        $placeholder = ucwords($arr[1]);
+        if ($arr[0] == 'location') {
+          $variables['result_appendix'] = t("for @location", ["@location" => $placeholder]);
+        }
+        elseif ($arr[0] == 'service') {
+          $variables['result_appendix'] = t("@service Service", ["@service" => $placeholder]);
+        }
+      }
+    }
+  }
 }
 
 /**
