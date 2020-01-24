@@ -12,7 +12,7 @@ dependencies:
 id: specialties
 theme: tower_health
 region: page_filters
-weight: -11
+weight: -15
 provider: null
 plugin: 'facet_block:specialties'
 settings:

@@ -20,7 +20,7 @@ use Drupal\views\Views;
  *   View query.
  */
 function towerhealth_misc_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  if ($view->id() == 'find_a_provider') {
+  if ($view->id() == 'find_a_provider' || $view->id() == 'auto_provider') {
     // Sort by provider type custom solr field first.
     $query->sort('provider_sort_field', 'ASC');
     // Then sort by relevance.
@@ -139,7 +139,7 @@ function towerhealth_misc_theme_suggestions_form_element(array $variables) {
  * Implementation of hook_preprocess_form_element().
  */
 function towerhealth_misc_preprocess_form_element(&$variables, $hook, &$info) {
-  $form_elements = ['provider-hero-block', 'location-hero-block', 'services-hero-block'];
+  $form_elements = ['provider-hero-block', 'location-hero-block', 'services-hero-block', 'location-proximity-search-input'];
   if (isset($variables['element']['#attributes']['data-id']) && in_array($variables['element']['#attributes']['data-id'], $form_elements)) {
     $info['template'] = 'form-element--' . $variables['element']['#attributes']['data-id'];
   }

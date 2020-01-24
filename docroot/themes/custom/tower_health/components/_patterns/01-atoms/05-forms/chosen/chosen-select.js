@@ -23,6 +23,8 @@
     placeholder_text_single: "Any",
     search_contains: true
   });
+
+  $(".chosen-select").parents('.facets-widget-chosen-dropdown').addClass('js-complete');
   
 
 })(jQuery); // REMOVE IF DRUPAL.

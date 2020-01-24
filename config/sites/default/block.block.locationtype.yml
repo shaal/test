@@ -12,7 +12,7 @@ dependencies:
 id: locationtype
 theme: tower_health
 region: page_filters
-weight: -13
+weight: -17
 provider: null
 plugin: 'facet_block:location_type'
 settings:

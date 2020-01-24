@@ -41,7 +41,10 @@ class LocationProximityBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['find_location_search']);
+    $form['find_location_search']['#type'] = 'hidden';
+    $search_term_id = $form['find_location_search']['#id'];
+    $form['find_location_search']['#id'] = $search_term_id . '-proximity';
+    $form['find_location_search']['#attributes']['data-id'] = 'location-proximity-search-input';
 
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-proximity';
 
