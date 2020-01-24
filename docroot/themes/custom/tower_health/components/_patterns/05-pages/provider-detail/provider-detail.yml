@@ -12,7 +12,9 @@ breadcrumb:
 
 name: "Karen A. Hoerst, MD"
 lead_title: "Medical Director, Stroke Program"
+type: 'Nurse Practitioner'
 rating: 4.9
+rating_icon: "star.svg"
 review_amt: 36
 provider_video:
   type: video
