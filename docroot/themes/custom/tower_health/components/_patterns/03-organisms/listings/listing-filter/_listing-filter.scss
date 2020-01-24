@@ -179,6 +179,11 @@
   .form-item--checkbox__item {
     display: inline-block;
   }
+  
+  .form-item--radios,
+  .form-item--checkboxes {
+    @include adjust-font-size-to($sm-text, .9);
+  }
 
   @include breakpoint($bp3) {
     .form-item--inline,

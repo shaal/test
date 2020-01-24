@@ -86,17 +86,21 @@ form_sections:
           - title: < 25 Miles
       -
         width: full
-        title: 'Provider Type'
+        title: 'Type'
         type: radio
         info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ullam, optio similique eius esse ex maiores distinctio tempore magni dolor, labore natus unde ratione consequuntur maxime repellendus beatae mollitia aliquam.'
         info_id: type
         orientation: inline
         children:
-          - title: All Providers
+          - title: All
             id: type
-          - title: Physicians Only
+          - title: Doctors
             id: type
-          - title: Advanced Practice Providers Only
+          - title: Nurse Practitioners
+            id: type
+          - title: Midwives
+            id: type
+          - title: Physicians Assistants
             id: type
 results_shown: 1-10
 results_count: 128
@@ -112,13 +116,14 @@ providers:
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: 
-        - "Oral and Maxillofacial Surgery"
+        - text: "Oral and Maxillofacial Surgery"
       focus: 
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '4.2'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -131,13 +136,14 @@ providers:
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
       specialties: 
-        - "Pediatrics"
+        - text: "Pediatrics"
       focus: 
-        - "Child Development, Preventative Medicine"
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '3.25'
+      rating_icon: "star.svg"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -148,13 +154,15 @@ providers:
     details:
       name: "Monique Lisa Abner, MD"
       specialties: 
-        - "Plastic Surgery"
+        - text: "Plastic Surgery"
       focus: 
-        - "Wound healing, Hyperbaric Medicine"
+        - text: "Wound healing"
+        - text: "Hyperbaric Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '2'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -167,13 +175,14 @@ providers:
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: 
-        - "Oral and Maxillofacial Surgery"
+        - text: "Oral and Maxillofacial Surgery"
       focus: 
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: null
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -186,13 +195,14 @@ providers:
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
       specialties: 
-        - "Pediatrics"
+        - text: "Pediatrics"
       focus: 
-        - "Child Development, Preventative Medicine"
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '1.75'
+      rating_icon: "star.svg"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -203,13 +213,14 @@ providers:
     details:
       name: "Monique Lisa Abner, MD"
       specialties: 
-        - "Plastic Surgery"
+        - text: "Plastic Surgery"
       focus: 
-        - "Wound healing, Hyperbaric Medicine"
+        - text: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '4.2'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -222,13 +233,14 @@ providers:
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: 
-        - "Oral and Maxillofacial Surgery"
+        - text: "Oral and Maxillofacial Surgery"
       focus: 
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '5'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -241,13 +253,14 @@ providers:
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
       specialties: 
-        - "Pediatrics"
+        - text: "Pediatrics"
       focus: 
-        - "Child Development, Preventative Medicine"
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '3'
+      rating_icon: "star.svg"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -258,13 +271,14 @@ providers:
     details:
       name: "Monique Lisa Abner, MD"
       specialties: 
-        - "Plastic Surgery"
+        - text: "Plastic Surgery"
       focus: 
-        - "Wound healing, Hyperbaric Medicine"
+        - text: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '4.2'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -277,13 +291,14 @@ providers:
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
       specialties: 
-        - "Pediatrics"
+        - text: "Pediatrics"
       focus: 
-        - "Child Development, Preventative Medicine"
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '1'
+      rating_icon: "star.svg"
     type: "provider"
 current: 4
 items:
