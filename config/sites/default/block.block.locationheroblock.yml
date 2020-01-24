@@ -15,7 +15,7 @@ provider: null
 plugin: location_hero_block
 settings:
   id: location_hero_block
-  label: 'Search Locations'
+  label: 'Find a Location'
   provider: towerhealth_misc
   label_display: visible
 visibility:
