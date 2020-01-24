@@ -10,19 +10,14 @@ dependencies:
     - field.field.node.service.field_service_card_cta
     - field.field.node.service.field_service_card_desc
     - field.field.node.service.field_service_card_image
-    - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
     - field.field.node.service.field_service_header
-    - field.field.node.service.field_service_headline
-    - field.field.node.service.field_service_intro
     - field.field.node.service.field_service_related_ref
     - node.type.service
   module:
-    - entity_reference_revisions
     - metatag
-    - options
     - text
     - user
 id: node.service.default
