@@ -21,7 +21,7 @@ form_sections:
         children:
           - title: Location
             id: type
-          - title: Provider
+          - title: Doctor
             id: type
           - title: Service
             id: type
