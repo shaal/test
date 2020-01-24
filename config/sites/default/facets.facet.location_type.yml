@@ -26,8 +26,8 @@ widget:
     show_reset_link: 0
     reset_text: 'Show all'
     hide_reset_when_no_selection: 0
-    default_option_label: Any
-query_operator: and
+    default_option_label: ''
+query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
 enable_parent_when_child_gets_disabled: true
