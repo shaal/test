@@ -8,12 +8,12 @@ header:
       text: "2nd Level"
     3:
       text: "3rd Level"
-  title: Find a Provider
+  title: Find a Doctor
   style: list
   form:
-    label: "Search Providers"
+    label: "Search Doctors"
     placeholder: "Search by Name, Specialty, or Condition"
-    button: "Search Providers"
+    button: "Search Doctors"
 form_sections:
   - section_items:
       -

@@ -111,7 +111,7 @@ section_items:
   - title: "Events & Classes"
     url: "/"
 cta_list:
-  - text: "Providers at this Location"
+  - text: "Doctors at this Location"
     url: "/"
     icon: "th-find-provider.svg"
 boxes:

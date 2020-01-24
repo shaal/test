@@ -214,7 +214,7 @@ careCircle:
     - icon: ../../images/icons/th-bill.svg
       icon_alt: alt text
       url: "#"
-      label: Find a Provider
+      label: Find a Doctor
     - icon: ../../images/icons/th-cal.svg
       icon_alt: alt text
       url: "#"
@@ -228,7 +228,7 @@ careCircle:
     - icon: ../../images/icons/th-find-hospital.svg
       icon_alt: alt text
       url: "#"
-      label: Follow-up with Provider
+      label: Follow-up with Doctor
       color: wisdom
     - icon: ../../images/icons/th-find-provider.svg
       icon_alt: alt text
@@ -261,7 +261,7 @@ careCircleFull:
     - icon: ../../images/icons/th-bill.svg
       icon_alt: alt text
       url: "#"
-      label: Find a Provider
+      label: Find a Doctor
     - icon: ../../images/icons/th-cal.svg
       icon_alt: alt text
       url: "#"
@@ -275,7 +275,7 @@ careCircleFull:
     - icon: ../../images/icons/th-find-hospital.svg
       icon_alt: alt text
       url: "#"
-      label: Follow-up with Provider
+      label: Follow-up with Doctor
       color: wisdom
     - icon: ../../images/icons/th-find-provider.svg
       icon_alt: alt text

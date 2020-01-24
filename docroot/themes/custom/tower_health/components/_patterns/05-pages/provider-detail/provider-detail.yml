@@ -6,7 +6,7 @@ breadcrumb:
       text: "Home"
     2:
       url: "#"
-      text: "Providers"
+      text: "Doctors"
     3:
       text: "Karen A. Hoerst, MD"
 
@@ -17,7 +17,7 @@ review_amt: 36
 provider_video:
   type: video
   reference: https://www.youtube.com/embed/d3ZLhedUtkA
-  label: Provider Video
+  label: Video
 img:
   src: "../../images/people/hoerst-karen.jpg"
   alt: "Karen A. Hoerst, MD"
@@ -59,7 +59,7 @@ locations:
           number: "484-555-5556"
       cta:
         url: "#"
-        label: "View Other Providers at this Location"
+        label: "View Other Doctors at this Location"
     - type: location
       name: "Reading Hospital"
       address_rows:
@@ -73,7 +73,7 @@ locations:
           number: "484-555-5556"
       cta:
         url: "#"
-        label: "View Other Providers at this Location"
+        label: "View Other Doctors at this Location"
 certification:
   label: Board Certifications
   items:
