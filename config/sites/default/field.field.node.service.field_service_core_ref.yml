@@ -11,7 +11,7 @@ field_name: field_service_core_ref
 entity_type: node
 bundle: service
 label: 'Core Service'
-description: 'Which core service does this service belong to?'
+description: 'Which core service does this service belong to? If you have selected "True" above you must still select a core service. <i>Example: "Women''s health" is a core service and this is the "Women''s Health" service page, the core service should also be "Women''s Health" and the "Is this service page a core service" set to "True"</i>'
 required: false
 translatable: false
 default_value: {  }
