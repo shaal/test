@@ -404,6 +404,18 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_acquia_search_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
           order: ASC
           exposed: false
           expose:
@@ -426,7 +438,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_ajax: false
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
