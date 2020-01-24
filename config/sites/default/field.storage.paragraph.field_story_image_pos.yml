@@ -1,4 +1,4 @@
-uuid: 0e97ba40-a9a4-4bbf-bbab-81967f488cfb
+uuid: ea0e750c-7086-4ab9-bc73-1a2715de4e51
 langcode: en
 status: true
 dependencies:
@@ -15,7 +15,7 @@ settings:
       value: left
       label: Left
     -
-      value: right
+      value: reverse
       label: Right
   allowed_values_function: ''
 module: options
