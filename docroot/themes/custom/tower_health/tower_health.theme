@@ -360,6 +360,25 @@ function tower_health_preprocess_node__service(&$variables) {
 
     $variables['cta_list'] = $cta_list;
   }
+
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
+    if ($node->hasField('field_conditions_ref') && !$node->get('field_conditions_ref')->isEmpty()) {
+      $condition_refs = $node->get('field_conditions_ref')->getValue();
+      $conditions = [];
+      foreach ($condition_refs as $id => $condition) {
+        $entity = $node->field_conditions_ref[$id]->entity;
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          $conditions[$id] = $name;
+        }
+      }
+      if ($conditions) {
+        $variables['related_conditions'] = $conditions;
+      }
+    }
+  }
 }
 
 /**
@@ -619,4 +638,126 @@ function tower_health_preprocess_field__field_services_ref(&$variables) {
     $services[$id]['text'] = $service['content'];
   }
   $variables['services'] = $services;
+}
+
+/**
+ * Alter views.
+ */
+function tower_health_preprocess_views_view(&$variables) {
+  $id = $variables['id'];
+
+  if ($id == 'find_a_provider') {
+    $facets = \Drupal::request()->get('providers');
+    if ($facets and is_array($facets)) {
+      foreach ($facets as $i => $facet) {
+        $arr = explode(':', $facet);
+        $placeholder = ucwords($arr[1]);
+        if ($arr[0] == 'location') {
+          $variables['result_appendix'] = t("for @location", ["@location" => $placeholder]);
+        }
+        elseif ($arr[0] == 'service') {
+          $variables['result_appendix'] = t("@service Service", ["@service" => $placeholder]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Setup the pager to match prototype
+ */
+function tower_health_preprocess_pager(&$variables) {
+  if (!isset($variables['items'])) {
+    return;
+  }
+
+  $items = $variables['items'];
+  $current = $variables['current'];
+  $route = \Drupal::routeMatch()->getCurrentRouteMatch();
+  $route_name = $route->getRouteName();
+
+  if ($route_name == 'view.find_a_location.find_location' && !empty($items)) {
+    $search_term = Xss::filter(\Drupal::request()->get('find_location_search'));
+    $facets = \Drupal::request()->get('f');
+    $locations = \Drupal::request()->get('location_latlon');
+
+    $params = [];
+
+    if (!empty($search_term)) {
+      $params['find_location_search'] = $search_term;
+    }
+
+    if ($locations and is_array($locations)) {
+      $params['location_latlon[value]'] = $locations['value'];
+      $params['location_latlon[distance][from]'] = $locations['distance']['from'];
+    }
+
+    if ($facets and is_array($facets)) {
+      foreach ($facets as $i => $facet) {
+        $facet_id = 'f['. $i . ']';
+        $params[$facet_id] = $facet;
+      }
+    }
+
+    $items = _tower_health_pager_links($items, $route_name, $params, $current);
+  }
+  elseif ($route_name == 'view.find_a_provider.find_doctor' && !empty($items)) {
+    $search_term = Xss::filter(\Drupal::request()->get('find_doctor_search'));
+    $facets = \Drupal::request()->get('providers');
+    $locations = \Drupal::request()->get('provider_location_latlong');
+
+    $params = [];
+
+    if (!empty($search_term)) {
+      $params['find_doctor_search'] = $search_term;
+    }
+
+    if ($locations and is_array($locations)) {
+      $params['provider_location_latlong[value]'] = $locations['value'];
+      $params['provider_location_latlong[distance][from]'] = $locations['distance']['from'];
+    }
+
+    if ($facets and is_array($facets)) {
+      foreach ($facets as $i => $facet) {
+        $facet_id = 'providers['. $i . ']';
+        $params[$facet_id] = $facet;
+      }
+    }
+
+    $items = _tower_health_pager_links($items, $route_name, $params, $current);
+  }
+
+  $variables['items'] = $items;
+}
+
+/**
+ * Set up pager links to properly page.
+ */
+function _tower_health_pager_links($items, $route_name, $params, $current) {
+  if (!is_array($items) || empty($route_name) || !is_array($params) || empty($current)) {
+    return;
+  }
+
+  foreach($items['pages'] as $i => $page) {
+    $page_number = $i - 1;
+    $route_params = $params;
+    $route_params['page'] = $page_number;
+    $items['pages'][$i]['href'] = Url::fromRoute($route_name, $route_params);
+  }
+
+  if (isset($items['previous'])) {
+    $page_number = $current - 1;
+    $route_params = $params;
+    $route_params['page'] = $page_number;
+    $items['previous']['href'] = Url::fromRoute($route_name, $route_params);
+  }
+
+  if (isset($items['next'])) {
+    $page_number = $current;
+    $route_params = $params;
+    $route_params['page'] = $page_number;
+    $items['next']['href'] = Url::fromRoute($route_name, $route_params);
+  }
+
+  return $items;
 }
