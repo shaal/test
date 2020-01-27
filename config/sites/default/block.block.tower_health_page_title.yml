@@ -33,6 +33,6 @@ visibility:
       node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: "/find-a-location\r\n/find-a-location*\r\n/find-a-provider\r\n/find-a-provider*"
+    pages: "/locations\r\n/locations*\r\n/providers\r\n/providers*"
     negate: true
     context_mapping: {  }

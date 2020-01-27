@@ -11,9 +11,9 @@ id: node.service.field_service_core_bool
 field_name: field_service_core_bool
 entity_type: node
 bundle: service
-label: 'Is this a core service'
-description: ''
-required: false
+label: 'Is this service page a core service?'
+description: "The \"Our services\" list that display on a core service detail page is controlled by the <a href=\"/admin/structure/taxonomy/manage/core_services/overview\">core services taxonomy vocabulary</a>. Select \"True\" above if this service page <i>is</i> the core service page and should display the \"Our services\" list.\r\n"
+required: true
 translatable: false
 default_value:
   -
