@@ -49,7 +49,7 @@ class ServicesHeroBlock extends BlockBase {
 
     $form['find_services_search']['#attributes']['class'][] = 'listing-search__input';
     $form['find_services_search']['#attributes']['data-id'] = 'services-hero-block';
-
+    $form['#info']['filter-search_api_fulltext']['label'] = t('Search Services');
     $form['#id'] = 'views-exposed-form-find-a-service-find-service-hero';
 
     $build['exposed_form'] = $form;
