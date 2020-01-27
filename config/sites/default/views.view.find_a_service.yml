@@ -182,6 +182,7 @@ display:
           min_length: null
           fields:
             - provider_specialties_condition_name
+            - provider_specialties_condition_synonym
             - rendered_item
             - title
           plugin_id: search_api_fulltext
