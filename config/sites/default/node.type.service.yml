@@ -4,11 +4,14 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - node_title_help_text
 third_party_settings:
   menu_ui:
     available_menus:
-      - main
-    parent: 'main:'
+      - main-menu-sidebar
+    parent: 'main-menu-sidebar:'
+  node_title_help_text:
+    title_help: ''
 name: Service
 type: service
 description: "Help users find details about specific services that a service line or program might offer.\r\n"
