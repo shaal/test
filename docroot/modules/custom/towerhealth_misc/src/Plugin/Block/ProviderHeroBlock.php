@@ -51,6 +51,7 @@ class ProviderHeroBlock extends BlockBase {
     unset($form['facets']);
     $form['find_doctor_search']['#attributes']['class'][] = 'listing-search__input';
     $form['find_doctor_search']['#attributes']['data-id'] = 'provider-hero-block';
+    $form['#info']['filter-search_api_fulltext']['label'] = t('Search Providers');
 
     $form['#id'] = 'views-exposed-form-find-a-provider-find-provider-hero';
 

@@ -12,7 +12,7 @@ dependencies:
 id: languagesstring
 theme: tower_health
 region: page_filters
-weight: -9
+weight: -13
 provider: null
 plugin: 'facet_block:languages'
 settings:
@@ -24,6 +24,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/providers\r\n/providers*"
+    pages: /providers
     negate: false
     context_mapping: {  }
