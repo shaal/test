@@ -7,11 +7,10 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_date
     - field.field.node.article.field_article_teaser
-    - field.field.node.article.field_metatags
+    - field.field.node.article.field_article_type_ref
     - node.type.article
   module:
     - datetime
-    - metatag
     - text
     - user
 id: node.article.card
@@ -43,17 +42,11 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_metatags:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_article_type_ref: true
   search_api_excerpt: true
