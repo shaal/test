@@ -630,10 +630,10 @@ function tower_health_preprocess_views_view(&$variables) {
         $arr = explode(':', $facet);
         $placeholder = ucwords($arr[1]);
         if ($arr[0] == 'location') {
-          $variables['result_appendix'] = t("for Doctors at @location", ["@location" => $placeholder]);
+          $variables['result_appendix'] = t("for Doctors at <strong>@location</strong>", ["@location" => $placeholder]);
         }
         elseif ($arr[0] == 'service') {
-          $variables['result_appendix'] = t("for @service Doctors", ["@service" => $placeholder]);
+          $variables['result_appendix'] = t("for <strong>@service</strong> Doctors", ["@service" => $placeholder]);
         }
       }
     }
