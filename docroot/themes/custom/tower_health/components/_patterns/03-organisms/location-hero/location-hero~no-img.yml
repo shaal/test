@@ -4,7 +4,7 @@ address_1: "420 S. Fifth Avenue"
 address_2: "West Reading, PA 19611"
 directions:
   link: "/"
-  icon: "th-find-hospital.svg"
+  button_icon: "th-find-hospital.svg"
   text: "Map & Directions"
   variation: "small"
 phones:
@@ -16,7 +16,9 @@ phones:
       - number: 484-628-4357
         label: 484-628-HELP (4357)
       - number: 866-988-4357
-img: null
+img:
+  src: null
+  alt: null
 classes: "growth top-left"
 breadcrumb:
   1:
