@@ -10,7 +10,7 @@ dependencies:
 id: locationproximityfilter
 theme: tower_health
 region: page_filters
-weight: -12
+weight: -16
 provider: null
 plugin: location_proximity_filter
 settings:
@@ -21,6 +21,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/find-a-location\r\n/find-a-location*"
+    pages: /locations
     negate: false
     context_mapping: {  }
