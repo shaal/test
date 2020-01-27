@@ -90,6 +90,7 @@
     min-height: 300px;
     padding-bottom: 1em;
     justify-content: space-between;
+    width: 100%;
 
     @include breakpoint($bp2) {
       min-height: 500px;
@@ -174,8 +175,6 @@
     background-color: $primary-dark;
     padding: 2.35em 2em 2.35em 0;
     border-radius: 0 $rd-brd-lg $rd-brd-lg 0;
-    // margin-top: auto;
-    // align-self: flex-end;
     bottom: -150px;
 
     &::before {
