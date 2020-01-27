@@ -312,7 +312,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: find-a-service
+      path: services
       exposed_block: true
       cache:
         type: none

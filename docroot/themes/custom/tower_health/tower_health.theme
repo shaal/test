@@ -37,6 +37,20 @@ function tower_health_preprocess_page(&$variables) {
 }
 
 /**
+ * Set basic page variables.
+ */
+function tower_health_preprocess_page__page(&$variables) {
+  $node = $variables['node'];
+  if ($node instanceof NodeInterface) {
+    $type = $node->getType();
+
+    if ($type == 'page') {
+      $variables['show_side_nav'] = $node->field_basic_enable_nav->value;
+    }
+  }
+}
+
+/**
  * Remove variables from exposed location search form.
  *
  * {@inheritdoc}
@@ -178,7 +192,10 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
   }
 }
 
-function tower_health_preprocess_region__sidebar_first(&$variables)  {
+/**
+ * Set variables for sidebar first region.
+ */
+function tower_health_preprocess_region__sidebar_first(&$variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if ($node->bundle() == 'location') {
       $location_name = strtolower($node->title->value);
@@ -232,9 +249,9 @@ function tower_health_preprocess_node__profile(&$variables) {
           $specialties[$id]['text'] = $name;
         }
       }
-    }
-    if ($specialties) {
-      $variables['specialties'] = $specialties;
+      if ($specialties) {
+        $variables['specialties'] = $specialties;
+      }
     }
 
     // Preprocess focuses.
@@ -392,7 +409,7 @@ function tower_health_preprocess_node__location(&$variables) {
   $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-hospital.svg';
 
   if ($node instanceof NodeInterface && $view_mode == 'teaser_small') {
-    _tower_heath_format_location_addres($node, $variables);
+    _tower_heath_format_location_address($node, $variables);
   }
   if ($node instanceof NodeInterface && $view_mode == 'teaser') {
     // Preprocess image variables.
@@ -416,7 +433,7 @@ function tower_health_preprocess_node__location(&$variables) {
     }
 
     // Preprocess address variables.
-    _tower_heath_format_location_addres($node, $variables);
+    _tower_heath_format_location_address($node, $variables);
 
     // Preprocess phone numbers.
     if ($node->hasField('field_location_phone_number') && !$node->get('field_location_phone_number')->isEmpty()) {
@@ -428,8 +445,8 @@ function tower_health_preprocess_node__location(&$variables) {
   }
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
     $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
-    $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
-    $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
+    $appointment_phone = theme_get_setting('appointment_phone_number');
+    $appointment_phone_label = theme_get_setting('appointment_phone_label');
     $variables['name'] = $node->title->value;
 
     if (!$node->get('field_location_type')->isEmpty()) {
@@ -438,7 +455,9 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['type'] = $name;
     }
 
-    $variables['phone'] = $node->field_location_phone_number->value;
+    $variables['address_1'] = $node->field_location_address->address_line1;
+    $variables['address_2'] = $node->field_location_address->locality . ', ' . $node->field_location_address->administrative_area . ' ' . $node->field_location_address->postal_code;
+
     if ($node->hasField('field_location_image') && !$node->get('field_location_image')->isEmpty()) {
       $media = $node->field_location_image->entity;
       if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
@@ -452,23 +471,49 @@ function tower_health_preprocess_node__location(&$variables) {
       }
     }
 
+    // Setup hone numbers
+    $phones = [];
+    $phone = $node->field_location_phone_number->value;
+    if (!empty($phone)) {
+      $phones[] = [
+        'label' => t('Main'),
+        'numbers' => [
+          [
+            'number' => $phone,
+            'label' => $phone,
+          ],
+        ],
+      ];
+    }
+    $phones[] = [
+      'label' => t('Appointments'),
+      'numbers' => [
+        [
+          'number' => $appointment_phone,
+          'label' => $appointment_phone_label,
+        ],
+      ],
+    ];
+    $variables['phones'] = $phones;
+
     // Preprocess other providers link.
     $location_name = strtolower($node->title->value);
     $location_providers_url = Url::fromRoute('view.find_a_location.find_location', ['providers[0]' => 'locations:' . strtolower($location_name)]);
     $variables['location_providers_url'] = $location_providers_url;
 
-    _tower_heath_format_location_addres($node, $variables);
+    _tower_heath_format_location_address($node, $variables);
   }
 }
 
 /**
  * Function for returning a location's address for the templates
  */
-function _tower_heath_format_location_addres($node, &$variables) {
+function _tower_heath_format_location_address($node, &$variables) {
   if (!$node instanceof EntityInterface && $node->bundle() !== 'location' && $node->hasField('field_location_address')) {
     return;
   }
 
+  // Preprocess directions link.
   $locality = $node->field_location_address->locality;
   $administrative_area = $node->field_location_address->administrative_area;
   $postal_code = $node->field_location_address->postal_code;
@@ -650,10 +695,10 @@ function tower_health_preprocess_views_view(&$variables) {
         $arr = explode(':', $facet);
         $placeholder = ucwords($arr[1]);
         if ($arr[0] == 'location') {
-          $variables['result_appendix'] = t("for @location", ["@location" => $placeholder]);
+          $variables['result_appendix'] = t("for Doctors at <strong>@location</strong>", ["@location" => $placeholder]);
         }
         elseif ($arr[0] == 'service') {
-          $variables['result_appendix'] = t("@service Service", ["@service" => $placeholder]);
+          $variables['result_appendix'] = t("for <strong>@service</strong> Doctors", ["@service" => $placeholder]);
         }
       }
     }

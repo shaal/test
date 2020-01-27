@@ -39,7 +39,7 @@
 %}
 {% embed "@organisms/listings/teaser-list/teaser-list.twig" %}
   {% block results %}
-    {{ header }} {% if result_appendix %}<strong>{{ result_appendix }}</strong>{% endif %}
+    {{ header }} {% if result_appendix %}{{ result_appendix }}{% endif %}
   {% endblock %}
   {% block teasers %}
     {{ rows }}
