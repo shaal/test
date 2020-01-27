@@ -10,7 +10,7 @@ field_name: field_story_quote
 entity_type: paragraph
 bundle: patient_story
 label: Quote
-description: 'What is the quote you are trying to reference?'
+description: ''
 required: false
 translatable: false
 default_value: {  }

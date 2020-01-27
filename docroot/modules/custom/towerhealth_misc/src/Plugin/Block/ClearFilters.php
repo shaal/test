@@ -4,6 +4,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Clear Filters' block.
@@ -33,6 +34,13 @@ class ClearFilters extends BlockBase {
       return [];
     }
 
+    $key = '';
+
+    if ($view_id == 'find_a_location') {
+      $key = 'find_location_search';
+    }
+    $search_term = Xss::filter(\Drupal::request()->get($key));
+
     $build['content']['title'] = [
       '#type' => 'markup',
       '#markup' => '<span>' . t('Filter') . '</span>',
@@ -40,7 +48,7 @@ class ClearFilters extends BlockBase {
 
     $route = 'view.' . $view_id . '.' . $view_display_id;
 
-    $build['content']['link'] = Link::createFromRoute('Clear all Filters', $route)->toRenderable();
+    $build['content']['link'] = Link::createFromRoute('Clear all Filters', $route, [$key => $search_term])->toRenderable();
 
     return $build;
   }

@@ -3,21 +3,21 @@
   border-radius: $rd-brd-lg;
   width: 100%;
   padding: .5em 0;
-  
+
   svg {
     fill: $white;
   }
-  
+
   &:active,
   &:hover,
   &:focus {
     background-color: $trust-aa;
-    
+
     svg {
       fill: $white;
     }
   }
-  
+
   @include breakpoint($bp3) {
     display: none;
     visibility: hidden;
@@ -82,7 +82,7 @@
   list-style: none;
   padding: 0;
   margin: .5em 0 0 0;
-  
+
   &.is-active {
     display: block;
     visibility: visible;
@@ -99,7 +99,7 @@
   padding: 0.75em;
   color: $primary-dark;
   text-decoration: none;
-  
+
   &:link,
   &:visited {
     color: $primary-dark;
@@ -117,7 +117,7 @@
   > .section-menu > .section-menu__item a:focus {
     border-left: 5px solid $trust-aa;
   }
-  
+
   > .section-menu > .section-menu__item--active > a {
     border-left: 5px solid $trust-aa;
   }
@@ -156,34 +156,34 @@
       width: 100%;
       font-weight: 600;
     }
-    
+
     &.is-active::before {
       content: "-";
     }
-    
+
     &:active,
     &:hover,
     &:focus {
       background-color: rgba($white, 0.5);
-      
+
       &::before {
         color: $trust-aa;
       }
     }
-    
+
     @include breakpoint($bp3) {
       flex: 1 1 20%;
     }
   }
-  
-  &.section-menu__item--active .expand-sub::before {
+
+  &.section-menu__item--active > .expand-sub::before {
     content: "-";
   }
 }
 
 .section-menu__link--with-sub {
   flex: 1 1 90%;
-  
+
   @include breakpoint($bp3) {
     flex: 1 1 80%;
   }
@@ -198,13 +198,12 @@
   visibility: hidden;
   margin: 0;
   padding: .75em 0;
-  
-  .section-menu__item--active &,
+
   &.is-active {
     display: block;
     visibility: visible;
   }
-  
+
   & .section-menu__item--active {
     > a {
       border-left: 5px solid $trust-aa;
@@ -213,11 +212,15 @@
   }
 }
 
+.section-menu__item--active > .section-menu--sub {
+  display: block;
+  visibility: visible;
+}
+
 .section-menu__link--sub {
   padding: 0.5em 0.75em;
-  
+
   @include breakpoint($bp3) {
     padding: 0.35em 1.25em;
   }
 }
-

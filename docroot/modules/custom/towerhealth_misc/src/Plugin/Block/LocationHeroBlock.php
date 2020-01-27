@@ -44,7 +44,7 @@ class LocationHeroBlock extends BlockBase {
     unset($form['facets']);
     $form['find_location_search']['#attributes']['data-id'] = 'location-hero-block';
     $form['find_location_search']['#attributes']['class'][] = 'listing-search__input';
-
+    $form['#info']['filter-search_api_fulltext']['label'] = t('Search Locations');
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-hero';
 
     // Set classes.
