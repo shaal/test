@@ -2,10 +2,7 @@ uuid: 40e1e99b-a8be-4fbc-98d4-fb203c05b6c0
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:listing_page_anchored_cta:20586f1c-a826-4cc4-8664-75100d6c5d7b'
   module:
-    - block_content
     - system
   theme:
     - tower_health
@@ -18,7 +15,7 @@ plugin: 'block_content:20586f1c-a826-4cc4-8664-75100d6c5d7b'
 settings:
   id: 'block_content:20586f1c-a826-4cc4-8664-75100d6c5d7b'
   label: 'Service Search Anchored CTA'
-  provider: block_content
+  provider: core
   label_display: '0'
   status: true
   info: ''
@@ -26,6 +23,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /find-a-service
+    pages: /services
     negate: false
     context_mapping: {  }
