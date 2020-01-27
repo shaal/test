@@ -63,7 +63,7 @@
 
   @include breakpoint($bp4) {
     max-width: 70%;
-    width: auto;
+    width: 100%;
     flex-grow: 1;
   }
 }
