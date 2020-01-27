@@ -94,6 +94,7 @@ form_sections:
         children:
           - title: All
             id: type
+            checked: true
           - title: Doctors
             id: type
           - title: Nurse Practitioners
@@ -126,25 +127,23 @@ providers:
       rating: '4.2'
       rating_icon: "star.svg"
     type: "provider"
-  - img:
-      src: "../../images/people/abdel-wahab-amir.jpg"
-      alt: "Alternative Text"
+  - img: null
     classes: "growth bottom-right"
     link:
       url: "/"
       text: "Request an Appointment"
       icon: "th-cal.svg"
     details:
-      name: "Amir A. Abdel-Wahab, MD, FAAP"
+      name: "Maria Ivette Bansner, PA-C"
       specialties: 
-        - text: "Pediatrics"
+        - text: "Physician Assistant"
       focus: 
-        - text: "Child Development, Preventative Medicine"
-      location: "Wyomissing, PA"
+        - text: "Emergency Medicine"
+      location: "West Reading, PA"
       language: 
         - text: "English"
-      type: 'Midwife'
-      rating: '3.25'
+      type: 'Physician Assistant'
+      rating: null
       rating_icon: "star.svg"
     type: "provider"
   - img: null
@@ -168,7 +167,7 @@ providers:
       rating_icon: "star.svg"
     type: "provider"
   - img:
-      src: "../../images/people/Roland-Donald.jpg"
+      src: "../../images/people/Scutti-Marie.jpg"
       alt: "Alternative Text"
     classes: "growth bottom-right"
     link:
@@ -176,12 +175,12 @@ providers:
       text: "Request an Appointment"
       icon: "th-cal.svg"
     details:
-      name: "Donald E. Roland, MD, DMD"
+      name: "Marie Catherine Scutti, CRNP"
       specialties: 
-        - text: "Oral and Maxillofacial Surgery"
+        - text: "Nurse Practitioner-Adult Health"
       focus: 
-        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
-      location: "Pottstown, PA"
+        - text: "Hematology & Oncology"
+      location: "West Reading, PA"
       language: 
         - text: "English"
       type: 'Nurse Practitioner'
@@ -285,7 +284,7 @@ providers:
       location: "Wyomissing, PA"
       language: 
         - text: "English"
-      type: 'Physicians Assistant'
+      type: 'Doctor'
       rating: '4.2'
       rating_icon: "star.svg"
     type: "provider"
