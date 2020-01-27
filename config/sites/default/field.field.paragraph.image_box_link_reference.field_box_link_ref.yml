@@ -12,7 +12,7 @@ field_name: field_box_link_ref
 entity_type: paragraph
 bundle: image_box_link_reference
 label: Reference
-description: ''
+description: 'Select an existing service or location page to reference'
 required: false
 translatable: false
 default_value: {  }

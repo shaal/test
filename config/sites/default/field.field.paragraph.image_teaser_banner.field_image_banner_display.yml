@@ -12,7 +12,7 @@ field_name: field_image_banner_display
 entity_type: paragraph
 bundle: image_teaser_banner
 label: Display
-description: 'Select whether the banner should use the default (image on right), or reversed (image on left) layout'
+description: 'Select where the text should appear in relation to the image'
 required: true
 translatable: false
 default_value:
