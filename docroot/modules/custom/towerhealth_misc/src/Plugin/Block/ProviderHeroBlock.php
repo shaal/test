@@ -4,6 +4,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Provider search block for hero region' block.
@@ -46,6 +47,12 @@ class ProviderHeroBlock extends BlockBase {
     $form['#attributes']['class'] = $classes;
 
     $form = $exposed_form->renderExposedForm(TRUE);
+
+    // Explicitly add search term to search input.
+    $search_term = Xss::filter(\Drupal::request()->get('find_doctor_search'));
+    if (!empty($search_term) && empty($form['find_doctor_search']['#attributes']['value'])) {
+      $form['find_doctor_search']['#attributes']['value'] = $search_term;
+    }
 
     unset($form['provider_location_latlong']);
     unset($form['facets']);
