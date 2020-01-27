@@ -24,6 +24,8 @@
   background-position: center;
   background-size: cover;
   margin-bottom: 175px;
+  display: flex;
+  flex-direction: column;
 
   &.basic-header--cta {
     margin-bottom: 250px;
@@ -87,6 +89,7 @@
   .basic-header--img & {
     min-height: 300px;
     padding-bottom: 1em;
+    justify-content: space-between;
 
     @include breakpoint($bp2) {
       min-height: 500px;
@@ -171,7 +174,8 @@
     background-color: $primary-dark;
     padding: 2.35em 2em 2.35em 0;
     border-radius: 0 $rd-brd-lg $rd-brd-lg 0;
-    margin-top: auto;
+    // margin-top: auto;
+    // align-self: flex-end;
     bottom: -150px;
 
     &::before {
