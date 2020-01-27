@@ -1,0 +1,8 @@
+uuid: 88dfef52-0dc0-4369-822d-4ec1abaa4802
+langcode: en
+status: true
+dependencies: {  }
+id: main-menu-sidebar
+label: 'Main menu sidebar'
+description: 'Menu that displays in the sidebar'
+locked: false
