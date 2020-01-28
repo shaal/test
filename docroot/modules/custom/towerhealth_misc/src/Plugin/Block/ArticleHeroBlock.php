@@ -40,8 +40,7 @@ class ArticleHeroBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    $build['exposed_form'] = null;
-
+    $build['exposed_form'] = NULL;
 
     return $build;
   }

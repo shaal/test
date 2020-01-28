@@ -60,7 +60,7 @@ class LocationProximityBlock extends BlockBase {
     $locations = \Drupal::request()->get('location_latlon');
     if (!empty($locations) && is_array($locations) && empty($form['location_latlon']['value']['#attributes']['value'])) {
       $form['location_latlon']['value']['#attributes']['value'] = Xss::filter($locations['value']);
-      $form['location_latlon']['distance']['from']['#attributes']['value']  = Xss::filter($locations['distance']['from']);
+      $form['location_latlon']['distance']['from']['#attributes']['value'] = Xss::filter($locations['distance']['from']);
     }
 
     // Explicitly add search term to search input.

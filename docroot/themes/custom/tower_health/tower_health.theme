@@ -22,7 +22,7 @@ function tower_health_preprocess_page(&$variables) {
     'view.find_a_location.find_location',
     'view.find_a_provider.find_doctor',
     'view.find_a_service.find_service',
-    'view.article_listing.article_listing_page'
+    'view.article_listing.article_listing_page',
   ];
 
   // Get the current route name.
@@ -184,7 +184,6 @@ function tower_health_preprocess_block__page_title_block(&$variables) {
     $variables['node_title'] = $node->title->value;
   }
 }
-
 
 /**
  * Add region theme suggestions.
