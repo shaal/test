@@ -21,6 +21,7 @@ function tower_health_preprocess_page(&$variables) {
   $full_width_pages = [
     'view.find_a_location.find_location',
     'view.find_a_provider.find_doctor',
+    'view.find_a_service.find_service',
   ];
 
   // Get the current route name.
@@ -377,6 +378,25 @@ function tower_health_preprocess_node__service(&$variables) {
 
     $variables['cta_list'] = $cta_list;
   }
+
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
+    if ($node->hasField('field_conditions_ref') && !$node->get('field_conditions_ref')->isEmpty()) {
+      $condition_refs = $node->get('field_conditions_ref')->getValue();
+      $conditions = [];
+      foreach ($condition_refs as $id => $condition) {
+        $entity = $node->field_conditions_ref[$id]->entity;
+        if ($entity instanceof EntityInterface) {
+          $tid = $entity->tid->value;
+          $term = Term::load($tid);
+          $name = $term->getName();
+          $conditions[$id] = $name;
+        }
+      }
+      if ($conditions) {
+        $variables['related_conditions'] = $conditions;
+      }
+    }
+  }
 }
 
 /**
@@ -450,7 +470,7 @@ function tower_health_preprocess_node__location(&$variables) {
       }
     }
 
-    // Setup hone numbers
+    // Setup hone numbers.
     $phones = [];
     $phone = $node->field_location_phone_number->value;
     if (!empty($phone)) {
@@ -485,7 +505,7 @@ function tower_health_preprocess_node__location(&$variables) {
 }
 
 /**
- * Function for returning a location's address for the templates
+ * Function for returning a location's address for the templates.
  */
 function _tower_heath_format_location_address($node, &$variables) {
   if (!$node instanceof EntityInterface && $node->bundle() !== 'location' && $node->hasField('field_location_address')) {
@@ -685,7 +705,7 @@ function tower_health_preprocess_views_view(&$variables) {
 }
 
 /**
- * Setup the pager to match prototype
+ * Setup the pager to match prototype.
  */
 function tower_health_preprocess_pager(&$variables) {
   if (!isset($variables['items'])) {
@@ -715,7 +735,7 @@ function tower_health_preprocess_pager(&$variables) {
 
     if ($facets and is_array($facets)) {
       foreach ($facets as $i => $facet) {
-        $facet_id = 'f['. $i . ']';
+        $facet_id = 'f[' . $i . ']';
         $params[$facet_id] = $facet;
       }
     }
@@ -740,7 +760,7 @@ function tower_health_preprocess_pager(&$variables) {
 
     if ($facets and is_array($facets)) {
       foreach ($facets as $i => $facet) {
-        $facet_id = 'providers['. $i . ']';
+        $facet_id = 'providers[' . $i . ']';
         $params[$facet_id] = $facet;
       }
     }
@@ -759,7 +779,7 @@ function _tower_health_pager_links($items, $route_name, $params, $current) {
     return;
   }
 
-  foreach($items['pages'] as $i => $page) {
+  foreach ($items['pages'] as $i => $page) {
     $page_number = $i - 1;
     $route_params = $params;
     $route_params['page'] = $page_number;

@@ -1,0 +1,8 @@
+uuid: 65e46278-27d2-4117-a5e7-1b0562e518e1
+langcode: en
+status: true
+dependencies: {  }
+id: listing_page_anchored_cta
+label: 'Listing Page Anchored CTA'
+revision: 1
+description: 'Add an anchored CTA component for doctor, location, or service search pages'

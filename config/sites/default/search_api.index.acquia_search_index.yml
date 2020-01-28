@@ -241,6 +241,28 @@ field_settings:
     label: 'Service medical specialty field'
     property_path: service_medical_specialty_field
     type: string
+  service_related_condition:
+    label: 'Services - Related Conditions'
+    datasource_id: 'entity:node'
+    property_path: 'field_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conditions_ref
+      module:
+        - taxonomy
+        - taxonomy
+  service_related_condition_synonym:
+    label: 'Services - Related Conditions - Synonym'
+    datasource_id: 'entity:node'
+    property_path: 'field_conditions_ref:entity:field_condition_synonym'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conditions_ref
+        - field.storage.taxonomy_term.field_condition_synonym
+      module:
+        - taxonomy
   synonym:
     label: Synonyms
     datasource_id: 'entity:taxonomy_term'
@@ -316,6 +338,8 @@ processor_settings:
       - provider_specialties_name_string
       - rendered_item
       - service_medical_specialty_field
+      - service_related_condition
+      - service_related_condition_synonym
       - synonym
       - title
       - type
