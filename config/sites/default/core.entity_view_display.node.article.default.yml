@@ -20,12 +20,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   field_article_date:
-    weight: 103
+    weight: 1
     label: hidden
     settings:
       timezone_override: ''
@@ -33,25 +33,19 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_article_teaser:
-    weight: 104
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_article_type_ref:
-    weight: 105
-    label: above
+    weight: 3
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_article_teaser: true
   search_api_excerpt: true
