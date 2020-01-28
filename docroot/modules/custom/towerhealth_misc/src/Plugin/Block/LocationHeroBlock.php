@@ -20,6 +20,13 @@ class LocationHeroBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
+  public function getCacheMaxAge() {
+    return 0;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     // We don't have much context during build, so we look at the current route
     // and try to decide if we're on a Views page.
