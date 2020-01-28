@@ -4,6 +4,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Location search block for hero region' block.
@@ -44,8 +45,14 @@ class LocationHeroBlock extends BlockBase {
     unset($form['facets']);
     $form['find_location_search']['#attributes']['data-id'] = 'location-hero-block';
     $form['find_location_search']['#attributes']['class'][] = 'listing-search__input';
-
+    $form['#info']['filter-search_api_fulltext']['label'] = t('Search Locations');
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-hero';
+
+    // Explicitly add search term to search input.
+    $search_term = Xss::filter(\Drupal::request()->get('find_location_search'));
+    if (!empty($search_term) && empty($form['find_location_search']['#attributes']['value'])) {
+      $form['find_location_search']['#attributes']['value'] = $search_term;
+    }
 
     // Set classes.
     $classes = [];

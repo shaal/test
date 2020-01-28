@@ -13,7 +13,7 @@ entity_type: paragraph
 bundle: text_teaser_banner
 label: Link
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

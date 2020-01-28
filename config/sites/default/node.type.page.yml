@@ -1,7 +1,18 @@
 uuid: 789367c5-bca7-4d9e-aee3-d39752be0510
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+    - node_title_help_text
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main-menu-sidebar
+    parent: 'main-menu-sidebar:'
+  node_title_help_text:
+    title_help: ''
 _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
 name: 'Basic page'

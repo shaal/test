@@ -5,6 +5,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
 use Drupal\Core\Url;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'DynamicFilterBlock' block.
@@ -41,9 +42,25 @@ class LocationProximityBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['find_location_search']);
+    $form['find_location_search']['#type'] = 'hidden';
+    $search_term_id = $form['find_location_search']['#id'];
+    $form['find_location_search']['#id'] = $search_term_id . '-proximity';
+    $form['find_location_search']['#attributes']['data-id'] = 'location-proximity-search-input';
 
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-proximity';
+
+    // Explicitly add locations terms to proximity input.
+    $locations = \Drupal::request()->get('location_latlon');
+    if (!empty($locations) && is_array($locations) && empty($form['location_latlon']['value']['#attributes']['value'])) {
+      $form['location_latlon']['value']['#attributes']['value'] = Xss::filter($locations['value']);
+      $form['location_latlon']['distance']['from']['#attributes']['value']  = Xss::filter($locations['distance']['from']);
+    }
+
+    // Explicitly add search term to search input.
+    $search_term = Xss::filter(\Drupal::request()->get('find_location_search'));
+    if (!empty($search_term) && empty($form['find_location_search']['#attributes']['value'])) {
+      $form['find_location_search']['#attributes']['value'] = $search_term;
+    }
 
     $classes = [];
     if (isset($form['#attributes']['class'])) {

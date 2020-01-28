@@ -422,17 +422,5 @@
         {
             "value": 1
         }
-    ],
-    "field_service_headline": [
-        {
-            "value": "Collaborative care for your evolving needs."
-        }
-    ],
-    "field_service_intro": [
-        {
-            "value": "<p>Cag Lorem ipsum dolor sit amet,&nbsp;<strong>consectetur adipisicing elit<\/strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis&nbsp;<a href=\"https:\/\/palantirnet.github.io\/towerhealth\/pattern-lab\/public\/patterns\/05-pages-service-detail-service-detail\/05-pages-service-detail-service-detail.html?1579214818186#\">nostrud exercitation ullamco<\/a>&nbsp;laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\r\n",
-            "format": "basic_html",
-            "processed": "<p>Cag Lorem ipsum dolor sit amet,\u00a0<strong>consectetur adipisicing elit<\/strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\u00a0<a href=\"https:\/\/palantirnet.github.io\/towerhealth\/pattern-lab\/public\/patterns\/05-pages-service-detail-service-detail\/05-pages-service-detail-service-detail.html?1579214818186#\">nostrud exercitation ullamco<\/a>\u00a0laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"
-        }
     ]
 }

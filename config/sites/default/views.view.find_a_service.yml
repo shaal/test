@@ -181,10 +181,9 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - location_services_specialty_condition_name
-            - location_services_specialty_condition_synonym
-            - location_services_title
             - rendered_item
+            - service_related_condition
+            - service_related_condition_synonym
             - title
           plugin_id: search_api_fulltext
         search_api_datasource:
@@ -277,13 +276,35 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_acquia_search_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
           order: ASC
           exposed: false
           expose:
             label: ''
           plugin_id: search_api
       title: Search
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: 'Showing @start - @end of @total results'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -304,7 +325,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: find-a-service
+      path: services
       exposed_block: true
       cache:
         type: none

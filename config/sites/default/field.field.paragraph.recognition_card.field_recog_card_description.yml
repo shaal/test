@@ -10,7 +10,7 @@ field_name: field_recog_card_description
 entity_type: paragraph
 bundle: recognition_card
 label: Description
-description: ''
+description: 'Recommend less that 100 characters. Will not display if an image is added.'
 required: false
 translatable: false
 default_value: {  }
