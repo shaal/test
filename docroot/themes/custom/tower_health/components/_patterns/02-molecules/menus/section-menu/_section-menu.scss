@@ -172,7 +172,9 @@
     }
 
     @include breakpoint($bp3) {
-      flex: 1 1 20%;
+      flex: 1 1 15%;
+      width: 15%;
+      padding: .075em 0;
     }
   }
 
@@ -182,10 +184,12 @@
 }
 
 .section-menu__link--with-sub {
-  flex: 1 1 90%;
+  flex: 0 1 90%;
 
   @include breakpoint($bp3) {
-    flex: 1 1 80%;
+    flex: 0 1 75%;
+    width: 75%;
+    padding-right: 0;
   }
 }
 
@@ -221,6 +225,12 @@
   padding: 0.5em 0.75em;
 
   @include breakpoint($bp3) {
-    padding: 0.35em 1.25em;
+    padding: 0.35em 0 0.35em 1.25em;
+  }
+}
+
+.section-menu__item--sub .expand-sub {
+  @include breakpoint($bp3) {
+    padding: 0;
   }
 }
