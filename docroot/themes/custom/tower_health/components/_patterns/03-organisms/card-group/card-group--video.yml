@@ -1,5 +1,6 @@
 cards:
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -7,6 +8,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -14,6 +16,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -21,6 +24,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -28,6 +32,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -35,6 +40,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -42,6 +48,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video

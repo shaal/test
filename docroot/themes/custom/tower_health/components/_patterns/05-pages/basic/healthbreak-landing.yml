@@ -10,6 +10,7 @@ header:
   style: secondary
 cards:
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -17,6 +18,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/CPn2q65u1K4
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-2.png
       alt: Botox for Spasticity
@@ -24,6 +26,7 @@ cards:
     title: Botox for Spasticity
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
   - videoURL: https://www.youtube.com/embed/X_Mqbgy0kss
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-3.png
       alt: Treatment for Peripheral Artery Disease
@@ -31,6 +34,7 @@ cards:
     title: Treatment for Peripheral Artery Disease
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
   - videoURL: https://www.youtube.com/embed/pZmc8SuyP18
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-4.png
       alt: Tower health MedSpa
@@ -38,6 +42,7 @@ cards:
     title: Tower health MedSpa
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -45,6 +50,7 @@ cards:
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
   - videoURL: https://www.youtube.com/embed/CPn2q65u1K4
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-2.png
       alt: Botox for Spasticity
@@ -52,6 +58,7 @@ cards:
     title: Botox for Spasticity
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
   - videoURL: https://www.youtube.com/embed/X_Mqbgy0kss
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-3.png
       alt: Treatment for Peripheral Artery Disease
@@ -59,6 +66,7 @@ cards:
     title: Treatment for Peripheral Artery Disease
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
   - videoURL: https://www.youtube.com/embed/pZmc8SuyP18
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-4.png
       alt: Tower health MedSpa
@@ -66,6 +74,7 @@ cards:
     title: Tower health MedSpa
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
   - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
