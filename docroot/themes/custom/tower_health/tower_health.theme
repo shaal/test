@@ -426,8 +426,8 @@ function tower_health_preprocess_node__location(&$variables) {
   }
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
     $variables['rating_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/star.svg';
-    $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
-    $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
+    $appointment_phone = theme_get_setting('appointment_phone_number');
+    $appointment_phone_label = theme_get_setting('appointment_phone_label');
     $variables['name'] = $node->title->value;
 
     if (!$node->get('field_location_type')->isEmpty()) {
@@ -436,7 +436,9 @@ function tower_health_preprocess_node__location(&$variables) {
       $variables['type'] = $name;
     }
 
-    $variables['phone'] = $node->field_location_phone_number->value;
+    $variables['address_1'] = $node->field_location_address->address_line1;
+    $variables['address_2'] = $node->field_location_address->locality . ', ' . $node->field_location_address->administrative_area . ' ' . $node->field_location_address->postal_code;
+
     if ($node->hasField('field_location_image') && !$node->get('field_location_image')->isEmpty()) {
       $media = $node->field_location_image->entity;
       if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
@@ -449,6 +451,31 @@ function tower_health_preprocess_node__location(&$variables) {
         }
       }
     }
+
+    // Setup hone numbers
+    $phones = [];
+    $phone = $node->field_location_phone_number->value;
+    if (!empty($phone)) {
+      $phones[] = [
+        'label' => t('Main'),
+        'numbers' => [
+          [
+            'number' => $phone,
+            'label' => $phone,
+          ],
+        ],
+      ];
+    }
+    $phones[] = [
+      'label' => t('Appointments'),
+      'numbers' => [
+        [
+          'number' => $appointment_phone,
+          'label' => $appointment_phone_label,
+        ],
+      ],
+    ];
+    $variables['phones'] = $phones;
 
     // Preprocess other providers link.
     $location_name = strtolower($node->title->value);

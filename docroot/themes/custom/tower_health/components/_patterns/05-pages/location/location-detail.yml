@@ -16,7 +16,7 @@ hero:
   address_2: "Honey Brook, PA 19344"
   directions:
     link: "/"
-    icon: "th-find-hospital.svg"
+    button_icon: "th-find-hospital.svg"
     text: "Map & Directions"
     variation: "small"
   phones:
