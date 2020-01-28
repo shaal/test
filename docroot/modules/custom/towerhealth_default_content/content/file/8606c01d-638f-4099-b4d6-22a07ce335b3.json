@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2020-01\/AdobeStock_254696350_Preview%20%281%29.jpeg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 12
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8606c01d-638f-4099-b4d6-22a07ce335b3"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3e8ba544-2bae-4989-aa6f-40cb4fb52716"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "AdobeStock_254696350_Preview (1).jpeg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-01\/AdobeStock_254696350_Preview (1).jpeg",
+            "url": "\/sites\/default\/files\/2020-01\/AdobeStock_254696350_Preview%20%281%29.jpeg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 182048
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-17T02:07:27+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-17T02:07:32+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

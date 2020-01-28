@@ -1,0 +1,33 @@
+uuid: ba063172-7e01-4c32-b37c-6b271b8d2bbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-menu-sidebar
+  module:
+    - menu_block
+    - system
+  theme:
+    - tower_health
+id: main_menu_sidebar_level_4
+theme: tower_health
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'menu_block:main-menu-sidebar'
+settings:
+  id: 'menu_block:main-menu-sidebar'
+  label: 'Main menu sidebar - Level 4'
+  provider: menu_block
+  label_display: '0'
+  level: 4
+  depth: 3
+  expand: 1
+  parent: 'main-menu-sidebar:'
+  suggestion: main_menu_sidebar
+visibility:
+  request_path:
+    id: request_path
+    pages: '/academics/academic-departments/*'
+    negate: false
+    context_mapping: {  }

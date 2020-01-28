@@ -1,0 +1,30 @@
+uuid: d0071270-cb18-453d-8586-18b92860db99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_box_link_ref
+    - node.type.location
+    - node.type.service
+    - paragraphs.paragraphs_type.image_box_link_reference
+id: paragraph.image_box_link_reference.field_box_link_ref
+field_name: field_box_link_ref
+entity_type: paragraph
+bundle: image_box_link_reference
+label: Reference
+description: 'Select an existing service or location page to reference'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      location: location
+      service: service
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: location
+field_type: entity_reference

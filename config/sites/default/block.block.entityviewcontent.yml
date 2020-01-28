@@ -14,7 +14,7 @@ provider: null
 plugin: 'entity_view:node'
 settings:
   id: 'entity_view:node'
-  label: 'Entity view (Content)'
+  label: 'Page Header'
   provider: ctools
   label_display: '0'
   view_mode: page_header
@@ -24,8 +24,10 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      location: location
       page: page
       profile: profile
+      service: service
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'

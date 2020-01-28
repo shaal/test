@@ -3,7 +3,9 @@
     {% if image %}
     <div class="patient-story__image">
       {% if cta %}<a href="{{ cta.link }}">{% endif %}
-      <img src="{{ image.src }}" alt="{{ image.alt }}" />
+        {% block image %}
+          <img src="{{ image.src }}" alt="{{ image.alt }}" />
+        {% endblock %}
       {% if cta %}</a>{% endif %}
     </div>
     {% endif %}

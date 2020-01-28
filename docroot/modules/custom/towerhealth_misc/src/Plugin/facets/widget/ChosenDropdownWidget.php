@@ -22,8 +22,8 @@ class ChosenDropdownWidget extends LinksWidget {
    */
   public function defaultConfiguration() {
     return [
-        'default_option_label' => 'Choose',
-      ] + parent::defaultConfiguration();
+      'default_option_label' => 'Choose',
+    ] + parent::defaultConfiguration();
   }
 
   /**

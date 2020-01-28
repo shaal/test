@@ -1,0 +1,103 @@
+uuid: 08be3270-6e46-4bdd-a414-8124c514a88d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.listing_page_anchored_cta
+    - field.storage.block_content.field_anchored_cta
+    - paragraphs.paragraphs_type.anchored_cta_block
+  module:
+    - entity_reference_revisions
+id: block_content.listing_page_anchored_cta.field_anchored_cta
+field_name: field_anchored_cta
+entity_type: block_content
+bundle: listing_page_anchored_cta
+label: 'Anchored CTA'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      anchored_cta_block: anchored_cta_block
+    target_bundles_drag_drop:
+      anchored_cta_block:
+        enabled: true
+        weight: 26
+      article_card:
+        weight: 27
+        enabled: false
+      basic_header:
+        weight: 28
+        enabled: false
+      box_links:
+        weight: 29
+        enabled: false
+      card:
+        weight: 30
+        enabled: false
+      cards:
+        weight: 31
+        enabled: false
+      cta_banner:
+        weight: 32
+        enabled: false
+      cta_list_banner:
+        weight: 33
+        enabled: false
+      education:
+        weight: 34
+        enabled: false
+      file_download_cta:
+        weight: 35
+        enabled: false
+      header_cta:
+        weight: 36
+        enabled: false
+      homepage_hero:
+        weight: 37
+        enabled: false
+      icon_button:
+        weight: 38
+        enabled: false
+      image_box_link_custom:
+        weight: 39
+        enabled: false
+      image_box_link_reference:
+        weight: 40
+        enabled: false
+      image_teaser_banner:
+        weight: 41
+        enabled: false
+      on_my_way:
+        weight: 42
+        enabled: false
+      patient_story:
+        weight: 43
+        enabled: false
+      rating_comments:
+        weight: 44
+        enabled: false
+      recognition_card:
+        weight: 45
+        enabled: false
+      recognition_cards:
+        weight: 46
+        enabled: false
+      rich_text:
+        weight: 47
+        enabled: false
+      sidebar_card:
+        weight: 48
+        enabled: false
+      text_teaser_banner:
+        weight: 49
+        enabled: false
+      video_card:
+        weight: 50
+        enabled: false
+field_type: entity_reference_revisions

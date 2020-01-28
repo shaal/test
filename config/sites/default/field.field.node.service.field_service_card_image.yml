@@ -1,0 +1,28 @@
+uuid: 9a3c0f40-0682-4e22-9fc4-b20d4d907e45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_card_image
+    - media.type.image
+    - node.type.service
+id: node.service.field_service_card_image
+field_name: field_service_card_image
+entity_type: node
+bundle: service
+label: 'Card Image'
+description: 'Image to be used in card when this service is referenced on other pages'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -4,7 +4,7 @@ address_1: "420 S. Fifth Avenue"
 address_2: "West Reading, PA 19611"
 directions:
   link: "/"
-  icon: "th-find-hospital.svg"
+  button_icon: "th-find-hospital.svg"
   text: "Map & Directions"
   variation: "small"
 phones:

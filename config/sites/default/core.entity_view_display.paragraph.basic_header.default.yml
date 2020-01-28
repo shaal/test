@@ -46,7 +46,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    type: list_key
     region: content
 hidden:
   search_api_excerpt: true

@@ -1,0 +1,23 @@
+uuid: 4acc9663-a6d5-4ac9-9ea7-4b473009a479
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_banner_display
+    - paragraphs.paragraphs_type.image_teaser_banner
+  module:
+    - options
+id: paragraph.image_teaser_banner.field_image_banner_display
+field_name: field_image_banner_display
+entity_type: paragraph
+bundle: image_teaser_banner
+label: Display
+description: 'Select where the text should appear in relation to the image'
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

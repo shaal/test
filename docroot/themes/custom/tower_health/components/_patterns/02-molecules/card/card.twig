@@ -1,14 +1,16 @@
 <div class="card js-section-animation
   {% if card.type %} card--{{ card.type }}{% endif %}
-  {% if card.image.src and card.image.src != "/" %} card--image{% endif %}
+  {% if card.image %} card--image{% endif %}
   {% if card.url.link == null %} card--simple{% endif %}">
   {% if card.url.link %}
     <a class="card__link" href="{{ card.url.link }}">
   {% endif %}
 
-  {% if card.image.src and card.image.src != "/" %}
+  {% if card.image %}
     <div class="card__image">
-      <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" />
+      {% block image %}
+        <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" />
+      {% endblock %}
     </div>
   {% endif %}
 

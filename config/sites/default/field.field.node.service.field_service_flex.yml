@@ -5,9 +5,15 @@ dependencies:
   config:
     - field.storage.node.field_service_flex
     - node.type.service
+    - paragraphs.paragraphs_type.anchored_cta_block
+    - paragraphs.paragraphs_type.box_links
     - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.file_download_cta
+    - paragraphs.paragraphs_type.image_teaser_banner
     - paragraphs.paragraphs_type.patient_story
     - paragraphs.paragraphs_type.recognition_cards
+    - paragraphs.paragraphs_type.rich_text
+    - paragraphs.paragraphs_type.text_teaser_banner
   module:
     - entity_reference_revisions
 id: node.service.field_service_flex
@@ -28,6 +34,12 @@ settings:
       cards: cards
       patient_story: patient_story
       recognition_cards: recognition_cards
+      anchored_cta_block: anchored_cta_block
+      box_links: box_links
+      file_download_cta: file_download_cta
+      rich_text: rich_text
+      image_teaser_banner: image_teaser_banner
+      text_teaser_banner: text_teaser_banner
     target_bundles_drag_drop:
       card:
         weight: -13
@@ -53,4 +65,55 @@ settings:
       recognition_cards:
         enabled: true
         weight: 16
+      anchored_cta_block:
+        enabled: true
+        weight: 19
+      article_card:
+        weight: 20
+        enabled: false
+      basic_header:
+        weight: 21
+        enabled: false
+      cta_banner:
+        weight: 24
+        enabled: false
+      cta_list_banner:
+        weight: 25
+        enabled: false
+      header_cta:
+        weight: 27
+        enabled: false
+      homepage_hero:
+        weight: 28
+        enabled: false
+      icon_button:
+        weight: 29
+        enabled: false
+      box_links:
+        enabled: true
+        weight: 29
+      file_download_cta:
+        enabled: true
+        weight: 35
+      rich_text:
+        enabled: true
+        weight: 35
+      sidebar_card:
+        weight: 36
+        enabled: false
+      image_box_link_custom:
+        weight: 39
+        enabled: false
+      image_box_link_reference:
+        weight: 40
+        enabled: false
+      image_teaser_banner:
+        enabled: true
+        weight: 41
+      text_teaser_banner:
+        enabled: true
+        weight: 49
+      video_card:
+        weight: 50
+        enabled: false
 field_type: entity_reference_revisions
