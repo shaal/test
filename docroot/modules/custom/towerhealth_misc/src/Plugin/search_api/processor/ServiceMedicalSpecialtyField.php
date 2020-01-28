@@ -57,7 +57,7 @@ class ServiceMedicalSpecialtyField extends ProcessorPluginBase {
     $entity = $item->getOriginalObject()->getValue();
     $keys = [];
 
-    if ($entity instanceof EntityInterface && $entity->hasField('field_medical_specialties_ref')) {
+    if (!$entity instanceof EntityInterface || !$entity->hasField('field_medical_specialties_ref')) {
       return;
     }
 

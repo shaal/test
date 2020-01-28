@@ -53,7 +53,7 @@
        .text(default_option_label);
        $dropdown.append($default_option);
 
-      $ul.prepend('<li class="default-option element-invisible"><a href="." class="element-invisible">' + default_option_label + '</a></li>');
+      $ul.prepend('<li class="default-option element-invisible"><a href="" class="element-invisible">' + default_option_label + '</a></li>');
 
       var has_active = false;
       $links.each(function () {
@@ -75,9 +75,8 @@
 
       // Go to the selected option when it's clicked.
       $dropdown.on('change.facets', function () {
-        var anchor = $($ul).find("[data-drupal-facet-item-id='" + $(this).find(':selected').data('drupalFacetItemId') + "']");
+        var anchor = $($ul).find('[data-drupal-facet-item-id="' + $(this).find(':selected').data('drupalFacetItemId') + '"]');
         var $linkElement = (anchor.length > 0) ? $(anchor) : $ul.find('.default-option a');
-        //console.log($linkElement);
         var url = $linkElement.attr('href');
 
         $(this).trigger('facets_filter', [ url ]);
@@ -87,7 +86,15 @@
       $ul.after($dropdown).hide();
       Drupal.attachBehaviors($dropdown.parent()[0], Drupal.settings);
 
-      $dropdown.chosen();
+      $dropdown.chosen({
+        width: "100%",
+        placeholder_text_multiple: "Any",
+        placeholder_text_single: "Any",
+        search_contains: true,
+      });
+      console.log($dropdown.parents('form-section__item'));
+
+      $dropdown.parents('.facets-widget-chosen-dropdown').addClass('js-complete');
     });
   };
 

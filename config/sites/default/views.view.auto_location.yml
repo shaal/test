@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.towerhealth
+    - search_api.index.acquia_search_index
   module:
     - search_api
 id: auto_location
@@ -224,6 +224,18 @@ display:
           id: search_api_relevance
           table: search_api_index_towerhealth
           field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_acquia_search_index
+          field: title
           relationship: none
           group_type: group
           admin_label: ''

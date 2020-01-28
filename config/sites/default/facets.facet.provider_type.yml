@@ -11,7 +11,7 @@ id: provider_type
 name: 'Provider Type'
 url_alias: provider_type
 weight: 2
-min_count: 1
+min_count: 0
 show_only_one_result: true
 field_identifier: provider_profile_type
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
