@@ -4,6 +4,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Services search block for hero region' block.
@@ -51,6 +52,11 @@ class ServicesHeroBlock extends BlockBase {
     $form['find_services_search']['#attributes']['data-id'] = 'services-hero-block';
     $form['#info']['filter-search_api_fulltext']['label'] = t('Search Services');
     $form['#id'] = 'views-exposed-form-find-a-service-find-service-hero';
+    // Explicitly add search term to search input.
+    $search_term = Xss::filter(\Drupal::request()->get('find_services_search'));
+    if (!empty($search_term) && empty($form['find_services_search']['#attributes']['value'])) {
+      $form['find_services_search']['#attributes']['value'] = $search_term;
+    }
 
     $build['exposed_form'] = $form;
 
