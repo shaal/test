@@ -1,0 +1,26 @@
+uuid: 8813da89-71d1-44f2-b7b1-2f2a429b9178
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: article_type
+theme: tower_health
+region: page_filters
+weight: 0
+provider: null
+plugin: article_type_filter
+settings:
+  id: article_type_filter
+  label: 'Article Type'
+  provider: towerhealth_misc
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false
+    context_mapping: {  }

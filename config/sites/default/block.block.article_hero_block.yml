@@ -1,0 +1,26 @@
+uuid: d219e319-a1cc-4340-8197-ac77027f3c3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: article_hero_block
+theme: tower_health
+region: page_header
+weight: 0
+provider: null
+plugin: article_hero_block
+settings:
+  id: article_hero_block
+  label: News
+  provider: towerhealth_misc
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false
+    context_mapping: {  }
