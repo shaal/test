@@ -84,7 +84,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
       @include breakpoint($bp4) {
         .no-cssgrid & {
-          width: 25%;
+          width: 28%;
           float: right;
           clear: right;
         }
@@ -106,7 +106,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
       @include breakpoint($bp4) {
         .no-cssgrid & {
-          width: 25%;
+          width: 28%;
           float: right;
           clear: right;
         }
@@ -126,7 +126,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
       @include breakpoint($bp4) {
         .no-cssgrid & {
-          width: 75%;
+          width: 70%;
           float: left;
         }
       }
