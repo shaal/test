@@ -53,8 +53,8 @@ settings:
         weight: 6
         enabled: false
       anchored_cta_block:
-        weight: 23
-        enabled: false
+        enabled: true
+        weight: 26
       article_card:
         weight: 24
         enabled: false
@@ -88,9 +88,6 @@ settings:
       header_cta:
         weight: 34
         enabled: false
-      anchored_cta_block:
-        enabled: true
-        weight: 26
       homepage_hero:
         weight: 35
         enabled: false
