@@ -31,15 +31,6 @@ class ArticleHeroBlock extends BlockBase {
     $view = Views::getView($view_id);
     $view->setDisplay($view_display_id);
 
-    $view->initHandlers();
-
-    $display = $view->getDisplay();
-
-    /** @var \Drupal\views\Plugin\views\exposed_form\ExposedFormPluginInterface $exposed_form */
-    $exposed_form = $display->getPlugin('exposed_form');
-
-    $form = $exposed_form->renderExposedForm(TRUE);
-
     $build['exposed_form'] = NULL;
 
     return $build;
