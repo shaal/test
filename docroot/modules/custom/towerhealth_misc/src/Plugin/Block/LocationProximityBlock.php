@@ -87,6 +87,7 @@ class LocationProximityBlock extends BlockBase {
       '#url' => $url,
     ];
     $build['exposed_form']['actions']['location_link'] = $location_link;
+    $build['#cache'] = ['max-age' => 0];
 
     return $build;
   }
