@@ -181,9 +181,9 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - provider_specialties_condition_name
-            - provider_specialties_condition_synonym
             - rendered_item
+            - service_related_condition
+            - service_related_condition_synonym
             - title
           plugin_id: search_api_fulltext
         search_api_datasource:
