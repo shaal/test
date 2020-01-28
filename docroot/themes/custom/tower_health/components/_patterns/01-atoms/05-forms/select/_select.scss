@@ -13,10 +13,10 @@
     top: 42%;
     right: .65em;
     z-index: 2;
+    display: block;
 
     /* These hacks make the select behind the arrow clickable in some browsers */
     pointer-events: none;
-    display: none;
   }
 }
 
