@@ -28,10 +28,12 @@
 
   var menu_toggle = $('#toggle-expand');
   var menu_drawer = $('.main-nav__container');
+  var body = $('body');
 
   function closeNav() {
     menu_drawer.removeClass('is-active');
     menu_toggle.removeClass('is-active');
+    body.removeClass('is-fixed');
 
     if ( $(window).width() < 900 ) {
       menu_drawer.attr("aria-expanded", "false");

@@ -3,6 +3,24 @@
   @extend %clearfix;
   z-index: 99;
   position: relative;
+  
+  &.is-active {
+    @include breakpoint(0 $bp3) {
+      position: fixed;
+      background-color: $white;
+      width: 100%;
+      top: 0;
+      max-width: 100vw;
+    }
+  }
+}
+
+// fix the body when the menu is open to prevent scrolling outside
+body.is-fixed {
+  
+  @include breakpoint(0 $bp3) {
+    position: fixed;
+  }
 }
 
 .header__container {
