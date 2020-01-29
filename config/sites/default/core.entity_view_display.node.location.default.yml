@@ -23,7 +23,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - metatag
-    - office_hours
     - telephone
     - text
     - user
@@ -56,33 +55,6 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
-  field_location_hours:
-    weight: 6
-    label: hidden
-    settings:
-      show_closed: all
-      office_hours_first_day: ''
-      day_format: long
-      time_format: g
-      closed_format: Closed
-      separator:
-        days: '<br />'
-        grouped_days: ' - '
-        day_hours: ': '
-        hours_hours: '-'
-        more_hours: ', '
-      current_status:
-        position: ''
-        open_text: 'Currently open!'
-        closed_text: 'Currently closed'
-      compress: false
-      grouped: false
-      schema:
-        enabled: 0
-      timezone_field: ''
-    third_party_settings: {  }
-    type: office_hours
-    region: content
   field_location_image:
     type: entity_reference_entity_view
     weight: 1
@@ -108,7 +80,7 @@ content:
     type: telephone_link
     region: content
   field_metatags:
-    weight: 7
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -130,6 +102,7 @@ hidden:
   field_location_card_image: true
   field_location_components: true
   field_location_geo: true
+  field_location_hours: true
   field_location_id: true
   field_location_type: true
   links: true
