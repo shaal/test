@@ -224,11 +224,15 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   }
   
   .cssanimations & {
-    opacity: 0;
+    @include breakpoint($bp2) {
+      opacity: 0;
+    }
   }
   
   .cssanimations &.in-view {
-    animation: fadeInRight .5s ease forwards;
+    @include breakpoint($bp2) {
+      animation: fadeInRight .5s ease forwards;
+    }
   }
 }
 
