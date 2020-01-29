@@ -58,7 +58,6 @@ class SearchHeroBlock extends BlockBase {
 
     $form['site_search']['#attributes']['class'][] = 'listing-search__input';
     $form['site_search']['#attributes']['data-id'] = 'search-hero-block';
-    $form['#info']['filter-search_api_fulltext']['label'] = t('');
     $form['#id'] = 'views-exposed-form-search-search-page-hero';
 
     // Explicitly add search term to search input.
