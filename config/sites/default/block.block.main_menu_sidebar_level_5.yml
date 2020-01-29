@@ -1,4 +1,4 @@
-uuid: a0eae200-6f07-48e9-815a-6c2284d0f73c
+uuid: e9210846-5504-4772-b5cd-44ff07d8c758
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - system
   theme:
     - tower_health
-id: main_menu_sidebar_level_2
+id: main_menu_sidebar_level_5
 theme: tower_health
 region: sidebar_first
 weight: 0
@@ -17,10 +17,10 @@ provider: null
 plugin: 'menu_block:main-menu-sidebar'
 settings:
   id: 'menu_block:main-menu-sidebar'
-  label: 'Main menu sidebar - Level 2'
+  label: 'Main menu sidebar - Level 5'
   provider: menu_block
   label_display: '0'
-  level: 2
+  level: 5
   depth: 3
   expand: 1
   parent: 'main-menu-sidebar:'
@@ -28,6 +28,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/academics/academic-departments/*\r\n/locations\r\n/locations/*\r\n/services\r\n/services/*"
-    negate: true
+    pages: '/academics/academic-departments/*'
+    negate: false
     context_mapping: {  }

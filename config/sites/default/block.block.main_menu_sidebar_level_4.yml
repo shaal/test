@@ -6,6 +6,7 @@ dependencies:
     - system.menu.main-menu-sidebar
   module:
     - menu_block
+    - node
     - system
   theme:
     - tower_health
@@ -28,6 +29,15 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/academics/academic-departments/*'
+    pages: "/services*\r\n/locations*"
     negate: false
     context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      location: location
+      page: page
+      service: service
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

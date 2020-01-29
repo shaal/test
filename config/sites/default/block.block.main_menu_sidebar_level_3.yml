@@ -5,7 +5,6 @@ dependencies:
   config:
     - system.menu.main-menu-sidebar
   module:
-    - ctools
     - menu_block
     - system
   theme:
@@ -27,17 +26,8 @@ settings:
   parent: 'main-menu-sidebar:'
   suggestion: main_menu_sidebar
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      location: location
-      page: page
-      service: service
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: "/services*\r\n/locations*"
-    negate: false
+    pages: "/academics/academic-departments/*\r\n/locations\r\n/locations/*\r\n/services\r\n/services/*"
+    negate: true
     context_mapping: {  }
