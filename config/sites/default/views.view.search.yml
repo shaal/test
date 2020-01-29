@@ -1,9 +1,9 @@
-uuid: 6747efa1-c86a-4cd4-99d9-fd3363151b48
+uuid: 7afa123c-30f0-43db-8e82-03d808ad0857
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.towerhealth
+    - search_api.index.acquia_search_index
   module:
     - search_api
 id: search
@@ -11,7 +11,7 @@ label: Search
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_towerhealth
+base_table: search_api_index_acquia_search_index
 base_field: search_api_id
 display:
   default:
@@ -29,9 +29,9 @@ display:
       query:
         type: views_query
         options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
+          skip_access: 0
+          bypass_access: 0
+          preserve_facet_query_args: 0
       exposed_form:
         type: basic
         options:
@@ -62,7 +62,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
+          quantity: 5
       style:
         type: default
       row:
@@ -152,17 +152,20 @@ display:
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
-            identifier: search
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: site_search
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              article_editor: '0'
+              editor: '0'
+              publisher: '0'
               administrator: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -222,14 +225,49 @@ display:
             group_items: {  }
           reduce_duplicates: false
           plugin_id: search_api_datasource
-      sorts: {  }
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_towerhealth
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+        title:
+          id: title
+          table: search_api_index_acquia_search_index
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: Search
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          content: 'Showing @start - @end of @total results'
+          plugin_id: result
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -237,15 +275,19 @@ display:
         - url
         - url.query_args
       tags: {  }
-  page_1:
+  search_page:
     display_plugin: page
-    id: page_1
+    id: search_page
     display_title: Page
     position: 1
     display_options:
       display_extenders: {  }
       path: search
-      exposed_block: true
+      exposed_block: false
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

@@ -27,6 +27,7 @@ dependencies:
     - geofield
     - media_library
     - metatag
+    - office_hours
     - paragraphs
     - path
     - readonly_field_widget
@@ -225,13 +226,9 @@ content:
     region: content
   field_location_hours:
     weight: 18
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
+    settings: {  }
     third_party_settings: {  }
-    type: readonly_field_widget
+    type: office_hours_list
     region: content
   field_location_id:
     weight: 13

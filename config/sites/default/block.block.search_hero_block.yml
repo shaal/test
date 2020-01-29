@@ -1,0 +1,26 @@
+uuid: 635ce5ef-cca6-4a1e-b840-10131f989f76
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: search_hero_block
+theme: tower_health
+region: page_header
+weight: 0
+provider: null
+plugin: search_hero_block
+settings:
+  id: search_hero_block
+  label: Search
+  provider: towerhealth_misc
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /search
+    negate: false
+    context_mapping: {  }
