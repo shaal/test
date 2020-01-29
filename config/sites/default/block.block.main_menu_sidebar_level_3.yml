@@ -27,6 +27,11 @@ settings:
   parent: 'main-menu-sidebar:'
   suggestion: main_menu_sidebar
 visibility:
+  request_path:
+    id: request_path
+    pages: "/services*\r\n/locations*"
+    negate: false
+    context_mapping: {  }
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
@@ -36,8 +41,3 @@ visibility:
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
-  request_path:
-    id: request_path
-    pages: "/services*\r\n/locations*"
-    negate: false
-    context_mapping: {  }
