@@ -23,12 +23,12 @@
   position: relative;
   background-position: center;
   background-size: cover;
-  margin-bottom: 175px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
 
   &.basic-header--cta {
-    margin-bottom: 250px;
+    margin-bottom: 175px;
   }
 
   @include breakpoint($bp2) {
@@ -175,7 +175,7 @@
     background-color: $primary-dark;
     padding: 2.35em 2em 2.35em 0;
     border-radius: 0 $rd-brd-lg $rd-brd-lg 0;
-    bottom: -150px;
+    bottom: -100px;
 
     &::before {
       position: absolute;
@@ -217,7 +217,7 @@
   }
 
   .basic-header--img.basic-header--cta & {
-    bottom: -250px;
+    bottom: -175px;
 
     @include breakpoint($bp3) {
       bottom: auto;
