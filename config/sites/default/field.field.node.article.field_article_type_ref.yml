@@ -11,7 +11,7 @@ field_name: field_article_type_ref
 entity_type: node
 bundle: article
 label: Type
-description: ''
+description: 'What type of article is this? Select any that apply.'
 required: false
 translatable: false
 default_value: {  }
