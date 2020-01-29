@@ -18,8 +18,8 @@ bundle: article
 mode: default
 content:
   field_article_body:
-    weight: 4
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
