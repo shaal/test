@@ -156,7 +156,6 @@ services:
         - Heel Spurs
         - Inngrown Toennails
     type: "service"
-  
 current: 4
 items:
   pages:

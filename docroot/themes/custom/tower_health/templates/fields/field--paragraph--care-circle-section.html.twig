@@ -33,11 +33,10 @@
  * - field_type: The type of the field.
  * - label_display: The display settings for the label.
  *
+ *
  * @see template_preprocess_field()
+ *
+ * No wrappers. It just doesn't flow with flexbox.
  */
 #}
-
-{% include "@atoms/02-text/00-headings/_heading.twig" with {
-  'heading_level': 2,
-  'heading': items.0.content,
-}%}
+{% include '@tower_health/fields/field-clean.html.twig' %}

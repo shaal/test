@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: default
-      label: Default
+      label: Left
     -
       value: reverse
-      label: Reversed
+      label: Right
   allowed_values_function: ''
 module: options
 locked: false

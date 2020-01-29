@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: patient_story
 label: Image
 description: 'What image would you like to display?'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -1,13 +1,13 @@
-uuid: bbf12a73-9469-451b-b076-59a1173961fc
+uuid: 62e8f2a8-aadf-48ed-b117-3849390d1c09
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - text
-id: node.field_service_intro
-field_name: field_service_intro
-entity_type: node
+id: paragraph.field_care_circle_description
+field_name: field_care_circle_description
+entity_type: paragraph
 type: text_long
 settings: {  }
 module: text

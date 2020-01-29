@@ -6,16 +6,14 @@ dependencies:
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_body_components
     - field.field.node.service.field_service_card_cta
     - field.field.node.service.field_service_card_desc
     - field.field.node.service.field_service_card_image
-    - field.field.node.service.field_metatags
     - field.field.node.service.field_service_core_bool
     - field.field.node.service.field_service_core_ref
     - field.field.node.service.field_service_flex
     - field.field.node.service.field_service_header
-    - field.field.node.service.field_service_headline
-    - field.field.node.service.field_service_intro
     - field.field.node.service.field_service_related_ref
     - node.type.service
     - workflows.workflow.default
@@ -50,9 +48,8 @@ third_party_settings:
     group_description:
       children:
         - title
-        - field_service_headline
-        - field_service_intro
         - field_body
+        - field_service_body_components
       parent_name: group_vertical_tabs
       weight: 6
       format_type: tab
@@ -62,7 +59,7 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Description'
+      label: Description
       region: content
     group_core_service:
       children:
@@ -91,7 +88,7 @@ third_party_settings:
         required_fields: true
         id: ''
         classes: ''
-      label: 'Conditions'
+      label: Conditions
       region: content
     group_flexible_components:
       children:
@@ -134,8 +131,7 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: 'Header'
-      region: content
+      label: Header
     group_card_data:
       children:
         - field_service_card_image
@@ -187,6 +183,18 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_service_body_components:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    region: content
+    third_party_settings: {  }
   field_service_card_cta:
     weight: 129
     settings:
@@ -233,10 +241,10 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
   field_service_header:
     type: entity_reference_paragraphs
@@ -250,22 +258,6 @@ content:
       default_paragraph_type: basic_header
     third_party_settings: {  }
     region: content
-  field_service_headline:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_service_intro:
-    type: text_textarea
-    weight: 2
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   field_service_related_ref:
     weight: 27
     settings:

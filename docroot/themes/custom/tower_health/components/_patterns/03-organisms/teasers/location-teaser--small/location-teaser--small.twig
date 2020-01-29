@@ -11,7 +11,7 @@
         {% include "@atoms/icon-button/icon-button.twig" with {
           "url": direction_url,
           "button_icon": 'th-find-hospital.svg',
-          "text": 'Directions',
+          "text": 'Map & Directions',
           "variation": "small",
           "target": "_blank"
         } %}
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="teaser__link--small">
-      <a class="teaser__link" href="{{cta.url}}">{{ cta.label }} {% include "@base/icons/arrow.svg" %} </a>
+      <a class="teaser__link" href="{{cta.url}}" target="_blank">{{ cta.label }} {% include "@base/icons/arrow.svg" %} </a>
     </div>
   </div>
 </div>

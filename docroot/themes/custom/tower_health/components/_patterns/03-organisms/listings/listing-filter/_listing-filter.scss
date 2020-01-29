@@ -126,6 +126,13 @@
     height: 50px;
   }
 
+  .facets-widget-chosen-dropdown {
+    visibility: hidden;
+    &.js-complete {
+      visibility: visible;
+    }
+  }
+
   .chosen-container-single .chosen-single,
   .chosen-container-multi .chosen-choices {
     padding: .65em 1.35em 0 1em;

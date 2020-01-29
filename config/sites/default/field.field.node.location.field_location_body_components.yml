@@ -1,10 +1,11 @@
-uuid: b5de18c8-4251-4e04-8a70-83dd55737542
+uuid: 529e60d2-a957-4157-9371-27bfba552565
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_location_body_components
     - node.type.location
+    - paragraphs.paragraphs_type.care_circle
   module:
     - entity_reference_revisions
 id: node.location.field_location_body_components
@@ -21,21 +22,28 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      care_circle: care_circle
     target_bundles_drag_drop:
+      anchored_cta_block:
+        weight: 23
+        enabled: false
       article_card:
-        weight: 25
+        weight: 24
         enabled: false
       basic_header:
-        weight: 26
-        enabled: false
-      box_links:
-        weight: 27
+        weight: 25
         enabled: false
       card:
-        weight: 28
+        weight: 26
         enabled: false
       cards:
+        weight: 27
+        enabled: false
+      care_circle:
+        enabled: true
+        weight: 28
+      care_circle_section:
         weight: 29
         enabled: false
       cta_banner:
@@ -59,40 +67,28 @@ settings:
       icon_button:
         weight: 36
         enabled: false
-      image_box_link_custom:
+      on_my_way:
         weight: 37
         enabled: false
-      image_box_link_reference:
+      patient_story:
         weight: 38
         enabled: false
-      image_teaser_banner:
+      rating_comments:
         weight: 39
         enabled: false
-      on_my_way:
+      recognition_card:
         weight: 40
         enabled: false
-      patient_story:
+      recognition_cards:
         weight: 41
         enabled: false
-      rating_comments:
+      rich_text:
         weight: 42
         enabled: false
-      recognition_card:
+      sidebar_card:
         weight: 43
         enabled: false
-      recognition_cards:
-        weight: 44
-        enabled: false
-      rich_text:
-        weight: 45
-        enabled: false
-      sidebar_card:
-        weight: 46
-        enabled: false
-      text_teaser_banner:
-        weight: 47
-        enabled: false
       video_card:
-        weight: 48
+        weight: 44
         enabled: false
 field_type: entity_reference_revisions

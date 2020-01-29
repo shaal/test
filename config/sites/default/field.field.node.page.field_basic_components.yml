@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_basic_components
     - node.type.page
     - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.care_circle
     - paragraphs.paragraphs_type.cta_banner
     - paragraphs.paragraphs_type.cta_list_banner
     - paragraphs.paragraphs_type.file_download_cta
@@ -31,6 +32,7 @@ settings:
       cta_banner: cta_banner
       cta_list_banner: cta_list_banner
       file_download_cta: file_download_cta
+      care_circle: care_circle
       rich_text: rich_text
     target_bundles_drag_drop:
       education:
@@ -60,20 +62,23 @@ settings:
       recognition_card:
         weight: 19
         enabled: false
-      article_card:
-        weight: 19
-        enabled: false
       cta_banner:
         enabled: true
         weight: 19
-      cta_list_banner:
-        enabled: true
-        weight: 20
+      article_card:
+        weight: 19
+        enabled: false
       recognition_cards:
         weight: 20
         enabled: false
+      cta_list_banner:
+        enabled: true
+        weight: 20
       header_cta:
         weight: 22
+        enabled: false
+      anchored_cta_block:
+        weight: 23
         enabled: false
       icon_button:
         weight: 24
@@ -81,6 +86,12 @@ settings:
       file_download_cta:
         enabled: true
         weight: 26
+      care_circle:
+        enabled: true
+        weight: 28
+      care_circle_section:
+        weight: 29
+        enabled: false
       rich_text:
         enabled: true
         weight: 30

@@ -5,6 +5,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
 use Drupal\Core\Url;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Provider proximity filter' block.
@@ -16,6 +17,13 @@ use Drupal\Core\Url;
  * )
  */
 class ProviderProximityBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    return 0;
+  }
 
   /**
    * {@inheritdoc}
@@ -41,7 +49,10 @@ class ProviderProximityBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
-    unset($form['find_doctor_search']);
+    $form['find_doctor_search']['#type'] = 'hidden';
+    $search_term_id = $form['find_doctor_search']['#id'];
+    $form['find_doctor_search']['#id'] = $search_term_id . '-proximity';
+    $form['find_doctor_search']['#attributes']['data-id'] = 'provider-proximity-search-input';
 
     $form['#id'] = 'views-exposed-form-find-a-provider-find-doctor-proximity';
 
@@ -51,6 +62,19 @@ class ProviderProximityBlock extends BlockBase {
     }
     $classes[] = 'form-autocomplete';
     $form['#attributes']['class'] = $classes;
+
+    // Explicitly add locations terms to proximity input.
+    $locations = \Drupal::request()->get('provider_location_latlong');
+    if (!empty($locations) && is_array($locations) && empty($form['provider_location_latlong']['value']['#attributes']['value'])) {
+      $form['provider_location_latlong']['value']['#attributes']['value'] = Xss::filter($locations['value']);
+      $form['provider_location_latlong']['distance']['from']['#attributes']['value']  = Xss::filter($locations['distance']['from']);
+    }
+
+    // Explicitly add search term to search input.
+    $search_term = Xss::filter(\Drupal::request()->get('find_doctor_search'));
+    if (!empty($search_term) && empty($form['find_doctor_search']['#attributes']['value'])) {
+      $form['find_doctor_search']['#attributes']['value'] = $search_term;
+    }
 
     $build['exposed_form'] = $form;
 
@@ -76,6 +100,7 @@ class ProviderProximityBlock extends BlockBase {
       '#url' => $url,
     ];
     $build['exposed_form']['actions']['location_link'] = $location_link;
+    $build['#cache'] = ['max-age' => 0];
 
     return $build;
   }

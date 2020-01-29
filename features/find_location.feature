@@ -6,6 +6,6 @@ Feature: Find a doctor
 
   Scenario: Verify that find a doctor exists
     Given I am not logged in
-    When I am at "/find-a-location"
+    When I am at "/locations"
     And I fill in "find_location_search" with "Reading Hospital"
-    Then I am at "find-a-location"
+    Then I am at "locations"
