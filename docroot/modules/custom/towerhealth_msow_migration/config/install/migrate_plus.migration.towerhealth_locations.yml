@@ -1,7 +1,6 @@
 id: towerhealth_locations
 label: Import tower health location content
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_locations_group
 dependencies:
   enforced:
     module:

@@ -3,8 +3,7 @@
 ---
 id: towerhealth_location_hours
 label: Import tower health location hours.
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_locations_group
 
 dependencies:
   enforced:
