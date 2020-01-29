@@ -17,6 +17,7 @@ dependencies:
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
     - field.storage.node.field_profile_type
+    - field.storage.node.field_profile_video
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
   module:
@@ -24,6 +25,7 @@ dependencies:
     - taxonomy
     - search_api_location
     - search_api_solr
+    - media
     - search_api
     - towerhealth_misc
 _core:
@@ -100,6 +102,17 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  media_name:
+    label: 'Video » Media » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_profile_video:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_profile_video
+      module:
+        - media
+        - media
   name:
     label: Name
     datasource_id: 'entity:taxonomy_term'
@@ -336,6 +349,7 @@ processor_settings:
       - location_services_title
       - location_services_title_string
       - location_type_string
+      - media_name
       - name
       - profile_gender_string
       - provider_insurance_groups_insurance_company_string
@@ -372,4 +386,4 @@ options:
   index_directly: true
   cron_limit: 50
   overridden_by_acquia_search: 2
-server: acquia_search_server
+server: local_development
