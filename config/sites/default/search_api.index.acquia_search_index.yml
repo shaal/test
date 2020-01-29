@@ -3,25 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location_geo
     - field.storage.node.field_services_ref
     - field.storage.node.field_conditions_ref
     - field.storage.taxonomy_term.field_condition_synonym
-    - field.storage.node.field_location_type
     - field.storage.node.field_profile_gender
     - field.storage.node.field_insurance_ref
     - field.storage.taxonomy_term.field_insurance_company
-    - field.storage.node.field_location_ref
     - field.storage.node.field_profile_languages
-    - field.storage.node.field_profile_type
+    - field.storage.node.field_location_geo
+    - field.storage.node.field_location_type
+    - field.storage.node.field_location_ref
+    - field.storage.node.field_location_id
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.node.field_profile_type
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
   module:
-    - search_api_location
     - node
     - taxonomy
+    - search_api_location
     - search_api_solr
     - search_api
     - towerhealth_misc
@@ -128,6 +129,17 @@ field_settings:
         - taxonomy
         - taxonomy
         - taxonomy
+  provider_location_id_string:
+    label: 'Location » Content » Location ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_ref:entity:field_location_id'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_ref
+        - field.storage.node.field_location_id
+      module:
+        - node
   provider_location_latlong:
     label: 'Location » Content » Location Geo » LatLong Pair'
     datasource_id: 'entity:node'
@@ -241,6 +253,28 @@ field_settings:
     label: 'Service medical specialty field'
     property_path: service_medical_specialty_field
     type: string
+  service_related_condition:
+    label: 'Services - Related Conditions'
+    datasource_id: 'entity:node'
+    property_path: 'field_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conditions_ref
+      module:
+        - taxonomy
+        - taxonomy
+  service_related_condition_synonym:
+    label: 'Services - Related Conditions - Synonym'
+    datasource_id: 'entity:node'
+    property_path: 'field_conditions_ref:entity:field_condition_synonym'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conditions_ref
+        - field.storage.taxonomy_term.field_condition_synonym
+      module:
+        - taxonomy
   synonym:
     label: Synonyms
     datasource_id: 'entity:taxonomy_term'
@@ -305,6 +339,7 @@ processor_settings:
       - name
       - profile_gender_string
       - provider_insurance_groups_insurance_company_string
+      - provider_location_id_string
       - provider_location_latlong
       - provider_location_title_string
       - provider_profile_languages_string
@@ -316,6 +351,8 @@ processor_settings:
       - provider_specialties_name_string
       - rendered_item
       - service_medical_specialty_field
+      - service_related_condition
+      - service_related_condition_synonym
       - synonym
       - title
       - type
