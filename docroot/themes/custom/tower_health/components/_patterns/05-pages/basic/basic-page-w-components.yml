@@ -136,13 +136,14 @@ recognitionItems:
       src: "../../images/award-2.png"
       alt: "US News & World Report, Best National Hospital - Pulmonology"
 file: 
-  url: '#'
   image:
     src: '../../images/2019-Tower-CHNA-01.png'
     alt: 'Alternative Text'
   title: 'Tower Health Community Health Needs Assessment'
   desc: 'This is an optional file download cta component. Community Health Needs Assessments (CHNA) are required of tax-exempt hospitals as a result of the Patient Protection and Affordable Care Act. These assessments, done every three years, create an important opportunity to improve the health of communities. Working alongside community stakeholders, we can and will use the CHNA data to develop programs that meets the needs of our community.'
-  downloadLabel: Download the PDF
+  file: 
+    label: Download the PDF
+    url: '#'
 video_cards:
   - url: 
       link: https://www.youtube.com/embed/d3ZLhedUtkA
