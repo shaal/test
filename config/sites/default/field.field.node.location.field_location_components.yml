@@ -8,7 +8,6 @@ dependencies:
     - paragraphs.paragraphs_type.anchored_cta_block
     - paragraphs.paragraphs_type.box_links
     - paragraphs.paragraphs_type.cards
-    - paragraphs.paragraphs_type.cta_banner
     - paragraphs.paragraphs_type.file_download_cta
     - paragraphs.paragraphs_type.image_teaser_banner
     - paragraphs.paragraphs_type.on_my_way
@@ -33,7 +32,6 @@ settings:
     target_bundles:
       on_my_way: on_my_way
       cards: cards
-      cta_banner: cta_banner
       box_links: box_links
       anchored_cta_block: anchored_cta_block
       image_teaser_banner: image_teaser_banner
@@ -63,8 +61,8 @@ settings:
         enabled: true
         weight: 21
       cta_banner:
-        enabled: true
         weight: 22
+        enabled: false
       box_links:
         enabled: true
         weight: 23
