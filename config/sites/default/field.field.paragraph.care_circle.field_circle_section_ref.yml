@@ -1,19 +1,19 @@
-uuid: 529e60d2-a957-4157-9371-27bfba552565
+uuid: ecff6d6e-5787-489a-8240-d16c698b2655
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location_body_components
-    - node.type.location
+    - field.storage.paragraph.field_circle_section_ref
     - paragraphs.paragraphs_type.care_circle
+    - paragraphs.paragraphs_type.care_circle_section
   module:
     - entity_reference_revisions
-id: node.location.field_location_body_components
-field_name: field_location_body_components
-entity_type: node
-bundle: location
-label: 'Body Components'
-description: ''
+id: paragraph.care_circle.field_circle_section_ref
+field_name: field_circle_section_ref
+entity_type: paragraph
+bundle: care_circle
+label: 'Circle Sections'
+description: 'Add between 3 and 8 sections for this care circle'
 required: false
 translatable: false
 default_value: {  }
@@ -23,7 +23,7 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      care_circle: care_circle
+      care_circle_section: care_circle_section
     target_bundles_drag_drop:
       anchored_cta_block:
         weight: 23
@@ -41,11 +41,11 @@ settings:
         weight: 27
         enabled: false
       care_circle:
-        enabled: true
         weight: 28
-      care_circle_section:
-        weight: 29
         enabled: false
+      care_circle_section:
+        enabled: true
+        weight: 29
       cta_banner:
         weight: 30
         enabled: false

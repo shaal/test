@@ -1,17 +1,17 @@
-uuid: 529e60d2-a957-4157-9371-27bfba552565
+uuid: f3729331-8bd3-4eb6-ab9f-5340a8804f29
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location_body_components
-    - node.type.location
+    - field.storage.node.field_service_body_components
+    - node.type.service
     - paragraphs.paragraphs_type.care_circle
   module:
     - entity_reference_revisions
-id: node.location.field_location_body_components
-field_name: field_location_body_components
+id: node.service.field_service_body_components
+field_name: field_service_body_components
 entity_type: node
-bundle: location
+bundle: service
 label: 'Body Components'
 description: ''
 required: false

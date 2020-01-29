@@ -1,0 +1,9 @@
+uuid: 57b27a92-cf2c-4fd0-986e-6fb19e518d1d
+langcode: en
+status: true
+dependencies: {  }
+id: care_circle
+label: 'Care Circle'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
