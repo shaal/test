@@ -77,11 +77,14 @@ Outside vagrant
 1. Confirm that you can access the production site by running `drush @towerhealth.prod status`
 1. Go to the root of this project.
 1. Run the following:
-  1. `drush rsync @towerhealth.prod:files/directory  ./docroot/sites/default/files/directory/`
+  1. `drush rsync @towerhealth.prod:files/directory  ./docroot/sites/default/files/`
 
 Running migrations
 1. `vagrant ssh`
-1. `phing migrate`
+1. `drush mim --group="towerhealth_provider_base_group"`
+1. `drush mim --group="towerhealth_locations_group"`
+1. `drush mim --group="towerhealth_provider_details_group"`
+1. `drush mim towerhealth_ratings`
 
 ## Deployment
 
