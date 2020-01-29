@@ -144,7 +144,9 @@ file:
   desc: 'This is an optional file download cta component. Community Health Needs Assessments (CHNA) are required of tax-exempt hospitals as a result of the Patient Protection and Affordable Care Act. These assessments, done every three years, create an important opportunity to improve the health of communities. Working alongside community stakeholders, we can and will use the CHNA data to develop programs that meets the needs of our community.'
   downloadLabel: Download the PDF
 video_cards:
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
@@ -152,7 +154,9 @@ video_cards:
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
@@ -160,7 +164,9 @@ video_cards:
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
@@ -168,7 +174,9 @@ video_cards:
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
@@ -176,7 +184,9 @@ video_cards:
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
@@ -184,7 +194,9 @@ video_cards:
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png

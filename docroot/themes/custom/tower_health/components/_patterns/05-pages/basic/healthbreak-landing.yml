@@ -9,7 +9,9 @@ header:
   lede: HealthBreak is designed to feature our physicians and educate the community about the state-of-art technology and lifesaving services offered at our facilities. The segments will be archived here on our website to form an easy-to-access online video health library, featuring our own physicians.
   style: secondary
 cards:
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
@@ -17,7 +19,9 @@ cards:
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/CPn2q65u1K4
+  - url: 
+      link: https://www.youtube.com/embed/CPn2q65u1K4
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-2.png
@@ -25,7 +29,9 @@ cards:
     doctor: Mark Chai, MD
     title: Botox for Spasticity
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
-  - videoURL: https://www.youtube.com/embed/X_Mqbgy0kss
+  - url: 
+      link: https://www.youtube.com/embed/X_Mqbgy0kss
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-3.png
@@ -33,7 +39,9 @@ cards:
     doctor: Hong Zheng, DO
     title: Treatment for Peripheral Artery Disease
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
-  - videoURL: https://www.youtube.com/embed/pZmc8SuyP18
+  - url: 
+      link: https://www.youtube.com/embed/pZmc8SuyP18
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-4.png
@@ -41,7 +49,9 @@ cards:
     doctor: Christine Cho, DO
     title: Tower health MedSpa
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
@@ -49,7 +59,9 @@ cards:
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/CPn2q65u1K4
+  - url: 
+      link: https://www.youtube.com/embed/CPn2q65u1K4
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-2.png
@@ -57,7 +69,9 @@ cards:
     doctor: Mark Chai, MD
     title: Botox for Spasticity
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
-  - videoURL: https://www.youtube.com/embed/X_Mqbgy0kss
+  - url: 
+      link: https://www.youtube.com/embed/X_Mqbgy0kss
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-3.png
@@ -65,7 +79,9 @@ cards:
     doctor: Hong Zheng, DO
     title: Treatment for Peripheral Artery Disease
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
-  - videoURL: https://www.youtube.com/embed/pZmc8SuyP18
+  - url: 
+      link: https://www.youtube.com/embed/pZmc8SuyP18
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-4.png
@@ -73,7 +89,9 @@ cards:
     doctor: Christine Cho, DO
     title: Tower health MedSpa
     desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim illo eos, ipsa similique veniam dolorum quos voluptates consequatur natus.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
     type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png

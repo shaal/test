@@ -1,7 +1,7 @@
 <section class="card-group grid">
   {% for card in cards %}
     {% include "@molecules/video-card/video-card.twig" with {
-      videoURL: card.videoURL,
+      url: card.url,
       thumbnail: card.thumbnail,
       doctor: card.doctor,
       title: card.title,
