@@ -70,7 +70,7 @@ display:
         options:
           view_modes:
             'entity:media':
-              video: card
+              video: teaser
             'entity:node':
               article: default
               location: teaser
