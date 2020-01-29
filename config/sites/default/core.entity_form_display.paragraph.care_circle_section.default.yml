@@ -1,0 +1,50 @@
+uuid: 2a86da3c-b582-4f25-98cb-7c9119646cf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.care_circle_section.field_care_circle_section_color
+    - field.field.paragraph.care_circle_section.field_care_circle_section_icon
+    - field.field.paragraph.care_circle_section.field_care_circle_section_link
+    - field.field.paragraph.care_circle_section.field_care_circle_section_title
+    - paragraphs.paragraphs_type.care_circle_section
+  module:
+    - link
+    - media_library
+id: paragraph.care_circle_section.default
+targetEntityType: paragraph
+bundle: care_circle_section
+mode: default
+content:
+  field_care_circle_section_color:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_care_circle_section_icon:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_care_circle_section_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_care_circle_section_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

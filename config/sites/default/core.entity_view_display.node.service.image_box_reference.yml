@@ -55,6 +55,7 @@ hidden:
   field_location_ref: true
   field_medical_specialties_ref: true
   field_metatags: true
+  field_service_body_components: true
   field_service_core_bool: true
   field_service_core_ref: true
   field_service_flex: true

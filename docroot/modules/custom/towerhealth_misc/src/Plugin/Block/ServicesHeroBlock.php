@@ -20,6 +20,13 @@ class ServicesHeroBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
+  public function getCacheMaxAge() {
+    return 0;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     // We don't have much context during build, so we look at the current route
     // and try to decide if we're on a Views page.
@@ -63,6 +70,7 @@ class ServicesHeroBlock extends BlockBase {
     $build['exposed_form']['actions']['#attributes']['class'][] = 'listing-search__actions';
 
     $build['exposed_form']['#attributes']['class'][] = 'listing-search';
+    $build['#cache'] = ['max-age' => 0];
 
     return $build;
   }

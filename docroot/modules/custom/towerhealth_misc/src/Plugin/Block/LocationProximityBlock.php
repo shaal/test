@@ -21,6 +21,13 @@ class LocationProximityBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
+  public function getCacheMaxAge() {
+    return 0;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function build() {
     // We don't have much context during build, so we look at the current route
     // and try to decide if we're on a Views page.
@@ -87,6 +94,7 @@ class LocationProximityBlock extends BlockBase {
       '#url' => $url,
     ];
     $build['exposed_form']['actions']['location_link'] = $location_link;
+    $build['#cache'] = ['max-age' => 0];
 
     return $build;
   }

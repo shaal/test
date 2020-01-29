@@ -1,0 +1,23 @@
+uuid: b3a54def-c938-4266-93bb-9864fd37749c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_care_circle_section_link
+    - paragraphs.paragraphs_type.care_circle_section
+  module:
+    - link
+id: paragraph.care_circle_section.field_care_circle_section_link
+field_name: field_care_circle_section_link
+entity_type: paragraph
+bundle: care_circle_section
+label: 'Section Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

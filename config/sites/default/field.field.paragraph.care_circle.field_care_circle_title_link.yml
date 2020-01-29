@@ -1,0 +1,23 @@
+uuid: c7a3568e-a8e0-4f0b-997e-c4b7fbbc4cc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_care_circle_title_link
+    - paragraphs.paragraphs_type.care_circle
+  module:
+    - link
+id: paragraph.care_circle.field_care_circle_title_link
+field_name: field_care_circle_title_link
+entity_type: paragraph
+bundle: care_circle
+label: 'Circle Title Link'
+description: 'Optionally add a link to the title that will display in the middle of the care circle.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link
