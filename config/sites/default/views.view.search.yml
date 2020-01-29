@@ -69,15 +69,25 @@ display:
         type: search_api
         options:
           view_modes:
+            'entity:media':
+              video: card
             'entity:node':
+              article: default
               location: teaser
               page: teaser
               profile: teaser
-              program: teaser
               service: teaser
             'entity:taxonomy_term':
+              access_control: default
+              area_of_interest: default
               condition: default
+              core_services: default
+              hospital_affiliation: default
+              insurance_company: default
+              insurance_groups: default
+              location_type: default
               medical_specialty: default
+              universities: default
       fields:
         rendered_item:
           table: search_api_index_towerhealth
@@ -193,6 +203,7 @@ display:
           admin_label: ''
           operator: or
           value:
+            'entity:media': 'entity:media'
             'entity:node': 'entity:node'
           group: 1
           exposed: false
@@ -202,6 +213,8 @@ display:
             description: ''
             use_operator: false
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -209,8 +222,6 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

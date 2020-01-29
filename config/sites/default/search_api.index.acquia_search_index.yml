@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.media.field_media_description
     - field.storage.node.field_services_ref
     - field.storage.node.field_conditions_ref
     - field.storage.taxonomy_term.field_condition_synonym
@@ -17,15 +18,14 @@ dependencies:
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
     - field.storage.node.field_profile_type
-    - field.storage.node.field_profile_video
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
   module:
+    - media
     - node
     - taxonomy
     - search_api_location
     - search_api_solr
-    - media
     - search_api
     - towerhealth_misc
 _core:
@@ -102,17 +102,6 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
-  media_name:
-    label: 'Video » Media » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_profile_video:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_profile_video
-      module:
-        - media
-        - media
   name:
     label: Name
     datasource_id: 'entity:taxonomy_term'
@@ -321,7 +310,31 @@ field_settings:
     dependencies:
       module:
         - taxonomy
+  video_description:
+    label: 'Video » Description'
+    datasource_id: 'entity:media'
+    property_path: field_media_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_media_description
+  video_name:
+    label: 'Video » Name'
+    datasource_id: 'entity:media'
+    property_path: name
+    type: text
+    dependencies:
+      module:
+        - media
 datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - video
+    languages:
+      default: true
+      selected: {  }
   'entity:node':
     bundles:
       default: true
@@ -349,7 +362,6 @@ processor_settings:
       - location_services_title
       - location_services_title_string
       - location_type_string
-      - media_name
       - name
       - profile_gender_string
       - provider_insurance_groups_insurance_company_string
@@ -371,6 +383,8 @@ processor_settings:
       - title
       - type
       - vid
+      - video_description
+      - video_name
     weights:
       preprocess_index: -20
       preprocess_query: -20
