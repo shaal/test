@@ -67,7 +67,7 @@ class ProviderProximityBlock extends BlockBase {
     $locations = \Drupal::request()->get('provider_location_latlong');
     if (!empty($locations) && is_array($locations) && empty($form['provider_location_latlong']['value']['#attributes']['value'])) {
       $form['provider_location_latlong']['value']['#attributes']['value'] = Xss::filter($locations['value']);
-      $form['provider_location_latlong']['distance']['from']['#attributes']['value']  = Xss::filter($locations['distance']['from']);
+      $form['provider_location_latlong']['distance']['from']['#attributes']['value'] = Xss::filter($locations['distance']['from']);
     }
 
     // Explicitly add search term to search input.

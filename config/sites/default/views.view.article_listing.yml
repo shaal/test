@@ -7,7 +7,6 @@ dependencies:
     - node.type.article
     - taxonomy.vocabulary.article_types
   module:
-    - better_exposed_filters
     - node
     - taxonomy
     - user
@@ -41,7 +40,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Filter
           reset_button: false
@@ -50,31 +49,18 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          input_required: false
-          text_input_required: 'Select any filter and click on Apply to see results'
-          bef:
-            general:
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_hide: false
-            field_article_type_ref_target_id:
-              bef_format: bef
-              more_options:
-                bef_select_all_none: false
-                bef_collapsible: false
-                is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
-          text_input_required_format: basic_html
       pager:
-        type: mini
+        type: full
         options:
           items_per_page: 10
           offset: 0
           id: 0
-          total_pages: null
+          total_pages: 5
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -83,9 +69,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
+          quantity: 9
       style:
         type: default
       row:
@@ -188,7 +172,7 @@ display:
             identifier: field_article_type_ref_target_id
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
