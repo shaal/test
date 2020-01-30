@@ -40,10 +40,4 @@ function towerhealth_autocomplete_form_views_exposed_form_alter(array &$form, Fo
     $form['find_services_search']['#attributes']['placeholder'] = t('Search by Condition or Service');
     $form['#attached']['library'][] = 'towerhealth_autocomplete/towerhealth_autocomplete';
   }
-  elseif ($id == 'views-exposed-form-search-search-page') {
-    $form['site_search']['#autocomplete_route_name'] = 'towerhealth_autocomplete.autocomplete.findservices';
-    $form['site_search']['#attributes']['class'] = ['site-search-autocomplete'];
-    $form['site_search']['#attributes']['placeholder'] = t('Search site content');
-    $form['#attached']['library'][] = 'towerhealth_autocomplete/towerhealth_autocomplete';
-  }
 }

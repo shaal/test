@@ -51,7 +51,6 @@ class SearchHeroBlock extends BlockBase {
     if (isset($form['#attributes']['class'])) {
       $classes = $form['#attributes']['class'];
     }
-    $classes[] = 'form-autocomplete';
     $form['#attributes']['class'] = $classes;
 
     $form = $exposed_form->renderExposedForm(TRUE);
