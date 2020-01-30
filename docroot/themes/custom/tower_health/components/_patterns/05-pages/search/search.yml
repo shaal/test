@@ -8,8 +8,8 @@ header:
   title: Search Results
   style: list
   form:
-    label: "Search"
-    placeholder: "Search by Name, Specialty, Condition, Location, or Keyword"
+    label: "Search our Site"
+    placeholder: "Search by Name, Specialty, Condition, or Location"
     button: "Search"
 form_sections:
   - section_items:

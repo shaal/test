@@ -22,7 +22,7 @@
   var reviews = $('.review-listing');
   var review_drawer = $('.review-listing__list');
 
-  // Mobile Menu Show/Hide.
+  // Mobile Review Show/Hide.
   function openReviews() {
     reviews.addClass('is-active');
     review_drawer.attr("aria-expanded", "true");

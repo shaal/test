@@ -19,7 +19,7 @@
 {% endif %}
 
 <div class="ratings-count">
-  {{ rating }} of 5
+  <div class="ratings-count__summary">{{ rating }} out of 5</div>
   <div class="ratings-count__stars ratings-count__stars--{{rating_round}}">
     {% if rating_icon %}
       {% include rating_icon %}
