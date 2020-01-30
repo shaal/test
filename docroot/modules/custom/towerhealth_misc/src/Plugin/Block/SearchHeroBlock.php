@@ -55,6 +55,8 @@ class SearchHeroBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
+    unset($form['search_api_datasource']);
+    unset($form['type']);
     $form['site_search']['#attributes']['class'][] = 'listing-search__input';
     $form['site_search']['#attributes']['data-id'] = 'search-hero-block';
     $form['site_search']['#attributes']['placeholder'] = t('Search by Keyword');

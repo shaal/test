@@ -5,6 +5,7 @@ dependencies:
   config:
     - search_api.index.acquia_search_index
   module:
+    - better_exposed_filters
     - search_api
 id: search
 label: Search
@@ -33,7 +34,7 @@ display:
           bypass_access: 0
           preserve_facet_query_args: 0
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Search
           reset_button: false
@@ -42,6 +43,39 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          bef:
+            general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              autosubmit: true
+              autosubmit_exclude_textfield: true
+              autosubmit_hide: true
+            search_api_fulltext:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+                rewrite:
+                  filter_rewrite_values: ''
+            search_api_datasource:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: Media|Video
+            type:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+          text_input_required_format: basic_html
       pager:
         type: full
         options:
@@ -204,24 +238,83 @@ display:
           operator: or
           value:
             'entity:media': 'entity:media'
-            'entity:node': 'entity:node'
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
+            operator_id: search_api_datasource_op
             label: ''
             description: ''
             use_operator: false
-            operator: ''
+            operator: search_api_datasource_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: search_api_datasource
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
-            reduce: false
+              anonymous: '0'
+              article_editor: '0'
+              editor: '0'
+              publisher: '0'
+              administrator: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: search_api_datasource
+            optional: true
+            widget: select
+            multiple: true
+            remember: false
+            default_group: '1'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Media
+                operator: or
+                value:
+                  'entity:media': 'entity:media'
+          reduce_duplicates: false
+          plugin_id: search_api_datasource
+        type:
+          id: type
+          table: search_api_index_acquia_search_index
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            article: article
+            location: location
+            page: page
+            profile: profile
+            service: service
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              article_editor: '0'
+              editor: '0'
+              publisher: '0'
+              administrator: '0'
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -235,7 +328,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          plugin_id: search_api_datasource
+          plugin_id: search_api_options
       sorts:
         search_api_relevance:
           id: search_api_relevance
@@ -294,7 +387,7 @@ display:
     display_options:
       display_extenders: {  }
       path: search
-      exposed_block: false
+      exposed_block: true
       cache:
         type: none
       defaults:
