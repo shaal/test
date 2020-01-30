@@ -12,7 +12,7 @@ header:
   style: list
   form:
     label: "Search Locations"
-    placeholder: "Search by Name"
+    placeholder: "Search by Name, Condition, or Service"
     button: "Search Locations"
 filters:
   - label: "Zip Code"
@@ -240,5 +240,5 @@ cta:
   link:
     url: "/"
     text: "484-628-HELP"
-    icon: "th-cal.svg"
+    button_icon: "th-cal.svg"
     variation: "right"

@@ -156,7 +156,7 @@ services:
         - Heel Spurs
         - Inngrown Toennails
     type: "service"
-  
+
 current: 4
 items:
   pages:
@@ -178,5 +178,5 @@ cta:
   link:
     url: "/"
     text: "Find a Provider"
-    icon: "th-find-provider.svg"
+    button_icon: "th-find-provider.svg"
     variation: "right"

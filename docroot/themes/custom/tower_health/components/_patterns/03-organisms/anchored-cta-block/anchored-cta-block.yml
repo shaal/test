@@ -3,4 +3,4 @@ text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet d
 link:
   url: "/"
   text: "484-628-HELP"
-  icon: "th-cal.svg"
+  button_icon: "th-cal.svg"

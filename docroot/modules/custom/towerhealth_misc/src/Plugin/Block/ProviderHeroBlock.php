@@ -4,6 +4,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Provider search block for hero region' block.
@@ -15,6 +16,13 @@ use Drupal\views\Views;
  * )
  */
 class ProviderHeroBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    return 0;
+  }
 
   /**
    * {@inheritdoc}
@@ -47,6 +55,12 @@ class ProviderHeroBlock extends BlockBase {
 
     $form = $exposed_form->renderExposedForm(TRUE);
 
+    // Explicitly add search term to search input.
+    $search_term = Xss::filter(\Drupal::request()->get('find_doctor_search'));
+    if (!empty($search_term) && empty($form['find_doctor_search']['#attributes']['value'])) {
+      $form['find_doctor_search']['#attributes']['value'] = $search_term;
+    }
+
     unset($form['provider_location_latlong']);
     unset($form['facets']);
     $form['find_doctor_search']['#attributes']['class'][] = 'listing-search__input';
@@ -60,6 +74,7 @@ class ProviderHeroBlock extends BlockBase {
     $build['exposed_form']['actions']['#attributes']['class'][] = 'listing-search__actions';
 
     $build['exposed_form']['#attributes']['class'][] = 'listing-search';
+    $build['#cache'] = ['max-age' => 0];
 
     return $build;
   }

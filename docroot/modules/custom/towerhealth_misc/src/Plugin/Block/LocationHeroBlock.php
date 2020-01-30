@@ -4,6 +4,7 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
+use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Location search block for hero region' block.
@@ -15,6 +16,13 @@ use Drupal\views\Views;
  * )
  */
 class LocationHeroBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    return 0;
+  }
 
   /**
    * {@inheritdoc}
@@ -47,6 +55,12 @@ class LocationHeroBlock extends BlockBase {
     $form['#info']['filter-search_api_fulltext']['label'] = t('Search Locations');
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-hero';
 
+    // Explicitly add search term to search input.
+    $search_term = Xss::filter(\Drupal::request()->get('find_location_search'));
+    if (!empty($search_term) && empty($form['find_location_search']['#attributes']['value'])) {
+      $form['find_location_search']['#attributes']['value'] = $search_term;
+    }
+
     // Set classes.
     $classes = [];
     if (isset($form['#attributes']['class'])) {
@@ -60,6 +74,7 @@ class LocationHeroBlock extends BlockBase {
     $build['exposed_form']['actions']['#attributes']['class'][] = 'listing-search__actions';
 
     $build['exposed_form']['#attributes']['class'][] = 'listing-search';
+    $build['#cache'] = ['max-age' => 0];
 
     return $build;
   }

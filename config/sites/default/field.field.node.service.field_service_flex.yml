@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.anchored_cta_block
     - paragraphs.paragraphs_type.box_links
     - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.care_circle
     - paragraphs.paragraphs_type.file_download_cta
     - paragraphs.paragraphs_type.image_teaser_banner
     - paragraphs.paragraphs_type.patient_story
@@ -36,6 +37,7 @@ settings:
       recognition_cards: recognition_cards
       anchored_cta_block: anchored_cta_block
       box_links: box_links
+      care_circle: care_circle
       file_download_cta: file_download_cta
       rich_text: rich_text
       image_teaser_banner: image_teaser_banner
@@ -86,15 +88,21 @@ settings:
       homepage_hero:
         weight: 28
         enabled: false
-      icon_button:
+      care_circle:
+        enabled: true
         weight: 29
+      icon_button:
+        weight: 30
         enabled: false
       box_links:
         enabled: true
-        weight: 29
+        weight: 31
+      care_circle_section:
+        weight: 32
+        enabled: false
       file_download_cta:
         enabled: true
-        weight: 35
+        weight: 33
       rich_text:
         enabled: true
         weight: 35
