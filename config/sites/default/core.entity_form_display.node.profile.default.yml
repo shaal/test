@@ -250,6 +250,16 @@ content:
       show_description: false
     third_party_settings: {  }
     region: content
+  field_profile_employment_type:
+    weight: 8
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
   field_profile_epic_id:
     weight: 19
     settings:
@@ -375,16 +385,6 @@ content:
     region: content
   field_profile_scheduling:
     weight: 20
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_profile_employment_type:
-    weight: 8
     settings:
       label: above
       formatter_type: null

@@ -40,7 +40,7 @@ class ProviderSortField extends ProcessorPluginBase {
     if (!$datasource) {
       $definition = [
         'label' => $this->t('Provider Sort Field'),
-        'description' => $this->t('Allows custom sorting by provider type'),
+        'description' => $this->t('Allows custom sorting by provider employment type'),
         'type' => 'string',
         'processor_id' => $this->getPluginId(),
       ];
@@ -57,14 +57,14 @@ class ProviderSortField extends ProcessorPluginBase {
     $entity = $item->getOriginalObject()->getValue();
     $key = '';
 
-    if ($entity instanceof EntityInterface && $entity->hasField('field_profile_type')) {
+    if ($entity instanceof EntityInterface && $entity->hasField('field_profile_employment_type')) {
       $provider_types = [
         'tower_health_employed',
         'app_employed',
         'independent',
         'contracted',
       ];
-      $type = $entity->get('field_profile_type')->getValue();
+      $type = $entity->get('field_profile_employment_type')->getValue();
       $value = reset($type)['value'];
       $key = array_search($value, $provider_types);
     }

@@ -82,7 +82,7 @@ process:
     source: professional_title
   - plugin: towerhealth_utf_8
 
-  field_profile_type:
+  field_profile_employment_type:
     - plugin: static_map
       source:
         - app
