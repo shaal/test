@@ -84,7 +84,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-reading.jpg"
@@ -99,7 +99,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-phoenixville.jpg"
@@ -114,7 +114,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-mcglinn.jpg"
@@ -129,7 +129,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-reading.jpg"
@@ -144,7 +144,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-phoenixville.jpg"
@@ -159,7 +159,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-mcglinn.jpg"
@@ -174,7 +174,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-reading.jpg"
@@ -189,7 +189,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-phoenixville.jpg"
@@ -203,7 +203,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
   - img:
       src: "../../images/locations/teaser-reading.jpg"
@@ -217,7 +217,7 @@ locations:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
     type: location
 current: 4
 items:
@@ -240,5 +240,5 @@ cta:
   link:
     url: "/"
     text: "484-628-HELP"
-    button_icon: "th-cal.svg"
+    button_button_icon: "th-cal.svg"
     variation: "right"

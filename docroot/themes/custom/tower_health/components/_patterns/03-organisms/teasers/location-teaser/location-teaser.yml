@@ -12,4 +12,4 @@ location:
   link:
     href: "/"
     text: "Map & Directions"
-    icon: "th-find-hospital.svg"
+    button_icon: "th-find-hospital.svg"

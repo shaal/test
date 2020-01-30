@@ -38,11 +38,11 @@ cards:
     image: 
       src: "../../images/AdobeStock_239096192_Preview.jpeg"
       alt: "Alt Text"
-    title:  Find a Provider
+    title:  Find a Doctor
     desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium quis, ducimus. Unde voluptates id voluptatum odit recusandae veritatis deserunt hic, commodi consequuntur eius omnis eaque quam numquam ipsum et minima.'
     url:
       link: '#'
-      label: Search our Providers
+      label: Search our Doctors
 text_callout:
   title: "Pay my Bill"
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed ipsum in lorem faucibus blandit ut sed tortor. Aliquam sodales ligula mattis arcu consequat, eget consequat velit semper."

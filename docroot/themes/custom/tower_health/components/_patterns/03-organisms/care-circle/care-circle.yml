@@ -4,7 +4,7 @@ items:
   - icon: ../../images/icons/th-bill.svg
     icon_alt: alt text
     url: "#"
-    label: Find a Provider
+    label: Find a Doctor
   - icon: ../../images/icons/th-cal.svg
     icon_alt: alt text
     url: "#"
