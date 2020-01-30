@@ -12,6 +12,7 @@ use Drupal\core\entity\EntityInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\core\Url;
 use Drupal\Component\Utility\Xss;
+use Drupal\facets\Entity\Facet;
 
 /**
  * Set page variables.
@@ -46,6 +47,17 @@ function tower_health_preprocess_page__page(&$variables) {
     if ($type == 'page') {
       $variables['show_side_nav'] = $node->field_basic_enable_nav->value;
     }
+  }
+}
+
+/**
+ *
+ */
+function tower_health_preprocess_facets_item_list(&$variables) {
+  $facet = $variables['facet'];
+
+  if (!empty($facet) && $facet instanceof Facet) {
+    $variables['attributes']['data-active-facets'] = implode(";", $facet->getActiveItems());
   }
 }
 
