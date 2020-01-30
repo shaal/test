@@ -28,7 +28,7 @@
     } %}
   {% endblock %}
   
-  {% block bottom_page_sidebar %}
+  {% block bottom_sidebar %}
     {% include "@molecules/sidebar-card/card--sidebar.twig" with {
       title: sidebarCard.title,
       desc: sidebarCard.desc,
@@ -71,7 +71,7 @@
       image: file.image,
       title: file.title,
       desc: file.desc,
-      downloadLabel: file.downloadLabel
+      file: file.file
     } %}
     
     {% include "@organisms/box-links/box-links.twig" with {

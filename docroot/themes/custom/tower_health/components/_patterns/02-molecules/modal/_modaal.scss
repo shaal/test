@@ -426,8 +426,12 @@
 }
 
 .modaal-video-wrap {
-  margin: auto 50px;
+  margin: auto 0;
   position: relative;
+  
+  @include breakpoint($bp2) {
+    margin: auto 50px;
+  }
 }
 
 .modaal-video-container {
@@ -677,8 +681,8 @@
 
 @media screen and (max-height: 1000px) {
   .modaal-inner-wrapper {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .modaal-instagram iframe {

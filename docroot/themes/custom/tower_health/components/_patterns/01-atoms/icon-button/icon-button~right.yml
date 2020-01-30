@@ -1,4 +1,4 @@
 text: "Make an Appointment"
 url: "/"
-icon: "th-cal.svg"
+button_icon: "th-cal.svg"
 variation: "right"

@@ -122,21 +122,28 @@
 .cssanimations {
   .image-teaser__content,
   .image-teaser__image {
-    opacity: 0;
+    
+    @include breakpoint($bp2) {
+      opacity: 0;
+    }
   }
 
   // animating in
   .in-view {
     &:not(.image-teaser--reverse) .image-teaser__content,
     &.image-teaser--reverse .image-teaser__image {
-      animation: fadeInLeft .65s ease-in-out forwards;
-      opacity: 1;
+      @include breakpoint($bp2) {
+        animation: fadeInLeft .65s ease-in-out forwards;
+        opacity: 1;
+      }
     }
 
     &:not(.image-teaser--reverse) .image-teaser__image,
     &.image-teaser--reverse .image-teaser__content {
-      animation: fadeInRight .65s ease-in-out forwards;
-      opacity: 1;
+      @include breakpoint($bp2) {
+        animation: fadeInRight .65s ease-in-out forwards;
+        opacity: 1;
+      }
     }
   }
 }

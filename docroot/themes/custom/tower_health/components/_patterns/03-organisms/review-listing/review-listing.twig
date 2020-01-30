@@ -22,6 +22,7 @@
       <li class="review-listing__item {% if loop.index > 5 %}is-hidden{% endif %}">
         {% include "@molecules/review/review.twig" with {
           rating: item.rating,
+          rating_icon: item.rating_icon,
           review: item.review,
           date: item.date,
           rating_icon: icon
