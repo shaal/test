@@ -12,7 +12,7 @@
     {% include "@organisms/provider-header/provider-header.twig" %}
   {% endblock %}
 
-  {% block top_page_sidebar %}
+  {% block top_sidebar %}
     <div class="sidebar--growth js-section-animation">
       {% include "@molecules/provider-details/provider-details.twig" with {
         detail: language,
@@ -63,7 +63,8 @@
     } %}
 
     {% include "@organisms/review-listing/review-listing.twig" with {
-      count: review_amt
+      count: review_amt,
+      icon: "star.svg"
     } %}
 
   {% endblock %}
