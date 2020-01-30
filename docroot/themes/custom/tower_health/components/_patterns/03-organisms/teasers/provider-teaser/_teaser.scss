@@ -6,6 +6,7 @@
   position: relative;
   text-align: center;
   width: 100%;
+  min-height: 175px;
 
   @include breakpoint($bp2) {
     text-align: left;
@@ -374,6 +375,7 @@
   margin: 0 auto;
   margin-top: 1.5em;
   margin-bottom: 2.5em;
+  min-height: auto;
 }
 
 .teaser__name--simple {
