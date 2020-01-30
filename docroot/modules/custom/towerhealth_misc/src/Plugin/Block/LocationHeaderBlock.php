@@ -44,6 +44,8 @@ class LocationHeaderBlock extends BlockBase {
     unset($form['facets']);
 
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-header';
+    $search_term_id = $form['find_location_search']['#id'];
+    $form['find_location_search']['#id'] = $search_term_id . '-header';
 
     // Set the classes.
     $classes = [];

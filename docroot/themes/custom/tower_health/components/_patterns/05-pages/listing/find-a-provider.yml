@@ -111,12 +111,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: 
+      specialties:
         - "Oral and Maxillofacial Surgery"
-      focus: 
+      focus:
         - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: 
+      language:
         - "English"
       rating: '4.2'
     type: "provider"
@@ -130,12 +130,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: 
+      specialties:
         - "Pediatrics"
-      focus: 
+      focus:
         - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: 
+      language:
         - "English"
       rating: '3.25'
     type: "provider"
@@ -147,12 +147,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties: 
+      specialties:
         - "Plastic Surgery"
-      focus: 
+      focus:
         - "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language: 
+      language:
         - "English"
       rating: '2'
     type: "provider"
@@ -166,12 +166,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: 
+      specialties:
         - "Oral and Maxillofacial Surgery"
-      focus: 
+      focus:
         - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: 
+      language:
         - "English"
       rating: null
     type: "provider"
@@ -185,12 +185,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: 
+      specialties:
         - "Pediatrics"
-      focus: 
+      focus:
         - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: 
+      language:
         - "English"
       rating: '1.75'
     type: "provider"
@@ -202,12 +202,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties: 
+      specialties:
         - "Plastic Surgery"
-      focus: 
+      focus:
         - "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language: 
+      language:
         - "English"
       rating: '4.2'
     type: "provider"
@@ -221,12 +221,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties: 
+      specialties:
         - "Oral and Maxillofacial Surgery"
-      focus: 
+      focus:
         - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language: 
+      language:
         - "English"
       rating: '5'
     type: "provider"
@@ -240,12 +240,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: 
+      specialties:
         - "Pediatrics"
-      focus: 
+      focus:
         - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: 
+      language:
         - "English"
       rating: '3'
     type: "provider"
@@ -257,12 +257,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties: 
+      specialties:
         - "Plastic Surgery"
-      focus: 
+      focus:
         - "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language: 
+      language:
         - "English"
       rating: '4.2'
     type: "provider"
@@ -276,12 +276,12 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties: 
+      specialties:
         - "Pediatrics"
-      focus: 
+      focus:
         - "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language: 
+      language:
         - "English"
       rating: '1'
     type: "provider"
@@ -306,5 +306,5 @@ cta:
   link:
     url: "/"
     text: "484-628-HELP"
-    icon: "th-cal.svg"
+    button_icon: "th-cal.svg"
     variation: "right"

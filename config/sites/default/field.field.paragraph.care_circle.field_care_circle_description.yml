@@ -1,0 +1,21 @@
+uuid: ea5629ff-726f-4e81-8fb5-9d38aaebd2fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_care_circle_description
+    - paragraphs.paragraphs_type.care_circle
+  module:
+    - text
+id: paragraph.care_circle.field_care_circle_description
+field_name: field_care_circle_description
+entity_type: paragraph
+bundle: care_circle
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

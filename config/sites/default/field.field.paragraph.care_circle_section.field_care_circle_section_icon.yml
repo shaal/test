@@ -1,0 +1,28 @@
+uuid: e1531827-f7ad-46bd-8f99-4f415ce07b0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_care_circle_section_icon
+    - media.type.svg
+    - paragraphs.paragraphs_type.care_circle_section
+id: paragraph.care_circle_section.field_care_circle_section_icon
+field_name: field_care_circle_section_icon
+entity_type: paragraph
+bundle: care_circle_section
+label: 'Section Icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      svg: svg
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

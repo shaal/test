@@ -1,12 +1,12 @@
-uuid: 0708b1b5-497e-4343-8c8b-b8cef10c3ece
+uuid: 0c0f27f0-6d7b-4456-9bd8-923eeb2e0d67
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_service_headline
-field_name: field_service_headline
-entity_type: node
+    - paragraphs
+id: paragraph.field_care_circle_section_title
+field_name: field_care_circle_section_title
+entity_type: paragraph
 type: string
 settings:
   max_length: 255

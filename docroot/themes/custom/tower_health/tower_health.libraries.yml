@@ -27,7 +27,6 @@ site-header:
 chosen:
   js:
     dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
-    dist/01-atoms/05-forms/chosen/chosen-select.js: {}
 
 list_filters:
   js:
