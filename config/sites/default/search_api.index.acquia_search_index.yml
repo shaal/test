@@ -3,29 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_media_description
+    - field.storage.node.field_location_geo
     - field.storage.node.field_services_ref
     - field.storage.node.field_conditions_ref
     - field.storage.taxonomy_term.field_condition_synonym
+    - field.storage.node.field_location_type
     - field.storage.node.field_profile_gender
     - field.storage.node.field_insurance_ref
     - field.storage.taxonomy_term.field_insurance_company
-    - field.storage.node.field_profile_languages
-    - field.storage.node.field_location_geo
-    - field.storage.node.field_location_type
     - field.storage.node.field_location_ref
     - field.storage.node.field_location_id
+    - field.storage.node.field_profile_languages
+    - field.storage.node.field_profile_type
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
-    - field.storage.node.field_profile_type
-    - search_api.server.local_development
+    - field.storage.media.field_media_description
+    - search_api.server.acquia_search_server
     - core.entity_view_mode.node.search_index
   module:
-    - media
+    - search_api_location
     - node
     - taxonomy
-    - search_api_location
     - search_api_solr
+    - media
     - search_api
     - towerhealth_misc
 _core:
@@ -33,7 +33,7 @@ _core:
 id: acquia_search_index
 name: 'Acquia Search Solr Index'
 description: ''
-read_only: false
+read_only: true
 field_settings:
   location_latlon:
     label: 'Location Geo » LatLong Pair'
@@ -400,4 +400,4 @@ options:
   index_directly: true
   cron_limit: 50
   overridden_by_acquia_search: 2
-server: local_development
+server: acquia_search_server
