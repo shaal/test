@@ -26,7 +26,7 @@ widget:
     show_reset_link: 0
     reset_text: 'Show all'
     hide_reset_when_no_selection: 0
-    default_option_label: Any
+    default_option_label: ''
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
@@ -35,12 +35,6 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
-    weights:
-      sort: 20
-    settings:
-      sort: DESC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:

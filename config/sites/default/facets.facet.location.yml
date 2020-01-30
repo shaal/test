@@ -3,17 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.towerhealth
+    - search_api.index.acquia_search_index
     - views.view.find_a_provider
   module:
     - search_api
 id: location
-name: 'Location » Content » Title'
+name: 'Location » Content » Location ID'
 url_alias: location
 weight: 1
 min_count: 1
 show_only_one_result: false
-field_identifier: provider_location_title_string
+field_identifier: provider_location_id_string
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
 widget:
   type: dropdown
