@@ -133,9 +133,13 @@
     }
   }
 
-  .chosen-container-single .chosen-single,
-  .chosen-container-multi .chosen-choices {
+  .chosen-container-single .chosen-single {
     padding: .65em 1.35em 0 1em;
+  }
+  
+  .chosen-container-multi .chosen-choices {
+    // padding: .65em 1.35em 0 1em;
+    padding: 0;
   }
 
   .chosen-search-input {

@@ -23,13 +23,13 @@ form_sections:
         chosen: true
         multiple: true
         children:
-          - title: Cardiology
-          - title: Primary Care
-          - title: Orthopedics
-          - title: Women's Health
-          - title: Neurology
-          - title: Cancer Care
-          - title: Heart & Vascular
+          - title: Cardiology Lorem ipsum dolor
+          - title: Primary Care Lorem ipsum dolor
+          - title: Orthopedics Lorem ipsum dolor
+          - title: Women's Health Lorem ipsum dolor
+          - title: Neurology Lorem ipsum dolor
+          - title: Cancer Care Lorem ipsum dolor
+          - title: Heart & Vascular Lorem ipsum dolor
           - title: Pediatrics
           - title: Audiology
           - title: Behavioral Health
