@@ -1,16 +1,16 @@
 autocomplete:
-  label: Find a Provider
+  label: Find a Doctor
   input_class: 
-  type: find-provider
+  type: find-Doctor
   placeholder: Search by Name, Specialty, or Condition
-  id: edit-find-provider
+  id: edit-find-Doctor
   path: some/path
   results:
     - label: Conditions
       children:
         - id: 11
           name: Conjunctivitis
-    - label: Providers
+    - label: Doctors
       children:
         - id: 12
           name: Monica Chung Kwan-consigli, Pa-c

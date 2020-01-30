@@ -3,12 +3,13 @@
   padding: 2em 0;
   border-top: 1px solid $off-white;
   border-bottom: 1px solid $off-white;
-  
+
   &.care-circle__banner--full {
     border: none;
     padding: 0;
     margin: 2em 0;
-    
+    width: 100%;
+
     @include breakpoint($bp3) {
       display: flex;
       align-items: center;
@@ -25,32 +26,32 @@
   @include adjust-font-size-to($lg-heading, 1.35);
   text-align: center;
   margin: 0 0 1em;
-  
+
   a:link,
   a:visited {
     text-decoration: none;
   }
-  
+
   a:active,
   a:hover,
   a:focus {
     text-decoration: underline;
   }
-  
+
   @include breakpoint($bp2) {
     // 425
     @include adjust-font-size-to($md-heading, 1.1);
     max-width: 275px;
     margin: 0;
-    
+
     z-index: 3;
   }
-  
+
   @include breakpoint($bp3) {
     // 375
     max-width: 250px;
   }
-  
+
   @include breakpoint($bp4) {
     // 575
     @include adjust-font-size-to($lg-heading, 1.35);
@@ -59,7 +60,7 @@
 }
 
 .care-circle__content {
-  
+
   @include breakpoint($bp2) {
     position: absolute;
     top: 0;
@@ -77,17 +78,17 @@
   border: solid 3px $off-white;
   list-style: none;
   padding: 0;
-  
+
   .care-circle__banner--full & {
     @include breakpoint($bp3) {
       margin: 75px;
     }
-    
+
     @include breakpoint($bp4) {
       margin: 95px;
     }
   }
-  
+
   @include breakpoint(0 $bp2) {
     display: flex;
     justify-content: center;
@@ -96,91 +97,91 @@
     flex-wrap: wrap;
     border: none;
   }
-  
+
   @include breakpoint($bp4) {
     margin: 95px auto;
   }
-  
+
   .care-circle--3 & {
-    
+
     @include breakpoint($bp2) {
       @include on-circle($item-count: 3, $circle-size: 425px, $item-size: 150px, $arrowy: -67px);
     }
-    
+
     @include breakpoint($bp3) {
       @include on-circle($item-count: 3, $circle-size: 375px, $item-size: 150px, $arrowy: -60px);
     }
-    
+
     @include breakpoint($bp4) {
       @include on-circle($item-count: 3, $circle-size: 575px, $item-size: 175px, $arrowy: -92px);
     }
   }
-  
+
   .care-circle--4 & {
     @include breakpoint($bp2) {
       @include on-circle($item-count: 4, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
-    
+
     @include breakpoint($bp3) {
       @include on-circle($item-count: 4, $circle-size: 375px, $item-size: 150px, $arrowy: -21px);
     }
-    
+
     @include breakpoint($bp4) {
       @include on-circle($item-count: 4, $circle-size: 575px, $item-size: 175px, $arrowy: -32px);
     }
   }
-  
+
   .care-circle--5 & {
     @include breakpoint($bp2) {
       @include on-circle($item-count: 5, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
-    
+
     @include breakpoint($bp3) {
       @include on-circle($item-count: 5, $circle-size: 375px, $item-size: 150px, $arrowy: -21px);
     }
-    
+
     @include breakpoint($bp4) {
       @include on-circle($item-count: 5, $circle-size: 575px, $item-size: 175px, $arrowy: -32px);
     }
   }
-  
+
   .care-circle--6 & {
     @include breakpoint($bp2) {
       @include on-circle($item-count: 6, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
-    
+
     @include breakpoint($bp3) {
       @include on-circle($item-count: 6, $circle-size: 375px, $item-size: 150px, $arrowy: -21px);
     }
-    
+
     @include breakpoint($bp4) {
       @include on-circle($item-count: 6, $circle-size: 575px, $item-size: 175px, $arrowy: -32px);
     }
   }
-  
+
   .care-circle--7 & {
     @include breakpoint($bp2) {
       @include on-circle($item-count: 7, $circle-size: 425px, $item-size: 150px, $arrowy: -23px);
     }
-    
+
     @include breakpoint($bp3) {
       @include on-circle($item-count: 7, $circle-size: 375px, $item-size: 130px, $arrowy: -21px);
     }
-    
+
     @include breakpoint($bp4) {
       @include on-circle($item-count: 7, $circle-size: 575px, $item-size: 175px, $arrowy: -32px);
     }
   }
-  
+
   .care-circle--8 & {
     @include breakpoint($bp2) {
       @include on-circle($item-count: 8, $circle-size: 425px, $item-size: 140px, $arrowy: -23px);
     }
-    
+
     @include breakpoint($bp3) {
       @include on-circle($item-count: 8, $circle-size: 400px, $item-size: 125px, $arrowy: -21px);
     }
-    
+
     @include breakpoint($bp4) {
       @include on-circle($item-count: 8, $circle-size: 575px, $item-size: 175px, $arrowy: -32px);
     }
@@ -188,6 +189,8 @@
 }
 
 .care-circle__item {
+  padding-left: 0;
+
   a,
   a:link,
   a:visited {
@@ -197,27 +200,26 @@
     height: 100%;
     color: $primary-dark;
   }
-  
+
   a:active,
   a:hover,
   a:focus {
     text-decoration: underline;
-    
+
     .care-circle__item__inner {
       transform: scale(1.05);
       box-shadow: $shadow;
       transition: all .5s ease;
     }
   }
-  
+
   @include breakpoint(0 $bp2) {
     position: relative;
     height: 0;
     width: 40%;
     padding: 0 0 40%;
-    margin: 1em 5%;
-    
-    
+    margin: 1em 5% !important; // override .text-long ul li
+
     &:nth-of-type(1) {
       &::after {
         position: absolute;
@@ -226,7 +228,7 @@
         right: -18%;
       }
     }
-    
+
     // Mobile positioning if there are 3 align-items
     .care-circle--3 & {
       &:nth-of-type(2) {
@@ -238,7 +240,7 @@
           transform: rotate(120deg);
         }
       }
-      
+
       &:nth-of-type(3) {
         // bottom left
         &::after {
@@ -249,7 +251,7 @@
         }
       }
     }
-    
+
     .care-circle--4 & {
       &:nth-of-type(2) {
         // down
@@ -261,7 +263,7 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(3) {
         order: 4;
         // left
@@ -273,7 +275,7 @@
           transform: rotate(180deg);
         }
       }
-      
+
       &:nth-of-type(4) {
         order: 3;
         // up
@@ -286,7 +288,7 @@
         }
       }
     }
-    
+
     .care-circle--5 & {
       &:nth-of-type(2) {
         &::after {
@@ -297,10 +299,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(3) {
         order: 4;
-        
+
         &::after {
           position: absolute;
           bottom: -2em;
@@ -308,7 +310,7 @@
           transform: rotate(120deg);
         }
       }
-      
+
       &:nth-of-type(4) {
         order: 5;
 
@@ -319,10 +321,10 @@
           transform: rotate(-120deg);
         }
       }
-      
+
       &:nth-of-type(5) {
         order: 3;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -332,7 +334,7 @@
         }
       }
     }
-    
+
     .care-circle--6 & {
       &:nth-of-type(2) {
         &::after {
@@ -343,10 +345,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(3) {
         order: 4;
-        
+
         &::after {
           position: absolute;
           bottom: -2em;
@@ -355,10 +357,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(4) {
         order: 6;
-        
+
         &::after {
           position: absolute;
           top: 40%;
@@ -367,10 +369,10 @@
           transform: rotate(180deg);
         }
       }
-      
+
       &:nth-of-type(5) {
         order: 5;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -379,10 +381,10 @@
           transform: rotate(270deg);
         }
       }
-      
+
       &:nth-of-type(6) {
         order: 3;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -392,7 +394,7 @@
         }
       }
     }
-    
+
     .care-circle--7 & {
       &:nth-of-type(2) {
         &::after {
@@ -403,10 +405,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(3) {
         order: 4;
-        
+
         &::after {
           position: absolute;
           bottom: -2em;
@@ -415,10 +417,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(4) {
         order: 6;
-        
+
         &::after {
           position: absolute;
           bottom: -2em;
@@ -426,10 +428,10 @@
           transform: rotate(120deg);
         }
       }
-      
+
       &:nth-of-type(5) {
         order: 7;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -437,10 +439,10 @@
           transform: rotate(-120deg);
         }
       }
-      
+
       &:nth-of-type(6) {
         order: 5;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -449,10 +451,10 @@
           transform: rotate(270deg);
         }
       }
-      
+
       &:nth-of-type(7) {
         order: 3;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -462,7 +464,7 @@
         }
       }
     }
-    
+
     .care-circle--8 & {
       &:nth-of-type(2) {
         &::after {
@@ -473,10 +475,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(3) {
         order: 4;
-        
+
         &::after {
           position: absolute;
           bottom: -2em;
@@ -485,10 +487,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(4) {
         order: 6;
-        
+
         &::after {
           position: absolute;
           bottom: -2em;
@@ -497,10 +499,10 @@
           transform: rotate(90deg);
         }
       }
-      
+
       &:nth-of-type(5) {
         order: 8;
-        
+
         &::after {
           position: absolute;
           top: 40%;
@@ -509,10 +511,10 @@
           transform: rotate(180deg);
         }
       }
-      
+
       &:nth-of-type(6) {
         order: 7;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -521,10 +523,10 @@
           transform: rotate(270deg);
         }
       }
-      
+
       &:nth-of-type(7) {
         order: 5;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -533,10 +535,10 @@
           transform: rotate(270deg);
         }
       }
-      
+
       &:nth-of-type(8) {
         order: 3;
-        
+
         &::after {
           position: absolute;
           top: -2em;
@@ -547,7 +549,7 @@
       }
     }
   }
-  
+
   &::after {
     content: '';
     display: block;
@@ -557,7 +559,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
-    
+
     @include breakpoint($bp2) {
       position: absolute;
       left: 50%; // fallback
@@ -578,13 +580,13 @@
   width: 100%;
   border-radius: 100%;
   background-color: $trust-ltst;
-  padding: .5em 1em 1em;
+  padding: 1em;
   text-align: center;
   color: $primary-dark;
   text-decoration: none;
   z-index: 3;
   transition: all .5s ease;
-  
+
   @include breakpoint(0 $bp2) {
     position: absolute;
     top: 0;
@@ -592,39 +594,39 @@
     left: 0;
     right: 0;
   }
-  
+
   @include breakpoint($bp3) {
     @include adjust-font-size-to($crumb, .5);
   }
-  
+
   @include breakpoint($bp4) {
     @include adjust-font-size-to($label, .65);
   }
-  
+
   .care-circle__item--healing & {
     background-color: $healing-ltst;
   }
-  
+
   .care-circle__item--uplifting & {
     background-color: $uplifting-ltst;
   }
-  
+
   .care-circle__item--wisdom & {
     background-color: $wisdom-ltst;
   }
-  
+
   .care-circle__item--growth & {
     background-color: $growth-ltst;
   }
-  
+
   .care-circle__item--tranquil & {
     background-color: $tranquil-ltst;
   }
-  
+
   .care-circle__item--energy & {
     background-color: $energy-ltst;
   }
-  
+
   .care-circle__item--pink & {
     background-color: #e5c1ca;
   }
@@ -645,17 +647,17 @@
 .care-circle__text {
   @include adjust-font-size-to($sm-text, .9);
   margin-top: 2em;
-  
+
   @include breakpoint($bp2) {
     margin-top: 6em;
   }
-  
+
   .care-circle__banner--full & {
     @include breakpoint($bp3) {
       margin-top: 0;
       margin-left: 2em;
     }
-    
+
     @include breakpoint($bp4) {
       margin-left: 3em;
     }
