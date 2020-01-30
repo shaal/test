@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.profile.field_metatags
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_employment_type
     - field.field.node.profile.field_profile_epic_id
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
@@ -25,7 +26,7 @@ dependencies:
     - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
-    - field.field.node.profile.field_profile_employment_type
+    - field.field.node.profile.field_profile_type
     - field.field.node.profile.field_profile_video
     - field.field.node.profile.field_rating_comment_count
     - field.field.node.profile.field_rating_comments_ref
@@ -139,6 +140,7 @@ hidden:
   field_profile_practid: true
   field_profile_professional_title: true
   field_profile_scheduling: true
+  field_profile_type: true
   field_profile_video: true
   field_rating_comment_count: true
   field_rating_comments_ref: true

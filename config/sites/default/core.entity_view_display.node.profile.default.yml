@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.profile.field_metatags
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_employment_type
     - field.field.node.profile.field_profile_epic_id
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
@@ -24,7 +25,7 @@ dependencies:
     - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
-    - field.field.node.profile.field_profile_employment_type
+    - field.field.node.profile.field_profile_type
     - field.field.node.profile.field_profile_video
     - field.field.node.profile.field_rating_comment_count
     - field.field.node.profile.field_rating_comments_ref
@@ -33,6 +34,7 @@ dependencies:
     - node.type.profile
   module:
     - entity_reference_revisions
+    - options
     - text
     - user
 id: node.profile.default
@@ -81,6 +83,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  field_profile_type:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_rating_comments_ref:
     type: entity_reference_revisions_entity_view
     weight: 5
