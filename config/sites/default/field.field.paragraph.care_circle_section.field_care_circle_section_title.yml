@@ -1,0 +1,19 @@
+uuid: bbff6617-a6cc-405d-96aa-670f16252f26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_care_circle_section_title
+    - paragraphs.paragraphs_type.care_circle_section
+id: paragraph.care_circle_section.field_care_circle_section_title
+field_name: field_care_circle_section_title
+entity_type: paragraph
+bundle: care_circle_section
+label: 'Section Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

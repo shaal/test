@@ -1,0 +1,19 @@
+uuid: 429bc76e-0739-48c5-a4ca-da13bded8b5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_care_circle_title
+    - paragraphs.paragraphs_type.care_circle
+id: paragraph.care_circle.field_care_circle_title
+field_name: field_care_circle_title
+entity_type: paragraph
+bundle: care_circle
+label: 'Circle Title'
+description: 'Optionally add a title that will display in the middle of the care circle.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
