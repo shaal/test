@@ -1,7 +1,7 @@
 <div class="teaser js-section-animation">
   <div class="teaser__image-container">
     <div class="teaser__image">
-      <a href="{{ url }}"><img src="{% if provider.img %}{{provider.img.src}}{% else %}../../images/people/provider-placeholder.png{% endif %}" alt="{{ provider.img.alt}}"></a>
+      <a href="{{ url }}"><img src={% if provider.img %}"{{provider.img.src}}" alt="{{ provider.img.alt}}"{% else %}"../../images/people/provider-placeholder.png"  alt="{{ provider.details.name }}"{% endif %}></a>
     </div>
   </div>
   <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
