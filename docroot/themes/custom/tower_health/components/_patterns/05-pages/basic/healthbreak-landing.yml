@@ -130,10 +130,10 @@ paragraph_rich_text:
   -
     type: table
 cta:
-  title: "Find a Provider"
+  title: "Find a Doctor"
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
   link:
     url: "/"
-    text: "Find a Provider"
+    text: "Find a Doctor"
     icon: "th-find-provider.svg"
     variation: "right"

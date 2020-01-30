@@ -111,6 +111,13 @@
 .provider-header__title {
   @include adjust-font-size-to($sm-heading, 1.15);
   margin-top: 0;
+  
+  .divider {
+    @include adjust-font-size-to($label, 1);
+    display: inline-block;
+    margin: 0 .5em;
+    color: $trust;
+  }
 }
 
 .provider-header__ratings {
