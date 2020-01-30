@@ -10,7 +10,7 @@ hero:
     alt: "Alternative Text"
   classes: "growth top-left"
   autocomplete:
-    label: Find a Provider
+    label: Find a Doctor
     input_class: 
     type: find-provider
     placeholder: Search by Name, Specialty, or Condition
@@ -21,7 +21,7 @@ hero:
         children:
           - id: 11
             name: Conjunctivitis
-      - label: Providers
+      - label: Doctors
         children:
           - id: 12
             name: Monica Chung Kwan-consigli, Pa-c

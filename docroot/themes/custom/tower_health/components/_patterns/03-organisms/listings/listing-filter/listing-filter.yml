@@ -49,15 +49,19 @@ form_sections:
           - title: < 25 Miles
       -
         width: full
-        title: 'Provider Type'
+        title: 'Type'
         type: radio
         info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ullam, optio similique eius esse ex maiores distinctio tempore magni dolor, labore natus unde ratione consequuntur maxime repellendus beatae mollitia aliquam.'
         info_id: type
         orientation: inline
         children:
-          - title: All Providers
+          - title: All
             id: type
-          - title: Physicians Only
+          - title: Doctors
             id: type
-          - title: Advanced Practice Providers Only
+          - title: Nurse Practitioners
+            id: type
+          - title: Midwives
+            id: type
+          - title: Physicians Assistants
             id: type
