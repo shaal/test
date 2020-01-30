@@ -24,7 +24,7 @@ dependencies:
     - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
-    - field.field.node.profile.field_profile_type
+    - field.field.node.profile.field_profile_employment_type
     - field.field.node.profile.field_profile_video
     - field.field.node.profile.field_rating_comment_count
     - field.field.node.profile.field_rating_comments_ref
@@ -95,7 +95,7 @@ third_party_settings:
         - field_profile_job_title
         - field_profile_npi
         - field_profile_practid
-        - field_profile_type
+        - field_profile_employment_type
         - field_profile_gender
         - field_profile_languages
         - field_profile_phone
@@ -383,7 +383,7 @@ content:
     third_party_settings: {  }
     type: readonly_field_widget
     region: content
-  field_profile_type:
+  field_profile_employment_type:
     weight: 8
     settings:
       label: above

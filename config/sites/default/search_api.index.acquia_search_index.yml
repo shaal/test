@@ -16,7 +16,7 @@ dependencies:
     - field.storage.node.field_location_id
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
-    - field.storage.node.field_profile_type
+    - field.storage.node.field_profile_employment_type
     - search_api.server.local_development
     - core.entity_view_mode.node.search_index
   module:
@@ -173,11 +173,11 @@ field_settings:
   provider_profile_type:
     label: 'Provider Type'
     datasource_id: 'entity:node'
-    property_path: field_profile_type
+    property_path: field_profile_employment_type
     type: string
     dependencies:
       config:
-        - field.storage.node.field_profile_type
+        - field.storage.node.field_profile_employment_type
   provider_sort_field:
     label: 'Provider Sort Field'
     property_path: provider_sort_field

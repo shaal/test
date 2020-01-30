@@ -3,15 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_profile_type
+    - field.storage.node.field_profile_employment_type
     - node.type.profile
   module:
     - options
-id: node.profile.field_profile_type
-field_name: field_profile_type
+id: node.profile.field_profile_employment_type
+field_name: field_profile_employment_type
 entity_type: node
 bundle: profile
-label: 'Provider Type'
+label: 'Provider Employment Type'
 description: ''
 required: false
 translatable: false
