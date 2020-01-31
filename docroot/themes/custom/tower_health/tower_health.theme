@@ -520,7 +520,7 @@ function tower_health_preprocess_node__location(&$variables) {
 function _tower_heath_format_location_provider_url($node) {
   $location_title = $node->title->value;
   $location_id = $node->field_location_id->value;
-  $location_providers_url = Url::fromRoute('view.find_a_provider.find_doctor', ['providers[0]' => 'locations:' . $location_id, 'location-title' => $location_title]);
+  $location_providers_url = Url::fromRoute('view.find_a_provider.find_doctor', ['providers[0]' => 'location:' . $location_id, 'location-title' => $location_title]);
 
   return $location_providers_url;
 }
