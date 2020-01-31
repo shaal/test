@@ -709,7 +709,7 @@ function tower_health_preprocess_paragraph__care_circle(&$variables) {
   $paragraph = $variables['paragraph'];
   $field_name = $paragraph->parent_field_name->value;
   if ($field_name == 'field_basic_components' || $field_name == 'field_location_components' || $field_name == 'field_service_flex') {
-    $variables['fullWidth'] = true;
+    $variables['fullWidth'] = TRUE;
   }
   $circle_refs = $paragraph->field_circle_section_ref->getValue();
   $items = [];
@@ -717,7 +717,7 @@ function tower_health_preprocess_paragraph__care_circle(&$variables) {
     $entity = Paragraph::load($circle['target_id']);
     $items[$id]['label'] = $entity->field_care_circle_section_title->value;
     $items[$id]['color'] = $entity->field_care_circle_section_color->value;
-    if ($entity->field_care_circle_section_link->uri != null) {
+    if ($entity->field_care_circle_section_link->uri != NULL) {
       $items[$id]['url'] = Url::fromUri($entity->field_care_circle_section_link->uri);
     }
     if (!$entity->field_care_circle_section_icon->isEmpty()) {
