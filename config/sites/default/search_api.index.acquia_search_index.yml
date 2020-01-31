@@ -186,7 +186,7 @@ field_settings:
       config:
         - field.storage.node.field_profile_languages
   provider_profile_type:
-    label: 'Provider Type'
+    label: 'Provider » Type'
     datasource_id: 'entity:node'
     property_path: field_profile_type
     type: string

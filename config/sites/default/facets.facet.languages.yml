@@ -11,7 +11,7 @@ id: languages
 name: Languages
 url_alias: languages
 weight: -1
-min_count: 1
+min_count: 0
 show_only_one_result: false
 field_identifier: provider_profile_languages_string
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'
@@ -26,7 +26,7 @@ widget:
     show_reset_link: 0
     reset_text: 'Show all'
     hide_reset_when_no_selection: 0
-    default_option_label: Any
+    default_option_label: ''
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
@@ -35,12 +35,6 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: false
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
-    weights:
-      sort: 20
-    settings:
-      sort: DESC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:

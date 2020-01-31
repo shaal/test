@@ -6,10 +6,10 @@
   </div>
   <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
 
-  {% if provider.details.rating or provider.details.type != 'Doctor' %}
+  {% if provider.details.rating or provider.details.type|render != 'Doctor' %}
   <div class="teaser__top">
     
-    {% if provider.details.type != 'Doctor' %}
+    {% if provider.details.type|render != 'Doctor' %}
       <span class="teaser__top__type">{{ provider.details.type }}</span>
     {% endif %}
     

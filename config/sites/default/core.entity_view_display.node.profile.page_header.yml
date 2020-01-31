@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.profile.field_metatags
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_employment_type
     - field.field.node.profile.field_profile_epic_id
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
@@ -35,6 +36,7 @@ dependencies:
     - node.type.profile
   module:
     - media
+    - options
     - telephone
     - user
 id: node.profile.page_header
@@ -67,6 +69,13 @@ content:
     third_party_settings: {  }
     type: telephone_link
     region: content
+  field_profile_type:
+    type: list_default
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_profile_video:
     type: entity_reference_entity_view
     weight: 2
@@ -106,6 +115,7 @@ hidden:
   field_metatags: true
   field_profile_board_certified: true
   field_profile_education: true
+  field_profile_employment_type: true
   field_profile_epic_id: true
   field_profile_first_name: true
   field_profile_gender: true
@@ -116,7 +126,6 @@ hidden:
   field_profile_practid: true
   field_profile_professional_title: true
   field_profile_scheduling: true
-  field_profile_type: true
   field_rating_comment_count: true
   field_rating_comments_ref: true
   links: true

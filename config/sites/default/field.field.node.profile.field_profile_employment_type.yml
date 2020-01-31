@@ -1,21 +1,22 @@
-uuid: 897be702-7a6b-4e26-8fd0-cf664254e775
+uuid: 08121420-7e37-42d9-b903-343ab0d1c2df
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_profile_type
+    - field.storage.node.field_profile_employment_type
     - node.type.profile
   module:
     - options
-id: node.profile.field_profile_type
-field_name: field_profile_type
+id: node.profile.field_profile_employment_type
+field_name: field_profile_employment_type
 entity_type: node
 bundle: profile
-label: Type
+label: 'Employment Type'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  - {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string

@@ -35,17 +35,7 @@
  *
  * @see template_preprocess_field()
  */
+
+ @TODO: THIS CAN BE REMOVED IF BEM CLASSES CAN BE APPLIED IN WYSIWYG
 #}
-{% embed "@molecules/provider-details/provider-details.twig" with {
-  "detail": {
-    "label": "Locations"|t
-  }
-} %}
-
-  {% block location %}
-    {% for item in items %}
-      {{ item.content }}
-    {% endfor %}
-  {% endblock %}
-
-{% endembed %}
+{% include '@tower_health/fields/field-clean.html.twig' %}
