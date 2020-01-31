@@ -95,9 +95,13 @@ content:
     region: content
   field_article_type_ref:
     weight: 3
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
     region: content
   moderation_state:
     type: moderation_state_default
