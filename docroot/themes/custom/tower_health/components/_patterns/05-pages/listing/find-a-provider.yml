@@ -330,5 +330,5 @@ cta:
   link:
     url: "/"
     text: "484-628-HELP"
-    icon: "th-cal.svg"
+    button_icon: "th-cal.svg"
     variation: "right"
