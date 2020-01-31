@@ -23,7 +23,8 @@
 }
 
 .sidebar-list__list-item {
-  margin-bottom: .25em;
+  @include adjust-leading-to(.85);
+  margin-bottom: .5em;
   break-inside: avoid;
   
   a:link,

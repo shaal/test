@@ -9,14 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  flex-wrap: wrap;
   text-align: center;
 }
 
 .pager__item {
   @include adjust-font-size-to($label, .9);
   display: inline-block;
-  margin: 0 0.25em;
+  margin: 0 0.25em 0.25em;
 }
 
 .pager__link,

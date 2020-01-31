@@ -1,4 +1,4 @@
-uuid: 8589fce6-7055-42ed-9850-2653e61327b2
+uuid: 3d7638f4-a575-47d5-8e36-d963629b7c3c
 langcode: en
 status: true
 dependencies:
@@ -9,21 +9,21 @@ dependencies:
     - views
   theme:
     - tower_health
-id: search
+id: exposedformsearchsearch_page
 theme: tower_health
-region: header
-weight: -8
+region: page_filters
+weight: 0
 provider: null
-plugin: 'views_exposed_filter_block:search-page_1'
+plugin: 'views_exposed_filter_block:search-search_page'
 settings:
-  id: 'views_exposed_filter_block:search-page_1'
+  id: 'views_exposed_filter_block:search-search_page'
   label: ''
   provider: views
   label_display: visible
-  views_label: 'General Search'
+  views_label: ''
 visibility:
   request_path:
     id: request_path
-    pages: "/search\r\n/search*"
+    pages: /search
     negate: false
     context_mapping: {  }

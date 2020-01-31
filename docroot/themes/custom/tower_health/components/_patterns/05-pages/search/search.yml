@@ -81,7 +81,7 @@ teasers:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
       variation: "small"
     type: location
   - details:
@@ -100,7 +100,7 @@ teasers:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
       variation: "small"
     type: location
   - details:
@@ -172,7 +172,7 @@ teasers:
     link:
       url: "/"
       text: "Map & Directions"
-      icon: "th-find-hospital.svg"
+      button_icon: "th-find-hospital.svg"
       variation: "small"
     type: location
   - details:

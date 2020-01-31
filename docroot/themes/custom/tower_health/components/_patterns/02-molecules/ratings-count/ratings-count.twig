@@ -14,8 +14,10 @@
   {% set rating_round = 'threeh' %}
 {% elseif (rating|round(1, 'ceil') >= '4') and (rating|round(1, 'ceil') < '4.5') %}
   {% set rating_round = 'four' %}
-{% elseif (rating|round(1, 'ceil') >= '4.5') and (rating|round(1, 'ceil') <= '5') %}
+{% elseif (rating|round(1, 'ceil') >= '4.5') and (rating|round(1, 'ceil') < '5') %}
   {% set rating_round = 'fourh' %}
+{% elseif (rating|round(1, 'ceil') == '5') %}
+  {% set rating_round = 'five' %}
 {% endif %}
 
 <div class="ratings-count">

@@ -24,6 +24,7 @@ function tower_health_preprocess_page(&$variables) {
     'view.find_a_location.find_location',
     'view.find_a_provider.find_doctor',
     'view.find_a_service.find_service',
+    'view.search.search_page',
   ];
 
   // Get the current route name.
