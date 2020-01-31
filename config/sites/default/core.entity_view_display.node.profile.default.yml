@@ -34,7 +34,6 @@ dependencies:
     - node.type.profile
   module:
     - entity_reference_revisions
-    - options
     - text
     - user
 id: node.profile.default
@@ -83,13 +82,6 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-  field_profile_type:
-    weight: 6
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_rating_comments_ref:
     type: entity_reference_revisions_entity_view
     weight: 5
@@ -118,6 +110,7 @@ hidden:
   field_profile_practid: true
   field_profile_professional_title: true
   field_profile_scheduling: true
+  field_profile_type: true
   field_profile_video: true
   field_rating_comment_count: true
   field_rating_count: true

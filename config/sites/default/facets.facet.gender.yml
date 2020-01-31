@@ -11,7 +11,7 @@ id: gender
 name: Gender
 url_alias: gender
 weight: -2
-min_count: 1
+min_count: 0
 show_only_one_result: true
 field_identifier: profile_gender_string
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'

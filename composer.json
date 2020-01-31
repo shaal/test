@@ -74,6 +74,7 @@
         "drupal/search_api_location": "^1.0",
         "drupal/search_api_solr": "^1.1",
         "drupal/token": "^1.5",
+        "drupal/twig_field_value": "^1.2",
         "drupal/twig_tweak": "^2.4",
         "drupal/workbench": "^1.1",
         "drupal/workbench_access": "^1.0@beta",
@@ -135,6 +136,9 @@
             },
             "drupal/core": {
                 "EditorMediaDialog triggers an \"undefined index\" notice for data-view-mode (https://www.drupal.org/project/drupal/issues/3100470)": "https://www.drupal.org/files/issues/2019-12-30/3100470-18.patch"
+            },
+            "drupal/migrate_devel": {
+                "Test": "https://www.drupal.org/files/issues/2018-10-08/migrate_devel-drush9-2938677-6.patch"
             }
         }
     }

@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: provider
-label: Provider
+label: Doctor
 type: 'canonical_entities:node'
-pattern: 'providers/[node:title]'
+pattern: 'doctors/[node:title]'
 selection_criteria:
-  66bdc4f0-b6cb-4b74-b03c-824cad3bd928:
+  2d76bc41-1068-4c1a-8e21-c2beab6cd113:
     id: node_type
     bundles:
       profile: profile
     negate: false
     context_mapping:
       node: node
-    uuid: 66bdc4f0-b6cb-4b74-b03c-824cad3bd928
+    uuid: 2d76bc41-1068-4c1a-8e21-c2beab6cd113
 selection_logic: and
 weight: -5
 relationships: {  }

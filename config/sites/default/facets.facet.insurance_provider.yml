@@ -11,7 +11,7 @@ id: insurance_provider
 name: Insurance
 url_alias: insurance_provider
 weight: 0
-min_count: 1
+min_count: 0
 show_only_one_result: false
 field_identifier: provider_insurance_groups_insurance_company_string
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'

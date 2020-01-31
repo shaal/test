@@ -36,6 +36,7 @@ dependencies:
     - node.type.profile
   module:
     - media
+    - options
     - user
 id: node.profile.teaser
 targetEntityType: node
@@ -88,6 +89,13 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_profile_type:
+    type: list_default
+    weight: 8
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_rating_overall:
     type: number_decimal
     weight: 7
@@ -122,7 +130,6 @@ hidden:
   field_profile_practid: true
   field_profile_professional_title: true
   field_profile_scheduling: true
-  field_profile_type: true
   field_profile_video: true
   field_rating_comment_count: true
   field_rating_comments_ref: true

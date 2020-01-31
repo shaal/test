@@ -11,7 +11,7 @@ id: specialties
 name: Specialty
 url_alias: specialties
 weight: -3
-min_count: 1
+min_count: 0
 show_only_one_result: false
 field_identifier: provider_specialties_name_string
 facet_source_id: 'search_api:views_page__find_a_provider__find_doctor'

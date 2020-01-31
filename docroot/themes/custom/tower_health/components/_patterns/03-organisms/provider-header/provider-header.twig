@@ -23,10 +23,10 @@
         <h1 class="provider-header__name">{{ name }}</h1>
         {% if lead_title %}
         <span class="provider-header__title">
-          {% if type != 'Doctor' %}
+          {% if type|render != 'Doctor' %}
           {{ type }}
           {% endif %}
-          {% if type != 'Doctor' and lead_title %}
+          {% if type|render != 'Doctor' and lead_title %}
             <span class="divider">&#8226;</span>
           {% endif %}
           
