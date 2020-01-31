@@ -16,7 +16,7 @@ hero:
   address_2: "Honey Brook, PA 19344"
   directions:
     link: "/"
-    icon: "th-find-hospital.svg"
+    button_icon: "th-find-hospital.svg"
     text: "Map & Directions"
     variation: "small"
   phones:
@@ -62,7 +62,7 @@ hours:
     - title: "Sunday"
       hours: "Closed"
 cta_list:
-  - text: "Providers at this Location"
+  - text: "Doctors at this Location"
     url: "/"
     icon: "th-find-provider.svg"
 image_callout:

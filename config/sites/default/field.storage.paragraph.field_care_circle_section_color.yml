@@ -1,0 +1,45 @@
+uuid: 9596ba2d-bd3f-4344-98e2-4e0bea88ffc3
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_care_circle_section_color
+field_name: field_care_circle_section_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: trust
+      label: 'Trust (blue)'
+    -
+      value: healing
+      label: 'Healing (dark green)'
+    -
+      value: uplifting
+      label: 'Uplifting (yellow)'
+    -
+      value: wisdom
+      label: 'Wisdom (purple)'
+    -
+      value: growth
+      label: 'Growth (light green)'
+    -
+      value: tranquil
+      label: 'Tranquil (teal)'
+    -
+      value: energy
+      label: 'Energy (orange)'
+    -
+      value: pink
+      label: Pink
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

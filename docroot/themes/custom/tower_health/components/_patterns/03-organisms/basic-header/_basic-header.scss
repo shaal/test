@@ -23,10 +23,12 @@
   position: relative;
   background-position: center;
   background-size: cover;
-  margin-bottom: 175px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
 
   &.basic-header--cta {
-    margin-bottom: 250px;
+    margin-bottom: 175px;
   }
 
   @include breakpoint($bp2) {
@@ -87,6 +89,8 @@
   .basic-header--img & {
     min-height: 300px;
     padding-bottom: 1em;
+    justify-content: space-between;
+    width: 100%;
 
     @include breakpoint($bp2) {
       min-height: 500px;
@@ -171,8 +175,7 @@
     background-color: $primary-dark;
     padding: 2.35em 2em 2.35em 0;
     border-radius: 0 $rd-brd-lg $rd-brd-lg 0;
-    margin-top: auto;
-    bottom: -150px;
+    top: 100px;
 
     &::before {
       position: absolute;
@@ -191,7 +194,7 @@
     }
 
     @include breakpoint($bp2) {
-      bottom: auto;
+      top: auto;
       background-color: rgba($primary-dark, .9);
 
       &::before {
@@ -214,10 +217,10 @@
   }
 
   .basic-header--img.basic-header--cta & {
-    bottom: -250px;
+    top: 175px;
 
     @include breakpoint($bp3) {
-      bottom: auto;
+      top: auto;
     }
 
     @include breakpoint($bp4) {

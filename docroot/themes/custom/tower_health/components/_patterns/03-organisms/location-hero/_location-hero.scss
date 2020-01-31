@@ -52,8 +52,6 @@
     position: static;
     border-radius: $rd-brd-lg;
     background-color: transparent;
-    padding-right: 28%;
-    width: 80%;
   }
 
   &.image {
@@ -146,7 +144,6 @@
 
   @include breakpoint($bp4) {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
 

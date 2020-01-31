@@ -9,7 +9,7 @@
     height: 1px;
     border-bottom: 4px solid $growth;
     left: -2em;
-    bottom: 45%;
+    top: .65em;
     
     @include breakpoint($bp6) {
       width: calc(1.25em + (100vw - 1500px));

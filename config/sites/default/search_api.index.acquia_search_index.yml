@@ -5,23 +5,27 @@ dependencies:
   config:
     - field.storage.node.field_location_geo
     - field.storage.node.field_services_ref
-    - field.storage.node.field_medical_specialties_ref
-    - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.node.field_conditions_ref
     - field.storage.taxonomy_term.field_condition_synonym
     - field.storage.node.field_location_type
     - field.storage.node.field_profile_gender
     - field.storage.node.field_insurance_ref
     - field.storage.taxonomy_term.field_insurance_company
     - field.storage.node.field_location_ref
+    - field.storage.node.field_location_id
     - field.storage.node.field_profile_languages
     - field.storage.node.field_profile_type
-    - search_api.server.local_development
+    - field.storage.node.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
+    - field.storage.media.field_media_description
+    - search_api.server.acquia_search_server
     - core.entity_view_mode.node.search_index
   module:
     - search_api_location
     - node
     - taxonomy
     - search_api_solr
+    - media
     - search_api
     - towerhealth_misc
 _core:
@@ -40,34 +44,30 @@ field_settings:
       config:
         - field.storage.node.field_location_geo
   location_services_specialty_condition_name:
-    label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Name'
+    label: 'Available Services » Content » Related Conditions » Taxonomy term » Name'
     datasource_id: 'entity:node'
-    property_path: 'field_services_ref:entity:field_medical_specialties_ref:entity:field_related_conditions_ref:entity:name'
+    property_path: 'field_services_ref:entity:field_conditions_ref:entity:name'
     type: text
     dependencies:
       config:
         - field.storage.node.field_services_ref
-        - field.storage.node.field_medical_specialties_ref
-        - field.storage.taxonomy_term.field_related_conditions_ref
+        - field.storage.node.field_conditions_ref
       module:
         - node
-        - taxonomy
         - taxonomy
         - taxonomy
   location_services_specialty_condition_synonym:
-    label: 'Available Services » Content » Medical Specialties » Taxonomy term » Related Conditions » Taxonomy term » Synonyms'
+    label: 'Available Services » Content » Related Conditions » Taxonomy term » Synonyms'
     datasource_id: 'entity:node'
-    property_path: 'field_services_ref:entity:field_medical_specialties_ref:entity:field_related_conditions_ref:entity:field_condition_synonym'
+    property_path: 'field_services_ref:entity:field_conditions_ref:entity:field_condition_synonym'
     type: text
     dependencies:
       config:
         - field.storage.node.field_services_ref
-        - field.storage.node.field_medical_specialties_ref
-        - field.storage.taxonomy_term.field_related_conditions_ref
+        - field.storage.node.field_conditions_ref
         - field.storage.taxonomy_term.field_condition_synonym
       module:
         - node
-        - taxonomy
         - taxonomy
   location_services_title:
     label: 'Services » Content » Title'
@@ -131,6 +131,17 @@ field_settings:
         - taxonomy
         - taxonomy
         - taxonomy
+  provider_location_id_string:
+    label: 'Location » Content » Location ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_ref:entity:field_location_id'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_ref
+        - field.storage.node.field_location_id
+      module:
+        - node
   provider_location_latlong:
     label: 'Location » Content » Location Geo » LatLong Pair'
     datasource_id: 'entity:node'
@@ -225,6 +236,7 @@ field_settings:
     label: 'Rendered HTML output'
     property_path: rendered_item
     type: text
+    boost: !!float 0
     configuration:
       roles:
         anonymous: anonymous
@@ -243,6 +255,28 @@ field_settings:
     label: 'Service medical specialty field'
     property_path: service_medical_specialty_field
     type: string
+  service_related_condition:
+    label: 'Services - Related Conditions'
+    datasource_id: 'entity:node'
+    property_path: 'field_conditions_ref:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conditions_ref
+      module:
+        - taxonomy
+        - taxonomy
+  service_related_condition_synonym:
+    label: 'Services - Related Conditions - Synonym'
+    datasource_id: 'entity:node'
+    property_path: 'field_conditions_ref:entity:field_condition_synonym'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_conditions_ref
+        - field.storage.taxonomy_term.field_condition_synonym
+      module:
+        - taxonomy
   synonym:
     label: Synonyms
     datasource_id: 'entity:taxonomy_term'
@@ -256,6 +290,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: solr_text_ngram
+    boost: !!float 8
     dependencies:
       module:
         - node
@@ -275,7 +310,31 @@ field_settings:
     dependencies:
       module:
         - taxonomy
+  video_description:
+    label: 'Video » Description'
+    datasource_id: 'entity:media'
+    property_path: field_media_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_media_description
+  video_name:
+    label: 'Video » Name'
+    datasource_id: 'entity:media'
+    property_path: name
+    type: text
+    dependencies:
+      module:
+        - media
 datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - video
+    languages:
+      default: true
+      selected: {  }
   'entity:node':
     bundles:
       default: true
@@ -286,10 +345,7 @@ datasource_settings:
   'entity:taxonomy_term':
     bundles:
       default: true
-      selected:
-        - areas_of_care
-        - program_type
-        - region
+      selected: {  }
     languages:
       default: true
       selected: {  }
@@ -309,6 +365,7 @@ processor_settings:
       - name
       - profile_gender_string
       - provider_insurance_groups_insurance_company_string
+      - provider_location_id_string
       - provider_location_latlong
       - provider_location_title_string
       - provider_profile_languages_string
@@ -320,10 +377,14 @@ processor_settings:
       - provider_specialties_name_string
       - rendered_item
       - service_medical_specialty_field
+      - service_related_condition
+      - service_related_condition_synonym
       - synonym
       - title
       - type
       - vid
+      - video_description
+      - video_name
     weights:
       preprocess_index: -20
       preprocess_query: -20
