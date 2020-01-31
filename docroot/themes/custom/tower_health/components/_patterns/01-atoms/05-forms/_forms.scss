@@ -54,6 +54,13 @@ input[type="week"] {
   @extend %input;
 }
 
+// centers date input text for mobile browsers
+input[type="date"] {
+  padding: 1.25em 1em; 
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 legend {
   @include adjust-font-size-to($label, .8);
   font-weight: 300;

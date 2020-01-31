@@ -22,6 +22,8 @@
   var menu_drawer = $('.main-nav__container');
   var search = $('.header__search');
   
+  var body = $('body');
+  
   var child_toggle = $('.expand-sub');
 
   // Mobile Menu Show/Hide.
@@ -29,6 +31,7 @@
     menu_drawer.addClass('is-active');
     menu_toggle.addClass('is-active');
     search.removeClass('is-active');
+    body.addClass('is-fixed');
     menu_drawer.attr("aria-expanded", "true");
   }
   
@@ -36,6 +39,7 @@
     menu_drawer.removeClass('is-active');
     menu_toggle.removeClass('is-active');
     search.removeClass('is-active');
+    body.removeClass('is-fixed');
     menu_drawer.attr("aria-expanded", "false");
   }
   

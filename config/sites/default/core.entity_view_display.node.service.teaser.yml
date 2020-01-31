@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.service.field_body
     - field.field.node.service.field_conditions_ref
     - field.field.node.service.field_metatags
+    - field.field.node.service.field_service_body_components
     - field.field.node.service.field_service_card_cta
     - field.field.node.service.field_service_card_desc
     - field.field.node.service.field_service_card_image
@@ -53,6 +54,7 @@ hidden:
   field_area_of_care_ref: true
   field_body: true
   field_metatags: true
+  field_service_body_components: true
   field_service_card_cta: true
   field_service_card_image: true
   field_service_core_bool: true

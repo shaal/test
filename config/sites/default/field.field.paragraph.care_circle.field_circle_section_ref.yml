@@ -1,0 +1,94 @@
+uuid: ecff6d6e-5787-489a-8240-d16c698b2655
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_circle_section_ref
+    - paragraphs.paragraphs_type.care_circle
+    - paragraphs.paragraphs_type.care_circle_section
+  module:
+    - entity_reference_revisions
+id: paragraph.care_circle.field_circle_section_ref
+field_name: field_circle_section_ref
+entity_type: paragraph
+bundle: care_circle
+label: 'Circle Sections'
+description: 'Add between 3 and 8 sections for this care circle'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      care_circle_section: care_circle_section
+    target_bundles_drag_drop:
+      anchored_cta_block:
+        weight: 23
+        enabled: false
+      article_card:
+        weight: 24
+        enabled: false
+      basic_header:
+        weight: 25
+        enabled: false
+      card:
+        weight: 26
+        enabled: false
+      cards:
+        weight: 27
+        enabled: false
+      care_circle:
+        weight: 28
+        enabled: false
+      care_circle_section:
+        enabled: true
+        weight: 29
+      cta_banner:
+        weight: 30
+        enabled: false
+      cta_list_banner:
+        weight: 31
+        enabled: false
+      education:
+        weight: 32
+        enabled: false
+      file_download_cta:
+        weight: 33
+        enabled: false
+      header_cta:
+        weight: 34
+        enabled: false
+      homepage_hero:
+        weight: 35
+        enabled: false
+      icon_button:
+        weight: 36
+        enabled: false
+      on_my_way:
+        weight: 37
+        enabled: false
+      patient_story:
+        weight: 38
+        enabled: false
+      rating_comments:
+        weight: 39
+        enabled: false
+      recognition_card:
+        weight: 40
+        enabled: false
+      recognition_cards:
+        weight: 41
+        enabled: false
+      rich_text:
+        weight: 42
+        enabled: false
+      sidebar_card:
+        weight: 43
+        enabled: false
+      video_card:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

@@ -11,7 +11,7 @@
     {% include "@organisms/basic-header/basic-header.twig" %}
   {% endblock %}
   
-  {% block top_page_sidebar %}
+  {% block top_sidebar %}
     {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
       cta_list: cta_list
     }%}
@@ -33,7 +33,7 @@
     
   {% endblock %}
   
-  {% block bottom_page_sidebar %}
+  {% block bottom_sidebar %}
     <div class="sidebar--growth js-section-animation">
       {% include "@molecules/sidebar-list/sidebar-list.twig" %}
     </div>

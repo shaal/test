@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.field_basic_enable_nav
     - field.field.node.page.field_basic_header
     - field.field.node.page.field_basic_sidebar
+    - field.field.node.page.field_body_components
     - field.field.node.page.field_metatags
     - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
@@ -69,6 +70,7 @@ third_party_settings:
       children:
         - title
         - field_text
+        - field_body_components
       parent_name: group_ver
       weight: 20
       format_type: tab
@@ -150,6 +152,18 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     region: content
+  field_body_components:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
   field_metatags:
     weight: 13
     settings: {  }
@@ -163,7 +177,7 @@ content:
     type: options_select
     region: content
   field_text:
-    weight: 4
+    weight: 3
     settings:
       rows: 5
       placeholder: ''

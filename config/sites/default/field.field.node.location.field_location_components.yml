@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.cards
     - paragraphs.paragraphs_type.file_download_cta
     - paragraphs.paragraphs_type.image_teaser_banner
+    - paragraphs.paragraphs_type.care_circle
     - paragraphs.paragraphs_type.on_my_way
     - paragraphs.paragraphs_type.recognition_cards
     - paragraphs.paragraphs_type.text_teaser_banner
@@ -34,6 +35,7 @@ settings:
       cards: cards
       box_links: box_links
       anchored_cta_block: anchored_cta_block
+      care_circle: care_circle
       image_teaser_banner: image_teaser_banner
       recognition_cards: recognition_cards
       file_download_cta: file_download_cta
@@ -48,18 +50,27 @@ settings:
       rating_comments:
         weight: 6
         enabled: false
+      anchored_cta_block:
+        enabled: true
+        weight: 26
       article_card:
-        weight: 18
+        weight: 24
         enabled: false
       basic_header:
-        weight: 19
+        weight: 25
         enabled: false
       card:
-        weight: 20
+        weight: 26
         enabled: false
       cards:
+        weight: 27
+        enabled: false
+      care_circle:
         enabled: true
-        weight: 21
+        weight: 28
+      care_circle_section:
+        weight: 29
+        enabled: false
       cta_banner:
         weight: 22
         enabled: false
@@ -67,51 +78,42 @@ settings:
         enabled: true
         weight: 23
       cta_list_banner:
-        weight: 23
-        enabled: false
-      header_cta:
-        weight: 25
-        enabled: false
-      anchored_cta_block:
-        enabled: true
-        weight: 26
-      homepage_hero:
-        weight: 26
-        enabled: false
-      icon_button:
-        weight: 27
-        enabled: false
-      image_teaser_banner:
-        enabled: true
-        weight: 28
-      patient_story:
-        weight: 30
-        enabled: false
-      image_box_link_custom:
-        weight: 32
-        enabled: false
-      recognition_card:
-        weight: 32
-        enabled: false
-      recognition_cards:
-        enabled: true
-        weight: 33
-      rich_text:
-        weight: 34
+        weight: 31
         enabled: false
       file_download_cta:
-        enabled: true
+        weight: 33
+        enabled: false
+      header_cta:
+        weight: 34
+        enabled: false
+      homepage_hero:
         weight: 35
+        enabled: false
+      icon_button:
+        weight: 36
+        enabled: false
+      patient_story:
+        weight: 38
+        enabled: false
+      recognition_card:
+        weight: 40
+        enabled: false
+      recognition_cards:
+        weight: 41
+        enabled: false
+      rich_text:
+        weight: 42
+        enabled: false
+      sidebar_card:
+        weight: 43
+        enabled: false
+      video_card:
+        weight: 44
+        enabled: false
       text_teaser_banner:
         enabled: true
         weight: 36
       image_box_link_reference:
         weight: 40
-        enabled: false
-      sidebar_card:
-        weight: 48
-        enabled: false
-      video_card:
-        weight: 50
         enabled: false
 field_type: entity_reference_revisions

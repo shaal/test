@@ -62,7 +62,7 @@ hours:
     - title: "Sunday"
       hours: "Closed"
 cta_list:
-  - text: "Providers at this Location"
+  - text: "Doctors at this Location"
     url: "/"
     icon: "th-find-provider.svg"
 image_callout:

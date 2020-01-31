@@ -133,9 +133,13 @@
     }
   }
 
-  .chosen-container-single .chosen-single,
-  .chosen-container-multi .chosen-choices {
+  .chosen-container-single .chosen-single {
     padding: .65em 1.35em 0 1em;
+  }
+
+  .chosen-container-multi .chosen-choices {
+    // padding: .65em 1.35em 0 1em;
+    padding: 0;
   }
 
   .chosen-search-input {
@@ -187,6 +191,11 @@
     display: inline-block;
   }
 
+  .form-item--radios,
+  .form-item--checkboxes {
+    @include adjust-font-size-to($sm-text, .9);
+  }
+
   @include breakpoint($bp3) {
     .form-item--inline,
     .form-item--radio__item {
@@ -201,6 +210,4 @@
 
 .js-form-type-checkbox {
   position: relative;
-  display: inline-block;
-  margin-right: 1em;
 }
