@@ -15,12 +15,12 @@ provider: null
 plugin: article_hero_block
 settings:
   id: article_hero_block
-  label: News
+  label: Articles
   provider: towerhealth_misc
   label_display: visible
 visibility:
   request_path:
     id: request_path
-    pages: /news
+    pages: /articles
     negate: false
     context_mapping: {  }
