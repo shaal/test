@@ -74,6 +74,7 @@
         "drupal/search_api_location": "^1.0",
         "drupal/search_api_solr": "^1.1",
         "drupal/token": "^1.5",
+        "drupal/twig_field_value": "^1.2",
         "drupal/twig_tweak": "^2.4",
         "drupal/views_taxonomy_term_name_depth": "^3.3",
         "drupal/workbench": "^1.1",
@@ -141,6 +142,9 @@
                 "Undefined index: exposed_form_options (https://www.drupal.org/project/better_exposed_filters/issues/3106332)": "https://www.drupal.org/files/issues/2020-01-21/undefined_index_exposed_form_options-3106332-2.patch",
                 "Cannot edit settings for BEF (https://www.drupal.org/project/better_exposed_filters/issues/3019535)" :"https://www.drupal.org/files/issues/2019-03-20/3019535-bef_ajax_error_0.patch",
                 "Undefined index #options when $form['sort_order'] is exposed as Radios (https://www.drupal.org/project/better_exposed_filters/issues/2936892)" :"https://www.drupal.org/files/issues/0001-Fix-undefined-index-options-when-sort_order-is-expos.patch"
+            },
+            "drupal/migrate_devel": {
+                "Test": "https://www.drupal.org/files/issues/2018-10-08/migrate_devel-drush9-2938677-6.patch"
             }
         }
     }

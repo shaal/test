@@ -46,7 +46,7 @@
     ],
     "title": [
         {
-            "value": "Find a Provider",
+            "value": "Find a Doctor",
             "lang": "en"
         }
     ],
@@ -57,7 +57,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/",
+            "uri": "internal:\/doctors",
             "title": "",
             "options": []
         }

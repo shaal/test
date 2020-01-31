@@ -1,4 +1,5 @@
 name: "McGlinn Cancer Institute"
+button_icon: "th-find-hospital.svg"
 address_rows: 
   - "420 S. Fifth Avenue"
   - "West Reading, PA 19611"

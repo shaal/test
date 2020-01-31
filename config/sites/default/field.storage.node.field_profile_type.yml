@@ -1,4 +1,4 @@
-uuid: cccd65e8-ac28-4802-8237-8c25937774ad
+uuid: 6c2b199a-c81d-448a-8f1a-7e62044504cc
 langcode: en
 status: true
 dependencies:
@@ -12,17 +12,17 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: tower_health_employed
-      label: 'Tower health employed'
+      value: doctor
+      label: Doctor
     -
-      value: app_employed
-      label: App
+      value: nurse_practitioner
+      label: 'Nurse Practitioner'
     -
-      value: independent
-      label: Independent
+      value: midwife
+      label: Midwife
     -
-      value: contracted
-      label: Contracted
+      value: physician_assistant
+      label: 'Physician Assistant'
   allowed_values_function: ''
 module: options
 locked: false

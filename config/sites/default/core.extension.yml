@@ -99,6 +99,7 @@ module:
   towerhealth_misc: 0
   towerhealth_msow_migration: 0
   towerhealth_rating_migration: 0
+  twig_field_value: 0
   twig_tweak: 0
   unified_twig_ext: 0
   update: 0

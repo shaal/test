@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.profile.field_metatags
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_employment_type
     - field.field.node.profile.field_profile_epic_id
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
@@ -96,6 +97,7 @@ third_party_settings:
         - field_profile_npi
         - field_profile_practid
         - field_profile_type
+        - field_profile_employment_type
         - field_profile_gender
         - field_profile_languages
         - field_profile_phone
@@ -175,7 +177,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_affiliations_ref:
-    weight: 18
+    weight: 19
     settings:
       label: above
       formatter_type: null
@@ -185,7 +187,7 @@ content:
     type: readonly_field_widget
     region: content
   field_area_interest_ref:
-    weight: 15
+    weight: 16
     settings:
       label: above
       formatter_type: null
@@ -195,7 +197,7 @@ content:
     type: readonly_field_widget
     region: content
   field_insurance_ref:
-    weight: 17
+    weight: 18
     settings:
       label: above
       formatter_type: null
@@ -205,7 +207,7 @@ content:
     type: readonly_field_widget
     region: content
   field_location_ref:
-    weight: 13
+    weight: 14
     settings:
       label: above
       formatter_type: null
@@ -215,7 +217,7 @@ content:
     type: readonly_field_widget
     region: content
   field_medical_specialties_ref:
-    weight: 16
+    weight: 17
     settings:
       label: above
       formatter_type: null
@@ -231,7 +233,7 @@ content:
     type: metatag_firehose
     region: content
   field_profile_board_certified:
-    weight: 12
+    weight: 13
     settings:
       label: above
       formatter_type: null
@@ -242,7 +244,7 @@ content:
     region: content
   field_profile_education:
     type: readonly_field_widget
-    weight: 14
+    weight: 15
     settings:
       label: above
       formatter_type: null
@@ -250,8 +252,18 @@ content:
       show_description: false
     third_party_settings: {  }
     region: content
+  field_profile_employment_type:
+    weight: 9
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
   field_profile_epic_id:
-    weight: 19
+    weight: 20
     settings:
       label: above
       formatter_type: null
@@ -273,7 +285,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_gender:
-    weight: 9
+    weight: 10
     settings:
       label: above
       formatter_type: null
@@ -300,7 +312,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_languages:
-    weight: 10
+    weight: 11
     settings:
       label: above
       formatter_type: null
@@ -344,7 +356,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_phone:
-    weight: 11
+    weight: 12
     settings:
       label: above
       formatter_type: null
@@ -374,7 +386,7 @@ content:
     type: readonly_field_widget
     region: content
   field_profile_scheduling:
-    weight: 20
+    weight: 21
     settings:
       label: above
       formatter_type: null

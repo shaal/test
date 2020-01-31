@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.profile.field_metatags
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
+    - field.field.node.profile.field_profile_employment_type
     - field.field.node.profile.field_profile_epic_id
     - field.field.node.profile.field_profile_first_name
     - field.field.node.profile.field_profile_gender
@@ -80,6 +81,7 @@ hidden:
   field_metatags: true
   field_profile_board_certified: true
   field_profile_education: true
+  field_profile_employment_type: true
   field_profile_epic_id: true
   field_profile_first_name: true
   field_profile_gender: true

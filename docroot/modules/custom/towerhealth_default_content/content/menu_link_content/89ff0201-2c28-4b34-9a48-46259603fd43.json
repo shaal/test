@@ -46,7 +46,7 @@
     ],
     "title": [
         {
-            "value": "Find a Provider",
+            "value": "Find a Doctor",
             "lang": "en"
         }
     ],
@@ -57,7 +57,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/find-a-provider",
+            "uri": "internal:\/doctors",
             "title": "",
             "options": []
         }
@@ -127,7 +127,7 @@
     ],
     "field_main_label": [
         {
-            "value": "Browse all providers"
+            "value": "Browse all Doctors"
         }
     ],
     "field_main_link_type": [
