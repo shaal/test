@@ -32,10 +32,10 @@
           </span>
         </button>
         <div class="header__search-drawer" id="search-drawer" aria-expanded='false'>
-          <form class='header__search-form' id="header__search-form">
+          <form action="/search" method="get" accept-charset="UTF-8" class='header__search-form' id="header__search-form">
             <div class="header__search-form__container">
               <label for="header__search-input">Search our Site</label>
-              <input class="header__search-input" type="text" id="header__search-input" placeholder="Search by Name, Specialty, Condition, or Location">
+              <input data-drupal-selector="edit-site_search" type="text" name="site_search" value="" class="header__search-input" id="header__search-input" placeholder="Search by Keyword">
             </div>
             <input class="header__search-submit" type="submit" value="Search">
           </form>
