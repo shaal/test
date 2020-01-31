@@ -12,7 +12,7 @@ third_party_settings:
     parent: 'main:'
   node_title_help_text:
     title_help: 'The display name is what the users of the site will see when viewing or searching for this provider. It is automatically generated from the values from the First Name, Middle Name and Last name fields. If the display name needs to be altered for this provider change the value and save the page it will now use the value entered. To go back to the auto generated name leave this field blank and save the page it will now use the auto generated name.'
-name: Provider
+name: Doctor
 type: profile
 description: 'Help users find and connect with Tower Health healthcare providers, including doctors, nurse practitioners, and others.'
 help: ''

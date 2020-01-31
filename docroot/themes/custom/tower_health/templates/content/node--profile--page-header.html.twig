@@ -70,13 +70,13 @@
  *   in different view modes.
  */
 #}
-
 {% embed "@organisms/provider-header/provider-header.twig" with {
   "img": {
     "src": src,
     "alt": alt
   },
   "name": name,
+  "type": content.field_profile_type|field_value,
   "lead_title": lead_title,
   "provider_video": provider_video,
   "rating": rating,
@@ -86,7 +86,8 @@
     "label": appointment_phone_label
   },
   "appt_url": "#",
-  "appt_label": "Request an Appointment"|t
+  "appt_label": "Request an Appointment"|t,
+  "appt_icon": button_icon,
 } %}
 
   {% block breadcrumb %}

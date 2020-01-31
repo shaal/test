@@ -13,6 +13,7 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\core\Url;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Utility\Xss;
+use Drupal\facets\Entity\Facet;
 
 /**
  * Set page variables.
@@ -48,6 +49,17 @@ function tower_health_preprocess_page__page(&$variables) {
     if ($type == 'page') {
       $variables['show_side_nav'] = $node->field_basic_enable_nav->value;
     }
+  }
+}
+
+/**
+ *
+ */
+function tower_health_preprocess_facets_item_list(&$variables) {
+  $facet = $variables['facet'];
+
+  if (!empty($facet) && $facet instanceof Facet) {
+    $variables['attributes']['data-active-facets'] = implode(";", $facet->getActiveItems());
   }
 }
 
@@ -509,7 +521,7 @@ function tower_health_preprocess_node__location(&$variables) {
 function _tower_heath_format_location_provider_url($node) {
   $location_title = $node->title->value;
   $location_id = $node->field_location_id->value;
-  $location_providers_url = Url::fromRoute('view.find_a_provider.find_doctor', ['providers[0]' => 'locations:' . $location_id, 'location-title' => $location_title]);
+  $location_providers_url = Url::fromRoute('view.find_a_provider.find_doctor', ['providers[0]' => 'location:' . $location_id, 'location-title' => $location_title]);
 
   return $location_providers_url;
 }
@@ -698,7 +710,7 @@ function tower_health_preprocess_paragraph__care_circle(&$variables) {
   $paragraph = $variables['paragraph'];
   $field_name = $paragraph->parent_field_name->value;
   if ($field_name == 'field_basic_components' || $field_name == 'field_location_components' || $field_name == 'field_service_flex') {
-    $variables['fullWidth'] = true;
+    $variables['fullWidth'] = TRUE;
   }
   $circle_refs = $paragraph->field_circle_section_ref->getValue();
   $items = [];
@@ -706,7 +718,7 @@ function tower_health_preprocess_paragraph__care_circle(&$variables) {
     $entity = Paragraph::load($circle['target_id']);
     $items[$id]['label'] = $entity->field_care_circle_section_title->value;
     $items[$id]['color'] = $entity->field_care_circle_section_color->value;
-    if ($entity->field_care_circle_section_link->uri != null) {
+    if ($entity->field_care_circle_section_link->uri != NULL) {
       $items[$id]['url'] = Url::fromUri($entity->field_care_circle_section_link->uri);
     }
     if (!$entity->field_care_circle_section_icon->isEmpty()) {

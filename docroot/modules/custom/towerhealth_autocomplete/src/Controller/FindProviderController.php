@@ -64,7 +64,7 @@ class FindProviderController extends FindCareController {
 
     $results = array_merge($results, $condition_results);
 
-    $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Providers'), $results, NULL, NULL);
+    $results = $this->nodeSuggestedTerms('auto_provider', $input, t('Doctors'), $results, NULL, NULL);
 
     return new JsonResponse($results);
   }

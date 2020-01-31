@@ -15,12 +15,12 @@ provider: null
 plugin: provider_hero_block
 settings:
   id: provider_hero_block
-  label: 'Find a Provider'
+  label: 'Find a Doctor'
   provider: towerhealth_misc
   label_display: visible
 visibility:
   request_path:
     id: request_path
-    pages: /providers
+    pages: /doctors
     negate: false
     context_mapping: {  }
