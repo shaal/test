@@ -7,16 +7,16 @@ dependencies:
 id: article
 label: Article
 type: 'canonical_entities:node'
-pattern: 'news/[node:title]'
+pattern: 'articles/[node:title]'
 selection_criteria:
-  6fa01d71-70d5-4048-bb98-4cfb7070675a:
+  709c9704-0d09-4375-8e6c-515ab64342bb:
     id: node_type
     bundles:
       article: article
     negate: false
     context_mapping:
       node: node
-    uuid: 6fa01d71-70d5-4048-bb98-4cfb7070675a
+    uuid: 709c9704-0d09-4375-8e6c-515ab64342bb
 selection_logic: and
 weight: -5
 relationships: {  }
