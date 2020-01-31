@@ -5,10 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.article
-    - taxonomy.vocabulary.article_types
   module:
     - node
-    - taxonomy
     - user
 id: article_listing
 label: 'Article Listing'
@@ -150,56 +148,6 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_article_type_ref_target_id:
-          id: field_article_type_ref_target_id
-          table: node__field_article_type_ref
-          field: field_article_type_ref_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_article_type_ref_target_id_op
-            label: ''
-            description: ''
-            use_operator: false
-            operator: field_article_type_ref_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_article_type_ref_target_id
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              article_editor: '0'
-              editor: '0'
-              publisher: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: article_types
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
       sorts:
         created:
           id: created
@@ -229,9 +177,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -249,9 +195,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
