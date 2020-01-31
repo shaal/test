@@ -65,3 +65,4 @@ modal:
 reviews:
   js:
     dist/03-organisms/review-listing/review-listing.js: {}
+    dist/02-molecules/review/review.js: {}

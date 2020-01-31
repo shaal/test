@@ -1,4 +1,4 @@
-uuid: 8813da89-71d1-44f2-b7b1-2f2a429b9178
+uuid: 635ce5ef-cca6-4a1e-b840-10131f989f76
 langcode: en
 status: true
 dependencies:
@@ -7,20 +7,20 @@ dependencies:
     - towerhealth_misc
   theme:
     - tower_health
-id: article_type
+id: search_hero_block
 theme: tower_health
-region: page_filters
+region: page_header
 weight: 0
 provider: null
-plugin: article_type_filter
+plugin: search_hero_block
 settings:
-  id: article_type_filter
-  label: 'Article Type'
+  id: search_hero_block
+  label: Search
   provider: towerhealth_misc
-  label_display: '0'
+  label_display: visible
 visibility:
   request_path:
     id: request_path
-    pages: /news
+    pages: /search
     negate: false
     context_mapping: {  }

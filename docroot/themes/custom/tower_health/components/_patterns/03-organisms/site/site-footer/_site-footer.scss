@@ -81,9 +81,7 @@
 
       @include breakpoint($bp4) {
         width: 30%;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
+        display: block;
         order: 2;
       }
 
@@ -163,6 +161,8 @@
       .footer__info__social {
         @include breakpoint($bp2) {
           text-align: left;
+          max-width: 100%;
+          overflow: hidden;
         }
 
         @include breakpoint($bp4) {

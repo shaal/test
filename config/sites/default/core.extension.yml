@@ -103,6 +103,7 @@ module:
   unified_twig_ext: 0
   update: 0
   user: 0
+  views_taxonomy_term_name_depth: 0
   views_ui: 0
   workbench: 0
   workbench_access: 0
