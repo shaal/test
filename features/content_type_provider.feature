@@ -1,5 +1,5 @@
 @api
-Feature: Location Content Type
+Feature: Doctor Content Type
   As a TH Consumer,
   I want to be able to read information about a provider,
   so that I can find out what if I should make an appointment with them.
@@ -28,7 +28,8 @@ Feature: Location Content Type
     Then I should see the text "Overall Rating"
     Then I should see the text "Phone Number"
     Then I should see the text "Professional Title"
-    Then I should see the text "Provider Type"
+    Then I should see the text "Type"
+    Then I should see the text "Employment Type"
     Then I should see the text "Rating Count"
     Then I should see the text "Video"
 
@@ -47,5 +48,6 @@ Feature: Location Content Type
     Then I should not see the text "Languages"
     Then I should not see the text "Overall Rating"
     Then I should not see the text "Professional Title"
-    Then I should not see the text "Provider Type"
+    Then I should not see the text "Type"
+    Then I should not see the text "Employment Type"
     Then I should not see the text "Rating count"
