@@ -48,6 +48,5 @@ Feature: Doctor Content Type
     Then I should not see the text "Languages"
     Then I should not see the text "Overall Rating"
     Then I should not see the text "Professional Title"
-    Then I should not see the text "Type"
     Then I should not see the text "Employment Type"
     Then I should not see the text "Rating count"
