@@ -15,7 +15,7 @@ _core:
   default_config_hash: mmRzotiiDIFi2Ozs3xKRCRENuR9Dpd6sXlXoaI8FNTo
 include_invalid_paths: false
 excluded_paths: ''
-replaced_titles: "Find a Location::Locations\r\nFind a Provider::Doctors\r\nFind a Service::Conditions & Services"
+replaced_titles: "Find a Location::Locations\r\nFind a Doctor::Doctors\r\nFind a Service::Conditions & Services"
 custom_paths: ''
 segments_separator: null
 title_segment_as_link: false
