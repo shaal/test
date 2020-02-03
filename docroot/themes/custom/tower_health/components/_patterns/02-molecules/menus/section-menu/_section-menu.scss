@@ -184,6 +184,7 @@
 }
 
 .section-menu__link--with-sub {
+  max-width: calc(100% - 40px);
   flex: 0 1 90%;
 
   @include breakpoint($bp3) {

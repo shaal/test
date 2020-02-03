@@ -26,6 +26,7 @@ function tower_health_preprocess_page(&$variables) {
     'view.find_a_service.find_service',
     'view.article_listing.article_listing_page',
     'view.search.search_page',
+    'entity.taxonomy_term.canonical',
   ];
 
   // Get the current route name.

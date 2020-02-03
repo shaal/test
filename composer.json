@@ -38,6 +38,7 @@
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/better_exposed_filters": "^3.0",
         "drupal/bigmenu": "^1.0@alpha",
+        "drupal/block_visibility_conditions": "^1.0@beta",
         "drupal/components": "^1.1",
         "drupal/config_installer": "^1.8",
         "drupal/config_split": "^1.4",
