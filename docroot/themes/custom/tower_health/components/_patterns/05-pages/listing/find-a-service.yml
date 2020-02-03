@@ -177,5 +177,5 @@ cta:
   link:
     url: "/"
     text: "Find a Doctor"
-    icon: "th-find-provider.svg"
+    button_icon: "th-find-provider.svg"
     variation: "right"

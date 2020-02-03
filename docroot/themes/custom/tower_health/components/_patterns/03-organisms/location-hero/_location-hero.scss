@@ -184,6 +184,9 @@
 }
 
 .location-details__number {
+  @include adjust-leading-to(.9);
+  margin-top: .25em;
+  
   &:link,
   &:visited {
     display: block;

@@ -54,7 +54,6 @@
 
 .modaal-wrapper .modaal-close {
   border: none;
-  background: transparent;
   padding: 0;
   -webkit-appearance: none;
 }
@@ -138,7 +137,7 @@
   opacity: 1;
   width: 50px;
   height: 50px;
-  background: rgba(0, 0, 0, 0);
+  background: $trust-aa;
   border-radius: 100%;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -147,14 +146,15 @@
 .modaal-close:focus,
 .modaal-close:hover {
   outline: none;
-  background: #fff;
+  background: $primary-dark;
+  transform: scale(1.05);
 }
 
 .modaal-close:focus::before,
 .modaal-close:focus::after,
 .modaal-close:hover::before,
 .modaal-close:hover::after {
-  background: #b93d0c;
+  background: $white;
 }
 
 .modaal-close span {

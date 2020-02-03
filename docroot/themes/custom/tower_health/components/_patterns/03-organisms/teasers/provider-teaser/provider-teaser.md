@@ -3,7 +3,7 @@ el: ".teaser"
 title: 'Provider Teaser'
 ---
 #### Description
-The Provider teaser is a teaser view for a provider content type. It contains an optional image, name, specialties, focus, location, language, and appointment link.
+The Provider teaser is a teaser view for a provider content type. It contains an optional image, name, specialties, focus, location, language, type (only displays if not doctor) and appointment link.
 
 #### Variables
 ~~~
@@ -18,6 +18,7 @@ location:
     location: short text / required
     language: short text / required
     rating: number / optional
+    type: provider type display if not doctor / required
   link:
     href: href / required  
 ~~~
