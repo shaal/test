@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
+    - block_visibility_conditions
     - system
     - towerhealth_misc
   theme:
@@ -16,19 +16,18 @@ provider: null
 plugin: listing_hero_block
 settings:
   id: listing_hero_block
-  label: 'Listing hero block'
+  label: Articles
   provider: towerhealth_misc
   label_display: visible
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
+  not_node_type:
+    id: not_node_type
     bundles:
       article: article
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
+    negate: null
+    context_mapping: {  }
   request_path:
     id: request_path
-    pages: "/articles\r\n/articles*"
+    pages: "/articles\r\n/articles/*"
     negate: false
     context_mapping: {  }

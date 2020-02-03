@@ -20,10 +20,12 @@ class ListingHeroBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $build = '';
-    dump('Het');
+    $build = [];
+    $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+    $title = $route->getDefault('_title');
+
+    $build['#label'] = $title;
 
     return $build;
   }
-
 }
