@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
     - node.type.location
     - node.type.page
     - node.type.profile
@@ -82,6 +83,7 @@ type_settings:
       weight: 1
   entity_types:
     node:
+      - article
       - location
       - page
       - profile

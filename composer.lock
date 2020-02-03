@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7935a391b1b2b5d4ac2c1542ad467f84",
+    "content-hash": "198d1552b9ec6a6cda8b123eb765b387",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1283,6 +1283,53 @@
             "homepage": "https://www.drupal.org/project/bigmenu",
             "support": {
                 "source": "https://git.drupalcode.org/project/bigmenu"
+            }
+        },
+        {
+            "name": "drupal/block_visibility_conditions",
+            "version": "1.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/block_visibility_conditions.git",
+                "reference": "8.x-1.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/block_visibility_conditions-8.x-1.0-beta4.zip",
+                "reference": "8.x-1.0-beta4",
+                "shasum": "f1cd5e1c220cef8086122b8067c9899cb219c9d4"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1571139786",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "matthiasm11",
+                    "homepage": "https://www.drupal.org/user/1208116"
+                }
+            ],
+            "description": "Provides some extra block visibility conditions.",
+            "homepage": "https://www.drupal.org/project/block_visibility_conditions",
+            "support": {
+                "source": "https://git.drupalcode.org/project/block_visibility_conditions"
             }
         },
         {
@@ -7415,16 +7462,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "7cfa470bc3b1887a7b2a47c0a702a84ad614fa92"
+                "reference": "46b53fd714568af343953c039ff47b67ce8af8d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/7cfa470bc3b1887a7b2a47c0a702a84ad614fa92",
-                "reference": "7cfa470bc3b1887a7b2a47c0a702a84ad614fa92",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/46b53fd714568af343953c039ff47b67ce8af8d6",
+                "reference": "46b53fd714568af343953c039ff47b67ce8af8d6",
                 "shasum": ""
             },
             "require": {
@@ -7487,7 +7534,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2020-01-04T13:00:46+00:00"
+            "time": "2020-01-25T12:44:29+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -9833,6 +9880,61 @@
             "time": "2017-12-06T20:35:40+00:00"
         },
         {
+            "name": "drupal/views_taxonomy_term_name_depth",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_taxonomy_term_name_depth.git",
+                "reference": "8.x-3.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_taxonomy_term_name_depth-8.x-3.3.zip",
+                "reference": "8.x-3.3",
+                "shasum": "a3e2464e87d3cb788211cce31945ba8155522b42"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.3",
+                    "datestamp": "1570980057",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "baikho",
+                    "homepage": "https://www.drupal.org/user/2727459"
+                },
+                {
+                    "name": "manojapare",
+                    "homepage": "https://www.drupal.org/user/2825053"
+                },
+                {
+                    "name": "rakesh.gectcr",
+                    "homepage": "https://www.drupal.org/user/1177822"
+                }
+            ],
+            "description": "The module provides the Views plugin for Contextual filter with Taxonomy Term Name Depth.",
+            "homepage": "https://www.drupal.org/project/views_taxonomy_term_name_depth",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_taxonomy_term_name_depth"
+            }
+        },
+        {
             "name": "drush/drush",
             "version": "9.7.1",
             "source": {
@@ -10721,16 +10823,16 @@
         },
         {
             "name": "palantirnet/the-build",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/the-build.git",
-                "reference": "55f58f13d51010bead5ec1feb1d753482d2cfe30"
+                "reference": "fc52e65796e73295cb02dd086a04cf1fbae33059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/the-build/zipball/55f58f13d51010bead5ec1feb1d753482d2cfe30",
-                "reference": "55f58f13d51010bead5ec1feb1d753482d2cfe30",
+                "url": "https://api.github.com/repos/palantirnet/the-build/zipball/fc52e65796e73295cb02dd086a04cf1fbae33059",
+                "reference": "fc52e65796e73295cb02dd086a04cf1fbae33059",
                 "shasum": ""
             },
             "require": {
@@ -10762,7 +10864,7 @@
                 }
             ],
             "description": "Project setup templates and Phing build tasks for Drupal projects.",
-            "time": "2019-12-04T23:21:48+00:00"
+            "time": "2020-01-30T23:56:19+00:00"
         },
         {
             "name": "palantirnet/the-vagrant",
@@ -12670,7 +12772,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -13248,6 +13350,7 @@
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
         "drupal/bigmenu": 15,
+        "drupal/block_visibility_conditions": 10,
         "drupal/default_content": 15,
         "drupal/inline_entity_form": 5,
         "drupal/migrate_devel": 10,

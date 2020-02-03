@@ -72,17 +72,14 @@
 #}
 
 
-{% embed "@molecules/card/01-card.twig" with {
-  card_modifiers: ["grid-item"],
-  card_title: label,
-  card_body: content.body,
-  card_link_url: url,
+{% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
+  "article": {
+    "details": {
+      "title": label,
+      "date": content.field_article_date,
+      "text": content.field_article_teaser,
+      "tags": tags
+    }
+  },
+  "url": url
 } %}
-  {% block card_img %}
-    {{ content.field_image }}
-  {% endblock %}
-
-  {% block card_info %}
-    {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-  {% endblock %}
-{% endembed %}
