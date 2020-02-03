@@ -49,16 +49,18 @@
       </div>
 
       <div class="provider-header__cta js-section-animation">
-        {% include "@atoms/icon-button/icon-button.twig" with {
-          "text": appt_label,
-          "button_icon": appt_icon,
-          "variation": "modal",
-          "modal": {
-            "type": "inline",
-            "reference": "inline-modal",
-            "content": "This is an example of an inline modal window."
-          }
-        } %}
+        {% block appointment_button %}
+          {% include "@atoms/icon-button/icon-button.twig" with {
+            "text": appt_label,
+            "button_icon": appt_icon,
+            "variation": "modal",
+            "modal": {
+              "type": "inline",
+              "reference": "inline-modal",
+              "content": "This is an example of an inline modal window."
+            }
+          } %}
+        {% endblock %}
         <span class="provider-header__cta__text">
         or call <a class="provider-header__cta__link" href="tel+1{{appt_phone.number}}">{{ appt_phone.label }}</a>
         </span>
