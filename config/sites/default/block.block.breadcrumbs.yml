@@ -1,0 +1,34 @@
+uuid: e50b804f-6bb2-4788-b286-776cb2611ac6
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - tower_health
+id: breadcrumbs
+theme: tower_health
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/locations/*\r\n/doctors/*\r\n/services/*"
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+      profile: profile
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
