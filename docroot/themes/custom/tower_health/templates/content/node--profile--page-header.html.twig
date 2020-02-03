@@ -93,16 +93,20 @@
 
   {% block appointment_button %}
     {% if content.field_profile_epic_id.0|render %}
-      {% include "@atoms/icon-button/icon-button.twig" with {
+      {% embed "@atoms/icon-button/icon-button.twig" with {
         "text": "Request an Appointment"|t,
         "button_icon": button_icon,
         "variation": "modal",
         "modal": {
           "type": "inline",
           "reference": "inline-modal",
-          "content": "If no appointments are available call " ~ appointment_phone ~ " for more help"
+          "content": "If no appointments are available call " ~ appointment_phone ~ " for additional help."
         }
       } %}
+        {% block iframe %}
+          <iframe src="https://mytowerhealth.org/mytowerhealth/openscheduling/signupandschedule/embeddedschedule?id={{content.field_profile_epic_id.0["#context"]["value"]}}&vt=1059"></iframe>
+        {% endblock %}
+      {% endembed %}
     {% else %}
       {% include "@atoms/icon-button/icon-button.twig" with {
          "text": "Request an Appointment"|t,

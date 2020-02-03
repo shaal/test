@@ -12,6 +12,11 @@
 
 {% if variation == "modal" %}
   <div id="{{modal.reference}}" class="modal__inline-window">
+    <div class="modal__iframe">
+      {% block iframe %}
+        Placeholder for iframe
+      {% endblock %}
+    </div>
     {{ modal.content }}
   </div>
 {% endif %}
