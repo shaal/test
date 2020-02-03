@@ -326,6 +326,7 @@ function tower_health_preprocess_node__profile(&$variables) {
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
     $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
     $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
+    $variables['appointment_button_link'] = theme_get_setting('appointment_button_link');
     $variables['name'] = $node->title->value;
     if (!$node->get('field_profile_job_title')->isEmpty()) {
       $variables['lead_title'] = $node->field_profile_job_title->value;
