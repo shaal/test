@@ -138,6 +138,11 @@
             "drupal/core": {
                 "EditorMediaDialog triggers an \"undefined index\" notice for data-view-mode (https://www.drupal.org/project/drupal/issues/3100470)": "https://www.drupal.org/files/issues/2019-12-30/3100470-18.patch"
             },
+            "drupal/better_exposed_filters": {
+                "Undefined index: exposed_form_options (https://www.drupal.org/project/better_exposed_filters/issues/3106332)": "https://www.drupal.org/files/issues/2020-01-21/undefined_index_exposed_form_options-3106332-2.patch",
+                "Cannot edit settings for BEF (https://www.drupal.org/project/better_exposed_filters/issues/3019535)" :"https://www.drupal.org/files/issues/2019-03-20/3019535-bef_ajax_error_0.patch",
+                "Undefined index #options when $form['sort_order'] is exposed as Radios (https://www.drupal.org/project/better_exposed_filters/issues/2936892)" :"https://www.drupal.org/files/issues/0001-Fix-undefined-index-options-when-sort_order-is-expos.patch"
+            },
             "drupal/migrate_devel": {
                 "Test": "https://www.drupal.org/files/issues/2018-10-08/migrate_devel-drush9-2938677-6.patch"
             }
