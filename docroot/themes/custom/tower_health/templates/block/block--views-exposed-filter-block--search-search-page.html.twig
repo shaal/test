@@ -27,5 +27,5 @@
 #}
 
 {% block content %}
-  {{ content }}
+  {{ content|without('site_search') }}
 {% endblock %}
