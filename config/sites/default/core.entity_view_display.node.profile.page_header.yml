@@ -44,6 +44,14 @@ targetEntityType: node
 bundle: profile
 mode: page_header
 content:
+  field_profile_epic_id:
+    type: string
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_profile_image:
     type: media_thumbnail
     weight: 0
@@ -116,7 +124,6 @@ hidden:
   field_profile_board_certified: true
   field_profile_education: true
   field_profile_employment_type: true
-  field_profile_epic_id: true
   field_profile_first_name: true
   field_profile_gender: true
   field_profile_languages: true

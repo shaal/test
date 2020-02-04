@@ -1,7 +1,6 @@
 id: towerhealth_insurance_groups
 label: Import tower health insurance group terms.
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_base_group
 dependencies:
   enforced:
     module:

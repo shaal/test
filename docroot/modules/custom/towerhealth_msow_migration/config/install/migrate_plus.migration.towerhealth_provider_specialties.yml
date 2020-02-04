@@ -1,7 +1,6 @@
 id: towerhealth_provider_specialties
 label: Import tower health clinical areas of interest taxonomy terms.
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_base_group
 dependencies:
   enforced:
     module:

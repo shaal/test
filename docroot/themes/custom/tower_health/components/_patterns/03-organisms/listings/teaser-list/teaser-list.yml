@@ -13,13 +13,15 @@ teasers:
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: 
-        - "Oral and Maxillofacial Surgery"
+        - text: "Oral and Maxillofacial Surgery"
       focus: 
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '4.2'
+      rating_icon: "star.svg"
+      type: 'Doctor'
     type: "provider"
   - details:
       title: "Lessons from the Oncology Center"
@@ -82,13 +84,15 @@ teasers:
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
       specialties: 
-        - "Pediatrics"
+        - text: "Pediatrics"
       focus: 
-        - "Child Development, Preventative Medicine"
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '5'
+      rating_icon: "star.svg"
+      type: 'Doctor'
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -101,13 +105,15 @@ teasers:
     details:
       name: "Donald E. Roland, MD, DMD"
       specialties: 
-        - "Oral and Maxillofacial Surgery"
+        - text: "Oral and Maxillofacial Surgery"
       focus: 
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
       language: 
-        - "English"
+        - text: "English"
       rating: '4.2'
+      rating_icon: "star.svg"
+      type: 'Doctor'
     type: "provider"
   - details:
       title: "Lessons from the Oncology Center"

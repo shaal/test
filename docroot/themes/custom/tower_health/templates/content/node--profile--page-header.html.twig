@@ -84,14 +84,29 @@
   "appt_phone": {
     "number": appointment_phone,
     "label": appointment_phone_label
-  },
-  "appt_url": "#",
-  "appt_label": "Request an Appointment"|t,
-  "appt_icon": button_icon,
+  }
 } %}
 
   {% block breadcrumb %}
     {{ drupal_block('system_breadcrumb_block') }}
+  {% endblock %}
+
+  {% block appointment_button %}
+    {% if content.field_profile_epic_id.0|render and node.field_profile_scheduling.0.value == 1 %}
+      {% set url = "https://mytowerhealth.org/mytowerhealth/openscheduling/signupandschedule/embeddedschedule?id=" ~ content.field_profile_epic_id|field_value|render ~ "&vt=1059" %}
+      {% include "@atoms/icon-button/icon-button.twig" with {
+        "text": "Make an Appointment Online"|t,
+        "url": url,
+        "button_icon": button_icon,
+        "target": "_blank"
+      } %}
+    {% else %}
+      {% include "@atoms/icon-button/icon-button.twig" with {
+         "text": "Request an Appointment"|t,
+         "url": appointment_button_link,
+         "button_icon": button_icon
+      } %}
+    {% endif %}
   {% endblock %}
 
 {% endembed %}

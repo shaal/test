@@ -1,7 +1,6 @@
 id: towerhealth_providers
 label: Import tower health provider content
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_base_group
 dependencies:
   enforced:
     module:
