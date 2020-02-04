@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_rating_migration # for uninstall
+id: towerhealth_provider_details_group
+label: Tower Health Provider Details
+description: 'Tower Health Provider Details'
+source_type: 'Tower Health JSON'
+shared_configuration: null

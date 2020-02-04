@@ -3,8 +3,7 @@
 ---
 id: towerhealth_providers_languages
 label: Import tower health provider languages spoken
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_details_group
 
 dependencies:
   enforced:

@@ -1,0 +1,13 @@
+uuid: 92f74864-0c37-4bd8-aef2-320e7ffb67fd
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_rating_migration
+id: towerhealth_provider_base_group
+label: 'Tower Health Provider Base'
+description: 'Tower Health Provider Base'
+source_type: 'Tower Health JSON'
+module: null
+shared_configuration: null

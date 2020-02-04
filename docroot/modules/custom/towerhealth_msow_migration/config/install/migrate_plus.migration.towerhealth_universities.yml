@@ -1,7 +1,6 @@
 id: towerhealth_universities
 label: Import tower health universities taxonomy terms.
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_base_group
 dependencies:
   enforced:
     module:
