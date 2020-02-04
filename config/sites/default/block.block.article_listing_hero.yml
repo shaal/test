@@ -1,0 +1,33 @@
+uuid: b49392fa-2fc3-47a1-9e12-dcc9fb674ccd
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_conditions
+    - system
+    - towerhealth_misc
+  theme:
+    - tower_health
+id: article_listing_hero
+theme: tower_health
+region: page_header
+weight: 0
+provider: null
+plugin: listing_hero_block
+settings:
+  id: listing_hero_block
+  label: Articles
+  provider: towerhealth_misc
+  label_display: visible
+visibility:
+  not_node_type:
+    id: not_node_type
+    bundles:
+      article: article
+    negate: null
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/articles\r\n/articles/*"
+    negate: false
+    context_mapping: {  }

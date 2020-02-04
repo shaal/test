@@ -3,8 +3,7 @@
 ---
 id: towerhealth_providers_insurance_group_ref
 label: Import tower health provider specialties referencees
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_details_group
 
 dependencies:
   enforced:

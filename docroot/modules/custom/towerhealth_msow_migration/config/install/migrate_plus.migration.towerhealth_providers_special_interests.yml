@@ -3,8 +3,7 @@
 ---
 id: towerhealth_providers_special_interests
 label: Import tower health provider clinical areas of interest references
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_details_group
 
 dependencies:
   enforced:

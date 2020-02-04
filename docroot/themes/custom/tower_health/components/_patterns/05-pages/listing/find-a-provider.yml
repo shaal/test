@@ -8,12 +8,12 @@ header:
       text: "2nd Level"
     3:
       text: "3rd Level"
-  title: Find a Provider
+  title: Find a Doctor
   style: list
   form:
-    label: "Search Providers"
+    label: "Search Doctors"
     placeholder: "Search by Name, Specialty, or Condition"
-    button: "Search Providers"
+    button: "Search Doctors"
 form_sections:
   - section_items:
       -
@@ -23,13 +23,13 @@ form_sections:
         chosen: true
         multiple: true
         children:
-          - title: Cardiology
-          - title: Primary Care
-          - title: Orthopedics
-          - title: Women's Health
-          - title: Neurology
-          - title: Cancer Care
-          - title: Heart & Vascular
+          - title: Cardiology Lorem ipsum dolor
+          - title: Primary Care Lorem ipsum dolor
+          - title: Orthopedics Lorem ipsum dolor
+          - title: Women's Health Lorem ipsum dolor
+          - title: Neurology Lorem ipsum dolor
+          - title: Cancer Care Lorem ipsum dolor
+          - title: Heart & Vascular Lorem ipsum dolor
           - title: Pediatrics
           - title: Audiology
           - title: Behavioral Health
@@ -86,17 +86,22 @@ form_sections:
           - title: < 25 Miles
       -
         width: full
-        title: 'Provider Type'
+        title: 'Type'
         type: radio
         info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ullam, optio similique eius esse ex maiores distinctio tempore magni dolor, labore natus unde ratione consequuntur maxime repellendus beatae mollitia aliquam.'
         info_id: type
         orientation: inline
         children:
-          - title: All Providers
+          - title: All
             id: type
-          - title: Physicians Only
+            checked: true
+          - title: Doctors
             id: type
-          - title: Advanced Practice Providers Only
+          - title: Nurse Practitioners
+            id: type
+          - title: Midwives
+            id: type
+          - title: Physicians Assistants
             id: type
 results_shown: 1-10
 results_count: 128
@@ -111,33 +116,16 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties:
-        - "Oral and Maxillofacial Surgery"
-      focus:
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      specialties: 
+        - text: "Oral and Maxillofacial Surgery"
+      focus: 
+        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language:
-        - "English"
+      language: 
+        - text: "English"
+      type: 'Doctor'
       rating: '4.2'
-    type: "provider"
-  - img:
-      src: "../../images/people/abdel-wahab-amir.jpg"
-      alt: "Alternative Text"
-    classes: "growth bottom-right"
-    link:
-      url: "/"
-      text: "Request an Appointment"
-      icon: "th-cal.svg"
-    details:
-      name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties:
-        - "Pediatrics"
-      focus:
-        - "Child Development, Preventative Medicine"
-      location: "Wyomissing, PA"
-      language:
-        - "English"
-      rating: '3.25'
+      rating_icon: "star.svg"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -146,34 +134,58 @@ providers:
       text: "Request an Appointment"
       icon: "th-cal.svg"
     details:
-      name: "Monique Lisa Abner, MD"
-      specialties:
-        - "Plastic Surgery"
-      focus:
-        - "Wound healing, Hyperbaric Medicine"
-      location: "Wyomissing, PA"
-      language:
-        - "English"
-      rating: '2'
-    type: "provider"
-  - img:
-      src: "../../images/people/Roland-Donald.jpg"
-      alt: "Alternative Text"
-    classes: "growth bottom-right"
-    link:
-      url: "/"
-      text: "Request an Appointment"
-      icon: "th-cal.svg"
-    details:
-      name: "Donald E. Roland, MD, DMD"
-      specialties:
-        - "Oral and Maxillofacial Surgery"
-      focus:
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
-      location: "Pottstown, PA"
-      language:
-        - "English"
+      name: "Maria Ivette Bansner, PA-C"
+      specialties: 
+        - text: "Physician Assistant"
+      focus: 
+        - text: "Emergency Medicine"
+      location: "West Reading, PA"
+      language: 
+        - text: "English"
+      type: 'Physician Assistant'
       rating: null
+      rating_icon: "star.svg"
+    type: "provider"
+  - img: null
+    classes: "growth bottom-right"
+    link:
+      url: "/"
+      text: "Request an Appointment"
+      icon: "th-cal.svg"
+    details:
+      name: "Monique Lisa Abner, MD"
+      specialties: 
+        - text: "Plastic Surgery"
+      focus: 
+        - text: "Wound healing"
+        - text: "Hyperbaric Medicine"
+      location: "Wyomissing, PA"
+      language: 
+        - text: "English"
+      type: 'Doctor'
+      rating: '2'
+      rating_icon: "star.svg"
+    type: "provider"
+  - img:
+      src: "../../images/people/Scutti-Marie.jpg"
+      alt: "Alternative Text"
+    classes: "growth bottom-right"
+    link:
+      url: "/"
+      text: "Request an Appointment"
+      icon: "th-cal.svg"
+    details:
+      name: "Marie Catherine Scutti, CRNP"
+      specialties: 
+        - text: "Nurse Practitioner-Adult Health"
+      focus: 
+        - text: "Hematology & Oncology"
+      location: "West Reading, PA"
+      language: 
+        - text: "English"
+      type: 'Nurse Practitioner'
+      rating: null
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -185,14 +197,16 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties:
-        - "Pediatrics"
-      focus:
-        - "Child Development, Preventative Medicine"
+      specialties: 
+        - text: "Pediatrics"
+      focus: 
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language:
-        - "English"
+      language: 
+        - text: "English"
+      type: 'Doctor'
       rating: '1.75'
+      rating_icon: "star.svg"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -202,14 +216,16 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties:
-        - "Plastic Surgery"
-      focus:
-        - "Wound healing, Hyperbaric Medicine"
+      specialties: 
+        - text: "Plastic Surgery"
+      focus: 
+        - text: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language:
-        - "English"
+      language: 
+        - text: "English"
+      type: 'Doctor'
       rating: '4.2'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/Roland-Donald.jpg"
@@ -221,14 +237,16 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Donald E. Roland, MD, DMD"
-      specialties:
-        - "Oral and Maxillofacial Surgery"
-      focus:
-        - "Cranio-facial clefts, Rhinoplasty, Genioplasty"
+      specialties: 
+        - text: "Oral and Maxillofacial Surgery"
+      focus: 
+        - text: "Cranio-facial clefts, Rhinoplasty, Genioplasty"
       location: "Pottstown, PA"
-      language:
-        - "English"
+      language: 
+        - text: "English"
+      type: 'Doctor'
       rating: '5'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -240,14 +258,16 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties:
-        - "Pediatrics"
-      focus:
-        - "Child Development, Preventative Medicine"
+      specialties: 
+        - text: "Pediatrics"
+      focus: 
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language:
-        - "English"
+      language: 
+        - text: "English"
+      type: 'Doctor'
       rating: '3'
+      rating_icon: "star.svg"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -257,14 +277,16 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Monique Lisa Abner, MD"
-      specialties:
-        - "Plastic Surgery"
-      focus:
-        - "Wound healing, Hyperbaric Medicine"
+      specialties: 
+        - text: "Plastic Surgery"
+      focus: 
+        - text: "Wound healing, Hyperbaric Medicine"
       location: "Wyomissing, PA"
-      language:
-        - "English"
+      language: 
+        - text: "English"
+      type: 'Doctor'
       rating: '4.2'
+      rating_icon: "star.svg"
     type: "provider"
   - img:
       src: "../../images/people/abdel-wahab-amir.jpg"
@@ -276,14 +298,16 @@ providers:
       icon: "th-cal.svg"
     details:
       name: "Amir A. Abdel-Wahab, MD, FAAP"
-      specialties:
-        - "Pediatrics"
-      focus:
-        - "Child Development, Preventative Medicine"
+      specialties: 
+        - text: "Pediatrics"
+      focus: 
+        - text: "Child Development, Preventative Medicine"
       location: "Wyomissing, PA"
-      language:
-        - "English"
+      language: 
+        - text: "English"
+      type: 'Doctor'
       rating: '1'
+      rating_icon: "star.svg"
     type: "provider"
 current: 4
 items:

@@ -4,14 +4,14 @@
   <div class="teaser--small__content">
     <div class="teaser--small__content__info">
       <div class="teaser__section">
-        <span class="teaser-label">Address</span>
+        <span class="teaser-label">{{ "Address"|t }}</span>
         {% for item in address_rows %}
           <span class="teaser__row">{{ item }}</span>
         {% endfor %}
         {% include "@atoms/icon-button/icon-button.twig" with {
           "url": direction_url,
-          "icon": 'th-find-hospital.svg',
-          "text": 'Map & Directions',
+          "button_icon": button_icon,
+          "text": "Map & Directions"|t,
           "variation": "small",
           "target": "_blank"
         } %}

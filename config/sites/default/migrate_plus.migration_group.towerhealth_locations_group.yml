@@ -1,0 +1,13 @@
+uuid: 9c9a0953-0196-4675-a115-6d1ef9d8e176
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - towerhealth_rating_migration
+id: towerhealth_locations_group
+label: 'Tower Health Locations'
+description: 'Tower Health locations'
+source_type: 'Tower Health JSON'
+module: null
+shared_configuration: null

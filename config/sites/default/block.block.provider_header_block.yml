@@ -14,7 +14,7 @@ provider: null
 plugin: provider_header_block
 settings:
   id: provider_header_block
-  label: 'Provider header block'
+  label: 'Doctor header block'
   provider: towerhealth_misc
   label_display: '0'
 visibility: {  }

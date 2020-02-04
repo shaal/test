@@ -4,14 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.field.node.article.body
+    - field.field.node.article.field_article_body
     - field.field.node.article.field_article_date
     - field.field.node.article.field_article_teaser
-    - field.field.node.article.field_metatags
+    - field.field.node.article.field_article_type_ref
     - node.type.article
   module:
     - datetime
-    - metatag
     - text
     - user
 id: node.article.card
@@ -19,14 +18,6 @@ targetEntityType: node
 bundle: article
 mode: card
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 1
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
   field_article_date:
     type: datetime_default
     weight: 3
@@ -43,17 +34,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_metatags:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_article_body: true
+  field_article_type_ref: true
   search_api_excerpt: true

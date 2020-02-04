@@ -1,0 +1,19 @@
+uuid: 62e8f2a8-aadf-48ed-b117-3849390d1c09
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_care_circle_description
+field_name: field_care_circle_description
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

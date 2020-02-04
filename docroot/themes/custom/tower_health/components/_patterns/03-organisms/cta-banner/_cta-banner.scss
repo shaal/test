@@ -194,11 +194,13 @@
   }
 
   .cta-banner__image {
-    opacity: 0;
+    @include breakpoint($bp2) {
+      opacity: 0;
 
-    .image-background.bottom-left .image::before {
-      margin-left: -30px;
-      margin-top: -10px;
+      .image-background.bottom-left .image::before {
+        margin-left: -30px;
+        margin-top: -10px;
+      }
     }
   }
 
@@ -209,7 +211,7 @@
       opacity: 1;
 
       @include breakpoint(0 899px) {
-        animation: fadeInRight .65s ease-in-out forwards;
+        animation: fadeIn .65s ease-in-out forwards;
       }
 
       &::before {
@@ -230,12 +232,15 @@
     }
 
     .cta-banner__image {
-      animation: fadeInLeftScale .65s ease-in-out forwards;
-
-      .image-background.bottom-left .image::before {
-        transition: all .25s ease .25s;
-        margin-left: -20px;
-        margin-top: 10px;
+      
+      @include breakpoint($bp2) {
+        animation: fadeInLeftScale .65s ease-in-out forwards;
+        
+        .image-background.bottom-left .image::before {
+          transition: all .25s ease .25s;
+          margin-left: -20px;
+          margin-top: 10px;
+        }
       }
     }
   }

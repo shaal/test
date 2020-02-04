@@ -14,7 +14,7 @@ provider: null
 plugin: provider_home_hero_block
 settings:
   id: provider_home_hero_block
-  label: 'Provider home hero block'
+  label: 'Doctor home hero block'
   provider: towerhealth_misc
   label_display: '0'
 visibility: {  }

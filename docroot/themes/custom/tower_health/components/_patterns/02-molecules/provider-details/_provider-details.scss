@@ -33,7 +33,7 @@
     margin-bottom: .5em;
   }
 
-  span {
+  span:not(span.teaser__section):not(.provider-detail__item-label) {
     @include adjust-font-size-to($label, .695);
     font-style: italic;
     display: block;
@@ -55,5 +55,3 @@
   @include adjust-font-size-to($xs-heading, 1);
   margin-bottom: 0;
 }
-
-

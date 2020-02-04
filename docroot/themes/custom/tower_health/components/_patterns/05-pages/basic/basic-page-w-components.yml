@@ -136,50 +136,69 @@ recognitionItems:
       src: "../../images/award-2.png"
       alt: "US News & World Report, Best National Hospital - Pulmonology"
 file: 
-  url: '#'
   image:
     src: '../../images/2019-Tower-CHNA-01.png'
     alt: 'Alternative Text'
   title: 'Tower Health Community Health Needs Assessment'
   desc: 'This is an optional file download cta component. Community Health Needs Assessments (CHNA) are required of tax-exempt hospitals as a result of the Patient Protection and Affordable Care Act. These assessments, done every three years, create an important opportunity to improve the health of communities. Working alongside community stakeholders, we can and will use the CHNA data to develop programs that meets the needs of our community.'
-  downloadLabel: Download the PDF
+  file: 
+    label: Download the PDF
+    url: '#'
 video_cards:
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
     doctor: Karen Hoerst, MD
     title: Advanced Stroke Care
     desc: When symptoms of a stroke begin, it's vital to seek treatment quickly. Dr. Karen Hoerst explains how Reading Hospital is prepared to provide advanced stroke care.
-  - videoURL: https://www.youtube.com/embed/d3ZLhedUtkA
+  - url: 
+      link: https://www.youtube.com/embed/d3ZLhedUtkA
+      label: Watch the Video
+    type: video
     thumbnail:
       src: ../../images/video-placeholder-1.png
       alt: Advanced Stroke Care Video
@@ -205,7 +224,7 @@ cta:
   link:
     url: "/"
     text: "484-628-HELP"
-    icon: "th-cal.svg"
+    button_icon: "th-cal.svg"
     variation: "right"
 careCircle:
   title: Compassionate Care Principles
@@ -214,7 +233,7 @@ careCircle:
     - icon: ../../images/icons/th-bill.svg
       icon_alt: alt text
       url: "#"
-      label: Find a Provider
+      label: Find a Doctor
     - icon: ../../images/icons/th-cal.svg
       icon_alt: alt text
       url: "#"
@@ -228,7 +247,7 @@ careCircle:
     - icon: ../../images/icons/th-find-hospital.svg
       icon_alt: alt text
       url: "#"
-      label: Follow-up with Provider
+      label: Follow-up with Doctor
       color: wisdom
     - icon: ../../images/icons/th-find-provider.svg
       icon_alt: alt text
@@ -261,7 +280,7 @@ careCircleFull:
     - icon: ../../images/icons/th-bill.svg
       icon_alt: alt text
       url: "#"
-      label: Find a Provider
+      label: Find a Doctor
     - icon: ../../images/icons/th-cal.svg
       icon_alt: alt text
       url: "#"
@@ -275,7 +294,7 @@ careCircleFull:
     - icon: ../../images/icons/th-find-hospital.svg
       icon_alt: alt text
       url: "#"
-      label: Follow-up with Provider
+      label: Follow-up with Doctor
       color: wisdom
     - icon: ../../images/icons/th-find-provider.svg
       icon_alt: alt text

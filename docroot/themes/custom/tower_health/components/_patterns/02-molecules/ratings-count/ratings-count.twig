@@ -14,12 +14,14 @@
   {% set rating_round = 'threeh' %}
 {% elseif (rating|round(1, 'ceil') >= '4') and (rating|round(1, 'ceil') < '4.5') %}
   {% set rating_round = 'four' %}
-{% elseif (rating|round(1, 'ceil') >= '4.5') and (rating|round(1, 'ceil') <= '5') %}
+{% elseif (rating|round(1, 'ceil') >= '4.5') and (rating|round(1, 'ceil') < '5') %}
   {% set rating_round = 'fourh' %}
+{% elseif (rating|round(1, 'ceil') == '5') %}
+  {% set rating_round = 'five' %}
 {% endif %}
 
 <div class="ratings-count">
-  {{ rating }} of 5
+  <div class="ratings-count__summary">{{ rating }} out of 5</div>
   <div class="ratings-count__stars ratings-count__stars--{{rating_round}}">
     {% if rating_icon %}
       {% include rating_icon %}

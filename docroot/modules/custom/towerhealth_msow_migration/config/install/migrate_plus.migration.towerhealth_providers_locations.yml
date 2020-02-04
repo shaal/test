@@ -3,8 +3,7 @@
 ---
 id: towerhealth_providers_locations
 label: Import tower health provider location references
-migration_groups:
-  - TowerHealth MSOW import
+migration_group: towerhealth_provider_details_group
 
 dependencies:
   enforced:

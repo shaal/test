@@ -84,7 +84,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
       @include breakpoint($bp4) {
         .no-cssgrid & {
-          width: 25%;
+          width: 28%;
           float: right;
           clear: right;
         }
@@ -106,7 +106,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
       @include breakpoint($bp4) {
         .no-cssgrid & {
-          width: 25%;
+          width: 28%;
           float: right;
           clear: right;
         }
@@ -126,7 +126,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
       @include breakpoint($bp4) {
         .no-cssgrid & {
-          width: 75%;
+          width: 70%;
           float: left;
         }
       }
@@ -195,7 +195,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
 
 .sidebar--growth {
   background-color: $growth-ltst;
-  padding: 1.5em 0 1.5em 1.5em;
+  padding: 1em 1.25em;
   margin-bottom: 2em;
   position: relative;
   border-radius: $rd-brd-lg;
@@ -203,6 +203,7 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   @include breakpoint($bp3) {
     border-radius: $rd-brd-lg 0 0 $rd-brd-lg;
     margin-bottom: 0;
+    padding: 1.5em 0 1.5em 1.5em;
   }
   
   &::after {
@@ -224,11 +225,15 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
   }
   
   .cssanimations & {
-    opacity: 0;
+    @include breakpoint($bp2) {
+      opacity: 0;
+    }
   }
   
   .cssanimations &.in-view {
-    animation: fadeInRight .5s ease forwards;
+    @include breakpoint($bp2) {
+      animation: fadeInRight .5s ease forwards;
+    }
   }
 }
 

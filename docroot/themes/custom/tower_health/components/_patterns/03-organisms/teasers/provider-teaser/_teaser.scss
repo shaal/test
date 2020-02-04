@@ -6,6 +6,7 @@
   position: relative;
   text-align: center;
   width: 100%;
+  min-height: 175px;
 
   @include breakpoint($bp2) {
     text-align: left;
@@ -149,7 +150,7 @@
 
   @include breakpoint($bp2) {
     position: relative;
-    margin-top: 1em;
+    margin-top: .5em;
     width: calc(100% - 225px);
 
     .teaser--small & {
@@ -176,29 +177,42 @@
   }
 }
 
-.teaser__rating {
-  display: block;
-
-  .ratings-count {
-    justify-content: center;
+.teaser__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .5em;
+  
+  @include breakpoint($bp1) {
+    flex-direction: row;
   }
 
   @include breakpoint($bp2) {
+    justify-content: flex-start;
+  }
+
+  @include breakpoint($bp3) {
+    position: relative;
+    top: -3.2em;
+    padding-left: .85em;
+    margin-bottom: .25em;
+    
     .ratings-count {
-      justify-content: flex-start;
+      margin-left: auto;
     }
   }
-
-  @include breakpoint($bp3 1349px) {
-    position: relative;
-    top: -3em;
-    padding-left: .85em;
-  }
-
+  
   @include breakpoint($bp5) {
-    position: relative;
-    top: -5px;
-    float: right;
+    .ratings-count {
+      height: 10px;
+      overflow: visible;
+    }
+  }
+  
+  .teaser__top__type {
+    font-style: italic;
+    margin-right: 1em;
   }
 }
 
@@ -374,6 +388,7 @@
   margin: 0 auto;
   margin-top: 1.5em;
   margin-bottom: 2.5em;
+  min-height: auto;
 }
 
 .teaser__name--simple {

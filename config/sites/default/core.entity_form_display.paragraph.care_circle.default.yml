@@ -1,0 +1,85 @@
+uuid: 27c2331f-6075-4edf-a511-07f6460698c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.care_circle.field_care_circle_description
+    - field.field.paragraph.care_circle.field_care_circle_text_title
+    - field.field.paragraph.care_circle.field_care_circle_title
+    - field.field.paragraph.care_circle.field_care_circle_title_link
+    - field.field.paragraph.care_circle.field_circle_section_ref
+    - paragraphs.paragraphs_type.care_circle
+  module:
+    - field_group
+    - link
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_care_circle_sections:
+      children:
+        - field_care_circle_title
+        - field_care_circle_title_link
+        - field_circle_section_ref
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Care Circle & Sections'
+id: paragraph.care_circle.default
+targetEntityType: paragraph
+bundle: care_circle
+mode: default
+content:
+  field_care_circle_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_care_circle_text_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_care_circle_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_care_circle_title_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_circle_section_ref:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: care_circle_section
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

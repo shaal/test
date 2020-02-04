@@ -6,12 +6,20 @@
   </div>
   <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
 
-  {% if provider.details.rating %}
-  <div class="teaser__rating">
+  {% if provider.details.rating or provider.details.type|render != 'Doctor' %}
+  <div class="teaser__top">
+    
+    {% if provider.details.type|render != 'Doctor' %}
+      <span class="teaser__top__type">{{ provider.details.type }}</span>
+    {% endif %}
+    
+    {% if provider.details.rating %}
     {% include "@molecules/ratings-count/ratings-count.twig" with {
       "rating": provider.details.rating,
-      "icon": provider.details.icon,
+      "rating_icon": provider.details.rating_icon
     } %}
+    {% endif %}
+    
   </div>
   {% endif %}
 

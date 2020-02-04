@@ -1,15 +1,35 @@
 .form-section {
   margin: 6em 0 1em;
-  
+
   @include breakpoint($bp2) {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
   }
-  
+
   &:first-child {
     margin-top: 4em;
+  }
+
+  &.news {
+
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .form-item--checkboxes {
+        width: 100%;
+      }
+
+      .js-form-type-checkbox {
+        position: relative;
+        display: inline-block;
+        margin-right: 1em;
+      }
+    }
   }
 }
 
@@ -38,33 +58,33 @@
   select {
     margin-bottom: 0;
   }
-  
+
   &--conditional {
     display: none;
     visibility: hidden;
   }
-  
+
   &--half {
-    
+
     @include breakpoint($bp3) {
       width: 48%;
     }
   }
-  
+
   &--oneQuarter {
-    
+
     @include breakpoint($bp3) {
       width: 23%;
     }
   }
-  
+
   &--threeQuarter {
-    
+
     @include breakpoint($bp3) {
       width: 73%;
     }
   }
-  
+
   &--oneThird {
 
     @include breakpoint($bp3) {
@@ -82,31 +102,31 @@
       width: 48%;
     }
   }
-  
+
   &--twoThird {
     @include breakpoint($bp3) {
       width: 64%;
     }
   }
-  
+
   &--oneFifth {
     @include breakpoint($bp3) {
       width: 18%;
     }
   }
-  
+
   &--twoFifth {
     @include breakpoint($bp3) {
       width: 38%;
     }
   }
-  
+
   &--threeFifth {
     @include breakpoint($bp3) {
       width: 58%;
     }
   }
-  
+
   &--fourFifth {
     @include breakpoint($bp3) {
       width: 78%;
@@ -127,22 +147,22 @@
     @include breakpoint($bp3) {
       width: 30%;
     }
-    
+
     @include breakpoint($bp4) {
       width: 15.5%;
     }
   }
-  
+
   .form-item--inline {
     display: flex;
     margin-top: 1em;
     flex-wrap: wrap;
-    
+
     li {
       margin-right: 1.5em;
     }
   }
-  
+
   label {
     display: inline-block;
     margin-right: .25em;

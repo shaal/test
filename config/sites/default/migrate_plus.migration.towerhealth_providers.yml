@@ -12,7 +12,7 @@ class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
-migration_group: null
+migration_group: towerhealth_provider_base_group
 label: 'Import tower health provider content'
 source:
   plugin: csv
@@ -94,7 +94,7 @@ process:
       source: professional_title
     -
       plugin: towerhealth_utf_8
-  field_profile_type:
+  field_profile_employment_type:
     -
       plugin: static_map
       source:
@@ -112,6 +112,35 @@ process:
     -
       plugin: default_value
       default_value: tower_health_employed
+  field_profile_type:
+    -
+      plugin: static_map
+      source:
+        - professional_title
+      map:
+        CNM: midwife
+        cnm: midwife
+        CRNP: nurse_practitioner
+        crnp: nurse_practitioner
+        DDS: doctor
+        dds: doctor
+        DMD: doctor
+        dmd: doctor
+        DO: doctor
+        do: doctor
+        DPM: doctor
+        dpm: doctor
+        MD: doctor
+        md: doctor
+        PA-C: physician_assistant
+        pa-c: physician_assistant
+        PhD: doctor
+        phd: doctor
+        PsyD: doctor
+        psyd: doctor
+    -
+      plugin: default_value
+      default_value: ''
   field_profile_scheduling:
     -
       plugin: static_map

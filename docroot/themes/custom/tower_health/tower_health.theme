@@ -11,7 +11,9 @@ use Drupal\node\NodeInterface;
 use Drupal\core\entity\EntityInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\core\Url;
+use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Component\Utility\Xss;
+use Drupal\facets\Entity\Facet;
 
 /**
  * Set page variables.
@@ -22,6 +24,9 @@ function tower_health_preprocess_page(&$variables) {
     'view.find_a_location.find_location',
     'view.find_a_provider.find_doctor',
     'view.find_a_service.find_service',
+    'view.article_listing.article_listing_page',
+    'view.search.search_page',
+    'entity.taxonomy_term.canonical',
   ];
 
   // Get the current route name.
@@ -46,6 +51,17 @@ function tower_health_preprocess_page__page(&$variables) {
     if ($type == 'page') {
       $variables['show_side_nav'] = $node->field_basic_enable_nav->value;
     }
+  }
+}
+
+/**
+ *
+ */
+function tower_health_preprocess_facets_item_list(&$variables) {
+  $facet = $variables['facet'];
+
+  if (!empty($facet) && $facet instanceof Facet) {
+    $variables['attributes']['data-active-facets'] = implode(";", $facet->getActiveItems());
   }
 }
 
@@ -174,6 +190,17 @@ function tower_health_preprocess_block__providerproximityfilter(&$variables, $ho
 }
 
 /**
+ * Alter title block.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__page_title_block(&$variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $variables['node_title'] = $node->title->value;
+  }
+}
+
+/**
  * Add region theme suggestions.
  */
 function tower_health_theme_suggestions_region_alter(array &$suggestions, array $variables) {
@@ -204,7 +231,29 @@ function tower_health_preprocess_region__sidebar_first(&$variables) {
 }
 
 /**
- * Provide variables for provider nodes.
+ * Provide variables for article teaser.
+ */
+function tower_health_preprocess_node__article(&$variables) {
+  $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
+
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
+    if ($node->hasField('field_article_type_ref') && !$node->get('field_article_type_ref')->isEmpty()) {
+      $tag_refs = $node->get('field_article_type_ref')->getValue();
+      $tags = [];
+      foreach ($tag_refs as $id => $tag) {
+        $tag = $node->field_article_type_ref[$id]->entity;
+        if ($tag instanceof EntityInterface) {
+          $tags[] = $tag->name->value;
+        }
+      }
+      $variables['tags'] = $tags;
+    }
+  }
+}
+
+/**
+ * Provide variables for provider teaser.
  */
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];
@@ -230,6 +279,23 @@ function tower_health_preprocess_node__profile(&$variables) {
       }
       if ($location) {
         $variables['location'] = implode("; ", $locations);
+      }
+    }
+
+    // Set the default appointment link.
+    $variables['appointment_link'] = theme_get_setting('appointment_button_link');
+    $variables['appointment_text'] = t('Request an Appointment');
+    $variables['target'] = '_self';
+
+    // Set appointment link.
+    if ($node->hasField('field_profile_epic_id') && !$node->get('field_profile_epic_id')->isEmpty()) {
+      if ($node->hasField('field_profile_scheduling') && !$node->get('field_profile_scheduling')->isEmpty()) {
+        $open_scheduling = $node->get('field_profile_scheduling')->getValue();
+        if ($open_scheduling[0]['value'] == 1) {
+          $variables['appointment_link'] = 'https://mytowerhealth.org/mytowerhealth/openscheduling/signupandschedule/embeddedschedule?id=' . $node->get('field_profile_epic_id')->getString() . '&vt=1059';
+          $variables['appointment_text'] = t('Make an Appointment Online');
+          $variables['target'] = '_blank';
+        }
       }
     }
 
@@ -281,16 +347,6 @@ function tower_health_preprocess_node__profile(&$variables) {
       }
     }
 
-    // Preprocess profile image.
-    if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
-      $variables['src'] = file_create_url($node->field_profile_image->entity->field_media_image->entity->uri->value);
-      $variables['alt'] = $node->field_profile_image->entity->field_media_image->entity->alt;
-    }
-    else {
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
-      $variables['alt'] = "Provider placeholder image";
-    }
-
     if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
       $media = $node->field_profile_image->entity;
       if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
@@ -305,13 +361,14 @@ function tower_health_preprocess_node__profile(&$variables) {
     }
     else {
       // Fallback if no image uploaded.
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['src'] = '/' . drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
       $variables['alt'] = "Provider placeholder image";
     }
   }
   elseif ($node instanceof EntityInterface && $view_mode == 'page_header') {
     $variables['appointment_phone'] = theme_get_setting('appointment_phone_number');
     $variables['appointment_phone_label'] = theme_get_setting('appointment_phone_label');
+    $variables['appointment_button_link'] = theme_get_setting('appointment_button_link');
     $variables['name'] = $node->title->value;
     if (!$node->get('field_profile_job_title')->isEmpty()) {
       $variables['lead_title'] = $node->field_profile_job_title->value;
@@ -339,8 +396,8 @@ function tower_health_preprocess_node__profile(&$variables) {
     }
     else {
       // Fallback if no image uploaded.
-      $variables['src'] = drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
-      $variables['alt'] = "Provider placeholder image";
+      $variables['src'] = '/' . drupal_get_path('theme', 'tower_health') . '/images/people/provider-placeholder.png';
+      $variables['alt'] = "Doctor placeholder image";
     }
   }
 }
@@ -507,7 +564,7 @@ function tower_health_preprocess_node__location(&$variables) {
 function _tower_heath_format_location_provider_url($node) {
   $location_title = $node->title->value;
   $location_id = $node->field_location_id->value;
-  $location_providers_url = Url::fromRoute('view.find_a_provider.find_doctor', ['providers[0]' => 'locations:' . $location_id, 'location-title' => $location_title]);
+  $location_providers_url = Url::fromRoute('view.find_a_provider.find_doctor', ['providers[0]' => 'location:' . $location_id, 'location-title' => $location_title]);
 
   return $location_providers_url;
 }
@@ -687,6 +744,32 @@ function tower_health_preprocess_field__field_services_ref(&$variables) {
     $services[$id]['text'] = $service['content'];
   }
   $variables['services'] = $services;
+}
+
+/**
+ * Provide variables for location services template.
+ */
+function tower_health_preprocess_paragraph__care_circle(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $field_name = $paragraph->parent_field_name->value;
+  if ($field_name == 'field_basic_components' || $field_name == 'field_location_components' || $field_name == 'field_service_flex') {
+    $variables['fullWidth'] = TRUE;
+  }
+  $circle_refs = $paragraph->field_circle_section_ref->getValue();
+  $items = [];
+  foreach ($circle_refs as $id => $circle) {
+    $entity = Paragraph::load($circle['target_id']);
+    $items[$id]['label'] = $entity->field_care_circle_section_title->value;
+    $items[$id]['color'] = $entity->field_care_circle_section_color->value;
+    if ($entity->field_care_circle_section_link->uri != NULL) {
+      $items[$id]['url'] = Url::fromUri($entity->field_care_circle_section_link->uri);
+    }
+    if (!$entity->field_care_circle_section_icon->isEmpty()) {
+      $items[$id]['icon'] = file_create_url($entity->field_care_circle_section_icon->entity->field_media_file->entity->uri->value);
+      $items[$id]['icon_alt'] = $entity->field_care_circle_section_icon->entity->field_media_file->entity->alt;
+    }
+  }
+  $variables['items'] = $items;
 }
 
 /**

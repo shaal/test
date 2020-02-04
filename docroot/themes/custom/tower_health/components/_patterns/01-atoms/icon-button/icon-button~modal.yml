@@ -1,0 +1,7 @@
+text: "Make an Appointment"
+button_icon: "th-cal.svg"
+variation: "modal"
+modal:
+  type: inline
+  reference: inline-modal
+  content: This is an example of an inline modal window.

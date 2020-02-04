@@ -8,7 +8,7 @@ dependencies:
     - search_api
     - search_api_location_views
 id: find_a_provider
-label: 'Find a Provider'
+label: 'Find a Doctor'
 module: views
 description: ''
 tag: ''
@@ -36,7 +36,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: 'Search Providers'
+          submit_button: 'Search Doctors'
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -154,7 +154,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Find a Provider'
+            label: 'Find a Doctor'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -402,7 +402,7 @@ display:
             radius_units: km
           plugin_id: search_api_location
       sorts: {  }
-      title: 'Find a Provider'
+      title: 'Find a Doctor'
       header:
         result:
           id: result
@@ -434,7 +434,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: providers
+      path: doctors
       exposed_block: true
       cache:
         type: none

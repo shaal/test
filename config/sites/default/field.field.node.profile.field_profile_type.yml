@@ -1,4 +1,4 @@
-uuid: 08121420-7e37-42d9-b903-343ab0d1c2df
+uuid: 897be702-7a6b-4e26-8fd0-cf664254e775
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: node.profile.field_profile_type
 field_name: field_profile_type
 entity_type: node
 bundle: profile
-label: 'Provider Type'
+label: Type
 description: ''
 required: false
 translatable: false
