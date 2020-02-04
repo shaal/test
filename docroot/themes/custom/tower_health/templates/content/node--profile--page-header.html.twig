@@ -84,14 +84,36 @@
   "appt_phone": {
     "number": appointment_phone,
     "label": appointment_phone_label
-  },
-  "appt_url": "#",
-  "appt_label": "Request an Appointment"|t,
-  "appt_icon": button_icon,
+  }
 } %}
 
   {% block breadcrumb %}
     {{ drupal_block('system_breadcrumb_block') }}
+  {% endblock %}
+
+  {% block appointment_button %}
+    {% if content.field_profile_epic_id.0|render %}
+      {% embed "@atoms/icon-button/icon-button.twig" with {
+        "text": "Request an Appointment"|t,
+        "button_icon": button_icon,
+        "variation": "modal",
+        "modal": {
+          "type": "inline",
+          "reference": "inline-modal",
+          "content": "If no appointments are available call " ~ appointment_phone ~ " for additional help."
+        }
+      } %}
+        {% block iframe %}
+          <iframe src="https://mytowerhealth.org/mytowerhealth/openscheduling/signupandschedule/embeddedschedule?id={{content.field_profile_epic_id.0["#context"]["value"]}}&vt=1059"></iframe>
+        {% endblock %}
+      {% endembed %}
+    {% else %}
+      {% include "@atoms/icon-button/icon-button.twig" with {
+         "text": "Request an Appointment"|t,
+         "url": appointment_button_link,
+         "button_icon": button_icon
+      } %}
+    {% endif %}
   {% endblock %}
 
 {% endembed %}

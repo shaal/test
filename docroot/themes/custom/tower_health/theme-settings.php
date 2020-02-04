@@ -19,5 +19,10 @@ function tower_health_form_system_theme_settings_alter(&$form, &$form_state, $fo
     '#default_value' => theme_get_setting('appointment_phone_label'),
     '#description'   => t("List the label to display for the phone number above (can include digits and letters, i.e. 555-555-HELP).")
   );
-
+  $form['global_data']['appointment_button_link'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Appointment Button Link'),
+    '#default_value' => theme_get_setting('appointment_button_link'),
+    '#description'   => t("Link to use for 'Request an Appointment' button for providers who do no have Epic ID for open scheduling widget")
+  );
 }
