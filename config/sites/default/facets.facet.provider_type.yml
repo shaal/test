@@ -45,7 +45,7 @@ processor_configs:
     weights:
       build: 50
     settings:
-      replacement_values: "r|doctor|Doctors\r\nr|nurse_practitioner|Nurse Practitioners\r\nr|midwife|Midwives\r\nr|physician_assistant|Physicians Assistants"
+      replacement_values: "r|doctor|Doctors\r\nr|nurse_practitioner|Nurse Practitioners\r\nr|midwife|Midwives\r\nr|physician_assistant|Physician Assistants"
   list_item:
     processor_id: list_item
     weights:
