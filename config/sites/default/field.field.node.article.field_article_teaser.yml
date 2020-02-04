@@ -12,7 +12,7 @@ field_name: field_article_teaser
 entity_type: node
 bundle: article
 label: Teaser
-description: ''
+description: 'A short teaser for this article to display in search results.'
 required: false
 translatable: false
 default_value: {  }

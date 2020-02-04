@@ -3,14 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
+    - field.field.node.article.field_article_body
     - field.field.node.article.field_article_date
     - field.field.node.article.field_article_teaser
-    - field.field.node.article.field_metatags
+    - field.field.node.article.field_article_type_ref
     - node.type.article
   module:
     - datetime
-    - metatag
     - text
     - user
 id: node.article.default
@@ -18,15 +17,15 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
-  body:
+  field_article_body:
+    weight: 2
     label: hidden
-    type: text_default
-    weight: 101
     settings: {  }
     third_party_settings: {  }
+    type: text_default
     region: content
   field_article_date:
-    weight: 103
+    weight: 1
     label: hidden
     settings:
       timezone_override: ''
@@ -34,24 +33,19 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_article_teaser:
-    weight: 104
+  field_article_type_ref:
+    weight: 3
     label: hidden
-    settings: {  }
+    settings:
+      link: false
     third_party_settings: {  }
-    type: text_default
-    region: content
-  field_metatags:
-    weight: 102
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
+    type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_article_teaser: true
   search_api_excerpt: true

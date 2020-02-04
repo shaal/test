@@ -11,13 +11,19 @@ dependencies:
     - field.storage.node.field_profile_gender
     - field.storage.node.field_insurance_ref
     - field.storage.taxonomy_term.field_insurance_company
-    - field.storage.node.field_location_ref
-    - field.storage.node.field_location_id
-    - field.storage.node.field_profile_languages
     - field.storage.node.field_profile_type
     - field.storage.node.field_medical_specialties_ref
     - field.storage.taxonomy_term.field_related_conditions_ref
     - field.storage.media.field_media_description
+    - field.storage.node.field_profile_languages
+    - field.storage.node.field_location_geo
+    - field.storage.node.field_location_id
+    - field.storage.node.field_location_type
+    - field.storage.node.field_location_ref
+    - field.storage.node.field_profile_type
+    - field.storage.node.field_article_type_ref
+    - field.storage.node.field_medical_specialties_ref
+    - field.storage.taxonomy_term.field_related_conditions_ref
     - search_api.server.acquia_search_server
     - core.entity_view_mode.node.search_index
   module:
@@ -35,6 +41,17 @@ name: 'Acquia Search Solr Index'
 description: ''
 read_only: true
 field_settings:
+  article_type_string:
+    label: 'Article Type » Taxonomy term » Name » String'
+    datasource_id: 'entity:node'
+    property_path: 'field_article_type_ref:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_article_type_ref
+      module:
+        - taxonomy
+        - taxonomy
   location_latlon:
     label: 'Location Geo » LatLong Pair'
     datasource_id: 'entity:node'
@@ -356,6 +373,7 @@ processor_settings:
   ignorecase:
     all_fields: true
     fields:
+      - article_type_string
       - location_latlon
       - location_services_specialty_condition_name
       - location_services_specialty_condition_synonym

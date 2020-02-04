@@ -24,7 +24,9 @@ function tower_health_preprocess_page(&$variables) {
     'view.find_a_location.find_location',
     'view.find_a_provider.find_doctor',
     'view.find_a_service.find_service',
+    'view.article_listing.article_listing_page',
     'view.search.search_page',
+    'entity.taxonomy_term.canonical',
   ];
 
   // Get the current route name.
@@ -188,6 +190,17 @@ function tower_health_preprocess_block__providerproximityfilter(&$variables, $ho
 }
 
 /**
+ * Alter title block.
+ *
+ * {@inheritdoc}
+ */
+function tower_health_preprocess_block__page_title_block(&$variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $variables['node_title'] = $node->title->value;
+  }
+}
+
+/**
  * Add region theme suggestions.
  */
 function tower_health_theme_suggestions_region_alter(array &$suggestions, array $variables) {
@@ -218,7 +231,29 @@ function tower_health_preprocess_region__sidebar_first(&$variables) {
 }
 
 /**
- * Provide variables for provider nodes.
+ * Provide variables for article teaser.
+ */
+function tower_health_preprocess_node__article(&$variables) {
+  $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
+
+  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
+    if ($node->hasField('field_article_type_ref') && !$node->get('field_article_type_ref')->isEmpty()) {
+      $tag_refs = $node->get('field_article_type_ref')->getValue();
+      $tags = [];
+      foreach ($tag_refs as $id => $tag) {
+        $tag = $node->field_article_type_ref[$id]->entity;
+        if ($tag instanceof EntityInterface) {
+          $tags[] = $tag->name->value;
+        }
+      }
+      $variables['tags'] = $tags;
+    }
+  }
+}
+
+/**
+ * Provide variables for provider teaser.
  */
 function tower_health_preprocess_node__profile(&$variables) {
   $node = $variables['node'];

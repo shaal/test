@@ -1,0 +1,11 @@
+uuid: f9bdba84-74ae-42b5-93d3-cbb093f82365
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.article_types
+id: taxonomy_vocabulary_article_types
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
