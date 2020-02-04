@@ -92,21 +92,14 @@
   {% endblock %}
 
   {% block appointment_button %}
-    {% if content.field_profile_epic_id.0|render %}
-      {% embed "@atoms/icon-button/icon-button.twig" with {
-        "text": "Request an Appointment"|t,
+    {% if content.field_profile_epic_id.0|render and node.field_profile_scheduling.0.value == 1 %}
+      {% set url = "https://mytowerhealth.org/mytowerhealth/openscheduling/signupandschedule/embeddedschedule?id=" ~ content.field_profile_epic_id|field_value|render ~ "&vt=1059" %}
+      {% include "@atoms/icon-button/icon-button.twig" with {
+        "text": "Make an Appointment Online"|t,
+        "url": url,
         "button_icon": button_icon,
-        "variation": "modal",
-        "modal": {
-          "type": "inline",
-          "reference": "inline-modal",
-          "content": "If no appointments are available call " ~ appointment_phone ~ " for additional help."
-        }
+        "target": "_blank"
       } %}
-        {% block iframe %}
-          <iframe src="https://mytowerhealth.org/mytowerhealth/openscheduling/signupandschedule/embeddedschedule?id={{content.field_profile_epic_id.0["#context"]["value"]}}&vt=1059"></iframe>
-        {% endblock %}
-      {% endembed %}
     {% else %}
       {% include "@atoms/icon-button/icon-button.twig" with {
          "text": "Request an Appointment"|t,
