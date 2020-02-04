@@ -26,7 +26,7 @@ function towerhealth_misc_views_query_alter(ViewExecutable $view, QueryPluginBas
     // Then sort by relevance.
     $query->sort('search_api_relevance', 'DESC');
     // And finally by name.
-    $query->sort('title', 'ASC');
+    $query->sort('provider_profile_last_name', 'ASC');
   }
 }
 

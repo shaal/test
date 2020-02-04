@@ -189,6 +189,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_profile_languages
+  provider_profile_last_name:
+    label: 'Last Name'
+    datasource_id: 'entity:node'
+    property_path: field_profile_last_name
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_profile_last_name
   provider_profile_type:
     label: 'Provider » Type'
     datasource_id: 'entity:node'
@@ -387,6 +395,7 @@ processor_settings:
       - provider_location_latlong
       - provider_location_title_string
       - provider_profile_languages_string
+      - provider_profile_last_name
       - provider_profile_type
       - provider_sort_field
       - provider_specialties_condition_name
