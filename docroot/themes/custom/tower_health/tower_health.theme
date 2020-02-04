@@ -247,6 +247,23 @@ function tower_health_preprocess_node__profile(&$variables) {
       }
     }
 
+    // Set the default appointment link.
+    $variables['appointment_link'] = theme_get_setting('appointment_button_link');
+    $variables['appointment_text'] = t('Request an Appointment');
+    $variables['target'] = '_self';
+
+    // Set appointment link.
+    if ($node->hasField('field_profile_epic_id') && !$node->get('field_profile_epic_id')->isEmpty()) {
+      if ($node->hasField('field_profile_scheduling') && !$node->get('field_profile_scheduling')->isEmpty()) {
+        $open_scheduling = $node->get('field_profile_scheduling')->getValue();
+        if ($open_scheduling[0]['value'] == 1) {
+          $variables['appointment_link'] = 'https://mytowerhealth.org/mytowerhealth/openscheduling/signupandschedule/embeddedschedule?id=' . $node->get('field_profile_epic_id')->getString() . '&vt=1059';
+          $variables['appointment_text'] = t('Make an Appointment Online');
+          $variables['target'] = '_blank';
+        }
+      }
+    }
+
     // Preprocess specialties.
     if ($node->hasField('field_medical_specialties_ref') && !$node->get('field_medical_specialties_ref')->isEmpty()) {
       $specialty_refs = $node->get('field_medical_specialties_ref')->getValue();
