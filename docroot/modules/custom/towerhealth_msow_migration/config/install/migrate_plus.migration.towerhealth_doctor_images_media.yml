@@ -1,0 +1,81 @@
+id: towerhealth_doctor_images_media
+label: Import tower health location content
+migration_groups:
+  - TowerHealth MSOW import
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'csv'
+  # Full path to the file.
+  path: 'public://directory/Doctor_Images.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  header_row_count: 1
+  ids: [npi]
+  # Here we identify the columns of interest in the source file.
+  # Each numeric key is the 0-based index of the column.
+  # For each column, the key below is the field name assigned to
+  # the data on import, to be used in field mappings below.
+  # The value is a user-friendly string for display by the
+  # migration UI.
+  track_changes: true
+  fields:
+    - name: npi
+      label: 'NPI ID'
+    - name: physician_id
+      label: 'Physician Id'
+    - name: first_name
+      label: 'First Name'
+    - name: last_name
+      label: 'Last Name'
+    - name: image
+      label: 'Image'
+
+process:
+  nid:
+    -
+      plugin: towerhealth_lookup_node
+      lookup_field: field_profile_npi
+      source: npi
+    -
+      plugin: skip_on_empty
+      method: row
+    -
+      plugin: entity_load_field
+      entity_type: node
+      field_name: nid
+    -
+      plugin: extract
+      index:
+        - 0
+        - value
+
+  title:
+    -
+      plugin: get
+      source: '@nid'
+    -
+      plugin: entity_load_field
+      entity_type: node
+      field_name: title
+    -
+      plugin: extract
+      index:
+        - 0
+        - value
+
+  _title:
+    -
+      plugin: get
+      source: title
+
+  field_profile_image:
+    plugin: towerhealth_doctor_images
+    source: image
+    name: first_name . ' ' . lastname
+
+destination:
+  plugin: 'entity:node'
