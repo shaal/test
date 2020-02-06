@@ -72,9 +72,12 @@ process:
       plugin: get
       source: title
   field_profile_image:
-    plugin: towerhealth_doctor_images
-    source: image
-    name: 'first_name . '' '' . lastname'
+    -
+      plugin: towerhealth_doctor_images
+      source: image
+    -
+      plugin: skip_on_empty
+      method: row
 destination:
   plugin: 'entity:node'
 migration_dependencies: null
