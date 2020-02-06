@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.patient_story
+    - field.field.media.image.field_image_type_ref
     - field.field.media.image.field_media_image
     - image.style.667x667
     - media.type.image
@@ -25,6 +26,7 @@ content:
     region: content
 hidden:
   created: true
+  field_image_type_ref: true
   name: true
   search_api_excerpt: true
   thumbnail: true
