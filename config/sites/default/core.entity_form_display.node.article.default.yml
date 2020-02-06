@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_article_teaser
     - field.field.node.article.field_article_type_ref
     - node.type.article
+    - workflows.workflow.default
   module:
     - content_moderation
     - datetime
@@ -19,7 +20,7 @@ third_party_settings:
     group_content:
       children:
         - group_description
-        - group_teaser
+        - group_card_data
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -46,7 +47,7 @@ third_party_settings:
         id: ''
         classes: ''
       label: Description
-    group_teaser:
+    group_card_data:
       children:
         - field_article_teaser
       parent_name: group_content
@@ -59,7 +60,7 @@ third_party_settings:
         description: ''
         formatter: closed
         required_fields: true
-      label: Teaser
+      label: 'Card Data'
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -86,7 +87,7 @@ content:
     type: datetime_default
     region: content
   field_article_teaser:
-    weight: 1
+    weight: 21
     settings:
       rows: 5
       placeholder: ''
