@@ -47,8 +47,6 @@ class TowerHealthDoctorImages extends ProcessPluginBase {
 
     $path = 'public://doctors/';
 
-    dump($file_path);
-
     $this->getFileSystem()->prepareDirectory($path, FileSystemInterface::CREATE_DIRECTORY);
 
     if ($file_path) {
@@ -67,7 +65,7 @@ class TowerHealthDoctorImages extends ProcessPluginBase {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $id = '';
 
-    if (empty($value) || $value == 'NULL' || $value = NULL) {
+    if (empty($value) || is_null($value) || $value === 'NULL') {
       return $id;
     }
 
@@ -79,7 +77,7 @@ class TowerHealthDoctorImages extends ProcessPluginBase {
       $title = $first_name . ' ' . $last_name;
     }
 
-    if (isset($title) && !empty($value)) {
+    if (!empty($title)) {
       $file = $this->createFile($value);
 
       if ($file) {
@@ -104,9 +102,6 @@ class TowerHealthDoctorImages extends ProcessPluginBase {
           $tid = $taxonom_term->id();
         }
 
-        dump($fid);
-        dump($tid);
-
         $image_media = Media::create([
           'bundle' => 'image',
           'uid' => \Drupal::currentUser()->id(),
@@ -120,7 +115,6 @@ class TowerHealthDoctorImages extends ProcessPluginBase {
         $image_media->set('field_image_type_ref', $tid);
         $image_media->set('name', $title);
         $image_media->save();
-        dump($image_media->get('field_image_type_ref')->getValue());
 
         $id = $image_media->id();
       }
