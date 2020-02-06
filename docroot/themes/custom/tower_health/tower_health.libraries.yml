@@ -56,7 +56,7 @@ proximity-facet:
 toggle-tips:
   js:
     dist/02-molecules/toggle-tip/toggle-tip.js: {}
-    
+
 modal:
   js:
     components/js/modaal.js: {}
@@ -66,3 +66,7 @@ reviews:
   js:
     dist/03-organisms/review-listing/review-listing.js: {}
     dist/02-molecules/review/review.js: {}
+
+listing-filter:
+  js:
+    components/js/listing-filter.js: {}

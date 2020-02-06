@@ -98,6 +98,11 @@ optgroup {
 #views-exposed-form-search-search-page {
   width: 100%;
   display: flex;
+  padding-top: 1em;
+
+  input[type=text] {
+    display: none;
+  }
 
   .form-item--checkboxes,
   .form-item {

@@ -26,6 +26,8 @@
  */
 #}
 
+{{ attach_library('tower_health/listing-filter') }}
+
 {% block content %}
-  {{ content|without('site_search') }}
+  {{ content }}
 {% endblock %}
