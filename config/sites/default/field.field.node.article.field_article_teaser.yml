@@ -11,8 +11,8 @@ id: node.article.field_article_teaser
 field_name: field_article_teaser
 entity_type: node
 bundle: article
-label: Teaser
-description: 'A short teaser for this article to display in search results.'
+label: 'Card Description'
+description: 'A short teaser for this article to display in search results and on cards.'
 required: false
 translatable: false
 default_value: {  }
