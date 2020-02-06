@@ -41,6 +41,7 @@
 #}
 {% for item in items %}
   {% include "@atoms/article-date/article-date.twig" with {
-    "date": item.content
+    "date": item.content,
+    "class": "detail"
   } %}
 {% endfor %}
