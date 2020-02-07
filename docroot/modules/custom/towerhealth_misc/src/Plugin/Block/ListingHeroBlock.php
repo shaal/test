@@ -3,7 +3,6 @@
 namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\views\Views;
 
 /**
  * Provides an 'Simple Listing header block for hero region' block.
@@ -28,4 +27,5 @@ class ListingHeroBlock extends BlockBase {
 
     return $build;
   }
+
 }

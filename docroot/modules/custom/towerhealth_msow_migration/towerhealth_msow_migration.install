@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @file
+ */
+
+/**
  * Delete all locations and doctors to setup re-import of this content.
  */
 function towerhealth_msow_migration_update_8001() {

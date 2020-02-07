@@ -91,9 +91,9 @@ class Locations extends CSVtoJSON {
      * If present then this location is a primary or secondary location
      * and should be migrated as a distinct location.
      */
-    foreach($processed_offices_data as $proccessed_office) {
+    foreach ($processed_offices_data as $proccessed_office) {
       $location_id = $proccessed_office['location_id'];
-      foreach($proccessed_office['practitioner_office_ids'] as $practitioner_office_id) {
+      foreach ($proccessed_office['practitioner_office_ids'] as $practitioner_office_id) {
         if (in_array($practitioner_office_id, $processed_practioner_offices) && !in_array($location_id, $processed_location_ids)) {
           $processed_location_ids[] = $location_id;
         }
@@ -109,7 +109,7 @@ class Locations extends CSVtoJSON {
   public function processOfficeDesigData($practitioner_offices_desig) {
     $processed_practioner_offices = [];
 
-    foreach($practitioner_offices_desig as $pracitioner_office) {
+    foreach ($practitioner_offices_desig as $pracitioner_office) {
       $processed_practioner_offices[] = $pracitioner_office[1];
     }
 
