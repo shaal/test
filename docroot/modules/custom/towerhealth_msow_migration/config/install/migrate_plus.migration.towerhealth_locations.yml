@@ -7,43 +7,12 @@ dependencies:
       - towerhealth_msow_migration
 
 source:
-  plugin: 'csv'
+  plugin: 'locations'
   # Full path to the file.
   path: 'public://directory/Find_Provider_Dir_Offices.txt'
-  # Column delimiter. Comma (,) by default.
-  delimiter: '|'
-  header_row_count: 1
-  ids: [location_id]
-  # Here we identify the columns of interest in the source file.
-  # Each numeric key is the 0-based index of the column.
-  # For each column, the key below is the field name assigned to
-  # the data on import, to be used in field mappings below.
-  # The value is a user-friendly string for display by the
-  # migration UI.
+  second_path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
+  third_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
   track_changes: true
-  fields:
-    - name: location_id
-      label: 'Location ID'
-    - name: office_name
-      label: 'Title'
-    - name: address_1
-      label: 'Address 1'
-    - name: address_2
-      label: 'Address 2'
-    - name: city
-      label: 'City'
-    - name: state
-      label: 'State'
-    - name: zip_code
-      label: 'Zip_Code'
-    - name: phone_number
-      label: 'Phone number'
-    - name: office_contact
-      label: 'Office Contact'
-    - name: handicap_access
-      label: 'Handicap Access'
-    - name: fax_number
-      label: 'Fax number'
 
 process:
   title:

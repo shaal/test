@@ -39,7 +39,7 @@ class ProviderInsuranceGroupTerms extends CSVtoJSON {
   /**
    * Process the JSON file and convert flattened data.
    */
-  public function parseJson($json, $secondary_json = NULL) {
+  public function parseJson($json, $secondary_json = NULL, $third_json = NULL) {
     $data = json_decode($json);
     // Remove the header from the data file.
     unset($data[0]);
