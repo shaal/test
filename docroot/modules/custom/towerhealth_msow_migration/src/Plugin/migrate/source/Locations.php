@@ -130,8 +130,8 @@ class Locations extends CSVtoJSON {
     unset($practitioner_offices_desig[0]);
 
     $processed_data = [];
-    $processed_practioner_offices = $this->processOfficeDesigData($practitioner_offices_desig);
     $processed_offices_data = $this->processPractionOfficeData($practitioner_offices);
+    $processed_practioner_offices = $this->processOfficeDesigData($practitioner_offices_desig);
 
     if (empty($processed_offices_data)) {
       return $processed_data;
@@ -140,9 +140,9 @@ class Locations extends CSVtoJSON {
     $processed_location_ids = $this->processLocationData($processed_offices_data, $processed_practioner_offices);
 
     foreach ($offices as $office) {
-      $location_id = $office[0];
+      $location_id = intval($office[0]);
 
-      if (in_array($location_id, $processed_location_ids) && is_integer($location_id) && !array_key_exists($location_id, $processed_data)) {
+      if (in_array($location_id, $processed_location_ids) && is_integer($location_id) && $location_id !== 0 && !array_key_exists($location_id, $processed_data)) {
         $processed_data[$location_id] = [
           'location_id' => $location_id,
           'office_name' => $office[1],

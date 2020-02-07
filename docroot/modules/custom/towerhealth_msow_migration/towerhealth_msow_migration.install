@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Delete all locations and doctors to setup re-import of this content.
+ */
+function towerhealth_msow_migration_update_8001() {
+  $location_results = \Drupal::entityQuery('node')
+    ->condition('type', 'location')
+    ->execute();
+
+  $doctor_results = \Drupal::entityQuery('node')
+    ->condition('type', 'profile')
+    ->execute();
+
+  $results = $location_results + $doctor_results;
+
+  $storage_handler = \Drupal::entityTypeManager()->getStorage('node');
+  $entities = $storage_handler->loadMultiple($results);
+  $storage_handler->delete($entities);
+}
