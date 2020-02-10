@@ -2,7 +2,8 @@
   {% if header.style == 'secondary' %} basic-header--secondary{% endif %}
   {% if header.style == 'list' %} basic-header--list{% endif %}
   {% if header.image.url %} basic-header--img{% endif %}
-  {% if header.cta %} basic-header--cta{% endif %}'
+  {% if header.cta %} basic-header--cta{% endif %}
+  {% if header.page == 'article' %}basic-header--article{% endif %}'
   {% if header.image.url %} style="background-image: url({{ header.image.url }});"{% endif %}>
   <div class="basic-header__container">
     {% block breadcrumb %}
