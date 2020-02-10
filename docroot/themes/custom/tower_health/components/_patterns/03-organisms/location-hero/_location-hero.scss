@@ -100,7 +100,7 @@
   position: relative;
   padding: .5em 1em .5em 0;
   margin-bottom: 2em;
-  background-color: $trust;
+  background-color: $trust-aa;
   color: $white;
   text-transform: uppercase;
   font-weight: 600;
@@ -115,7 +115,7 @@
     left: -5.25em;
     top: 0;
     bottom: 0;
-    background-color: $trust;
+    background-color: $trust-aa;
   }
 
   @include breakpoint($bp6) {

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_visibility_conditions
     - ctools
     - system
   theme:
@@ -27,8 +28,14 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      article: article
       page: page
       profile: profile
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'
+  not_node_type:
+    id: not_node_type
+    bundles: {  }
+    negate: null
+    context_mapping: {  }

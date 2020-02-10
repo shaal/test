@@ -65,7 +65,12 @@ class CSVtoJSON extends SourcePluginBase {
       $secondary_json = $this->encodeJsonCsv($this->configuration['second_path']);
     }
 
-    $this->dataRows = $this->parseJSON($json, $secondary_json);
+    // Path is required.
+    if (!empty($this->configuration['third_path'])) {
+      $third_json = $this->encodeJsonCsv($this->configuration['third_path']);
+    }
+
+    $this->dataRows = $this->parseJSON($json, $secondary_json, $third_json);
   }
 
   /**
@@ -103,9 +108,9 @@ class CSVtoJSON extends SourcePluginBase {
   }
 
   /**
-   * Process the JSON file and convert flattened data to single record per TIN.
+   * Process the JSON file and convert flattened data to single record.
    */
-  public function parseJson($json, $secondary_json = NULL) {
+  public function parseJson($json, $secondary_json = NULL, $third_json = NULL) {
     return [];
   }
 

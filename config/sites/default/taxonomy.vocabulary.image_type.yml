@@ -1,0 +1,8 @@
+uuid: 80ddcd1c-4b6e-4e2f-be44-6627680223ce
+langcode: en
+status: true
+dependencies: {  }
+name: 'Image Type'
+vid: image_type
+description: ''
+weight: 0

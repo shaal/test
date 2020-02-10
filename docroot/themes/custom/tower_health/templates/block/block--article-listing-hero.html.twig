@@ -25,7 +25,11 @@
  * @see template_preprocess_block()
  */
 #}
-
-{% block content %}
-  {{ content }}
-{% endblock %}
+{% set header = [] %}
+{% set header = header|merge({
+    'title': label,
+    'style': 'list',
+    'page': 'article'
+  })
+%}
+{% extends "@organisms/basic-header/basic-header.twig" %}

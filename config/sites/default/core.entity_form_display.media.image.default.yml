@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field_image_type_ref
     - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
@@ -20,6 +21,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_image_type_ref:
+    weight: 101
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_media_image:
     weight: 0
     settings:
