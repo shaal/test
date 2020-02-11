@@ -38,6 +38,7 @@ permissions:
   - 'use default transition create_new_draft'
   - 'use default transition needs_review'
   - 'use default transition publish'
+  - 'use text format basic_html'
   - 'use workbench_tabs'
   - 'view all media revisions'
   - 'view article revisions'

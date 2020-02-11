@@ -1,0 +1,32 @@
+uuid: d97d4fcd-e8e7-4007-9a6b-b223bcd70685
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.inline
+    - field.field.media.image.field_image_type_ref
+    - field.field.media.image.field_media_image
+    - media.type.image
+  module:
+    - image
+id: media.image.inline
+targetEntityType: media
+bundle: image
+mode: inline
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  field_image_type_ref: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

@@ -65,6 +65,7 @@ permissions:
   - 'use default transition publish'
   - 'use default transition restore_to_draft'
   - 'use default transition un_archive'
+  - 'use text format basic_html'
   - 'use text format full_html'
   - 'use workbench access'
   - 'use workbench_tabs'
