@@ -12,7 +12,13 @@
  * - string classes: The classes of the captioned HTML tag.
  */
 #}
-<figure role="group"{%- if classes %} class="{{ classes }}"{%- endif %}>
+{% if "align-left" in classes %}
+  {% set classes = classes ~ " figure--left" %}
+{% endif %}
+{% if "align-right" in classes %}
+  {% set classes = classes ~ " figure--right" %}
+{% endif %}
+<figure role="group" class="figure figure--inline{%- if classes %} {{ classes }}{%- endif %}">
 {{ node }}
 <figcaption class="figure__caption">{{ caption }}</figcaption>
 </figure>

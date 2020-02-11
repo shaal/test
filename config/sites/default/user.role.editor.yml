@@ -33,6 +33,7 @@ permissions:
   - 'use default transition back_to_draft'
   - 'use default transition create_new_draft'
   - 'use default transition needs_review'
+  - 'use text format basic_html'
   - 'use text format full_html'
   - 'use workbench access'
   - 'use workbench_tabs'
