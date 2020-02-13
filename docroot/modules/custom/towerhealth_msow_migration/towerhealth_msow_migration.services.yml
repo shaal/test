@@ -1,0 +1,7 @@
+services:
+  towerhealth_msow_migration.subscriber:
+    class: Drupal\towerhealth_msow_migration\EventSubscriber\DoctorPostMigrationSubscriber
+    tags:
+      - { name: 'event_subscriber' }
+    arguments:
+      - '@event_dispatcher'

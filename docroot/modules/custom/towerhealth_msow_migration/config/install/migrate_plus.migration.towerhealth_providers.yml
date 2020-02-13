@@ -7,45 +7,10 @@ dependencies:
       - towerhealth_msow_migration
 
 source:
-  plugin: 'csv'
+  plugin: 'doctors'
   # Full path to the file.
   path: 'public://directory/Find_Provider_Dir_Practitioner.txt'
-  # Column delimiter. Comma (,) by default.
-  delimiter: '|'
-  header_row_count: 1
-  enclosure: '"'
-  ids:
-   - practioner_id
   track_changes: true
-  # Here we identify the columns of interest in the source file.
-  # Each numeric key is the 0-based index of the column.
-  # For each column, the key below is the field name assigned to
-  # the data on import, to be used in field mappings below.
-  # The value is a user-friendly string for display by the
-  # migration UI.
-  fields:
-    - name: practioner_id
-      label: 'Practioner ID'
-    - name: last_name
-      label: 'Last name'
-    - name: first_name
-      label: 'First name'
-    - name: middle_name
-      label: 'Middle name'
-    - name: professional_title
-      label: 'Professional Title'
-    - name: gender
-      label: 'Gender'
-    - name: app
-      label: 'APP'
-    - name: employment_status
-      label: 'Employment Status'
-    - name: npi_id
-      label: 'NPI ID'
-    - name: epic_id
-      label: 'Epic_Provider_Number'
-    - name: open_scheduling
-      label: 'Open scheduling'
 
 process:
   field_profile_practid: practioner_id
