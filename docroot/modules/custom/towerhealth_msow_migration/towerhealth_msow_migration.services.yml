@@ -5,3 +5,9 @@ services:
       - { name: 'event_subscriber' }
     arguments:
       - '@event_dispatcher'
+  towerhealth_msow_migration.fieldsubscriber:
+      class: Drupal\towerhealth_msow_migration\EventSubscriber\FieldPostMigrationSubscriber
+      tags:
+        - { name: 'event_subscriber' }
+      arguments:
+        - '@event_dispatcher'

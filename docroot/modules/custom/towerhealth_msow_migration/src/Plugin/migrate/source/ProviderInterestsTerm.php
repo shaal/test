@@ -50,6 +50,7 @@ class ProviderInterestsTerm extends CSVtoJSON {
       $interest_term = $row[1];
       if (!isset($processed_data[$id])) {
         $processed_data[$id] = [
+          'id' => $id,
           'interest' => $interest_term,
         ];
       }

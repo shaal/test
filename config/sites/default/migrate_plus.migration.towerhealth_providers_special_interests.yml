@@ -63,4 +63,6 @@ process:
       source: '@_area_of_interest'
 destination:
   plugin: 'entity:node'
+  overwrite_properties:
+    - field_area_interest_ref
 migration_dependencies: null

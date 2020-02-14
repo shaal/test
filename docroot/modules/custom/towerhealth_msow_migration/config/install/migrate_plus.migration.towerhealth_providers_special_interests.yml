@@ -18,6 +18,8 @@ source:
 
 destination:
   plugin: 'entity:node'
+  overwrite_properties:
+    - field_area_interest_ref
 
 process:
   nid:
