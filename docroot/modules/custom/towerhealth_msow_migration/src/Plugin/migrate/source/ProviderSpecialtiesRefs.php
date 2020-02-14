@@ -62,7 +62,7 @@ class ProviderSpecialtiesRefs extends CSVtoJSON {
           'board_certified' => [],
         ];
       }
-      if (is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
+      if (!empty($specialty_term) && is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
         $processed_data[$pracitioner_id]['specialty_terms'][] = $specialty_term;
 
         $this->boardPendingDataAlter($processed_data, $pracitioner_id, $document_name, $board_name, $certified_year);

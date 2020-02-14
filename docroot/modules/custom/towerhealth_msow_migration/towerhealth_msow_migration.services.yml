@@ -5,9 +5,15 @@ services:
       - { name: 'event_subscriber' }
     arguments:
       - '@event_dispatcher'
-  towerhealth_msow_migration.fieldsubscriber:
+  towerhealth_msow_migration.special_interest_subscriber:
       class: Drupal\towerhealth_msow_migration\EventSubscriber\SpecialInterestPostMigrationSubscriber
       tags:
         - { name: 'event_subscriber' }
       arguments:
         - '@event_dispatcher'
+  towerhealth_msow_migration.specialties_subscriber:
+        class: Drupal\towerhealth_msow_migration\EventSubscriber\SpecialtiesPostMigrationSubscriber
+        tags:
+          - { name: 'event_subscriber' }
+        arguments:
+          - '@event_dispatcher'
