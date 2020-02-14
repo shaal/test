@@ -15,6 +15,7 @@ label: 'Import tower health provider specialties referencees'
 source:
   plugin: provider_insurance_provider_group
   path: 'public://directory/Find_Provider_Dir_Practitioner_Insurance.txt'
+  track_changes: true
 process:
   nid:
     -

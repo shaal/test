@@ -15,6 +15,7 @@ label: 'Import tower health provider hospital affiliations.'
 source:
   plugin: provider_hospital_aff
   path: 'public://directory/Find_Provider_Dir_Facilities.txt'
+  track_changes: true
 process:
   nid:
     -

@@ -15,6 +15,7 @@ label: 'Import tower health location hours.'
 source:
   plugin: location_hours
   path: 'public://directory/Find_Provider_Dir_OfficeHours.txt'
+  track_changes: true
 process:
   nid:
     -

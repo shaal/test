@@ -13,6 +13,7 @@ source:
   plugin: 'provider_specialties_refs'
   # Full path to the file.
   path: 'public://directory/Find_Provider_Dir_Practitioner_Specialties.txt'
+  track_changes: true
 
 destination:
   plugin: 'entity:node'

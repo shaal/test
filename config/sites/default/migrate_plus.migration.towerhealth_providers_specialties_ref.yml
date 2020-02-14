@@ -15,6 +15,7 @@ label: 'Import tower health provider specialties referencees'
 source:
   plugin: provider_specialties_refs
   path: 'public://directory/Find_Provider_Dir_Practitioner_Specialties.txt'
+  track_changes: true
 process:
   nid:
     -

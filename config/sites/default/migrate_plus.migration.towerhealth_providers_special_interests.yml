@@ -15,6 +15,7 @@ label: 'Import tower health provider clinical areas of interest references'
 source:
   plugin: provider_special_interest_refs
   path: 'public://directory/Find_Provider_Dir_Practitioner_Interests.txt'
+  track_changes: true
 process:
   nid:
     -

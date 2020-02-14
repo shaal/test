@@ -14,6 +14,7 @@ source:
   plugin: 'provider_insurance_provider_group'
   # Full path to the file.
   path: 'public://directory/Find_Provider_Dir_Practitioner_Insurance.txt'
+  track_changes: true
 
 destination:
   plugin: 'entity:node'

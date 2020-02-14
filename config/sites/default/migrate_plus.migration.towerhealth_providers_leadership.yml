@@ -15,6 +15,7 @@ label: 'Import tower health provider leadership titles.'
 source:
   plugin: provider_leadership
   path: 'public://directory/Find_Provider_Dir_Practitioner_Leadership.txt'
+  track_changes: true
 process:
   nid:
     -

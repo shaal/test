@@ -16,6 +16,7 @@ source:
   plugin: provider_phone_numbers
   path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
   second_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
+  track_changes: true
 process:
   nid:
     -
