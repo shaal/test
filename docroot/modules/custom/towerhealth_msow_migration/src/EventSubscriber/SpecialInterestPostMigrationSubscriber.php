@@ -11,6 +11,8 @@ use Drupal\migrate\Event\MigrateRowDeleteEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\migrate\Row;
 
 /**
 * Class DoctorPostMigrationSubscriber.
@@ -19,7 +21,7 @@ use Drupal\node\Entity\Node;
 *
 * @package Drupal\towerhealth_msow_migration
 */
-class FieldPostMigrationSubscriber implements EventSubscriberInterface {
+class SpecialInterestPostMigrationSubscriber implements EventSubscriberInterface {
 
   /**
    * The event dispatcher.
@@ -62,6 +64,8 @@ class FieldPostMigrationSubscriber implements EventSubscriberInterface {
       $source = $migration->getSourcePlugin();
       $source->rewind();
       $source_id_values = [];
+      $current_source = [];
+
       while ($source->valid()) {
         $source_id_values[] = $source->current()->getSourceIdValues();
         $current_source = $source->current();
@@ -73,19 +77,25 @@ class FieldPostMigrationSubscriber implements EventSubscriberInterface {
         $map_source_id = $id_map->currentSource();
         if (!in_array($map_source_id, $source_id_values, TRUE)) {
           $destination_ids = $id_map->currentDestination();
-          dump($destination_ids);
-          dump($current_source);
-          /*$node = Node::load($destination_ids['nid']);
+          $node = Node::load($destination_ids['nid']);
           // Don't remove the node from the system, only archive it.
           if ($node instanceof EntityInterface) {
-            $node->set('moderation_state', 'archived');
-            $node->save();
-            $id_map->delete($map_source_id);
-          }*/
+            $interest_terms = $node->get('field_area_interest_ref')->getValue();
+
+            foreach($interest_terms as $i => $term) {
+              $interest_term = Term::load($term['target_id']);
+
+              if (in_array($interest_term->get('field_area_of_interest_msow_id')->getString(), $current_source->get('msow_ids'))) {
+                $node->get('field_area_interest_ref')->removeItem($i);
+                $node->save();
+                $id_map->delete($map_source_id);
+              }
+            }
+          }
         }
         $id_map->next();
       }
-      //$this->dispatcher->dispatch(MigrateEvents::POST_ROLLBACK, new MigrateRollbackEvent($migration));
+      $this->dispatcher->dispatch(MigrateEvents::POST_ROLLBACK, new MigrateRollbackEvent($migration));
     }
   }
 }

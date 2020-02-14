@@ -1,12 +1,12 @@
 services:
   towerhealth_msow_migration.subscriber:
-    class: Drupal\towerhealth_msow_migration\EventSubscriber\DoctorPostMigrationSubscriber
+    class: Drupal\towerhealth_msow_migration\EventSubscriber\DoctorLocationPostMigrationSubscriber
     tags:
       - { name: 'event_subscriber' }
     arguments:
       - '@event_dispatcher'
   towerhealth_msow_migration.fieldsubscriber:
-      class: Drupal\towerhealth_msow_migration\EventSubscriber\FieldPostMigrationSubscriber
+      class: Drupal\towerhealth_msow_migration\EventSubscriber\SpecialInterestPostMigrationSubscriber
       tags:
         - { name: 'event_subscriber' }
       arguments:

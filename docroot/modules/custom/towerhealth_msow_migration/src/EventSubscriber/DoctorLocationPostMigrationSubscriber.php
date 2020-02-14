@@ -19,7 +19,7 @@ use Drupal\node\Entity\Node;
 *
 * @package Drupal\towerhealth_msow_migration
 */
-class DoctorPostMigrationSubscriber implements EventSubscriberInterface {
+class DoctorLocationPostMigrationSubscriber implements EventSubscriberInterface {
 
   /**
    * The event dispatcher.
