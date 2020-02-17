@@ -4,13 +4,13 @@ namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class DoctorPostMigrationSubscriber.
+* Class CredentialsPreMigrationSubscriber.
 *
-* Run our user flagging after the last node migration is run.
+* Remove Education paragraph and data from education field if removed from data.
 *
 * @package Drupal\towerhealth_msow_migration
 */
-class SpecialInterestPostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
+class CredentialsPreMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
    * The event dispatcher.
@@ -20,26 +20,6 @@ class SpecialInterestPostMigrationSubscriber extends EntityRefPostMigrationSubsc
   protected $dispatcher;
 
   /**
-   * The migration in question.
-   */
-  protected $migration_name;
-
-  /**
-   * The field on the node being imported on.
-   */
-  protected $field_name;
-
-  /**
-   * The field on the term to search by.
-   */
-  protected $term_field_name;
-
-  /**
-   * The name for the value in the source.
-   */
-  protected $source_value_name;
-
-  /**
    * MigrationImportSync constructor.
    *
    * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $dispatcher
@@ -47,11 +27,12 @@ class SpecialInterestPostMigrationSubscriber extends EntityRefPostMigrationSubsc
    */
   public function __construct(EventDispatcherInterface $dispatcher) {
     $this->dispatcher = $dispatcher;
-    $this->migration_name = 'towerhealth_providers_special_interests';
+    $this->migration_name = 'towerhealth_providers_credentials';
     $this->field_names = [
       [
-        'field_name' => 'field_area_interest_ref',
+        'field_name' => 'field_profile_education',
         'value' => [],
+        'is_paragraph_ref' => TRUE,
       ],
     ];
   }

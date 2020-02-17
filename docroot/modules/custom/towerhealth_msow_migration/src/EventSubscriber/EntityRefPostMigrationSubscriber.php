@@ -8,7 +8,7 @@ use Drupal\migrate\Event\MigrateImportEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\node\Entity\Node;
-use Drupal\taxonomy\Entity\Term;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
 * Class DoctorPostMigrationSubscriber.
@@ -34,17 +34,7 @@ class EntityRefPostMigrationSubscriber implements EventSubscriberInterface {
   /**
    * The field on the node being imported on.
    */
-  protected $field_name;
-
-  /**
-   * The field on the term to search by.
-   */
-  protected $term_field_name;
-
-  /**
-   * The name for the value in the source.
-   */
-  protected $source_value_name;
+  protected $field_names;
 
   /**
    * MigrationImportSync constructor.
@@ -74,9 +64,7 @@ class EntityRefPostMigrationSubscriber implements EventSubscriberInterface {
    */
   public function onPreImport(MigrateImportEvent $event) {
     $migration = $event->getMigration();
-    $field_name = $this->field_name;
-    $term_field_name = $this->term_field_name;
-    $source_value_name = $this->source_value_name;
+    $field_names = $this->field_names;
 
     if ($migration->id() === $this->migration_name) {
       $id_map = $migration->getIdMap();
@@ -84,38 +72,36 @@ class EntityRefPostMigrationSubscriber implements EventSubscriberInterface {
       $source = $migration->getSourcePlugin();
       $source->rewind();
       $source_id_values = [];
-      $current_source = [];
 
       while ($source->valid()) {
         $source_id_values[] = $source->current()->getSourceIdValues();
-        $current_source = $source->current();
         $source->next();
       }
       $id_map->rewind();
-      $destination = $migration->getDestinationPlugin();
       while ($id_map->valid()) {
         $map_source_id = $id_map->currentSource();
         if (!in_array($map_source_id, $source_id_values, TRUE)) {
           $destination_ids = $id_map->currentDestination();
-          $node = Node::load($destination_ids['nid']);
-          dump($node->getTitle());
+          if (isset($destination_ids['nid'])) {
+            $node = Node::load($destination_ids['nid']);
 
-          // Don't remove the node from the system, only archive it.
-          if ($node instanceof EntityInterface) {
-            $terms = $node->get($field_name)->getValue();
-            dump($terms);
+            // Remove all items from the given fields.
+            foreach($field_names as $field) {
+              if ($node instanceof EntityInterface) {
+                if (isset($field['is_paragraph_ref']) && $field['is_paragraph_ref'] == TRUE) {
+                  $paragraphs = $node->get($field['field_name'])->getValue();
 
-            foreach($terms as $i => $term_value) {
-              $term = Term::load($term_value['target_id']);
-              dump($current_source);
-              dump($term->get($term_field_name)->getString());
+                  foreach ($paragraphs as $paragraph_value) {
+                    $paragraph = Paragraph::load($paragraph_value['target_id']);
+                    $paragraph->delete();
+                  }
 
-              if (in_array($term->get($term_field_name)->getString(), $current_source->get($source_value_name))) {
-                $node->get($field_name)->removeItem($i);
+                }
+                $node->set($field['field_name'], $field['value']);
                 $node->save();
-                $id_map->delete($map_source_id);
               }
             }
+            $id_map->delete($map_source_id);
           }
         }
         $id_map->next();

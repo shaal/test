@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 *
 * @package Drupal\towerhealth_msow_migration
 */
-class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
+class HospitalAffPostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
    * The event dispatcher.
@@ -47,15 +47,11 @@ class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscribe
    */
   public function __construct(EventDispatcherInterface $dispatcher) {
     $this->dispatcher = $dispatcher;
-    $this->migration_name = 'towerhealth_providers_specialties_ref';
+    $this->migration_name = 'towerhealth_providers_hospital_aff';
     $this->field_names = [
       [
-        'field_name' => 'field_medical_specialties_ref',
+        'field_name' => 'field_affiliations_ref',
         'value' => []
-      ],
-      [
-        'field_name' => 'field_profile_board_certified',
-        'value' => '',
       ],
     ];
   }

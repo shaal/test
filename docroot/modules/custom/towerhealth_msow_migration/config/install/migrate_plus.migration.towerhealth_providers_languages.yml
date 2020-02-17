@@ -11,27 +11,10 @@ dependencies:
       - towerhealth_msow_migration
 
 source:
-  plugin: 'csv'
+  plugin: 'provider_languages'
   # Full path to the file.
   path: 'public://directory/Find_Provider_Dir_Languages.txt'
-  # Column delimiter. Comma (,) by default.
-  delimiter: '|'
-  header_row_count: 1
-  ids: [practioner_id]
   track_changes: true
-  # Here we identify the columns of interest in the source file.
-  # Each numeric key is the 0-based index of the column.
-  # For each column, the key below is the field name assigned to
-  # the data on import, to be used in field mappings below.
-  # The value is a user-friendly string for display by the
-  # migration UI.
-  fields:
-    0:
-      name: practioner_id
-      label: 'Practioner ID'
-    1:
-      name: language
-      label: 'Language'
 
 destination:
   plugin: 'entity:node'
@@ -70,10 +53,4 @@ process:
         - 0
         - value
 
-  _languages:
-    plugin: towerhealth_append_values
-    source: language
-    nid: '@nid'
-    field: field_profile_languages
-
-  field_profile_languages: '@_languages'
+  field_profile_languages: 'languages'

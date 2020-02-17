@@ -4,13 +4,13 @@ namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class DoctorPostMigrationSubscriber.
+* Class InsurancePostMigrationSubscriber.
 *
 * Run our user flagging after the last node migration is run.
 *
 * @package Drupal\towerhealth_msow_migration
 */
-class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
+class InsurancePostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
    * The event dispatcher.
@@ -47,15 +47,11 @@ class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscribe
    */
   public function __construct(EventDispatcherInterface $dispatcher) {
     $this->dispatcher = $dispatcher;
-    $this->migration_name = 'towerhealth_providers_specialties_ref';
+    $this->migration_name = 'towerhealth_providers_insurance_group_ref';
     $this->field_names = [
       [
-        'field_name' => 'field_medical_specialties_ref',
+        'field_name' => 'field_insurance_ref',
         'value' => []
-      ],
-      [
-        'field_name' => 'field_profile_board_certified',
-        'value' => '',
       ],
     ];
   }

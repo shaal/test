@@ -13,20 +13,9 @@ migration_tags: null
 migration_group: towerhealth_provider_details_group
 label: 'Import tower health provider languages spoken'
 source:
-  plugin: csv
+  plugin: provider_languages
   path: 'public://directory/Find_Provider_Dir_Languages.txt'
-  delimiter: '|'
-  header_row_count: 1
-  ids:
-    - practioner_id
   track_changes: true
-  fields:
-    -
-      name: practioner_id
-      label: 'Practioner ID'
-    -
-      name: language
-      label: Language
 process:
   nid:
     -
@@ -59,12 +48,7 @@ process:
       index:
         - 0
         - value
-  _languages:
-    plugin: towerhealth_append_values
-    source: language
-    nid: '@nid'
-    field: field_profile_languages
-  field_profile_languages: '@_languages'
+  field_profile_languages: languages
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

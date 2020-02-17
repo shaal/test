@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 *
 * @package Drupal\towerhealth_msow_migration
 */
-class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
+class DoctorLocationRefPostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
    * The event dispatcher.
@@ -20,26 +20,6 @@ class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscribe
   protected $dispatcher;
 
   /**
-   * The migration in question.
-   */
-  protected $migration_name;
-
-  /**
-   * The field on the node being imported on.
-   */
-  protected $field_name;
-
-  /**
-   * The field on the term to search by.
-   */
-  protected $term_field_name;
-
-  /**
-   * The name for the value in the source.
-   */
-  protected $source_value_name;
-
-  /**
    * MigrationImportSync constructor.
    *
    * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $dispatcher
@@ -47,15 +27,11 @@ class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscribe
    */
   public function __construct(EventDispatcherInterface $dispatcher) {
     $this->dispatcher = $dispatcher;
-    $this->migration_name = 'towerhealth_providers_specialties_ref';
+    $this->migration_name = 'towerhealth_providers_locations';
     $this->field_names = [
       [
-        'field_name' => 'field_medical_specialties_ref',
-        'value' => []
-      ],
-      [
-        'field_name' => 'field_profile_board_certified',
-        'value' => '',
+        'field_name' => 'field_location_ref',
+        'value' => [],
       ],
     ];
   }
