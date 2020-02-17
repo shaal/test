@@ -1,6 +1,10 @@
 .filter {
   @include grid;
   margin-bottom: .5em;
+
+  &__position {
+    margin-top: -1em;
+  }
 }
 
 .filter__toggle {
