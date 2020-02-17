@@ -121,6 +121,23 @@ function towerhealth_misc_theme_suggestions_container(array $variables) {
 /**
  * Implements hook_theme_suggestions_form_element().
  */
+function towerhealth_misc_theme_suggestions_checkboxes(array $variables) {
+  $suggestions = [];
+
+  if (isset($variables['element']['#attributes']['#type'])) {
+    $suggestions[] = ['checkboxes__' . $variables['element']['#type']];
+  }
+
+  if (isset($variables['element']['#attributes']['data-id'])) {
+    $suggestions[] = 'checkboxes__' . $variables['element']['#attributes']['data-id'];
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_form_element().
+ */
 function towerhealth_misc_theme_suggestions_form_element(array $variables) {
   $suggestions = [];
 
@@ -139,7 +156,7 @@ function towerhealth_misc_theme_suggestions_form_element(array $variables) {
  * Implementation of hook_preprocess_form_element().
  */
 function towerhealth_misc_preprocess_form_element(&$variables, $hook, &$info) {
-  $form_elements = ['provider-hero-block', 'location-hero-block', 'services-hero-block', 'search-hero-block', 'location-proximity-search-input', 'provider-proximity-search-input'];
+  $form_elements = ['provider-hero-block', 'location-hero-block', 'general-search-filter-input', 'general-search-filter--checkbox', 'services-hero-block', 'search-hero-block', 'location-proximity-search-input', 'provider-proximity-search-input'];
   if (isset($variables['element']['#attributes']['data-id']) && in_array($variables['element']['#attributes']['data-id'], $form_elements)) {
     $info['template'] = 'form-element--' . $variables['element']['#attributes']['data-id'];
   }

@@ -164,9 +164,33 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .listing-search {
       margin-top: 1.5em;
+    }
+  }
+
+  .basic-header--article & {
+    border-bottom: 6px solid $trust-ltst;
+    margin-bottom: 0.5em;
+
+    @include breakpoint($bp3) {
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 2em;
+        height: 1px;
+        border-bottom: 6px solid $trust-ltst;
+        right: -2em;
+        bottom: -6px;
+        z-index: 2;
+
+        @include breakpoint($bp6) {
+          width: calc(1.9em + (100vw - 1500px));
+          right: calc(-1.9em - (100vw - 1500px));
+        }
+      }
     }
   }
 
@@ -303,4 +327,3 @@
     }
   }
 }
-

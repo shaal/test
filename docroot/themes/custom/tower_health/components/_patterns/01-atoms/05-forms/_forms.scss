@@ -94,3 +94,22 @@ optgroup {
 :-moz-placeholder { /* Firefox 18- */
   color: $gray;
 }
+
+#views-exposed-form-search-search-page {
+  width: 100%;
+  display: flex;
+  padding-top: 1em;
+
+  input[type=text] {
+    display: none;
+  }
+
+  .form-item--checkboxes,
+  .form-item {
+    display: inline-block;
+  }
+
+  .form-item  {
+    margin-right: 1em;
+  }
+}

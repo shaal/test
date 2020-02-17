@@ -25,7 +25,14 @@
  * @see template_preprocess_block()
  */
 #}
-
-{% block content %}
-  {{ content }}
+{% set header = [] %}
+{% set header = header|merge({
+    'title': label,
+    'style': 'list',
+    'page': 'article'
+  })
+%}
+{% extends "@organisms/basic-header/basic-header.twig" %}
+{% block breadcrumb %}
+  {{ drupal_block('system_breadcrumb_block') }}
 {% endblock %}

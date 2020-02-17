@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_body_components
     - node.type.page
     - paragraphs.paragraphs_type.care_circle
+    - paragraphs.paragraphs_type.form
   module:
     - entity_reference_revisions
 id: node.page.field_body_components
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       care_circle: care_circle
+      form: form
     target_bundles_drag_drop:
       anchored_cta_block:
         weight: 23
@@ -52,6 +54,9 @@ settings:
       cta_list_banner:
         weight: 31
         enabled: false
+      box_links:
+        weight: 32
+        enabled: false
       education:
         weight: 32
         enabled: false
@@ -79,6 +84,9 @@ settings:
       recognition_card:
         weight: 40
         enabled: false
+      form:
+        enabled: true
+        weight: 41
       recognition_cards:
         weight: 41
         enabled: false
@@ -90,5 +98,17 @@ settings:
         enabled: false
       video_card:
         weight: 44
+        enabled: false
+      image_box_link_custom:
+        weight: 45
+        enabled: false
+      image_box_link_reference:
+        weight: 46
+        enabled: false
+      image_teaser_banner:
+        weight: 47
+        enabled: false
+      text_teaser_banner:
+        weight: 55
         enabled: false
 field_type: entity_reference_revisions
