@@ -12,7 +12,7 @@ header:
   style: list
   form:
     label: "Search Locations"
-    placeholder: "Search by Name, Condition, or Service"
+    placeholder: "Search by Location, Condition, or Service"
     button: "Search Locations"
 filters:
   - label: "Zip Code"
