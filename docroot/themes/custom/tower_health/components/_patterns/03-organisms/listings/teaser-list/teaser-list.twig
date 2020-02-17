@@ -1,15 +1,14 @@
 <div class="teaser-list">
-  <div class='listing-results'>
-    {% block results %}
-      Showing {{ results_shown}} of {{ results_count }} results{% if results_term %} for "<strong>{{ results_term }}</strong>"{% endif %}.
-    {% endblock %}
-  </div>
-
   {% if emergency_banner %}
   {% include "@molecules/banner-message/banner-message.twig" with {
     banner_text: emergency_banner
   } %}
   {% endif %}
+  <div class='listing-results'>
+    {% block results %}
+      Showing {{ results_shown}} of {{ results_count }} results{% if results_term %} for "<strong>{{ results_term }}</strong>"{% endif %}
+    {% endblock %}
+  </div>
   {% block teasers %}
     {% for teaser in teasers %}
       {% if teaser.type == "provider" %}
