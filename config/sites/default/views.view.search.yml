@@ -226,6 +226,56 @@ display:
           min_length: null
           fields: {  }
           plugin_id: search_api_fulltext
+        type:
+          id: type
+          table: search_api_index_acquia_search_index
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            article: article
+            location: location
+            page: page
+            profile: profile
+            service: service
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              article_editor: '0'
+              editor: '0'
+              publisher: '0'
+              administrator: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
         search_api_datasource:
           id: search_api_datasource
           table: search_api_index_towerhealth
@@ -277,56 +327,6 @@ display:
                   'entity:media': 'entity:media'
           reduce_duplicates: false
           plugin_id: search_api_datasource
-        type:
-          id: type
-          table: search_api_index_acquia_search_index
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            article: article
-            location: location
-            page: page
-            profile: profile
-            service: service
-          group: 1
-          exposed: true
-          expose:
-            operator_id: type_op
-            label: ''
-            description: ''
-            use_operator: false
-            operator: type_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              article_editor: '0'
-              editor: '0'
-              publisher: '0'
-              administrator: '0'
-            reduce: true
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_options
         search_api_datasource_1:
           id: search_api_datasource_1
           table: search_api_index_acquia_search_index
@@ -412,6 +412,10 @@ display:
       arguments: {  }
       display_extenders: {  }
       use_ajax: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:

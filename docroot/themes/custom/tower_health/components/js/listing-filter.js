@@ -17,8 +17,18 @@
     attach: function (context, settings) {
 
       $('.form-checkbox').on('change', function() {
+        if ($(this).hasClass('js-search-all')) {
+          $('.form-checkbox').not(this).prop('checked', false);
+        }
         $(this).parents('#views-exposed-form-search-search-page').submit();
       });
+
+      var urlParams = new URLSearchParams(window.location.search);
+      var params = urlParams.toString();
+
+      if (params.length === 0) {
+        $('.js-search-all').prop('checked', true);
+      }
     }
   }
 })(jQuery, Drupal, drupalSettings);
