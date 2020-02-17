@@ -1,0 +1,19 @@
+uuid: e9e096b7-a6fc-4a1e-82e5-35afb09d2395
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_form_builder_id
+    - paragraphs.paragraphs_type.form
+id: paragraph.form.field_form_builder_id
+field_name: field_form_builder_id
+entity_type: paragraph
+bundle: form
+label: 'Form builder id'
+description: 'Add the ID from the form builder tool. Example from "//formbuilder.geonetric.com/render/5fc17f8c-6bf9-44ee-8605-b7b4aefecc13" the ID would be "5fc17f8c-6bf9-44ee-8605-b7b4aefecc13".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
