@@ -48,6 +48,10 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  entity_title_field:
+    label: 'Entity Title Field'
+    property_path: entity_title_field
+    type: string
   location_latlon:
     label: 'Location Geo » LatLong Pair'
     datasource_id: 'entity:node'
@@ -374,10 +378,12 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   entity_status: {  }
+  entity_title_field: {  }
   ignorecase:
     all_fields: true
     fields:
       - article_type_string
+      - entity_title_field
       - location_latlon
       - location_services_specialty_condition_name
       - location_services_specialty_condition_synonym

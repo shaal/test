@@ -224,7 +224,10 @@ display:
             group_items: {  }
           parse_mode: terms
           min_length: null
-          fields: {  }
+          fields:
+            - rendered_item
+            - title
+            - video_name
           plugin_id: search_api_fulltext
         type:
           id: type
@@ -382,10 +385,10 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-        title:
-          id: title
+        entity_title_field:
+          id: entity_title_field
           table: search_api_index_acquia_search_index
-          field: title
+          field: entity_title_field
           relationship: none
           group_type: group
           admin_label: ''
