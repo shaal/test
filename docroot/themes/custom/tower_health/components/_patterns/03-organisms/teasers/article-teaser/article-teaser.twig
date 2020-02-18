@@ -5,10 +5,14 @@
   <div class="teaser__content--simple">
     <span class="article-date">{{ article.details.date }}</span>
     <div class="teaser__content__desc">{{ article.details.text }}</div>
-    {% if article.details.tags %}
-    {% for item in article.details.tags %}
-      <span class="teaser-tag">{{ item }}</span>
-    {% endfor %}
-    {% endif %}
+      {% block tags %}
+        {% if article.details.tags %}
+          {% for item in article.details.tags %}
+            {% include "@molecules/teaser-tag/teaser-tag.twig" with {
+              "label": item
+            } %}
+          {% endfor %}
+        {% endif %}
+      {% endblock %}
   </div>
 </div>
