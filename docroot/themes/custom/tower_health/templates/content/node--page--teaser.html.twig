@@ -70,20 +70,14 @@
  *   in different view modes.
  */
 #}
-{{ attach_library('tower_health/modal') }}
 
-{% set youtube_id = media.field_media_oembed_video.value|split('v=', 2) %}
-{% set youtube_uri = "//www.youtube.com/embed/" ~ youtube_id['1'] %}
 
-{% embed "@organisms/teasers/video-teaser/video-teaser.twig" with {
-    "video": {
-      "details": {
-        "title": name,
-        "meta": content.field_media_author,
-        "text": content.field_media_description,
-        "thumb": content.thumbnail.0['#markup'],
-        "videoURL": youtube_uri
-      }
+{% include "@organisms/teasers/basic-teaser/basic-teaser.twig" with {
+  "basic": {
+    "details": {
+      "title": label,
+      "text": content.field_page_teaser,
     }
+  },
+  "url": url
 } %}
-{% endembed %}
