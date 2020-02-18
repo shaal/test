@@ -1,15 +1,16 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class InsurancePostMigrationSubscriber.
-*
-* Run our user flagging after the last node migration is run.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class InsurancePostMigrationSubscriber.
+ *
+ * Run our user flagging after the last node migration is run.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class InsurancePostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
@@ -51,8 +52,9 @@ class InsurancePostMigrationSubscriber extends EntityRefPostMigrationSubscriber 
     $this->field_names = [
       [
         'field_name' => 'field_insurance_ref',
-        'value' => []
+        'value' => [],
       ],
     ];
   }
+
 }

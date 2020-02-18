@@ -1,15 +1,16 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class PhoneNumberPreMigrationSubscriber.
-*
-* Remove value from phone number field if removed from data.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class PhoneNumberPreMigrationSubscriber.
+ *
+ * Remove value from phone number field if removed from data.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class PhoneNumberPreMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
@@ -35,4 +36,5 @@ class PhoneNumberPreMigrationSubscriber extends EntityRefPostMigrationSubscriber
       ],
     ];
   }
+
 }

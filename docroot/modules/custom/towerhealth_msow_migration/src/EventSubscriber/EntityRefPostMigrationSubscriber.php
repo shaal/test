@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Drupal\Core\Entity\EntityInterface;
@@ -11,12 +12,12 @@ use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 
 /**
-* Class DoctorPostMigrationSubscriber.
-*
-* Run our user flagging after the last node migration is run.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class DoctorPostMigrationSubscriber.
+ *
+ * Run our user flagging after the last node migration is run.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class EntityRefPostMigrationSubscriber implements EventSubscriberInterface {
 
   /**
@@ -86,7 +87,7 @@ class EntityRefPostMigrationSubscriber implements EventSubscriberInterface {
             $node = Node::load($destination_ids['nid']);
 
             // Remove all items from the given fields.
-            foreach($field_names as $field) {
+            foreach ($field_names as $field) {
               if ($node instanceof EntityInterface) {
                 if (isset($field['is_paragraph_ref']) && $field['is_paragraph_ref'] == TRUE) {
                   $paragraphs = $node->get($field['field_name'])->getValue();
@@ -109,4 +110,5 @@ class EntityRefPostMigrationSubscriber implements EventSubscriberInterface {
       $this->dispatcher->dispatch(MigrateEvents::POST_ROLLBACK, new MigrateRollbackEvent($migration));
     }
   }
+
 }

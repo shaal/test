@@ -1,15 +1,16 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class LanguagePreMigrationSubscriber.
-*
-* Remove value from the Language field if removed from data.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class LanguagePreMigrationSubscriber.
+ *
+ * Remove value from the Language field if removed from data.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class LanguagePreMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
@@ -35,4 +36,5 @@ class LanguagePreMigrationSubscriber extends EntityRefPostMigrationSubscriber {
       ],
     ];
   }
+
 }

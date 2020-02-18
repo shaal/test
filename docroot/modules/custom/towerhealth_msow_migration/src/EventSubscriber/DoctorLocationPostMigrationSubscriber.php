@@ -1,24 +1,22 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigrateRollbackEvent;
-use Drupal\migrate\Plugin\MigrationInterface;
-use Drupal\migrate_plus\Event\MigrateEvents as MigratePlusEvents;
 use Drupal\migrate\Event\MigrateImportEvent;
-use Drupal\migrate\Event\MigrateRowDeleteEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Drupal\node\Entity\Node;
 
 /**
-* Class DoctorPostMigrationSubscriber.
-*
-* Run our user flagging after the last node migration is run.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class DoctorPostMigrationSubscriber.
+ *
+ * Run our user flagging after the last node migration is run.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class DoctorLocationPostMigrationSubscriber implements EventSubscriberInterface {
 
   /**
@@ -85,4 +83,5 @@ class DoctorLocationPostMigrationSubscriber implements EventSubscriberInterface 
       $this->dispatcher->dispatch(MigrateEvents::POST_ROLLBACK, new MigrateRollbackEvent($migration));
     }
   }
+
 }

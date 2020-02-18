@@ -1,15 +1,16 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class LocationHoursPreMigrationSubscriber.
-*
-* Remove value from the location office hours field if removed from data.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class LocationHoursPreMigrationSubscriber.
+ *
+ * Remove value from the location office hours field if removed from data.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class LocationHoursPreMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
@@ -35,4 +36,5 @@ class LocationHoursPreMigrationSubscriber extends EntityRefPostMigrationSubscrib
       ],
     ];
   }
+
 }

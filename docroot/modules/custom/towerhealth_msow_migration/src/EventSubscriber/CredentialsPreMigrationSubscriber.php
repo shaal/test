@@ -1,15 +1,16 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class CredentialsPreMigrationSubscriber.
-*
-* Remove Education paragraph and data from education field if removed from data.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class CredentialsPreMigrationSubscriber.
+ *
+ * Remove Education paragraph and data from education field if removed from data.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class CredentialsPreMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
@@ -36,4 +37,5 @@ class CredentialsPreMigrationSubscriber extends EntityRefPostMigrationSubscriber
       ],
     ];
   }
+
 }

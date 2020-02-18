@@ -4,8 +4,6 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
-use Drupal\Core\Url;
-use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Search filter block' block.

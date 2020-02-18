@@ -1,15 +1,16 @@
 <?php
+
 namespace Drupal\towerhealth_msow_migration\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
-* Class DoctorPostMigrationSubscriber.
-*
-* Run our user flagging after the last node migration is run.
-*
-* @package Drupal\towerhealth_msow_migration
-*/
+ * Class DoctorPostMigrationSubscriber.
+ *
+ * Run our user flagging after the last node migration is run.
+ *
+ * @package Drupal\towerhealth_msow_migration
+ */
 class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscriber {
 
   /**
@@ -51,7 +52,7 @@ class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscribe
     $this->field_names = [
       [
         'field_name' => 'field_medical_specialties_ref',
-        'value' => []
+        'value' => [],
       ],
       [
         'field_name' => 'field_profile_board_certified',
@@ -59,4 +60,5 @@ class SpecialtiesPostMigrationSubscriber extends EntityRefPostMigrationSubscribe
       ],
     ];
   }
+
 }
