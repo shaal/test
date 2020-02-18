@@ -27,15 +27,15 @@
       });
 
       var urlParams = new URLSearchParams(window.location.search);
-      var search_terms = urlParams.get('site_search');
-      var keys = urlParams.keys();
-      var key_count = 0;
+      var params = urlParams.toString();
+      var keys_object = urlParams.keys();
+      var keys = [];
 
-      for(key of keys) {
-        ++key_count;
+      for(var key of keys_object) {
+        keys.push(key);
       }
 
-      if (key_count === 0 || (search_terms.length !== 0 && key_count === 1)) {
+      if (keys.length === 0 || params === '=' || (keys.includes('site_search') && keys.length === 1) || (keys.includes('page') && keys.length === 1) || (keys.includes('site_search') && keys.includes('page') && keys.length === 2)) {
         $('.js-search-all').prop('checked', true);
       }
     }
