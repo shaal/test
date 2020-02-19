@@ -149,6 +149,22 @@ function tower_health_preprocess_paragraph__image_teaser_banner(&$variables) {
 }
 
 /**
+ * Get the width of the image displayed.
+ */
+function tower_health_preprocess_media__image(&$variables) {
+  $media = $variables['media'];
+  $view_mode = $variables['view_mode'];
+
+  if ($view_mode == 'inline' && $media instanceof EntityInterface) {
+    $image = $media->get('field_media_image')->getValue();
+
+    if (reset($image)['width'] > 900) {
+      $variables['attributes']['class'][] = 'figure--inline-mobile-full-width';
+    }
+  }
+}
+
+/**
  * Load the utility menu into a variable.
  */
 function tower_health_preprocess_menu(&$variables) {
