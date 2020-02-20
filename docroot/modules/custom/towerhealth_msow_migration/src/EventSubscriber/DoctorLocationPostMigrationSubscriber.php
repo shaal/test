@@ -54,7 +54,7 @@ class DoctorLocationPostMigrationSubscriber implements EventSubscriberInterface 
    */
   public function onPreImport(MigrateImportEvent $event) {
     $migration = $event->getMigration();
-    if ($migration->id() === 'towerhealth_providers' || $migration->id() === 'towerhealth_locations') {
+    if ($migration->id() === 'towerhealth_doctors' || $migration->id() === 'towerhealth_locations') {
       $id_map = $migration->getIdMap();
       $id_map->prepareUpdate();
       $source = $migration->getSourcePlugin();
@@ -66,19 +66,23 @@ class DoctorLocationPostMigrationSubscriber implements EventSubscriberInterface 
       }
       $id_map->rewind();
       $destination = $migration->getDestinationPlugin();
+      $nids = [];
       while ($id_map->valid()) {
         $map_source_id = $id_map->currentSource();
         if (!in_array($map_source_id, $source_id_values, TRUE)) {
           $destination_ids = $id_map->currentDestination();
-          $node = Node::load($destination_ids['nid']);
-          // Don't remove the node from the system, only archive it.
-          if ($node instanceof EntityInterface) {
-            $node->set('moderation_state', 'archived');
-            $node->save();
-            $id_map->delete($map_source_id);
-          }
+          $nids[] = $destination_ids['nid'];
+          $id_map->delete($map_source_id);
         }
         $id_map->next();
+      }
+      $nodes = Node::loadMultiple($nids);
+      foreach($nodes as $node) {
+        // Don't remove the node from the system, only archive it.
+        if ($node instanceof EntityInterface) {
+          $node->set('moderation_state', 'archived');
+          $node->save();
+        }
       }
       $this->dispatcher->dispatch(MigrateEvents::POST_ROLLBACK, new MigrateRollbackEvent($migration));
     }

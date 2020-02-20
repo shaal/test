@@ -16,9 +16,10 @@ migration_group: towerhealth_locations_group
 label: 'Import tower health location content'
 source:
   plugin: locations
-  path: 'public://directory/Find_Provider_Dir_Offices.txt'
-  second_path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
-  third_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
+  offices_path: 'public://directory/Find_Provider_Dir_Offices.txt'
+  practioner_offices_path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
+  office_desig_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
+  office_hours_path: 'public://directory/Find_Provider_Dir_OfficeHours.txt'
   track_changes: true
 process:
   title:
@@ -61,6 +62,13 @@ process:
   field_location_phone_number: phone_number
   field_location_id: location_id
   field_location_fax: fax_number
+  field_location_hours:
+    -
+      plugin: towerhealth_office_hours
+      source: hours
+    -
+      plugin: skip_on_empty
+      method: process
   type:
     plugin: default_value
     default_value: location

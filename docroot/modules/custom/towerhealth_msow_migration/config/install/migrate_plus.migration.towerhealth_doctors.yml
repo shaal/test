@@ -6,7 +6,7 @@ dependencies:
       - towerhealth_msow_migration
 
 source:
-  plugin: 'doctors_refactor'
+  plugin: 'doctors'
   # Full path to the file.
   doctors_path: 'public://directory/Find_Provider_Dir_Practitioner.txt'
   credentials_path: 'public://directory/Find_Provider_Dir_Practitioner_Credentials.txt'
@@ -20,7 +20,41 @@ source:
   track_changes: true
 
 process:
-  field_profile_practid: practioner_id
+  field_profile_practid:
+   - plugin: get
+     source: practioner_id
+   - plugin: skip_on_empty
+     method: row
+
+  field_area_interest_ref:
+  - plugin: towerhealth_entity_ref_values
+    source: '@_area_of_interest'
+
+  _medical_specialty:
+    - plugin: towerhealth_lookup_taxonomy_term
+      lookup_field: name
+      source: specialty_terms
+      vid: medical_specialty
+    - plugin: skip_on_empty
+      method: process
+
+  field_medical_specialties_ref:
+  - plugin: towerhealth_entity_ref_values
+    source: '@_medical_specialty'
+
+  field_profile_board_certified: board_certified
+
+  _hospital_aff:
+    - plugin: towerhealth_lookup_taxonomy_term
+      lookup_field: field_hospital_faccode
+      source: fac_codes
+      vid: hospital_affiliation
+    - plugin: skip_on_empty
+      method: process
+
+  field_affiliations_ref:
+  - plugin: towerhealth_entity_ref_values
+    source: '@_hospital_aff'
 
   field_profile_first_name:
    - plugin: get
@@ -118,20 +152,20 @@ process:
     plugin: towerhealth_credentials
     source: credentials
 
-  field_profile_languages: 'languages'
+  field_profile_languages: languages
 
   field_profile_job_title: job_titles
 
-  _location_ids:
+  _locations:
     - plugin: towerhealth_lookup_node
       lookup_field: field_location_id
       source: location_ids
     - plugin: skip_on_empty
-      method: row
+      method: process
 
   field_location_ref:
   - plugin: towerhealth_entity_ref_values
-    source: '@_location_ids'
+    source: '@_locations'
 
   _area_of_interest:
     - plugin: towerhealth_lookup_taxonomy_term
@@ -139,7 +173,7 @@ process:
       source: msow_ids
       vid: area_of_interest
     - plugin: skip_on_empty
-      method: row
+      method: process
 
   field_area_interest_ref:
   - plugin: towerhealth_entity_ref_values
@@ -151,7 +185,7 @@ process:
       source: specialty_terms
       vid: medical_specialty
     - plugin: skip_on_empty
-      method: row
+      method: process
 
   field_medical_specialties_ref:
   - plugin: towerhealth_entity_ref_values
@@ -165,7 +199,7 @@ process:
       source: fac_codes
       vid: hospital_affiliation
     - plugin: skip_on_empty
-      method: row
+      method: process
 
   field_affiliations_ref:
   - plugin: towerhealth_entity_ref_values
