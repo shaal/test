@@ -1,0 +1,19 @@
+uuid: b8df98a0-6af4-4297-8e94-f6024a35b3bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hospital_location_id
+    - taxonomy.vocabulary.hospital_affiliation
+id: taxonomy_term.hospital_affiliation.field_hospital_location_id
+field_name: field_hospital_location_id
+entity_type: taxonomy_term
+bundle: hospital_affiliation
+label: 'Hospital Location ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

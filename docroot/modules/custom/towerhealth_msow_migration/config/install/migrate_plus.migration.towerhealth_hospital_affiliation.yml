@@ -1,0 +1,27 @@
+id: towerhealth_hospital_affiliation
+label: Import tower health hospital affiliation taxonomy terms.
+migration_group: towerhealth_provider_base_group
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'hospital_affiliation_term'
+  # Full path to the file.
+  path: 'public://directory/Find_Provider_Dir_Facility_Offices.txt'
+  track_changes: true
+
+process:
+  vid:
+  - plugin: default_value
+    default_value: hospital_affiliation
+
+  name: name
+
+  field_hospital_faccode: fac_code
+
+  field_hospital_location_id: location_id
+
+destination:
+  plugin: entity:taxonomy_term
