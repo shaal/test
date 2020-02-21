@@ -156,48 +156,10 @@ class Locations extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $office_hours_id = $row[0];
       $office_record_no = $row[1];
-      $days_of_week = $row[4];
-      $start = $row[5];
-      $end = $row[6];
 
-      if (isset($processed_data[$office_record_no]) && !in_array($office_hours_id, $processed_data[$office_record_no]['hours'])) {
-        if (strpos($days_of_week, '-') > 0) {
-          $split = explode(' - ', $days_of_week);
-
-          $days = [
-            1 => 'Mon',
-            2 => 'Tues',
-            3 => 'Wed',
-            4 => 'Thurs',
-            5 => 'Fri',
-            6 => 'Sat',
-            7 => 'Sun',
-          ];
-
-          $start_day = array_search($split[0], $days);
-          $end_day = array_search($split[1], $days);
-        }
-        else {
-          $days = [
-            1 => 'Monday',
-            2 => 'Tuesday',
-            3 => 'Wednesday',
-            4 => 'Thursday',
-            5 => 'Friday',
-            6 => 'Saturday',
-            7 => 'Sunday',
-          ];
-
-          $start_day = array_search($days_of_week, $days);
-          $end_day = $start_day;
-        }
-
-        $start = substr($start, '11', 5);
-        $end = substr($end, '11', 5);
-
-        $processed_data = $this->processOfficeHours($processed_data, $office_record_no, $office_hours_id, $start_day, $end_day, $start, $end);
+      if (isset($processed_data[$office_record_no])) {
+        $processed_data = $this->processOfficeHours($processed_data, $row);
       }
     }
 
@@ -207,25 +169,73 @@ class Locations extends SourcePluginBase {
   /**
    * Process office_hours.
    */
-  public function processOfficeHours($processed_data, $office_record_no, $office_hours_id, $start_day, $end_day, $start, $end) {
-    $index = $start_day;
+  public function processOfficeHours($processed_data, $row) {
+    $office_hours_id = $row[0];
+    $office_record_no = $row[1];
+    $days_of_week = $row[4];
+    $start = $row[5];
+    $end = $row[6];
 
-    while ($index <= $end_day) {
-      $day = $index;
-      // Office hour modules weeks are sunday - saturday.
-      // Office hour data is monday - sunday.
-      // Reset the day to 0 to work with office hour module.
-      if ($index == 7) {
-        $day = 0;
+    if (!array_key_exists('hours', $processed_data[$office_record_no])) {
+      $processed_data[$office_record_no]['hours'] = [];
+    }
+
+    if (!in_array($office_hours_id, $processed_data[$office_record_no]['hours'])) {
+
+      if (strpos($days_of_week, '-') > 0) {
+        $split = explode(' - ', $days_of_week);
+
+        $days = [
+          1 => 'Mon',
+          2 => 'Tues',
+          3 => 'Wed',
+          4 => 'Thurs',
+          5 => 'Fri',
+          6 => 'Sat',
+          7 => 'Sun',
+        ];
+
+        $start_day = array_search($split[0], $days);
+        $end_day = array_search($split[1], $days);
       }
-      $processed_data[$office_record_no]['hours'][] = [
-        'office_hours_id' => $office_hours_id,
-        'day' => $day,
-        'starthours' => str_replace(':', '', $start),
-        'endhours' => str_replace(':', '', $end),
-      ];
+      else {
+        $days = [
+          1 => 'Monday',
+          2 => 'Tuesday',
+          3 => 'Wednesday',
+          4 => 'Thursday',
+          5 => 'Friday',
+          6 => 'Saturday',
+          7 => 'Sunday',
+        ];
 
-      $index++;
+        $start_day = array_search($days_of_week, $days);
+        $end_day = $start_day;
+      }
+
+      $start = substr($start, '11', 5);
+      $end = substr($end, '11', 5);
+
+      $index = $start_day;
+
+      while ($index <= $end_day) {
+        $day = $index;
+        // Office hour modules weeks are sunday - saturday.
+        // Office hour data is monday - sunday.
+        // Reset the day to 0 to work with office hour module.
+        if ($index == 7) {
+          $day = 0;
+        }
+        $processed_data[$office_record_no]['hours'][] = [
+          'office_hours_id' => $office_hours_id,
+          'day' => $day,
+          'starthours' => str_replace(':', '', $start),
+          'endhours' => str_replace(':', '', $end),
+        ];
+
+        $index++;
+      }
+
     }
 
     return $processed_data;

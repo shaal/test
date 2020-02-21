@@ -335,11 +335,9 @@ class Doctors extends SourcePluginBase {
       $document_name = $row[12];
       $certified_year = $row[6];
 
-      if (!isset($processed_data[$pracitioner_id]) || ($document_name !== 'Board Specialties' || $document_name !== 'Board Pending')) {
-        continue;
+      if (isset($processed_data[$pracitioner_id])) {
+        $processed_data = $this->processSpecialties($processed_data, $pracitioner_id, $specialty_term, $board_name, $document_name, $certified_year);
       }
-
-      $processed_data = $this->processSpecialties($processed_data, $pracitioner_id, $specialty_term, $board_name, $document_name, $certified_year);
     }
 
     return $processed_data;
@@ -349,14 +347,16 @@ class Doctors extends SourcePluginBase {
    * Process specialties.
    */
   private function processSpecialties($processed_data, $pracitioner_id, $specialty_term, $board_name, $document_name, $certified_year) {
-    if (!array_key_exists('specialty_terms', $processed_data[$pracitioner_id])) {
-      $processed_data[$pracitioner_id]['specialty_terms'] = [];
-    }
+    if ($document_name == 'Board Specialties' || $document_name == 'Board Pending') {
+      if (!array_key_exists('specialty_terms', $processed_data[$pracitioner_id])) {
+        $processed_data[$pracitioner_id]['specialty_terms'] = [];
+      }
 
-    if (!empty($specialty_term) && is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
-      $processed_data[$pracitioner_id]['specialty_terms'][] = $specialty_term;
+      if (!empty($specialty_term) && is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
+        $processed_data[$pracitioner_id]['specialty_terms'][] = $specialty_term;
 
-      $this->boardPendingDataAlter($processed_data, $pracitioner_id, $document_name, $board_name, $certified_year);
+        $this->boardPendingDataAlter($processed_data, $pracitioner_id, $document_name, $board_name, $certified_year);
+      }
     }
 
     return $processed_data;
