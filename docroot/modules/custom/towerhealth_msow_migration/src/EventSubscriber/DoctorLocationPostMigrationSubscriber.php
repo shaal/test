@@ -65,7 +65,6 @@ class DoctorLocationPostMigrationSubscriber implements EventSubscriberInterface 
         $source->next();
       }
       $id_map->rewind();
-      $destination = $migration->getDestinationPlugin();
       $nids = [];
       while ($id_map->valid()) {
         $map_source_id = $id_map->currentSource();
@@ -77,7 +76,7 @@ class DoctorLocationPostMigrationSubscriber implements EventSubscriberInterface 
         $id_map->next();
       }
       $nodes = Node::loadMultiple($nids);
-      foreach($nodes as $node) {
+      foreach ($nodes as $node) {
         // Don't remove the node from the system, only archive it.
         if ($node instanceof EntityInterface) {
           $node->set('moderation_state', 'archived');

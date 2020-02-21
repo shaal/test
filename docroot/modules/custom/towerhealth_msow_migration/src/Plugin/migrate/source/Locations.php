@@ -162,66 +162,70 @@ class Locations extends SourcePluginBase {
       $start = $row[5];
       $end = $row[6];
 
-      if (isset($processed_data[$office_record_no])) {
-        if (!array_key_exists('hours', $processed_data[$office_record_no])) {
-          $processed_data[$office_record_no]['hours'] = [];
+      if (isset($processed_data[$office_record_no]) && !in_array($office_hours_id, $processed_data[$office_record_no]['hours'])) {
+        if (strpos($days_of_week, '-') > 0) {
+          $split = explode(' - ', $days_of_week);
+
+          $days = [
+            1 => 'Mon',
+            2 => 'Tues',
+            3 => 'Wed',
+            4 => 'Thurs',
+            5 => 'Fri',
+            6 => 'Sat',
+            7 => 'Sun',
+          ];
+
+          $start_day = array_search($split[0], $days);
+          $end_day = array_search($split[1], $days);
         }
-        if (!in_array($office_hours_id, $processed_data[$office_record_no]['hours'])) {
-          if (strpos($days_of_week, '-') > 0) {
-            $split = explode(' - ', $days_of_week);
+        else {
+          $days = [
+            1 => 'Monday',
+            2 => 'Tuesday',
+            3 => 'Wednesday',
+            4 => 'Thursday',
+            5 => 'Friday',
+            6 => 'Saturday',
+            7 => 'Sunday',
+          ];
 
-            $days = [
-              1 => 'Mon',
-              2 => 'Tues',
-              3 => 'Wed',
-              4 => 'Thurs',
-              5 => 'Fri',
-              6 => 'Sat',
-              7 => 'Sun',
-            ];
-
-            $start_day = array_search($split[0], $days);
-            $end_day = array_search($split[1], $days);
-          }
-          else {
-            $days = [
-              1 => 'Monday',
-              2 => 'Tuesday',
-              3 => 'Wednesday',
-              4 => 'Thursday',
-              5 => 'Friday',
-              6 => 'Saturday',
-              7 => 'Sunday',
-            ];
-
-            $start_day = array_search($days_of_week, $days);
-            $end_day = $start_day;
-          }
-
-          $start = substr($start, '11', 5);
-          $end = substr($end, '11', 5);
-
-          $i = $start_day;
-
-          while ($i <= $end_day) {
-            $day = $i;
-            // Office hour modules weeks are sunday - saturday.
-            // Office hour data is monday - sunday.
-            // Reset the day to 0 to work with office hour module.
-            if ($i == 7) {
-              $day = 0;
-            }
-            $processed_data[$office_record_no]['hours'][] = [
-              'office_hours_id' => $office_hours_id,
-              'day' => $day,
-              'starthours' => str_replace(':', '', $start),
-              'endhours' => str_replace(':', '', $end),
-            ];
-
-            $i++;
-          }
+          $start_day = array_search($days_of_week, $days);
+          $end_day = $start_day;
         }
+
+        $start = substr($start, '11', 5);
+        $end = substr($end, '11', 5);
+
+        $processed_data = $this->processOfficeHours($processed_data, $office_record_no, $office_hours_id, $start_day, $end_day, $start, $end);
       }
+    }
+
+    return $processed_data;
+  }
+
+  /**
+   * Process office_hours.
+   */
+  public function processOfficeHours($processed_data, $office_record_no, $office_hours_id, $start_day, $end_day, $start, $end) {
+    $index = $start_day;
+
+    while ($index <= $end_day) {
+      $day = $index;
+      // Office hour modules weeks are sunday - saturday.
+      // Office hour data is monday - sunday.
+      // Reset the day to 0 to work with office hour module.
+      if ($index == 7) {
+        $day = 0;
+      }
+      $processed_data[$office_record_no]['hours'][] = [
+        'office_hours_id' => $office_hours_id,
+        'day' => $day,
+        'starthours' => str_replace(':', '', $start),
+        'endhours' => str_replace(':', '', $end),
+      ];
+
+      $index++;
     }
 
     return $processed_data;
@@ -261,7 +265,6 @@ class Locations extends SourcePluginBase {
     }
 
     $processed_data = $this->parseOfficeHours($processed_data, $office_hours);
-    dump($processed_data['50871']);
 
     return $processed_data;
   }

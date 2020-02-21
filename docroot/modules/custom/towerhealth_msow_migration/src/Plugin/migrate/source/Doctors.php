@@ -52,7 +52,7 @@ class Doctors extends SourcePluginBase {
     'npi_id' => 'NPI ID',
     'epic_id' => 'Epic_Provider_Number',
     'open_scheduling' => 'Open scheduling',
-    'msow_ids' =>'Msow Ids',
+    'msow_ids' => 'Msow Ids',
     'insurance_groups' => 'Insurance Groups',
     'specialty_term' => 'Specialty term',
     'board_certified' => 'Board certified',
@@ -87,7 +87,7 @@ class Doctors extends SourcePluginBase {
 
     /*// Path is required.
     if (empty($this->configuration['path'])) {
-      throw new MigrateException('You must declare the "path" to the source CSV file in your source settings.');
+    throw new MigrateException('You must declare the "path" to the source CSV file in your source settings.');
     }*/
 
     $this->encodedJson['doctors'] = $this->encodeJsonCsv($this->configuration['doctors_path']);
@@ -335,21 +335,28 @@ class Doctors extends SourcePluginBase {
       $document_name = $row[12];
       $certified_year = $row[6];
 
-      if (isset($processed_data[$pracitioner_id]) && ($document_name == 'Board Specialties' || $document_name == 'Board Pending')) {
-        if (!array_key_exists('specialty_terms', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['specialty_terms'] = [];
-        }
-
-        if (!array_key_exists('board_certified', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['board_certified'] = [];
-        }
-
-        if (!empty($specialty_term) && is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
-          $processed_data[$pracitioner_id]['specialty_terms'][] = $specialty_term;
-
-          $this->boardPendingDataAlter($processed_data, $pracitioner_id, $document_name, $board_name, $certified_year);
-        }
+      if (!isset($processed_data[$pracitioner_id]) || ($document_name !== 'Board Specialties' || $document_name !== 'Board Pending')) {
+        continue;
       }
+
+      $processed_data = $this->processSpecialties($processed_data, $pracitioner_id, $specialty_term, $board_name, $document_name, $certified_year);
+    }
+
+    return $processed_data;
+  }
+
+  /**
+   * Process specialties.
+   */
+  private function processSpecialties($processed_data, $pracitioner_id, $specialty_term, $board_name, $document_name, $certified_year) {
+    if (!array_key_exists('specialty_terms', $processed_data[$pracitioner_id])) {
+      $processed_data[$pracitioner_id]['specialty_terms'] = [];
+    }
+
+    if (!empty($specialty_term) && is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
+      $processed_data[$pracitioner_id]['specialty_terms'][] = $specialty_term;
+
+      $this->boardPendingDataAlter($processed_data, $pracitioner_id, $document_name, $board_name, $certified_year);
     }
 
     return $processed_data;
@@ -381,6 +388,10 @@ class Doctors extends SourcePluginBase {
     elseif ($document_name == 'Board Pending') {
       $certified_year = $certified_year ? ', ' . $certified_year : '';
       $specialty_term_board = $board_name . ' <span>' . t('Board Elligible') . $certified_year . '</span>';
+    }
+
+    if (!array_key_exists('board_certified', $processed_data[$pracitioner_id])) {
+      $processed_data[$pracitioner_id]['board_certified'] = [];
     }
 
     if (!in_array($specialty_term_board, $processed_data[$pracitioner_id]['board_certified'])) {
@@ -506,6 +517,5 @@ class Doctors extends SourcePluginBase {
 
     return $processed_data;
   }
-
 
 }
