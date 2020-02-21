@@ -43,7 +43,6 @@ class HospitalAffiliationsTerm extends CSVtoJSON {
   public function parseJson($json, $secondary_json = NULL, $third_json = NULL) {
     $data = json_decode($json);
     // Remove the header from the data file.
-
     $processed_data = [];
     foreach ($data as $row) {
       $name = $row[0];
