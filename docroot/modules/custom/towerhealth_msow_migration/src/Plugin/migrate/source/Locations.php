@@ -256,8 +256,9 @@ class Locations extends SourcePluginBase {
 
     foreach ($offices as $office) {
       $location_id = intval($office[0]);
+      $include = filter_var($office[11], FILTER_VALIDATE_BOOLEAN);
 
-      if (is_integer($location_id) && $location_id !== 0 && !array_key_exists($location_id, $processed_data)) {
+      if (is_integer($location_id) && $location_id !== 0 && !array_key_exists($location_id, $processed_data) && $include == TRUE) {
         $processed_data[$location_id] = [
           'location_id' => $location_id,
           'office_name' => $office[1],
@@ -270,6 +271,7 @@ class Locations extends SourcePluginBase {
           'office_contact' => $office[8],
           'handicap_access' => $office[9],
           'fax_number' => $office[10],
+          'location_type' => $office[12],
         ];
       }
     }
