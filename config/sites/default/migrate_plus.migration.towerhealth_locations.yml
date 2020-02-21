@@ -62,6 +62,19 @@ process:
   field_location_phone_number: phone_number
   field_location_id: location_id
   field_location_fax: fax_number
+  _location_type:
+    -
+      plugin: towerhealth_lookup_taxonomy_term
+      lookup_field: name
+      source: location_type
+      vid: location_type
+    -
+      plugin: skip_on_empty
+      method: process
+  field_location_type:
+    -
+      plugin: towerhealth_entity_ref_values
+      source: '@_location_type'
   field_location_hours:
     -
       plugin: towerhealth_office_hours
