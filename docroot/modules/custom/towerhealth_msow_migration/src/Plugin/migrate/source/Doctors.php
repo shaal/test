@@ -385,11 +385,11 @@ class Doctors extends SourcePluginBase {
     $specialty_term_board = '';
 
     if ($document_name == 'Board Specialties') {
-      $specialty_term_board = $board_name;
+      $specialty_term_board = $board_name . ' <span class="provider-detail__item-meta">' . $certified_year . '</span>';;
     }
     elseif ($document_name == 'Board Pending') {
       $certified_year = $certified_year ? ', ' . $certified_year : '';
-      $specialty_term_board = $board_name . ' <span>' . t('Board Elligible') . $certified_year . '</span>';
+      $specialty_term_board = $board_name . ' <span class="provider-detail__item-meta">' . t('Board Elligible') . $certified_year . '</span>';
     }
 
     if (!array_key_exists('board_certified', $processed_data[$pracitioner_id])) {
@@ -397,7 +397,10 @@ class Doctors extends SourcePluginBase {
     }
 
     if (!in_array($specialty_term_board, $processed_data[$pracitioner_id]['board_certified'])) {
-      $processed_data[$pracitioner_id]['board_certified'][] = $specialty_term_board;
+      $processed_data[$pracitioner_id]['board_certified'][] = [
+        'value' => $specialty_term_board,
+        'format' => 'full_html'
+      ];
     }
 
     return $processed_data;
@@ -487,6 +490,7 @@ class Doctors extends SourcePluginBase {
         }
 
         $processed_data = $this->addHospitalLocations($processed_data, $pracitioner_id, $fac_code);
+
       }
     }
 
