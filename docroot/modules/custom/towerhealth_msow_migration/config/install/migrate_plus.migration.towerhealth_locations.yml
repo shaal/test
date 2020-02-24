@@ -10,8 +10,6 @@ source:
   plugin: 'locations'
   # Full path to the file.
   offices_path: 'public://directory/Find_Provider_Dir_Offices.txt'
-  practioner_offices_path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
-  office_desig_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
   office_hours_path: 'public://directory/Find_Provider_Dir_OfficeHours.txt'
   track_changes: true
 

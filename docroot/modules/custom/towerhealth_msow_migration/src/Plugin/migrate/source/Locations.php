@@ -78,8 +78,6 @@ class Locations extends SourcePluginBase {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
 
     $this->encodedJson['offices_json'] = $this->encodeJsonCsv($this->configuration['offices_path']);
-    $this->encodedJson['practioner_offices_json'] = $this->encodeJsonCsv($this->configuration['practioner_offices_path']);
-    $this->encodedJson['office_desig_json'] = $this->encodeJsonCsv($this->configuration['office_desig_path']);
     $this->encodedJson['office_hours_json'] = $this->encodeJsonCsv($this->configuration['office_hours_path']);
 
     $this->dataRows = $this->parseJSON($this->encodedJson);
