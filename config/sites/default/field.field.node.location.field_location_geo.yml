@@ -14,8 +14,9 @@ third_party_settings:
     weight: 0
     geocode_field: field_location_address
     reverse_geocode_field: ''
-    hidden: false
+    skip_not_empty_value: 1
     disabled: true
+    hidden: false
     plugins:
       - googlemaps
     dumper: wkt

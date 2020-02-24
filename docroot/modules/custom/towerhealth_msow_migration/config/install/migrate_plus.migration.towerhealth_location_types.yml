@@ -1,0 +1,23 @@
+id: towerhealth_location_types
+label: Import tower location type taxonomy terms.
+migration_group: towerhealth_provider_base_group
+dependencies:
+  enforced:
+    module:
+      - towerhealth_msow_migration
+
+source:
+  plugin: 'location_types_term'
+  # Full path to the file.
+  path: 'public://directory/Find_Provider_Dir_Offices.txt'
+  track_changes: true
+
+process:
+  vid:
+  - plugin: default_value
+    default_value: location_type
+
+  name: name
+
+destination:
+  plugin: entity:taxonomy_term

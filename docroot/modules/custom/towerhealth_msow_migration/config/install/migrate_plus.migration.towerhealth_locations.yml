@@ -9,9 +9,10 @@ dependencies:
 source:
   plugin: 'locations'
   # Full path to the file.
-  path: 'public://directory/Find_Provider_Dir_Offices.txt'
-  second_path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
-  third_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
+  offices_path: 'public://directory/Find_Provider_Dir_Offices.txt'
+  practioner_offices_path: 'public://directory/Find_Provider_Dir_Practitioner_Offices.txt'
+  office_desig_path: 'public://directory/Find_Provider_Dir_Practitioner_Office_Desig.txt'
+  office_hours_path: 'public://directory/Find_Provider_Dir_OfficeHours.txt'
   track_changes: true
 
 process:
@@ -53,6 +54,24 @@ process:
   field_location_id: location_id
 
   field_location_fax: fax_number
+
+  _location_type:
+    - plugin: towerhealth_lookup_taxonomy_term
+      lookup_field: name
+      source: location_type
+      vid: location_type
+    - plugin: skip_on_empty
+      method: process
+
+  field_location_type:
+  - plugin: towerhealth_entity_ref_values
+    source: '@_location_type'
+
+  field_location_hours:
+    - plugin: towerhealth_office_hours
+      source: hours
+    - plugin: skip_on_empty
+      method: process
 
   type:
     plugin: default_value

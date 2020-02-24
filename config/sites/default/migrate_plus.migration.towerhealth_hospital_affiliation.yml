@@ -1,28 +1,29 @@
-uuid: bd87e4c3-f4d2-4672-96fe-9d6205970ef7
+uuid: d881569f-cb79-4549-acd8-e83916e915fb
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - towerhealth_msow_migration
-id: towerhealth_universities
+id: towerhealth_hospital_affiliation
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: towerhealth_provider_base_group
-label: 'Import tower health universities taxonomy terms.'
+label: 'Import tower health hospital affiliation taxonomy terms.'
 source:
-  plugin: provider_universities_term
-  path: 'public://directory/Find_Provider_Dir_Practitioner_Universities.txt'
+  plugin: hospital_affiliation_term
+  path: 'public://directory/Find_Provider_Dir_Facility_Offices.txt'
   track_changes: true
 process:
   vid:
     -
       plugin: default_value
-      default_value: universities
-  name: university_name
-  field_university_record_no: id
+      default_value: hospital_affiliation
+  name: name
+  field_hospital_faccode: fac_code
+  field_hospital_location_id: location_id
 destination:
   plugin: 'entity:taxonomy_term'
 migration_dependencies: null

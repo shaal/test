@@ -1,4 +1,4 @@
-uuid: b84d49bc-613e-477c-b130-382f04221cf1
+uuid: b2ec4baf-cc17-41aa-8054-b623de135184
 langcode: en
 status: true
 dependencies:
@@ -15,6 +15,7 @@ label: 'Import tower health clinical areas of interest taxonomy terms.'
 source:
   plugin: provider_specialties_term
   path: 'public://directory/Find_Provider_Dir_Practitioner_Specialties.txt'
+  track_changes: true
 process:
   vid:
     -

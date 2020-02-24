@@ -3,13 +3,13 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 /**
- * Migrate source plugin for Insurance.
+ * Migrate source plugin for clinical area of interests.
  *
  * @MigrateSource(
- *   id = "provider_location_refs"
+ *   id = "provider_interests_term"
  * )
  */
-class ProviderLocationRefs extends CSVtoJSON {
+class ProviderInterestsTerm extends CSVtoJSON {
 
   /**
    * List of available source fields.
@@ -20,8 +20,8 @@ class ProviderLocationRefs extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'practioner_id' => 'Pracitioner ID',
-    'location_ids' => 'Location ID',
+    'id' => 'Special interest ID',
+    'interest' => 'Special Interest',
   ];
 
   /**
@@ -30,7 +30,7 @@ class ProviderLocationRefs extends CSVtoJSON {
    * @var array
    */
   public $ids = [
-    'practioner_id' => [
+    'id' => [
       'type' => 'string',
       'max_length' => 64,
     ],
@@ -46,23 +46,18 @@ class ProviderLocationRefs extends CSVtoJSON {
 
     $processed_data = [];
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
-      $location_id = $row[2];
-      if (!isset($processed_data[$pracitioner_id])) {
-        $processed_data[$pracitioner_id] = [
-          'practioner_id' => $pracitioner_id,
-          'location_ids' => [],
+      $id = $row[0];
+      $interest_term = $row[1];
+      if (!isset($processed_data[$id])) {
+        $processed_data[$id] = [
+          'id' => $id,
+          'interest' => $interest_term,
         ];
       }
-      if (!in_array($location_id, $processed_data[$pracitioner_id]['location_ids'])) {
-        $processed_data[$pracitioner_id]['location_ids'][] = $location_id;
-      }
     }
+
     // Remove keys since this is confusing the migration references.
     $processed_data = array_values($processed_data);
-    foreach ($processed_data as &$pracitioner_id) {
-      $pracitioner_id['location_ids'] = array_values($pracitioner_id['location_ids']);
-    }
 
     return $processed_data;
   }
