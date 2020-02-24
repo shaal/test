@@ -1,0 +1,9 @@
+uuid: 2ece810b-0927-4f85-8cde-879d04f09287
+langcode: en
+status: true
+dependencies: {  }
+id: form
+label: 'Form Builder Form'
+icon_uuid: null
+description: 'Add Form Builder embedded forms'
+behavior_plugins: {  }

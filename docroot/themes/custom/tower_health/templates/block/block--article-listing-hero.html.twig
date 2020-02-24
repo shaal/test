@@ -33,3 +33,6 @@
   })
 %}
 {% extends "@organisms/basic-header/basic-header.twig" %}
+{% block breadcrumb %}
+  {{ drupal_block('system_breadcrumb_block') }}
+{% endblock %}

@@ -149,6 +149,22 @@ function tower_health_preprocess_paragraph__image_teaser_banner(&$variables) {
 }
 
 /**
+ * Get the width of the image displayed.
+ */
+function tower_health_preprocess_media__image(&$variables) {
+  $media = $variables['media'];
+  $view_mode = $variables['view_mode'];
+
+  if ($view_mode == 'inline' && $media instanceof EntityInterface) {
+    $image = $media->get('field_media_image')->getValue();
+
+    if (reset($image)['width'] > 900) {
+      $variables['attributes']['class'][] = 'figure--inline-mobile-full-width';
+    }
+  }
+}
+
+/**
  * Load the utility menu into a variable.
  */
 function tower_health_preprocess_menu(&$variables) {
@@ -226,28 +242,6 @@ function tower_health_preprocess_region__sidebar_first(&$variables) {
     if ($node->bundle() == 'location') {
       $variables['location_providers_url'] = _tower_heath_format_location_provider_url($node);
       $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-provider.svg';
-    }
-  }
-}
-
-/**
- * Provide variables for article teaser.
- */
-function tower_health_preprocess_node__article(&$variables) {
-  $node = $variables['node'];
-  $view_mode = $variables['view_mode'];
-
-  if ($node instanceof NodeInterface && $view_mode == 'teaser') {
-    if ($node->hasField('field_article_type_ref') && !$node->get('field_article_type_ref')->isEmpty()) {
-      $tag_refs = $node->get('field_article_type_ref')->getValue();
-      $tags = [];
-      foreach ($tag_refs as $id => $tag) {
-        $tag = $node->field_article_type_ref[$id]->entity;
-        if ($tag instanceof EntityInterface) {
-          $tags[] = $tag->name->value;
-        }
-      }
-      $variables['tags'] = $tags;
     }
   }
 }

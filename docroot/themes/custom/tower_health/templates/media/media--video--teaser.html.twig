@@ -70,6 +70,7 @@
  *   in different view modes.
  */
 #}
+{{ attach_library('tower_health/modal') }}
 
 {% set youtube_id = media.field_media_oembed_video.value|split('v=', 2) %}
 {% set youtube_uri = "//www.youtube.com/embed/" ~ youtube_id['1'] %}

@@ -1,0 +1,21 @@
+uuid: 49482836-4fce-41d9-b3e2-9df347d17761
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_teaser
+    - node.type.page
+  module:
+    - text
+id: node.page.field_page_teaser
+field_name: field_page_teaser
+entity_type: node
+bundle: page
+label: 'Card Description'
+description: 'A short teaser for this page to display in search results.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
