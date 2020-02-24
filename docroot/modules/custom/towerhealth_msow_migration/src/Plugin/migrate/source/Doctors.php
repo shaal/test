@@ -198,7 +198,7 @@ class Doctors extends SourcePluginBase {
     foreach ($data as $row) {
       $pracitioner_id = $row[0];
 
-      if (!isset($processed_data[$pracitioner_id])) {
+      if (!empty($pracitioner_id) && !isset($processed_data[$pracitioner_id])) {
         $processed_data[$pracitioner_id] = [
           'practioner_id' => $pracitioner_id,
           'last_name' => $row[1],
@@ -523,7 +523,7 @@ class Doctors extends SourcePluginBase {
       if ($term instanceof EntityInterface) {
         $location_id = $term->get('field_hospital_location_id')->getString();
 
-        if (!in_array($location_id, $processed_data[$pracitioner_id]['location_ids'])) {
+        if (!empty($location_id) && !in_array($location_id, $processed_data[$pracitioner_id]['location_ids'])) {
           $processed_data[$pracitioner_id]['location_ids'][] = $location_id;
         }
       }
