@@ -279,6 +279,7 @@ class Doctors extends SourcePluginBase {
 
         if (!in_array($insurance_group, $processed_data[$pracitioner_id]['insurance_groups'])) {
           $processed_data[$pracitioner_id]['insurance_groups'][] = $insurance_group;
+          dump($insurance_group);
         }
       }
     }
