@@ -53,6 +53,7 @@
     attach: function (context, settings) {
       // Find all checkbox facet links and give them a checkbox.
       var locationInput = $('.js-set-my-location', context);
+      var distanceInput = $('.js-proximity-distance', context);
 
       if (locationInput.length > 0) {
         locationInput.keyup(function() {
@@ -61,6 +62,14 @@
           }
         });
       }
+
+      distanceInput.on('change', function() {
+        var optionSelected = $("option:selected", this);
+        if (locationInput.val().length === 5) {
+          $(this).val(optionSelected.val());
+          $(this).parents('form').submit();
+        }
+      });
     }
   };
 

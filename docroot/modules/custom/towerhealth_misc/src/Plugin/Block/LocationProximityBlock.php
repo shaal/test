@@ -55,12 +55,17 @@ class LocationProximityBlock extends BlockBase {
     $form['find_location_search']['#attributes']['data-id'] = 'location-proximity-search-input';
 
     $form['#id'] = 'views-exposed-form-find-a-location-find-location-proximity';
+    $form['location_latlon']['distance']['from']['#attributes']['class'][] = 'js-proximity-distance';
 
     // Explicitly add locations terms to proximity input.
     $locations = \Drupal::request()->get('location_latlon');
     if (!empty($locations) && is_array($locations) && empty($form['location_latlon']['value']['#attributes']['value'])) {
       $form['location_latlon']['value']['#attributes']['value'] = Xss::filter($locations['value']);
       $form['location_latlon']['distance']['from']['#attributes']['value'] = Xss::filter($locations['distance']['from']);
+    }
+    else {
+      $form['location_latlon']['distance']['from']['#default_value'] = '40.23';
+      $form['location_latlon']['distance']['from']['#value'] = '40.23';
     }
 
     // Explicitly add search term to search input.

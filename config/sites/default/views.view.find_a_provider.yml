@@ -296,6 +296,8 @@ display:
             description: ''
             use_operator: false
             operator: provider_location_latlong_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: provider_location_latlong
             required: false
             remember: false
@@ -304,8 +306,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -398,7 +398,7 @@ display:
                 weight: '0'
                 checked: 0
             radius_type: select
-            radius_options: "8.046 5 mi\r\n16.09 10 mi\r\n40.233 25 mi"
+            radius_options: "8.046 5 mi\r\n16.09 10 mi\r\n24.14 15 mi\r\n40.23 25 mi\r\n80.47 50 mi\r\n120.70 75 mi\r\n160.93 100 mi"
             radius_units: km
           plugin_id: search_api_location
       sorts: {  }
