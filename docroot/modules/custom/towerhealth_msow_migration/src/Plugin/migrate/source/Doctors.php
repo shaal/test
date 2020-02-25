@@ -58,7 +58,7 @@ class Doctors extends SourcePluginBase {
     'insurance_groups' => 'Insurance Groups',
     'specialty_term' => 'Specialty term',
     'board_certified' => 'Board certified',
-    'board_elligble' => 'Board elligible',
+    'board_elligble' => 'Board eligible',
     'job_titles' => 'Job titles',
     'languages' => 'Languages',
     'fac_code' => 'Facility Code',
@@ -389,7 +389,7 @@ class Doctors extends SourcePluginBase {
     }
     elseif ($document_name == 'Board Pending') {
       $certified_year = $certified_year ? ', ' . $certified_year : '';
-      $specialty_term_board = $board_name . ' <span class="provider-detail__item-meta">' . t('Board Elligible') . $certified_year . '</span>';
+      $specialty_term_board = $board_name . ' <span class="provider-detail__item-meta">' . t('Board Eligible') . $certified_year . '</span>';
     }
 
     if (!array_key_exists('board_certified', $processed_data[$pracitioner_id])) {
