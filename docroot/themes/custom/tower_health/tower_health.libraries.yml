@@ -28,6 +28,10 @@ chosen:
   js:
     dist/01-atoms/05-forms/chosen/chosen.jquery.js: {}
 
+inline_image:
+  js:
+    components/js/inline-image.js: {}
+
 list_filters:
   js:
     dist/03-organisms/listings/listing-filter/listing-filters.js: {}

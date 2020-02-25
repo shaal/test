@@ -12,6 +12,8 @@
  * - string classes: The classes of the captioned HTML tag.
  */
 #}
+{{ attach_library("tower_health/inline_image") }}
+
 {% if "align-left" in classes %}
   {% set classes = classes ~ " figure--left" %}
 {% endif %}

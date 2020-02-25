@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.page.field_basic_sidebar
     - field.field.node.page.field_body_components
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_page_teaser
     - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
     - node.type.page
@@ -39,6 +40,7 @@ hidden:
   field_basic_sidebar: true
   field_body_components: true
   field_metatags: true
+  field_page_teaser: true
   field_reference_access_control: true
   field_text: true
   links: true
