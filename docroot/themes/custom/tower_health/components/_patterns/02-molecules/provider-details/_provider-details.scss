@@ -54,4 +54,9 @@
 .provider-detail__item-title {
   @include adjust-font-size-to($xs-heading, 1);
   margin-bottom: 0;
+
+  .provider-detail__item-meta {
+    @include adjust-font-size-to($label, .8, $xs-heading);
+    font-weight:300;
+  }
 }

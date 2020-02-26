@@ -6,6 +6,7 @@ use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Row;
 use Drupal\paragraphs\Entity\Paragraph;
+use DateTime;
 
 /**
  * Creates rating comment paragraphs.
@@ -39,7 +40,8 @@ class TowerHealthRatingComments extends ProcessPluginBase {
       if (isset($comment_value['overallRating']['value'])) {
         $comment['field_rating_comment_rating'] = $comment_value['overallRating']['value'];
       }
-      $comment['field_rating_comment_date'] = $comment_value['mentionTime'];
+      $date = new DateTime($comment_value['mentionTime']);
+      $comment['field_rating_comment_date'] = $date->format('F j, Y');
       $comment['field_rating_comment_body'] = $comment_value['comment'];
 
       $comment_paragraph = Paragraph::create($comment);

@@ -4,8 +4,6 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
-use Drupal\Core\Url;
-use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Search filter block' block.
@@ -53,7 +51,6 @@ class SearchFilterBlock extends BlockBase {
     $search_term_id = $form['site_search']['#id'];
     $form['site_search']['#id'] = $search_term_id . '-filter';
     $form['site_search']['#attributes']['data-id'] = 'general-search-filter-input';
-    $form['site_search']['#theme'] = 'checkboxes';
 
     $form['type']['#prefix'] = '<ul class="form-item--checkboxes form-item--inline">';
     $form['type']['#attributes']['data-id'] = 'general_search_filter__checkboxes';

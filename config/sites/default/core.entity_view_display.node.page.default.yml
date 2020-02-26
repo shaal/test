@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.page.field_basic_sidebar
     - field.field.node.page.field_body_components
     - field.field.node.page.field_metatags
+    - field.field.node.page.field_page_teaser
     - field.field.node.page.field_reference_access_control
     - field.field.node.page.field_text
     - node.type.page
@@ -44,6 +45,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_page_teaser:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_text:
     weight: 0

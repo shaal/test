@@ -15,6 +15,7 @@ label: 'Import tower health insurance group terms.'
 source:
   plugin: provider_insurance_group_terms
   path: 'public://directory/Find_Provider_Dir_Practitioner_Insurance.txt'
+  track_changes: true
 process:
   vid:
     -

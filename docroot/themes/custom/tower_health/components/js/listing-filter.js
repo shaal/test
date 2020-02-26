@@ -20,13 +20,22 @@
         if ($(this).hasClass('js-search-all')) {
           $('.form-checkbox').not(this).prop('checked', false);
         }
+        else {
+          $('.form-checkbox.js-search-all').prop('checked', false);
+        }
         $(this).parents('#views-exposed-form-search-search-page').submit();
       });
 
       var urlParams = new URLSearchParams(window.location.search);
       var params = urlParams.toString();
+      var keys_object = urlParams.keys();
+      var keys = [];
 
-      if (params.length === 0) {
+      for(var key of keys_object) {
+        keys.push(key);
+      }
+
+      if (keys.length === 0 || params === '=' || (keys.includes('site_search') && keys.length === 1) || (keys.includes('page') && keys.length === 1) || (keys.includes('site_search') && keys.includes('page') && keys.length === 2)) {
         $('.js-search-all').prop('checked', true);
       }
     }

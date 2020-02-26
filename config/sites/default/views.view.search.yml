@@ -106,7 +106,7 @@ display:
             'entity:media':
               video: teaser
             'entity:node':
-              article: default
+              article: teaser
               location: teaser
               page: teaser
               profile: teaser
@@ -114,9 +114,11 @@ display:
             'entity:taxonomy_term':
               access_control: default
               area_of_interest: default
+              article_types: default
               condition: default
               core_services: default
               hospital_affiliation: default
+              image_type: default
               insurance_company: default
               insurance_groups: default
               location_type: default
@@ -224,8 +226,53 @@ display:
             group_items: {  }
           parse_mode: terms
           min_length: null
-          fields: {  }
+          fields:
+            - rendered_item
+            - title
+            - video_name
           plugin_id: search_api_fulltext
+        search_api_datasource_1:
+          id: search_api_datasource_1
+          table: search_api_index_acquia_search_index
+          field: search_api_datasource
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            'entity:media': 'entity:media'
+            'entity:node': 'entity:node'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_datasource
         type:
           id: type
           table: search_api_index_acquia_search_index
@@ -240,7 +287,7 @@ display:
             page: page
             profile: profile
             service: service
-          group: 1
+          group: 2
           exposed: true
           expose:
             operator_id: type_op
@@ -286,7 +333,7 @@ display:
           operator: or
           value:
             'entity:media': 'entity:media'
-          group: 1
+          group: 2
           exposed: true
           expose:
             operator_id: search_api_datasource_op
@@ -327,48 +374,6 @@ display:
                   'entity:media': 'entity:media'
           reduce_duplicates: false
           plugin_id: search_api_datasource
-        search_api_datasource_1:
-          id: search_api_datasource_1
-          table: search_api_index_acquia_search_index
-          field: search_api_datasource
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            'entity:media': 'entity:media'
-            'entity:node': 'entity:node'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_datasource
       sorts:
         search_api_relevance:
           id: search_api_relevance
@@ -382,10 +387,10 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-        title:
-          id: title
+        entity_title_field:
+          id: entity_title_field
           table: search_api_index_acquia_search_index
-          field: title
+          field: entity_title_field
           relationship: none
           group_type: group
           admin_label: ''
@@ -416,6 +421,7 @@ display:
         operator: AND
         groups:
           1: AND
+          2: OR
     cache_metadata:
       max-age: -1
       contexts:
