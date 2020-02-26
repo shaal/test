@@ -2,14 +2,28 @@
 
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
+use ArrayIterator;
+use Drupal\migrate\MigrateException;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
+
 /**
- * Migrate source plugin for provider leadership titles.
+ * Source for converting CSV files to JSON.
  *
  * @MigrateSource(
- *   id = "locations"
+ *   id = "locations",
+ *   source_module = "towerhealth_msow_migration"
  * )
  */
-class Locations extends CSVtoJSON {
+class Locations extends SourcePluginBase {
+
+  /**
+   * Data obtained from the JSON file.
+   *
+   * @var array[]
+   *   Array of data rows, each one an array of values keyed by field names.
+   */
+  public $dataRows = [];
 
   /**
    * List of available source fields.
@@ -31,6 +45,7 @@ class Locations extends CSVtoJSON {
     'office_contact' => 'Office Contact',
     'handicap_access' => 'Handicap Access',
     'fax_number' => 'Fax number',
+    'hours' => 'Hours',
   ];
 
   /**
@@ -46,103 +61,203 @@ class Locations extends CSVtoJSON {
   ];
 
   /**
-   * @param $practitioner_offices
+   * Encoded json files to be used to build the entire doctor profile.
+   *
+   * @var array[]
+   *   Each array item should contain the encoded json source.
    */
-  public function processPractionOfficeData($practitioner_offices) {
-    $processed_offices_data = [];
+  public $encodedJson = [];
 
-    if (!is_array($practitioner_offices)) {
-      return $processed_offices_data;
-    }
+  /**
+   * {@inheritdoc}
+   *
+   * @throws \InvalidArgumentException
+   * @throws \Drupal\migrate\MigrateException
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
 
-    // Sort through the offices to find the primary location for a provider.
-    foreach ($practitioner_offices as $office_row) {
-      $pracitioner_officer_id = $office_row[1];
-      $location_id = $office_row[2];
+    $this->encodedJson['offices_json'] = $this->encodeJsonCsv($this->configuration['offices_path']);
+    $this->encodedJson['practioner_offices_json'] = $this->encodeJsonCsv($this->configuration['practioner_offices_path']);
+    $this->encodedJson['office_desig_json'] = $this->encodeJsonCsv($this->configuration['office_desig_path']);
+    $this->encodedJson['office_hours_json'] = $this->encodeJsonCsv($this->configuration['office_hours_path']);
 
-      if (!isset($processed_offices_data[$location_id])) {
-        $processed_offices_data[$location_id] = [
-          'location_id' => $location_id,
-          'practitioner_office_ids' => [],
-        ];
-        if (!in_array($pracitioner_officer_id, $processed_offices_data[$location_id]['practitioner_office_ids'])) {
-          $processed_offices_data[$location_id]['practitioner_office_ids'][] = $pracitioner_officer_id;
-        }
-      }
-    }
-
-    return $processed_offices_data;
+    $this->dataRows = $this->parseJSON($this->encodedJson);
   }
 
   /**
-   * @param $processed_offices_data
-   * @param $practitioner_offices_desig
+   * Return a string representing the source query.
+   *
+   * @return string
+   *   The file path.
    */
-  public function processLocationData($processed_offices_data, $processed_practioner_offices) {
-    $processed_location_ids = [];
-
-    if (!is_array($processed_offices_data) || !is_array($processed_practioner_offices)) {
-      return $processed_location_ids;
-    }
-
-    /**
-     * Based on the practioner office id determine the office location ids
-     * that are in the practioner offices designation data.
-     * If present then this location is a primary or secondary location
-     * and should be migrated as a distinct location.
-     */
-    foreach ($processed_offices_data as $proccessed_office) {
-      $location_id = $proccessed_office['location_id'];
-      foreach ($proccessed_office['practitioner_office_ids'] as $practitioner_office_id) {
-        if (in_array($practitioner_office_id, $processed_practioner_offices) && !in_array($location_id, $processed_location_ids)) {
-          $processed_location_ids[] = $location_id;
-        }
-      }
-    }
-
-    return $processed_location_ids;
+  public function __toString() {
+    return $this->configuration['file'];
   }
 
   /**
-   * @param $practitioner_offices_desig
+   * {@inheritdoc}
+   *
+   * @throws \Drupal\migrate\MigrateException
+   * @throws \League\Csv\Exception
    */
-  public function processOfficeDesigData($practitioner_offices_desig) {
-    $processed_practioner_offices = [];
+  public function initializeIterator() {
+    return new ArrayIterator($this->dataRows);
+  }
 
-    foreach ($practitioner_offices_desig as $pracitioner_office) {
-      $processed_practioner_offices[] = $pracitioner_office[1];
+  /**
+   * {@inheritdoc}
+   */
+  public function getIds() {
+    return $this->ids;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function fields() {
+    return $this->fields;
+  }
+
+  /**
+   * Open file from CSV and encode to JSON.
+   */
+  public function encodeJsonCsv($path) {
+    $file = fopen($path, 'r');
+
+    // Setup a PHP array to hold our CSV rows.
+    $csv_data = [];
+
+    // Go through rows in our CSV file and add them to array.
+    while (($row = fgetcsv($file, 0, "|")) !== FALSE) {
+      // Cleanup non-utf8 characters.
+      $csv_data[] = mb_convert_encoding($row, 'UTF-8', 'UTF-8');
     }
 
-    return $processed_practioner_offices;
+    $json = json_encode($csv_data);
+
+    // If JSON encoding fails throw an exception.
+    if (!$json) {
+      throw new MigrateException(json_last_error_msg());
+    }
+
+    return $json;
   }
 
   /**
    * Process the JSON file and convert flattened data.
    */
-  public function parseJson($json, $secondary_json = NULL, $third_json = NULL) {
-    $offices = json_decode($json);
-    $practitioner_offices = json_decode($secondary_json);
-    $practitioner_offices_desig = json_decode($third_json);
-
-    // Remove the header from the data file.
-    unset($offices[0]);
-    unset($practitioner_offices[0]);
-    unset($practitioner_offices_desig[0]);
-
-    $processed_data = [];
-    $processed_offices_data = $this->processPractionOfficeData($practitioner_offices);
-    $processed_practioner_offices = $this->processOfficeDesigData($practitioner_offices_desig);
-
-    if (empty($processed_offices_data)) {
+  public function parseOfficeHours($processed_data, $data) {
+    if (empty($data) || !is_array($data)) {
       return $processed_data;
     }
 
-    $processed_location_ids = $this->processLocationData($processed_offices_data, $processed_practioner_offices);
+    // Remove the header from the data file.
+    unset($data[0]);
+
+    foreach ($data as $row) {
+      $office_record_no = $row[1];
+
+      if (isset($processed_data[$office_record_no])) {
+        $processed_data = $this->processOfficeHours($processed_data, $row);
+      }
+    }
+
+    return $processed_data;
+  }
+
+  /**
+   * Process office_hours.
+   */
+  public function processOfficeHours($processed_data, $row) {
+    $office_hours_id = $row[0];
+    $office_record_no = $row[1];
+    $days_of_week = $row[4];
+    $start = $row[5];
+    $end = $row[6];
+
+    if (!array_key_exists('hours', $processed_data[$office_record_no])) {
+      $processed_data[$office_record_no]['hours'] = [];
+    }
+
+    if (!in_array($office_hours_id, $processed_data[$office_record_no]['hours'])) {
+
+      if (strpos($days_of_week, '-') > 0) {
+        $split = explode(' - ', $days_of_week);
+
+        $days = [
+          1 => 'Mon',
+          2 => 'Tues',
+          3 => 'Wed',
+          4 => 'Thurs',
+          5 => 'Fri',
+          6 => 'Sat',
+          7 => 'Sun',
+        ];
+
+        $start_day = array_search($split[0], $days);
+        $end_day = array_search($split[1], $days);
+      }
+      else {
+        $days = [
+          1 => 'Monday',
+          2 => 'Tuesday',
+          3 => 'Wednesday',
+          4 => 'Thursday',
+          5 => 'Friday',
+          6 => 'Saturday',
+          7 => 'Sunday',
+        ];
+
+        $start_day = array_search($days_of_week, $days);
+        $end_day = $start_day;
+      }
+
+      $start = substr($start, '11', 5);
+      $end = substr($end, '11', 5);
+
+      $index = $start_day;
+
+      while ($index <= $end_day) {
+        $day = $index;
+        // Office hour modules weeks are sunday - saturday.
+        // Office hour data is monday - sunday.
+        // Reset the day to 0 to work with office hour module.
+        if ($index == 7) {
+          $day = 0;
+        }
+        $processed_data[$office_record_no]['hours'][] = [
+          'office_hours_id' => $office_hours_id,
+          'day' => $day,
+          'starthours' => str_replace(':', '', $start),
+          'endhours' => str_replace(':', '', $end),
+        ];
+
+        $index++;
+      }
+
+    }
+
+    return $processed_data;
+  }
+
+  /**
+   * Process the JSON file and convert flattened data.
+   */
+  public function parseJson($encodedJson) {
+    $offices = json_decode($encodedJson['offices_json']);
+    $office_hours = json_decode($encodedJson['office_hours_json']);
+
+    // Remove the header from the data file.
+    unset($offices[0]);
+    unset($office_hours[0]);
+
+    $processed_data = [];
 
     foreach ($offices as $office) {
       $location_id = intval($office[0]);
 
-      if (in_array($location_id, $processed_location_ids) && is_integer($location_id) && $location_id !== 0 && !array_key_exists($location_id, $processed_data)) {
+      if (is_integer($location_id) && $location_id !== 0 && !array_key_exists($location_id, $processed_data)) {
         $processed_data[$location_id] = [
           'location_id' => $location_id,
           'office_name' => $office[1],
@@ -158,6 +273,8 @@ class Locations extends CSVtoJSON {
         ];
       }
     }
+
+    $processed_data = $this->parseOfficeHours($processed_data, $office_hours);
 
     return $processed_data;
   }

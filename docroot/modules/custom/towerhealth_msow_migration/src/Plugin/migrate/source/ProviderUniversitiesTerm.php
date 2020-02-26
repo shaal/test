@@ -3,13 +3,13 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 /**
- * Migrate source plugin for provider leadership titles.
+ * Migrate source plugin for clinical area of interests.
  *
  * @MigrateSource(
- *   id = "provider_leadership"
+ *   id = "provider_universities_term"
  * )
  */
-class ProviderLeadership extends CSVtoJSON {
+class ProviderUniversitiesTerm extends CSVtoJSON {
 
   /**
    * List of available source fields.
@@ -20,8 +20,8 @@ class ProviderLeadership extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'practioner_id' => 'Pracitioner ID',
-    'job_titles' => 'Job titles',
+    'id' => 'University Record No',
+    'university_name' => 'University name',
   ];
 
   /**
@@ -30,7 +30,7 @@ class ProviderLeadership extends CSVtoJSON {
    * @var array
    */
   public $ids = [
-    'practioner_id' => [
+    'id' => [
       'type' => 'string',
       'max_length' => 64,
     ],
@@ -46,16 +46,15 @@ class ProviderLeadership extends CSVtoJSON {
 
     $processed_data = [];
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
-      $leadership_name = $row[2];
-      if (!isset($processed_data[$pracitioner_id])) {
-        $processed_data[$pracitioner_id] = [
-          'practioner_id' => $pracitioner_id,
-          'job_titles' => [],
-        ];
-      }
-      if (!in_array($leadership_name, $processed_data[$pracitioner_id]['job_titles'])) {
-        $processed_data[$pracitioner_id]['job_titles'][] = $leadership_name;
+      $id = $row[0];
+      $university_name = $row[1];
+      if (!empty($id) && !empty($university_name)) {
+        if (!isset($processed_data[$id])) {
+          $processed_data[$id] = [
+            'id' => $id,
+            'university_name' => $university_name,
+          ];
+        }
       }
     }
 

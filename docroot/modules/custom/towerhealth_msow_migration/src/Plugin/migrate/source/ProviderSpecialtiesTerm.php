@@ -46,7 +46,7 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
     $processed_data = [];
     foreach ($data as $row) {
       $specialty_term = $row[1];
-      if (!isset($processed_data[$specialty_term])) {
+      if (!empty($specialty_term) && !isset($processed_data[$specialty_term])) {
         $processed_data[$specialty_term] = [
           'specialty_term' => $specialty_term,
         ];
