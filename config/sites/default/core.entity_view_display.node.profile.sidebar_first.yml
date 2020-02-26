@@ -22,7 +22,6 @@ dependencies:
     - field.field.node.profile.field_profile_last_name
     - field.field.node.profile.field_profile_middle_name
     - field.field.node.profile.field_profile_npi
-    - field.field.node.profile.field_profile_phone
     - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
@@ -34,7 +33,6 @@ dependencies:
     - field.field.node.profile.field_rating_overall
     - node.type.profile
   module:
-    - telephone
     - user
 id: node.profile.sidebar_first
 targetEntityType: node
@@ -64,14 +62,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_profile_phone:
-    weight: 1
-    label: hidden
-    settings:
-      title: ''
-    third_party_settings: {  }
-    type: telephone_link
     region: content
 hidden:
   content_moderation_control: true
