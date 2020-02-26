@@ -113,7 +113,7 @@ header_menu_items:
           label: Find a Location
           input_class: 
           type: find-location
-          placeholder: Search by Name, Condition, or Service
+          placeholder: Search by Location, Condition, or Service
           id: edit-find-location
           path: some/path
           results:
