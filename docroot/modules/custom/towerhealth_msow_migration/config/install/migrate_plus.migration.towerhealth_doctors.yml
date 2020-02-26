@@ -204,7 +204,7 @@ process:
   field_insurance_ref:
   - plugin: towerhealth_entity_ref_values
     source: '@_insurance_groups'
-
+    
   _hospital_aff:
     - plugin: towerhealth_lookup_taxonomy_term
       lookup_field: field_hospital_faccode

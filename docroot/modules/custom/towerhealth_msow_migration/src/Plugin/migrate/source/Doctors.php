@@ -3,9 +3,11 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 use ArrayIterator;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Migrate source plugin for provider location hours.
@@ -56,7 +58,7 @@ class Doctors extends SourcePluginBase {
     'insurance_groups' => 'Insurance Groups',
     'specialty_term' => 'Specialty term',
     'board_certified' => 'Board certified',
-    'board_elligble' => 'Board elligible',
+    'board_elligble' => 'Board eligible',
     'job_titles' => 'Job titles',
     'languages' => 'Languages',
     'fac_code' => 'Facility Code',
@@ -175,8 +177,8 @@ class Doctors extends SourcePluginBase {
     $processed_data = $this->parseSpecialties($processed_data, $encodedJson['specialties']);
     $processed_data = $this->parseLanguages($processed_data, $encodedJson['languages']);
     $processed_data = $this->parseLeadership($processed_data, $encodedJson['leadership']);
-    $processed_data = $this->parseLocations($processed_data, $encodedJson['locations']);
     $processed_data = $this->parseHospitalAffiliations($processed_data, $encodedJson['hospital_affiliations']);
+    $processed_data = $this->parseLocations($processed_data, $encodedJson['locations']);
 
     return $processed_data;
   }
@@ -196,7 +198,7 @@ class Doctors extends SourcePluginBase {
     foreach ($data as $row) {
       $pracitioner_id = $row[0];
 
-      if (!isset($processed_data[$pracitioner_id])) {
+      if (!empty($pracitioner_id) && !isset($processed_data[$pracitioner_id])) {
         $processed_data[$pracitioner_id] = [
           'practioner_id' => $pracitioner_id,
           'last_name' => $row[1],
@@ -383,11 +385,11 @@ class Doctors extends SourcePluginBase {
     $specialty_term_board = '';
 
     if ($document_name == 'Board Specialties') {
-      $specialty_term_board = $board_name;
+      $specialty_term_board = $board_name . ' <span class="provider-detail__item-meta">' . $certified_year . '</span>';;
     }
     elseif ($document_name == 'Board Pending') {
       $certified_year = $certified_year ? ', ' . $certified_year : '';
-      $specialty_term_board = $board_name . ' <span>' . t('Board Elligible') . $certified_year . '</span>';
+      $specialty_term_board = $board_name . ' <span class="provider-detail__item-meta">' . t('Board Eligible') . $certified_year . '</span>';
     }
 
     if (!array_key_exists('board_certified', $processed_data[$pracitioner_id])) {
@@ -395,7 +397,10 @@ class Doctors extends SourcePluginBase {
     }
 
     if (!in_array($specialty_term_board, $processed_data[$pracitioner_id]['board_certified'])) {
-      $processed_data[$pracitioner_id]['board_certified'][] = $specialty_term_board;
+      $processed_data[$pracitioner_id]['board_certified'][] = [
+        'value' => $specialty_term_board,
+        'format' => 'full_html'
+      ];
     }
 
     return $processed_data;
@@ -482,6 +487,44 @@ class Doctors extends SourcePluginBase {
 
         if (!in_array($fac_code, $processed_data[$pracitioner_id]['fac_codes'])) {
           $processed_data[$pracitioner_id]['fac_codes'][] = $fac_code;
+        }
+
+        $processed_data = $this->addHospitalLocations($processed_data, $pracitioner_id, $fac_code);
+
+      }
+    }
+
+    return $processed_data;
+  }
+
+  /**
+   * Add hospital locations to doctors.
+   */
+  public function addHospitalLocations($processed_data, $pracitioner_id, $fac_code) {
+    if (!is_array($processed_data) || empty($pracitioner_id) || empty($fac_code)) {
+      return $processed_data;
+    }
+
+    if (!array_key_exists('location_ids', $processed_data[$pracitioner_id])) {
+      $processed_data[$pracitioner_id]['location_ids'] = [];
+    }
+
+    if (!empty($fac_code)) {
+      $location_id = '';
+
+      $query = \Drupal::entityQuery('taxonomy_term');
+      $result = $query
+        ->condition('field_hospital_faccode.0.value', $fac_code, '=')
+        ->condition('vid', 'hospital_affiliation')
+        ->execute();
+
+      $term = Term::load(reset($result));
+
+      if ($term instanceof EntityInterface) {
+        $location_id = $term->get('field_hospital_location_id')->getString();
+
+        if (!empty($location_id) && !in_array($location_id, $processed_data[$pracitioner_id]['location_ids'])) {
+          $processed_data[$pracitioner_id]['location_ids'][] = $location_id;
         }
       }
     }

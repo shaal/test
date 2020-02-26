@@ -78,8 +78,6 @@ class Locations extends SourcePluginBase {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
 
     $this->encodedJson['offices_json'] = $this->encodeJsonCsv($this->configuration['offices_path']);
-    $this->encodedJson['practioner_offices_json'] = $this->encodeJsonCsv($this->configuration['practioner_offices_path']);
-    $this->encodedJson['office_desig_json'] = $this->encodeJsonCsv($this->configuration['office_desig_path']);
     $this->encodedJson['office_hours_json'] = $this->encodeJsonCsv($this->configuration['office_hours_path']);
 
     $this->dataRows = $this->parseJSON($this->encodedJson);
@@ -256,8 +254,9 @@ class Locations extends SourcePluginBase {
 
     foreach ($offices as $office) {
       $location_id = intval($office[0]);
+      $include = filter_var($office[11], FILTER_VALIDATE_BOOLEAN);
 
-      if (is_integer($location_id) && $location_id !== 0 && !array_key_exists($location_id, $processed_data)) {
+      if (is_integer($location_id) && $location_id !== 0 && !array_key_exists($location_id, $processed_data) && $include == TRUE) {
         $processed_data[$location_id] = [
           'location_id' => $location_id,
           'office_name' => $office[1],
@@ -270,6 +269,7 @@ class Locations extends SourcePluginBase {
           'office_contact' => $office[8],
           'handicap_access' => $office[9],
           'fax_number' => $office[10],
+          'location_type' => $office[12],
         ];
       }
     }
