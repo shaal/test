@@ -8,7 +8,6 @@ use Drupal\migrate\Row;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\Core\Language\Language;
 
 /**
  * Creates provider credential paragraphs.
@@ -34,7 +33,7 @@ class TowerHealthDoctorImages extends ProcessPluginBase {
    *
    * @return \Drupal\Core\File\FileSystemInterface
    *   The file system service.
-  */
+   */
   private function getFileSystem() {
     return \Drupal::service('file_system');
   }
@@ -109,8 +108,9 @@ class TowerHealthDoctorImages extends ProcessPluginBase {
           'field_media_image' => [[
             'target_id' => $fid,
             'alt' => t('Image of @name', ['@name' => $title]),
-            'title' =>  t('Image of @name', ['@name' => $title]),
-          ]],
+            'title' => t('Image of @name', ['@name' => $title]),
+          ],
+          ],
         ]);
         $image_media->set('field_image_type_ref', $tid);
         $image_media->set('name', $title);

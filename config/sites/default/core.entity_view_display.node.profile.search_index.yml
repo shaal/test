@@ -22,7 +22,6 @@ dependencies:
     - field.field.node.profile.field_profile_last_name
     - field.field.node.profile.field_profile_middle_name
     - field.field.node.profile.field_profile_npi
-    - field.field.node.profile.field_profile_phone
     - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
@@ -136,7 +135,6 @@ hidden:
   field_profile_last_name: true
   field_profile_middle_name: true
   field_profile_npi: true
-  field_profile_phone: true
   field_profile_practid: true
   field_profile_professional_title: true
   field_profile_scheduling: true

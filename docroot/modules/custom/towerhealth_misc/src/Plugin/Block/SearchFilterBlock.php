@@ -4,8 +4,6 @@ namespace Drupal\towerhealth_misc\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\views\Views;
-use Drupal\Core\Url;
-use Drupal\Component\Utility\Xss;
 
 /**
  * Provides a 'Search filter block' block.
@@ -53,19 +51,31 @@ class SearchFilterBlock extends BlockBase {
     $search_term_id = $form['site_search']['#id'];
     $form['site_search']['#id'] = $search_term_id . '-filter';
     $form['site_search']['#attributes']['data-id'] = 'general-search-filter-input';
-    $form['site_search']['#theme'] = 'checkboxes';
 
+    $form['type']['#prefix'] = '<ul class="form-item--checkboxes form-item--inline">';
     $form['type']['#attributes']['data-id'] = 'general_search_filter__checkboxes';
     $form['type']['article']['#attributes']['data-id'] = 'general-search-filter--checkbox';
     $form['type']['location']['#attributes']['data-id'] = 'general-search-filter--checkbox';
-    $form['type']['page']['#attributes']['data-id'] = 'general-search-filter--checkbox';
     $form['type']['profile']['#attributes']['data-id'] = 'general-search-filter--checkbox';
     $form['type']['service']['#attributes']['data-id'] = 'general-search-filter--checkbox';
-    $form['type']['#suffix'] = '</ul>';
+    $form['type']['all'] = [
+      '#type' => 'checkbox',
+      '#title' => 'All',
+      '#attributes' => [
+        'data-id' => 'general-search-filter--checkbox',
+        'class' => ['js-search-all'],
+      ],
+      '#return_value' => '',
+      '#default_value' => null,
+      '#id' => 'edit-type-all',
+    ];
+
+    // Remove basic page as an option
+    unset($form['type']['page']);
 
     $form['search_api_datasource']['entity:media']['#attributes']['data-id'] = 'general-search-filter--checkbox';
     $form['search_api_datasource']['#attributes']['data-id'] = 'general_search_filter__checkboxes';
-    $form['search_api_datasource']['#prefix'] = '<ul class="form-item--checkboxes form-item--inline">';
+    $form['search_api_datasource']['#suffix'] = '</ul>';
 
     $form['#id'] = 'views-exposed-form-general-search-filters';
 

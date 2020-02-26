@@ -181,6 +181,7 @@
     position: absolute;
     right: 1em;
     text-decoration: none;
+    z-index: 100;
 
     @include breakpoint($bp3) {
       right: 0;

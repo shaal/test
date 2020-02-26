@@ -71,15 +71,17 @@
  */
 #}
 
-
-{% include "@organisms/teasers/article-teaser/article-teaser.twig" with {
+{% embed "@organisms/teasers/article-teaser/article-teaser.twig" with {
   "article": {
     "details": {
       "title": label,
       "date": content.field_article_date,
-      "text": content.field_article_teaser,
-      "tags": tags
+      "text": content.field_article_teaser
     }
   },
   "url": url
 } %}
+  {% block tags %}
+    {{ content.field_article_type_ref }}
+  {% endblock %}
+{% endembed %}
