@@ -59,6 +59,7 @@ class LocationProximityBlock extends BlockBase {
 
     // Explicitly add locations terms to proximity input.
     $locations = \Drupal::request()->get('location_latlon');
+    $form['location_latlon']['value']['#attributes']['data-id'] = 'location-proximity-value-input';
     if (!empty($locations) && is_array($locations) && empty($form['location_latlon']['value']['#attributes']['value'])) {
       $form['location_latlon']['value']['#attributes']['value'] = Xss::filter($locations['value']);
       $form['location_latlon']['distance']['from']['#attributes']['value'] = Xss::filter($locations['distance']['from']);
@@ -92,13 +93,13 @@ class LocationProximityBlock extends BlockBase {
         'class' => [
           'js-use-my-location',
           'link',
-          'link--small',
+          'link--italic',
         ],
         'data-view' => 'views-exposed-form-find-a-location-find-location',
       ],
       '#url' => $url,
     ];
-    $build['exposed_form']['actions']['location_link'] = $location_link;
+    $build['exposed_form']['location_latlon']['value']['location_link'] = $location_link;
     $build['#cache'] = ['max-age' => 0];
 
     return $build;

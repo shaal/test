@@ -73,6 +73,15 @@
     font-weight: 300;
     margin: 0;
     padding: .15em 0;
+    :hover, :visited {
+      color: $primary-dark;
+      text-decoration: underline;
+    }
+
+    :focus {
+      color: $primary-dark;
+      text-decoration: underline;
+    }
   }
 
   @include breakpoint(0 $bp3) {

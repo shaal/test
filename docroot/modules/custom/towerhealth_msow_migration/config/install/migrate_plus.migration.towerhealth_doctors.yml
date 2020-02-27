@@ -193,6 +193,18 @@ process:
 
   field_profile_board_certified: board_certified
 
+  _insurance_groups:
+  - plugin: towerhealth_lookup_taxonomy_term
+    lookup_field: name
+    source: insurance_groups
+    vid: insurance_groups
+  - plugin: skip_on_empty
+    method: process
+
+  field_insurance_ref:
+  - plugin: towerhealth_entity_ref_values
+    source: '@_insurance_groups'
+    
   _hospital_aff:
     - plugin: towerhealth_lookup_taxonomy_term
       lookup_field: field_hospital_faccode

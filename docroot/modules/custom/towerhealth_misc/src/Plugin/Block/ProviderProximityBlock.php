@@ -67,6 +67,7 @@ class ProviderProximityBlock extends BlockBase {
 
     // Explicitly add locations terms to proximity input.
     $locations = \Drupal::request()->get('provider_location_latlong');
+    $form['provider_location_latlong']['value']['#attributes']['data-id'] = 'provider-proximity-value-input';
     if (!empty($locations) && is_array($locations) && empty($form['provider_location_latlong']['value']['#attributes']['value'])) {
       $form['provider_location_latlong']['value']['#attributes']['value'] = Xss::filter($locations['value']);
       $form['provider_location_latlong']['distance']['from']['#attributes']['value'] = Xss::filter($locations['distance']['from']);
@@ -99,13 +100,13 @@ class ProviderProximityBlock extends BlockBase {
         'class' => [
           'js-use-my-location',
           'link',
-          'link--small',
+          'link--italic',
         ],
         'data-view' => 'views-exposed-form-find-a-provider-find-doctor-proximity',
       ],
       '#url' => $url,
     ];
-    $build['exposed_form']['actions']['location_link'] = $location_link;
+    $build['exposed_form']['provider_location_latlong']['value']['location_link'] = $location_link;
     $build['#cache'] = ['max-age' => 0];
 
     return $build;

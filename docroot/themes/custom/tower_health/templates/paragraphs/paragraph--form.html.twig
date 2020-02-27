@@ -37,5 +37,6 @@
  */
 #}
 {% if content.field_form_builder_id|render %}
-  <script src="//formbuilder.geonetric.com/render/{{ content.field_form_builder_id|field_value }}" type="text/javascript"></script>
+  {% set form_id = content.field_form_builder_id|field_value %}
+  {% include "@molecules/form-embedded/form-embedded.twig" with form_id %}
 {% endif %}
