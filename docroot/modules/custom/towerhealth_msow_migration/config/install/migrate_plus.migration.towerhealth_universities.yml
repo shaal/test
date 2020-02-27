@@ -7,27 +7,10 @@ dependencies:
       - towerhealth_msow_migration
 
 source:
-  plugin: 'csv'
+  plugin: 'provider_universities_term'
   # Full path to the file.
   path: 'public://directory/Find_Provider_Dir_Practitioner_Universities.txt'
-  # Column delimiter. Comma (,) by default.
-  delimiter: '|'
-  header_row_count: 1
-  enclosure: '"'
-  ids:
-   - id
   track_changes: true
-  # Here we identify the columns of interest in the source file.
-  # Each numeric key is the 0-based index of the column.
-  # For each column, the key below is the field name assigned to
-  # the data on import, to be used in field mappings below.
-  # The value is a user-friendly string for display by the
-  # migration UI.
-  fields:
-    - name: id
-      label: 'University Record No'
-    - name: university_name
-      label: 'University name'
 
 process:
   vid:

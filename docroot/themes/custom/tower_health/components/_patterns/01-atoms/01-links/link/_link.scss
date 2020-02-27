@@ -17,3 +17,7 @@
   @include adjust-font-size-to($crumb, .7);
   font-style: italic;
 }
+
+.link--italic {
+  font-style: italic;
+}

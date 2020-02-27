@@ -10,6 +10,7 @@ source:
   plugin: 'provider_specialties_term'
   # Full path to the file.
   path: 'public://directory/Find_Provider_Dir_Practitioner_Specialties.txt'
+  track_changes: true
 
 process:
   vid:

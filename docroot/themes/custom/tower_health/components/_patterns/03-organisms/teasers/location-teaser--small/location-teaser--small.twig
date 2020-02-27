@@ -17,12 +17,14 @@
         } %}
       </div>
       <div class="teaser__section">
-        {% for item in phones %}
-          {% if item.number %}
-            <span class="teaser-label">{{ item.label }}</span>
-            <span>{{ item.number }}</span>
-          {% endif %}
-        {% endfor %}
+        {% if phone %}
+          <span class="teaser-label">{{ "Phone"|t }}</span>
+          <a href="tel:+1{{ phone }}">{{ phone }}</a>
+        {% endif %}
+        {% if fax %}
+          <span class="teaser-label">{{ "Fax"|t }}</span>
+          {{ fax }}
+        {% endif %}
       </div>
     </div>
     <div class="teaser__link--small">

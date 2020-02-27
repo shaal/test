@@ -13,21 +13,9 @@ migration_tags: null
 migration_group: towerhealth_provider_base_group
 label: 'Import tower health universities taxonomy terms.'
 source:
-  plugin: csv
+  plugin: provider_universities_term
   path: 'public://directory/Find_Provider_Dir_Practitioner_Universities.txt'
-  delimiter: '|'
-  header_row_count: 1
-  enclosure: '"'
-  ids:
-    - id
   track_changes: true
-  fields:
-    -
-      name: id
-      label: 'University Record No'
-    -
-      name: university_name
-      label: 'University name'
 process:
   vid:
     -

@@ -21,7 +21,6 @@ dependencies:
     - field.field.node.profile.field_profile_last_name
     - field.field.node.profile.field_profile_middle_name
     - field.field.node.profile.field_profile_npi
-    - field.field.node.profile.field_profile_phone
     - field.field.node.profile.field_profile_practid
     - field.field.node.profile.field_profile_professional_title
     - field.field.node.profile.field_profile_scheduling
@@ -347,16 +346,6 @@ content:
     region: content
   field_profile_npi:
     weight: 6
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_profile_phone:
-    weight: 12
     settings:
       label: above
       formatter_type: null
