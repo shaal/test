@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.hospital_affiliation.field_hospital_faccode
+    - field.field.taxonomy_term.hospital_affiliation.field_hospital_location_id
     - taxonomy.vocabulary.hospital_affiliation
   module:
     - path
@@ -14,15 +15,23 @@ bundle: hospital_affiliation
 mode: default
 content:
   description:
-    type: text_textfield
-    weight: 0
+    type: text_textarea
+    weight: 1
     region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_hospital_faccode:
+    weight: 3
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_hospital_faccode:
-    weight: 31
+    type: string_textfield
+    region: content
+  field_hospital_location_id:
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -31,7 +40,7 @@ content:
     region: content
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -39,7 +48,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -47,7 +56,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 100
+    weight: 5
     region: content
     third_party_settings: {  }
 hidden: {  }

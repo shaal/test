@@ -3,13 +3,13 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 /**
- * Migrate source plugin for provider leadership titles.
+ * Migrate source plugin for hospital affiliations.
  *
  * @MigrateSource(
- *   id = "provider_specialties_term"
+ *   id = "location_types_term"
  * )
  */
-class ProviderSpecialtiesTerm extends CSVtoJSON {
+class LocationTypesTerm extends CSVtoJSON {
 
   /**
    * List of available source fields.
@@ -20,7 +20,7 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'specialty_term' => 'Specialty Term',
+    'name' => 'Name',
   ];
 
   /**
@@ -29,7 +29,7 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
    * @var array
    */
   public $ids = [
-    'specialty_term' => [
+    'name' => [
       'type' => 'string',
       'max_length' => 64,
     ],
@@ -45,10 +45,10 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
 
     $processed_data = [];
     foreach ($data as $row) {
-      $specialty_term = $row[1];
-      if (!empty($specialty_term) && !isset($processed_data[$specialty_term])) {
-        $processed_data[$specialty_term] = [
-          'specialty_term' => $specialty_term,
+      $location_type = $row[12];
+      if (!isset($processed_data[$location_type]) && !empty($location_type)) {
+        $processed_data[$location_type] = [
+          'name' => $location_type,
         ];
       }
     }

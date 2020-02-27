@@ -3,13 +3,13 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 /**
- * Migrate source plugin for provider leadership titles.
+ * Migrate source plugin for clinical area of interests.
  *
  * @MigrateSource(
- *   id = "provider_specialties_term"
+ *   id = "provider_universities_term"
  * )
  */
-class ProviderSpecialtiesTerm extends CSVtoJSON {
+class ProviderUniversitiesTerm extends CSVtoJSON {
 
   /**
    * List of available source fields.
@@ -20,7 +20,8 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'specialty_term' => 'Specialty Term',
+    'id' => 'University Record No',
+    'university_name' => 'University name',
   ];
 
   /**
@@ -29,7 +30,7 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
    * @var array
    */
   public $ids = [
-    'specialty_term' => [
+    'id' => [
       'type' => 'string',
       'max_length' => 64,
     ],
@@ -45,11 +46,15 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
 
     $processed_data = [];
     foreach ($data as $row) {
-      $specialty_term = $row[1];
-      if (!empty($specialty_term) && !isset($processed_data[$specialty_term])) {
-        $processed_data[$specialty_term] = [
-          'specialty_term' => $specialty_term,
-        ];
+      $id = $row[0];
+      $university_name = $row[1];
+      if (!empty($id) && !empty($university_name)) {
+        if (!isset($processed_data[$id])) {
+          $processed_data[$id] = [
+            'id' => $id,
+            'university_name' => $university_name,
+          ];
+        }
       }
     }
 

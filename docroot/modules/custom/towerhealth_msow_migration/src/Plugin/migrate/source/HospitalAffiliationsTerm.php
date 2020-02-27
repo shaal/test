@@ -3,13 +3,13 @@
 namespace Drupal\towerhealth_msow_migration\Plugin\migrate\source;
 
 /**
- * Migrate source plugin for provider leadership titles.
+ * Migrate source plugin for hospital affiliations.
  *
  * @MigrateSource(
- *   id = "provider_specialties_term"
+ *   id = "hospital_affiliation_term"
  * )
  */
-class ProviderSpecialtiesTerm extends CSVtoJSON {
+class HospitalAffiliationsTerm extends CSVtoJSON {
 
   /**
    * List of available source fields.
@@ -20,7 +20,9 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
    * @var array
    */
   public $fields = [
-    'specialty_term' => 'Specialty Term',
+    'fac_code' => 'Fac code',
+    'name' => 'Name',
+    'location_id' => 'Location Id',
   ];
 
   /**
@@ -29,7 +31,7 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
    * @var array
    */
   public $ids = [
-    'specialty_term' => [
+    'fac_code' => [
       'type' => 'string',
       'max_length' => 64,
     ],
@@ -41,14 +43,16 @@ class ProviderSpecialtiesTerm extends CSVtoJSON {
   public function parseJson($json, $secondary_json = NULL, $third_json = NULL) {
     $data = json_decode($json);
     // Remove the header from the data file.
-    unset($data[0]);
-
     $processed_data = [];
     foreach ($data as $row) {
-      $specialty_term = $row[1];
-      if (!empty($specialty_term) && !isset($processed_data[$specialty_term])) {
-        $processed_data[$specialty_term] = [
-          'specialty_term' => $specialty_term,
+      $name = $row[0];
+      $fac_code = $row[1];
+      $location_id = $row[2];
+      if (!isset($processed_data[$fac_code])) {
+        $processed_data[$fac_code] = [
+          'fac_code' => $fac_code,
+          'name' => $name,
+          'location_id' => $location_id,
         ];
       }
     }

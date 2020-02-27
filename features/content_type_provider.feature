@@ -26,7 +26,6 @@ Feature: Doctor Content Type
     Then I should see the text "NPI ID"
     Then I should see the text "Open Scheduling Available"
     Then I should see the text "Overall Rating"
-    Then I should see the text "Phone Number"
     Then I should see the text "Professional Title"
     Then I should see the text "Type"
     Then I should see the text "Employment Type"
