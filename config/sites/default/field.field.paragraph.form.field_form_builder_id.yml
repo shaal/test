@@ -10,7 +10,7 @@ field_name: field_form_builder_id
 entity_type: paragraph
 bundle: form
 label: 'Form builder id'
-description: 'Add the ID from the form builder tool. Example from "//formbuilder.geonetric.com/render/5fc17f8c-6bf9-44ee-8605-b7b4aefecc13" the ID would be "5fc17f8c-6bf9-44ee-8605-b7b4aefecc13".'
+description: 'Add the ID from the form builder tool. Example from "//formbuilder.geonetric.com/render/ee1b15d5-f1d6-4a6f-abb8-4007b12df2ae" the ID would be "ee1b15d5-f1d6-4a6f-abb8-4007b12df2ae".'
 required: false
 translatable: false
 default_value: {  }
