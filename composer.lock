@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b56c10a9aea2a07ed7b3d83aaa3dfeab",
+    "content-hash": "3d07c354d057cf92372f9fd523ee05f3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4642,6 +4642,69 @@
                 "source": "http://git.drupal.org/project/search_api_solr.git",
                 "issues": "https://www.drupal.org/project/issues/search_api_solr",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
+            }
+        },
+        {
+            "name": "drupal/siteimprove",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/siteimprove.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/siteimprove-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "5ef9457cc2dc307ecb692841d22844d79b6afad9"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1547809980",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Siteimprove",
+                    "homepage": "https://www.drupal.org/user/3521441"
+                },
+                {
+                    "name": "cbccharlie",
+                    "homepage": "https://www.drupal.org/user/616836"
+                },
+                {
+                    "name": "kreynen",
+                    "homepage": "https://www.drupal.org/user/48877"
+                },
+                {
+                    "name": "rofejo",
+                    "homepage": "https://www.drupal.org/user/3284851"
+                }
+            ],
+            "description": "Integration with Siteimprove.",
+            "homepage": "https://www.drupal.org/project/siteimprove",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/siteimprove",
+                "issues": "https://www.drupal.org/project/issues/siteimprove"
             }
         },
         {
