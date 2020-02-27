@@ -56,6 +56,8 @@ class ProviderProximityBlock extends BlockBase {
 
     $form['#id'] = 'views-exposed-form-find-a-provider-find-doctor-proximity';
 
+    $form['provider_location_latlong']['distance']['from']['#attributes']['class'][] = 'js-proximity-distance';
+
     $classes = [];
     if (isset($form['#attributes']['class'])) {
       $classes = $form['#attributes']['class'];
@@ -69,6 +71,10 @@ class ProviderProximityBlock extends BlockBase {
     if (!empty($locations) && is_array($locations) && empty($form['provider_location_latlong']['value']['#attributes']['value'])) {
       $form['provider_location_latlong']['value']['#attributes']['value'] = Xss::filter($locations['value']);
       $form['provider_location_latlong']['distance']['from']['#attributes']['value'] = Xss::filter($locations['distance']['from']);
+    }
+    else {
+      $form['provider_location_latlong']['distance']['from']['#default_value'] = '40.23';
+      $form['provider_location_latlong']['distance']['from']['#value'] = '40.23';
     }
 
     // Explicitly add search term to search input.
