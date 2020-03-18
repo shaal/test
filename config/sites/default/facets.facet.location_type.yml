@@ -41,6 +41,13 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  exclude_specified_items:
+    processor_id: exclude_specified_items
+    weights:
+      build: 50
+    settings:
+      exclude: 'independent physician office'
+      regex: false
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
