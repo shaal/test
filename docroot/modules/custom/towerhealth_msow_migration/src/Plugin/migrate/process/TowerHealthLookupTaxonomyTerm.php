@@ -53,6 +53,7 @@ class TowerHealthLookupTaxonomyTerm extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    $result = '';
 
     if (isset($this->configuration['lookup_field'])) {
       $lookup_field = $this->configuration['lookup_field'];
@@ -69,7 +70,7 @@ class TowerHealthLookupTaxonomyTerm extends ProcessPluginBase {
         return reset($result);
       }
 
-      return NULL;
+      return $result;
     }
   }
 

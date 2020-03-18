@@ -52,7 +52,9 @@ class TowerHealthEntityRefValues extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    $value = ['target_id' => $value];
+    if (!empty($value)) {
+      $value = ['target_id' => $value];
+    }
 
     return $value;
   }

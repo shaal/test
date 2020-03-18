@@ -177,8 +177,8 @@ class Doctors extends SourcePluginBase {
     $processed_data = $this->parseSpecialties($processed_data, $encodedJson['specialties']);
     $processed_data = $this->parseLanguages($processed_data, $encodedJson['languages']);
     $processed_data = $this->parseLeadership($processed_data, $encodedJson['leadership']);
-    $processed_data = $this->parseHospitalAffiliations($processed_data, $encodedJson['hospital_affiliations']);
     $processed_data = $this->parseLocations($processed_data, $encodedJson['locations']);
+    $processed_data = $this->parseHospitalAffiliations($processed_data, $encodedJson['hospital_affiliations']);
 
     return $processed_data;
   }
@@ -313,6 +313,7 @@ class Doctors extends SourcePluginBase {
           $processed_data[$pracitioner_id]['msow_ids'][] = $msow_id;
         }
       }
+
     }
 
     return $processed_data;
