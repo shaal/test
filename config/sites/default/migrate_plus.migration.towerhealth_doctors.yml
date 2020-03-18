@@ -32,6 +32,15 @@ process:
     -
       plugin: skip_on_empty
       method: row
+  _area_of_interest:
+    -
+      plugin: towerhealth_lookup_taxonomy_term
+      lookup_field: field_area_of_interest_msow_id
+      source: msow_ids
+      vid: area_of_interest
+    -
+      plugin: skip_on_empty
+      method: process
   field_area_interest_ref:
     -
       plugin: towerhealth_entity_ref_values
@@ -176,15 +185,6 @@ process:
     -
       plugin: towerhealth_entity_ref_values
       source: '@_locations'
-  _area_of_interest:
-    -
-      plugin: towerhealth_lookup_taxonomy_term
-      lookup_field: field_area_of_interest_msow_id
-      source: msow_ids
-      vid: area_of_interest
-    -
-      plugin: skip_on_empty
-      method: process
   _insurance_groups:
     -
       plugin: towerhealth_lookup_taxonomy_term
