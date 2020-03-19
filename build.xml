@@ -127,6 +127,13 @@
                 <echo message="${theme.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
             </else>
         </if>
+        <if>
+            <equals arg1="${build.env}" arg2="acquia"/>
+            <then>
+                <exec command="git add pattern-lab/public/images/chosen/* --force" />
+                <exec command="git commit -m 'Add image assets'" />
+            </then>
+        </if>
     </target>
 
 
@@ -247,8 +254,6 @@
   
     <!-- Target: artifact -->
     <target name="artifact" description="Build and deploy the application.">
-        <exec command="git add pattern-lab/public/images/chosen/* --force" />
-        <exec command="git commit -m 'Add image assets'" />
         <phing phingfile="build.xml" target="artifact-main" inheritAll="false">
             <property name="build.env" value="acquia" />
         </phing>
