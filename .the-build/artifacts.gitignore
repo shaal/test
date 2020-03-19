@@ -14,3 +14,5 @@
 /docroot/core/misc/favicon.ico
 # Ignore local and generated settings files
 /docroot/sites/*/settings.local.php
+/docroot/themes/custom/*/pattern-lab
+!/docroot/themes/custom/*/pattern-lab/public/images
