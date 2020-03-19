@@ -21,6 +21,10 @@
 /docroot/themes/custom/tower_health/components/js/drupal.js
 /docroot/themes/custom/tower_health/components/js/jquery.min.js
 
+# Pattern Lab (ignored initially)
+/docroot/themes/custom/*/pattern-lab
+!/docroot/themes/custom/*/pattern-lab/public/images
+
 # Ignore yarn error log
 /docroot/themes/custom/*/yarn-error.log
 
