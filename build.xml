@@ -127,6 +127,14 @@
                 <echo message="${theme.root}/dist/style.css exists, so you've already built the style guide? Awesome. Be sure to run `yarn build` or `yarn start` in your chosen environment to get the latest and greatest." />
             </else>
         </if>
+        <if>
+            <equals arg1="${build.env}" arg2="acquia"/>
+            <then>
+                <echo message="Force adding images.." />
+                <exec dir="${theme.root}" command="git add --force pattern-lab/public/images" passthru="true" checkreturn="true"/>
+                <exec dir="${theme.root}" command="git commit -m'Add image assets'" passthru="true" checkreturn="true"/>
+            </then>
+        </if>
     </target>
 
 
