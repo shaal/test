@@ -100,7 +100,7 @@ class ProviderProximityBlock extends BlockBase {
         'class' => [
           'js-use-my-location',
           'link',
-          'link--italic',
+          'link--small',
         ],
         'data-view' => 'views-exposed-form-find-a-provider-find-doctor-proximity',
       ],
