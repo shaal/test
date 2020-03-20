@@ -4,7 +4,10 @@ type: 'Doctor'
 rating: 4.9
 rating_icon: "star.svg"
 review_amt: 36
-provider_video: "https://www.youtube.com/embed/d3ZLhedUtkA"
+provider_video:
+  type: video
+  reference: https://www.youtube.com/embed/d3ZLhedUtkA
+  label: Video
 img:
   src: "../../images/people/hoerst-karen.jpg"
   alt: "Karen A. Hoerst, MD"

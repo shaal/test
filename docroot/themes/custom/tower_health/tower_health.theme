@@ -367,9 +367,6 @@ function tower_health_preprocess_node__profile(&$variables) {
     if (!$node->get('field_profile_job_title')->isEmpty()) {
       $variables['lead_title'] = $node->field_profile_job_title->value;
     }
-    if (!$node->get('field_profile_video')->isEmpty()) {
-      $variables['provider_video'] = $node->field_profile_video->value;
-    }
     if (!$node->get('field_rating_overall')->isEmpty()) {
       $variables['rating'] = $node->field_rating_overall->value;
     }

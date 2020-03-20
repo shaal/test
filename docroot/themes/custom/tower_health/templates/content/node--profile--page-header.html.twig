@@ -70,6 +70,16 @@
  *   in different view modes.
  */
 #}
+{% if content.field_profile_video|render %}
+  {% set youtube_id = node.field_profile_video.entity.field_media_oembed_video.value|split('v=', 2) %}
+  {% set provider_video = {
+      "type": "video",
+      "reference": "//www.youtube.com/embed/" ~ youtube_id['1'],
+      "label": "Video"|t,
+    }
+  %}
+{% endif %}
+
 {% embed "@organisms/provider-header/provider-header.twig" with {
   "img": {
     "src": src,
