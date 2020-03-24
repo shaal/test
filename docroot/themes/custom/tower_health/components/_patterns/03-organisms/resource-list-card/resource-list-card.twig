@@ -8,14 +8,16 @@
   </div>
   {% endif %}
   <ul class='resource-list-card__list'>
-    {% for item in items %}
-      {% include "@molecules/resource-list-item/resource-list-item.twig" with {
-        url: item.url,
-        title: item.title,
-        filetype: item.filetype,
-        desc: item.desc,
-        target: item.target
-      } %}
-    {% endfor %}
+    {% block items %}
+      {% for item in items %}
+        {% include "@molecules/resource-list-item/resource-list-item.twig" with {
+          url: item.url,
+          title: item.title,
+          filetype: item.filetype,
+          desc: item.desc,
+          target: item.target
+        } %}
+      {% endfor %}
+    {% endblock %}
   </ul>
 </div>

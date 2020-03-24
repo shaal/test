@@ -1,0 +1,64 @@
+uuid: 28b8cf40-9bd7-448f-9976-68325eeb4c5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_list_item.field_resource_item_desc
+    - field.field.paragraph.resource_list_item.field_resource_item_link
+    - field.field.paragraph.resource_list_item.field_resource_item_link_type
+    - field.field.paragraph.resource_list_item.field_resource_item_pdf
+    - field.field.paragraph.resource_list_item.field_resource_item_title
+    - paragraphs.paragraphs_type.resource_list_item
+  module:
+    - link
+id: paragraph.resource_list_item.default
+targetEntityType: paragraph
+bundle: resource_list_item
+mode: default
+content:
+  field_resource_item_desc:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_resource_item_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_resource_item_link_type:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_resource_item_pdf:
+    type: entity_reference_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_resource_item_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

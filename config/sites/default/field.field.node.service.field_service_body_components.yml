@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_service_body_components
     - node.type.service
     - paragraphs.paragraphs_type.care_circle
+    - paragraphs.paragraphs_type.resource_list_card
   module:
     - entity_reference_revisions
 id: node.service.field_service_body_components
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       care_circle: care_circle
+      resource_list_card: resource_list_card
     target_bundles_drag_drop:
       anchored_cta_block:
         weight: 23
@@ -58,6 +60,9 @@ settings:
       file_download_cta:
         weight: 33
         enabled: false
+      box_links:
+        weight: 34
+        enabled: false
       header_cta:
         weight: 34
         enabled: false
@@ -85,10 +90,31 @@ settings:
       rich_text:
         weight: 42
         enabled: false
+      form:
+        weight: 43
+        enabled: false
       sidebar_card:
         weight: 43
         enabled: false
       video_card:
         weight: 44
+        enabled: false
+      image_box_link_custom:
+        weight: 47
+        enabled: false
+      image_box_link_reference:
+        weight: 48
+        enabled: false
+      image_teaser_banner:
+        weight: 49
+        enabled: false
+      resource_list_card:
+        enabled: true
+        weight: 55
+      resource_list_item:
+        weight: 56
+        enabled: false
+      text_teaser_banner:
+        weight: 59
         enabled: false
 field_type: entity_reference_revisions

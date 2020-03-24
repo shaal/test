@@ -1,0 +1,19 @@
+uuid: f55f1544-ca6c-4299-8daf-fd8acd65dc6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_list_title
+    - paragraphs.paragraphs_type.resource_list_card
+id: paragraph.resource_list_card.field_resource_list_title
+field_name: field_resource_list_title
+entity_type: paragraph
+bundle: resource_list_card
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
