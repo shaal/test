@@ -1,0 +1,21 @@
+uuid: fd7f7d59-2a17-4150-93f3-3bba78c0c195
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_list_desc
+    - paragraphs.paragraphs_type.resource_list_card
+  module:
+    - text
+id: paragraph.resource_list_card.field_resource_list_desc
+field_name: field_resource_list_desc
+entity_type: paragraph
+bundle: resource_list_card
+label: Description
+description: 'Optionally add a short description that will display about the items that are available.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

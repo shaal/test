@@ -1,0 +1,9 @@
+uuid: 6534f326-e606-4e65-865a-7d32b697c00e
+langcode: en
+status: true
+dependencies: {  }
+id: resource_list_card
+label: 'Resource List Card'
+icon_uuid: null
+description: 'The resource list card appears at the bottom of a page''s body if it has a flexible component area enabled there. The card contains an optional title, an optional description, and a set of resource list items.'
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: 24de5286-d988-40be-bd23-abf8dccff08c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_item_title
+    - paragraphs.paragraphs_type.resource_list_item
+id: paragraph.resource_list_item.field_resource_item_title
+field_name: field_resource_item_title
+entity_type: paragraph
+bundle: resource_list_item
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
