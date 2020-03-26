@@ -10,7 +10,7 @@ field_name: field_resource_item_link_type
 entity_type: paragraph
 bundle: resource_list_item
 label: 'Link Type'
-description: 'Optionally add what type of link that this item is linking off to. The type should be capitalized and will display in between two brackets: <i>[FORM]</i>'
+description: 'Optionally add what type of link that this item is linking off to. The type should be capitalized and will display in between two brackets: <i>FORM</i>'
 required: false
 translatable: false
 default_value: {  }
