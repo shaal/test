@@ -11,7 +11,7 @@ field_name: field_profile_image
 entity_type: node
 bundle: profile
 label: Image
-description: 'Upload or select an existing image of this doctor to display on their profile and in lists.'
+description: 'Upload or select an existing image of this doctor to display on their profile and in lists. The profile image should be a minimum of 250px by 250px. Please upload an image that is square or portrait'
 required: false
 translatable: false
 default_value: {  }

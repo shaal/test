@@ -1,20 +1,18 @@
-uuid: b423a4a1-d60e-4d9f-ba95-c4a90e7e78c8
+uuid: 63a9979a-807a-4223-a379-9f822bcf7ee7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_body_components
-    - node.type.page
-    - paragraphs.paragraphs_type.care_circle
-    - paragraphs.paragraphs_type.form
+    - field.storage.paragraph.field_resource_list_items
     - paragraphs.paragraphs_type.resource_list_card
+    - paragraphs.paragraphs_type.resource_list_item
   module:
     - entity_reference_revisions
-id: node.page.field_body_components
-field_name: field_body_components
-entity_type: node
-bundle: page
-label: 'Body Components'
+id: paragraph.resource_list_card.field_resource_list_items
+field_name: field_resource_list_items
+entity_type: paragraph
+bundle: resource_list_card
+label: Items
 description: ''
 required: false
 translatable: false
@@ -25,98 +23,96 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      care_circle: care_circle
-      form: form
-      resource_list_card: resource_list_card
+      resource_list_item: resource_list_item
     target_bundles_drag_drop:
       anchored_cta_block:
-        weight: 23
-        enabled: false
-      article_card:
-        weight: 24
-        enabled: false
-      basic_header:
-        weight: 25
-        enabled: false
-      card:
-        weight: 26
-        enabled: false
-      cards:
-        weight: 27
-        enabled: false
-      care_circle:
-        enabled: true
-        weight: 28
-      care_circle_section:
-        weight: 29
-        enabled: false
-      cta_banner:
         weight: 30
         enabled: false
-      cta_list_banner:
+      article_card:
         weight: 31
         enabled: false
+      basic_header:
+        weight: 32
+        enabled: false
       box_links:
-        weight: 32
-        enabled: false
-      education:
-        weight: 32
-        enabled: false
-      file_download_cta:
         weight: 33
         enabled: false
-      header_cta:
+      card:
         weight: 34
         enabled: false
-      homepage_hero:
+      cards:
         weight: 35
         enabled: false
-      icon_button:
+      care_circle:
         weight: 36
         enabled: false
-      on_my_way:
+      care_circle_section:
         weight: 37
         enabled: false
-      patient_story:
+      cta_banner:
         weight: 38
         enabled: false
-      rating_comments:
+      cta_list_banner:
         weight: 39
         enabled: false
-      recognition_card:
+      education:
         weight: 40
         enabled: false
-      form:
-        enabled: true
-        weight: 41
-      recognition_cards:
+      file_download_cta:
         weight: 41
         enabled: false
-      rich_text:
+      form:
         weight: 42
         enabled: false
-      sidebar_card:
+      header_cta:
         weight: 43
         enabled: false
-      video_card:
+      homepage_hero:
         weight: 44
         enabled: false
-      image_box_link_custom:
+      icon_button:
         weight: 45
         enabled: false
-      image_box_link_reference:
+      image_box_link_custom:
         weight: 46
         enabled: false
-      image_teaser_banner:
+      image_box_link_reference:
         weight: 47
         enabled: false
+      image_teaser_banner:
+        weight: 48
+        enabled: false
+      on_my_way:
+        weight: 49
+        enabled: false
+      patient_story:
+        weight: 50
+        enabled: false
+      rating_comments:
+        weight: 51
+        enabled: false
+      recognition_card:
+        weight: 52
+        enabled: false
+      recognition_cards:
+        weight: 53
+        enabled: false
       resource_list_card:
-        enabled: true
-        weight: 55
-      text_teaser_banner:
+        weight: 54
+        enabled: false
+      rich_text:
         weight: 55
         enabled: false
       resource_list_item:
+        enabled: true
         weight: 56
+      sidebar_card:
+        weight: 56
+        enabled: false
+      text_teaser_banner:
+        weight: 57
+        enabled: false
+      video_card:
+        weight: 58
         enabled: false
 field_type: entity_reference_revisions

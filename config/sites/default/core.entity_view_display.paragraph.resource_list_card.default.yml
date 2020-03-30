@@ -1,0 +1,43 @@
+uuid: e744d12d-9587-43f0-83e1-8892c26aac6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_list_card.field_resource_list_desc
+    - field.field.paragraph.resource_list_card.field_resource_list_items
+    - field.field.paragraph.resource_list_card.field_resource_list_title
+    - paragraphs.paragraphs_type.resource_list_card
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.resource_list_card.default
+targetEntityType: paragraph
+bundle: resource_list_card
+mode: default
+content:
+  field_resource_list_desc:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_resource_list_items:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_resource_list_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

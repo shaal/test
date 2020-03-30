@@ -1,0 +1,9 @@
+uuid: f151512a-9603-4c3e-901f-cb02f0e77499
+langcode: en
+status: true
+dependencies: {  }
+id: resource_list_item
+label: 'Resource List Item'
+icon_uuid: null
+description: 'The resource list item appears in a resource list card. It contains a URL, a title, an optional filetype, an optional description, and an optional target specification.'
+behavior_plugins: {  }

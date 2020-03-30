@@ -23,6 +23,12 @@ function tower_health_form_system_theme_settings_alter(&$form, &$form_state, $fo
     '#type'          => 'textfield',
     '#title'         => t('Appointment Button Link'),
     '#default_value' => theme_get_setting('appointment_button_link'),
-    '#description'   => t("Link to use for 'Request an Appointment' button for providers who do no have Epic ID for open scheduling widget")
+    '#description'   => t("Link to use for 'Request an Appointment' button for doctors who do no have Epic ID for open scheduling widget")
+  );
+  $form['global_data']['reviews_link'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('About Reviews Link'),
+    '#default_value' => theme_get_setting('reviews_link'),
+    '#description'   => t("Link to use for 'About Reviews' link on doctor profiles with ratings from Binary Fountain. This should link to the generic about reviews page.")
   );
 }

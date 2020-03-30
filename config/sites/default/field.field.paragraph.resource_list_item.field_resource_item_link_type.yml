@@ -1,0 +1,19 @@
+uuid: 8a0be05d-a3a3-4528-acf9-5390b9cdd680
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_item_link_type
+    - paragraphs.paragraphs_type.resource_list_item
+id: paragraph.resource_list_item.field_resource_item_link_type
+field_name: field_resource_item_link_type
+entity_type: paragraph
+bundle: resource_list_item
+label: 'Link Type'
+description: 'Optionally add what type of link that this item is linking off to. The type should be capitalized and will display in between two brackets: <i>FORM</i>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

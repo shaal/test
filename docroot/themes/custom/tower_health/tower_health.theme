@@ -367,9 +367,6 @@ function tower_health_preprocess_node__profile(&$variables) {
     if (!$node->get('field_profile_job_title')->isEmpty()) {
       $variables['lead_title'] = $node->field_profile_job_title->value;
     }
-    if (!$node->get('field_profile_video')->isEmpty()) {
-      $variables['provider_video'] = $node->field_profile_video->value;
-    }
     if (!$node->get('field_rating_overall')->isEmpty()) {
       $variables['rating'] = $node->field_rating_overall->value;
     }
@@ -619,6 +616,8 @@ function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
     $reviews[$id]["rating"] = $paragraph->field_rating_comment_rating->value;
     $reviews[$id]["date"] = date("F Y", strtotime($paragraph->field_rating_comment_date->value));
   }
+
+  $variables["review_url"] =  theme_get_setting('reviews_link');
 
   $variables["reviews"] = $reviews;
 }
