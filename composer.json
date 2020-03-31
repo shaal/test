@@ -142,7 +142,8 @@
                 "node_title_help_text_inline_entity_form_entity_form_alter loads NodeType even when not referencing nodes (https://www.drupal.org/project/node_title_help_text/issues/307031)": "https://www.drupal.org/files/issues/2019-07-25/ief-only-nodes.patch"
             },
             "drupal/core": {
-                "EditorMediaDialog triggers an \"undefined index\" notice for data-view-mode (https://www.drupal.org/project/drupal/issues/3100470)": "https://www.drupal.org/files/issues/2019-12-30/3100470-18.patch"
+                "EditorMediaDialog triggers an \"undefined index\" notice for data-view-mode (https://www.drupal.org/project/drupal/issues/3100470)": "https://www.drupal.org/files/issues/2019-12-30/3100470-18.patch",
+                "If a filter wraps the drupal-media tag in a paragraph, the edit button breaks (https://www.drupal.org/project/drupal/issues/3097338)": "https://www.drupal.org/files/issues/2019-12-10/3097338-47.patch"
             },
             "drupal/better_exposed_filters": {
                 "Undefined index: exposed_form_options (https://www.drupal.org/project/better_exposed_filters/issues/3106332)": "https://www.drupal.org/files/issues/2020-01-21/undefined_index_exposed_form_options-3106332-2.patch",

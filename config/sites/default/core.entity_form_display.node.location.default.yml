@@ -26,6 +26,7 @@ dependencies:
     - field_group
     - geofield
     - media_library
+    - media_library_edit
     - metatag
     - paragraphs
     - path
@@ -192,7 +193,9 @@ content:
     weight: 12
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_location_components:
     type: entity_reference_paragraphs
@@ -248,7 +251,9 @@ content:
     weight: 34
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_location_phone_number:
     weight: 16
