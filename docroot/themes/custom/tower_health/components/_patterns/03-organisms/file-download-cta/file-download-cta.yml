@@ -6,3 +6,6 @@ desc: 'Community Health Needs Assessments (CHNA) are required of tax-exempt hosp
 file:
   label: 'Download the PDF'
   url: '#'
+file_2:
+  label: 'Versión en español'
+  url: '#'
