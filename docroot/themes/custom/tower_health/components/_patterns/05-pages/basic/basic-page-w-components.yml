@@ -226,6 +226,19 @@ cta:
     text: "484-628-HELP"
     button_icon: "th-cal.svg"
     variation: "right"
+cta2:
+  title: "Need Help? We're Here."
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet dolor dapibus, mollis diam id, euismod urna. Nulla finibus lorem in massa semper, at ultrices qam interdum. Praesent nec ante id lorem cursus."
+  link:
+    url: "/"
+    text: "484-628-HELP"
+    button_icon: "th-cal.svg"
+    variation: "right"
+  link_2:
+    url: "/"
+    text: "484-628-HELP"
+    button_icon: "th-cal.svg"
+    variation: "right"
 careCircle:
   title: Compassionate Care Principles
   url: "#"
