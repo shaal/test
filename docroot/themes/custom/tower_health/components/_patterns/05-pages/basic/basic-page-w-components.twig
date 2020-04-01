@@ -95,6 +95,13 @@
       rich_text: paragraph_rich_text
     } %}
     
+    {% include "@organisms/resource-list-card/resource-list-card.twig" with {
+      title: full_resources.title,
+      text: full_resources.text,
+      items: full_resources.items,
+      full: full_resources.full
+    } %}
+    
     {% include "@organisms/card-group/card-group--article.twig" with {
       cards: article_cards
     } %}
