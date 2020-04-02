@@ -1,7 +1,10 @@
-{% if rich_text_full_width == true %}
+{% if rich_text_full_width == true and rich_text_left == true %}
+<div class="page--container">
+  <div class="main-content">
+{% elseif rich_text_full_width == true and rich_text_left == false %}
   <div class="grid grid--sm-centered">
 {% endif %}
-  <div class="rich-text">
+  <div class="rich-text text-long">
     {% block rich_text %}
       {% for item in rich_text %}
         {% if item.type == "blockquote" %}
@@ -50,6 +53,10 @@
       {% endfor %}
     {% endblock %}
   </div>
+{% if rich_text_left == true %}
+  </div>
+{% endif %}
 {% if rich_text_full_width == true %}
   </div>
 {% endif %}
+
