@@ -38,6 +38,10 @@
             heading: item.heading,
             heading_url: item.heading_url
           }%}
+        {% elseif item.type == "twocol" %}
+          {% include "@atoms/02-text/text/two-col-wysiwyg.twig"  with {
+            content: item.content
+          }%}
         {% else %}
           {% include "@atoms/02-text/text/01-paragraph.twig" with {
             paragraph_content: item.paragraph_content
