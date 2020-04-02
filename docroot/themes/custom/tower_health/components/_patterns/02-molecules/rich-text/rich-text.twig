@@ -1,7 +1,7 @@
-{% if rich_text_full_width == true and rich_text_left == true %}
+{% if rich_text_full_left == true %}
 <div class="page--container">
   <div class="main-content">
-{% elseif rich_text_full_width == true and rich_text_left == false %}
+{% elseif rich_text_full_width == true %}
   <div class="grid grid--sm-centered">
 {% endif %}
   <div class="rich-text text-long">
@@ -53,10 +53,11 @@
       {% endfor %}
     {% endblock %}
   </div>
-{% if rich_text_left == true %}
+{% if rich_text_full_left == true %}
   </div>
+</div>
 {% endif %}
 {% if rich_text_full_width == true %}
-  </div>
+</div>
 {% endif %}
 
