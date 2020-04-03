@@ -17,6 +17,9 @@ rich_text:
     paragraph_content:
       "Lorem <em>ipsum dolor sit amet</em>, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
   -
+    type: twocol
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
+  -
     type: heading
     heading_level:
       2
