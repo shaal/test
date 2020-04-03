@@ -40,6 +40,13 @@
     align-self: center;
     margin-top: 0;
   }
+  
+  .divider {
+    @include adjust-font-size-to($label, 1);
+    display: inline-block;
+    margin: 0 .5em;
+    color: $trust;
+  }
 }
 
 .file-download__title {
