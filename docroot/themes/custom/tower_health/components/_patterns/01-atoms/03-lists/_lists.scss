@@ -9,6 +9,11 @@
 ul,
 ol {
   padding-left: 1em;
+  
+  // ensures that lists will float properly when there is an inline image within a wysiwyg
+  .text-long & {
+    overflow: hidden;
+  }
 }
 
 ul {

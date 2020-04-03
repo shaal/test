@@ -56,7 +56,19 @@ rich_text:
       1:
         inline
       2: 
-        right
+        left
+  -
+    type: ul
+    ul_items:
+      1:
+        content: "This is the first item in the <ul>."
+      2:
+        label: "This is the optional label"
+        content: "And here is the item that goes with the label."
+      3:
+        content: "Here's the third item."
+      4:
+        content: "And here's the last item."
   -
     paragraph_content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae est sit amet est imperdiet pellentesque a eu eros. Aenean luctus purus ac magna auctor tristique. Vivamus vestibulum, nibh sit amet luctus pretium, lorem lorem mollis nulla, ut consectetur lacus est vel nunc. Quisque nec iaculis nisl. Vestibulum a elit magna. Donec nec nisi a justo placerat aliquam. Vivamus in turpis in felis dictum aliquet. Maecenas a ex laoreet, mattis turpis ut, lobortis lorem. Praesent placerat tempor lectus vel dignissim. Nam vestibulum sed ex id porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non lectus nec leo accumsan congue. Morbi porta leo at risus lacinia, et elementum mi varius. Praesent at nulla a mi accumsan vulputate non vitae diam. Nullam a sem et lectus ullamcorper mattis a ut urna."
@@ -82,18 +94,6 @@ rich_text:
   -
     paragraph_content:
       "Ut pulvinar faucibus mauris ac sollicitudin. Aenean enim dui, lacinia sed eleifend interdum, auctor et nunc. Mauris vulputate tortor non dui tempus, eu mattis sapien laoreet. Nulla condimentum, ex eu vestibulum auctor, massa libero porttitor quam, sed consectetur libero lectus eu tellus. Nunc non sodales magna. Aenean lacinia vehicula nibh, id imperdiet eros ultrices sit amet. Donec ullamcorper quam ac lectus rutrum, vel tristique turpis dapibus. Mauris placerat tellus sit amet lorem sagittis maximus non id augue. Nulla consequat vestibulum ipsum a laoreet. Donec viverra orci sit amet augue rutrum, eu elementum nunc sagittis. Suspendisse et arcu a felis molestie volutpat et sit amet augue. Nunc nec ante sed elit sodales euismod. Praesent porttitor massa in orci placerat, nec eleifend lacus tempus. Suspendisse aliquet tincidunt enim, nec convallis dui rutrum mollis.Ut pulvinar faucibus mauris ac sollicitudin. Aenean enim dui, lacinia sed eleifend interdum, auctor et nunc. Mauris vulputate tortor non dui tempus, eu mattis sapien laoreet. Nulla condimentum, ex eu vestibulum auctor, massa libero porttitor quam, sed consectetur libero lectus eu tellus. Nunc non sodales magna. Aenean lacinia vehicula nibh, id imperdiet eros ultrices sit amet. Donec ullamcorper quam ac lectus rutrum, vel tristique turpis dapibus. Mauris placerat tellus sit amet lorem sagittis maximus non id augue. Nulla consequat vestibulum ipsum a laoreet. Donec viverra orci sit amet augue rutrum, eu elementum nunc sagittis. Suspendisse et arcu a felis molestie volutpat et sit amet augue. Nunc nec ante sed elit sodales euismod. Praesent porttitor massa in orci placerat, nec eleifend lacus tempus. Suspendisse aliquet tincidunt enim, nec convallis dui rutrum mollis."
-  -
-    type: ul
-    ul_items:
-      1:
-        content: "This is the first item in the <ul>."
-      2:
-        label: "This is the optional label"
-        content: "And here is the item that goes with the label."
-      3:
-        content: "Here's the third item."
-      4:
-        content: "And here's the last item."
   - 
     type: ol
     ol_items:
