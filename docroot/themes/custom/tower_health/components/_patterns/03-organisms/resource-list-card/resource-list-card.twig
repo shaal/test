@@ -1,3 +1,6 @@
+{% if full == true %}
+<div class="resource-list-card--full">
+{% endif %}
 <div class="resource-list-card">
   {% if title or text %}
   <div class="resource-list-card__header">
@@ -21,3 +24,6 @@
     {% endblock %}
   </ul>
 </div>
+{% if full == true %}
+</div>
+{% endif %}
