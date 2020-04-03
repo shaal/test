@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.file_download_cta
   module:
     - media_library
+    - media_library_edit
 id: paragraph.file_download_cta.default
 targetEntityType: paragraph
 bundle: file_download_cta
@@ -28,14 +29,18 @@ content:
     weight: 3
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_file_download_cta_image:
     type: media_library_widget
     weight: 2
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_file_download_cta_title:
     weight: 0

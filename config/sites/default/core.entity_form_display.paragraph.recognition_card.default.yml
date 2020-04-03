@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.recognition_card
   module:
     - media_library
+    - media_library_edit
 id: paragraph.recognition_card.default
 targetEntityType: paragraph
 bundle: recognition_card
@@ -27,7 +28,9 @@ content:
     weight: 2
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_recog_card_title:
     weight: 0
