@@ -1,4 +1,4 @@
-<div class="anchored-cta-block js-section-animation">
+<div class="anchored-cta-block {% if link_2 %}anchored-cta-block__content--lg{% endif %}js-section-animation">
   <div class="grid">
     <div class="anchored-cta-block__content">
       <h2 class="anchored-cta-block__title">{{ title }}</h2>
@@ -14,6 +14,14 @@
           "text": link.text,
           "variation": "right"
         } %}
+        {% if link_2 %}
+          {% include "@atoms/icon-button/icon-button.twig" with {
+            "url": link_2.url,
+            "button_icon": link_2.button_icon,
+            "text": link_2.text,
+            "variation": "right"
+          } %}
+        {% endif %}
       {% endblock %}
     </div>
   </div>
