@@ -46,13 +46,6 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
-  field_page_teaser:
-    weight: 5
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_text:
     weight: 0
     label: hidden
@@ -70,5 +63,6 @@ hidden:
   field_basic_enable_nav: true
   field_basic_header: true
   field_basic_sidebar: true
+  field_page_teaser: true
   field_reference_access_control: true
   search_api_excerpt: true
