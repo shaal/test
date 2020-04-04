@@ -3,6 +3,7 @@ lead_title: "Medical Director, Stroke Program"
 type: 'Doctor'
 rating: 4.9
 rating_icon: "star.svg"
+rating_comments: false
 review_amt: 36
 provider_video:
   type: video
