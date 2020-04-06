@@ -6,11 +6,45 @@ dependencies:
     - field.field.paragraph.file_download_cta.field_file_download_cta_desc
     - field.field.paragraph.file_download_cta.field_file_download_cta_file
     - field.field.paragraph.file_download_cta.field_file_download_cta_image
+    - field.field.paragraph.file_download_cta.field_file_download_cta_label
+    - field.field.paragraph.file_download_cta.field_file_download_cta_label_2
+    - field.field.paragraph.file_download_cta.field_file_download_cta_second
     - field.field.paragraph.file_download_cta.field_file_download_cta_title
     - paragraphs.paragraphs_type.file_download_cta
   module:
+    - field_group
     - media_library
-    - media_library_edit
+third_party_settings:
+  field_group:
+    group_primary_pdf:
+      children:
+        - field_file_download_cta_file
+        - field_file_download_cta_label
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Primary PDF'
+    group_secondar:
+      children:
+        - field_file_download_cta_second
+        - field_file_download_cta_label_2
+      parent_name: ''
+      weight: 4
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        open: false
+      label: 'Secondary PDF'
 id: paragraph.file_download_cta.default
 targetEntityType: paragraph
 bundle: file_download_cta
@@ -26,7 +60,7 @@ content:
     region: content
   field_file_download_cta_file:
     type: media_library_widget
-    weight: 3
+    weight: 4
     settings:
       media_types: {  }
     third_party_settings:
@@ -41,6 +75,29 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+    region: content
+  field_file_download_cta_label:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_file_download_cta_label_2:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_file_download_cta_second:
+    type: media_library_widget
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   field_file_download_cta_title:
     weight: 0

@@ -1,17 +1,17 @@
-uuid: 75d6da92-7694-44f4-9733-8a50ac6695a4
+uuid: af01d50b-dafe-4c7b-b8e8-ff3ad4985c83
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_file_download_cta_file
+    - field.storage.paragraph.field_file_download_cta_second
     - media.type.pdf
     - paragraphs.paragraphs_type.file_download_cta
-id: paragraph.file_download_cta.field_file_download_cta_file
-field_name: field_file_download_cta_file
+id: paragraph.file_download_cta.field_file_download_cta_second
+field_name: field_file_download_cta_second
 entity_type: paragraph
 bundle: file_download_cta
-label: 'Primary PDF'
-description: ''
+label: 'Secondary PDF'
+description: 'Optionally add a secondary PDF that can be downloaded separately from the main pdf. Example use case: Adding a Spanish version of a form that is added to the main pdf field.'
 required: false
 translatable: false
 default_value: {  }
