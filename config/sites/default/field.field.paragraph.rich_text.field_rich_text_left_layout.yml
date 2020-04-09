@@ -1,0 +1,23 @@
+uuid: 77eacad9-f0bb-40c2-895d-4b64b0d9ed86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rich_text_left_layout
+    - paragraphs.paragraphs_type.rich_text
+id: paragraph.rich_text.field_rich_text_left_layout
+field_name: field_rich_text_left_layout
+entity_type: paragraph
+bundle: rich_text
+label: 'Left Aligned Layout'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Left aligned'
+  off_label: 'Centered Aligned'
+field_type: boolean
