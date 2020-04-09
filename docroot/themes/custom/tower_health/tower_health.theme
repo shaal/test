@@ -370,6 +370,9 @@ function tower_health_preprocess_node__profile(&$variables) {
     if (!$node->get('field_rating_overall')->isEmpty()) {
       $variables['rating'] = $node->field_rating_overall->value;
     }
+    if (!$node->get('field_rating_comments_ref')->isEmpty()) {
+      $variables['rating_comments'] = TRUE;
+    }
     if (!$node->get('field_rating_count')->isEmpty()) {
       $variables['review_amt'] = $node->field_rating_count->value;
     }

@@ -116,14 +116,12 @@
 .provider-header__ratings {
   margin-top: 2em;
   display: flex;
+}
 
-  a,
-  a:link,
-  a:visited {
-    @include adjust-font-size-to($label, .75);
-    display: inline-block;
-    margin-left: 1em;
-  }
+.provider-header__ratings-amt {
+  @include adjust-font-size-to($label, .75);
+  display: inline-block;
+  margin-left: 1em;
 }
 
 .provider-header__cta {
