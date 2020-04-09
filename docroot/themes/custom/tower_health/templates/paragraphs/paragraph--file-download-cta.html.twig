@@ -45,16 +45,30 @@
   {% set image = '' %}
 {% endif %}
 
+{% set label_1 = "Download the PDF"|t %}
+{% if content.field_file_download_cta_label|field_value|render %}
+  {% set label_1 = content.field_file_download_cta_label|field_value %}
+{% endif %}
+
 {% set pdf = content.field_file_download_cta_file.0['#media'].field_media_file_1.entity.uri.value %}
 {% set pdf_src = image ? file_url(pdf) %}
+
+{% if content.field_file_download_cta_second|render %}
+  {% set pdf_2 = content.field_file_download_cta_second.0['#media'].field_media_file_1.entity.uri.value %}
+  {% set pdf_src_2 = file_url(pdf_2) %}
+{% endif %}
 
 {% include "@organisms/file-download-cta/file-download-cta.twig" with {
   "title": content.field_file_download_cta_title,
   "image": image,
   "desc": content.field_file_download_cta_desc,
   "file": {
-    "label": 'Download the PDF',
+    "label": label_1,
     "url": pdf_src,
+  },
+  "file_2": {
+    "label": content.field_file_download_cta_label_2|field_value,
+    "url": pdf_src_2,
   },
 } %}
 

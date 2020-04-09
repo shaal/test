@@ -1,0 +1,19 @@
+uuid: 38c5cc25-98ac-479d-a13a-0a6d1a6faa74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file_download_cta_label_2
+    - paragraphs.paragraphs_type.file_download_cta
+id: paragraph.file_download_cta.field_file_download_cta_label_2
+field_name: field_file_download_cta_label_2
+entity_type: paragraph
+bundle: file_download_cta
+label: 'Secondary Label'
+description: 'Add a label for the secondary pdf for this component.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

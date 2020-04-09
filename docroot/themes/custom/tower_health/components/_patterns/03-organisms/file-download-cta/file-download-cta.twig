@@ -11,7 +11,7 @@
       </h2>
       <div class='file-download__desc'>{{ desc }}</div>
       <a class='file-download__cta' href="{{ file.url }}" target="_blank">{{ file.label }}</a>
-      {% if file_2 %}
+      {% if file_2.url %}
         <span class="divider">&#8226;</span>
         <a class='file-download__cta' href="{{ file_2.url }}" target="_blank">{{ file_2.label }}</a>
       {% endif %}

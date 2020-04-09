@@ -6,6 +6,9 @@ dependencies:
     - field.field.paragraph.file_download_cta.field_file_download_cta_desc
     - field.field.paragraph.file_download_cta.field_file_download_cta_file
     - field.field.paragraph.file_download_cta.field_file_download_cta_image
+    - field.field.paragraph.file_download_cta.field_file_download_cta_label
+    - field.field.paragraph.file_download_cta.field_file_download_cta_label_2
+    - field.field.paragraph.file_download_cta.field_file_download_cta_second
     - field.field.paragraph.file_download_cta.field_file_download_cta_title
     - paragraphs.paragraphs_type.file_download_cta
 id: paragraph.file_download_cta.default
@@ -33,6 +36,31 @@ content:
     type: entity_reference_entity_view
     weight: 2
     label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_file_download_cta_label:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_file_download_cta_label_2:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_file_download_cta_second:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
     settings:
       view_mode: default
       link: false
