@@ -2,13 +2,12 @@
   background-color: $primary-dark;
   color: $white;
   margin: 4em 0 3.5em;
-  position: relative;
   width: 100%;
   
   @include breakpoint($bp3) {
     background: linear-gradient(to right, $primary-dark, $primary-dark 30%, transparent 30%, transparent);
-    margin: 4em 0 0;
-    overflow: hidden;
+    margin: 4em 0;
+    position: relative;
   }
 }
 
@@ -33,31 +32,60 @@
 }
 
 .anchored-cta-block__buttons {
-  position: absolute;
-  bottom: -4.25em;
-  left: 50%;
-  transform: translateX(-50%);
   text-align: center;
+  overflow: visible;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100vw;
+  background-color: $white;
+  margin-left: -2em;
+  margin-right: -2em;
+  
+  .icon-button {
+    min-width: 175px;
+  }
+  
+  .icon-button--right,
+  .icon-button--right:link,
+  .icon-button--right:visited {
+    margin-right: 1.25em;
+    margin-top: -1em;
+  }
   
   @include breakpoint($bp2) {
-    bottom: -4em;
+    justify-content: center;
   }
   
   @include breakpoint($bp3) {
-    bottom: 3em;
-    left: 82%;
+    position: absolute;
+    left: 73%;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+    background-color: transparent;
+    width: auto;
+    
+    flex-direction: column;
+    justify-content: center;
     
     .icon-button {
       min-width: 215px;
     }
+    
+    .icon-button--right,
+    .icon-button--right:link,
+    .icon-button--right:visited {
+      margin-right: 1.25em;
+      margin-top: .35em;
+    }
   }
   
   @include breakpoint($bp4) {
-    bottom: 3em;
-    left: 87%;
+    left: 79%;
   }
   
   @include breakpoint($bp6) {
-    left: calc(((100vw - 1500px) / 2) + (1500px * .88));
+    left: calc(((100vw - 1500px) / 2) + (1500px * .82));
   }
 }

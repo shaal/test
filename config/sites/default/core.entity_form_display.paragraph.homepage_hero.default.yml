@@ -5,12 +5,13 @@ dependencies:
   config:
     - field.field.paragraph.homepage_hero.field_hero_hp_image
     - field.field.paragraph.homepage_hero.field_hero_hp_subtitle
-    - field.field.paragraph.homepage_hero.field_hero_hp_title__top
     - field.field.paragraph.homepage_hero.field_hero_hp_title__bottom
     - field.field.paragraph.homepage_hero.field_hero_hp_title__middle
+    - field.field.paragraph.homepage_hero.field_hero_hp_title__top
     - paragraphs.paragraphs_type.homepage_hero
   module:
     - media_library
+    - media_library_edit
 id: paragraph.homepage_hero.default
 targetEntityType: paragraph
 bundle: homepage_hero
@@ -21,7 +22,9 @@ content:
     weight: 0
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_hero_hp_subtitle:
     weight: 4

@@ -46,11 +46,18 @@
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
+{% set left_layout = false %}
+{% if content.field_rich_text_left_layout|render %}
+  {% if content.field_rich_text_left_layout.0['#markup'] == 'True' %}
+    {% set left_layout = true %}
+  {% endif %}
+{% endif %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% embed "@molecules/rich-text/rich-text.twig" with {
         "rich_text_full_width": true,
+        "rich_text_full_left": left_layout,
       } %}
         {% block rich_text %}
           {{ content.field_rich_text }}

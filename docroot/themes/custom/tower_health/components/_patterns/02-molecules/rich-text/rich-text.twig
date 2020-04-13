@@ -1,7 +1,10 @@
-{% if rich_text_full_width == true %}
+{% if rich_text_full_left == true %}
+<div class="page--container">
+  <div class="main-content">
+{% elseif rich_text_full_width == true %}
   <div class="grid grid--sm-centered">
 {% endif %}
-  <div class="rich-text">
+  <div class="rich-text text-long">
     {% block rich_text %}
       {% for item in rich_text %}
         {% if item.type == "blockquote" %}
@@ -38,6 +41,10 @@
             heading: item.heading,
             heading_url: item.heading_url
           }%}
+        {% elseif item.type == "twocol" %}
+          {% include "@atoms/02-text/text/two-col-wysiwyg.twig"  with {
+            content: item.content
+          }%}
         {% else %}
           {% include "@atoms/02-text/text/01-paragraph.twig" with {
             paragraph_content: item.paragraph_content
@@ -46,6 +53,11 @@
       {% endfor %}
     {% endblock %}
   </div>
-{% if rich_text_full_width == true %}
+{% if rich_text_full_left == true %}
   </div>
+</div>
 {% endif %}
+{% if rich_text_full_width == true %}
+</div>
+{% endif %}
+

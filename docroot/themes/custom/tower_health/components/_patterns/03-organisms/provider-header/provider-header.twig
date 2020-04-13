@@ -43,7 +43,11 @@
         {% if rating %}
         <div class="provider-header__ratings">
           {% include "@molecules/ratings-count/ratings-count.twig" %}
-          <a href="#ratings">{{ review_amt }} Reviews</a>
+          {% if rating_comments %}
+            <a href="#ratings" class="provider-header__ratings-amt">{{ review_amt }} Reviews</a>
+          {% else %}
+            <span class="provider-header__ratings-amt">{{ review_amt }} Ratings</span>
+          {% endif %}
         </div>
         {% endif %}
       </div>

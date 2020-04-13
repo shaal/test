@@ -51,8 +51,15 @@
       links: image_callout.links,
     } %}
     
+    {% include "@organisms/anchored-cta-block/anchored-cta-block.twig" with {
+      "title": cta2.title,
+      "text": cta2.text,
+      "link": cta2.link,
+      "link_2": cta2.link_2
+    } %}
+    
     {% include "@molecules/rich-text/rich-text.twig" with {
-      rich_text_full_width: true,
+      rich_text_full_left: true,
       rich_text: paragraph_rich_text
     } %}
     
@@ -93,6 +100,13 @@
     {% include "@molecules/rich-text/rich-text.twig" with {
       rich_text_full_width: true,
       rich_text: paragraph_rich_text
+    } %}
+    
+    {% include "@organisms/resource-list-card/resource-list-card.twig" with {
+      title: full_resources.title,
+      text: full_resources.text,
+      items: full_resources.items,
+      full: full_resources.full
     } %}
     
     {% include "@organisms/card-group/card-group--article.twig" with {

@@ -57,3 +57,11 @@
     @extend .hr;
   }
 }
+
+.rich-text__two-col {
+  
+  @include breakpoint($bp2) {
+    column-count: 2;
+    column-gap: 1.5em;
+  }
+}

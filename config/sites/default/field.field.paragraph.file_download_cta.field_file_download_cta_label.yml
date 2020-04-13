@@ -1,0 +1,19 @@
+uuid: b4ad3d49-e15a-4046-9ff4-e347ae4f1d2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file_download_cta_label
+    - paragraphs.paragraphs_type.file_download_cta
+id: paragraph.file_download_cta.field_file_download_cta_label
+field_name: field_file_download_cta_label
+entity_type: paragraph
+bundle: file_download_cta
+label: 'Primary Label'
+description: 'Add a label for the primary PDF for this component.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -36,6 +36,7 @@ dependencies:
     - content_moderation
     - field_group
     - media_library
+    - media_library_edit
     - metatag
     - path
     - readonly_field_widget
@@ -99,7 +100,6 @@ third_party_settings:
         - field_profile_employment_type
         - field_profile_gender
         - field_profile_languages
-        - field_profile_phone
         - field_profile_board_certified
         - field_location_ref
         - field_profile_education
@@ -298,7 +298,9 @@ content:
     weight: 13
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_profile_job_title:
     weight: 5
@@ -399,7 +401,9 @@ content:
     weight: 40
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
     region: content
   field_rating_comment_count:
     weight: 33
