@@ -514,7 +514,8 @@ function tower_health_preprocess_node__location(&$variables) {
     }
 
     $variables['address_1'] = $node->field_location_address->address_line1;
-    $variables['address_2'] = $node->field_location_address->locality . ', ' . $node->field_location_address->administrative_area . ' ' . $node->field_location_address->postal_code;
+    $variables['address_2'] = $node->field_location_address->address_line2;
+    $variables['address_local'] = $node->field_location_address->locality . ', ' . $node->field_location_address->administrative_area . ' ' . $node->field_location_address->postal_code;
 
     if ($node->hasField('field_location_image') && !$node->get('field_location_image')->isEmpty()) {
       $media = $node->field_location_image->entity;
@@ -585,11 +586,13 @@ function _tower_heath_format_location_address($node, &$variables) {
   $administrative_area = $node->field_location_address->administrative_area;
   $postal_code = $node->field_location_address->postal_code;
   $address_1 = $node->field_location_address->address_line1;
-  $address_2 = $locality . ', ' . $administrative_area . ' ' . $postal_code;
+  $address_2 = $node->field_location_address->address_line2;
+  $address_localilty = $locality . ', ' . $administrative_area . ' ' . $postal_code;
   $href = "https://www.google.com/maps/place/" . str_replace(' ', '+', $address_1) . '+' . $locality . '+' . $administrative_area . '+' . $postal_code;
 
   $variables['address_1'] = $address_1;
   $variables['address_2'] = $address_2;
+  $variables['address_local'] = $address_localilty;
   $variables['href'] = $href;
 }
 
