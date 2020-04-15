@@ -4,8 +4,9 @@ recognitionItems:
       alt: "Healthgrades America's 100 best hospitals, 2017-2019"
   - title: '‘A’ Hospital Safety Grade'
     desc: 'The Leapfrog Group has awarded Tower Health an ‘A’ Hospital Safety Grade, their highest award, for Fall 2019.'
-  - title: '‘A’ Hospital Safety Grade'
-    desc: 'The Leapfrog Group has awarded Tower Health an ‘A’ Hospital Safety Grade, their highest award, for Fall 2019.'
   - image:
       src: "../../images/award-2.png"
       alt: "US News & World Report, Best National Hospital - Pulmonology"
+    desc: "US News & World Report, Best National Hospital - Pulmonology"
+  - title: '‘A’ Hospital Safety Grade'
+    desc: 'The Leapfrog Group has awarded Tower Health an ‘A’ Hospital Safety Grade, their highest award, for Fall 2019.'
