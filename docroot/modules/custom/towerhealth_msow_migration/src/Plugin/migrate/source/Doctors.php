@@ -64,6 +64,7 @@ class Doctors extends SourcePluginBase {
     'fac_code' => 'Facility Code',
     'status' => 'Status',
     'location_ids' => 'Location ID',
+    'appointment_link' => 'Appointment Link',
   ];
 
   /**
@@ -178,6 +179,11 @@ class Doctors extends SourcePluginBase {
     $processed_data = $this->parseLanguages($processed_data, $encodedJson['languages']);
     $processed_data = $this->parseLeadership($processed_data, $encodedJson['leadership']);
     $processed_data = $this->parseLocations($processed_data, $encodedJson['locations']);
+
+    // Set the appointment link.
+    $processed_data = $this->setAppointmentLink($processed_data);
+
+    // Finish parsing hospital affiliations.
     $processed_data = $this->parseHospitalAffiliations($processed_data, $encodedJson['hospital_affiliations']);
 
     return $processed_data;
@@ -196,11 +202,11 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
 
-      if (!empty($pracitioner_id) && !isset($processed_data[$pracitioner_id])) {
-        $processed_data[$pracitioner_id] = [
-          'practioner_id' => $pracitioner_id,
+      if (!empty($practioner_id) && !isset($processed_data[$practioner_id])) {
+        $processed_data[$practioner_id] = [
+          'practioner_id' => $practioner_id,
           'last_name' => $row[1],
           'first_name' => $row[2],
           'middle_name' => $row[3],
@@ -231,17 +237,17 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $id = $row[1];
       $credential_type = $row[7];
 
-      if (isset($processed_data[$pracitioner_id])) {
-        if (!array_key_exists('credentials', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['credentials'] = [];
+      if (isset($processed_data[$practioner_id])) {
+        if (!array_key_exists('credentials', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['credentials'] = [];
         }
 
-        if (!in_array($id, $processed_data[$pracitioner_id]['credentials'])) {
-          $processed_data[$pracitioner_id]['credentials'][] = [
+        if (!in_array($id, $processed_data[$practioner_id]['credentials'])) {
+          $processed_data[$practioner_id]['credentials'][] = [
             'id' => $id,
             'credential_type' => $credential_type,
           ];
@@ -266,7 +272,7 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $insurance_name = trim($row[2]);
       $insurance_group = 'DIV1';
 
@@ -274,13 +280,13 @@ class Doctors extends SourcePluginBase {
         $insurance_group = substr($insurance_name, 0, '4');
       }
 
-      if (isset($processed_data[$pracitioner_id])) {
-        if (!array_key_exists('insurance_groups', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['insurance_groups'] = [];
+      if (isset($processed_data[$practioner_id])) {
+        if (!array_key_exists('insurance_groups', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['insurance_groups'] = [];
         }
 
-        if (!in_array($insurance_group, $processed_data[$pracitioner_id]['insurance_groups'])) {
-          $processed_data[$pracitioner_id]['insurance_groups'][] = $insurance_group;
+        if (!in_array($insurance_group, $processed_data[$practioner_id]['insurance_groups'])) {
+          $processed_data[$practioner_id]['insurance_groups'][] = $insurance_group;
         }
       }
     }
@@ -301,16 +307,16 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $msow_id = $row[1];
 
-      if (isset($processed_data[$pracitioner_id])) {
-        if (!array_key_exists('msow_ids', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['msow_ids'] = [];
+      if (isset($processed_data[$practioner_id])) {
+        if (!array_key_exists('msow_ids', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['msow_ids'] = [];
         }
 
-        if (!in_array($msow_id, $processed_data[$pracitioner_id]['msow_ids'])) {
-          $processed_data[$pracitioner_id]['msow_ids'][] = $msow_id;
+        if (!in_array($msow_id, $processed_data[$practioner_id]['msow_ids'])) {
+          $processed_data[$practioner_id]['msow_ids'][] = $msow_id;
         }
       }
 
@@ -332,14 +338,14 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $specialty_term = $row[1];
       $board_name = $row[5];
       $document_name = $row[12];
       $certified_year = $row[6];
 
-      if (isset($processed_data[$pracitioner_id])) {
-        $processed_data = $this->processSpecialties($processed_data, $pracitioner_id, $specialty_term, $board_name, $document_name, $certified_year);
+      if (isset($processed_data[$practioner_id])) {
+        $processed_data = $this->processSpecialties($processed_data, $practioner_id, $specialty_term, $board_name, $document_name, $certified_year);
       }
     }
 
@@ -349,16 +355,16 @@ class Doctors extends SourcePluginBase {
   /**
    * Process specialties.
    */
-  private function processSpecialties($processed_data, $pracitioner_id, $specialty_term, $board_name, $document_name, $certified_year) {
+  private function processSpecialties($processed_data, $practioner_id, $specialty_term, $board_name, $document_name, $certified_year) {
     if ($document_name == 'Board Specialties' || $document_name == 'Board Pending') {
-      if (!array_key_exists('specialty_terms', $processed_data[$pracitioner_id])) {
-        $processed_data[$pracitioner_id]['specialty_terms'] = [];
+      if (!array_key_exists('specialty_terms', $processed_data[$practioner_id])) {
+        $processed_data[$practioner_id]['specialty_terms'] = [];
       }
 
-      if (!empty($specialty_term) && is_array($processed_data[$pracitioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$pracitioner_id]['specialty_terms'])) {
-        $processed_data[$pracitioner_id]['specialty_terms'][] = $specialty_term;
+      if (!empty($specialty_term) && is_array($processed_data[$practioner_id]['specialty_terms']) && !in_array($specialty_term, $processed_data[$practioner_id]['specialty_terms'])) {
+        $processed_data[$practioner_id]['specialty_terms'][] = $specialty_term;
 
-        $this->boardPendingDataAlter($processed_data, $pracitioner_id, $document_name, $board_name, $certified_year);
+        $this->boardPendingDataAlter($processed_data, $practioner_id, $document_name, $board_name, $certified_year);
       }
     }
 
@@ -370,7 +376,7 @@ class Doctors extends SourcePluginBase {
    *
    * @param array $processed_data
    *   The data array to work on.
-   * @param string $pracitioner_id
+   * @param string $practioner_id
    *   The provider's id.
    * @param string $document_name
    *   Is this pending or certified.
@@ -382,7 +388,7 @@ class Doctors extends SourcePluginBase {
    * @return mixed
    *   THe processed array with board data added.
    */
-  private function boardPendingDataAlter(array &$processed_data, $pracitioner_id, $document_name, $board_name, $certified_year) {
+  private function boardPendingDataAlter(array &$processed_data, $practioner_id, $document_name, $board_name, $certified_year) {
     $specialty_term_board = '';
 
     if ($document_name == 'Board Specialties') {
@@ -393,12 +399,12 @@ class Doctors extends SourcePluginBase {
       $specialty_term_board = $board_name . ' <span class="provider-detail__item-meta">' . t('Board Eligible') . $certified_year . '</span>';
     }
 
-    if (!array_key_exists('board_certified', $processed_data[$pracitioner_id])) {
-      $processed_data[$pracitioner_id]['board_certified'] = [];
+    if (!array_key_exists('board_certified', $processed_data[$practioner_id])) {
+      $processed_data[$practioner_id]['board_certified'] = [];
     }
 
-    if (!in_array($specialty_term_board, $processed_data[$pracitioner_id]['board_certified'])) {
-      $processed_data[$pracitioner_id]['board_certified'][] = [
+    if (!in_array($specialty_term_board, $processed_data[$practioner_id]['board_certified'])) {
+      $processed_data[$practioner_id]['board_certified'][] = [
         'value' => $specialty_term_board,
         'format' => 'full_html'
       ];
@@ -420,15 +426,15 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $language = $row[1];
-      if (!empty($language) && strtolower($language) !== 'english' && isset($processed_data[$pracitioner_id])) {
-        if (!array_key_exists('languages', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['languages'] = [];
+      if (!empty($language) && strtolower($language) !== 'english' && isset($processed_data[$practioner_id])) {
+        if (!array_key_exists('languages', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['languages'] = [];
         }
 
-        if (!in_array($language, $processed_data[$pracitioner_id]['languages'])) {
-          $processed_data[$pracitioner_id]['languages'][] = $language;
+        if (!in_array($language, $processed_data[$practioner_id]['languages'])) {
+          $processed_data[$practioner_id]['languages'][] = $language;
         }
       }
     }
@@ -449,15 +455,15 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $leadership_name = $row[2];
-      if (isset($processed_data[$pracitioner_id])) {
-        if (!array_key_exists('job_titles', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['job_titles'] = [];
+      if (isset($processed_data[$practioner_id])) {
+        if (!array_key_exists('job_titles', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['job_titles'] = [];
         }
 
-        if (!in_array($leadership_name, $processed_data[$pracitioner_id]['job_titles'])) {
-          $processed_data[$pracitioner_id]['job_titles'][] = $leadership_name;
+        if (!in_array($leadership_name, $processed_data[$practioner_id]['job_titles'])) {
+          $processed_data[$practioner_id]['job_titles'][] = $leadership_name;
         }
       }
     }
@@ -478,20 +484,49 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $fac_code = $row[1];
       $status = $row[2];
-      if ($status == 'Active' && isset($processed_data[$pracitioner_id])) {
-        if (!array_key_exists('fac_codes', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['fac_codes'] = [];
+      if ($status == 'Active' && isset($processed_data[$practioner_id])) {
+        if (!array_key_exists('fac_codes', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['fac_codes'] = [];
         }
 
-        if (!in_array($fac_code, $processed_data[$pracitioner_id]['fac_codes'])) {
-          $processed_data[$pracitioner_id]['fac_codes'][] = $fac_code;
+        if (!in_array($fac_code, $processed_data[$practioner_id]['fac_codes'])) {
+          $processed_data[$practioner_id]['fac_codes'][] = $fac_code;
         }
 
-        $processed_data = $this->addHospitalLocations($processed_data, $pracitioner_id, $fac_code);
+        $processed_data = $this->addHospitalLocations($processed_data, $practioner_id, $fac_code);
 
+      }
+    }
+
+    return $processed_data;
+  }
+
+  /**
+   * Set appointment link on doctors.
+   */
+  public function setAppointmentLink($processed_data) {
+    if (!is_array($processed_data)) {
+      return $processed_data;
+    }
+
+    foreach ($processed_data as $row) {
+      // By default display appoinment link on doctors.
+      $appointment_link = 1;
+      $practioner_id = $row['practioner_id'];
+
+      if (isset($practioner_id)) {
+        // Only add the affiliated hospitals on doctors who are hospitalists.
+        // These doctors will have no locations associated with them.
+        if (!array_key_exists('location_ids', $processed_data[$practioner_id])) {
+          $appointment_link = 0;
+        }
+
+        if (isset($processed_data[$practioner_id]) && !array_key_exists('appointment_link', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['appointment_link'] = $appointment_link;
+        }
       }
     }
 
@@ -501,16 +536,16 @@ class Doctors extends SourcePluginBase {
   /**
    * Add hospital locations to doctors.
    */
-  public function addHospitalLocations($processed_data, $pracitioner_id, $fac_code) {
-    if (!is_array($processed_data) || empty($pracitioner_id) || empty($fac_code)) {
+  public function addHospitalLocations($processed_data, $practioner_id, $fac_code) {
+    if (!is_array($processed_data) || empty($practioner_id) || empty($fac_code)) {
       return $processed_data;
     }
 
-    if (!array_key_exists('location_ids', $processed_data[$pracitioner_id])) {
-      $processed_data[$pracitioner_id]['location_ids'] = [];
-    }
+    // Only add the affiliated hospitals on doctors who are hospitalists.
+    // These doctors will have no locations associated with them.
+    if (!array_key_exists('location_ids', $processed_data[$practioner_id]) && !empty($fac_code)) {
+      $processed_data[$practioner_id]['location_ids'] = [];
 
-    if (!empty($fac_code)) {
       $location_id = '';
 
       $query = \Drupal::entityQuery('taxonomy_term');
@@ -524,8 +559,8 @@ class Doctors extends SourcePluginBase {
       if ($term instanceof EntityInterface) {
         $location_id = $term->get('field_hospital_location_id')->getString();
 
-        if (!empty($location_id) && !in_array($location_id, $processed_data[$pracitioner_id]['location_ids'])) {
-          $processed_data[$pracitioner_id]['location_ids'][] = $location_id;
+        if (!empty($location_id) && !in_array($location_id, $processed_data[$practioner_id]['location_ids'])) {
+          $processed_data[$practioner_id]['location_ids'][] = $location_id;
         }
       }
     }
@@ -546,15 +581,15 @@ class Doctors extends SourcePluginBase {
     unset($data[0]);
 
     foreach ($data as $row) {
-      $pracitioner_id = $row[0];
+      $practioner_id = $row[0];
       $location_id = $row[2];
-      if (isset($processed_data[$pracitioner_id])) {
-        if (!array_key_exists('location_ids', $processed_data[$pracitioner_id])) {
-          $processed_data[$pracitioner_id]['location_ids'] = [];
+      if (isset($processed_data[$practioner_id])) {
+        if (!array_key_exists('location_ids', $processed_data[$practioner_id])) {
+          $processed_data[$practioner_id]['location_ids'] = [];
         }
 
-        if (!in_array($location_id, $processed_data[$pracitioner_id]['location_ids'])) {
-          $processed_data[$pracitioner_id]['location_ids'][] = $location_id;
+        if (!in_array($location_id, $processed_data[$practioner_id]['location_ids'])) {
+          $processed_data[$practioner_id]['location_ids'][] = $location_id;
         }
       }
     }
