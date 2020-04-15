@@ -1,7 +1,7 @@
 type: "Hospital"
 name: "Reading Hospital"
 address_1: "420 S. Fifth Avenue"
-address_2: "West Reading, PA 19611"
+address_local: "West Reading, PA 19611"
 directions:
   link: "/"
   button_icon: "th-find-hospital.svg"
