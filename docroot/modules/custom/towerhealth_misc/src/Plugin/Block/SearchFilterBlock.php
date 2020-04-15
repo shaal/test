@@ -66,11 +66,11 @@ class SearchFilterBlock extends BlockBase {
         'class' => ['js-search-all'],
       ],
       '#return_value' => '',
-      '#default_value' => null,
+      '#default_value' => NULL,
       '#id' => 'edit-type-all',
     ];
 
-    // Remove basic page as an option
+    // Remove basic page as an option.
     unset($form['type']['page']);
 
     $form['search_api_datasource']['entity:media']['#attributes']['data-id'] = 'general-search-filter--checkbox';

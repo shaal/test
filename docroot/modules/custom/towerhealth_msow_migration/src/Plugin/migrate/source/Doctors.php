@@ -406,7 +406,7 @@ class Doctors extends SourcePluginBase {
     if (!in_array($specialty_term_board, $processed_data[$practioner_id]['board_certified'])) {
       $processed_data[$practioner_id]['board_certified'][] = [
         'value' => $specialty_term_board,
-        'format' => 'full_html'
+        'format' => 'full_html',
       ];
     }
 

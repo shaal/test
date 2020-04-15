@@ -620,7 +620,7 @@ function tower_health_preprocess_field__field_rating_comments_ref(&$variables) {
     $reviews[$id]["date"] = date("F Y", strtotime($paragraph->field_rating_comment_date->value));
   }
 
-  $variables["review_url"] =  theme_get_setting('reviews_link');
+  $variables["review_url"] = theme_get_setting('reviews_link');
 
   $variables["reviews"] = $reviews;
 }
