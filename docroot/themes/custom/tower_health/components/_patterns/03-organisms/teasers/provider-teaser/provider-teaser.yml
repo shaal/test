@@ -20,3 +20,4 @@ provider:
     rating: '4.2'
     rating_icon: "star.svg"
     type: "Provider Type if not Doctor"
+  appointment_link: true
