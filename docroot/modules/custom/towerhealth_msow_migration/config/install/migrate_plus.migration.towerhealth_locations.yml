@@ -53,6 +53,10 @@ process:
 
   field_location_fax: fax_number
 
+  field_location_doctor_link:
+  - plugin: default_value
+    default_value: 0
+
   _location_type:
     - plugin: towerhealth_lookup_taxonomy_term
       lookup_field: name

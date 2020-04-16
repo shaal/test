@@ -27,8 +27,10 @@
         {% endif %}
       </div>
     </div>
-    <div class="teaser__link--small">
-      <a class="teaser__link" href="{{cta.url}}" target="_blank">{{ cta.label }} {% include "@base/icons/arrow.svg" %} </a>
-    </div>
+    {% if hide_cta != true %}
+      <div class="teaser__link--small">
+        <a class="teaser__link" href="{{cta.url}}" target="_blank">{{ cta.label }} {% include "@base/icons/arrow.svg" %} </a>
+      </div>
+    {% endif %}
   </div>
 </div>

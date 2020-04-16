@@ -61,6 +61,7 @@ hours:
       hours: "8 a.m. - 8 p.m."
     - title: "Sunday"
       hours: "Closed"
+hide_cta: false
 cta_list:
   - text: "Doctors at this Location"
     url: "/"
