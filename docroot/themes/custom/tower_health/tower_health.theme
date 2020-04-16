@@ -240,13 +240,14 @@ function tower_health_theme_suggestions_breadcrumb_alter(array &$suggestions, ar
 function tower_health_preprocess_region__sidebar_first(&$variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     if ($node->bundle() == 'location') {
+      $hide_doctor_link = FALSE;
       if (!$node->get('field_location_doctor_link')->isEmpty()) {
         $hide_doctor_link = $node->get('field_location_doctor_link')->getString();
+      }
 
-        if ($hide_doctor_link == FALSE) {
-          $variables['location_providers_url'] = _tower_heath_format_location_provider_url($node);
-          $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-provider.svg';
-        }
+      if ($hide_doctor_link == FALSE) {
+        $variables['location_providers_url'] = _tower_heath_format_location_provider_url($node);
+        $variables['button_icon'] = drupal_get_path('theme', 'tower_health') . '/images/icons/th-find-provider.svg';
       }
     }
   }

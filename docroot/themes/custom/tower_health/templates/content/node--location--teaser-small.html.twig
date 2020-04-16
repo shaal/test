@@ -70,6 +70,10 @@
  *   in different view modes.
  */
 #}
+{% set hide_cta = FALSE %}
+{% if node.field_location_doctor_link.0.value == 1 %}
+    {% set hide_cta = TRUE %}
+{% end %}
 {% include "@organisms/teasers/location-teaser--small/location-teaser--small.twig" with {
     "name": label,
     "address_rows": [address_1, address_2, address_local],
@@ -77,7 +81,7 @@
     "button_icon": button_icon,
     "phone": phone,
     "fax": fax,
-    "hide_cta": node.field_location_doctor_link.0.value,
+    "hide_cta": hide_cta,
     "cta": {
       "url": location_providers_url,
       "label": "View other doctors at this location"|t
