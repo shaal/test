@@ -1,0 +1,23 @@
+uuid: 8a98507f-046d-4fe3-87d4-ad16b5971044
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_appointment_link
+    - node.type.profile
+  module:
+    - options
+id: node.profile.field_profile_appointment_link
+field_name: field_profile_appointment_link
+entity_type: node
+bundle: profile
+label: 'Appointment LInk'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'true'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

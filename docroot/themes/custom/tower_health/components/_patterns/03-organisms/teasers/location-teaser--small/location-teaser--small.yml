@@ -9,6 +9,7 @@ phones:
     number: "484-555-5555"
   - label: Fax
     number: "484-555-5556"
+display_cta: true
 cta:
   url: "#"
   label: "Other Doctors at this Location"
