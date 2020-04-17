@@ -1,0 +1,16 @@
+<div class='featured-banner' style="background-image: url({{ image.url }});">
+  <div class='grid'>
+    <div class='featured-banner__circle'>
+      <div class='featured-banner__content'>
+        <span class='featured-banner__label'>{{ label }}</span>
+        <h2 class='featured-banner__title'>{{ title }}</h2>
+        <div class='featured-banner__desc'>
+          {{ desc }}
+        </div>
+        {% if link %}
+          <a class="button" href="{{ link.url }}">{{ link.label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
