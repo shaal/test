@@ -1,0 +1,18 @@
+<div class="people-teaser">
+  {% if teaser.image %}
+  <div class="people-teaser__img">
+    <img src="{{ teaser.image.src }}" alt="{{ teaser.img.alt }}"/>
+  </div>
+  {% endif %}
+  <div class="people-teaser__content">
+    <h2 class="people-teaser__name">{{ teaser.name }}</h2>
+    <span class="people-teaser__meta">{{ teaser.title }}</span>
+    
+    {% if teaser.title_2 or teaser.org %}
+    <span class="people-teaser__meta">
+      {% if teaser.title_2 %}{{ teaser.title_2 }}{% endif %}{% if teaser.org %},{% endif %}
+      {% if teaser.org %}{{ teaser.org }}{% endif %}
+    </span>
+    {% endif %}
+  </div>
+</div>
