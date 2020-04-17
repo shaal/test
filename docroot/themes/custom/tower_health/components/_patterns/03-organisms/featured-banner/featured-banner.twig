@@ -2,7 +2,9 @@
   <div class='grid'>
     <div class='featured-banner__circle'>
       <div class='featured-banner__content'>
+        {% if label %}
         <span class='featured-banner__label'>{{ label }}</span>
+        {% endif %}
         <h2 class='featured-banner__title'>{{ title }}</h2>
         <div class='featured-banner__desc'>
           {{ desc }}
