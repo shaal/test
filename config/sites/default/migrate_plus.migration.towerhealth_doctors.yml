@@ -198,6 +198,7 @@ process:
     -
       plugin: towerhealth_entity_ref_values
       source: '@_insurance_groups'
+  field_profile_appointment_link: appointment_link
   type:
     plugin: default_value
     default_value: profile

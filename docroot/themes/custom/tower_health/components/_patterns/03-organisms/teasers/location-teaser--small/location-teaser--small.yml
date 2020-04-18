@@ -4,11 +4,9 @@ address_rows:
   - "420 S. Fifth Avenue"
   - "West Reading, PA 19611"
 direction_url: '#'
-phones:
-  - label: Main
-    number: "484-555-5555"
-  - label: Fax
-    number: "484-555-5556"
+phone: "484-555-5555"
+fax: "484-555-5556"
+display_cta: true
 cta:
   url: "#"
   label: "Other Doctors at this Location"

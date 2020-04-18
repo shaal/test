@@ -1,0 +1,161 @@
+.large-hero {
+  @extend %clearfix;
+  position: relative;
+  padding-top: 100px;
+  width: 100%;
+  max-width: 1500px;
+
+  @include breakpoint($bp2) {
+    padding: 70px 0 0;
+  }
+
+  @include breakpoint($bp3) {
+    padding: 0;
+    margin: 3em auto 5em;
+    min-height: 575px;
+    
+    display: flex;
+    align-items: center;
+  }
+}
+
+.large-hero__container {
+  max-width: 1500px;
+  width: 100%;
+
+  @include breakpoint($bp2) {
+    padding: 0 2em;
+  }
+}
+
+.large-hero__content {
+  border-radius: 0 $rd-brd-sm $rd-brd-sm 0;
+  background-color: $white;
+  width: 96%;
+  padding: 1em 1em 2em 2em;
+  box-shadow: $shadow;
+  position: relative;
+  z-index: 1;
+  
+  @include breakpoint($bp0) {
+    width: 95%;
+    margin-top: 25%;
+  }
+
+  @include breakpoint($bp2) {
+    border-radius: $rd-brd-sm;
+    width: 75%;
+    padding: 1em 2em 2em;
+    min-height: 300px;
+  }
+
+  @include breakpoint($bp3) {
+    background-color: transparent;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 52% 0 0;
+    box-shadow: none;
+    position: static;
+    border-radius: $rd-brd-lg;
+    min-height: 0;
+  }
+
+  @include breakpoint($bp4) {
+    padding-right: 53%;
+  }
+
+  @include breakpoint($bp6) {
+    padding-right: 53%;
+  }
+}
+
+.large-hero__image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -10;
+  overflow: hidden;
+
+  .image-background {
+    position: relative;
+    width: 90%;
+    right: -30%;
+  }
+
+  @include breakpoint($bp2) {
+    width: 80%;
+  }
+
+  @include breakpoint($bp3) {
+    z-index: auto;
+    right: 0;
+    left: 53%;
+    top: -1.5em;
+    width: auto;
+
+    .image-background {
+      position: relative;
+      width: 150%;
+      max-width: 625px;
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @include breakpoint($bp6) {
+    right: calc(( 100vw - 1500px ) / 2 * -1);
+    top: -2em;
+    left: 55%;
+
+    .image-background {
+      max-width: 650px;
+    }
+  }
+}
+
+.large-hero__label {
+  @include adjust-font-size-to($label, .8);
+  @extend %track-out;
+  position: relative;
+  display: inline-block;
+  padding: .5em 1em .5em 0;
+  margin-bottom: 1em;
+  background-color: $primary-dark;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0 $rd-brd-sm $rd-brd-sm 0;
+  
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 5.25em;
+    left: -5.25em;
+    top: 0;
+    bottom: 0;
+    background-color: $primary-dark;
+  }
+  
+  @include breakpoint($bp3) {
+    margin-bottom: 2em;
+  }
+
+  @include breakpoint($bp6) {
+    &::before {
+      left: calc((-1 * (100vw - 1500px) / 2) - 4.5rem);
+      width: calc(((100vw - 1500px) / 2) + 4.5rem);
+    }
+  }
+}
+
+.large-hero__title {
+  @include adjust-font-size-to($h1-font-size, 1.75);
+  margin-top: .5em;
+  margin-bottom: .25em;
+}
+
+.large-hero__desc {
+  margin-bottom: 1.5em;
+}

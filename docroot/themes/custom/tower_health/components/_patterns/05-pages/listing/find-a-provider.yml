@@ -110,6 +110,7 @@ providers:
       src: "../../images/people/Roland-Donald.jpg"
       alt: "Alternative Text"
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -129,6 +130,7 @@ providers:
     type: "provider"
   - img: null
     classes: "growth bottom-right"
+    appointment_link: false
     link:
       url: "/"
       text: "Request an Appointment"
@@ -148,6 +150,7 @@ providers:
     type: "provider"
   - img: null
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -170,6 +173,7 @@ providers:
       src: "../../images/people/Scutti-Marie.jpg"
       alt: "Alternative Text"
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -191,6 +195,7 @@ providers:
       src: "../../images/people/abdel-wahab-amir.jpg"
       alt: "Alternative Text"
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -210,6 +215,7 @@ providers:
     type: "provider"
   - img: null
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -231,6 +237,7 @@ providers:
       src: "../../images/people/Roland-Donald.jpg"
       alt: "Alternative Text"
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -252,6 +259,7 @@ providers:
       src: "../../images/people/abdel-wahab-amir.jpg"
       alt: "Alternative Text"
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -271,6 +279,7 @@ providers:
     type: "provider"
   - img: null
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"
@@ -292,6 +301,7 @@ providers:
       src: "../../images/people/abdel-wahab-amir.jpg"
       alt: "Alternative Text"
     classes: "growth bottom-right"
+    appointment_link: true
     link:
       url: "/"
       text: "Request an Appointment"

@@ -1,0 +1,9 @@
+image:
+  url: '../../images/AdobeStock_317366543_Preview.jpeg'
+  alt: 'alt text'
+label: "St. Christopher's Hospital for Children"
+title: "The best kept secret in the region."
+desc: "For more than 145 years, St. Christopher’s Hospital for Children—a partnership of Tower Health and Drexel University—has offered compassionate, expert care for children and families. Discover our award-winning pediatric care."
+link:
+  url: "#"
+  label: "About the Hospital"

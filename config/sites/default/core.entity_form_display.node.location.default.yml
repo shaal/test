@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.location.field_location_card_desc
     - field.field.node.location.field_location_card_image
     - field.field.node.location.field_location_components
+    - field.field.node.location.field_location_doctor_link
     - field.field.node.location.field_location_fax
     - field.field.node.location.field_location_geo
     - field.field.node.location.field_location_hours
@@ -52,7 +53,7 @@ third_party_settings:
       region: content
     group_description:
       children:
-        - field_location_type
+        - field_location_doctor_link
         - field_location_image
         - field_location_body
         - field_location_body_components
@@ -70,6 +71,7 @@ third_party_settings:
     group_migrated_data:
       children:
         - title
+        - field_location_type
         - field_location_id
         - field_location_address
         - field_location_geo
@@ -143,7 +145,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_location_address:
-    weight: 14
+    weight: 15
     settings:
       label: above
       formatter_type: null
@@ -153,7 +155,7 @@ content:
     type: readonly_field_widget
     region: content
   field_location_body:
-    weight: 35
+    weight: 36
     settings:
       rows: 5
       placeholder: ''
@@ -162,7 +164,7 @@ content:
     region: content
   field_location_body_components:
     type: entity_reference_paragraphs
-    weight: 36
+    weight: 37
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -209,24 +211,13 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     region: content
+  field_location_doctor_link:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_location_fax:
-    weight: 17
-    settings:
-      label: above
-      formatter_type: null
-      formatter_settings: null
-      show_description: false
-    third_party_settings: {  }
-    type: readonly_field_widget
-    region: content
-  field_location_geo:
-    weight: 15
-    settings:
-      html5_geolocation: false
-    third_party_settings: {  }
-    type: geofield_latlon
-    region: content
-  field_location_hours:
     weight: 18
     settings:
       label: above
@@ -236,8 +227,25 @@ content:
     third_party_settings: {  }
     type: readonly_field_widget
     region: content
+  field_location_geo:
+    weight: 16
+    settings:
+      html5_geolocation: false
+    third_party_settings: {  }
+    type: geofield_latlon
+    region: content
+  field_location_hours:
+    weight: 19
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
   field_location_id:
-    weight: 13
+    weight: 14
     settings:
       label: above
       formatter_type: null
@@ -248,7 +256,7 @@ content:
     region: content
   field_location_image:
     type: media_library_widget
-    weight: 34
+    weight: 35
     settings:
       media_types: {  }
     third_party_settings:
@@ -256,7 +264,7 @@ content:
         show_edit: '1'
     region: content
   field_location_phone_number:
-    weight: 16
+    weight: 17
     settings:
       label: above
       formatter_type: null
@@ -266,10 +274,14 @@ content:
     type: readonly_field_widget
     region: content
   field_location_type:
-    weight: 33
-    settings: {  }
+    weight: 13
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: options_select
+    type: readonly_field_widget
     region: content
   field_metatags:
     weight: 10
