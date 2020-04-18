@@ -13,14 +13,16 @@
  */
 #}
 
-{% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
-  "cta_list": [
-    {
-      "text": "Doctors at this Location"|t,
-      "url": location_providers_url,
-      "icon": button_icon
-    }
-  ]
-}%}
+{% if location_providers_url %}
+  {% include "@molecules/sidebar-cta-list/sidebar-cta-list.twig" with {
+    "cta_list": [
+      {
+        "text": "Doctors at this Location"|t,
+        "url": location_providers_url,
+        "icon": button_icon
+      }
+    ]
+  }%}
+{% endif %}
 
 {{ content }}

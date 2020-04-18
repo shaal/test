@@ -17,6 +17,7 @@ rating: 4.9
 rating_icon: "star.svg"
 rating_comments: true
 review_amt: 36
+appointment_link: true
 provider_video:
   type: video
   reference: https://www.youtube.com/embed/d3ZLhedUtkA

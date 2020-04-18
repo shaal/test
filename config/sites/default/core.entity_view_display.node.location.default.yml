@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.location.field_location_card_desc
     - field.field.node.location.field_location_card_image
     - field.field.node.location.field_location_components
+    - field.field.node.location.field_location_doctor_link
     - field.field.node.location.field_location_fax
     - field.field.node.location.field_location_geo
     - field.field.node.location.field_location_hours
@@ -75,6 +76,7 @@ hidden:
   field_location_card_desc: true
   field_location_card_image: true
   field_location_components: true
+  field_location_doctor_link: true
   field_location_fax: true
   field_location_geo: true
   field_location_hours: true

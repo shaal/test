@@ -6,6 +6,7 @@ address_rows:
 direction_url: '#'
 phone: "484-555-5555"
 fax: "484-555-5556"
+display_cta: true
 cta:
   url: "#"
   label: "Other Doctors at this Location"

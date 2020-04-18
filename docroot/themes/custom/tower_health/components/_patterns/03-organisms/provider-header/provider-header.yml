@@ -19,3 +19,4 @@ appt_phone:
 appt_url: "#"
 appt_icon: "th-cal.svg"
 appt_label: "Request an Appointment"
+appointment_link: true

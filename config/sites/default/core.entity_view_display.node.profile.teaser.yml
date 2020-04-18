@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.profile.field_location_ref
     - field.field.node.profile.field_medical_specialties_ref
     - field.field.node.profile.field_metatags
+    - field.field.node.profile.field_profile_appointment_link
     - field.field.node.profile.field_profile_board_certified
     - field.field.node.profile.field_profile_education
     - field.field.node.profile.field_profile_employment_type
@@ -115,6 +116,7 @@ hidden:
   field_affiliations_ref: true
   field_insurance_ref: true
   field_metatags: true
+  field_profile_appointment_link: true
   field_profile_board_certified: true
   field_profile_education: true
   field_profile_employment_type: true

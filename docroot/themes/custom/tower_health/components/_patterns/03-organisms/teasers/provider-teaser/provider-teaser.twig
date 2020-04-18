@@ -56,7 +56,7 @@
         {% endif %}
       </div>
     </div>
-    {% if provider.link %}
+    {% if provider.link and provider.appointment_link == TRUE %}
     <div class="teaser__button">
       {% include "@atoms/icon-button/icon-button.twig" with {
         "url": provider.link.href,
