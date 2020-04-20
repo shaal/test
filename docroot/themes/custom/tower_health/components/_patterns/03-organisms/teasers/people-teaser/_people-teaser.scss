@@ -2,7 +2,7 @@
   text-align: center;
   margin-bottom: 2em;
   
-  @include breakpoint($bp0) {
+  @include breakpoint($bp3) {
     display: flex;
     align-items: center;
     text-align: left;
@@ -10,27 +10,20 @@
 }
 
 .people-teaser__img {
-  min-width: 150px;
-  width: 150px;
-  height: 150px;
+  min-width: 125px;
+  width: 125px;
+  height: 125px;
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto 1em;
-  
-  @include breakpoint($bp0) {
+
+  @include breakpoint($bp3) {
     align-self: flex-start;
     margin: 0 1em 0 0;
+    min-width: 175px;
+    width: 175px;
+    height: 175px;
   }
-  
-  @include breakpoint($bp2) {
-    min-width: 200px;
-    width: 200px;
-    height: 200px;
-  }
-}
-
-.people-teaser__content {
-  
 }
 
 .people-teaser__name {
@@ -56,6 +49,7 @@
 }
 
 .people-teaser__meta {
+  @include adjust-font-size-to($label, .75);
   display: block;
   font-style: italic;
 }
