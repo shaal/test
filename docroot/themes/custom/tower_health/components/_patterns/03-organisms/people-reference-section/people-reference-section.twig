@@ -1,0 +1,26 @@
+<section class="people-section">
+  <div class="grid">
+    {% if title or desc %}
+    <header class="people-section__header">
+    {% if title %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+    {% if desc %}
+      <div>
+        {{ desc }}
+      </div>
+    {% endif %}
+    </header>
+    {% endif %}
+    
+    <ul  class="people-section__list">
+    {% for item in people %}
+      <li  class="people-section__item">
+        {% include "@organisms/teasers/people-teaser/people-teaser.twig" with {
+            "teaser": item.teaser
+          } %}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
