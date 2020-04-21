@@ -20,7 +20,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite class> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width class data-entity-type data-entity-uuid data-align data-caption> <figure class src alt height width data-entity-type data-entity-uuid data-align data-caption><drupal-entity class data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-media class data-entity-type data-entity-uuid data-align data-caption>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite class> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width class data-entity-type data-entity-uuid data-align data-caption> <figure class src alt height width data-entity-type data-entity-uuid data-align data-caption><drupal-entity class data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <drupal-media class data-entity-type data-entity-uuid data-align data-caption><div class>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -65,13 +65,6 @@ filters:
         video: video
       allowed_view_modes:
         inline: inline
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: false
-    weight: -41
-    settings:
-      filter_url_length: 72
   filter_autop:
     id: filter_autop
     provider: filter
@@ -90,3 +83,10 @@ filters:
     status: false
     weight: -43
     settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -41
+    settings:
+      filter_url_length: 72

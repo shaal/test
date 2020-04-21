@@ -10,6 +10,7 @@
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Views;
+use Drupal\editor\Entity\Editor;
 
 /**
  * Add custom sort order for find a provider search.
@@ -171,4 +172,12 @@ function towerhealth_misc_preprocess_form_element(&$variables, $hook, &$info) {
   if (isset($variables['element']['#attributes']['data-id']) && in_array($variables['element']['#attributes']['data-id'], $form_elements)) {
     $info['template'] = 'form-element--' . $variables['element']['#attributes']['data-id'];
   }
+}
+
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function towerhealth_misc_ckeditor_css_alter(array &$css, Editor $editor) {
+  $theme_path = drupal_get_path('theme', 'tower_health');
+  $css[] = $theme_path . '/dist/wysiwyg-editor.css';
 }
