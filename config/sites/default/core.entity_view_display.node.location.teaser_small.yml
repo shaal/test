@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser_small
+    - field.field.node.location.field_admin_title
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_body_components
@@ -60,6 +61,7 @@ content:
     type: telephone_link
     region: content
 hidden:
+  field_admin_title: true
   field_location_body: true
   field_location_body_components: true
   field_location_card_cta: true
