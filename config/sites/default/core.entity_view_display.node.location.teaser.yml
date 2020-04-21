@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.location.field_admin_title
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_body_components
@@ -70,6 +71,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
+  field_admin_title: true
   field_location_body: true
   field_location_body_components: true
   field_location_card_cta: true
