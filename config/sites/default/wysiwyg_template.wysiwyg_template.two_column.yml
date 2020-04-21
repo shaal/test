@@ -1,0 +1,12 @@
+uuid: 796659fd-341a-4879-9b76-bd15bb43dac6
+langcode: en
+status: true
+dependencies: {  }
+id: two_column
+label: 'Two column'
+description: 'Display content in two columns.'
+body:
+  value: "<div class=\"rich-text__two-col\">Replace with two column content</div>\r\n"
+  format: full_html
+weight: -10
+node_types: {  }
