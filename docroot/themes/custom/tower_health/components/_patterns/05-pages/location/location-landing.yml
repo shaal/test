@@ -110,6 +110,7 @@ section_items:
     url: "/"
   - title: "Events & Classes"
     url: "/"
+hide_cta: false
 cta_list:
   - text: "Doctors at this Location"
     url: "/"

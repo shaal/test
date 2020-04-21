@@ -1,0 +1,11 @@
+title: "Pediatric Services"
+subtitle: "Curious Minds and Healthy Bodies"
+title_as_label: true
+lead: "Our team partners with you to help your child grow up healthy, happy and strong. We understand your commitment to getting the best care for your child. And you’ll find it all here, within one system."
+img:
+  src: "../../images/th-hero-image.jpg"
+  alt: "Alternative Text"
+classes: "trust top-left"
+link:
+  label: 'Our Services'
+  url: '#'
