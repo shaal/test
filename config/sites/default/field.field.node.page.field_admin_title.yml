@@ -10,7 +10,7 @@ field_name: field_admin_title
 entity_type: node
 bundle: page
 label: 'Admin title'
-description: ''
+description: 'Optionally add a title that will be used for admin purposes only. This field will not be used anywhere else except for in admin listings.'
 required: false
 translatable: true
 default_value: {  }
