@@ -63,6 +63,17 @@
       margin-left: 2em;
     }
   }
+  
+  &.icon-button--white {
+    background-color: $white;
+    box-shadow: $shadow;
+    
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $trust-aa;
+    }
+  }
 
   &.icon-button--small {
     @include adjust-font-size-to($sm-text, .75);
