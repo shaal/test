@@ -1,0 +1,28 @@
+uuid: 559cf77f-a594-4cf7-80e5-20376b9ed8b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_large_hero_img
+    - media.type.image
+    - paragraphs.paragraphs_type.large_hero
+id: paragraph.large_hero.field_large_hero_img
+field_name: field_large_hero_img
+entity_type: paragraph
+bundle: large_hero
+label: Image
+description: 'Add an image that is at least 630px by 630px. If an image is larger then this size it will be automatically cropped to fit the dimensions.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

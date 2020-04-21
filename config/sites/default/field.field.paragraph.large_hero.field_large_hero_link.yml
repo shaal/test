@@ -1,0 +1,23 @@
+uuid: 2dc398e1-3b0a-4020-9bb8-efd31b20d490
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_large_hero_link
+    - paragraphs.paragraphs_type.large_hero
+  module:
+    - link
+id: paragraph.large_hero.field_large_hero_link
+field_name: field_large_hero_link
+entity_type: paragraph
+bundle: large_hero
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

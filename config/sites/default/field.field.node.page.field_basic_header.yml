@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.basic_header
     - paragraphs.paragraphs_type.homepage_hero
+    - paragraphs.paragraphs_type.large_hero
   module:
     - entity_reference_revisions
 id: node.page.field_basic_header
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       basic_header: basic_header
       homepage_hero: homepage_hero
+      large_hero: large_hero
     target_bundles_drag_drop:
       basic_header:
         enabled: true
@@ -33,10 +35,10 @@ settings:
       card:
         weight: 17
         enabled: false
-      article_card:
+      cards:
         weight: 18
         enabled: false
-      cards:
+      article_card:
         weight: 18
         enabled: false
       cta_banner:
@@ -75,7 +77,49 @@ settings:
       rich_text:
         weight: 30
         enabled: false
+      anchored_cta_block:
+        weight: 32
+        enabled: false
       sidebar_card:
         weight: 34
+        enabled: false
+      box_links:
+        weight: 35
+        enabled: false
+      care_circle:
+        weight: 38
+        enabled: false
+      care_circle_section:
+        weight: 39
+        enabled: false
+      file_download_cta:
+        weight: 43
+        enabled: false
+      form:
+        weight: 44
+        enabled: false
+      image_box_link_custom:
+        weight: 48
+        enabled: false
+      image_box_link_reference:
+        weight: 49
+        enabled: false
+      image_teaser_banner:
+        weight: 50
+        enabled: false
+      large_hero:
+        enabled: true
+        weight: 51
+      resource_list_card:
+        weight: 57
+        enabled: false
+      resource_list_item:
+        weight: 58
+        enabled: false
+      text_teaser_banner:
+        weight: 61
+        enabled: false
+      video_card:
+        weight: 62
         enabled: false
 field_type: entity_reference_revisions
