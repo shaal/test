@@ -7,6 +7,8 @@ The Patient Story Card contains an image, title, and a link with a label. All fi
 
 This component is used in the multiple patient story banner. 
 
+The image must be a square ratio.
+
 #### Variables
 ~~~
 image:
