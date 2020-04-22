@@ -1,8 +1,11 @@
 .patient-story-card {
-  
+  display: flex;
+  margin-bottom: 2em;
 }
 
 .patient-story-card__link {
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   
   &:active,
@@ -19,6 +22,11 @@
       transform: scale(1.05);
     }
   }
+  
+  @include breakpoint(450px $bp2) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .patient-story-card__image-container {
@@ -27,7 +35,7 @@
   position: relative;
   border-radius: 50%;
   width: 100%;
-  margin-bottom: -6em;
+  margin-bottom: -7em;
   
   &::before {
     position: absolute;
@@ -38,8 +46,20 @@
     border-radius: 50%;
     background-color: $growth;
     z-index: 1;
-    bottom: -10px;
-    left: -10px;
+    bottom: -8px;
+    left: -8px;
+  }
+  
+  @include breakpoint(450px $bp2) {
+    flex: 0 1 40%;
+    min-width: 40%;
+    margin-bottom: 0;
+    margin-right: -6em;
+    align-self: flex-start;
+  }
+  
+  @include breakpoint($bp5) {
+    margin-bottom: -9em;
   }
 }
 
@@ -53,19 +73,29 @@
   text-align: center;
   border: 4px solid $trust-ltst;
   border-radius: $rd-brd-lg;
-  padding: 8em 1em 1em;
+  padding: 8.5em 1em 1em;
+  flex-grow: 1;
+  
+  @include breakpoint(450px $bp2) {
+    padding: 1.5em 1em 1.5em 7em;
+  }
+  
+  @include breakpoint($bp5) {
+    padding: 10.5em 2em 2em;
+  }
 }
 
 .patient-story-card__title {
   @include adjust-font-size-to($sm-heading, 1);
   margin-top: 0;
-  margin-bottom: .25em;
+  margin-bottom: .5em;
   color: $primary-dark;
 }
 
 .patient-story-card__cta {
   @extend %track-out;
-  @include adjust-font-size-to($label, .8);
+  @include adjust-font-size-to($label, .75);
+  display: block;
   text-transform: uppercase;
   font-weight: 600;
 }
