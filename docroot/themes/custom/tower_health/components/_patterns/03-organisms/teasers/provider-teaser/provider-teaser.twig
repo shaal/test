@@ -12,6 +12,12 @@
     {% if provider.details.type|render != 'Doctor' %}
       <span class="teaser__top__type">{{ provider.details.type }}</span>
     {% endif %}
+    {% if provider.details.employed_flag and provider.details.type|render != 'Doctor' %}
+      <span class="divider">&#8226;</span>
+    {% endif %}
+    {% if provider.details.employed_flag %}
+      <span class="teaser__top__type">{{ provider.details.employed_flag }}</span>
+    {% endif %}
     
     {% if provider.details.rating %}
     {% include "@molecules/ratings-count/ratings-count.twig" with {

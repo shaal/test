@@ -215,6 +215,12 @@
     font-style: italic;
     margin-right: 1em;
   }
+
+  .divider {
+    @include adjust-font-size-to($label, 1);
+    display: inline-block;
+    margin: 0 .5em;
+  }
 }
 
 .teaser__content {
