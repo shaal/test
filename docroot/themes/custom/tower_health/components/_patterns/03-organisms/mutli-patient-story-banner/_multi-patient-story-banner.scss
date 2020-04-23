@@ -1,0 +1,136 @@
+.multi-patient-story-banner {
+  margin: 3em 0;
+}
+
+.multi-patient-story-banner__content {
+  
+  @include breakpoint($bp2 $bp3) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    .patient-story-card {
+      flex: 0 1 50%;
+      padding: 0 2%;
+      
+      &:nth-of-type(even) {
+        .patient-story-card__link {
+          
+        }
+        
+        .patient-story-card__content {
+          order: 1;
+          padding: 1em 1em 8.5em;
+          margin-bottom: -7em;
+        }
+        
+        .patient-story-card__image-container {
+          order: 2;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  @include breakpoint($bp3) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    .patient-story-card {
+      
+      // 2up - 50/50
+      &:nth-child(1):nth-last-child(2),
+      &:nth-child(2):nth-last-child(1),
+      // 4up - 50/50
+      &:nth-child(1):nth-last-child(4),
+      &:nth-child(2):nth-last-child(3),
+      &:nth-child(3):nth-last-child(2),
+      &:nth-child(4):nth-last-child(1) {
+        flex: 0 1 50%;
+        padding: 0 2%;
+        
+        .patient-story-card__link {
+          flex-direction: row;
+          align-items: center;
+        }
+        
+        .patient-story-card__image-container {
+          flex: 0 1 40%;
+          min-width: 40%;
+          margin-bottom: 0;
+          margin-right: -6em;
+          align-self: flex-start;
+        }
+        
+        .patient-story-card__content {
+          padding: 2em 1.5em 2em 7em;
+        }
+      }
+      
+      // 3up
+      &:nth-child(1):nth-last-child(3),
+      &:nth-child(2):nth-last-child(2),
+      &:nth-child(3):nth-last-child(1),
+      // 5up
+      &:nth-child(1):nth-last-child(5),
+      &:nth-child(2):nth-last-child(4),
+      &:nth-child(3):nth-last-child(3),
+      &:nth-child(4):nth-last-child(2),
+      &:nth-child(5):nth-last-child(1),
+      // 6up
+      &:nth-child(1):nth-last-child(6),
+      &:nth-child(2):nth-last-child(5),
+      &:nth-child(3):nth-last-child(4),
+      &:nth-child(4):nth-last-child(3),
+      &:nth-child(5):nth-last-child(2),
+      &:nth-child(6):nth-last-child(1) {
+        flex: 0 1 33%;
+        padding: 0 2%;
+      }
+      
+      &:nth-child(2):nth-last-child(2),
+      
+      &:nth-child(2):nth-last-child(4),
+      &:nth-child(4):nth-last-child(2),
+      
+      &:nth-child(2):nth-last-child(5),
+      &:nth-child(5):nth-last-child(2) {
+        
+        .patient-story-card__content {
+          order: 1;
+          padding: 1em 1em 8.5em;
+          margin-bottom: -7em;
+        }
+        
+        .patient-story-card__image-container {
+          order: 2;
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    @include breakpoint($bp5) {
+      .patient-story-card {
+        &:nth-child(2):nth-last-child(2),
+        
+        &:nth-child(2):nth-last-child(4),
+        &:nth-child(4):nth-last-child(2),
+        
+        &:nth-child(2):nth-last-child(5),
+        &:nth-child(5):nth-last-child(2) {
+          
+          .patient-story-card__content {
+            padding: 2em 2em 10.5em;
+            margin-bottom: -9em;
+          }
+          
+          .patient-story-card__image-container {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

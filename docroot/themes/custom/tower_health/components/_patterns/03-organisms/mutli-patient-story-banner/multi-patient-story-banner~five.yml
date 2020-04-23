@@ -1,0 +1,36 @@
+patient_stories:
+  - image: 
+      src: "../../images/madeline.png"
+      alt: "alt text"
+    title: A Second Opinion that changed their lives for the best.
+    link:
+      url: "#"
+      label: "Read Madeline's Story"
+  - image: 
+      src: "../../images/harley.jpeg"
+      alt: "alt text"
+    title: Meeting milestones with help from the whole family.
+    link:
+      url: "#"
+      label: "Read Harley's Story"
+  - image: 
+      src: "../../images/jared.png"
+      alt: "alt text"
+    title: A speedy recovery by a determined boy.
+    link:
+      url: "#"
+      label: "Read Jared's Story"
+  - image: 
+      src: "../../images/harley.jpeg"
+      alt: "alt text"
+    title: Meeting milestones with help from the whole family.
+    link:
+      url: "#"
+      label: "Read Harley's Story"
+  - image: 
+      src: "../../images/jared.png"
+      alt: "alt text"
+    title: A speedy recovery by a determined boy.
+    link:
+      url: "#"
+      label: "Read Jared's Story"
