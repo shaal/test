@@ -4,6 +4,7 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.location.field_admin_title
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_body_components
@@ -41,6 +42,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_admin_title: true
   field_location_address: true
   field_location_body: true
   field_location_body_components: true
