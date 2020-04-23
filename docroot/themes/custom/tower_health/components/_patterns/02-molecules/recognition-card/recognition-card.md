@@ -3,7 +3,7 @@ el: ".recognition-card"
 title: 'Recognition Row'
 ---
 #### Description
-The Recognition card can be either an image with alt text, or a text block with a title and a description
+The Recognition card can be either an image with alt text and an optional description, or a text block with a title and a description.
 
 #### Variables
 ~~~
