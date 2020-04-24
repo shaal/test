@@ -47,7 +47,7 @@
 
 {% embed "@molecules/recognition-card/recognition-card.twig" with {
   "image": image,
-  "title": content.field_recog_card_title,
-  "desc": content.field_recog_card_description
+  "title": content.field_recog_card_title|render,
+  "desc": content.field_recog_card_description|render
 } %}
 {% endembed %}
