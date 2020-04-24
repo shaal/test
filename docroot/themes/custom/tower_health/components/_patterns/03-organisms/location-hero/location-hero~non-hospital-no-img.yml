@@ -1,0 +1,31 @@
+type: "Physician Office"
+name: "Berks Family Care"
+address_1: "193 Old Swede Road"
+address_local: "Douglassville, PA 19518"
+directions:
+  link: "/"
+  button_icon: "th-find-hospital.svg"
+  text: "Map & Directions"
+  variation: "small"
+phones:
+  - label: Main
+    numbers:
+      - number: 610-285-3010
+  - label: Appointments
+    numbers:
+      - number: 484-628-4357
+        label: 484-628-HELP (4357)
+      - number: 866-988-4357
+classes: "growth top-left"
+img:
+  src: null
+  alt: null
+breadcrumb:
+  1:
+    url: "#"
+    text: "Home"
+  2:
+    url: "#"
+    text: "2nd Level"
+  3:
+    text: "3rd Level"
