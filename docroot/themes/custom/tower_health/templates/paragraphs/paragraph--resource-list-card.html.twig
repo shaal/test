@@ -36,15 +36,10 @@
  * @ingroup themeable
  */
 #}
-{% set full = false %}
-{% if paragraph.field_resource_list_full.0.value == 1 %}
-  {% set full = true %}
-{% endif %}
 
 {% embed "@organisms/resource-list-card/resource-list-card.twig" with {
   "title": content.field_resource_list_title,
   "text": content.field_resource_list_desc,
-  "full": full,
 } %}
   {% block items %}
     {{ content.field_resource_list_items }}

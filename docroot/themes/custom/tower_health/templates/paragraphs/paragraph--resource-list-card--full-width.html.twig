@@ -36,20 +36,12 @@
  * @ingroup themeable
  */
 #}
-{% if content.field_resource_item_pdf|render %}
-  {% set pdf = content.field_resource_item_pdf.0['#media'].field_media_file_1.entity.uri.value %}
-  {% set url = pdf ? file_url(pdf) %}
-  {% set type = "PDF" %}
-{% else %}
-  {% set url = content.field_resource_item_link|field_value %}
-  {% set type = content.field_resource_item_link_type|field_value %}
-{% endif %}
-
-{% embed "@molecules/resource-list-item/resource-list-item.twig" with {
-  "title": content.field_resource_item_title|field_value,
-  "url": url,
-  "desc": content.field_resource_item_desc,
-  "filetype": type,
-  "target": "_blank",
+{% embed "@organisms/resource-list-card/resource-list-card.twig" with {
+  "title": content.field_resource_list_title,
+  "text": content.field_resource_list_desc,
+  "full": true,
 } %}
+  {% block items %}
+    {{ content.field_resource_list_items }}
+  {% endblock %}
 {% endembed %}
