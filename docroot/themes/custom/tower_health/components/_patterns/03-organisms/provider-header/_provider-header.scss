@@ -113,6 +113,12 @@
   }
 }
 
+.provider-header__status {
+  @include adjust-font-size-to($sm-text, .9);
+  display: block;
+  font-style: italic;
+}
+
 .provider-header__ratings {
   margin-top: 2em;
   display: flex;
