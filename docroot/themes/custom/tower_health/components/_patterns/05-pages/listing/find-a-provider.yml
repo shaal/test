@@ -127,6 +127,7 @@ providers:
       type: 'Doctor'
       rating: '4.2'
       rating_icon: "star.svg"
+      employed_flag: "Not employed by Tower Health"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -145,8 +146,9 @@ providers:
       language: 
         - text: "English"
       type: 'Physician Assistant'
-      rating: null
+      rating: '4.2'
       rating_icon: "star.svg"
+      employed_flag: "Not employed by Tower Health"
     type: "provider"
   - img: null
     classes: "growth bottom-right"
@@ -188,29 +190,28 @@ providers:
       language: 
         - text: "English"
       type: 'Nurse Practitioner'
+      employed_flag: "Not employed by Tower Health"
       rating: null
       rating_icon: "star.svg"
     type: "provider"
-  - img:
-      src: "../../images/people/abdel-wahab-amir.jpg"
-      alt: "Alternative Text"
+  - img: null
     classes: "growth bottom-right"
-    appointment_link: true
+    appointment_link: false
     link:
       url: "/"
       text: "Request an Appointment"
       icon: "th-cal.svg"
     details:
-      name: "Amir A. Abdel-Wahab, MD, FAAP"
+      name: "Maria Ivette Bansner, PA-C"
       specialties: 
-        - text: "Pediatrics"
+        - text: "Physician Assistant"
       focus: 
-        - text: "Child Development, Preventative Medicine"
-      location: "Wyomissing, PA"
+        - text: "Emergency Medicine"
+      location: "West Reading, PA"
       language: 
         - text: "English"
-      type: 'Doctor'
-      rating: '1.75'
+      type: 'Physician Assistant'
+      rating: null
       rating_icon: "star.svg"
     type: "provider"
   - img: null

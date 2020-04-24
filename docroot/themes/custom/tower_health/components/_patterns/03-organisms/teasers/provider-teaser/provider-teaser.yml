@@ -20,4 +20,5 @@ provider:
     rating: '4.2'
     rating_icon: "star.svg"
     type: "Provider Type if not Doctor"
+    employed_flag: "Not employed by Tower Health"
   appointment_link: true

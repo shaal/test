@@ -26,12 +26,16 @@
           {% if type|render != 'Doctor' %}
           {{ type }}
           {% endif %}
+
           {% if type|render != 'Doctor' and lead_title %}
             <span class="divider">&#8226;</span>
           {% endif %}
-
           {{ lead_title }}
         </span>
+        {% endif %}
+        
+        {% if employed_flag %}
+        <span  class="provider-header__status">{{ employed_flag }}</span>
         {% endif %}
 
         {% if provider_video %}

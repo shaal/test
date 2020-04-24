@@ -1,0 +1,14 @@
+<section class="multi-patient-story-banner">
+  <div class="grid">
+    <div class="multi-patient-story-banner__content">
+      {% for item in patient_stories %}
+        {% include "@molecules/patient-story-card/patient-story-card.twig" with {
+          image: item.image,
+          title: item.title,
+          link: item.link
+        } %}
+        
+      {% endfor %}
+    </div>
+  </div>
+</section>
