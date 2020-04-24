@@ -1,0 +1,12 @@
+uuid: 65b8c961-7844-4222-84bc-caf6884781de
+langcode: en
+status: true
+dependencies: {  }
+id: two_column_ordered_lists
+label: 'Two column ordered lists'
+description: ''
+body:
+  value: "<div class=\"rich-text__two-col\">\r\n<ol>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n</ol>\r\n</div>\r\n"
+  format: full_html
+weight: null
+node_types: {  }
