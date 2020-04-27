@@ -17,6 +17,7 @@ phones:
         label: 484-628-HELP (4357)
       - number: 866-988-4357
 classes: "growth top-left"
+flag: "Are you an existing patient? Visit the <a href='#'>St. Christopher's Patient Portal</a>."
 img:
   src: null
   alt: null
