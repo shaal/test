@@ -1,0 +1,35 @@
+type: "hospital"
+name: "St. Christopher's Hospital for Children"
+logo:
+  src: "../../images/StChrisHospital_HZ_RGB.jpg"
+  alt: "alt"
+address_1: "160 East Erie Ave."
+address_local: "Philadelphia, PA 19134"
+flag: "Are you an existing patient? Visit the <a href='#'>St. Christopher's Patient Portal</a>."
+directions:
+  link: "/"
+  button_icon: "th-find-hospital.svg"
+  text: "Map & Directions"
+  variation: "small"
+phones:
+  - label: Main
+    numbers:
+      - number: 215-427-5000
+  - label: Appointments
+    numbers:
+      - number: 484-628-4357
+        label: 484-628-HELP (4357)
+      - number: 866-988-4357
+img:
+  src: "../../images/locations/st-chris.jpg"
+  alt: "Alternative Text"
+classes: "growth top-left"
+breadcrumb:
+  1:
+    url: "#"
+    text: "Home"
+  2:
+    url: "#"
+    text: "2nd Level"
+  3:
+    text: "3rd Level"
