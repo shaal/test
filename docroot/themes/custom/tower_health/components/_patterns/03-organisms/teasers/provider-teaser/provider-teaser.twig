@@ -7,7 +7,7 @@
   <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
 
   <div class="teaser__top">
-  {% if provider.details.rating or provider.details.type|render != 'Doctor' %}
+  {% if provider.details.rating or provider.details.type|render != 'Doctor' or provider.details.employed_flag %}
     
     {% if provider.details.employed_flag or provider.details.type|render != 'Doctor' %}
     <span class="teaser__top__type">

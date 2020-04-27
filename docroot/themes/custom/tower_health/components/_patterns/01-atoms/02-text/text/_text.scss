@@ -59,9 +59,15 @@
 }
 
 .rich-text__two-col {
+  @include paragraph;
   
   @include breakpoint($bp2) {
     column-count: 2;
     column-gap: 1.5em;
+  }
+
+  ol,
+  ul {
+    margin-top: 0;
   }
 }

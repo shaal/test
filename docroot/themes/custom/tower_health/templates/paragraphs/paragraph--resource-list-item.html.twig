@@ -36,13 +36,6 @@
  * @ingroup themeable
  */
 #}
-{#
-url: '#'
-title: Request for Service
-filetype: PDF
-desc: Use this form to ipsum dolor sit amet, consectetur adipisicing elit. Commodi, sed odit non, impedit quo quaerat iusto blanditiis, adipisci deserunt sit voluptates distinctio.
-target: _blank
-#}
 {% if content.field_resource_item_pdf|render %}
   {% set pdf = content.field_resource_item_pdf.0['#media'].field_media_file_1.entity.uri.value %}
   {% set url = pdf ? file_url(pdf) %}

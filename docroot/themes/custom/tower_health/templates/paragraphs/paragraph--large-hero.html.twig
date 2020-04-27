@@ -36,13 +36,12 @@
  * @ingroup themeable
  */
 #}
-
 {% embed "@organisms/large-hero/large-hero.twig" with {
   "img": content.field_large_hero_image,
   "title": node_title,
   "subtitle": content.field_large_hero_subtitle,
   "lead": content.field_large_hero_desc,
-  "title_as_label": content.field_large_hero_label_opt|field_value,
+  "title_as_label": paragraph.field_large_hero_label_opt.0.value,
   "link": {
     "url": content.field_large_hero_link.0['#url'],
     "label": content.field_large_hero_link.0['#title'],

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "549547510b23fa5c29420d302466b082",
+    "content-hash": "d5502efaf3354395fd6b9b6e91b868b2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,6 +57,16 @@
                 "stack"
             ],
             "time": "2017-12-20T14:37:45+00:00"
+        },
+        {
+            "name": "ckeditor/templates",
+            "version": "4.11.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/templates/releases/templates_4.11.1.zip",
+                "reference": "master"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "commerceguys/addressing",
@@ -1186,9 +1196,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-3.0-alpha6",
                     "datestamp": "1550449381",
@@ -1330,6 +1337,53 @@
             "homepage": "https://www.drupal.org/project/block_visibility_conditions",
             "support": {
                 "source": "https://git.drupalcode.org/project/block_visibility_conditions"
+            }
+        },
+        {
+            "name": "drupal/ckeditor_templates",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor_templates.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_templates-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "f8c793e34a5d6aea769fbc0204e818509a486a94"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1552809780",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "lucaslg",
+                    "homepage": "https://www.drupal.org/user/3128975"
+                }
+            ],
+            "description": "Integrates the CKEdito templates plugin",
+            "homepage": "https://www.drupal.org/project/ckeditor_templates",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor_templates"
             }
         },
         {
@@ -2015,6 +2069,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "TypeError in CsvEncoder.php (https://www.drupal.org/project/csv_serialization/issues/3120645)": "https://www.drupal.org/files/issues/2020-03-18/fix-typeerror-3120645-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5350,6 +5407,152 @@
             "homepage": "https://www.drupal.org/project/workbench_tabs",
             "support": {
                 "source": "https://git.drupalcode.org/project/workbench_tabs"
+            }
+        },
+        {
+            "name": "drupal/wysiwyg_template",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/wysiwyg_template.git",
+                "reference": "8.x-2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/wysiwyg_template-8.x-2.3.zip",
+                "reference": "8.x-2.3",
+                "shasum": "4047b13834c1478b67b9ea61727431a07f38220f"
+            },
+            "require": {
+                "ckeditor/templates": "4.11.1",
+                "drupal/core": "^8 || ^9",
+                "drupal/wysiwyg_template_core": "*",
+                "php": ">=7.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.3",
+                    "datestamp": "1575907980",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\wysiwyg_template\\": "src/"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "guybedford",
+                    "homepage": "https://www.drupal.org/user/746802"
+                },
+                {
+                    "name": "jenlampton",
+                    "homepage": "https://www.drupal.org/user/85586"
+                },
+                {
+                    "name": "jhedstrom",
+                    "homepage": "https://www.drupal.org/user/208732"
+                },
+                {
+                    "name": "jurgenhaas",
+                    "homepage": "https://www.drupal.org/user/168924"
+                },
+                {
+                    "name": "recidive",
+                    "homepage": "https://www.drupal.org/user/12564"
+                },
+                {
+                    "name": "sebas5384",
+                    "homepage": "https://www.drupal.org/user/567694"
+                },
+                {
+                    "name": "snipebin",
+                    "homepage": "https://www.drupal.org/user/858710"
+                }
+            ],
+            "description": "Manage templates for use in a WYSIWYG.",
+            "homepage": "https://www.drupal.org/project/wysiwyg_template",
+            "keywords": [
+                "Drupal",
+                "Templates",
+                "WYSIWYG"
+            ],
+            "support": {
+                "source": "https://drupal.org/project/wysiwyg_template",
+                "issues": "https://drupal.org/project/issues/wysiwyg_template"
+            }
+        },
+        {
+            "name": "drupal/wysiwyg_template_core",
+            "version": "2.3.0",
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/wysiwyg_template": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.3",
+                    "datestamp": "1575907980",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "guybedford",
+                    "homepage": "https://www.drupal.org/user/746802"
+                },
+                {
+                    "name": "jenlampton",
+                    "homepage": "https://www.drupal.org/user/85586"
+                },
+                {
+                    "name": "jhedstrom",
+                    "homepage": "https://www.drupal.org/user/208732"
+                },
+                {
+                    "name": "jurgenhaas",
+                    "homepage": "https://www.drupal.org/user/168924"
+                },
+                {
+                    "name": "recidive",
+                    "homepage": "https://www.drupal.org/user/12564"
+                },
+                {
+                    "name": "sebas5384",
+                    "homepage": "https://www.drupal.org/user/567694"
+                },
+                {
+                    "name": "snipebin",
+                    "homepage": "https://www.drupal.org/user/858710"
+                }
+            ],
+            "description": "Core functionality for the Wysiwyg Template module",
+            "homepage": "https://www.drupal.org/project/wysiwyg_template",
+            "support": {
+                "source": "https://git.drupalcode.org/project/wysiwyg_template"
             }
         },
         {
@@ -10798,6 +11001,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -10844,6 +11048,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {

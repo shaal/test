@@ -40,6 +40,7 @@ settings:
           items:
             - Format
             - Styles
+            - TemplateSelector
         -
           name: Tools
           items:

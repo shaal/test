@@ -39,6 +39,7 @@
 {% embed "@organisms/resource-list-card/resource-list-card.twig" with {
   "title": content.field_resource_list_title,
   "text": content.field_resource_list_desc,
+  "full": true,
 } %}
   {% block items %}
     {{ content.field_resource_list_items }}
