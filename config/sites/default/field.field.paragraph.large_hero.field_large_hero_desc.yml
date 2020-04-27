@@ -1,0 +1,21 @@
+uuid: 6d984965-637d-4870-877e-36e6221670de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_large_hero_desc
+    - paragraphs.paragraphs_type.large_hero
+  module:
+    - text
+id: paragraph.large_hero.field_large_hero_desc
+field_name: field_large_hero_desc
+entity_type: paragraph
+bundle: large_hero
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

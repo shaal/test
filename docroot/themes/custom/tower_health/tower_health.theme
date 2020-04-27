@@ -134,6 +134,16 @@ function tower_health_preprocess_paragraph__basic_header(&$variables) {
   $variables['node_title'] = $node->getTitle();
 }
 
+
+/**
+ * Adds node title to paragraphs.
+ */
+function tower_health_preprocess_paragraph__large_hero(&$variables) {
+  $node = \Drupal::request()->attributes->get('node');
+  $variables['node_title'] = $node->getTitle();
+}
+
+
 /**
  * Provide icon variable for rating comments paragraph.
  */

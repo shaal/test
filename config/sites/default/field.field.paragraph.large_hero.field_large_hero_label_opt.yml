@@ -1,0 +1,23 @@
+uuid: 27ef1cb0-e660-461d-ac29-7e00d512a5d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_large_hero_label_opt
+    - paragraphs.paragraphs_type.large_hero
+id: paragraph.large_hero.field_large_hero_label_opt
+field_name: field_large_hero_label_opt
+entity_type: paragraph
+bundle: large_hero
+label: 'Display title as label'
+description: 'Optionally display the page title as the label in order to have a more narrative title displayed large but to maintain accessibility and SEO best practices.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

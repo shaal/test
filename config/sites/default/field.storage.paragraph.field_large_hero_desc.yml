@@ -1,0 +1,19 @@
+uuid: 849da842-b3e8-4eb4-8ff8-42fef01be93b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_large_hero_desc
+field_name: field_large_hero_desc
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
