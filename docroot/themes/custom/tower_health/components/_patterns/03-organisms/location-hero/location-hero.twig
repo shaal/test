@@ -1,7 +1,13 @@
 <div class="location-hero {% if type == "hospital" %}location-hero--hospital{% endif %} js-section-animation">
   <div class="location-hero__container">
     <div class="location-hero__content {% if img.src is not empty %}image{% endif %}">
+      {% if logo %}
+      <div class="location-hero__logo">
+        <img src="{{ logo.src }}" alt="{{ logo.alt }}"/>
+      </div>
+      {% else %}
       <span class="location-label">{{ type }}</span>
+      {% endif %}
       <h1 class="location-hero__title">{{ name }}</h1>
       <div class="location-details">
         <div class="location-details__item">
