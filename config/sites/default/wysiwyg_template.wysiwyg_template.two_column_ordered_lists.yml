@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: two_column_ordered_lists
-label: 'Two column ordered lists'
-description: ''
+label: 'Two column - ordered lists'
+description: 'Display an ordered list in two columns.'
 body:
   value: "<div class=\"rich-text__two-col\">\r\n<ol>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n</ol>\r\n</div>\r\n"
   format: full_html

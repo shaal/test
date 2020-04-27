@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: two_column_lists
-label: 'Two column unordered lists'
-description: ''
+label: 'Two column - unordered lists'
+description: 'Display an unordered list in two columns.'
 body:
   value: "<div class=\"rich-text__two-col\">\r\n<ul>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n\t<li>Replace these list items</li>\r\n</ul>\r\n</div>\r\n"
   format: full_html

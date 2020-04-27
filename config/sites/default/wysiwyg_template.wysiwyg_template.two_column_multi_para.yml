@@ -1,0 +1,12 @@
+uuid: 8815eeb0-7e80-4db5-a57d-24f90854086f
+langcode: en
+status: true
+dependencies: {  }
+id: two_column_multi_para
+label: 'Two column - multi paragraphs'
+description: 'Display multiple paragraphs in two columns.'
+body:
+  value: "<div class=\"rich-text__two-col\">\r\n<p>Replace these paragraphs</p>\r\n\r\n<p>Replace these paragraphs</p>\r\n\r\n<p>Replace these paragraphs</p>\r\n</div>\r\n"
+  format: basic_html
+weight: null
+node_types: {  }

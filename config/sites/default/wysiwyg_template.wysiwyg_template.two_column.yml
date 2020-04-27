@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies: {  }
 id: two_column
-label: 'Two column'
-description: 'Display content in two columns.'
+label: 'Two column - single paragraph'
+description: 'Display a single paragraph in two columns.'
 body:
-  value: "<div class=\"rich-text__two-col\">Replace with two column content</div>\r\n"
+  value: "<div class=\"rich-text__two-col\">Replace this paragraph.</div>\r\n"
   format: full_html
 weight: -10
 node_types: {  }
