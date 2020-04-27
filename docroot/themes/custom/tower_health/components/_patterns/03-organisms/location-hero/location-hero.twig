@@ -43,6 +43,9 @@
         </div>
       </div>
     </div>
+    {% if flag %}
+    <span class="location-details__flag">{{ flag|raw }}</span>
+    {% endif %}
     {% if img.src is not empty %}
       <div class="location-hero__image">
         {% include "@molecules/image-background/image-background.twig" with {
