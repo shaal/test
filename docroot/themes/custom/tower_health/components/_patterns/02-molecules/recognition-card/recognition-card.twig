@@ -5,8 +5,11 @@
       <img src="{{image.src}}" alt="{{image.alt}}" />
     {% endblock %}
   </div>
-{% else %} 
+{% endif %}
+{% if title %} 
   <h2 class="recognition__title">{{ title }}</h2>
+{% endif %}
+{% if desc %} 
   <div class="recognition__desc">
     {{ desc }}
   </div>

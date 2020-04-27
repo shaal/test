@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.media.card
     - field.field.media.image.field_image_type_ref
     - field.field.media.image.field_media_image
-    - image.style.900x900
+    - image.style.image_card
     - media.type.image
   module:
     - image
@@ -19,7 +19,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: 900x900
+      image_style: image_card
       image_link: ''
     third_party_settings: {  }
     type: image

@@ -38,6 +38,9 @@
 /docroot/themes/contrib/
 /docroot/profiles/contrib/
 
+# Ignore Templates downloaded by Composer
+/docroot/libraries
+
 # Ignore regular Composer dependencies
 /vendor/
 

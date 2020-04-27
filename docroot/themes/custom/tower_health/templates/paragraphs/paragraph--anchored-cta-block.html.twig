@@ -41,12 +41,6 @@
   "text": content.field_anchored_cta_desc
 } %}
     {% block button %}
-      {% include "@atoms/icon-button/icon-button.twig" with {
-      "url": content.field_anchored_cta_link.0['#paragraph'].field_icon_link.0.url,
-      "text": content.field_anchored_cta_link.0['#paragraph'].field_icon_link.value.0.title,
-      "button_icon": paragraph.field_anchored_cta_link.0.entity.field_icon_button|file_url,
-      "animated": "true",
-      "variation": "right"
-      } %}
+      {{ content.field_anchored_cta_link }}
     {% endblock %}
 {% endembed %}

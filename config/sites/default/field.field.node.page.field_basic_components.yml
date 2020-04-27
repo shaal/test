@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_teaser_banner
     - paragraphs.paragraphs_type.patient_story
     - paragraphs.paragraphs_type.recognition_cards
+    - paragraphs.paragraphs_type.resource_list_card
     - paragraphs.paragraphs_type.rich_text
     - paragraphs.paragraphs_type.text_teaser_banner
   module:
@@ -48,6 +49,7 @@ settings:
       form: form
       image_teaser_banner: image_teaser_banner
       text_teaser_banner: text_teaser_banner
+      resource_list_card: resource_list_card
     target_bundles_drag_drop:
       education:
         weight: 3
@@ -133,4 +135,10 @@ settings:
       text_teaser_banner:
         enabled: true
         weight: 53
+      resource_list_card:
+        enabled: true
+        weight: 55
+      resource_list_item:
+        weight: 56
+        enabled: false
 field_type: entity_reference_revisions
