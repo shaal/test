@@ -358,6 +358,14 @@ function tower_health_preprocess_node__profile(&$variables) {
       }
     }
 
+    if (!$node->get('field_profile_employment_type')->isEmpty()) {
+      $list_type = $node->get('field_profile_employment_type')->getString();
+
+      if ($list_type == 'independent') {
+        $variables['employed_flag'] = t('Not employed by Tower Health');
+      }
+    }
+
     if ($node->hasField('field_profile_image') && !$node->get('field_profile_image')->isEmpty()) {
       $media = $node->field_profile_image->entity;
       if ($media instanceof EntityInterface && $media->hasField('field_media_image') && !$media->get('field_media_image')->isEmpty()) {
@@ -383,6 +391,13 @@ function tower_health_preprocess_node__profile(&$variables) {
     $variables['name'] = $node->title->value;
     if (!$node->get('field_profile_job_title')->isEmpty()) {
       $variables['lead_title'] = $node->field_profile_job_title->value;
+    }
+    if (!$node->get('field_profile_employment_type')->isEmpty()) {
+      $list_type = $node->get('field_profile_employment_type')->getString();
+
+      if ($list_type == 'independent') {
+        $variables['employed_flag'] = t('Not employed by Tower Health');
+      }
     }
     if (!$node->get('field_rating_overall')->isEmpty()) {
       $variables['rating'] = $node->field_rating_overall->value;
