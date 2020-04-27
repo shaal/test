@@ -109,7 +109,7 @@
       @include adjust-font-size-to($xxl-heading, 1.75);
       
       @include breakpoint($bp2) {
-        @include adjust-font-size-to($xxxl-heading, 1.75);
+        @include adjust-font-size-to($xxxl-heading, 2);
       }
     }
   }
@@ -133,8 +133,8 @@
     content: '';
     display: block;
     position: absolute;
-    width: 5.25em;
-    left: -5.25em;
+    width: 6.25em;
+    left: -6.25em;
     top: 0;
     bottom: 0;
     background-color: $primary-dark;
@@ -154,6 +154,31 @@
     
     &::before {
       background-color: $trust-aa;
+    }
+  }
+}
+
+.location-hero__logo {
+  padding: 15px;
+  margin-left: -15px;
+  max-width: 250px;
+  margin-bottom: 1em;
+  margin-top: -1em;
+  
+  @include breakpoint($bp2) {
+    background-color: $white;
+    border-radius: $rd-brd-lg;
+    margin-top: -4.5em;
+  }
+  
+  @include breakpoint($bp3) {
+    max-width: 275px;
+  }
+  
+  .location-hero--hospital & {
+    
+    @include breakpoint($bp2) {
+      margin-top: -5.5em;
     }
   }
 }
@@ -231,6 +256,39 @@
   &:focus {
     text-decoration: underline;
     color: $primary-dark;
+  }
+}
+
+.location-details__flag {
+  @include adjust-font-size-to($sm-text, .8);
+  display: block;
+  text-align: center;
+  background-color: rgba($trust-ltst, .4);
+  border-radius: 0 0 $rd-brd-sm $rd-brd-sm;
+  padding: .75em;
+  margin: 0 2em;
+  
+  a {
+    font-weight: 700;
+  }
+  
+  .location-hero__content.image + & {
+    width: 85%;
+    margin: 0 1em;
+    
+    @include breakpoint($bp2) {
+      width: 75%;
+      margin: 0 1em;
+    }
+    
+    @include breakpoint($bp3) {
+      width: auto;
+      margin: 0 40% 0 2em;
+    }
+    
+    @include breakpoint($bp4) {
+      margin-right: 45%;
+    }
   }
 }
 
