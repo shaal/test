@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.resource_list_card.field_resource_list_desc
-    - field.field.paragraph.resource_list_card.field_resource_list_full
     - field.field.paragraph.resource_list_card.field_resource_list_items
     - field.field.paragraph.resource_list_card.field_resource_list_title
     - paragraphs.paragraphs_type.resource_list_card
@@ -23,12 +22,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-    region: content
-  field_resource_list_full:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   field_resource_list_items:
     type: entity_reference_paragraphs
