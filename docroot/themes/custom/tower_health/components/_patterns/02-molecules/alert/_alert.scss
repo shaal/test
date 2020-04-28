@@ -1,0 +1,42 @@
+.alert {
+  position: relative;
+  padding: 1em 0;
+  border-bottom: 1px solid $trust-aa;
+  
+  &.alert--high {
+    background-color: rgba($ed, .4);
+    border-color: $ed;
+  }
+  
+  &.alert--medium {
+    
+  }
+  
+  &.alert--low {
+    
+  }
+}
+
+.alert__content {
+  @include adjust-font-size-to($sm-text, .9);
+  width: 100%;
+}
+
+.alert--close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  
+  svg {
+    height: 1em;
+    width: 1em;
+    fill: $trust-aa;
+  }
+}
+
+.alert__close-text {
+  @extend %element-invisible;
+}
