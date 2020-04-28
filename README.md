@@ -106,6 +106,16 @@ Running migrations
 1. Edit the [index](https://towerhealth.prod.acquia-sites.com/admin/config/search/search-api/index/acquia_search_index/edit) and unset `read only`. 
 1. Run cron to reset acquia connector settings.
 
+## Setup local search
+The local search isn't setup out of the box a few settings need to be changed.
+* Go to http://towerhealth.local/admin/config/search/search-api
+* Enable the local development server if not enabled.
+* Disable the Acquia Search API Solr server.
+* Change the [acquia index to use the local server](http://towerhealth.local/admin/config/search/search-api/index/acquia_search_index/edit)
+* Re-edit the index and turn off read only.
+* Clear the [index and rebuild tracking information.](http://towerhealth.local/admin/config/search/search-api/index/acquia_search_index)
+* Index the site.
+
 ## Additional Documentation
 
 Project-specific:
