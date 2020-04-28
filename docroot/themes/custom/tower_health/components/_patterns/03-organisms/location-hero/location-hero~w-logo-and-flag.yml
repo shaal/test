@@ -1,7 +1,11 @@
 type: "hospital"
-name: "Reading Hospital"
-address_1: "420 S. Fifth Avenue"
-address_2: "West Reading, PA 19611"
+name: "St. Christopher's Hospital for Children"
+logo:
+  src: "../../images/StChrisHospital_HZ_RGB.jpg"
+  alt: "alt"
+address_1: "160 East Erie Ave."
+address_local: "Philadelphia, PA 19134"
+flag: "Are you an existing patient? Visit the <a href='#'>St. Christopher's Patient Portal</a>."
 directions:
   link: "/"
   button_icon: "th-find-hospital.svg"
@@ -10,15 +14,15 @@ directions:
 phones:
   - label: Main
     numbers:
-      - number: 484-628-8000
+      - number: 215-427-5000
   - label: Appointments
     numbers:
       - number: 484-628-4357
         label: 484-628-HELP (4357)
       - number: 866-988-4357
 img:
-  src: null
-  alt: null
+  src: "../../images/locations/st-chris.jpg"
+  alt: "Alternative Text"
 classes: "growth top-left"
 breadcrumb:
   1:

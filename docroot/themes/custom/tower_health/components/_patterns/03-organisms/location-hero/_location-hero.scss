@@ -31,10 +31,14 @@
   border-bottom: 4px solid $trust-ltr;
   border-radius: 0 $rd-brd-sm $rd-brd-sm 0;
   width: 96%;
-  padding: 2em 1em 2em 2em;
+  padding: 1em 1em 1em 2em;
   box-shadow: $shadow;
   position: relative;
   z-index: 1;
+  
+  .location-hero--hospital & {
+    padding: 2em 1em 2em 2em;
+  }
 
   @include breakpoint($bp0) {
     width: 95%;
@@ -43,8 +47,12 @@
   @include breakpoint($bp2) {
     border: 4px solid $trust-ltr;
     border-radius: $rd-brd-sm;
-    padding: 3em 2em;
+    padding: 2em 1.5em 2em 2em;
     width: 100%;
+    
+    .location-hero--hospital & {
+      padding: 3em 2em;
+    }
   }
 
   @include breakpoint($bp3) {
@@ -68,39 +76,53 @@
 
     @include breakpoint($bp3) {
       width: 80%;
-      padding-right: 28%;
+      padding-right: 22%;
       margin-top: .5em;
-      min-height: 450px;
+      min-height: 350px;
+      
+      .location-hero--hospital & {
+        padding-right: 28%;
+        min-height: 450px;
+      }
     }
 
     @include breakpoint($bp4) {
       width: 85%;
-      padding-right: 34%;
+      padding-right: 26%;
+      
+      .location-hero--hospital & {
+        padding-right: 34%;
+      }
     }
   }
 
   .location-hero__title {
     @extend %track-in;
+    @include adjust-font-size-to($xl-heading, 1.5);
     margin-top: 0;
     color: $primary-dark;
-    text-transform: uppercase;
     font-weight: 600;
     word-wrap: break-word;
 
-    @include breakpoint($bp2) {
-      @include adjust-font-size-to($xxxl-heading, 1.75);
+    
+    .location-hero--hospital & {
+      @include adjust-font-size-to($xxl-heading, 1.75);
+      
+      @include breakpoint($bp2) {
+        @include adjust-font-size-to($xxxl-heading, 2);
+      }
     }
   }
 }
 
 .location-label {
-  @include adjust-font-size-to($label, .8);
+  @include adjust-font-size-to($crumb, .8);
   @extend %track-out;
   display: inline-block;
   position: relative;
-  padding: .5em 1em .5em 0;
+  padding: .25em 1em .25em 0;
   margin-bottom: 2em;
-  background-color: $trust-aa;
+  background-color: $primary-dark;
   color: $white;
   text-transform: uppercase;
   font-weight: 600;
@@ -111,17 +133,52 @@
     content: '';
     display: block;
     position: absolute;
-    width: 5.25em;
-    left: -5.25em;
+    width: 6.25em;
+    left: -6.25em;
     top: 0;
     bottom: 0;
-    background-color: $trust-aa;
+    background-color: $primary-dark;
   }
 
   @include breakpoint($bp6) {
     &::before {
       left: calc((-1 * (100vw - 1500px) / 2) - 4.5rem);
       width: calc(((100vw - 1500px) / 2) + 4.5rem);
+    }
+  }
+  
+  .location-hero--hospital & {
+    @include adjust-font-size-to($label, .8);
+    padding: .5em 1em .5em 0;
+    background-color: $trust-aa;
+    
+    &::before {
+      background-color: $trust-aa;
+    }
+  }
+}
+
+.location-hero__logo {
+  padding: 15px;
+  margin-left: -15px;
+  max-width: 250px;
+  margin-bottom: 1em;
+  margin-top: -1em;
+  
+  @include breakpoint($bp2) {
+    background-color: $white;
+    border-radius: $rd-brd-lg;
+    margin-top: -4.5em;
+  }
+  
+  @include breakpoint($bp3) {
+    max-width: 275px;
+  }
+  
+  .location-hero--hospital & {
+    
+    @include breakpoint($bp2) {
+      margin-top: -5.5em;
     }
   }
 }
@@ -202,6 +259,39 @@
   }
 }
 
+.location-details__flag {
+  @include adjust-font-size-to($sm-text, .8);
+  display: block;
+  text-align: center;
+  background-color: rgba($trust-ltst, .4);
+  border-radius: 0 0 $rd-brd-sm $rd-brd-sm;
+  padding: .75em;
+  margin: 0 2em;
+  
+  a {
+    font-weight: 700;
+  }
+  
+  .location-hero__content.image + & {
+    width: 85%;
+    margin: 0 1em;
+    
+    @include breakpoint($bp2) {
+      width: 75%;
+      margin: 0 1em;
+    }
+    
+    @include breakpoint($bp3) {
+      width: auto;
+      margin: 0 40% 0 2em;
+    }
+    
+    @include breakpoint($bp4) {
+      margin-right: 45%;
+    }
+  }
+}
+
 .location-hero__image {
   width: 100%;
   position: absolute;
@@ -223,26 +313,45 @@
   @include breakpoint($bp3) {
     z-index: 5;
     right: 0;
-    left: 53%;
-    top: -3.25em;
+    left: 60%;
+    top: -1.25em;
     width: auto;
 
     .image-background {
       position: relative;
       width: 150%;
-      max-width: 625px;
+      max-width: 450px;
       left: 0;
       right: auto;
+    }
+    
+    .location-hero--hospital & {
+      left: 53%;
+      top: -3.25em;
+    
+      .image-background {
+        width: 150%;
+        max-width: 625px;
+      }
     }
   }
 
   @include breakpoint($bp6) {
     right: calc(( 100vw - 1550px ) / 2 * -1);
-    top: -4em;
-    left: 55%;
+    top: -1em;
+    left: 65%;
 
     .image-background {
-      max-width: 650px;
+      max-width: 450px;
+    }
+    
+    .location-hero--hospital & {
+      top: -4em;
+      left: 55%;
+      
+      .image-background {
+        max-width: 650px;
+      }
     }
   }
 }
