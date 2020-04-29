@@ -1,0 +1,9 @@
+uuid: cca574c2-6e7d-4fc3-a11c-9038f5b3d9cf
+langcode: en
+status: true
+dependencies: {  }
+id: large_hero
+label: 'Large Hero'
+icon_uuid: null
+description: 'The large hero is an optional header to replace the basic header. It contains an image, a title, an optional subtitle, an optional lead, and an optional call to action link.'
+behavior_plugins: {  }

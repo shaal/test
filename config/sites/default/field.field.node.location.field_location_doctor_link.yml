@@ -1,0 +1,23 @@
+uuid: c18514dc-121e-44cd-8f5d-7be75ead9ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_doctor_link
+    - node.type.location
+  module:
+    - options
+id: node.location.field_location_doctor_link
+field_name: field_location_doctor_link
+entity_type: node
+bundle: location
+label: 'Disable "find doctors at this location" link'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

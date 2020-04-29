@@ -1,14 +1,23 @@
-<div class="location-hero js-section-animation">
+<div class="location-hero {% if type == "Hospital" %}location-hero--hospital{% endif %} js-section-animation">
   <div class="location-hero__container">
     <div class="location-hero__content {% if img.src is not empty %}image{% endif %}">
+      {% if logo %}
+      <div class="location-hero__logo">
+        <img src="{{ logo.src }}" alt="{{ logo.alt }}"/>
+      </div>
+      {% else %}
       <span class="location-label">{{ type }}</span>
+      {% endif %}
       <h1 class="location-hero__title">{{ name }}</h1>
       <div class="location-details">
         <div class="location-details__item">
           <div class="location-details__child">
             <span class="location-details__label">Address</span>
             <span class='location-details__info'>{{ address_1 }}</span>
-            <span class='location-details__info'>{{ address_2 }}</span>
+            {% if address_2 %}
+              <span class='location-details__info'>{{ address_2 }}</span>
+            {% endif %}
+            <span class='location-details__info'>{{ address_local }}</span>
           </div>
           <div class="location-details__child">
             {% include "@atoms/icon-button/icon-button.twig" with {
@@ -34,6 +43,9 @@
         </div>
       </div>
     </div>
+    {% if flag %}
+    <span class="location-details__flag">{{ flag|raw }}</span>
+    {% endif %}
     {% if img.src is not empty %}
       <div class="location-hero__image">
         {% include "@molecules/image-background/image-background.twig" with {

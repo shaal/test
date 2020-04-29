@@ -1,0 +1,28 @@
+<section class="three-col-listing">
+  <div class="grid grid--sm-centered">
+    <div class="three-col-listing__content">
+      <header class="three-col-listing__header">
+        <h2 class="three-col-listing__title">{{ title }}</h2>
+        {% if desc %}
+        <div class="three-col-listing__desc">
+          {{ desc }}
+        </div>
+        {% endif %}
+      </header>
+      <ul class="three-col-listing__list">
+        {% for item in list_items %}
+        <li>
+          {% if item.url %}
+          <a href="{{ item.url }}">{{ item.text }}</a>
+          {% else %}
+          {{ item.text }}
+          {% endif %}
+        {% endfor %}
+        </li>
+      </ul>
+      {% if link %}
+        <a class="button button--small" href="{{ link.url }}">{{ link.label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

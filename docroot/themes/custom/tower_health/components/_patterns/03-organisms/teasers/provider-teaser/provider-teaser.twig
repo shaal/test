@@ -7,12 +7,22 @@
   <h2 class="teaser__name"><a href="{{ url }}">{{ provider.details.name }}</a></h2>
 
   <div class="teaser__top">
-  {% if provider.details.rating or provider.details.type|render != 'Doctor' %}
+  {% if provider.details.rating or provider.details.type|render != 'Doctor' or provider.details.employed_flag %}
     
+    {% if provider.details.employed_flag or provider.details.type|render != 'Doctor' %}
+    <span class="teaser__top__type">
     {% if provider.details.type|render != 'Doctor' %}
-      <span class="teaser__top__type">{{ provider.details.type }}</span>
+      {{ provider.details.type }}
     {% endif %}
-    
+    {% if provider.details.employed_flag and provider.details.type|render != 'Doctor' %}
+      <span class="divider">&#8226;</span>
+    {% endif %}
+    {% if provider.details.employed_flag %}
+      {{ provider.details.employed_flag }}
+    {% endif %}
+    </span>
+    {% endif %}
+
     {% if provider.details.rating %}
     {% include "@molecules/ratings-count/ratings-count.twig" with {
       "rating": provider.details.rating,
@@ -56,7 +66,7 @@
         {% endif %}
       </div>
     </div>
-    {% if provider.link %}
+    {% if provider.link and provider.appointment_link == TRUE %}
     <div class="teaser__button">
       {% include "@atoms/icon-button/icon-button.twig" with {
         "url": provider.link.href,

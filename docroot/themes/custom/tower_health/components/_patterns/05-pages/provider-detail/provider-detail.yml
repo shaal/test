@@ -13,10 +13,12 @@ breadcrumb:
 name: "Karen A. Hoerst, MD"
 lead_title: "Medical Director, Stroke Program"
 type: 'Nurse Practitioner'
+employed_flag: "Not employed by Tower Health"
 rating: 4.9
 rating_icon: "star.svg"
 rating_comments: true
 review_amt: 36
+appointment_link: true
 provider_video:
   type: video
   reference: https://www.youtube.com/embed/d3ZLhedUtkA

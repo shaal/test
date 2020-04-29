@@ -1,0 +1,17 @@
+<div class='button-row'>
+  <div class='grid'>
+    <div class='button-row__content'>
+    {% block icon_buttons %}
+      {% for link in links %}
+        {% include "@atoms/icon-button/icon-button.twig" with {
+          "url": link.url,
+          "button_icon": link.button_icon,
+          "text": link.text,
+          "animated": null,
+          "variation": "white"
+        } %}
+      {% endfor %}
+    {% endblock %}
+    </div>
+  </div>
+</div>

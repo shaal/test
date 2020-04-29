@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.components
+    - field.field.node.page.field_admin_title
     - field.field.node.page.field_basic_components
     - field.field.node.page.field_basic_enable_nav
     - field.field.node.page.field_basic_header
@@ -29,12 +30,13 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: default
+      view_mode: full_width
       link: ''
     third_party_settings: {  }
     region: content
 hidden:
   content_moderation_control: true
+  field_admin_title: true
   field_basic_enable_nav: true
   field_basic_header: true
   field_basic_sidebar: true

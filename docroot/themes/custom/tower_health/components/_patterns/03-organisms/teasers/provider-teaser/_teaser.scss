@@ -184,16 +184,14 @@
   align-items: center;
   margin-bottom: .5em;
   min-height: 15px;
-  
-  @include breakpoint($bp1) {
-    flex-direction: row;
-  }
 
   @include breakpoint($bp2) {
     justify-content: flex-start;
+    align-items: flex-start;
   }
 
   @include breakpoint($bp3) {
+    flex-direction: row;
     position: relative;
     top: -3.2em;
     padding-left: .85em;
@@ -201,6 +199,8 @@
     
     .ratings-count {
       margin-left: auto;
+      min-width: 175px;
+      justify-content: flex-end;
     }
   }
   
@@ -212,8 +212,16 @@
   }
   
   .teaser__top__type {
+    @include adjust-font-size-to($sm-text, .75);
     font-style: italic;
     margin-right: 1em;
+    margin-bottom: .25em;
+  }
+
+  .divider {
+    @include adjust-font-size-to($label, .75);
+    display: inline;
+    margin: 0 .75em;
   }
 }
 

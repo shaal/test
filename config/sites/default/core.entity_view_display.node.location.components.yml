@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.components
+    - field.field.node.location.field_admin_title
     - field.field.node.location.field_location_address
     - field.field.node.location.field_location_body
     - field.field.node.location.field_location_body_components
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.location.field_location_card_desc
     - field.field.node.location.field_location_card_image
     - field.field.node.location.field_location_components
+    - field.field.node.location.field_location_doctor_link
     - field.field.node.location.field_location_fax
     - field.field.node.location.field_location_geo
     - field.field.node.location.field_location_hours
@@ -40,12 +42,14 @@ content:
     third_party_settings: {  }
 hidden:
   content_moderation_control: true
+  field_admin_title: true
   field_location_address: true
   field_location_body: true
   field_location_body_components: true
   field_location_card_cta: true
   field_location_card_desc: true
   field_location_card_image: true
+  field_location_doctor_link: true
   field_location_fax: true
   field_location_geo: true
   field_location_hours: true

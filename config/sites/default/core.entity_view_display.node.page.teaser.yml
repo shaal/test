@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_admin_title
     - field.field.node.page.field_basic_components
     - field.field.node.page.field_basic_enable_nav
     - field.field.node.page.field_basic_header
@@ -37,6 +38,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_admin_title: true
   field_basic_components: true
   field_basic_enable_nav: true
   field_basic_header: true

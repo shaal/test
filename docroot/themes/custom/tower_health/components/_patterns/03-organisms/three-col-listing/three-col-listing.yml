@@ -1,0 +1,52 @@
+title: Pediatric Services
+desc: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi et sed aliquam ex rem ad necessitatibus ab consectetur repellat veritatis ducimus hic quidem officiis velit laborum molestias voluptas, architecto dolorem.
+list_items:
+  - text: Anesthesiology
+    url: "#"
+  - text: Audiology
+    url: "#"
+  - text: Cardiology
+    url: "#"
+  - text: Clinical Nutrition
+  - text: Critical Care
+    url: "#"
+  - text: Dental Medicine
+    url: "#"
+  - text: Developmental Pediatrics
+    url: "#"
+  - text: Ear Nose Throat
+    url: "#"
+  - text: Hematology
+  - text: Hospital Medicine
+    url: "#"
+  - text: Immunology
+    url: "#"
+  - text: Infectious Diseases
+    url: "#"
+  - text: Neonatal Care
+    url: "#"
+  - text: Nephrology
+    url: "#"
+  - text: Neurology & Neurosurgery
+    url: "#"
+  - text: Occupational Therapy
+    url: "#"
+  - text: Pharmacy
+    url: "#"
+  - text: Physical Therapy
+    url: "#"
+  - text: Pulmonology & Allergy
+    url: "#"
+  - text: Radiology
+    url: "#"
+  - text: Rheumatology
+    url: "#"
+  - text: Social Work
+    url: "#"
+  - text: Speech Therapy
+    url: "#"
+  - text: Surgery
+    url: "#"
+link:
+  url: "#"
+  label: "All Pediatric Services"
