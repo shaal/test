@@ -10,4 +10,5 @@ The Sitewide alert is displayed at the top of all pages when there is an alert.
 alert:
   level: select / required
   content: text / required
+  id: system / required
 ~~~
