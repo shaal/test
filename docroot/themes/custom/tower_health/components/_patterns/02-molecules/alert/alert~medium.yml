@@ -1,0 +1,3 @@
+alert:
+  level: medium
+  content: "This alert is a 'medium' level alert."
