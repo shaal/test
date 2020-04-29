@@ -35,6 +35,9 @@
   {% endblock %}
 
   {% block page_system %}
+    {% if alert %}
+    {% include "@molecules/alert/alert.twig" %}
+    {% endif %}
   {% endblock %}
 
   <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
