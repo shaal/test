@@ -1,7 +1,7 @@
-type: "hospital"
-name: "Reading Hospital"
-address_1: "420 S. Fifth Avenue"
-address_2: "West Reading, PA 19611"
+type: "Physician Office"
+name: "Berks Family Care"
+address_1: "193 Old Swede Road"
+address_local: "Douglassville, PA 19518"
 directions:
   link: "/"
   button_icon: "th-find-hospital.svg"
@@ -10,16 +10,17 @@ directions:
 phones:
   - label: Main
     numbers:
-      - number: 484-628-8000
+      - number: 610-285-3010
   - label: Appointments
     numbers:
       - number: 484-628-4357
         label: 484-628-HELP (4357)
       - number: 866-988-4357
+classes: "growth top-left"
+flag: "Are you an existing patient? Visit the <a href='#'>St. Christopher's Patient Portal</a>."
 img:
   src: null
   alt: null
-classes: "growth top-left"
 breadcrumb:
   1:
     url: "#"

@@ -82,13 +82,39 @@ Outside vagrant
 Running migrations
 1. `vagrant ssh`
 1. `drush mim --group="towerhealth_provider_base_group"`
-1. `drush mim --group="towerhealth_locations_group"`
-1. `drush mim --group="towerhealth_provider_details_group"`
+1. `drush mim towerhealth_locations`
+1. `drush mim towerhealth_doctors`
 1. `drush mim towerhealth_ratings`
 
 ## Deployment
 
-``Run phing artifact.``
+1. Create a pull request of develop against master.
+1. In the pull request notes capture the tickets and PRs for work included.
+1. [Create a release in github ](https://github.com/palantirnet/towerhealth/releases)
+1. Checkout the release locally.
+1. Run ``phing artifact.``
+1. Clear cache on production: ```drush @towerhealth.prod cr```
+1. Copy production to dev server.
+1. Checkout dev server to new release. ex(artifact-0.19.0)
+1. ```drush @towerhealth.dev cr```
+1. ```drush @towerhealth.dev cim```
+1. Run smoke test on dev server.
+1. Backup database on production server.
+1. ```drush @towerhealth.prod cr```
+1. ```drush @towerhealth.prod cim```
+1. Update the following settings:
+1. Edit the [index](https://towerhealth.prod.acquia-sites.com/admin/config/search/search-api/index/acquia_search_index/edit) and unset `read only`. 
+1. Run cron to reset acquia connector settings.
+
+## Setup local search
+The local search isn't setup out of the box a few settings need to be changed.
+* Go to http://towerhealth.local/admin/config/search/search-api
+* Enable the local development server if not enabled.
+* Disable the Acquia Search API Solr server.
+* Change the [acquia index to use the local server](http://towerhealth.local/admin/config/search/search-api/index/acquia_search_index/edit)
+* Re-edit the index and turn off read only.
+* Clear the [index and rebuild tracking information.](http://towerhealth.local/admin/config/search/search-api/index/acquia_search_index)
+* Index the site.
 
 ## Additional Documentation
 

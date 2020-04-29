@@ -10,10 +10,10 @@ breadcrumb:
     3:
       text: "Location Name"
 hero:
-  type: "Hospital"
-  name: "Brandywine Valley Cardiology"
-  address_1: "471 Pequea Avenue"
-  address_2: "Honey Brook, PA 19344"
+  type: "Physician Office"
+  name: "Berks Family Care"
+  address_1: "193 Old Swede Road"
+  address_local: "Douglassville, PA 19518"
   directions:
     link: "/"
     button_icon: "th-find-hospital.svg"
@@ -22,12 +22,14 @@ hero:
   phones:
     - label: Main
       numbers:
-        - number: 610-384-2211
-    - label: Fax
+        - number: 610-285-3010
+    - label: Appointments
       numbers:
-        - number: 610-384-2340
+        - number: 484-628-4357
+          label: 484-628-HELP (4357)
+        - number: 866-988-4357
   img:
-    src: "../../images/locations/brandywine-cardiology.png"
+    src: "../../images/locations/berks-family-care.png"
     alt: "Alternative Text"
   classes: "growth top-left"
 link_list:

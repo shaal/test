@@ -10,7 +10,7 @@ breadcrumb:
     3:
       text: "Location Name"
 hero:
-  type: "Hospital"
+  type: "hospital"
   name: "Reading Hospital"
   address_1: "420 S. Fifth Avenue"
   address_2: "West Reading, PA 19611"
