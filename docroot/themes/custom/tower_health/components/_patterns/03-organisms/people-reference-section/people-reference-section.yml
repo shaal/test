@@ -6,39 +6,44 @@ people:
         src: '../../images/john-weidenhammer.png'
         alt: John Weidenhammer
       name: John Weidenhammer
-      title: Chair, Board of Trustees
-      org: Weidenhammer Systems
+      title: Chair
+      org: Board of Trustees
       title_2: President
+      org_2: Weidenhammer Systems
   - teaser:
       image:
         src: '../../images/imgs-providers-Barbera-Charles.jpg'
         alt: Charles Barbera, MD
       name: Charles Barbera, MD
-      title: Vice Chair, Board of Trustees
-      org: Tower Health
-      title_2: Chair, Department of Medicine
+      title: Vice Chair
+      org: Board of Trustees, Tower Health
+      title_2: Chair
+      org_2: Department of Medicine
   - teaser:
       image:
         src: '../../images/imgs-providers-john-casey.jpg'
         alt: John Casey, Jr., MD
       name: John Casey, Jr., MD
-      title: null
-      org: Tower Health
-      title_2: Assistant Chair, Department of Surgery
+      title: Assistant Chair
+      org: Board of Trustees, Tower Health
+      title_2: null
+      org_2: Department of Surgery
   - teaser:
       image:
-        src: '../../images/john-weidenhammer.png'
-        alt: John Weidenhammer
+        src: null
+        alt: null
       name: John Weidenhammer
-      title: Chair, Board of Trustees
-      org: Weidenhammer Systems
+      title: Chair
+      org: Board of Trustees
       title_2: President
+      org_2: Weidenhammer Systems
   - teaser:
       image:
         src: '../../images/imgs-providers-Barbera-Charles.jpg'
         alt: Charles Barbera, MD
       name: Charles Barbera, MD
-      title: Vice Chair, Board of Trustees
-      org: Tower Health
-      title_2: Chair, Department of Medicine
+      title: Vice Chair
+      org: Board of Trustees, Tower Health
+      title_2: Chair
+      org_2: Department of Medicine
 

@@ -1,18 +1,30 @@
 <div class="people-teaser">
-  {% if teaser.image %}
+  
   <div class="people-teaser__img">
-    <img src="{{ teaser.image.src }}" alt="{{ teaser.img.alt }}"/>
+    <img {% if teaser.image.src %} src="{{ teaser.image.src }}" alt="{{ teaser.img.alt }}" {% else %}src="../../images/people/provider-placeholder.png" alt="{{ teaser.name }}"{% endif %} />
   </div>
-  {% endif %}
+  
   <div class="people-teaser__content">
     <h2 class="people-teaser__name">{{ teaser.name }}</h2>
-    <span class="people-teaser__meta">{{ teaser.title }}</span>
     
-    {% if teaser.title_2 or teaser.org %}
+    {% if teaser.title or teaser.org %}
     <span class="people-teaser__meta">
-      {% if teaser.title_2 %}{{ teaser.title_2 }}{% endif %}{% if teaser.org %},{% endif %}
+      {% if teaser.title %}{{ teaser.title }}{% endif %}{% if teaser.org and teaser.title %},{% endif %}
       {% if teaser.org %}{{ teaser.org }}{% endif %}
     </span>
     {% endif %}
+    {% if teaser.title_2 or teaser.org_2 %}
+    <span class="people-teaser__meta">
+      {% if teaser.title_2 %}{{ teaser.title_2 }}{% endif %}{% if teaser.org_2 and teaser.title_2 %},{% endif %}
+      {% if teaser.org_2 %}{{ teaser.org_2 }}{% endif %}
+    </span>
+    {% endif %}
+    {% if teaser.title_3 or teaser.org_3 %}
+    <span class="people-teaser__meta">
+      {% if teaser.title_3 %}{{ teaser.title_3 }}{% endif %}{% if teaser.org_3 and teaser.title_3 %},{% endif %}
+      {% if teaser.org_3 %}{{ teaser.org_3 }}{% endif %}
+    </span>
+    {% endif %}
+
   </div>
 </div>
