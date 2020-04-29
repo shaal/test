@@ -1,19 +1,30 @@
 .alert {
-  position: relative;
+  margin: .5em 0 0;
   padding: 1em 0;
-  border-bottom: 1px solid $trust-aa;
+  border-top: 4px solid $trust-aa;
+  box-shadow: $shadow;
   
   &.alert--high {
-    background-color: rgba($ed, .4);
+    background-color: rgba($ed, .3);
     border-color: $ed;
   }
   
   &.alert--medium {
-    
+    background-color: $uplifting-ltst;
+    border-color: $uplifting-lt;
   }
   
   &.alert--low {
-    
+    background-color: $off-white;
+  }
+  
+  .grid {
+    position: relative;
+  }
+  
+  &.is-closed {
+    display: none;
+    visibility: hidden;
   }
 }
 
@@ -23,8 +34,9 @@
 }
 
 .alert--close {
+  @include trans();
   position: absolute;
-  top: 1em;
+  top: 0;
   right: 1em;
   background-color: transparent;
   border: none;
@@ -34,6 +46,25 @@
     height: 1em;
     width: 1em;
     fill: $trust-aa;
+    
+    .alert--high & {
+      fill: $black;
+    }
+  }
+  
+  &:active,
+  &:hover,
+  &:focus {
+    @include trans();
+    transform: scale(1.1);
+    
+    svg{
+      fill: $primary-dark;
+      
+      .alert--high & {
+        fill: $ed;
+      }
+    }
   }
 }
 
