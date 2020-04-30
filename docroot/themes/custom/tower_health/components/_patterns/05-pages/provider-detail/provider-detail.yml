@@ -10,6 +10,9 @@ breadcrumb:
     3:
       text: "Karen A. Hoerst, MD"
 
+alert:
+  level: high
+  content: "This alert is a 'high' level alert."
 name: "Karen A. Hoerst, MD"
 lead_title: "Medical Director, Stroke Program"
 type: 'Nurse Practitioner'
