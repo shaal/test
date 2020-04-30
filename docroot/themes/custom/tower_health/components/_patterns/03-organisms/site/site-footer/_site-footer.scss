@@ -206,7 +206,7 @@
     }
 
     .footer__details {
-      @include adjust-font-size-to($crumb, .75);
+      @include adjust-font-size-to($crumb, .65);
       width: 100%;
 
       @include breakpoint(1075px) {
@@ -248,7 +248,7 @@
 
 
     .footer__legal {
-      @include adjust-font-size-to($crumb, .75);
+      @include adjust-font-size-to($crumb, .65);
       display: block;
       width: 100%;
       margin-top: .25em;
