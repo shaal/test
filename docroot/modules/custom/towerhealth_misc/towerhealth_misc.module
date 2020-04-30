@@ -11,6 +11,8 @@ use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Views;
 use Drupal\editor\Entity\Editor;
+use Drupal\node\Entity\Node;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Add custom sort order for find a provider search.
@@ -180,4 +182,28 @@ function towerhealth_misc_preprocess_form_element(&$variables, $hook, &$info) {
 function towerhealth_misc_ckeditor_css_alter(array &$css, Editor $editor) {
   $theme_path = drupal_get_path('theme', 'tower_health');
   $css[] = $theme_path . '/dist/wysiwyg-editor.css';
+}
+
+/**
+ * Update profile node when medical specialty is updated.
+ */
+function towerhealth_misc_taxonomy_term_update($term) {
+  if ($term->getEntityType()->id() === 'taxonomy_term' && $term->getVocabularyId() == 'medical_specialty') {
+    $query = \Drupal::entityQuery('node')
+      ->condition('status', 1)
+      ->condition('field_medical_specialties_ref', $term->id());
+
+    $nids = $query->execute();
+
+    if ($nids) {
+      $nodes = Node::loadMultiple($nids);
+      $item_ids = [];
+      foreach ($nodes as $nid => $node) {
+        foreach ($node->getTranslationLanguages() as $language) {
+          $item_ids[] = "$nid:" . $language->getId();
+        }
+      }
+      Index::load('acquia_search_index')->trackItemsUpdated('entity:node', $item_ids);
+    }
+  }
 }
