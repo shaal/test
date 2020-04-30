@@ -68,12 +68,3 @@ footer_items:
         url: "/"
       - title: "Tower Health Medical Group"
         url: "/"
-  - title: "Giving & Volunteering"
-    url: "/"
-    below:
-      - title: "Reading Hospital Foundation"
-        url: "/"
-      - title: "Donate"
-        url: "/"
-      - title: "Volunteer"
-        url: "/"

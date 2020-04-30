@@ -35,11 +35,13 @@
         border-top: 4px solid $growth;
 
         @include breakpoint($bp2) {
-          width: calc(50% - 0.5em);
+          flex: 0 1 48%;
+          margin-right: 2%;
         }
 
         @include breakpoint($bp3) {
-          width: calc(25% - 1em);
+          flex: 1 1 23%;
+          margin-right: 2%;
         }
 
         a {
