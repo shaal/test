@@ -1,0 +1,3 @@
+alert:
+  level: low
+  content: "This alert is a 'low' level alert."

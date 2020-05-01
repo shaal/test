@@ -1,0 +1,16 @@
+{{ attach_library('tower_health/alert') }}
+<div role="alert" id="{{ alert.id }}" class="alert {% if alert.level %}alert--{{ alert.level }}{% endif %}">
+  <div class="grid">
+    <div class="alert__content">
+      {{ alert.content }}
+    </div>
+    <button class="alert--close" aria-controls="{{ alert.id }}">
+      {% include "@atoms/04-images/icons/_icon.twig" with {
+        icon_base_class: "icon",
+        icon_blockname: "alert-close",
+        icon_name: "close",
+      } %}
+      <span class="alert__close-text">Close Alert</span>
+    </button>
+  </div>
+</div>

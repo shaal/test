@@ -14,6 +14,9 @@ header:
   image:
     url: '../../images/AdobeStock_194014777_Preview.jpeg'
   cta: null
+alert:
+  level: high
+  content: "This alert is a 'high' level alert."
 rich_text:
   -
     paragraph_content:

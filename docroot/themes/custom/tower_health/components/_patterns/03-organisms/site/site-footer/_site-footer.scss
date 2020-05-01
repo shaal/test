@@ -35,11 +35,13 @@
         border-top: 4px solid $growth;
 
         @include breakpoint($bp2) {
-          width: calc(50% - 0.5em);
+          flex: 0 1 48%;
+          margin-right: 2%;
         }
 
         @include breakpoint($bp3) {
-          width: calc(25% - 1em);
+          flex: 1 1 23%;
+          margin-right: 2%;
         }
 
         a {
@@ -197,28 +199,36 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     padding: 1em 2em;
 
-    @include breakpoint($bp3) {
+    @include breakpoint(1075px) {
       flex-wrap: nowrap;
     }
 
     .footer__details {
-      @include adjust-font-size-to($crumb, .75);
+      @include adjust-font-size-to($crumb, .65);
       width: 100%;
 
-      @include breakpoint($bp3) {
+      @include breakpoint(1075px) {
         text-align: left;
+        width: auto;
         margin-bottom: 0;
       }
 
       a {
-        display: block;
         margin-bottom: 0.5em;
-        border: none;
         color: $trust-ltst;
         text-decoration: none;
+        display: inline-block;
+        padding-right: 0.75em;
+        margin-right: 0.75em;
+        border-right: 1px solid rgba($trust-ltr, .5);
+
+        &:last-of-type {
+          border-right: none;
+          padding-left: 0;
+          margin-right: 0;
+        }
 
         &:active,
         &:hover,
@@ -226,21 +236,7 @@
           text-decoration: underline;
         }
 
-        @include breakpoint($bp2) {
-          display: inline-block;
-          padding: 0 0.75em;
-          border-right: 1px solid rgba($trust-ltr, .5);
-
-          &:last-of-type {
-            border-right: none;
-          }
-
-          &:first-of-type {
-            padding-left: 0;
-          }
-        }
-
-        @include breakpoint($bp3) {
+        @include breakpoint(1075px) {
           margin-bottom: 0;
         }
       }
@@ -252,11 +248,15 @@
 
 
     .footer__legal {
-      @include adjust-font-size-to($crumb, .75);
+      @include adjust-font-size-to($crumb, .65);
+      display: block;
       width: 100%;
+      margin-top: .25em;
 
-      @include breakpoint($bp3) {
+      @include breakpoint(1075px) {
         text-align: right;
+        width: auto;
+        margin-top: 0;
       }
 
       p {
