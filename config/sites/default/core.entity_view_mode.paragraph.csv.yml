@@ -1,0 +1,10 @@
+uuid: 4f5fb47a-a097-49c5-a9b7-b2ba5d1e84a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.csv
+label: CSV
+targetEntityType: paragraph
+cache: true
